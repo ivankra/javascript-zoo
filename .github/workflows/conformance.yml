@@ -51,6 +51,29 @@ jobs:
         shard: ${{ fromJson(needs.init.outputs.shards) }}
     runs-on: ubuntu-24.04
     steps:
+      # Sometimes github runner just doesn't come with enough free disk space...
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: false
+
+      # Add extra swap in addition to 3G /swapfile + 16G RAM / 4C on ubuntu-24.04 runners
+      # for a total of 16G RAM + 16G swap. Need at least 2-3G for system.
+      - name: Add extra swap
+        run: |
+          set -x
+          sudo fallocate -l 13G /extra-swapfile
+          sudo chmod 600 /extra-swapfile
+          sudo mkswap /extra-swapfile
+          sudo swapon /extra-swapfile
+          swapon --show; free -h; df -h; nproc
+
       - uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
@@ -71,7 +94,7 @@ jobs:
       - name: Run conformance and test262
         run: |
           IMAGE=ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-          DR="docker run --rm --memory=15g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $IMAGE python3"
+          DR="docker run --rm -m 14g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $IMAGE python3"
           mkdir -p results/es1-5 results/compat-table results/test262
           set -x;
           for engine in ${{ steps.engines.outputs.engines }}; do
