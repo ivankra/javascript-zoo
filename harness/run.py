@@ -115,6 +115,7 @@ def main() -> None:
         output_file=args.output,
         verbose=args.verbose,
         report_json=args.report_json,
+        report_dirs=True,
     )
     multi_dir = len(set(os.path.dirname(rel) for rel in tests)) >= 2
     if multi_dir:

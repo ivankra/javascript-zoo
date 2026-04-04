@@ -100,7 +100,7 @@ class TestTagStats(unittest.TestCase):
             self.assertEqual(s.failed, 1)
 
     def test_summary_tests_deduped(self):
-        """summary["total"] deduplicates across modes (per-file worst)."""
+        """summary["all"] deduplicates across modes (per-file worst)."""
         tags_s = _t262(mode="strict")
         tags_l = _t262(mode="sloppy")
         r = self._reporter([
@@ -111,8 +111,8 @@ class TestTagStats(unittest.TestCase):
         ])
         summary = r._summary_json()
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
-        self.assertEqual(summary["total"]["ok"], 1)
-        self.assertEqual(summary["total"]["fail"], 1)
+        self.assertEqual(summary["all"]["ok"], 1)
+        self.assertEqual(summary["all"]["fail"], 1)
 
     def test_skipped_with_tags_counted(self):
         """Skipped results with tags appear in tag stats."""
@@ -143,15 +143,15 @@ class TestTagStats(unittest.TestCase):
         self.assertIn("edition:N/A", stats)
         self.assertEqual(stats["edition:N/A"].passed, 1)
 
-    def test_empty_keys_in_summary_json(self):
-        """'features:N/A' and 'edition:N/A' appear in summary JSON for featureless tests."""
+    def test_empty_keys_in_tags_json(self):
+        """'features:N/A' and 'edition:N/A' appear in tags JSON for featureless tests."""
         tags = _t262(mode="strict")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
-        summary = r._summary_json()
-        self.assertIn("features:N/A", summary)
-        self.assertIn("edition:N/A", summary)
+        tag_stats = r._tags_json()
+        self.assertIn("features:N/A", tag_stats)
+        self.assertIn("edition:N/A", tag_stats)
 
 
 class TestEditionReport(unittest.TestCase):

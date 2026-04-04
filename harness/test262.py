@@ -154,7 +154,7 @@ class Executor:
         if scenario.tags is None:
             scenario.tags = Tags()
         for ref in staged.references:
-            scenario.tags.add("references", ref)
+            scenario.tags.add("ref", ref)
 
         try:
             run = self.runner.run_command(
@@ -254,11 +254,11 @@ def main() -> None:
     p.add_argument("--report-scenarios", action="store_true", default=False, dest="report_runs",
                    help="Report results per scenario (one entry per each strict/sloppy mode run)")
     p.add_argument("--report-rusage", metavar="MODE", type=parse_rusage_mode, default="top10",
-                   help="Report tests resource usage in json: topN, all, or no (default: top10)")
+                   help="Report tests resource usage in json: top<N>, all, or no (default: top10)")
     p.add_argument("--no-report-rusage", action="store_const", const="no", dest="report_rusage",
                    help=argparse.SUPPRESS)
-    p.add_argument("--report-dirs", action=argparse.BooleanOptionalAction, default=True,
-                   help="Include per-directory stats in JSON output (default: on)")
+    p.add_argument("--report-dirs", action="store_true",
+                   help="Include per-directory stats in JSON output")
     p.add_argument("--shuffle", action="store_true", default=False,
                    help="Randomize test execution order")
     p.add_argument("--no-probe", action="store_true", default=False,

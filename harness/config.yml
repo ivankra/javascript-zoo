@@ -25,6 +25,9 @@ default:
   # GitHub runners only have 4G/core and we need some buffer to avoid worker VM deaths
   # V8 can pass whole test suite with 1.5G
   memory_limit_mb: 3584
+  #flaky_tests:
+  #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
+  #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
 
 .constants:
   # Common pattern to report exceptions

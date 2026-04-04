@@ -28,52 +28,7 @@ _REL_SPECIFIER_RE = re.compile(
     r""")"""
 )
 
-_REFS_GLOBALS = [
-    "$262",
-    "$DONE",
-    "AbstractModuleSource",
-    "AggregateError",
-    "ArrayBuffer",
-    "AsyncDisposableStack",
-    "Atomics",
-    "BigInt",
-    "BigInt64Array",
-    "BigUint64Array",
-    "DataView",
-    "DisposableStack",
-    "Float32Array",
-    "Float64Array",
-    "EvalError",
-    "FinalizationRegistry",
-    "Int8Array",
-    "Int16Array",
-    "Int32Array",
-    "Intl",
-    "Iterator",
-    "Map",
-    "Promise",
-    "Proxy",
-    "RangeError",
-    "ReferenceError",
-    "Reflect",
-    "Set",
-    "ShadowRealm",
-    "SharedArrayBuffer",
-    "SuppressedError",
-    "SyntaxError",
-    "Symbol",
-    "Test262Error",
-    "Temporal",
-    "TypeError",
-    "Uint8Array",
-    "Uint8ClampedArray",
-    "Uint16Array",
-    "Uint32Array",
-    "URIError",
-    "WeakMap",
-    "WeakRef",
-    "WeakSet",
-]
+_REFS_GLOBALS = ["$262"]
 _REFS_RE = re.compile(
     r"(?<![0-9A-Za-z_$.])"
     r"(?:\$262\.[A-Za-z_$][0-9A-Za-z_$]*"

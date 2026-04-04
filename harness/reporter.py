@@ -48,9 +48,18 @@ class Stats:
         self.failed += other.failed
         self.skipped += other.skipped
 
-    def to_dict(self) -> dict[str, int]:
-        d = {"ok": self.passed, "fail": self.failed, "skip": self.skipped}
-        return {k: v for k, v in d.items() if v}
+    def to_dict(self, percent: bool = False) -> dict[str, int]:
+        d = {}
+        if self.passed:
+            d["pass"] = self.passed
+        if self.failed:
+            d["fail"] = self.failed
+        if self.skipped:
+            d["skip"] = self.skipped
+        total = self.passed + self.failed + self.skipped
+        if percent and total:
+            d["pass_percent"] = round(100.0 * self.passed / total, 3)
+        return d
 
 
 def format_summary_line(
@@ -144,7 +153,7 @@ class Reporter:
         report_json: bool | None = None,
         report_tests: bool | None = None,
         report_runs: bool | None = None,
-        report_dirs: bool = True,
+        report_dirs: bool = False,
     ) -> None:
         self._engine = engine
         self._discovery = discovery
@@ -385,11 +394,12 @@ class Reporter:
             print(f"  {line}" if header else line, flush=True)
 
     _INLINE_DICT_KEYS = frozenset({
-        "ok", "ok_percent", "fail", "skip", "strict", "sloppy", "if", "then",
+        "pass", "pass_percent", "fail", "skip", "strict", "sloppy", "if", "then",
         "else", "shell", "user_time", "sys_time", "real_time", "max_rss_kb",
         "io_in_blocks", "io_out_blocks", "ctx_switches_voluntary",
         "ctx_switches_involuntary"
     })
+    _INLINE_VALUE_KEYS = frozenset({"console_log"})
 
     @staticmethod
     def _is_inline_json(value: Any) -> bool:
@@ -405,15 +415,15 @@ class Reporter:
         if isinstance(value, dict):
             if not value or Reporter._is_inline_json(value):
                 return json.dumps(value)
-            items = [f'{inner}{json.dumps(k)}: {Reporter.format_json_value(v, indent + 1)}'
-                     for k, v in value.items()]
+            items = [
+                f'{inner}{json.dumps(k)}: {json.dumps(v) if k in Reporter._INLINE_VALUE_KEYS else Reporter.format_json_value(v, indent + 1)}'
+                for k, v in value.items()
+            ]
             return "{\n" + ",\n".join(items) + "\n" + pad + "}"
         if isinstance(value, list):
             items = [f'{inner}{Reporter.format_json_value(v, indent + 1)}' for v in value]
             return "[\n" + ",\n".join(items) + "\n" + pad + "]"
         return json.dumps(value)
-
-    # ── Internal helpers ──────────────────────────────────────────────────────
 
     def _file_verdicts(self) -> dict[str, Verdict | None]:
         """Compute per-file worst verdict (deduplicating across modes)."""
@@ -477,42 +487,39 @@ class Reporter:
         return result
 
     def _summary_json(self) -> dict[str, Any]:
-        """Build summary: tests at top, then {qualified_tag: stats} version-sorted.
-
-        Excludes dir: tags (those go in _dirs_json()).
-        """
+        """Build summary totals."""
         fv = self._file_verdicts()
 
-        def add_ok_percent(d: dict[str, int]) -> dict[str, int | float]:
-            total = d.get("ok", 0) + d.get("fail", 0)
-            if total:
-                return {**d, "ok_percent": round(100.0 * d.get("ok", 0) / total, 3)}
-            return dict(d)
-
         def total(filter_expr: str | None = None) -> dict[str, int | float]:
-            return add_ok_percent(self._total_stats(fv, filter_expr).to_dict())
-
-        INTL = "dir:test/intl402 | dir:test/staging/Intl402"
+            return self._total_stats(fv, filter_expr).to_dict(percent=True)
 
         result: dict[str, Any] = {}
-        result["total"] = total()
-        result["total-intl"] = total(INTL)
-        result["total-staging"] = total("dir:test/staging")
-        result["total-annexb"] = total("dir:test/annexB")
-        result["total-ex-staging"] = total(f"~(dir:test/staging)")
-        result["total-ex-staging-intl"] = total(f"~({INTL} | dir:test/staging)")
-        result["total-ex-staging-intl-annexb"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB)")
-        result["total-ex-staging-intl-annexb-esnext"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB | edition:esnext)")
-        result["total-ex-staging-intl-annexb-esnext-$262"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB | edition:esnext | references:$262)")
+        result["all"] = total()
 
+        if self._test262:
+            result["intl"] = total("test/intl402 | test/staging/Intl402")
+            result["staging"] = total("test/staging")
+            result["annexb"] = total("test/annexB")
+            ex = "test/intl402 | test/staging/Intl402"
+            result["ex-intl"] = total(f"~({ex})")
+            result["ex-staging"] = total(f"~test/staging")
+            ex += "|test/staging";   result["ex-staging-intl"] = total(f"~({ex})")
+            ex += "|test/annexB";    result["ex-staging-intl-annexb"] = total(f"~({ex})")
+            ex += "|edition:esnext"; result["ex-staging-intl-annexb-esnext"] = total(f"~({ex})")
+            ex += "|ref:$262";       result["ex-staging-intl-annexb-esnext-$262"] = total(f"~({ex})")
+
+        return result
+
+    def _tags_json(self) -> dict[str, Any]:
+        """Build non-dir tag stats: {qualified_tag: stats} version-sorted."""
+
+        result: dict[str, Any] = {}
         tag_stats = self._build_tag_stats()
         for qt in sorted(tag_stats, key=version_sort_key):
             assert ":" in qt, f"tag must be namespaced: {qt!r}"
             if qt.startswith("dir:"):
                 continue
-            d = tag_stats[qt].to_dict()
-            result[qt] = add_ok_percent(d)
-
+            result[qt] = tag_stats[qt].to_dict(percent=True)
         return result
 
     def _dirs_json(self) -> dict[str, Any]:
@@ -521,7 +528,7 @@ class Reporter:
         dirs: dict[str, Any] = {}
         for qt in sorted(tag_stats, key=version_sort_key):
             if qt.startswith("dir:"):
-                dirs[qt.removeprefix("dir:")] = tag_stats[qt].to_dict()
+                dirs[qt.removeprefix("dir:")] = tag_stats[qt].to_dict(percent=True)
         return dirs
 
     def _edition_report(self) -> str:
@@ -597,13 +604,21 @@ class Reporter:
             run_wall_time = run_wall_time[:self._report_rusage_top_n]
 
             peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
+            sum_user_time = sum((r.rusage.user_time or 0) for r in results) if results else 0
+            sum_sys_time = sum((r.rusage.sys_time or 0) for r in results) if results else 0
 
             if self._wall_sec:
-                rusage["total_time_s"] = round(self._wall_sec, 3)
+                rusage["total_duration_sec"] = round(self._wall_sec, 3)
+            if sum_user_time:
+                rusage["total_user_sec"] = round(sum_user_time, 3)
+            if sum_sys_time:
+                rusage["total_sys_sec"] = round(sum_sys_time, 3)
             if peak_rss_kb:
                 rusage["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
             if run_wall_time:
-                rusage["wall_time_s"] = {run_id: round(t, 3) for run_id, t in run_wall_time}
+                wall_time_s = {run_id: round(t, 3) for run_id, t in run_wall_time}
+                rusage["wall_time_s"] = wall_time_s
+                rusage["duration_sec"] = wall_time_s
             if run_rss:
                 rusage["rss_mb"] = {run_id: round(kb / 1024, 1) for run_id, kb in run_rss}
         elif self._report_rusage_mode == "all":
@@ -627,24 +642,25 @@ class Reporter:
         if self._test262_revision:
             data["test262"] = self._test262_revision.to_json()
         data["summary"] = self._summary_json()
+        tags = self._tags_json()
+        if tags:
+            data["tags"] = tags
         if self._report_dirs:
             dirs = self._dirs_json()
             if dirs:
                 data["dirs"] = dirs
+        if self._report_rusage_mode != "no" and rusage:
+            data["rusage"] = rusage
         test_order = self._test_order()
         if self._report_tests:
             data["tests"] = group_run_results(results, test_order)
         if self._report_runs:
             data["scenarios"] = group_run_results(results, test_order, "run_id")
-        if self._report_rusage_mode != "no" and rusage:
-            data["rusage"] = rusage
         return self.format_json_value(data) + "\n"
 
     def to_text(self) -> str:
         """Format results as text."""
         lines: list[str] = []
-        if self._engine.build_metadata:
-            lines.append(f"Metadata: {json.dumps(self._engine.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
         if self._report_runs:
             results = self._results
             test_order = self._test_order()

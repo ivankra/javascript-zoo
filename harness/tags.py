@@ -26,9 +26,8 @@ class Tags:
       * edition    – highest ES edition (es5, es6, es2020, ..., esnext)
       * mode       – execution mode (strict or sloppy)
       * dir        – all ancestor directory prefixes of rel_path
-      * references – $262.* and top-level JS class references (reporting only
-                     not available for test discovery/filtering because they are
-                     added after staging)
+      * ref        – $262.* references (reporting only; not available for test
+                     discovery/filtering because they are added after staging)
     """
 
     __slots__ = ("values", "pairs")
