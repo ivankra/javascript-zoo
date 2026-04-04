@@ -134,8 +134,7 @@ class EngineConfig:
     # --- Conformance mode ---
     conformance_suite: list[str] = dataclasses.field(default_factory=lambda: [
         "es[1-5]",
-        "compat-table/es6",
-        "compat-table/es20[0-9][0-9]",
+        "compat-table",
     ])
     # Default test262 filter expression for this engine.
     # See test262.py --filter; if flag is specified it takes precedence.

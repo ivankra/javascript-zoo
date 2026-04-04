@@ -23,12 +23,63 @@ CONFORMANCE_DIR = REPO_ROOT / "conformance"
 PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
 
 
+_COMPAT_TABLE_HEADER_RE = re.compile(r"^// compat-table: (.*)")
+_COMPAT_TABLE_GROUP_RE = re.compile(r"^(.*) \((tiny|small|medium|large)\) > .*")
+_COMPAT_TABLE_SIZE = {"tiny": 1, "small": 2, "medium": 4, "large": 8}
+
+
+def compute_compat_table_weights(test_files: list[str], root: Path) -> dict[str, float]:
+    """Parse compat-table headers from test files, compute per-file weights.
+
+    Two-pass: first counts group members, then assigns weight = group_size / group_count.
+    Files without a group marker get weight 1.
+    """
+    # Parse headers
+    file_headers: dict[str, str] = {}
+    for rel in test_files:
+        if not rel.startswith("compat-table/"):
+            continue
+        path = root / rel
+        with open(path, encoding="utf-8", errors="replace") as f:
+            for line in f:
+                m = _COMPAT_TABLE_HEADER_RE.match(line)
+                if m:
+                    file_headers[rel] = m.group(1)
+                    break
+                if not line.startswith(("//", "#!")):
+                    break
+
+    # Pass 1: count group members
+    groups: dict[str, list[str]] = {}
+    ungrouped: list[str] = []
+    for rel, header in file_headers.items():
+        m = _COMPAT_TABLE_GROUP_RE.match(header)
+        if m:
+            groups.setdefault(m.group(1), []).append(rel)
+        else:
+            ungrouped.append(rel)
+
+    # Pass 2: assign weights
+    weights: dict[str, float] = {}
+    for rel, header in file_headers.items():
+        m = _COMPAT_TABLE_GROUP_RE.match(header)
+        if not m:
+            weights[rel] = 1
+        else:
+            group_name = m.group(1)
+            group_weight = _COMPAT_TABLE_SIZE[m.group(2)]
+            weights[rel] = group_weight / len(groups[group_name])
+
+    return weights
+
+
 def run_one(
     runner: Runner,
     annotator: Annotator,
     cfg: EngineConfig,
     test_path: Path,
     test_id: str,
+    weight: float | None = None,
 ) -> RunResult:
     """Run a single conformance test, return RunResult."""
     console_log = cfg.console_log or ["console.log"]
@@ -72,6 +123,8 @@ def run_one(
     tags = Tags()
     tags.add_folders(test_id)
     run.tags = tags
+    if weight is not None:
+        run.weight = weight
     return run
 
 
@@ -121,12 +174,14 @@ def main() -> None:
     if multi_dir:
         reporter.set_expected_dirs()
 
+    weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
+
     wall_start = time.monotonic()
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.jobs) as pool:
         futs = {}
         for rel in tests:
             reporter.note_started(rel)
-            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel)] = rel
+            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel))] = rel
         for fut in concurrent.futures.as_completed(futs):
             run = fut.result()
             reporter.add_file([run])

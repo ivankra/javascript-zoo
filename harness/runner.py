@@ -133,6 +133,8 @@ class RunResult:
     tags: Tags | None = None
     # Execution mode: "strict" or "sloppy" (test262).
     mode: str = ""
+    # Weight for compat-table's weighted pass rate calculation.
+    weight: float | None = None
 
     def print_streams(self) -> None:
         """Print stdout and stderr with stream-prefixed lines."""

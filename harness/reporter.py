@@ -27,13 +27,16 @@ if TYPE_CHECKING:
 
 @dataclasses.dataclass
 class Stats:
-    """Aggregated pass/fail/skip counts."""
+    """Aggregated pass/fail/skip counts with optional weighted tracking."""
     total: int = 0
     passed: int = 0
     failed: int = 0
     skipped: int = 0
+    weighted_pass: float = 0.0
+    weighted_total: float = 0.0
+    weighted_count: int = 0
 
-    def add(self, verdict: Verdict | None) -> None:
+    def add(self, verdict: Verdict | None, weight: float | None = None) -> None:
         self.total += 1
         if verdict is Verdict.OK:
             self.passed += 1
@@ -41,15 +44,32 @@ class Stats:
             self.failed += 1
         else:
             self.skipped += 1
+        if weight is not None:
+            self.weighted_count += 1
+            self.weighted_total += weight
+            if verdict is Verdict.OK:
+                self.weighted_pass += weight
 
     def merge(self, other: Stats) -> None:
         self.total += other.total
         self.passed += other.passed
         self.failed += other.failed
         self.skipped += other.skipped
+        self.weighted_pass += other.weighted_pass
+        self.weighted_total += other.weighted_total
+        self.weighted_count += other.weighted_count
 
-    def to_dict(self, percent: bool = False) -> dict[str, int]:
-        d = {}
+    def has_weight_for_every_test(self) -> bool:
+        """True if all non-skipped files have explicit weights (no mix)."""
+        return self.weighted_count > 0 and self.weighted_count == self.passed + self.failed
+
+    def weighted_pass_percent(self) -> float | None:
+        if self.has_weight_for_every_test():
+            return round(100.0 * self.weighted_pass / self.weighted_total, 3) if self.weighted_total else 0.0
+        return None
+
+    def to_dict(self, percent: bool = False) -> dict[str, int | float]:
+        d: dict[str, int | float] = {}
         if self.passed:
             d["pass"] = self.passed
         if self.failed:
@@ -59,6 +79,11 @@ class Stats:
         total = self.passed + self.failed + self.skipped
         if percent and total:
             d["pass_percent"] = round(100.0 * self.passed / total, 3)
+        if percent and self.has_weight_for_every_test():
+            d["weight"] = round(self.weighted_total, 3)
+            wpct = self.weighted_pass_percent()
+            assert wpct is not None
+            d["weighted_pass_percent"] = wpct
         return d
 
 
@@ -69,6 +94,7 @@ def format_summary_line(
     skip: int = 0,
     *,
     use_color: bool = False,
+    weighted_pass_percent: float | None = None,
 ) -> str:
     """Format a summary line: label and counts, with optional ANSI color."""
     if use_color:
@@ -83,7 +109,10 @@ def format_summary_line(
     if fail == 0:
         counts = f"{ok} passed"
     else:
-        counts = f"{ok}/{ok + fail} ({ok * 100 / (ok + fail):.2f}%) passed, {fail} failed"
+        pct_str = f"{ok * 100 / (ok + fail):.2f}%"
+        if weighted_pass_percent is not None:
+            pct_str += f", weighted: {weighted_pass_percent:.2f}%"
+        counts = f"{ok}/{ok + fail} ({pct_str}) passed, {fail} failed"
     if skip:
         counts += f"; {skip} skipped"
     return f"{label}: {counts}"
@@ -179,6 +208,7 @@ class Reporter:
         self._dir_done: Counter[str] = Counter()
         self._dir_passed: Counter[str] = Counter()
         self._dir_failed_tests: dict[str, list[str]] = {}
+        self._dir_stats: dict[str, Stats] = {}
         self._dir_next_index: int = 0
         self._probes = probes
         if report_rusage in ("all", "no"):
@@ -245,6 +275,7 @@ class Reporter:
         self._dir_done = Counter()
         self._dir_passed = Counter()
         self._dir_failed_tests = {d: [] for d in self._dir_order}
+        self._dir_stats = {d: Stats() for d in self._dir_order}
         self._dir_next_index = 0
 
     def add(self, run: RunResult) -> None:
@@ -275,11 +306,11 @@ class Reporter:
             fp = run.test_id
             d = os.path.dirname(fp)
             self._dir_done[d] += 1
+            self._dir_stats[d].add(run.verdict, run.weight)
             if run.verdict is Verdict.OK:
                 self._dir_passed[d] += 1
             else:
-                base = fp.split("/", 1)[1] if "/" in fp else fp
-                self._dir_failed_tests[d].append(base)
+                self._dir_failed_tests[d].append(os.path.basename(fp))
 
     def add_file(self, runs: list[RunResult]) -> None:
         """Record all runs from a single test file and update progress counters.
@@ -386,18 +417,22 @@ class Reporter:
             self._dir_next_index += 1
             ok = self._dir_passed[d]
             fail = self._dir_total[d] - ok
-            line = format_summary_line(d, ok, fail, use_color=self._use_color)
+            line = format_summary_line(d, ok, fail, use_color=self._use_color,
+                                       weighted_pass_percent=self._dir_stats[d].weighted_pass_percent())
+            prefix = "  " if header else ""
             if fail:
                 failed_text = " ".join(self._dir_failed_tests[d])
-                if failed_text and len(failed_text) < 60:
-                    line += f"; {failed_text}"
-            print(f"  {line}" if header else line, flush=True)
+                candidate = f"{prefix}{line} ({failed_text})"
+                cols = shutil.get_terminal_size((80, 24)).columns
+                if len(candidate) <= cols:
+                    line += f" ({failed_text})"
+            print(f"{prefix}{line}", flush=True)
 
     _INLINE_DICT_KEYS = frozenset({
-        "pass", "pass_percent", "fail", "skip", "strict", "sloppy", "if", "then",
-        "else", "shell", "user_time", "sys_time", "real_time", "max_rss_kb",
-        "io_in_blocks", "io_out_blocks", "ctx_switches_voluntary",
-        "ctx_switches_involuntary"
+        "pass", "pass_percent", "weight", "weighted_pass_percent", "fail",
+        "skip", "strict", "sloppy", "if", "then", "else", "shell", "user_time",
+        "sys_time", "real_time", "max_rss_kb", "io_in_blocks", "io_out_blocks",
+        "ctx_switches_voluntary", "ctx_switches_involuntary"
     })
     _INLINE_VALUE_KEYS = frozenset({"console_log"})
 
@@ -440,26 +475,18 @@ class Reporter:
                 fv[fp] = run.verdict
         return fv
 
-    def _total_stats(self, fv: dict[str, Verdict | None], filter_expr: str | None = None) -> Stats:
-        """Aggregate file verdicts into Stats, filtering by FilterExpr on tags."""
+    def _file_weights(self) -> dict[str, float]:
+        """Collect per-file weights (first non-None weight per test_id)."""
+        fw: dict[str, float] = {}
+        for run in self._results:
+            if run.test_id and run.weight is not None and run.test_id not in fw:
+                fw[run.test_id] = run.weight
+        return fw
 
-        file_tags: dict[str, Tags] = {}
-        for r in self._results:
-            if r.test_id and isinstance(r.tags, Tags) and r.test_id not in file_tags:
-                file_tags[r.test_id] = r.tags
-
-        res = Stats()
-        filt = FilterExpr(filter_expr)
-
-        for fp, verdict in fv.items():
-            tags = file_tags.get(fp)
-            if tags is not None and filt(tags):
-                res.add(verdict)
-
-        return res
-
-    def _build_tag_stats(self) -> dict[str, Stats]:
+    def _build_tag_stats(self, fw: dict[str, float] | None = None) -> dict[str, Stats]:
         """Aggregate per-file worst verdict for each fully-qualified tag."""
+        if fw is None:
+            fw = {}
         # Collect per-file worst verdict per tag.
         tag_file_verdicts: dict[str, dict[str, Verdict]] = {}
         for r in self._results:
@@ -479,24 +506,35 @@ class Reporter:
                     fv[key] = v
 
         result: dict[str, Stats] = {}
-        for qt, fv in tag_file_verdicts.items():
+        for qt, file_verdicts in tag_file_verdicts.items():
             s = Stats()
-            for v in fv.values():
-                s.add(v)
+            for fp, v in file_verdicts.items():
+                s.add(v, fw.get(fp))
             result[qt] = s
         return result
 
-    def _summary_json(self) -> dict[str, Any]:
+    def _summary_json(self, tag_stats: dict[str, Stats], fv: dict[str, Verdict | None], fw: dict[str, float]) -> dict[str, Any]:
         """Build summary totals."""
-        fv = self._file_verdicts()
+        file_tags: dict[str, Tags] = {}
+        for r in self._results:
+            if r.test_id and isinstance(r.tags, Tags) and r.test_id not in file_tags:
+                file_tags[r.test_id] = r.tags
 
         def total(filter_expr: str | None = None) -> dict[str, int | float]:
-            return self._total_stats(fv, filter_expr).to_dict(percent=True)
+            filt = FilterExpr(filter_expr)
+            stats = Stats()
+            for fp, verdict in fv.items():
+                tags = file_tags.get(fp)
+                if tags is None or not filt(tags):
+                    continue
+                stats.add(verdict, fw.get(fp))
+            return stats.to_dict(percent=True)
 
         result: dict[str, Any] = {}
         result["all"] = total()
 
         if self._test262:
+            result["esnext"] = total("edition:esnext")
             result["intl"] = total("test/intl402 | test/staging/Intl402")
             result["staging"] = total("test/staging")
             result["annexb"] = total("test/annexB")
@@ -507,14 +545,20 @@ class Reporter:
             ex += "|test/annexB";    result["ex-staging-intl-annexb"] = total(f"~({ex})")
             ex += "|edition:esnext"; result["ex-staging-intl-annexb-esnext"] = total(f"~({ex})")
             ex += "|ref:$262";       result["ex-staging-intl-annexb-esnext-$262"] = total(f"~({ex})")
+        else:
+            result["es1-5"] = total("dir:es1 | dir:es3 | dir:es5")
+            result["es6"] = total("dir:compat-table/es6")
+            es2016_dirs = sorted(tag for tag in tag_stats if tag.startswith("dir:compat-table/es20"))
+            if es2016_dirs:
+                result["es2016+"] = total(" | ".join(es2016_dirs))
+            result["esnext"] = total("dir:compat-table/next")
+            result["intl"] = total("dir:compat-table/intl")
 
-        return result
+        return {k: v for k, v in result.items() if v}
 
-    def _tags_json(self) -> dict[str, Any]:
+    def _tags_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
         """Build non-dir tag stats: {qualified_tag: stats} version-sorted."""
-
         result: dict[str, Any] = {}
-        tag_stats = self._build_tag_stats()
         for qt in sorted(tag_stats, key=version_sort_key):
             assert ":" in qt, f"tag must be namespaced: {qt!r}"
             if qt.startswith("dir:"):
@@ -522,9 +566,8 @@ class Reporter:
             result[qt] = tag_stats[qt].to_dict(percent=True)
         return result
 
-    def _dirs_json(self) -> dict[str, Any]:
+    def _dirs_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
         """Build dir stats: {path: stats} without the dir: prefix."""
-        tag_stats = self._build_tag_stats()
         dirs: dict[str, Any] = {}
         for qt in sorted(tag_stats, key=version_sort_key):
             if qt.startswith("dir:"):
@@ -641,12 +684,15 @@ class Reporter:
             data["probes"] = dict(sorted(self._probes.items()))
         if self._test262_revision:
             data["test262"] = self._test262_revision.to_json()
-        data["summary"] = self._summary_json()
-        tags = self._tags_json()
+        fv = self._file_verdicts()
+        fw = self._file_weights()
+        tag_stats = self._build_tag_stats(fw)
+        data["summary"] = self._summary_json(tag_stats, fv, fw)
+        tags = self._tags_json(tag_stats)
         if tags:
             data["tags"] = tags
         if self._report_dirs:
-            dirs = self._dirs_json()
+            dirs = self._dirs_json(tag_stats)
             if dirs:
                 data["dirs"] = dirs
         if self._report_rusage_mode != "no" and rusage:

@@ -109,9 +109,9 @@ class TestTagStats(unittest.TestCase):
             _run("test/b.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/b.js"),
             _run("test/b.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/b.js"),
         ])
-        summary = r._summary_json()
+        summary = r._summary_json(r._build_tag_stats(), r._file_verdicts(), r._file_weights())
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
-        self.assertEqual(summary["all"]["ok"], 1)
+        self.assertEqual(summary["all"]["pass"], 1)
         self.assertEqual(summary["all"]["fail"], 1)
 
     def test_skipped_with_tags_counted(self):
@@ -149,7 +149,7 @@ class TestTagStats(unittest.TestCase):
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
-        tag_stats = r._tags_json()
+        tag_stats = r._tags_json(r._build_tag_stats())
         self.assertIn("features:N/A", tag_stats)
         self.assertIn("edition:N/A", tag_stats)
 
@@ -242,11 +242,11 @@ class TestJsonFormatting(unittest.TestCase):
 
     def test_stats_dict_is_inline(self):
         """Stats dicts (ok/fail/skip) render on a single line."""
-        data = {"features:Symbol": {"ok": 10, "fail": 2}}
+        data = {"features:Symbol": {"pass": 10, "fail": 2}}
         out = Reporter.format_json_value(data)
         for line in out.splitlines():
             if '"features:Symbol"' in line:
-                self.assertIn('"ok"', line)
+                self.assertIn('"pass"', line)
                 self.assertIn('"fail"', line)
                 break
         else:
