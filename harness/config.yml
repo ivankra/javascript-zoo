@@ -38,8 +38,8 @@ default:
 .constants:
   # Tighter settings for OOM-prone engines that cause GitHub runners to die
   oom_prone: &oom_prone
-    - memory_addr_limit_mb: 4096  # ulimit -v (kernel enforced, mallocs would start failing)
-    - memory_limit_mb: 3072       # RSS limit enforced by OOM watchdog
+    - memory_addr_limit_mb: 3072  # ulimit -v (kernel enforced, mallocs would start failing)
+    - memory_limit_mb: 2560       # RSS limit enforced by OOM watchdog
     - max_jobs: 3                 # instead of 4 (cpu count) on standard GitHub runners
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
@@ -231,7 +231,7 @@ continuum:
     - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 10
+  timeout_sec: 5
 
 delskayn:
   console_log: console.log
@@ -324,7 +324,6 @@ engine262:
     - --features=all
     - { if: 'flags:module', then: '--module' }
   timeout_sec: 10
-  # test262_filter: "~(dir:test/built-ins/RegExp/property-escapes/generated)"  # too slow
 
 epimetheus:
   console_log: ['console.log', 'print']
@@ -369,7 +368,7 @@ fastschema-qjs:
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 10
+  timeout_sec: 5
 
 fesi: &fesi
   console_log: writeln
@@ -433,7 +432,7 @@ hako:
   errors_re:
     - *uncaught_exception_colon_message
     - '^  "name": "(?P<type>[A-Za-z0-9]*Error)",?$'  # hako_wamr/hako-cli
-  timeout_sec: 10
+  timeout_sec: 5
 
 hako_wasmtime_go:
   flags:
@@ -495,7 +494,7 @@ jint: &jint
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 20
+  timeout_sec: 10
 
 jispy:
   console_log: ['console.log', 'print']
@@ -688,7 +687,9 @@ mujs:
   errors_re:
     - '^(?P<type>SyntaxError): [^:]+[.]js:[0-9]+: (?P<message>[^\n]+)'
     - *exception_colon_message
-  timeout_sec: 10
+
+mujs_babel:
+  timeout_sec: 5
 
 narcissus:
   console_log: ['console.log', 'print']
@@ -714,7 +715,7 @@ nashorn:
   # https://github.com/openjdk/nashorn/blob/main/src/org.openjdk.nashorn/share/classes/org/openjdk/nashorn/tools/Shell.java#L98
   exit_code_for_syntax_error: 101   # COMPILATION_ERROR
   exit_code_for_test262_error: 102  # RUNTIME_ERROR, prints '... [object Object]'
-  timeout_sec: 10
+  timeout_sec: 5
 
 ngs:
   console_log: print
@@ -788,7 +789,7 @@ porffor:
     - *exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 10
+  timeout_sec: 5
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
@@ -872,7 +873,7 @@ reeva:
     - *java_crash_re
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 10
+  timeout_sec: 5
 
 rhino:
   # print() exists but broken - doesn't print to pipes, breaks testing
@@ -895,7 +896,7 @@ rhino:
     - '^(?P<message>java.lang.StackOverflowError)$'
   prelude:
     - file: engines/rhino/prelude.js
-  timeout_sec: 10
+  timeout_sec: 5
   # No ES modules support (only CommonJS)
   # Strict mode is broken
 
@@ -1086,7 +1087,7 @@ topchetoeu:
     - '^Uncaught Error: (?P<message>.+)$'
   stdout_replace_re:
     - '^Running j2s .*': ''
-  timeout_sec: 10
+  timeout_sec: 5
 
 twostroke:
   console_log: console.log
@@ -1097,7 +1098,7 @@ twostroke:
   errors_re:
     - ".*twostroke-dist/lib/twostroke/([^: ]+/)?parser[.]rb:[0-9]+:in `error!': (?P<type>SyntaxError): (?P<message>.+)$"
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
-  timeout_sec: 10
+  timeout_sec: 5
 
 ucode:
   bench_suite: ['richards.ucode.js']
@@ -1188,6 +1189,7 @@ yantra: &yantra
   stderr_replace_re:
     - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
   ignore_sigabrt: true  # raises SIGABRT on exceptions
+  timeout_sec: 5
   <<: *oom_prone
 
 yrm006:
@@ -1218,6 +1220,7 @@ zhuzilin:
     - '^ParserError: ?(.*)$': 'SyntaxError: \1'
   errors_re:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
+  timeout_sec: 5
 
 zuqe:
   console_log: ['console.log', 'print']
