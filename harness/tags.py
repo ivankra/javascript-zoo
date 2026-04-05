@@ -26,6 +26,7 @@ class Tags:
       * edition    – highest ES edition (es5, es6, es2020, ..., esnext)
       * mode       – execution mode (strict or sloppy)
       * dir        – all ancestor directory prefixes of rel_path
+      * file       – full relative test file path
       * ref        – $262.* references (reporting only; not available for test
                      discovery/filtering because they are added after staging)
     """
@@ -70,6 +71,7 @@ class Tags:
 
         if rel_path:
             assert not rel_path.startswith("/")
+            tags.add("file", rel_path)
             tags.add_folders(rel_path)
 
         return tags

@@ -175,6 +175,7 @@ class Reporter:
         *,
         discovery: FileDiscovery | None = None,
         output_file: str | Path | None = None,
+        output_tags_file: str | Path | None = None,
         verbose: int = 0,
         test262: bool = False,
         test262_dir: Path | None = None,
@@ -222,6 +223,7 @@ class Reporter:
                 raise ValueError(f"invalid rusage mode: {report_rusage!r}")
             self._report_rusage_mode, self._report_rusage_top_n = "top", int(m.group(1))
         self._output_file = Path(output_file) if output_file is not None else None
+        self._output_tags_file = Path(output_tags_file) if output_tags_file is not None else None
         self._report_json = report_json if report_json is not None else bool(
             self._output_file and self._output_file.suffix == ".json"
         )
@@ -571,11 +573,13 @@ class Reporter:
 
         return {k: v for k, v in result.items() if v}
 
-    def _tags_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
-        """Build non-dir tag stats: {qualified_tag: stats} version-sorted."""
+    def _tags_stats_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
+        """Build reportable tag stats: {qualified_tag: stats} version-sorted."""
         result: dict[str, Any] = {}
         for qt in sorted(tag_stats, key=version_sort_key):
             assert ":" in qt, f"tag must be namespaced: {qt!r}"
+            if qt.startswith("file:"):
+                continue
             if qt.startswith("dir:"):
                 continue
             result[qt] = tag_stats[qt].to_dict(percent=True)
@@ -715,7 +719,7 @@ class Reporter:
         fw = self._file_weights()
         tag_stats = self._build_tag_stats(fw)
         data["summary"] = self._summary_json(tag_stats, fv, fw)
-        tags = self._tags_json(tag_stats)
+        tags = self._tags_stats_json(tag_stats)
         if tags:
             data["tags"] = tags
         if self._report_dirs:
@@ -751,19 +755,35 @@ class Reporter:
                     lines.append(f"{fp}: {json.dumps(status, ensure_ascii=False)}")
         return "\n".join(lines) + "\n" if lines else ""
 
-    def write(self) -> None:
-        """Write results to file.
+    def _tags_by_file(self) -> dict[str, list[str]]:
+        """Build per-file qualified tag lists, excluding file:* and dir:* tags."""
+        tags_by_file: dict[str, set[str]] = {}
+        for run in self._results:
+            if run.test_id and isinstance(run.tags, Tags):
+                tags_by_file.setdefault(run.test_id, set()).update(
+                    tag for tag in run.tags
+                    if not tag.startswith("file:") and not tag.startswith("dir:")
+                )
+        return {
+            fp: sorted(tags)
+            for fp, tags in sorted(tags_by_file.items())
+        }
 
-        JSON output may include tests and/or scenarios sections.
-        Text output can include either tests or scenarios, but not both.
-        """
-        if self._output_file is None:
-            raise ValueError("output_file is not configured")
-        path = self._output_file
-        if self._report_json:
-            out = self.to_json()
-        else:
-            out = self.to_text()
+    def to_tags_json(self) -> str:
+        """Format per-file tags as JSON with one entry per line."""
+        data = self._tags_by_file()
+        if not data:
+            return "{}\n"
+        lines = ["{"]
+        items = list(data.items())
+        for i, (fp, tags) in enumerate(items):
+            suffix = "," if i + 1 < len(items) else ""
+            lines.append(f"  {json.dumps(fp)}: {json.dumps(tags, ensure_ascii=False)}{suffix}")
+        lines.append("}")
+        return "\n".join(lines) + "\n"
+
+    @staticmethod
+    def _write_path(path: Path, out: str, success_label: str) -> None:
         if str(path) == "-":
             sys.stdout.write(out)
             return
@@ -780,7 +800,28 @@ class Reporter:
             except OSError:
                 pass
             raise
-        print(f"Results written to {path}")
+        print(f"{success_label} written to {path}")
+
+    def write(self) -> None:
+        """Write results to file.
+
+        JSON output may include tests and/or scenarios sections.
+        Text output can include either tests or scenarios, but not both.
+        """
+        if self._output_file is None:
+            raise ValueError("output_file is not configured")
+        path = self._output_file
+        if self._report_json:
+            out = self.to_json()
+        else:
+            out = self.to_text()
+        self._write_path(path, out, "Results")
+
+    def write_tags(self) -> None:
+        """Write per-file tags JSON to the configured output file."""
+        if self._output_tags_file is None:
+            raise ValueError("output_tags_file is not configured")
+        self._write_path(self._output_tags_file, self.to_tags_json(), "Tags")
 
     def print_summary(self) -> int:
         """Print failure list, optional breakdowns, and summary line. Returns fail count."""

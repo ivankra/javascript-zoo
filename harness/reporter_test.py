@@ -8,7 +8,9 @@ import json
 import contextlib
 import io
 import os
+import tempfile
 from datetime import UTC, datetime
+from pathlib import Path
 from unittest.mock import patch
 
 from harness.config import EngineConfig
@@ -150,9 +152,55 @@ class TestTagStats(unittest.TestCase):
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
-        tag_stats = r._tags_json(r._build_tag_stats())
+        tag_stats = r._tags_stats_json(r._build_tag_stats())
         self.assertIn("features:N/A", tag_stats)
         self.assertIn("edition:N/A", tag_stats)
+
+    def test_file_tags_are_not_reported(self):
+        """file:* tags stay filterable but are omitted from JSON tag stats."""
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        tags.add("mode", "strict")
+        r = self._reporter([
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+        ])
+        stats = r._build_tag_stats()
+        self.assertIn("file:test/built-ins/Map/a.js", stats)
+        tag_stats = r._tags_stats_json(stats)
+        self.assertNotIn("file:test/built-ins/Map/a.js", tag_stats)
+
+    def test_dir_tags_never_in_tags_stats(self):
+        """dir:* tags are excluded from _tags_stats_json (they go in dirs section)."""
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        tags.add("mode", "strict")
+
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_dirs=True)
+        r.add_file([_run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js")])
+        self.assertNotIn("dir:test", r._tags_stats_json(r._build_tag_stats()))
+
+    def test_dirs_json_when_enabled(self):
+        """_dirs_json returns dir stats without the dir: prefix."""
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        tags.add("mode", "strict")
+
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_dirs=True)
+        r.add_file([_run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js")])
+        dirs = r._dirs_json(r._build_tag_stats())
+        self.assertIn("test", dirs)
+        self.assertIn("test/built-ins", dirs)
+        self.assertNotIn("dir:test", dirs)
+
+
+class TestTags(unittest.TestCase):
+    def test_test262_adds_file_and_dir_tags(self):
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        self.assertIn("file:test/built-ins/Map/a.js", tags)
+        self.assertIn("dir:test", tags)
+        self.assertIn("dir:test/built-ins", tags)
+        self.assertIn("dir:test/built-ins/Map", tags)
 
 
 class TestEditionReport(unittest.TestCase):
@@ -261,6 +309,56 @@ class TestJsonFormatting(unittest.TestCase):
         lines = [l.strip() for l in out.splitlines()]
         outer_line = next(l for l in lines if '"outer"' in l)
         self.assertNotIn('"a"', outer_line)
+
+
+class TestOutputTags(unittest.TestCase):
+    def test_to_tags_json_excludes_file_tags_and_keeps_one_entry_per_line(self):
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        tags.add("mode", "strict")
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.add_file([
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+        ])
+
+        out = r.to_tags_json()
+        self.assertTrue(out.startswith("{\n"))
+        self.assertIn('  "test/a.js": [', out)
+        self.assertNotIn("file:test/built-ins/Map/a.js", out)
+        self.assertNotIn("dir:test", out)
+        self.assertIn("mode:strict", out)
+
+    def test_write_tags_writes_json_file(self):
+        fm = Frontmatter(features={"Symbol"})
+        tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        tags.add("mode", "strict")
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = os.path.join(tmpdir, "tags.json")
+            r = Reporter(EngineConfig(binary_path="/fake/js"), output_tags_file=path)
+            r.add_file([
+                _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            ])
+            r.write_tags()
+            data = json.loads(Path(path).read_text(encoding="utf-8"))
+            self.assertEqual(sorted(data), ["test/a.js"])
+            self.assertNotIn("dir:test", data["test/a.js"])
+            self.assertNotIn("file:test/built-ins/Map/a.js", data["test/a.js"])
+
+    def test_to_tags_json_unions_modes_for_same_file(self):
+        fm = Frontmatter(features={"Symbol"})
+        strict_tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        strict_tags.add("mode", "strict")
+        sloppy_tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
+        sloppy_tags.add("mode", "sloppy")
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.add_file([
+            _run("test/a.strict.js", Verdict.OK, tags=strict_tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.OK, tags=sloppy_tags, mode="sloppy", test_id="test/a.js"),
+        ])
+
+        data = json.loads(r.to_tags_json())
+        self.assertIn("mode:strict", data["test/a.js"])
+        self.assertIn("mode:sloppy", data["test/a.js"])
 
 
 class TestTestOrder(unittest.TestCase):

@@ -231,6 +231,8 @@ def main() -> None:
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
+    p.add_argument("--output-tags", metavar="FILE",
+                   help="Write per-test tags map to FILE")
     p.add_argument("-t", "--timeout", type=float,  metavar="SEC",
                    help=f"Per-scenario timeout in seconds")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
@@ -312,6 +314,7 @@ def main() -> None:
         cfg,
         discovery=discovery,
         output_file=args.output,
+        output_tags_file=args.output_tags,
         verbose=args.verbose,
         test262=True,
         test262_dir=test262_dir,
@@ -361,6 +364,8 @@ def main() -> None:
 
     if args.output:
         reporter.write()
+    if args.output_tags:
+        reporter.write_tags()
 
 
 if __name__ == "__main__":
