@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -223,6 +224,21 @@ class ResolveFlagsTest(unittest.TestCase):
             [],
         )
 
+
+class ConfigScriptExecutionTest(unittest.TestCase):
+    def test_config_module_runs_as_script_path(self) -> None:
+        proc = subprocess.run(
+            ["python3", "./harness/config.py"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        data = json.loads(proc.stdout)
+        self.assertIsInstance(data, dict)
+        self.assertIn("default", data)
+
     # --- EngineConfig.resolve() integration ---
 
     def test_resolve_method_updates_flags_in_place(self) -> None:
@@ -435,6 +451,15 @@ class EngineConfigLoadTest(unittest.TestCase):
     def test_missing_binary_raises(self) -> None:
         with self.assertRaises(SystemExit):
             EngineConfig.load("/nonexistent/binary")
+
+    def test_all_declared_configs_construct(self) -> None:
+        configs = load_configs_dict()
+        assert isinstance(configs, dict)
+        for name, cfg in configs.items():
+            if name.startswith("."):
+                continue
+            assert isinstance(cfg, dict), name
+            EngineConfig(**cfg)
 
 
 class ResolvePreludesTest(unittest.TestCase):

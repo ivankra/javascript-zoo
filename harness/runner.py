@@ -10,6 +10,7 @@ import resource
 import shlex
 import signal
 import subprocess
+import sys
 import threading
 import time
 from enum import StrEnum
@@ -200,39 +201,42 @@ class RunResult:
 class MemoryWatchdog:
     """Polls /proc for process group RSS and kills on limit breach."""
 
-    POLL_SEC = 1.0 / 25
     RE_NSPGID = re.compile(rb"^NSpgid:\t(\d+)", re.M)
     RE_PGID = re.compile(rb"^Pgid:\t(\d+)", re.M)
     RE_VMRSS = re.compile(rb"^VmRSS:\s+(\d+)\s+kB", re.M)
 
-    def __init__(self, proc: subprocess.Popen[bytes], limit_mb: int) -> None:
+    def __init__(self, proc: subprocess.Popen[bytes], limit_mb: int, *, poll_sec: float) -> None:
         self.proc = proc
         self.limit_mb = limit_mb
-        self.pgid = os.getpgid(proc.pid)
+        self.poll_sec = poll_sec
+        self.pgid = self._read_proc_group_id(proc.pid)
         self.oom_killed = False
         self.peak_rss_kb = 0
         self._thread = threading.Thread(target=self._run, daemon=True)
         self._thread.start()
 
     def _run(self) -> None:
-        time.sleep(self.POLL_SEC)
+        time.sleep(self.poll_sec)
         while self.proc.poll() is None:
             rss_kb = self.read_group_rss_kb(self.pgid)
+            if rss_kb is None:
+                return
             if rss_kb > self.peak_rss_kb:
                 self.peak_rss_kb = rss_kb
             if rss_kb > self.limit_mb * 1024:
                 self.oom_killed = True
+                print(f"memory watchdog: killing pid={self.proc.pid} pgid={self.pgid} rss={rss_kb / 1024:.1f}MB limit={self.limit_mb}MB", file=sys.stderr, flush=True)
                 _kill_pgroup(self.proc.pid, signal.SIGKILL)
                 return
-            time.sleep(self.POLL_SEC)
+            time.sleep(self.poll_sec)
 
-    def read_group_rss_kb(self, pgid: int) -> int:
+    def read_group_rss_kb(self, pgid: int) -> int | None:
         """Sum VmRSS of all processes belonging to process group *pgid*."""
         total = 0
         try:
             entries = os.listdir("/proc")
         except OSError:
-            return 0
+            return None
         for entry in entries:
             if not entry.isdigit():
                 continue
@@ -241,13 +245,36 @@ class MemoryWatchdog:
                     status = f.read()
             except (FileNotFoundError, ProcessLookupError, PermissionError):
                 continue
-            m = self.RE_NSPGID.search(status) or self.RE_PGID.search(status)
-            if not m or int(m.group(1)) != pgid:
+            proc_pgid = self._parse_proc_group_id(status)
+            if proc_pgid is None or proc_pgid != pgid:
                 continue
             m = self.RE_VMRSS.search(status)
             if m:
                 total += int(m.group(1))
         return total
+
+    @classmethod
+    def _parse_proc_group_id(cls, status: bytes) -> int | None:
+        m = cls.RE_NSPGID.search(status) or cls.RE_PGID.search(status)
+        return int(m.group(1)) if m else None
+
+    @classmethod
+    def _read_proc_group_id(cls, pid: int) -> int:
+        try:
+            with open(f"/proc/{pid}/status", "rb") as f:
+                status = f.read()
+        except OSError:
+            return os.getpgid(pid)
+        proc_pgid = cls._parse_proc_group_id(status)
+        return proc_pgid if proc_pgid is not None else os.getpgid(pid)
+
+    @staticmethod
+    def supported() -> bool:
+        try:
+            os.listdir("/proc")
+        except:
+            return False
+        return True
 
 
 class Runner:
@@ -284,6 +311,9 @@ class Runner:
         timeout = timeout_sec or self.config.timeout_sec
         memory_limit_mb = memory_limit_mb or self.config.memory_limit_mb
         memory_addr_limit_mb = memory_addr_limit_mb or self.config.memory_addr_limit_mb
+        memory_watchdog_poll_sec = self.config.memory_watchdog_poll_sec
+        if memory_limit_mb is not None:
+            assert memory_watchdog_poll_sec is not None, "memory_limit_mb requires memory_watchdog_poll_sec"
         run_cwd = cwd or self.config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
@@ -314,8 +344,8 @@ class Runner:
                 start_new_session=True,
             )
             self.current_proc = proc
-            if memory_limit_mb:
-                watchdog = MemoryWatchdog(proc, memory_limit_mb)
+            if memory_limit_mb and memory_watchdog_poll_sec is not None and MemoryWatchdog.supported():
+                watchdog = MemoryWatchdog(proc, memory_limit_mb, poll_sec=memory_watchdog_poll_sec)
             stdout_b, stderr_b = proc.communicate(timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True

@@ -15,6 +15,10 @@ from functools import cache
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    __package__ = "harness"
+
 if TYPE_CHECKING:
     from .tags import Tags
 
@@ -80,8 +84,15 @@ class EngineConfig:
 
     # --- Process defaults ---
     timeout_sec: float | None = None
-    memory_limit_mb: int | None = None
+    # Virtual memory space limit (i.e. `ulimit -v`), enforced by the kernel.
+    # Leave as None by default = no limit, faster process spawning.
     memory_addr_limit_mb: int | None = None
+    # Maximum RSS size before a process will get killed by OOM watchdog.
+    # None disables OOM watchdog.
+    memory_limit_mb: int | None = None
+    # Period between memory usage polls by a background OOM watchdog thread.
+    # Must be set, if memory_limit_mb is set.
+    memory_watchdog_poll_sec: float | None = None
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
     output_limit: int = 1000000
@@ -217,7 +228,7 @@ class EngineConfig:
                 raise SystemExit(f"unknown config: {config_name}")
             cfg = {**cfg, **configs[config_name]}
         else:
-            for key in [re.split(r"[_.]", binary.name, 1)[0], binary.name]:
+            for key in [re.split(r"[_.]", binary.name, maxsplit=1)[0], binary.name]:
                 if key and key in configs:
                     cfg = {**cfg, **configs[key]}
         cfg = {**cfg, **build_metadata}
@@ -229,7 +240,6 @@ class EngineConfig:
         if cmd_flags:
             cfg["flags"] = cmd_flags
         return EngineConfig(**cfg)
-
 
 
 def resolve_flags(

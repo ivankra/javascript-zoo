@@ -22,14 +22,25 @@
 default:
   # Per-run timeout in seconds
   timeout_sec: 60
-  # GitHub runners only have 4G/core and we need some buffer to avoid worker VM deaths
-  # V8 can pass whole test suite with 1.5G
-  memory_limit_mb: 3584
+  # Maximum RSS size before a process will get killed by OOM watchdog.
+  # 4G is sufficient for major engines to pass test262: V8 needs 1.5G, JSC 2.8G.
+  # GitHub runners provide 16G RAM / 4C + swap; we also use --shuffle against clustered OOMs.
+  memory_limit_mb: 4096
+  # Period between memory usage polls by a background OOM watchdog thread.
+  memory_watchdog_poll_sec: 0.05  # ~20 Hz
+  #TODO: implement retries on failures:
   #flaky_tests:
   #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
   #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
 
+# Common constants to be referenced later in the config via YAML anchors.
+# Top-level keys starting with a dot are ignored when validating the config.
 .constants:
+  # Tighter settings for OOM-prone engines that cause GitHub runners to die
+  oom_prone: &oom_prone
+    - memory_addr_limit_mb: 4096  # ulimit -v (kernel enforced, mallocs would start failing)
+    - memory_limit_mb: 3072       # RSS limit enforced by OOM watchdog
+    - max_jobs: 3                 # instead of 4 (cpu count) on standard GitHub runners
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
   # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
@@ -229,8 +240,7 @@ delskayn:
   errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error): (?P<message>.*)$'
     - *uncaught_exception_colon_message
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 derkjs:
   console_log: console.log
@@ -270,8 +280,7 @@ dscriptcpp:
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - { if: 'bench', file: 'harness/prelude-es5.js' }
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -299,8 +308,7 @@ ejscript:
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+[.]js: [0-9]+: (?P<message>.+)$'
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 engine262:
   console_log: ['console.log', 'print']
@@ -381,8 +389,7 @@ flathead:
   console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 goja: &goja
   # While our wrapper provides print(), standard goja main doesn't
@@ -433,7 +440,7 @@ hako_wasmtime_go:
     - { if: 'flags:module', then: '--module' }
 
 hermes: &hermes
-  bench_flags:
+  flags:
     - -O  # Expensive optimizations
     - -w  # Disable all warnings
     - if: test262
@@ -460,8 +467,7 @@ iv-lv5:
     # "SyntaxError: file.js:10: SyntaxError: unexpected token class"
     - '^(?P<type>[A-Za-z0-9]*Error): [^ ]+:[0-9]+: \1: (?P<message>.+)$'
     - *exception_colon_message
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 je-perl:
   console_log: ['console.log', 'print']
@@ -904,9 +910,8 @@ rpython-langjs:
     - '^(?P<message>NotImplementedError)$'
     - *exception_colon_message
   multiple_scripts_with_shared_realm: true
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
   timeout_sec: 10
+  <<: *oom_prone
 
 rust-js:
   console_log: console.log
@@ -955,9 +960,8 @@ sophonjs:
   errors_re:
     - '^exception (?P<type>SyntaxError):Syntax error$'
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
   timeout_sec: 10
+  <<: *oom_prone
 
 spidermonkey: &spidermonkey
   console_log: ['console.log', 'print']
@@ -1184,8 +1188,7 @@ yantra: &yantra
   stderr_replace_re:
     - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
   ignore_sigabrt: true  # raises SIGABRT on exceptions
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 yrm006:
   console_log: print
@@ -1193,8 +1196,7 @@ yrm006:
     # This engine sometimes emits unstable bare integers instead of failure text
     # for broken bitwise/print paths; keep conformance output deterministic.
     - '^-?[0-9]+$': ''
-  memory_limit_mb: 2048
-  memory_addr_limit_mb: 3072
+  <<: *oom_prone
 
 yavashark:
   console_log: console.log

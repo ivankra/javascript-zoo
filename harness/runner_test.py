@@ -3,14 +3,17 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
 import json
 import tempfile
 import unittest
 from pathlib import Path
 from typing import Any
+from unittest import mock
 
 from harness.config import EngineConfig
-from harness.runner import ErrorType, RunRusage, RunResult, Runner, Verdict
+from harness.runner import ErrorType, MemoryWatchdog, RunRusage, RunResult, Runner, Verdict
 
 
 def mk_run(**kwargs: Any) -> RunResult:
@@ -114,14 +117,17 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             binary = self._make_binary(td)
             cfg = EngineConfig.load(str(binary))
             # Allocate ~100MB via python; limit to 10MB so watchdog kills it.
-            run = Runner(cfg).run_command(
-                ["python3", "-c", "x = b'A' * (100 * 1024 * 1024); import time; time.sleep(10)"],
-                memory_limit_mb=10,
-                timeout_sec=30,
-            )
+            stderr = io.StringIO()
+            with contextlib.redirect_stderr(stderr):
+                run = Runner(cfg).run_command(
+                    ["python3", "-c", "x = b'A' * (100 * 1024 * 1024); import time; time.sleep(10)"],
+                    memory_limit_mb=10,
+                    timeout_sec=30,
+                )
             self.assertEqual(run.verdict, Verdict.FAILED)
             self.assertEqual(run.error_type, ErrorType.OOM)
             self.assertIn(">10MB", run.error_message or "")
+            self.assertIn("memory watchdog: killing", stderr.getvalue())
 
     def test_memory_addr_limit_mb(self) -> None:
         with tempfile.TemporaryDirectory() as td:
@@ -138,6 +144,24 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             )
             self.assertNotEqual(run.exit_code, 0)
             self.assertIn("MemoryError", run.stderr or "")
+
+
+class MemoryWatchdogTest(unittest.TestCase):
+    def test_supported_false_when_procfs_unavailable(self) -> None:
+        with mock.patch("harness.runner.os.listdir", side_effect=OSError("no /proc")):
+            self.assertFalse(MemoryWatchdog.supported())
+
+    def test_runner_skips_watchdog_when_unavailable(self) -> None:
+        cfg = EngineConfig(binary_path="/bin/true", memory_watchdog_poll_sec=0.04)
+        with mock.patch.object(MemoryWatchdog, "supported", return_value=False):
+            with mock.patch.object(MemoryWatchdog, "__init__", side_effect=AssertionError("watchdog should not be created")):
+                run = Runner(cfg).run_command(["/bin/true"], memory_limit_mb=10, timeout_sec=1)
+        self.assertEqual(run.exit_code, 0)
+
+    def test_runner_rejects_memory_limit_without_poll_interval(self) -> None:
+        cfg = EngineConfig(binary_path="/bin/true", memory_watchdog_poll_sec=None)
+        with self.assertRaisesRegex(AssertionError, "memory_limit_mb requires memory_watchdog_poll_sec"):
+            Runner(cfg).run_command(["/bin/true"], memory_limit_mb=10, timeout_sec=1)
 
 
 if __name__ == "__main__":
