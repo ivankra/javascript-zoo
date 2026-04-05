@@ -8,6 +8,7 @@ import json
 import contextlib
 import io
 import os
+from datetime import UTC, datetime
 from unittest.mock import patch
 
 from harness.config import EngineConfig
@@ -313,9 +314,15 @@ class TestReporterRusageJson(unittest.TestCase):
         ])
         out = json.loads(r.to_json())
         self.assertIn("rusage", out)
+        self.assertEqual(out["rusage"]["duration_sec"], 0)
+        self.assertNotIn("total_user_sec", out["rusage"])
+        self.assertNotIn("total_sys_sec", out["rusage"])
         self.assertEqual(out["rusage"]["peak_rss_mb"], 2.0)
-        self.assertEqual(out["rusage"]["wall_time_s"]["test/a.strict.js"], 1.25)
-        self.assertEqual(out["rusage"]["rss_mb"]["test/a.strict.js"], 2.0)
+        self.assertEqual(out["rusage"]["run_duration_sec"]["test/a.strict.js"], 1.25)
+        self.assertEqual(out["rusage"]["run_rss_mb"]["test/a.strict.js"], 2.0)
+        self.assertEqual(list(out["rusage"])[:2], ["started_at", "finished_at"])
+        self.assertRegex(out["rusage"]["started_at"], r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC$")
+        self.assertRegex(out["rusage"]["finished_at"], r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC$")
 
     def test_json_omits_rusage_when_disabled(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="no")
@@ -342,6 +349,39 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertEqual(out["rusage"]["test/a.sloppy.js"]["real_time"], 0.5)
         self.assertEqual(out["rusage"]["test/a.sloppy.js"]["max_rss_kb"], 1024)
 
+    def test_json_reports_aggregate_duration_sec(self):
+        with patch("harness.reporter.datetime", wraps=datetime) as mock_datetime:
+            mock_datetime.now.side_effect = [
+                datetime(2026, 4, 5, 4, 28, 10, tzinfo=UTC),
+                datetime(2026, 4, 5, 4, 28, 12, 500000, tzinfo=UTC),
+            ]
+            r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="top20")
+            r.add_file([
+                _run("test/a.strict.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            ])
+            out = json.loads(r.to_json())
+        self.assertEqual(out["rusage"]["started_at"], "2026-04-05 04:28:10 UTC")
+        self.assertEqual(out["rusage"]["finished_at"], "2026-04-05 04:28:12 UTC")
+        self.assertEqual(out["rusage"]["duration_sec"], 2.5)
+
+    def test_json_reports_zero_rusage_values(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="top20")
+        r.add_file([
+            _run(
+                "test/a.strict.js",
+                Verdict.OK,
+                test_id="test/a.js",
+                rusage=RunRusage(real_time=0.0, user_time=0.0, sys_time=0.0, max_rss_kb=0),
+            ),
+        ])
+        out = json.loads(r.to_json())
+        self.assertEqual(out["rusage"]["duration_sec"], 0)
+        self.assertEqual(out["rusage"]["total_user_sec"], 0)
+        self.assertEqual(out["rusage"]["total_sys_sec"], 0)
+        self.assertEqual(out["rusage"]["peak_rss_mb"], 0.0)
+        self.assertEqual(out["rusage"]["run_duration_sec"]["test/a.strict.js"], 0.0)
+        self.assertEqual(out["rusage"]["run_rss_mb"]["test/a.strict.js"], 0.0)
+
     def test_json_reports_all_runs_requires_unique_run_id(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="all")
         r.add_file([
@@ -359,8 +399,8 @@ class TestReporterRusageJson(unittest.TestCase):
             _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
         ])
         out = json.loads(r.to_json())
-        self.assertEqual(list(out["rusage"]["wall_time_s"]), ["run/b.js", "run/c.js", "run/a.js"])
-        self.assertEqual(list(out["rusage"]["rss_mb"]), ["run/b.js", "run/c.js", "run/a.js"])
+        self.assertEqual(list(out["rusage"]["run_duration_sec"]), ["run/b.js", "run/c.js", "run/a.js"])
+        self.assertEqual(list(out["rusage"]["run_rss_mb"]), ["run/b.js", "run/c.js", "run/a.js"])
 
     def test_json_reports_top_n_runs_when_requested(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top2")
@@ -370,8 +410,8 @@ class TestReporterRusageJson(unittest.TestCase):
             _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
         ])
         out = json.loads(r.to_json())
-        self.assertEqual(list(out["rusage"]["wall_time_s"]), ["run/b.js", "run/c.js"])
-        self.assertEqual(list(out["rusage"]["rss_mb"]), ["run/b.js", "run/c.js"])
+        self.assertEqual(list(out["rusage"]["run_duration_sec"]), ["run/b.js", "run/c.js"])
+        self.assertEqual(list(out["rusage"]["run_rss_mb"]), ["run/b.js", "run/c.js"])
 
 
 class TestReporterOutputSelection(unittest.TestCase):

@@ -12,7 +12,6 @@ import shlex
 import shutil
 import sys
 import tempfile
-import time
 from pathlib import Path
 from typing import Iterable
 
@@ -277,8 +276,6 @@ def main() -> None:
                 if line and not line.startswith("#"):
                     args.tests.append(line)
 
-    wall_start = time.monotonic()
-
     cfg = EngineConfig.load(args.engine, config_name=args.config)
     cfg.resolve()
     if args.timeout is not None:
@@ -360,11 +357,10 @@ def main() -> None:
         print("No runnable tests")
         sys.exit(0)
 
-    wall_sec = time.monotonic() - wall_start
-    reporter.print_summary(wall_sec=wall_sec)
+    reporter.print_summary()
 
     if args.output:
-        reporter.write(wall_sec=wall_sec)
+        reporter.write()
 
 
 if __name__ == "__main__":

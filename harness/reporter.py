@@ -10,6 +10,7 @@ import re
 import shutil
 import sys
 import time
+from datetime import UTC, datetime
 from collections import Counter
 from collections.abc import Callable
 from pathlib import Path
@@ -192,12 +193,12 @@ class Reporter:
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
         self._test262_revision = get_git_revision(test262_dir) if test262_dir else None
+        self._started_at = datetime.now(UTC)
         self._results: list[RunResult] = []
         # Per-file and per-mode (run) progress counters.
         self._file_counts: Counter[Verdict] = Counter()
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
-        self._wall_sec: float = 0
         # Currently in-flight tests: test_id -> monotonic start time.
         # Progress bar shows the most recently submitted entry.
         self._in_flight: dict[str, float] = {}
@@ -231,6 +232,10 @@ class Reporter:
         if not self._report_json and not self._report_tests and not self._report_runs:
             raise ValueError("text output must include either tests or runs")
         self._report_dirs = report_dirs
+
+    @staticmethod
+    def _format_timestamp(ts: datetime) -> str:
+        return ts.strftime("%Y-%m-%d %H:%M:%S UTC")
 
     @property
     def results(self) -> list[RunResult]:
@@ -645,35 +650,40 @@ class Reporter:
         """Format results as JSON with summary, per-test/per-scenario statuses, and rusage."""
         results = self._results
         engine = self._engine
+        finished_at = datetime.now(UTC)
 
         rusage: dict[str, Any] = {}
         if self._report_rusage_mode == "top":
-            run_rss = [(r.run_id or "", r.rusage.max_rss_kb or 0) for r in results]
-            run_rss = sorted(((run_id, kb) for run_id, kb in run_rss if kb), key=lambda x: (-x[1], x[0]))
-            run_wall_time = [(r.run_id or "", r.rusage.real_time or 0) for r in results]
-            run_wall_time = sorted(((run_id, t) for run_id, t in run_wall_time if t), key=lambda x: (-x[1], x[0]))
+            run_rss: list[tuple[str, int]] = [
+                (r.run_id or "", r.rusage.max_rss_kb) for r in results if r.rusage.max_rss_kb is not None
+            ]
+            run_rss.sort(key=lambda x: (-x[1], x[0]))
+            run_wall_time: list[tuple[str, float]] = [
+                (r.run_id or "", r.rusage.real_time) for r in results if r.rusage.real_time is not None
+            ]
+            run_wall_time.sort(key=lambda x: (-x[1], x[0]))
 
             run_rss = run_rss[:self._report_rusage_top_n]
             run_wall_time = run_wall_time[:self._report_rusage_top_n]
 
-            peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
-            sum_user_time = sum((r.rusage.user_time or 0) for r in results) if results else 0
-            sum_sys_time = sum((r.rusage.sys_time or 0) for r in results) if results else 0
+            peak_rss_values = [r.rusage.max_rss_kb for r in results if r.rusage.max_rss_kb is not None]
+            user_time_values = [r.rusage.user_time for r in results if r.rusage.user_time is not None]
+            sys_time_values = [r.rusage.sys_time for r in results if r.rusage.sys_time is not None]
+            peak_rss_kb = max(peak_rss_values) if peak_rss_values else None
+            sum_user_time = sum(user_time_values) if user_time_values else None
+            sum_sys_time = sum(sys_time_values) if sys_time_values else None
 
-            if self._wall_sec:
-                rusage["total_duration_sec"] = round(self._wall_sec, 3)
-            if sum_user_time:
+            rusage["duration_sec"] = round((finished_at - self._started_at).total_seconds(), 3)
+            if sum_user_time is not None:
                 rusage["total_user_sec"] = round(sum_user_time, 3)
-            if sum_sys_time:
+            if sum_sys_time is not None:
                 rusage["total_sys_sec"] = round(sum_sys_time, 3)
-            if peak_rss_kb:
+            if peak_rss_kb is not None:
                 rusage["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
             if run_wall_time:
-                wall_time_s = {run_id: round(t, 3) for run_id, t in run_wall_time}
-                rusage["wall_time_s"] = wall_time_s
-                rusage["duration_sec"] = wall_time_s
+                rusage["run_duration_sec"] = {run_id: round(t, 3) for run_id, t in run_wall_time}
             if run_rss:
-                rusage["rss_mb"] = {run_id: round(kb / 1024, 1) for run_id, kb in run_rss}
+                rusage["run_rss_mb"] = {run_id: round(kb / 1024, 1) for run_id, kb in run_rss}
         elif self._report_rusage_mode == "all":
             run_ids = [r.run_id for r in results]
             assert all(run_ids), "rusage=all requires run_id"
@@ -682,6 +692,13 @@ class Reporter:
             for r in results:
                 assert r.run_id is not None
                 rusage[r.run_id] = r.rusage.to_json()
+
+        if self._report_rusage_mode != "no" and rusage:
+            rusage = {
+                "started_at": self._format_timestamp(self._started_at),
+                "finished_at": self._format_timestamp(finished_at),
+                **rusage,
+            }
 
         data: dict[str, Any] = {}
         if engine.build_metadata:
@@ -734,14 +751,12 @@ class Reporter:
                     lines.append(f"{fp}: {json.dumps(status, ensure_ascii=False)}")
         return "\n".join(lines) + "\n" if lines else ""
 
-    def write(self, *, wall_sec: float = 0) -> None:
+    def write(self) -> None:
         """Write results to file.
 
         JSON output may include tests and/or scenarios sections.
         Text output can include either tests or scenarios, but not both.
         """
-        if wall_sec:
-            self._wall_sec = wall_sec
         if self._output_file is None:
             raise ValueError("output_file is not configured")
         path = self._output_file
@@ -767,16 +782,13 @@ class Reporter:
             raise
         print(f"Results written to {path}")
 
-    def print_summary(
-        self,
-        *,
-        wall_sec: float = 0,
-    ) -> int:
+    def print_summary(self) -> int:
         """Print failure list, optional breakdowns, and summary line. Returns fail count."""
-        self._wall_sec = wall_sec
         results = self._results
         engine_name = self._engine.name
         use_color = self._use_color
+        finished_at = datetime.now(UTC)
+        elapsed_sec = (finished_at - self._started_at).total_seconds()
 
         fv = self._file_verdicts()
         test_ok = sum(1 for v in fv.values() if v is Verdict.OK)
@@ -817,8 +829,7 @@ class Reporter:
                 line = f"{engine_name}: all {test_ok} tests passed"
             if n_skipped:
                 line += f", {n_skipped} skipped"
-            if wall_sec:
-                line += f" in {wall_sec:.3f}s"
+            line += f" in {elapsed_sec:.3f}s"
             if peak_rss_kb:
                 line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
         else:
