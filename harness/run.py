@@ -136,7 +136,7 @@ def main() -> None:
     parser.add_argument("engine", help="Engine binary path or name")
     parser.add_argument("suites", nargs="*", help="Suite dirs/globs (default: from config)")
     parser.add_argument("-o", "--output", help="Write results to file")
-    parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
+    parser.add_argument("-j", "--jobs", type=int, default=None, metavar="N",
                         help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     parser.add_argument("-t", "--timeout", type=float, metavar="SEC", help="Per-test timeout in seconds")
@@ -177,7 +177,7 @@ def main() -> None:
     weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
 
     wall_start = time.monotonic()
-    with concurrent.futures.ProcessPoolExecutor(max_workers=args.jobs) as pool:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs)) as pool:
         futs = {}
         for rel in tests:
             reporter.note_started(rel)

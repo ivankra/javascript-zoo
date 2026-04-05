@@ -51,7 +51,7 @@ class Executor:
         engine: EngineConfig,
         assembler: Assembler,
         *,
-        jobs: int = 4,
+        jobs: int | None = None,
         mode: str = "all",
         filter_expr: FilterExpr | None = None,
     ) -> None:
@@ -62,7 +62,7 @@ class Executor:
         self.annotator = Annotator(engine)
         self.mode = mode
         self.filter_expr = filter_expr
-        self._jobs = max(1, jobs)
+        self._jobs = engine.job_count(flag=jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
     def run(self, tests: Iterable[str], *, reporter: Reporter, limit: int = 0) -> None:
@@ -224,7 +224,7 @@ def main() -> None:
         tests with features:Map). Multiple flags are joined with OR.""")
     p.add_argument("-i", "--input", metavar="FILE",
                    help="Read test globs from FILE (one per line, blank lines and #-comments ignored)")
-    p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
+    p.add_argument("-j", "--jobs", type=int, default=None, metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     p.add_argument("-l", "--limit", type=int, default=0, metavar="N",
                    help="Stop after running N tests")
@@ -337,7 +337,8 @@ def main() -> None:
         filter_expr = parse_filter_expr(p, [cfg.test262_filter])
 
     executor = Executor(
-        cfg, assembler,
+        cfg,
+        assembler,
         jobs=args.jobs,
         mode=args.mode,
         filter_expr=filter_expr,

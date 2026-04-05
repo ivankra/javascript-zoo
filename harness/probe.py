@@ -12,7 +12,7 @@ check basic capabilities.
 Output: YAML to stdout, one block per engine with true/false per probe
 and failure details as comments.
 
-Usage: test262-probe.py [engines or dirs...]
+Usage: probe.py [engines or dirs...]
 """
 
 from __future__ import annotations
@@ -294,7 +294,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
 
 
 def probe_engine(
-    cfg: EngineConfig, test262_dir: Path, *, jobs: int = 1
+    cfg: EngineConfig, test262_dir: Path, *, jobs: int | None = None
 ) -> Iterator[tuple[str, str]]:
     """Run all probes on a single engine, yielding (probe_name, result) as each completes.
 
@@ -307,6 +307,7 @@ def probe_engine(
     yield run_probe(cfg, test262_dir, first_name, first_spec, timeout=60)
     rest = probes[1:]
 
+    jobs = cfg.job_count(flag=jobs)
     if jobs <= 1 or not rest:
         for name, spec in rest:
             yield run_probe(cfg, test262_dir, name, spec)
@@ -325,7 +326,7 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Probe JavaScript engines for test262 readiness.")
     p.add_argument("engines", nargs="+", help="Engine binary paths (or path to directory with them)")
     p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR), help="test262 repo root")
-    p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), help="Parallel probes per engine")
+    p.add_argument("-j", "--jobs", type=int, default=None, help="Parallel probes per engine")
     args = p.parse_args()
 
     test262_dir = Path(args.test262_dir).resolve()

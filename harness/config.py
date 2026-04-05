@@ -63,7 +63,6 @@ class EngineConfig:
     #   Shell substitutions are expanded once at startup, not per test.
     flags: list = dataclasses.field(default_factory=list)
 
-    # --- Promoted sidecar fields ---
     # Print function name - "console.log", "print", etc.
     # Can be a list if multiple functions are available.
     console_log: str | list[str] = dataclasses.field(default_factory=list)
@@ -73,6 +72,11 @@ class EngineConfig:
     multiple_scripts_with_shared_realm: bool | None = None
     # Always stage javascript code to be run by the engine in /tmp
     requires_tmp_staging: bool = False
+
+    # Max number of parallel jobs for this engine.
+    # Unless -j/--jobs flag is explicitly set in run.py and test262.py,
+    # number of jobs will be computed as min(max_jobs, os.cpu_count()).
+    max_jobs: int | None = None
 
     # --- Process defaults ---
     timeout_sec: float | None = None
@@ -169,6 +173,18 @@ class EngineConfig:
         cmd.extend(str(f) for f in resolved)
         cmd.extend(str(arg) for arg in args)
         return cmd
+
+    def job_count(self, flag: int | None) -> int:
+        """Returns default size of process pool to run the engine.
+
+        Considers cpu count, max_jobs and explicit -j/--jobs flag value."""
+
+        if flag and flag > 0:
+            return flag
+        res = os.cpu_count() or 1
+        if self.max_jobs:
+            res = min(res, self.max_jobs)
+        return max(res, 1)
 
     @staticmethod
     def get_configs() -> dict[str, Any]:
