@@ -13,16 +13,20 @@ on:
     inputs:
       conformance_shards:
         description: 'Parallel shards for conformance suites'
-        default: 20
+        default: &default_conformance_shards 20
         type: number
       test262_shards:
         description: 'Parallel shards for test262'
-        default: 152
+        default: &default_test262_shards 152
         type: number
       release:
         description: 'Release tag'
         default: 'latest'
         type: string
+
+concurrency:
+  group: conformance
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -30,9 +34,13 @@ permissions:
 
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DEFAULT_CONFORMANCE_SHARDS: *default_conformance_shards
+  DEFAULT_TEST262_SHARDS: *default_test262_shards
 
 jobs:
   init:
+    # Skip when triggered by a failed Build workflow run
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     outputs:
       tag: ${{ steps.init.outputs.tag }}
@@ -51,18 +59,22 @@ jobs:
           echo "tag=$TAG" | tee -a "$GITHUB_OUTPUT"
 
           N1="${{ inputs.conformance_shards }}"
-          N1="${N1:-20}"
+          N1="${N1:-$DEFAULT_CONFORMANCE_SHARDS}"
           echo "conformance_shards=$N1" | tee -a "$GITHUB_OUTPUT"
           echo "conformance_shard_list=$(seq 1 "$N1" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
           N2="${{ inputs.test262_shards }}"
-          N2="${N2:-150}"
+          N2="${N2:-$DEFAULT_TEST262_SHARDS}"
           echo "test262_shards=$N2" | tee -a "$GITHUB_OUTPUT"
           echo "test262_shard_list=$(seq 1 "$N2" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
   conformance:
     needs: init
     timeout-minutes: 360
+    env:
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+      SHARDS: ${{ needs.init.outputs.conformance_shards }}
+      SHARD_PREFIX: conformance
     strategy:
       fail-fast: false
       matrix:
@@ -70,8 +82,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       # Sometimes github runner just doesn't come with enough free disk space...
-      - name: Free disk space
-        uses: jlumbroso/free-disk-space@main
+      - &free_disk_space
+        name: Free disk space
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be  # main
         with:
           tool-cache: true
           android: true
@@ -83,7 +96,8 @@ jobs:
 
       # Add extra swap in addition to 3G /swapfile + 16G RAM / 4C on ubuntu-24.04 runners
       # for a total of 16G RAM + 16G swap. Need at least 2-3G for system.
-      - name: Add extra swap
+      - &add_swap
+        name: Add extra swap
         run: |
           set -x
           sudo fallocate -l 13G /extra-swapfile
@@ -93,113 +107,79 @@ jobs:
           swapon --show; free -h; df -h; nproc
 
       # Use latest harness and test262 from default branch, not the release commit - that's only for binaries.
-      - uses: actions/checkout@v6
+      - &checkout
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
           submodules: true
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - name: Pull hub image
-        run: docker pull ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-
-      - name: Select engines for this shard
-        id: engines
+      - &pull_docker_image
+        name: Pull hub image
         run: |
-          ENGINES=$(docker run --rm ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} cat /dist/LIST | sed -n '${{ matrix.shard }}~${{ needs.init.outputs.conformance_shards }}p' | tr '\n' ' ')
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker pull "$DOCKER_IMAGE"
+
+      - &select_engines
+        name: Select engines for this shard
+        id: select_engines
+        run: |
+          ENGINES=$(docker run --rm "$DOCKER_IMAGE" cat /dist/LIST | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
           echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
 
-      - name: Run conformance tests (es1-5, compat-table)
+      - name: Run conformance tests
         run: |
-          IMAGE=ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-          DR="docker run --rm -m 14g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $IMAGE python3"
+          DR="docker run --rm -m 12g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/es1-5 results/compat-table
           set -x;
-          for engine in ${{ steps.engines.outputs.engines }}; do
+          for engine in ${{ steps.select_engines.outputs.engines }}; do
+            # For jscript/jscript9 to download .dll's. TODO: remove after run.py starts probing for print
+            $DR /zoo/harness/probe.py "/dist/$engine";
             $DR /zoo/harness/run.py --shuffle -o "/results/es1-5/$engine.json" "/dist/$engine" "es[1-5]";
             $DR /zoo/harness/run.py --shuffle -o "/results/compat-table/$engine.json" "/dist/$engine" compat-table;
           done
 
-      - name: Upload shard results
+      - &upload_shard_results
+        name: Upload shard results
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: conformance-shard-${{ matrix.shard }}
+          name: ${{ env.SHARD_PREFIX }}-shard-${{ matrix.shard }}
           path: results/
           if-no-files-found: ignore
 
   test262:
     needs: init
     timeout-minutes: 360
+    env:
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+      SHARDS: ${{ needs.init.outputs.test262_shards }}
+      SHARD_PREFIX: test262
     strategy:
       fail-fast: false
       matrix:
         shard: ${{ fromJson(needs.init.outputs.test262_shard_list) }}
     runs-on: ubuntu-24.04
     steps:
-      # Sometimes github runner just doesn't come with enough free disk space...
-      - name: Free disk space
-        uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: true
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: true
-          swap-storage: false
-
-      # Add extra swap in addition to 3G /swapfile + 16G RAM / 4C on ubuntu-24.04 runners
-      # for a total of 16G RAM + 16G swap. Need at least 2-3G for system.
-      - name: Add extra swap
-        run: |
-          set -x
-          sudo fallocate -l 13G /extra-swapfile
-          sudo chmod 600 /extra-swapfile
-          sudo mkswap /extra-swapfile
-          sudo swapon /extra-swapfile
-          swapon --show; free -h; df -h; nproc
-
-      # Use latest harness and test262 from default branch, not the release commit - that's only for binaries.
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
-          submodules: true
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - name: Pull hub image
-        run: docker pull ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-
-      - name: Select engines for this shard
-        id: engines
-        run: |
-          ENGINES=$(docker run --rm ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} cat /dist/LIST | sed -n '${{ matrix.shard }}~${{ needs.init.outputs.test262_shards }}p' | tr '\n' ' ')
-          echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
+      - *free_disk_space
+      - *add_swap
+      - *checkout
+      - *pull_docker_image
+      - *select_engines
 
       - name: Run test262
         run: |
-          IMAGE=ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-          DR="docker run --rm -m 14g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $IMAGE python3"
+          DR="docker run --rm -m 12g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/test262
           set -x;
-          for engine in ${{ steps.engines.outputs.engines }}; do
+          for engine in ${{ steps.select_engines.outputs.engines }}; do
             $DR /zoo/harness/test262.py --progress=100 --shuffle -o "/results/test262/$engine.json" "/dist/$engine";
           done
 
-      - name: Upload shard results
-        if: always()
-        uses: actions/upload-artifact@v6
-        with:
-          name: test262-shard-${{ matrix.shard }}
-          path: results/
-          if-no-files-found: ignore
+      - *upload_shard_results
 
   merge:
     needs: [init, conformance, test262]
-    if: always()
+    if: always() && needs.init.result == 'success'
     runs-on: ubuntu-24.04
     steps:
       - name: Download all shard results
