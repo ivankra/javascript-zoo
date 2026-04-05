@@ -113,7 +113,7 @@ jobs:
   # Download all per-shard artifacts and merge into per-engine JSON files.
   merge:
     needs: [init, bench]
-    if: always()
+    if: always() && needs.init.result == 'success'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6

@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: MIT
 
 name: Build (QEMU)
+run-name: Build (${{ inputs.arch }})
 
 on:
   workflow_dispatch:
@@ -21,6 +22,10 @@ on:
           - ppc64le
           - s390x
           - loong64
+
+concurrency:
+  group: build-qemu-${{ inputs.arch }}
+  cancel-in-progress: false
 
 env:
   DOCKER_ARCH: ${{ inputs.arch }}
@@ -60,10 +65,12 @@ jobs:
     steps:
       - uses: docker/setup-qemu-action@v3
 
-      - name: Log in to GHCR
+      - &ghcr-login
+        name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
-      - uses: actions/checkout@v6
+      - &checkout
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
 
@@ -82,7 +89,7 @@ jobs:
         engine: ${{ fromJson(needs.init.outputs.engines) }}
     steps:
       - name: Free disk space
-        uses: jlumbroso/free-disk-space@main
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be  # main
         with:
           tool-cache: true
           android: true
@@ -91,13 +98,8 @@ jobs:
           large-packages: true
 
       - uses: docker/setup-qemu-action@v3
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
+      - *ghcr-login
+      - *checkout
 
       - name: Build engine
         uses: nick-fields/retry@v4
@@ -117,7 +119,7 @@ jobs:
       - name: Package and upload to release
         run: |
           tar -c -C dist/${DOCKER_ARCH} . | zstd -19 -o ${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst
-          gh release upload "${{ needs.init.outputs.release_tag }}" ${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst
+          gh release upload --clobber "${{ needs.init.outputs.release_tag }}" ${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst
 
   hub:
     needs: [init, engine]
@@ -126,13 +128,8 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: docker/setup-qemu-action@v3
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
+      - *ghcr-login
+      - *checkout
 
       - name: Download release artifacts and build dist tarball
         run: |
@@ -145,6 +142,7 @@ jobs:
           cd dist/${DOCKER_ARCH}
           for x in *; do if [ -f "$x" ] && [ -x "$x" ] && [ -f "$x.json" ]; then echo "$x"; fi; done | sort -V >LIST
           cd ..
+          # Repack into <arch>-<tag>.tar for hub.Dockerfile (ADD auto-extracts it)
           tar --owner=root --group=root -cf ${DOCKER_ARCH}-${RELEASE_TAG}.tar ${DOCKER_ARCH}
 
       - name: "Build and push ghcr.io/ivankra/javascript-zoo/jsz-runtime:${{ inputs.arch }}"

@@ -11,6 +11,10 @@ on:
   schedule:
     - cron: '0 1 1,8,15,22 * *'  # ~weekly
 
+concurrency:
+  group: build
+  cancel-in-progress: false
+
 permissions:
   contents: write  # gh release create/edit/upload
   packages: write  # GHCR push
@@ -58,10 +62,12 @@ jobs:
       matrix:
         runner: [ubuntu-24.04, ubuntu-24.04-arm]
     steps:
-      - name: Log in to GHCR
+      - &ghcr-login
+        name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
-      - uses: actions/checkout@v6
+      - &checkout
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
 
@@ -80,8 +86,9 @@ jobs:
       matrix:
         engine: ${{ fromJson(needs.init.outputs.engines_amd64) }}
     steps:
-      - name: Free disk space
-        uses: jlumbroso/free-disk-space@main
+      - &free-disk-space
+        name: Free disk space
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be  # main
         with:
           tool-cache: true
           android: true
@@ -89,16 +96,14 @@ jobs:
           haskell: true
           large-packages: true
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - *ghcr-login
+      - *checkout
 
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
-
-      - name: System info
+      - &system-info
+        name: System info
         run: uname -a; lscpu; cat /proc/cpuinfo; gcc -march=native -Q --help=target
 
+      # Retry handles transient failures (OOM, network); timeout matches job limit intentionally.
       - name: Build engine
         uses: nick-fields/retry@v4
         with:
@@ -121,11 +126,12 @@ jobs:
           rm -f dist/amd64/jscript-dist/jscript*.dll dist/amd64/jscript9-dist/jscript*.dll  # proprietary DLLs, amd64 only
           rm -f dist/amd64/*.dbg
           tar -c -C dist/amd64 . | zstd -19 -o ${{ matrix.engine }}.amd64.tar.zst
-          gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst \
-            || (sleep 15 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst) \
-            || (sleep 30 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst)
+          gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst \
+            || (sleep 15 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst) \
+            || (sleep 30 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst)
 
-      - name: Cleanup
+      - &cleanup
+        name: Cleanup
         if: always()
         run: rm -rf dist/
 
@@ -141,32 +147,17 @@ jobs:
       matrix:
         engine: ${{ fromJson(needs.init.outputs.engines_arm64) }}
     steps:
-      - name: Free disk space
-        uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: true
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
-
-      - name: System info
-        run: uname -a; lscpu; cat /proc/cpuinfo; gcc -march=native -Q --help=target
+      - *free-disk-space
+      - *ghcr-login
+      - *checkout
+      - *system-info
 
       - name: Build engine
         uses: nick-fields/retry@v4
         with:
           max_attempts: 3
           timeout_minutes: 360
-          command: |
-            DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
+          command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
 
       - name: Pack dist artifact tarball
         run: tar -cf dist-arm64-${{ matrix.engine }}.tar -C dist/arm64 .
@@ -182,13 +173,11 @@ jobs:
         run: |
           rm -f dist/arm64/*.dbg
           tar -c -C dist/arm64 . | zstd -19 -o ${{ matrix.engine }}.arm64.tar.zst
-          gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst \
-            || (sleep 15 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst) \
-            || (sleep 30 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst)
+          gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst \
+            || (sleep 15 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst) \
+            || (sleep 30 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst)
 
-      - name: Cleanup
-        if: always()
-        run: rm -rf dist/
+      - *cleanup
 
   publish:
     needs: [init, engine-amd64, engine-arm64]
@@ -212,12 +201,8 @@ jobs:
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - *checkout
+      - *ghcr-login
 
       - name: Build and push ghcr.io/ivankra/javascript-zoo/hub
         run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ needs.init.outputs.build_date }}
