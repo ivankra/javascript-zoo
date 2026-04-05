@@ -10,10 +10,7 @@ ARG REV=main
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
-RUN cargo generate-lockfile && \
-    cargo update -p temporal_rs --precise 0.2.0 && \
-    cargo update -p icu_calendar --precise 2.1.0 && \
-    cargo build --release --locked --bin nova_cli
+RUN cargo build --release --bin nova_cli
 
 # Usage: nova repl / nova eval script.js
 COPY build/dist.py ./
