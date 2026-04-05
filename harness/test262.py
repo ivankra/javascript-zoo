@@ -259,6 +259,8 @@ def main() -> None:
                    help=argparse.SUPPRESS)
     p.add_argument("--report-dirs", action="store_true",
                    help="Include per-directory stats in JSON output")
+    p.add_argument("--progress", type=int, default=0, metavar="N",
+                   help="Print progress every N tests (default: 1 if TTY else never)")
     p.add_argument("--shuffle", action="store_true", default=False,
                    help="Randomize test execution order")
     p.add_argument("--no-probe", action="store_true", default=False,
@@ -321,6 +323,7 @@ def main() -> None:
         report_tests=args.report_tests,
         report_runs=args.report_runs,
         report_dirs=args.report_dirs,
+        progress_every=args.progress,
     )
 
     # Probe engine and harness capabilities (discovery runs in parallel)

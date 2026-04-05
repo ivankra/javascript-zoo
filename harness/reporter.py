@@ -183,10 +183,12 @@ class Reporter:
         report_tests: bool | None = None,
         report_runs: bool | None = None,
         report_dirs: bool = False,
+        progress_every: int = 0,
     ) -> None:
         self._engine = engine
         self._discovery = discovery
         self._verbose = verbose
+        self._progress_every = progress_every
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
         self._test262_revision = get_git_revision(test262_dir) if test262_dir else None
@@ -332,8 +334,16 @@ class Reporter:
         else:
             self._file_counts[Verdict.OK] += 1
 
-        if self._verbose < 1 and sys.stderr.isatty():
-            self._print_progress()
+        if self._verbose < 1:
+            n_done = sum(self._file_counts.values())
+            if self._progress_every:
+                if n_done % self._progress_every == 0:
+                    if sys.stderr.isatty():
+                        self._print_progress()
+                    else:
+                        print(self._progress_line(), file=sys.stderr, flush=True)
+            elif sys.stderr.isatty():
+                self._print_progress()
 
     @staticmethod
     def _truncate_left(text: str, width: int) -> str:
