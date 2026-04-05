@@ -38,9 +38,9 @@ default:
 .constants:
   # Tighter settings for OOM-prone engines that cause GitHub runners to die
   oom_prone: &oom_prone
-    - memory_addr_limit_mb: 3072  # ulimit -v (kernel enforced, mallocs would start failing)
-    - memory_limit_mb: 2560       # RSS limit enforced by OOM watchdog
-    - max_jobs: 3                 # instead of 4 (cpu count) on standard GitHub runners
+    - memory_addr_limit_mb: 2560  # ulimit -v (kernel enforced, mallocs would start failing)
+    - memory_limit_mb: 2048       # RSS limit enforced by OOM watchdog
+    - max_jobs: 2                 # instead of 4 (cpu count) on standard GitHub runners
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
   # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
@@ -73,6 +73,7 @@ asynkron:
   errors_re:
     - *uncaught_exception_colon_message
     - *exception_colon_message
+  timeout_sec: 20
 
 bali:
   console_log: console.log
@@ -231,7 +232,7 @@ continuum:
     - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 5
+  timeout_sec: 3
 
 delskayn:
   console_log: console.log
@@ -368,7 +369,7 @@ fastschema-qjs:
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 5
+  timeout_sec: 3
 
 fesi: &fesi
   console_log: writeln
@@ -520,7 +521,7 @@ jint: &jint
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 10
+  timeout_sec: 5
 
 jispy:
   console_log: ['console.log', 'print']
