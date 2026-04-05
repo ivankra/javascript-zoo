@@ -3,7 +3,7 @@
 name: Conformance
 
 on:
-  # Automatically trigger after Build workflow finishes
+  # Automatic trigger after Build workflow finishes, using latest release tag
   workflow_run:
     workflows: ['Build']
     types: [completed]
@@ -13,7 +13,7 @@ on:
     inputs:
       conformance_shards:
         description: 'Parallel shards for conformance suites'
-        default: &default_conformance_shards 10
+        default: &default_conformance_shards 5
         type: number
       test262_shards:
         description: 'Parallel shards for test262'
@@ -23,9 +23,18 @@ on:
         description: 'Release tag'
         default: 'latest'
         type: string
+      engines:
+        description: 'Engines (space-separated, empty=all)'
+        default: ''
+        type: string
+      commit:
+        description: 'Commit results to data repo'
+        default: false
+        type: boolean
 
 concurrency:
-  group: conformance
+  # Manual runs with custom engines get their own group so they don't cancel/block the default run
+  group: ${{ github.event_name == 'workflow_dispatch' && inputs.engines != '' && format('conformance-manual-{0}', github.run_id) || 'conformance' }}
   cancel-in-progress: false
 
 permissions:
@@ -45,10 +54,12 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       tag: ${{ steps.init.outputs.tag }}
+      engines: ${{ steps.init.outputs.engines }}
       conformance_shards: ${{ steps.init.outputs.conformance_shards }}
       conformance_shard_list: ${{ steps.init.outputs.conformance_shard_list }}
       test262_shards: ${{ steps.init.outputs.test262_shards }}
       test262_shard_list: ${{ steps.init.outputs.test262_shard_list }}
+      should_commit: ${{ steps.init.outputs.should_commit }}
     steps:
       - name: Resolve release tag and build shard arrays
         id: init
@@ -58,6 +69,19 @@ jobs:
             TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
           fi
           echo "tag=$TAG" | tee -a "$GITHUB_OUTPUT"
+
+          ENGINES="${{ inputs.engines }}"
+          echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
+
+          # Determine whether to commit results to data repo
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            # Automatically triggered workflow always commits
+            echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
+          elif [[ "${{ inputs.commit }}" == "true" ]]; then
+            echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
+          else
+            echo "should_commit=false" | tee -a "$GITHUB_OUTPUT"
+          fi
 
           N1="${{ inputs.conformance_shards }}"
           N1="${N1:-$DEFAULT_CONFORMANCE_SHARDS}"
@@ -123,10 +147,15 @@ jobs:
       - &select_engines
         name: Select engines for this shard
         id: select_engines
+        env:
+          INPUT_ENGINES: ${{ needs.init.outputs.engines }}
         run: |
-          ENGINES=$( \
-            (echo $EXP_CONFIGS | tr ' ' '\n'; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST) \
-            | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
+          if [[ -n "$INPUT_ENGINES" ]]; then
+            ENGINES="$INPUT_ENGINES"
+          else
+            ENGINES="$(echo $EXP_CONFIGS | tr ' ' '\n'; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
+          fi
+          ENGINES=$(echo "$ENGINES" | tr ' ' '\n' | grep -v '^$' | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
           echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
 
       - name: Run conformance tests
@@ -182,9 +211,9 @@ jobs:
 
       - name: Run test262
         run: |
-          DR="docker run --rm -m 12g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
+          DR="docker run --rm -m 12g --memory-swap 24g -e PYTHONDONTWRITEBYTECODE=1 -v /tmp:/tmp -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/test262
-          set -x;
+          set -x
           for engine in ${{ steps.select_engines.outputs.engines }}; do
             # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
             if [[ "$engine" == *_exp ]]; then
@@ -233,3 +262,27 @@ jobs:
           name: conformance-results-${{ needs.init.outputs.tag }}
           path: merged/
           if-no-files-found: warn
+
+      - name: Commit to javascript-zoo-data
+        if: needs.init.outputs.should_commit == 'true' && needs.conformance.result == 'success' && needs.test262.result == 'success'
+        env:
+          JSZ_DATA_GITHUB_TOKEN: ${{ secrets.JSZ_DATA_GITHUB_TOKEN }}
+        run: |
+          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/ivankra/javascript-zoo-data.git" data-repo
+
+          cd data-repo
+          for dir in es1-5 compat-table test262; do
+            mkdir -p $dir
+            cp -f ../merged/$dir/*.json $dir/ || true
+          done
+          make || true
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "conformance.yml workflow for release ${{ needs.init.outputs.tag }}"
+            git push
+          fi
