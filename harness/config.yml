@@ -426,8 +426,29 @@ graaljs: &graaljs
 graaljs_exp:
   <<: *graaljs
   flags:
+    - --js.ecmascript-version=staging
+    # Enable experimental JavaScript features advertised by the binary.
+    # Cherry-picked from `graaljs --help:all | grep -- --js.*default:false`.
+    # See also: https://github.com/oracle/graaljs/blob/master/graal-js/src/com.oracle.truffle.js/src/com/oracle/truffle/js/runtime/JSContextOptions.java
     - shell: |
-        $BINARY --help:all | egrep -o '(--js.class-fields|--js.import-attributes|--js.private-fields-in|--js.regexp-match-indices|--js.regexp-unicode-sets|--js.source-phase-imports|--js.async-context|--js.async-iterator-helpers|--js.atomics-wait-async|--js.iterator-helpers|--js.new-set-methods|--js.shadow-realm|--js.temporal|--js.top-level-await|--js.error-cause)'
+        EXP_FLAGS=(
+          --js.class-fields
+          --js.import-attributes
+          --js.private-fields-in
+          --js.regexp-match-indices
+          --js.regexp-unicode-sets
+          --js.source-phase-imports
+          --js.async-context
+          --js.async-iterator-helpers
+          --js.atomics-wait-async
+          --js.iterator-helpers
+          --js.new-set-methods
+          --js.shadow-realm
+          --js.temporal
+          --js.top-level-await
+          --js.error-cause
+        )
+        $BINARY --help:all | egrep -o "($(echo "${EXP_FLAGS[@]}" | tr ' ' '|'))"
     - *graaljs_flags  # note: --module must be last
 
 hako:
@@ -1155,6 +1176,7 @@ v8: &v8
     - --allow-natives-syntax
     # Only expose GC for tests that require it, otherwise it breaks
     # test/built-ins/ShadowRealm/prototype/evaluate/globalthis-config-only-properties.js
+    # TODO: verify
     - if: features:host-gc-required
       then: --expose-gc
     - if: flags:CanBlockIsFalse
