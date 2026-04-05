@@ -213,7 +213,12 @@ class MemoryWatchdog:
         self.oom_killed = False
         self.peak_rss_kb = 0
         self._thread = threading.Thread(target=self._run, daemon=True)
-        self._thread.start()
+        try:
+            self._thread.start()
+        except RuntimeError:
+            # Hit a thread limit or something
+            print("memory watchdog: cannot start background thread", file=sys.stderr, flush=True)
+            self._thread = None
 
     def _run(self) -> None:
         time.sleep(self.poll_sec)
@@ -355,6 +360,9 @@ class Runner:
                 stdout_b += out
                 stderr_b += err
         finally:
+            # Kill any orphaned children in the process group
+            if proc is not None:
+                _kill_pgroup(proc.pid, signal.SIGKILL)
             self.current_proc = None
             wall = time.monotonic() - start
 
