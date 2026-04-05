@@ -212,7 +212,7 @@ class MemoryWatchdog:
         self.pgid = self._read_proc_group_id(proc.pid)
         self.oom_killed = False
         self.peak_rss_kb = 0
-        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread: threading.Thread | None = threading.Thread(target=self._run, daemon=True)
         try:
             self._thread.start()
         except RuntimeError:

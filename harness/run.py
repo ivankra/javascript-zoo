@@ -10,7 +10,6 @@ import os
 import re
 import sys
 import tempfile
-import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -176,7 +175,6 @@ def main() -> None:
 
     weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
 
-    wall_start = time.monotonic()
     with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs)) as pool:
         futs = {}
         for rel in tests:
@@ -194,8 +192,7 @@ def main() -> None:
     if multi_dir:
         reporter.print_completed_dirs(header=args.verbose >= 1)
 
-    wall_sec = time.monotonic() - wall_start
-    reporter.print_summary(wall_sec=wall_sec)
+    reporter.print_summary()
 
     if args.output:
         reporter.write()
