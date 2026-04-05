@@ -135,6 +135,7 @@ def main() -> None:
     parser.add_argument("engine", help="Engine binary path or name")
     parser.add_argument("suites", nargs="*", help="Suite dirs/globs (default: from config)")
     parser.add_argument("-o", "--output", help="Write results to file")
+    parser.add_argument("-c", "--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
     parser.add_argument("-j", "--jobs", type=int, default=None, metavar="N",
                         help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
@@ -147,7 +148,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    cfg = EngineConfig.load(args.engine)
+    cfg = EngineConfig.load(args.engine, config_name=args.config)
     cfg.resolve()
     if args.timeout is not None:
         cfg.timeout_sec = args.timeout
