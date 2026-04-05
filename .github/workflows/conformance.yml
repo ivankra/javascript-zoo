@@ -13,11 +13,11 @@ on:
     inputs:
       conformance_shards:
         description: 'Parallel shards for conformance suites'
-        default: &default_conformance_shards 20
+        default: &default_conformance_shards 10
         type: number
       test262_shards:
         description: 'Parallel shards for test262'
-        default: &default_test262_shards 152
+        default: &default_test262_shards 156
         type: number
       release:
         description: 'Release tag'
@@ -36,6 +36,7 @@ env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DEFAULT_CONFORMANCE_SHARDS: *default_conformance_shards
   DEFAULT_TEST262_SHARDS: *default_test262_shards
+  EXP_CONFIGS: graaljs_exp jsc_exp spidermonkey_exp v8_exp
 
 jobs:
   init:
@@ -123,7 +124,9 @@ jobs:
         name: Select engines for this shard
         id: select_engines
         run: |
-          ENGINES=$(docker run --rm "$DOCKER_IMAGE" cat /dist/LIST | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
+          ENGINES=$( \
+            (echo $EXP_CONFIGS | tr ' ' '\n'; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST) \
+            | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
           echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
 
       - name: Run conformance tests
@@ -132,10 +135,21 @@ jobs:
           mkdir -p results/es1-5 results/compat-table
           set -x;
           for engine in ${{ steps.select_engines.outputs.engines }}; do
+            # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
+            if [[ "$engine" == *_exp ]]; then
+              extra="--config=$engine"
+              binary=/dist/${engine/_exp}
+              if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
+                binary+="_full"  # use full-featured build
+              fi
+            else
+              binary="/dist/$engine"
+              extra=""
+            fi
             # For jscript/jscript9 to download .dll's. TODO: remove after run.py starts probing for print
-            $DR /zoo/harness/probe.py "/dist/$engine";
-            $DR /zoo/harness/run.py --shuffle -o "/results/es1-5/$engine.json" "/dist/$engine" "es[1-5]";
-            $DR /zoo/harness/run.py --shuffle -o "/results/compat-table/$engine.json" "/dist/$engine" compat-table;
+            $DR /zoo/harness/probe.py "$binary";
+            $DR /zoo/harness/run.py $extra --shuffle -o "/results/es1-5/$engine.json" "$binary" "es[1-5]";
+            $DR /zoo/harness/run.py $extra --shuffle -o "/results/compat-table/$engine.json" "$binary" compat-table;
           done
 
       - &upload_shard_results
@@ -172,7 +186,18 @@ jobs:
           mkdir -p results/test262
           set -x;
           for engine in ${{ steps.select_engines.outputs.engines }}; do
-            $DR /zoo/harness/test262.py --progress=100 --shuffle -o "/results/test262/$engine.json" "/dist/$engine";
+            # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
+            if [[ "$engine" == *_exp ]]; then
+              extra="--config=$engine"
+              binary=/dist/${engine/_exp}
+              if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
+                binary+="_full"  # use full-featured build
+              fi
+            else
+              binary="/dist/$engine"
+              extra=""
+            fi
+            $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" "$binary";
           done
 
       - *upload_shard_results
