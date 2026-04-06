@@ -223,7 +223,7 @@ class Assembler:
             # Single script — drop into the shared temp dir.  PID prefix
             # avoids collisions between parallel worker processes (e.g.
             # foo/a.js and bar/a.js running in different workers).
-            script_path = temp_dir / f"{os.getpid()}-{os.path.basename(scenario.run_id())}"
+            script_path = temp_dir / f"t262-{os.getpid()}.{os.path.basename(scenario.run_id())}"
             script_path.write_bytes(assembled.encode("utf-8"))
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()),
                                 references=references, unlink=True)
