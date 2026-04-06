@@ -26,18 +26,19 @@ class Verdict(StrEnum):
     """Test result's coarse classification."""
 
     OK = "OK"
-    FAILED = "failed"
-    SKIPPED = "skipped"  # didn't run the test due to some filter
+    FAILED = "FAILED"
+    SKIPPED = "SKIPPED"  # didn't run the test due to some filter
 
 
 class ErrorType(StrEnum):
-    """Fine-grained subcategories for FAIL/SKIP verdicts."""
+    """Fine-grained subcategories for FAILED/SKIPPED verdicts."""
 
-    GENERIC = "generic"       # unclassified error / missing OK marker / generic Error exception
-    CRASHED = "crashed"       # killed by a signal or runtime panic
-    EXIT = "exit"             # non-zero exit code
-    TIMEOUT = "timeout"
+    FAILED = "FAILED"    # unclassified error / missing OK marker / generic Error exception
+    CRASHED = "CRASHED"  # killed by a signal or runtime panic
+    TIMEOUT = "TIMEOUT"
     OOM = "OOM"
+    # Non-zero exit code (low priority, only given when no better error type fits)
+    EXIT = "EXIT"
     # Standard JavaScript exception types
     SYNTAX_ERROR = "SyntaxError"
     REFERENCE_ERROR = "ReferenceError"
@@ -47,16 +48,23 @@ class ErrorType(StrEnum):
     URI_ERROR = "URIError"
     INTERNAL_ERROR = "InternalError"
     AGGREGATE_ERROR = "AggregateError"
-    SUPPRESSED_ERROR = "SuppressedError"  # esnext
-    # test262 errors
-    TEST262_ERROR = "Test262Error"   # assert etc
-    NEGATIVE = "Negative"            # negative test expectations mismatch
-    DONOTEVALUATE = "DONOTEVALUATE"  # got "Test262: This statement should not be evaluated."
-    ASYNC_TEST_FAILURE = "AsyncTestFailure"  # Test262:AsyncTestFailure
-    NO_ASYNC_TEST_COMPLETE = "NoAsyncTestComplete"
+    SUPPRESSED_ERROR = "SuppressedError"
+    # Test262Error exception (assertion failure, etc)
+    TEST262_ERROR = "Test262Error"
+    # Negative test passed or threw an unexpected error
+    NEGATIVE = "NEGATIVE"
+    # Got "Test262: This statement should not be evaluated."
+    # Usually a negative syntax test that didn't get rejected.
+    DONOTEVALUATE = "DONOTEVALUATE"
+    # Got "Test262:AsyncTestFailure:..."
+    ASYNC_TEST_FAILURE = "AsyncTestFailure"
+    # Missing "Test262:AsyncTestComplete" marker
+    NO_ASYNC_TEST_COMPLETE = "NO_ASYNC_TEST_COMPLETE"
 
     @classmethod
     def from_js_error(cls, exception_name: str) -> ErrorType | None:
+        if exception_name == "Error":
+            return ErrorType.FAILED
         try:
             et = cls(exception_name)
             return et if et.value.endswith("Error") else None
@@ -159,10 +167,11 @@ class RunResult:
         """Render verdict plus optional error detail as a compact status string."""
         if self.verdict is None:
             return ""
-        assert self.error_message not in ("OK", "skipped")
-        if self.error_type in (ErrorType.GENERIC, ErrorType.EXIT):
+        assert self.error_message not in ("OK", "FAILED", "SKIPPED")
+        if self.error_type in (ErrorType.FAILED, ErrorType.EXIT):
+            # Format EXIT as simply their error message: "exit code N"
             assert self.verdict == Verdict.FAILED
-            return self.error_message or "failed"
+            return self.error_message or "FAILED"
         status = str(self.error_type or self.verdict)
         if self.error_message:
             status += f": {self.error_message}"

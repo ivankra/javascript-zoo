@@ -939,8 +939,14 @@ rhino:
     # js: .^
     # js: "file.js", line 1: Compilation produced 1 syntax errors.
     - '(js: "[^"]+"), line [0-9]+: (?P<message>.+\n)(.|\n)*\1, line [0-9]+: Compilation produced .* syntax error': 'SyntaxError: \2'
+    # [0.006s][warning][aot,codecache,stubs] Saved blob's name 'LLLLLLIILLLL' is different from the expected name 'LLLLLLLIILLL'
+    - "^\\[[0-9.]+s\\]\\[warning\\]\\[aot,codecache,stubs\\] Saved blob's name .*expected name .*$": ''
+    # [0.006s][warning][aot                ] Failed to link AdapterHandlerEntry (fp=LLLLLLLIILLL) to its code in the AOT code cache
+    - '^\[[0-9.]+s\]\[warning\]\[aot\s+\] Failed to link .* AOT code cache$': ''
     - 'INFO *': ''
   stderr_replace_re:
+    # Apr 05, 2026 11:29:28 AM org.jline.nativ.JLineNativeLoader log
+    - '^[A-Z][a-z]{2} [ 0-9]{1,2}, [0-9]{4} [0-9]{1,2}:[0-9]{2}:[0-9]{2} [AP]M org\.jline\.nativ\.JLineNativeLoader log$': ''
     - 'WARNING: .*': ''
   errors_re:
     - '^js: "[^"]+", line [0-9]+: uncaught JavaScript runtime exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'

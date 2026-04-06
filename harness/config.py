@@ -118,7 +118,7 @@ class EngineConfig:
     # stdout/stderr, one line after another - first line with errors wins.
     # Order matters - first regex to match against the current line wins.
     # "type" group should capture standard JavaScript error name / one of
-    # ErrorType enum values, else it'll map to uninformative ErrorType.GENERIC.
+    # ErrorType enum values, else it'll map to uninformative ErrorType.FAILED.
     # Advise: try to match stable terminal exception lines (e.g. "TypeError: ..."),
     # not traceback scaffolding; use *_replace_re to strip traceback boilerplate,
     # normalize multi-line exceptions to one-liners, normalize exception names,

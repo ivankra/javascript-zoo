@@ -34,13 +34,13 @@ _CLASSIFY_CASES: list[tuple[str, dict, dict, Verdict, ErrorType | None, str]] = 
     ("clean ok",           {"stdout": "42\n"},                                  {},                          Verdict.OK,   None,                                ""),
     ("nonzero exit+output", {"stdout": "ReferenceError: x not defined", "exit_code": 1}, {},              Verdict.FAILED, ErrorType.REFERENCE_ERROR,           "x not defined"),
     ("ok pattern found",   {"stdout": "test.js: OK\nnoise"},                    {"ok_pattern": r"test\.js: OK"}, Verdict.OK,   None,                    ""),
-    ("ok pattern missing", {"stdout": "plain output"},                          {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.GENERIC,     ""),
+    ("ok pattern missing", {"stdout": "plain output"},                          {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.FAILED,     ""),
     ("ok absent+error",    {"stdout": "SyntaxError: bad"},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.SYNTAX_ERROR,   "bad"),
-    ("ok absent+exit 3",   {"stdout": "", "exit_code": 3},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.GENERIC,     ""),
+    ("ok absent+exit 3",   {"stdout": "", "exit_code": 3},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.FAILED,     ""),
     # fail_pattern tests
-    ("ok+fail both present",  {"stdout": "test.js: OK\ntest.js: failed"},        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.GENERIC, "both ok and fail"),
+    ("ok+fail both present",  {"stdout": "test.js: OK\ntest.js: failed"},        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.FAILED, "both ok and fail"),
     ("ok+fail ok only",       {"stdout": "test.js: OK"},                         {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.OK,     None,                 ""),
-    ("ok+fail exception line",{"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"}, {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.GENERIC, "both ok and fail"),
+    ("ok+fail exception line",{"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"}, {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.FAILED, "both ok and fail"),
     ("ok+fail fail only",     {"stdout": "test.js: exception: TypeError: bad"},  {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.TYPE_ERROR,  "bad"),
     # async tests
     ("async complete",     {"stdout": "Test262:AsyncTestComplete"},              {"expect_async": True},      Verdict.OK,   None,                                ""),
@@ -295,13 +295,13 @@ class ErrorsReTest(unittest.TestCase):
     def test_unknown_error_type_preserves_type_and_message(self) -> None:
         cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = cl.classify(mk_run(stdout="CustomError: bad"))
-        self.assertEqual(out.error_type, ErrorType.GENERIC)
+        self.assertEqual(out.error_type, ErrorType.FAILED)
         self.assertEqual(out.error_message, "CustomError: bad")
 
     def test_unknown_error_type_without_message_preserves_type(self) -> None:
         cl = self._arb([r"^(?P<type>[A-Za-z]+Error)$"])
         out = cl.classify(mk_run(stdout="CustomError"))
-        self.assertEqual(out.error_type, ErrorType.GENERIC)
+        self.assertEqual(out.error_type, ErrorType.FAILED)
         self.assertEqual(out.error_message, "CustomError")
 
     # --- priority ---

@@ -147,7 +147,7 @@ class Annotator:
 
         if ok_found and fail_found:
             run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.GENERIC
+            run.error_type = ErrorType.FAILED
             run.error_message = "found both ok and fail markers"
             return
 
@@ -165,7 +165,7 @@ class Annotator:
         if errors:
             best_et, best_msg = errors[0]
             for et, msg in errors:
-                if et != ErrorType.GENERIC:
+                if et != ErrorType.FAILED:
                     best_et, best_msg = et, msg
                     break
             msgs = [msg for _, msg in errors if msg]
@@ -194,7 +194,7 @@ class Annotator:
             if expect_async and "Test262:AsyncTestComplete" not in output:
                 run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
             else:
-                run.error_type = ErrorType.GENERIC
+                run.error_type = ErrorType.FAILED
                 run.error_message = output or None
                 self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
@@ -274,7 +274,7 @@ class Annotator:
                     if et is None:
                         if raw_type:
                             message = f"{raw_type}: {message}" if message else raw_type
-                        results.append((ErrorType.GENERIC, message or None))
+                        results.append((ErrorType.FAILED, message or None))
                     else:
                         results.append((et, message or None))
                     break

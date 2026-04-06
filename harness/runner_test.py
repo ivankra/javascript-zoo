@@ -55,8 +55,8 @@ class RunResultTest(unittest.TestCase):
             exit_code=-11,
         )
         d = r.to_dict()
-        self.assertEqual(d["verdict"], "failed")
-        self.assertEqual(d["error_type"], "crashed")
+        self.assertEqual(d["verdict"], "FAILED")
+        self.assertEqual(d["error_type"], "CRASHED")
         r2 = RunResult.from_dict(d)
         self.assertEqual(r2.verdict, Verdict.FAILED)
         self.assertEqual(r2.error_type, ErrorType.CRASHED)
@@ -78,7 +78,7 @@ class RunResultTest(unittest.TestCase):
 
     def test_verdict_message_timeout(self) -> None:
         r = mk_run(verdict=Verdict.FAILED, error_type=ErrorType.TIMEOUT)
-        self.assertEqual(r.verdict_message(), "timeout")
+        self.assertEqual(r.verdict_message(), "TIMEOUT")
 
     def test_verdict_message_error_with_message(self) -> None:
         r = mk_run(
@@ -88,13 +88,13 @@ class RunResultTest(unittest.TestCase):
         )
         self.assertEqual(r.verdict_message(), "SyntaxError: Unexpected token")
 
-    def test_verdict_message_generic_omits_error_type(self) -> None:
+    def test_verdict_message_failed_omits_error_type(self) -> None:
         r = mk_run(
             verdict=Verdict.FAILED,
-            error_type=ErrorType.GENERIC,
-            error_message="failed",
+            error_type=ErrorType.FAILED,
+            error_message="something went wrong",
         )
-        self.assertEqual(r.verdict_message(), "failed")
+        self.assertEqual(r.verdict_message(), "something went wrong")
 
 
 class ConfigRunnerSmokeTest(unittest.TestCase):
