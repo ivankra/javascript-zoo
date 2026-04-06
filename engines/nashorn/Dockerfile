@@ -17,13 +17,15 @@ RUN cd make/nashorn && ant jar
 RUN mkdir -p /dist/nashorn-dist && \
     cp /src/build/nashorn/dist/*.jar /dist/nashorn-dist && \
     cp /src/build/nashorn/dependencies/*.jar /dist/nashorn-dist
+COPY engines/nashorn/nashorn.sh /dist/nashorn
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/nashorn \
-      --wrapper='exec java -cp "$SCRIPT_DIR/nashorn-dist/*" --add-exports=jdk.internal.le/jdk.internal.org.jline.{reader,reader.impl,reader.impl.completer,terminal,keymap}=ALL-UNNAMED org.openjdk.nashorn.tools.jjs.Main --language=es6 "$@"' \
+      --dist_files=/dist/nashorn-dist/*.jar \
       version="$(git describe --tags | sed 's/^release-//')"
 
 # Wrapper with -ot flag (optimistic types): helps some benchmarks esp. numeric, hurts others
 RUN ./dist.py /dist/nashorn_ot \
+      --dist_files=/dist/nashorn-dist/*.jar \
       --wrapper='exec $SCRIPT_DIR/nashorn -ot "$@"' \
       version="$(git describe --tags | sed 's/^release-//')"
