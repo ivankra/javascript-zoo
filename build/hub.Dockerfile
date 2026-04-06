@@ -26,7 +26,8 @@ RUN rm -rf /dist /zoo && \
     echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/zoo/bench:/zoo/conformance:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
 
 # Build AOT cache for faster startup
-RUN rm -rf /dist/rhino-dist/rhino.aot* && /dist/rhino /zoo/bench/v8-v7.js || true
+RUN rm -rf /dist/rhino-dist/rhino.aot* && /dist/rhino /zoo/bench/v8-v7.js || true; \
+    rm -rf /dist/reeva-dist/reeva.aot* && /dist/reeva /zoo/bench/richards.js || true;
 
 WORKDIR /dist
 

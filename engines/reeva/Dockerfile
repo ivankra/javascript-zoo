@@ -15,9 +15,11 @@ RUN git apply reeva.patch
 
 RUN ./gradlew --no-daemon runnerJar
 
-RUN install -D /src/build/libs/reeva-runner-sources.jar /dist/reeva.jar
+RUN install -D /src/build/libs/reeva-runner-sources.jar /dist/reeva-dist/reeva.jar
+COPY engines/reeva/reeva.sh /dist/reeva
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/reeva \
-      --wrapper='exec java -jar "$SCRIPT_DIR/reeva.jar" "$@"' \
-      --dist_files=/dist/reeva.jar
+      --dist_files=/dist/reeva-dist/reeva.jar && \
+    # AOT cache is specific to JVM version and jsz-runtime has a different JDK \
+    rm -f /dist/reeva-dist/reeva.aot*
