@@ -156,6 +156,12 @@ class EngineConfig:
     # See test262.py --filter; if flag is specified it takes precedence.
     test262_filter: str = ""
 
+    # List of test paths (relative to test262 root) known to be flaky.
+    # Supports nested lists (flattened at resolve time) for YAML anchor composition.
+    flaky_tests: set[str] = dataclasses.field(default_factory=set)
+    # Max attempts for flaky tests (default: 1 = no retries)
+    flaky_attempts: int = 1
+
     @property
     def name(self) -> str:
         return Path(self.binary_path).name if self.binary_path else ""
@@ -172,6 +178,7 @@ class EngineConfig:
         self.flags = resolve_flags(self.flags, expand_shell=True, env=env)
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
+        self.flaky_tests = _flatten_str_set(self.flaky_tests)
 
     def argv(self, *args: Path | str, tags: Tags | None = None) -> list[str]:
         """Build execution argv: binary + flags + positional args.
@@ -241,6 +248,19 @@ class EngineConfig:
         if cmd_flags:
             cfg["flags"] = cmd_flags
         return EngineConfig(**cfg)
+
+
+def _flatten_str_set(items: set | list) -> set[str]:
+    """Flatten a set, list, or nested list of strings into a flat set[str]."""
+    result: set[str] = set()
+    for item in items:
+        if isinstance(item, str):
+            result.add(item)
+        elif isinstance(item, list):
+            result.update(_flatten_str_set(item))
+        else:
+            raise TypeError(f"expected str or list, got {type(item).__name__}: {item!r}")
+    return result
 
 
 def resolve_flags(

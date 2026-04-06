@@ -63,6 +63,7 @@ class Executor:
         self.filter_expr = filter_expr
         self._jobs = engine.job_count(flag=jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
+        self._flaky_tests = engine.flaky_tests
 
     def run(self, tests: Iterable[str], *, reporter: Reporter, limit: int = 0) -> None:
         """Submit test files to worker pool, delivering results to reporter.
@@ -157,23 +158,31 @@ class Executor:
         for ref in staged.references:
             scenario.tags.add("ref", ref)
 
-        try:
-            run = self.runner.run_command(
-                self.engine.argv(staged.script_path, tags=scenario.tags),
-                run_id=scenario.run_id(),
-                test_id=scenario.rel_path,
-                test_path=str(scenario.test_path),
-                script_path=str(staged.script_path),
-                cwd=str(staged.cwd),
-            )
+        max_attempts = 1
+        if scenario.rel_path in self._flaky_tests:
+            max_attempts = self.engine.flaky_attempts
 
-            self.annotator.classify(
-                run,
-                expect_async=is_async,
-                ok_pattern=ok_pattern,
-                negative_phase=scenario.fm.negative_phase if is_negative else None,
-                negative_type=scenario.fm.negative_type if is_negative else None,
-            )
+        try:
+            for attempt in range(max_attempts):
+                run = self.runner.run_command(
+                    self.engine.argv(staged.script_path, tags=scenario.tags),
+                    run_id=scenario.run_id(),
+                    test_id=scenario.rel_path,
+                    test_path=str(scenario.test_path),
+                    script_path=str(staged.script_path),
+                    cwd=str(staged.cwd),
+                )
+
+                self.annotator.classify(
+                    run,
+                    expect_async=is_async,
+                    ok_pattern=ok_pattern,
+                    negative_phase=scenario.fm.negative_phase if is_negative else None,
+                    negative_type=scenario.fm.negative_type if is_negative else None,
+                )
+
+                if run.verdict == Verdict.OK:
+                    break
 
             run.mode = scenario.mode
             run.tags = scenario.tags
