@@ -13,7 +13,7 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -70,6 +70,7 @@ class Executor:
         Iterates tests lazily — works with FileDiscovery's background queue.
         limit: stop after this many non-skipped files (0 = unlimited).
         """
+        started_queue = reporter.started_queue
         n_submitted = 0
         try:
             with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
@@ -88,9 +89,8 @@ class Executor:
                             except StopIteration:
                                 exhausted = True
                                 break
-                            futs[pool.submit(self._process_file, rel_path)] = rel_path
+                            futs[pool.submit(self._process_file, rel_path, started_queue)] = rel_path
                             n_submitted += 1
-                            reporter.note_started(rel_path)
 
                         if not futs:
                             break
@@ -107,12 +107,14 @@ class Executor:
         finally:
             shutil.rmtree(self._shared_tmp, ignore_errors=True)
 
-    def _process_file(self, rel_path: str) -> list[RunResult]:
+    def _process_file(self, rel_path: str, started_queue: Any = None) -> list[RunResult]:
         """Read file, parse frontmatter, expand modes, execute each.
 
         Returns a single SKIPPED RunResult if filtered by features,
         [] if no applicable modes.
         """
+        if started_queue is not None:
+            started_queue.put(rel_path)
         test_path = self.test262_dir / rel_path
         # Binary read to preserve CR/CRLF line endings verbatim, e.g.
         # Function/prototype/toString/line-terminator-normalisation-CR.js

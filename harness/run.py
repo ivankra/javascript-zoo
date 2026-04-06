@@ -11,6 +11,7 @@ import re
 import sys
 import tempfile
 from pathlib import Path
+from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -79,8 +80,11 @@ def run_one(
     test_path: Path,
     test_id: str,
     weight: float | None = None,
+    started_queue: Any = None,
 ) -> RunResult:
     """Run a single conformance test, return RunResult."""
+    if started_queue is not None:
+        started_queue.put(test_id)
     console_log = cfg.console_log or ["console.log"]
     if type(console_log) is str:
         console_log = [console_log]
@@ -176,11 +180,12 @@ def main() -> None:
 
     weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
 
+    started_queue = reporter.started_queue
+
     with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs)) as pool:
         futs = {}
         for rel in tests:
-            reporter.note_started(rel)
-            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel))] = rel
+            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel), started_queue)] = rel
         for fut in concurrent.futures.as_completed(futs):
             run = fut.result()
             reporter.add_file([run])

@@ -5,7 +5,10 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import multiprocessing
+import multiprocessing.managers
 import os
+import queue
 import re
 import shutil
 import sys
@@ -201,8 +204,12 @@ class Reporter:
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         # Currently in-flight tests: test_id -> monotonic start time.
-        # Progress bar shows the most recently submitted entry.
+        # Progress bar shows the most recently started entry.
         self._in_flight: dict[str, float] = {}
+        self._last_completed: str | None = None
+        # Manager + queue for workers to signal actual test start times.
+        self._mp_manager: multiprocessing.managers.SyncManager | None = None
+        self._started_queue: Any | None = None
         self._progress_dirty = False
         # dict used as ordered set (Python 3.7+ insertion order); values unused.
         self._input_order: dict[str, int] = {}
@@ -259,9 +266,29 @@ class Reporter:
         if test_id not in self._input_order:
             self._input_order[test_id] = len(self._input_order)
 
-    def note_started(self, test_id: str) -> None:
-        """Mark a test as in-flight (submitted to process pool)."""
-        self._in_flight[test_id] = time.monotonic()
+    @property
+    def started_queue(self) -> Any:
+        """A picklable queue for worker processes to signal test start.
+
+        Workers should call queue.put(test_id) at the beginning of
+        execution.  The main process drains these in add_file() to
+        update _in_flight with accurate timestamps.
+        """
+        if self._started_queue is None:
+            self._mp_manager = multiprocessing.Manager()
+            self._started_queue = self._mp_manager.Queue()
+        return self._started_queue
+
+    def _drain_started_queue(self) -> None:
+        """Drain the started_queue into _in_flight."""
+        q = self._started_queue
+        if q is None:
+            return
+        while True:
+            try:
+                self._in_flight[q.get_nowait()] = time.monotonic()
+            except queue.Empty:
+                break
 
     def set_expected_dirs(self, test_ids: list[str] | None = None) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
@@ -326,12 +353,14 @@ class Reporter:
 
         Prints a progress line to stderr when not in verbose mode and stderr is a TTY.
         """
+        self._drain_started_queue()
         for run in runs:
             self.add(run)
             self._mode_counts[run.verdict or Verdict.FAILED] += 1
 
         if runs:
             test_id = runs[0].test_id or runs[0].run_id or ""
+            self._last_completed = test_id
             self._in_flight.pop(test_id, None)
 
         if any(r.verdict is Verdict.SKIPPED for r in runs):
@@ -370,12 +399,18 @@ class Reporter:
         line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
         if fc[Verdict.SKIPPED]:
             line += f", {fc[Verdict.SKIPPED]} skipped"
+        show_id = None
         if self._in_flight:
-            latest_id = max(self._in_flight, key=self._in_flight.__getitem__)
+            show_id = max(self._in_flight, key=self._in_flight.__getitem__)
+        elif self._last_completed:
+            # -j 1 or fast tests: worker finishes before main drains the queue,
+            # so _in_flight is empty; fall back to the last completed test.
+            show_id = self._last_completed
+        if show_id:
             cols = shutil.get_terminal_size((80, 24)).columns
             avail = cols - len(line) - 3  # " | "
             if avail >= 10:
-                line += f" | {self._truncate_left(latest_id, avail)}"
+                line += f" | {self._truncate_left(show_id, avail)}"
         return line
 
     def _print_progress(self) -> None:
