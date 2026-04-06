@@ -15,14 +15,8 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN dotnet publish Jint.Repl/Jint.Repl.csproj \
       -c Release \
       -o /dist/jint-dist \
-      -p:PublishAot=false \
-      -p:PublishTrimmed=false \
-      -p:EnableAotAnalyzer=false \
-      -p:IsAotCompatible=false
-
-#Testing:
-#RUN apt-get install -y tzdata tzdata-legacy
-#RUN dotnet test --configuration Release
+      -p:SuppressTrimAnalysisWarnings=true \
+      -p:TreatWarningsAsErrors=false
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/jint --wrapper='exec dotnet "$SCRIPT_DIR/jint-dist/Jint.Repl.dll" "$@"'
+RUN ./dist.py /dist/jint --wrapper='exec "$SCRIPT_DIR/jint-dist/Jint.Repl" "$@"'

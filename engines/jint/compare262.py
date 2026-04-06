@@ -7,6 +7,7 @@ Generate ours:
   ./harness/test262.py -o jint.json dist/arm64/jint
 
 Generate trx.log (in Jint repo):
+  apt-get install -y tzdata tzdata-legacy
   dotnet test Jint.Tests.Test262/Jint.Tests.Test262.csproj -c Release --logger "trx;LogFileName=trx.log"
   # produces Jint.Tests.Test262/TestResults/trx.log
 """
