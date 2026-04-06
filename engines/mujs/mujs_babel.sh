@@ -31,7 +31,7 @@ else
 fi
 
 ROLLUP_CFG=$(mktemp --suffix=.cjs)
-TRANSFORMED=$(mktemp --suffix=.js)
+TRANSFORMED=$(mktemp /tmp/mujs_babel.XXXXXXX.js)
 
 trap 'rm -f "$ROLLUP_CFG" "$TRANSFORMED"' EXIT
 
