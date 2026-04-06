@@ -1,26 +1,32 @@
 # Per-engine configuration: customization knobs on how to work with each engine
 # such as command-line flags, test262 options, regexes to parse output, etc.
 #
-# See harness/config.py for schema and parser.
-#
-# Lookup key is binary's basename.
+# See EngineConfig dataclass in harness/config.py for schema.
 #
 # This file is shared between benchmarking and conformance testing scripts,
 # read at start up to find configuration for the binary to be run.
 #
-# The config is merged at runtime with sidecar metadata (<binary>.json file)
-# and the key without _<variant> suffix, if any, in this order:
-#  * config.yml[default] (lowest priority defaults)
-#  * config.yml[<engine>]
-#  * config.yml[<engine>_<variant>] (higher priority per-variant overrides)
-#  * <engine>_<variant>.json (highest priority overrides)
+# Lookup key is based on binary's basename or can be specified explicitly
+# with -c/--config flag, e.g. `test262.py -c v8_exp node` to run node
+# using v8_exp config (V8 with experimental flags on).
+#
+# The config is merged at runtime (by replacing whole value, no deep merge)
+# from key-value pairs defined in these places in order:
+#  * EngineConfig's defaults
+#  * config.yml[default] - overrides to the defaults for all engines
+#  * config.yml[<engine>] - standard engine config. Engine name is derived
+#    from binary's basename by stripping _* and .* suffixes.
+#  * config.yml[<basename>] - higher priority overrides for specific variants.
+#  * <basename>.json - sidecar metadata file next to the binary
+#    (highest priority overrides; deprecated: only used for console_log now,
+#    which should be removed in favor of just always probing)
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
 # Any overrides to the defaults for all engines can go here
 default:
-  # Per-run timeout in seconds
+  # Timeout per run/scenario (a single test run in either strict or sloppy mode).
   timeout_sec: 60
   # Maximum RSS size before a process will get killed by OOM watchdog.
   # 4G is sufficient for major engines to pass test262: V8 needs 1.5G, JSC 2.8G.
@@ -38,9 +44,9 @@ default:
 .constants:
   # Tighter settings for OOM-prone engines that cause GitHub runners to die
   oom_prone: &oom_prone
-    - memory_addr_limit_mb: 2560  # ulimit -v (kernel enforced, mallocs would start failing)
-    - memory_limit_mb: 2048       # RSS limit enforced by OOM watchdog
-    - max_jobs: 2                 # instead of 4 (cpu count) on standard GitHub runners
+    - memory_addr_limit_mb: 2048  # ulimit -v (kernel enforced, mallocs would start failing)
+    - memory_limit_mb: 1536       # RSS limit enforced by OOM watchdog
+    - max_jobs: 3                 # instead of 4 (cpu count) on standard GitHub runners
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
   # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
@@ -74,6 +80,7 @@ asynkron:
     - *uncaught_exception_colon_message
     - *exception_colon_message
   timeout_sec: 20
+  exit_code_for_syntax_error: 1
 
 bali:
   console_log: console.log
@@ -175,9 +182,9 @@ castl:
   errors_re:
     - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
     - '^luajit: [^ ]*[.]lua:[0-9]+: (?P<message>.*)$'
-    - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>.*)$'
-    - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>function at line [0-9]+ has more than 200 local variables)$'
-    - '[^ ]*\.js\.lua:[0-9]+: (?P<message>attempt to .*)$'
+    - '^luajit: [^ ]*\.m?js\.lua:[0-9]+: (?P<message>.*)$'
+    - '^luajit: [^ ]*\.m?js\.lua:[0-9]+: (?P<message>function at line [0-9]+ has more than 200 local variables)$'
+    - '[^ ]*\.m?js\.lua:[0-9]+: (?P<message>attempt to .*)$'
     - *exception_colon_message
   requires_tmp_staging: true  # writes .lua alongside .js files => requires writeable location
 
@@ -232,7 +239,7 @@ continuum:
     - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 3
+  timeout_sec: 2
 
 delskayn:
   console_log: console.log
@@ -304,9 +311,9 @@ ejscript:
   crash_re:
     - '^(?P<message>Assertion .*, failed at [^:]+:[0-9]+)'
   stderr_replace_re:
-    - '^ejs: Error: /[^ :]+[.]js: [0-9]+: (?P<message>Unexpected input .+)$': 'SyntaxError: \g<message>'
+    - '^ejs: Error: /[^ :]+\.m?js: [0-9]+: (?P<message>Unexpected input .+)$': 'SyntaxError: \g<message>'
   errors_re:
-    - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+[.]js: [0-9]+: (?P<message>.+)$'
+    - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+\.m?js: [0-9]+: (?P<message>.+)$'
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
   <<: *oom_prone
@@ -377,6 +384,7 @@ fesi: &fesi
     - '^Syntax error ': 'SyntaxError: '
     - '^Lexical error ': 'SyntaxError: '
     - "('(?:toDateString|toLocaleDateString|toTimeString|toLocaleTimeString)' is not defined) for object .*": '\1'
+    - "^(Keyword '[^']+' reserved for future extension .*)$": 'SyntaxError: \1'
   errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -389,6 +397,7 @@ flathead:
   console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
+  timeout_sec: 5
   <<: *oom_prone
 
 goja: &goja
@@ -399,7 +408,7 @@ goja: &goja
   errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message
-    - '^(?P<type>[A-Za-z0-9]*Error): [^:]+[.]js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
+    - '^(?P<type>[A-Za-z0-9]*Error): [^:]+\.m?js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
   stderr_replace_re:
     # goja_nodejs/console prefixes console messages with a timestamp
     - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
@@ -474,14 +483,15 @@ hermes: &hermes
         shell: $BINARY -help-list-hidden | grep -o [-]test262  # Increase compliance with test262
   console_log: print  # hermes main only has print()
   stderr_replace_re:
-    # Syntax errors: "file.js:14:3: error: invalid statement encountered."
-    - '([^ ]+[.]js:[0-9]+:[0-9]+: error: .*)': 'SyntaxError \1'
+    # Syntax errors:
+    # file.js:14:3: error: invalid statement encountered.
+    - '([^ ]+[.]m?js:[0-9]+:[0-9]+: error: .*)': 'SyntaxError \1'
     # es5/strict.this-undefined-in-function.js - dumps both ok and fail markers
-    - '[^ ]+[.]js:[0-9]+:[0-9]+: warning: the variable "console" was not declared.*\n *console.log\("[^"]+"\);': ''
+    - '[^ ]+[.]m?js:[0-9]+:[0-9]+: warning: the variable "console" was not declared.*\n *console.log\("[^"]+"\);': ''
   errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
-    - '(?P<type>(SyntaxError)) [^ ]+[.]js:(?P<line>[0-9]+):[0-9]+: error: (?P<message>.+?)[.]?$'
-    - '^[^ ]+[.]js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
+    - '(?P<type>(SyntaxError)) [^ ]+\.m?js:(?P<line>[0-9]+):[0-9]+: error: (?P<message>.+?)[.]?$'
+    - '^[^ ]+\.m?js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
   prelude:
     - file: engines/hermes/prelude.js
 
@@ -566,18 +576,20 @@ jsish:
   console_log: console.log
   stderr_replace_re:
     # test.js:1:   "42",  or  typeof.null.js:11:  "...",
-    - '^\S+[.]js:[0-9]+: +"([^"]*)", *$': '\1'
+    - '^\S+\.m?js:[0-9]+: +"([^"]*)", *$': '\1'
     # file.js:14: parse: :13.6: error: msg  ->  file.js:14: SyntaxError: msg
     # file.js:2: parse: /full/path.js:2.7: error: msg  ->  file.js:2: SyntaxError: msg
     - ': parse: (?:[^ ]+\.[0-9]+: error: )?(?:syntax error, )?': ': SyntaxError: '
     # Drop bare "ERROR:" summary line emitted after parse errors
     - '^ERROR: *$': ''
   errors_re:
-    - '^[^:]+[.]js:[0-9]+: (?P<type>[A-Za-z]+Error): (?P<message>.+)$'
-    - '^[^:]+[.]js:[0-9]+: error: (?P<message>.+)$'
+    - '^[^:]+\.m?js:[0-9]+: (?P<type>[A-Za-z]+Error): (?P<message>.+)$'
+    - '^[^:]+\.m?js:[0-9]+: error: (?P<message>.+)$'
 
 jsse:
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - "(Module '[^']+' has no export named .*)": 'SyntaxError: \1'
   flags:
     - { if: 'flags:CanBlockIsTrue', then: '--can-block' }
     - { if: 'flags:module', then: '--module' }
@@ -689,11 +701,11 @@ mocha:
   prelude:
     - code: 'var console = new Object(); console.log = print;'
   stderr_replace_re:
-    - '^Mocha: ([^,]+[.]js, line [0-9]+): syntax error:$': 'Mocha: \1: SyntaxError'
-    - '^Mocha: [^,]+[.]js, line [0-9]+: (nested comment|illegal character):?$': ''
+    - '^Mocha: ([^,]+\.m?js, line [0-9]+): syntax error:$': 'Mocha: \1: SyntaxError'
+    - '^Mocha: [^,]+\.m?js, line [0-9]+: (nested comment|illegal character):?$': ''
   errors_re:
-    - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<type>SyntaxError)$'
-    - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
+    - '^Mocha: [^,]+\.m?js, line [0-9]+: (?P<type>SyntaxError)$'
+    - '^Mocha: [^,]+\.m?js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
 
 modernc-quickjs:
@@ -705,7 +717,14 @@ modernc-quickjs:
   flags:
     - { if: 'flags:module', then: '--module' }
 
+motet-a:
+  stderr_replace_re:
+    - '^fatal: syntax error \(line [0-9]+\)': 'SyntaxError: '
+  errors_re:
+    - *exception_colon_message
+
 mquickjs: &mquickjs
+  # TODO: mode: strict
   console_log: ['console.log', 'print']
   errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
@@ -718,7 +737,7 @@ mujs:
   stderr_replace_re:
     - '^(SyntaxError: .*)undefined$': '\1'
   errors_re:
-    - '^(?P<type>SyntaxError): [^:]+[.]js:[0-9]+: (?P<message>[^\n]+)'
+    - '^(?P<type>SyntaxError): [^:]+\.m?js:[0-9]+: (?P<message>[^\n]+)'
     - *exception_colon_message
 
 mujs_babel:
@@ -741,9 +760,9 @@ nashorn:
     - --language=es6
   multiple_scripts_with_shared_realm: true
   stderr_replace_re:
-    - '^Exception in thread "main" .*\.js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
+    - '^Exception in thread "main" .*\.m?js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
   errors_re:
-    - '^[^:]+[.]js:[0-9]+(:[0-9]+)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+    - '^[^:]+\.m?js:[0-9]+(:[0-9]+)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '^java.lang.RuntimeException: (?P<message>.*)$'
   # https://github.com/openjdk/nashorn/blob/main/src/org.openjdk.nashorn/share/classes/org/openjdk/nashorn/tools/Shell.java#L98
   exit_code_for_syntax_error: 101   # COMPILATION_ERROR
@@ -753,11 +772,11 @@ nashorn:
 ngs:
   console_log: print
   stderr_replace_re:
-    - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.js:[0-9]+: .*)$': '\1 \2'
-    - '^(ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: )syntax error$': '\1SyntaxError: syntax error'
+    - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.m?js:[0-9]+: .*)$': '\1 \2'
+    - '^(ngs: evaluation of file .* failed: *[^ ]+\.m?js:[0-9]+: )syntax error$': '\1SyntaxError: syntax error'
   errors_re:
-    - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<type>SyntaxError): (?P<message>.*)$'
-    - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<message>.*)$'
+    - '^ngs: evaluation of file .* failed: *[^ ]+\.m?js:[0-9]+: (?P<type>SyntaxError): (?P<message>.*)$'
+    - '^ngs: evaluation of file .* failed: *[^ ]+\.m?js:[0-9]+: (?P<message>.*)$'
   prelude:
     - code: 'var console = {log: print};'
   bench_suite: ['richards.tiny-js.js']
@@ -771,6 +790,7 @@ niljs:
     - { if: 'flags:module', then: '--module' }
 
 njs:
+  # TODO: mode: strict
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
@@ -906,7 +926,7 @@ reeva:
     - *java_crash_re
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 5
+  timeout_sec: 3
 
 rhino:
   # print() exists but broken - doesn't print to pipes, breaks testing
@@ -954,14 +974,16 @@ rust-js:
   stderr_replace_re:
     - *rust_crash_norm_re
   errors_re:
-    - '^\S+[.]js: (?P<type>[A-Za-z0-9]*Error)(?:: (?P<message>.+))?$'
+    - '^\S+\.m?js: (?P<type>[A-Za-z0-9]*Error)(?:: (?P<message>.+))?$'
 
 sablejs:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     # SableJS always logs a transient compile path on stdout before the real result.
     - '^\[INFO\] compile in [0-9]+ms: /tmp/sablejs\.[^/]+/\S+[.]sablejs$': ''
-    - '^([^:\n]+[.]js: )\[INFO\] compile in [0-9]+ms: /tmp/sablejs\.[^/]+/\S+[.]sablejs; ': '\1'
+    - '^([^:\n]+\.m?js: )\[INFO\] compile in [0-9]+ms: /tmp/sablejs\.[^/]+/\S+[.]sablejs; ': '\1'
+  stderr_replace_re:
+    - '\[ERROR\] compile failed: Error:': '\[ERROR\] compile failed: SyntaxError:'
   errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
     - '^(?P<message>(Uncaught exception): [object Object])$'
@@ -983,7 +1005,7 @@ see:
   stderr_replace_re:
     - 'WARNING: SEE is using non-release malloc': ''
   errors_re:
-    - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+[.]js:[0-9]+: )?(?P<message>.+)$'
+    - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+\.m?js:[0-9]+: )?(?P<message>.+)$'
 
 sobek: *goja
 
@@ -999,7 +1021,7 @@ sophonjs:
 
 spidermonkey: &spidermonkey
   console_log: ['console.log', 'print']
-  errors_re: &sm_exc
+  errors_re: &spidermonkey_errors_re
     # /tmp/x.js:1: ReferenceError: x is not defined
     # /tmp/x.js:488:7 uncaught exception: Test262Error: x
     - '^[^:]+:[0-9]+:?([0-9]+)?:?( uncaught exception:)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -1011,42 +1033,40 @@ spidermonkey: &spidermonkey
     - file: engines/spidermonkey/prelude.js
 
 # SpiderMonkey with experimental flags
-spidermonkey_exp:
+spidermonkey_exp: &spidermonkey_exp
   <<: *spidermonkey
   flags:
-    - *spidermonkey_flags
     # Enable experimental JavaScript features advertised by the binary
     - shell: |
-        $BINARY --help | egrep -o '^  --enable-[^ ]+ ' | egrep -v '(--enable-avx|--enable-parallel-marking|--enable-ic-frame-pointers|--enable-legacy-regexp)'
+        NOT_JS_FLAGS=(
+          --enable-avx
+          --enable-parallel-marking
+          --enable-ic-frame-pointers
+          --enable-legacy-regexp
+        )
+        $BINARY --help | egrep -o '^ *--enable-[^ ]+ ' | egrep -v "($(echo "${NOT_JS_FLAGS[@]}" | tr ' ' '|'))"
+    - *spidermonkey_flags
 
-spidermonkey_1.5: &sm15
-  # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
+# SpiderMonkey 1.5-24
+spidermonkey_old: &spidermonkey_old
+  # SpiderMonkey 1.5–1.8.5 only have print() and need some ES5 polyfills to run benchmarks
+  console_log: print
+  errors_re: *spidermonkey_errors_re
+  flags:
+    # SpiderMonkey 1.8.5/17 JIT flags
+    - shell: |
+        $BINARY --help 2>&1 | egrep 'TraceMonkey|JaegerMonkey' | egrep -o '^ *(-j|-m) '
   prelude:
     - file: harness/prelude-print.js
     - { if: 'bench', file: 'harness/prelude-es5.js' }
-  console_log: print
-  errors_re: *sm_exc
-  flags: []
 
-spidermonkey_1.6: *sm15
-spidermonkey_1.7: *sm15
-spidermonkey_1.8.0: *sm15
-
-spidermonkey_1.8.5:
-  <<: *sm15
-  # -j  Enable the TraceMonkey tracing JIT
-  # -m  Enable the JaegerMonkey method JIT
-  flags: ['-jm']
-
-spidermonkey_17:
-  console_log: print
-  flags: ['-m']  # -m/--methodjit  Enable the JaegerMonkey method JIT
-  errors_re: *sm_exc
-
-spidermonkey_24:
-  console_log: print
-  flags: []
-  errors_re: *sm_exc
+spidermonkey_1.5: *spidermonkey_old
+spidermonkey_1.6: *spidermonkey_old
+spidermonkey_1.7: *spidermonkey_old
+spidermonkey_1.8.0: *spidermonkey_old
+spidermonkey_1.8.5: *spidermonkey_old
+spidermonkey_17: *spidermonkey_old
+spidermonkey_24: *spidermonkey_old
 
 ssrlive:
   console_log: console.log
@@ -1056,6 +1076,13 @@ ssrlive:
     - *rust_crash_norm_re
   flags:
     - { if: 'flags:module', then: '--module' }
+
+stackluca:
+  stdout_replace_re:
+    - 'welcome to v3 javascript interpretor 0.1': ''
+    - '^ *error_code:-3\((unexpected token)\) .*': 'SyntaxError: \1'
+  errors_re:
+    - *exception_colon_message
 
 starlight:
   bench_suite: ['richards.js1.js']
@@ -1072,7 +1099,7 @@ starlingmonkey:
   console_log: console.log
   stdout_replace_re:
     - '^Log: ': ''
-  errors_re: *sm_exc
+  errors_re: *spidermonkey_errors_re
   prelude:
     - file: engines/spidermonkey/prelude.js
   # TODO: warmup_cmd
@@ -1099,6 +1126,7 @@ syoyo:
     - "Type '.help' for help, '.exit' to quit": ""
   stderr_replace_re:
     - "^Parse error in file '(.*)'$": 'SyntaxError: \1'
+    - "^Error in file '([^']+)': (Unexpected character .*)$": 'SyntaxError: \2'
   errors_re:
     - *exception_colon_message
 
@@ -1137,7 +1165,7 @@ twostroke:
   errors_re:
     - ".*twostroke-dist/lib/twostroke/([^: ]+/)?parser[.]rb:[0-9]+:in `error!': (?P<type>SyntaxError): (?P<message>.+)$"
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
-  timeout_sec: 5
+  timeout_sec: 10
 
 ucode:
   bench_suite: ['richards.ucode.js']
@@ -1286,13 +1314,13 @@ node_exp: *v8_exp
 
 bun:
   console_log: console.log
-  #module_always: true
+  # TODO: module_always: true
   errors_re:
     *exception_colon_message
 
 deno:
   console_log: console.log
-  #module_always: true
+  # TODO: module_always: true
   stderr_replace_re:
     - "error: The module's source code could not be parsed: ": "SyntaxError: "
   errors_re:
@@ -1334,4 +1362,6 @@ qjs: *quickjs
 run-test262: *quickjs
 serenity-js: *libjs
 sm: *spidermonkey
+sm_exp: *spidermonkey_exp
+sm_old: *spidermonkey_old
 xst: *xs

@@ -82,7 +82,7 @@ class EngineConfig:
     # number of jobs will be computed as min(max_jobs, os.cpu_count()).
     max_jobs: int | None = None
 
-    # --- Process defaults ---
+    # Timeout per run/scenario (a single test run in either strict or sloppy mode).
     timeout_sec: float | None = None
     # Virtual memory space limit (i.e. `ulimit -v`), enforced by the kernel.
     # Leave as None by default = no limit, faster process spawning.
