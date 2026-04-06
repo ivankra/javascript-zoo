@@ -124,6 +124,10 @@ class EngineConfig:
     # normalize multi-line exceptions to one-liners, normalize exception names,
     # silence false positive warning lines etc.
     errors_re: list[str] = dataclasses.field(default_factory=list)
+    # Lower-priority error patterns appended after errors_re at resolve time.
+    # Useful for defining common fallback patterns in the "default" config
+    # that engine-specific errors_re entries take precedence over.
+    common_errors_re: list[str] = dataclasses.field(default_factory=list)
     # Exit code to map to SyntaxError unconditionally (nashorn COMPILATION_ERROR=101).
     exit_code_for_syntax_error: int | None = None
     # Heuristic: if a negative test expects SyntaxError/Test262Error and the engine
@@ -179,6 +183,9 @@ class EngineConfig:
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
         self.flaky_tests = _flatten_str_set(self.flaky_tests)
+        if self.common_errors_re:
+            self.errors_re = self.errors_re + self.common_errors_re
+            self.common_errors_re = []
 
     def argv(self, *args: Path | str, tags: Tags | None = None) -> list[str]:
         """Build execution argv: binary + flags + positional args.
