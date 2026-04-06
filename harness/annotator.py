@@ -140,6 +140,7 @@ class Annotator:
                 # Strip redundant "Test262Error: " prefixes from message
                 while run.error_message and run.error_message.startswith("Test262Error:"):
                     run.error_message = run.error_message[len("Test262Error:"):].strip()
+                self._shorten_message(run, strip_line_prefix=strip_line_prefix)
                 return
 
             ok_found = ("Test262:AsyncTestComplete" in output) and (ok_found or not ok_required)
@@ -308,14 +309,10 @@ class Annotator:
             if path and path.startswith('/') and path in run.error_message:
                 run.error_message = run.error_message.replace(path, os.path.basename(run.test_path or path))
 
-        # Replace temporary script basename (from test262.py) with
-        # the basename of the original test filename
-        if 't262-temp-' in run.error_message and run.test_path:
-            run.error_message = re.sub(
-                    't262-temp-[a-z0-9-]+[.]js',
-                    os.path.basename(run.test_path),
-                    run.error_message
-            )
+        # Replace temp script basename (from assembler.py: "t262-{os.getpid()}.{...}")
+        # with the basename of the original test filename
+        if run.script_path and run.test_path and '/t262-' in run.script_path:
+            run.error_message = run.error_message.replace(os.path.basename(run.script_path), os.path.basename(run.test_path))
 
         # Strip staging root (temp dir or --stage-dir) from module paths
         # to keep error messages short and consistent between runs.
