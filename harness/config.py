@@ -124,11 +124,12 @@ class EngineConfig:
     # normalize multi-line exceptions to one-liners, normalize exception names,
     # silence false positive warning lines etc.
     errors_re: list[str] = dataclasses.field(default_factory=list)
-    # Exit code to map to SyntaxError (needed for nashorn)
+    # Exit code to map to SyntaxError unconditionally (nashorn COMPILATION_ERROR=101).
     exit_code_for_syntax_error: int | None = None
-    # Exit code to accept for Test262Error in negative test262 case
-    # Needed for some engines that don't properly format user-defined exceptions
-    exit_code_for_test262_error: int | None = None
+    # Heuristic: if a negative test expects SyntaxError/Test262Error and the engine
+    # exits with this code, accept it as a match.  Only used in negative test checking.
+    exit_code_may_be_syntax_error: int | None = None
+    exit_code_may_be_test262_error: int | None = None
     ignore_sigabrt: bool = False
 
     # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].

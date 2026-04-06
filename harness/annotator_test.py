@@ -144,26 +144,43 @@ class AnnotatorTest(unittest.TestCase):
         self.assertEqual(result.error_type, ErrorType.CRASHED)
         self.assertEqual(result.error_message, "SIGABRT")
 
-    def test_negative_exit_code_maps_to_syntax_error(self) -> None:
-        cfg = EngineConfig(exit_code_for_syntax_error=7)
-        run = mk_run(exit_code=7)
-        out = Annotator(cfg).classify(
-            run,
-            negative_phase="parse",
-            negative_type="SyntaxError",
-        )
+    def test_exit_code_for_syntax_error_unconditional(self) -> None:
+        """exit_code_for_syntax_error maps to SyntaxError even outside negative tests."""
+        cfg = EngineConfig(exit_code_for_syntax_error=101)
+        run = mk_run(exit_code=101)
+        out = Annotator(cfg).classify(run)
+        self.assertEqual(out.verdict, Verdict.FAILED)
+        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
+
+    def test_exit_code_for_syntax_error_negative(self) -> None:
+        cfg = EngineConfig(exit_code_for_syntax_error=101)
+        out = Annotator(cfg).classify(mk_run(exit_code=101), negative_phase="parse", negative_type="SyntaxError")
         self.assertEqual(out.verdict, Verdict.OK)
         self.assertIsNone(out.error_type)
         self.assertIsNone(out.error_message)
 
-    def test_negative_exit_code_maps_to_test262_error(self) -> None:
-        cfg = EngineConfig(exit_code_for_test262_error=9)
-        run = mk_run(exit_code=9)
-        out = Annotator(cfg).classify(
-            run,
-            negative_phase="runtime",
-            negative_type="Test262Error",
-        )
+    def test_exit_code_may_be_syntax_error_negative(self) -> None:
+        """Heuristic: accept exit code as SyntaxError only in negative tests."""
+        cfg = EngineConfig(exit_code_may_be_syntax_error=7)
+        # Outside negative context, it's just an EXIT error
+        out = Annotator(cfg).classify(mk_run(exit_code=7))
+        self.assertEqual(out.verdict, Verdict.FAILED)
+        self.assertEqual(out.error_type, ErrorType.EXIT)
+        # In negative context, heuristic kicks in
+        out = Annotator(cfg).classify(mk_run(exit_code=7), negative_phase="parse", negative_type="SyntaxError")
+        self.assertEqual(out.verdict, Verdict.OK)
+        self.assertIsNone(out.error_type)
+        self.assertIsNone(out.error_message)
+
+    def test_exit_code_may_be_test262_error_negative(self) -> None:
+        """Heuristic: accept exit code as Test262Error only in negative tests."""
+        cfg = EngineConfig(exit_code_may_be_test262_error=9)
+        # Outside negative context, it's just an EXIT error
+        out = Annotator(cfg).classify(mk_run(exit_code=9))
+        self.assertEqual(out.verdict, Verdict.FAILED)
+        self.assertEqual(out.error_type, ErrorType.EXIT)
+        # In negative context, heuristic kicks in
+        out = Annotator(cfg).classify(mk_run(exit_code=9), negative_phase="runtime", negative_type="Test262Error")
         self.assertEqual(out.verdict, Verdict.OK)
         self.assertIsNone(out.error_type)
         self.assertIsNone(out.error_message)

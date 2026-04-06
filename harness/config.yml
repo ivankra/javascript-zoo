@@ -80,7 +80,7 @@ asynkron:
     - *uncaught_exception_colon_message
     - *exception_colon_message
   timeout_sec: 20
-  exit_code_for_syntax_error: 1
+  exit_code_may_be_syntax_error: 1
 
 bali:
   console_log: console.log
@@ -153,7 +153,7 @@ brimstone: &brimstone
   # doesn't print to stdout/stderr
   prelude:
     - code: 'globalThis.print = console.log.bind(console);'
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 carakan:
   stdout_replace_re:
@@ -593,14 +593,14 @@ jsse:
   flags:
     - { if: 'flags:CanBlockIsTrue', then: '--can-block' }
     - { if: 'flags:module', then: '--module' }
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 js-interpreter:
   console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-  exit_code_for_test262_error: 1  # prints 'Uncaught exception: [object Object]'
+  exit_code_may_be_test262_error: 1  # prints 'Uncaught exception: [object Object]'
 
 jscript: &jscript
   console_log: ['console.log', 'print', 'WScript.Echo']
@@ -643,7 +643,7 @@ kiesel:
     - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/kiesel/prelude.js
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 kjs:
   console_log: print
@@ -693,7 +693,7 @@ metaes:
     - '^Uncaught exception: Error: \[[0-9]+:[0-9]+\]: ': 'Uncaught exception: SyntaxError: '
   errors_re:
     - *uncaught_exception_colon_message
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 mocha:
   bench_suite: ['richards.es1.js']
@@ -730,7 +730,7 @@ mquickjs: &mquickjs
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   prelude:
     - { if: 'bench', file: 'harness/prelude-strict.js' }
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 mujs:
   console_log: ['console.log', 'print']
@@ -750,7 +750,7 @@ narcissus:
     - '^:[0-9]+:[0-9]+ ': ''
   errors_re:
     - *exception_colon_message
-  exit_code_for_test262_error: 3  # print '... uncaught exception: [object Object]'
+  exit_code_may_be_test262_error: 3  # print '... uncaught exception: [object Object]'
 
 nashorn:
   console_log: print
@@ -766,7 +766,7 @@ nashorn:
     - '^java.lang.RuntimeException: (?P<message>.*)$'
   # https://github.com/openjdk/nashorn/blob/main/src/org.openjdk.nashorn/share/classes/org/openjdk/nashorn/tools/Shell.java#L98
   exit_code_for_syntax_error: 101   # COMPILATION_ERROR
-  exit_code_for_test262_error: 102  # RUNTIME_ERROR, prints '... [object Object]'
+  exit_code_may_be_test262_error: 102  # RUNTIME_ERROR, prints '... [object Object]'
   timeout_sec: 5
 
 ngs:
@@ -1106,7 +1106,7 @@ starlingmonkey:
 
 stator:
   console_log: ['console.log', 'print']
-  exit_code_for_test262_error: 1
+  exit_code_may_be_test262_error: 1
 
 sval:
   console_log: ['console.log', 'print']

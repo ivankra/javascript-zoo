@@ -208,7 +208,6 @@ class Annotator:
             if self._config.exit_code_for_syntax_error == run.exit_code:
                 run.error_type = ErrorType.SYNTAX_ERROR
                 run.error_message = f"exit code {run.exit_code}"
-            # don't map exit_code_for_test262_error - too specific for here
             return
 
         run.verdict = Verdict.OK
@@ -237,11 +236,12 @@ class Annotator:
             expected = ErrorType.from_js_error(negative_type)
             assert expected is not None, f"Unknown negative.type in test262 frontmatter: {negative_type}"
 
-            # Map exit codes to errors as a fallback for some engines
+            # Heuristic: accept exit code as a substitute error type for
+            # negative tests when the engine doesn't format the error properly.
             if got != expected and run.error_type == ErrorType.EXIT:
-                if self._config.exit_code_for_syntax_error == run.exit_code:
+                if expected == ErrorType.SYNTAX_ERROR and self._config.exit_code_may_be_syntax_error == run.exit_code:
                     got = ErrorType.SYNTAX_ERROR
-                elif self._config.exit_code_for_test262_error == run.exit_code:
+                elif expected == ErrorType.TEST262_ERROR and self._config.exit_code_may_be_test262_error == run.exit_code:
                     got = ErrorType.TEST262_ERROR
 
             if got != expected:
