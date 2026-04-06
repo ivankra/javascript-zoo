@@ -81,6 +81,7 @@ def run_one(
     weight: float | None = None,
 ) -> RunResult:
     """Run a single conformance test, return RunResult."""
+    Reporter.test_started(test_id)
     console_log = cfg.console_log or ["console.log"]
     if type(console_log) is str:
         console_log = [console_log]
@@ -176,16 +177,18 @@ def main() -> None:
 
     weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs)) as pool:
-        futs = {}
-        for rel in tests:
-            reporter.note_started(rel)
-            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel))] = rel
-        for fut in concurrent.futures.as_completed(futs):
-            run = fut.result()
-            reporter.add_file([run])
-            if not args.verbose and multi_dir:
-                reporter.print_completed_dirs()
+    try:
+        with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs), **reporter.worker_pool_kwargs()) as pool:
+            futs = {}
+            for rel in tests:
+                futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel))] = rel
+            for fut in concurrent.futures.as_completed(futs):
+                run = fut.result()
+                reporter.add_file([run])
+                if not args.verbose and multi_dir:
+                    reporter.print_completed_dirs()
+    finally:
+        reporter.worker_pool_finished()
 
     reporter.clear_progress()
 

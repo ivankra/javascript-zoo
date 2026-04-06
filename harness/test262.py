@@ -72,7 +72,7 @@ class Executor:
         """
         n_submitted = 0
         try:
-            with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
+            with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs, **reporter.worker_pool_kwargs()) as pool:
                 futs: dict[concurrent.futures.Future[list[RunResult]], str] = {}
                 test_iter = iter(tests)
                 exhausted = False
@@ -90,7 +90,6 @@ class Executor:
                                 break
                             futs[pool.submit(self._process_file, rel_path)] = rel_path
                             n_submitted += 1
-                            reporter.note_started(rel_path)
 
                         if not futs:
                             break
@@ -105,6 +104,7 @@ class Executor:
                         f.cancel()
                     raise
         finally:
+            reporter.worker_pool_finished()
             shutil.rmtree(self._shared_tmp, ignore_errors=True)
 
     def _process_file(self, rel_path: str) -> list[RunResult]:
@@ -113,6 +113,7 @@ class Executor:
         Returns a single SKIPPED RunResult if filtered by features,
         [] if no applicable modes.
         """
+        Reporter.test_started(rel_path)
         test_path = self.test262_dir / rel_path
         # Binary read to preserve CR/CRLF line endings verbatim, e.g.
         # Function/prototype/toString/line-terminator-normalisation-CR.js

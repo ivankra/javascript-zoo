@@ -169,6 +169,8 @@ class Reporter:
     print_completed_dirs() after each add()).
     """
 
+    _worker_started_pipe_w: int | None = None
+
     def __init__(
         self,
         engine: EngineConfig,
@@ -201,8 +203,14 @@ class Reporter:
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         # Currently in-flight tests: test_id -> monotonic start time.
-        # Progress bar shows the most recently submitted entry.
+        # Progress bar shows the most recently started entry.
         self._in_flight: dict[str, float] = {}
+        self._last_completed: str | None = None
+        # Parent-side read/write fds for worker "started test" notifications.
+        self._started_pipe_r: int | None = None
+        self._started_pipe_w: int | None = None
+        # Partial line buffer for non-blocking pipe reads.
+        self._started_pipe_buf = bytearray()
         self._progress_dirty = False
         # dict used as ordered set (Python 3.7+ insertion order); values unused.
         self._input_order: dict[str, int] = {}
@@ -259,9 +267,70 @@ class Reporter:
         if test_id not in self._input_order:
             self._input_order[test_id] = len(self._input_order)
 
-    def note_started(self, test_id: str) -> None:
-        """Mark a test as in-flight (submitted to process pool)."""
-        self._in_flight[test_id] = time.monotonic()
+    @classmethod
+    def _init_started_pipe(cls, write_fd: int | None) -> None:
+        """Initialize worker-local start notification pipe."""
+        cls._worker_started_pipe_w = write_fd
+
+    @classmethod
+    def test_started(cls, test_id: str) -> None:
+        """Report that a worker actually started executing a test."""
+        if cls._worker_started_pipe_w is None:
+            return
+        os.write(cls._worker_started_pipe_w, test_id.encode("utf-8", errors="surrogateescape") + b"\n")
+
+    def worker_pool_kwargs(self) -> dict[str, object]:
+        """Executor kwargs needed for exact worker-start progress reporting."""
+        if self._started_pipe_r is None or self._started_pipe_w is None:
+            read_fd, write_fd = os.pipe()
+            os.set_blocking(read_fd, False)
+            os.set_inheritable(write_fd, True)
+            self._started_pipe_r = read_fd
+            self._started_pipe_w = write_fd
+        return {
+            "initializer": self._init_started_pipe,
+            "initargs": (self._started_pipe_w,),
+        }
+
+    def _drain_started_pipe(self) -> None:
+        """Drain worker start notifications from the pipe."""
+        read_fd = self._started_pipe_r
+        if read_fd is None:
+            return
+
+        while True:
+            try:
+                chunk = os.read(read_fd, 65536)
+            except BlockingIOError:
+                break
+            if not chunk:
+                break
+            self._started_pipe_buf.extend(chunk)
+
+        if not self._started_pipe_buf:
+            return
+
+        data = bytes(self._started_pipe_buf)
+        last_nl = data.rfind(b"\n")
+        if last_nl < 0:
+            return
+
+        complete = data[:last_nl]
+        self._started_pipe_buf = bytearray(data[last_nl + 1:])
+        for raw in complete.split(b"\n"):
+            if raw:
+                test_id = raw.decode("utf-8", errors="surrogateescape")
+                self._in_flight[test_id] = time.monotonic()
+
+    def worker_pool_finished(self) -> None:
+        """Release the worker start notification pipe."""
+        if self._started_pipe_r is not None:
+            os.close(self._started_pipe_r)
+            self._started_pipe_r = None
+        if self._started_pipe_w is not None:
+            os.close(self._started_pipe_w)
+            self._started_pipe_w = None
+        self._started_pipe_buf.clear()
 
     def set_expected_dirs(self, test_ids: list[str] | None = None) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
@@ -326,12 +395,14 @@ class Reporter:
 
         Prints a progress line to stderr when not in verbose mode and stderr is a TTY.
         """
+        self._drain_started_pipe()
         for run in runs:
             self.add(run)
             self._mode_counts[run.verdict or Verdict.FAILED] += 1
 
         if runs:
             test_id = runs[0].test_id or runs[0].run_id or ""
+            self._last_completed = test_id
             self._in_flight.pop(test_id, None)
 
         if any(r.verdict is Verdict.SKIPPED for r in runs):
@@ -370,12 +441,18 @@ class Reporter:
         line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
         if fc[Verdict.SKIPPED]:
             line += f", {fc[Verdict.SKIPPED]} skipped"
+        show_id = None
         if self._in_flight:
-            latest_id = max(self._in_flight, key=self._in_flight.__getitem__)
+            show_id = max(self._in_flight, key=self._in_flight.__getitem__)
+        elif self._last_completed:
+            # -j 1 or fast tests: worker finishes before main drains the queue,
+            # so _in_flight is empty; fall back to the last completed test.
+            show_id = self._last_completed
+        if show_id:
             cols = shutil.get_terminal_size((80, 24)).columns
             avail = cols - len(line) - 3  # " | "
             if avail >= 10:
-                line += f" | {self._truncate_left(latest_id, avail)}"
+                line += f" | {self._truncate_left(show_id, avail)}"
         return line
 
     def _print_progress(self) -> None:
