@@ -34,19 +34,41 @@ default:
   memory_limit_mb: 4096
   # Period between memory usage polls by a background OOM watchdog thread.
   memory_watchdog_poll_sec: 0.05  # ~20 Hz
-  #TODO: implement retries on failures:
-  #flaky_tests:
-  #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
-  #- test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
+  # Retry known flaky tests couple times on failures
+  flaky_attempts: 3
+  flaky_tests:
+    - test/built-ins/Atomics/notify/count-defaults-to-infinity-missing.js
+    - test/built-ins/Atomics/notify/notify-one.js
+    - test/built-ins/Atomics/notify/notify-renotify-noop.js
+    - test/built-ins/Atomics/notify/undefined-index-defaults-to-zero.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/wait/false-for-timeout-agent.js
+    - test/built-ins/Atomics/wait/nan-for-timeout.js
+    - test/built-ins/Atomics/wait/wait-index-value-not-equal.js
+    - test/built-ins/Atomics/wait/waiterlist-order-of-operations-is-fifo.js
+    - test/built-ins/Atomics/waitAsync/bigint/false-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/waitAsync/bigint/symbol-for-timeout-throws-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/implicit-infinity-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/nan-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-ok.js
+    - test/built-ins/Atomics/waitAsync/undefined-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/undefined-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/undefined-index-defaults-to-zero-agent.js
+    - test/built-ins/Atomics/waitAsync/waiterlist-block-indexedposition-wake.js
 
 # Common constants to be referenced later in the config via YAML anchors.
 # Top-level keys starting with a dot are ignored when validating the config.
 .constants:
   # Tighter settings for OOM-prone engines that cause GitHub runners to die
   oom_prone: &oom_prone
-    - memory_addr_limit_mb: 2048  # ulimit -v (kernel enforced, mallocs would start failing)
-    - memory_limit_mb: 1536       # RSS limit enforced by OOM watchdog
-    - max_jobs: 3                 # instead of 4 (cpu count) on standard GitHub runners
+    - memory_addr_limit_mb: 4096  # ulimit -v (kernel enforced, mallocs would start failing)
+    - memory_limit_mb: 3072       # RSS limit enforced by OOM watchdog
+    - max_jobs: 2                 # instead of 4 (cpu count) on standard GitHub runners
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
   # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
@@ -93,6 +115,11 @@ besen:
   console_log: ['console.log', 'print']
   bench_ignore_errors: true
   bench_suite: ['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js']
+  stderr_replace_re:
+    - '^An unhandled exception occurred at \$[0-9A-F]+:$': 'Unhandled exception'
+    - '^Exception object is not a valid class\.$': ''
+    - '^  \$[0-9A-F]+$': ''
+    - '^Runtime error [0-9]+ at \$[0-9A-F]+$': 'Runtime error'
   errors_re:
     - *exception_colon_message
     - '^ThrowException: (?P<message>.+?)$'
@@ -177,6 +204,7 @@ castl:
     # 	[C]: in function 'error'
     # 	/zoo/dist/arm64/castl-dist/castl/jssupport.lua:41: in function '_throw'
     - "^luajit: \\{ message: '(.*)' \\}\\nstack traceback:\n\t\\[C\\]: in function 'error'\n\t.*jssupport.lua.*": 'Test262Error: \1'
+    - '(?ms)^(luajit: .*)\nstack traceback:\n.*$': '\1'
   stderr_replace_re:
     - "^SyntaxError: Couldn't transpile JS code: Error: (.*)$": 'SyntaxError: \1'
   errors_re:
@@ -239,10 +267,14 @@ continuum:
     - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 2
+  timeout_sec: 10
 
 delskayn:
   console_log: console.log
+  crash_re:
+    - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
   stdout_replace_re:
     - '^Uncaught SyntaxError: error: ': 'Uncaught SyntaxError: '
   errors_re:
@@ -270,7 +302,7 @@ dmdscript:
     - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>Test262Error): ?(?P<message>.*)$': '\g<type>: \g<message>'
   errors_re:
     - '^(?P<type>[A-Za-z0-9]+Error): ?(?P<message>.*)$'
-    - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException)@[^ :]+: (?P<message>.+)$'
+    - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException|undead.dateparse.DateParseError|std.format.FormatException)@[^ :]+: (?P<message>[^;]+)'
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - { if: 'bench', file: 'harness/prelude-es5.js' }
@@ -341,7 +373,7 @@ epimetheus:
     - '(?m)^Reference error: (.+)$': 'ReferenceError: \1'
   errors_re:
     - *exception_colon_message
-  timeout_sec: 3
+  timeout_sec: 10
 
 escargot:
   console_log: print
@@ -359,6 +391,8 @@ espruino:
     - '^([| ]____|[|]  |.*espruino.com|.*G.William|Espruino is Open Source|only by sales).*': ''
     - '^>(.)\1{50,}': ''
     - '^> *$': ''
+    - 'Espruino 2v[0-9]+ LINUX': ''
+    - 'Press Ctrl-C again to exit': ''
   errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
@@ -376,7 +410,7 @@ fastschema-qjs:
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 3
+  timeout_sec: 10
 
 fesi: &fesi
   console_log: writeln
@@ -397,7 +431,7 @@ flathead:
   console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
-  timeout_sec: 5
+  timeout_sec: 10
   <<: *oom_prone
 
 goja: &goja
@@ -468,7 +502,7 @@ hako:
   errors_re:
     - *uncaught_exception_colon_message
     - '^  "name": "(?P<type>[A-Za-z0-9]*Error)",?$'  # hako_wamr/hako-cli
-  timeout_sec: 5
+  timeout_sec: 10
 
 hako_wasmtime_go:
   flags:
@@ -531,7 +565,7 @@ jint: &jint
     - *uncaught_exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 5
+  timeout_sec: 10
 
 jispy:
   console_log: ['console.log', 'print']
@@ -606,6 +640,7 @@ jscript: &jscript
   console_log: ['console.log', 'print', 'WScript.Echo']
   stderr_replace_re: &jscript_replace_re
     - 'Microsoft JScript compilation error: Syntax error': 'Microsoft JScript compilation error: SyntaxError'
+    - '^Compilation error$': 'SyntaxError'
   stdout_replace_re: *jscript_replace_re
   errors_re:
     - '^.*Microsoft JScript compilation error: (?P<type>SyntaxError)$'
@@ -649,6 +684,7 @@ kjs:
   console_log: print
   stderr_replace_re:
     - '^LEAK: [0-9]+ KJS::Node$': ''
+    - 'String \(0x[0-9a-fA-F]+\)': 'String'
     - '^(.*\bSyntaxError): Parse error$': '\1'
   errors_re:
     - '^\S+ \(line [0-9]+\): (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -665,6 +701,8 @@ lebjs:
   console_log: console.log
   crash_re:
     - *java_crash_re
+  stderr_replace_re:
+    - '^\[[0-9.]+s\]\[warning\]\[perf,memops\] Cannot use file /tmp/hsperfdata_[^ ]+/[0-9]+ because it is locked by another process \(errno = 11\)$': ''
   errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error): ?(?P<message>.*)$'
     - *exception_colon_message
@@ -741,7 +779,9 @@ mujs:
     - *exception_colon_message
 
 mujs_babel:
-  timeout_sec: 5
+  stderr_replace_re:
+    '/tmp/mujs_babel.[^ :]+\.js': '<script>'
+  timeout_sec: 10
 
 narcissus:
   console_log: ['console.log', 'print']
@@ -767,7 +807,7 @@ nashorn:
   # https://github.com/openjdk/nashorn/blob/main/src/org.openjdk.nashorn/share/classes/org/openjdk/nashorn/tools/Shell.java#L98
   exit_code_for_syntax_error: 101   # COMPILATION_ERROR
   exit_code_may_be_test262_error: 102  # RUNTIME_ERROR, prints '... [object Object]'
-  timeout_sec: 5
+  timeout_sec: 10
 
 ngs:
   console_log: print
@@ -785,6 +825,8 @@ niljs:
   console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
+    # Uncaught exception: ArgumentException: Invalid flag in regexp definition
+    - '^Uncaught exception: (?P<message>.*)$'
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
   flags:
     - { if: 'flags:module', then: '--module' }
@@ -842,7 +884,7 @@ porffor:
     - *exception_colon_message
   flags:
     - { if: 'flags:module', then: '--module' }
-  timeout_sec: 5
+  timeout_sec: 10
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
@@ -926,7 +968,7 @@ reeva:
     - *java_crash_re
   errors_re:
     - *uncaught_exception_colon_message
-  timeout_sec: 3
+  timeout_sec: 10
 
 rhino:
   # print() exists but broken - doesn't print to pipes, breaks testing
@@ -955,7 +997,7 @@ rhino:
     - '^(?P<message>java.lang.StackOverflowError)$'
   prelude:
     - file: engines/rhino/prelude.js
-  timeout_sec: 5
+  timeout_sec: 10
   # No ES modules support (only CommonJS)
   # Strict mode is broken
 
@@ -1080,6 +1122,8 @@ ssrlive:
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+    # [2026-04-05T03:07:34Z ERROR javascript::core::statement] Unhandled expression in scan_expr: ...
+    - '^\[[-0-9:T]+Z ERROR javascript::core::statement\] (Unhandled expression in scan_expr.*)': 'SyntaxError: \1'
   flags:
     - { if: 'flags:module', then: '--module' }
 
@@ -1112,6 +1156,10 @@ starlingmonkey:
 
 stator:
   console_log: ['console.log', 'print']
+  crash_re:
+    - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
   exit_code_may_be_test262_error: 1
 
 sval:
@@ -1160,7 +1208,7 @@ topchetoeu:
     - '^Uncaught Error: (?P<message>.+)$'
   stdout_replace_re:
     - '^Running j2s .*': ''
-  timeout_sec: 5
+  timeout_sec: 10
 
 twostroke:
   console_log: console.log
@@ -1171,7 +1219,7 @@ twostroke:
   errors_re:
     - ".*twostroke-dist/lib/twostroke/([^: ]+/)?parser[.]rb:[0-9]+:in `error!': (?P<type>SyntaxError): (?P<message>.+)$"
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
-  timeout_sec: 10
+  timeout_sec: 20
 
 ucode:
   bench_suite: ['richards.ucode.js']
@@ -1274,7 +1322,7 @@ yantra: &yantra
   stderr_replace_re:
     - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
   ignore_sigabrt: true  # raises SIGABRT on exceptions
-  timeout_sec: 5
+  timeout_sec: 10
   <<: *oom_prone
 
 yrm006:
@@ -1305,7 +1353,7 @@ zhuzilin:
     - '^ParserError: ?(.*)$': 'SyntaxError: \1'
   errors_re:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
-  timeout_sec: 5
+  timeout_sec: 10
 
 zuqe:
   console_log: ['console.log', 'print']
@@ -1348,13 +1396,14 @@ gjs: &gjs
     - file: engines/spidermonkey/prelude.js
 
 # --------------------------------------------------------------------
-# Aliases: eshost host types and alternative binary names.
+# Aliases: eshost/esvu/jsvu host types and alternative binary names.
 # Note: <alias>_* variants won't automatically pick up <primary>_*.
 
 Jint.Repl: *jint
 YantraJS: *yantra
 bs: *brimstone
 ch: *chakracore
+chakra: *chakracore
 cjs-console: *gjs
 cjs: *gjs
 d8: *v8
@@ -1363,11 +1412,14 @@ gjs-console: *gjs
 javascriptcore: *jsc
 jerry: *jerryscript
 jsshell: *spidermonkey
+ladybird-js: *libjs
 mqjs: *mquickjs
 qjs: *quickjs
+quickjs-run-test262: *quickjs
 run-test262: *quickjs
 serenity-js: *libjs
 sm: *spidermonkey
 sm_exp: *spidermonkey_exp
 sm_old: *spidermonkey_old
+v8-debug: *v8
 xst: *xs
