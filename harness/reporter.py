@@ -706,7 +706,6 @@ class Reporter:
         if self._report_rusage_mode != "no" and rusage:
             rusage = {
                 "started_at": self._format_timestamp(self._started_at),
-                "finished_at": self._format_timestamp(finished_at),
                 **rusage,
             }
 

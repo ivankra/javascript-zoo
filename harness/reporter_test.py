@@ -418,9 +418,7 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertEqual(out["rusage"]["peak_rss_mb"], 2.0)
         self.assertEqual(out["rusage"]["run_duration_sec"]["test/a.strict.js"], 1.25)
         self.assertEqual(out["rusage"]["run_rss_mb"]["test/a.strict.js"], 2.0)
-        self.assertEqual(list(out["rusage"])[:2], ["started_at", "finished_at"])
         self.assertRegex(out["rusage"]["started_at"], r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC$")
-        self.assertRegex(out["rusage"]["finished_at"], r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC$")
 
     def test_json_omits_rusage_when_disabled(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="no")
@@ -459,7 +457,6 @@ class TestReporterRusageJson(unittest.TestCase):
             ])
             out = json.loads(r.to_json())
         self.assertEqual(out["rusage"]["started_at"], "2026-04-05 04:28:10 UTC")
-        self.assertEqual(out["rusage"]["finished_at"], "2026-04-05 04:28:12 UTC")
         self.assertEqual(out["rusage"]["duration_sec"], 2.5)
 
     def test_json_reports_zero_rusage_values(self):
