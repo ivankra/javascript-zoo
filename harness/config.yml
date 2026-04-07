@@ -248,10 +248,16 @@ cesanta-v7:
 chakracore: &chakracore
   console_log: ['console.log', 'print', 'WScript.Echo']
   flags:
-    # - { if: 'test262', then: '-Test262' }  # requires --test-build
-    - { if: 'flags:module', then: '--module' }
-  ignore_sigabrt: true
-  timeout_sec: 10
+    - if: test262
+      then:
+        # requires binary built with --test-build/-DCMAKE_BUILD_TYPE=RelWithDebInfo
+        shell: "if $BINARY -? 2>&1 | grep -q Test262; then echo -Test262; fi"
+    - if: features:host-gc-required
+      then: -CollectGarbage
+    - if: flags:module
+      then: --module
+  prelude:
+    - file: engines/chakracore/prelude.js
 
 continuum:
   console_log: console.log

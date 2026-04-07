@@ -12,10 +12,8 @@ JIT_ARCHS = amd64
 ifeq ($(filter $(DOCKER_ARCH),$(JIT_ARCHS)),$(DOCKER_ARCH))
 $(eval $(call build_engine,chakracore,Dockerfile))
 $(eval $(call build_engine,chakracore_jitless,Dockerfile,--build-arg JITLESS=y))
-$(eval $(call build_engine,chakracore_full,Dockerfile,,--build-arg FULL=y --build-arg JITLESS=y))
-$(eval $(call build_engine,chakracore_test,Dockerfile,,--build-arg FULL=y --build-arg JITLESS=y --build-arg TEST=y))
+$(eval $(call build_engine,chakracore_full,Dockerfile,--build-arg FULL=y --build-arg JITLESS=y))
 else
 $(eval $(call build_engine,chakracore,Dockerfile,--build-arg JITLESS=y))
-$(eval $(call build_engine,chakracore_full,Dockerfile,,--build-arg FULL=y --build-arg JITLESS=y))
-$(eval $(call build_engine,chakracore_test,Dockerfile,,--build-arg FULL=y --build-arg JITLESS=y --build-arg TEST=y))
+$(eval $(call build_engine,chakracore_full,Dockerfile,--build-arg FULL=y --build-arg JITLESS=y))
 endif

@@ -17,18 +17,20 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 # ChakraICU.h:21:10: fatal error: 'unicode/uvernum.h' file not found
 RUN apt-get update -y && apt-get install -y libicu-dev
 
-# FULL=y: build with Intl support
-ARG FULL=
+# FULL=y: enable Intl support and test flags (especially -Test262)
+ARG FULL=n
 # JITLESS=y: JIT-less build
-ARG JITLESS=
-# TEST=y: build with --test-build
-ARG TEST=
+ARG JITLESS=n
 
 RUN ./build.sh --ninja --static \
-      $(if [ "$TEST" = y ]; then echo --test-build; fi) \
-      $(if [ "$FULL" = y ]; then echo --embed-icu; \
-                            else echo --no-icu --without-intl; fi) \
-      $(if [ "$JITLESS" = y ]; then echo --no-jit; fi)
+      $(if [ "$FULL" = y ]; then \
+          echo --embed-icu --test-build; \
+        else \
+          echo --no-icu --without-intl; \
+        fi) \
+      $(if [ "$JITLESS" = y ] || [ "$(uname -m)" != "x86_64" ]; then \
+          echo --no-jit; \
+        fi)
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/chakracore \

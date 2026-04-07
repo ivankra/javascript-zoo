@@ -160,6 +160,7 @@ PROBES: dict[str, dict] = {
     "$262.gc": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.gc === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
+        "fm_features": {"host-gc-required"},
         "ok": "PROBE_OK",
     },
     "$262.global": {
