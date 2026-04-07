@@ -14,9 +14,6 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libssl-dev
 
-COPY engines/boa/boa.patch ./
-RUN git apply boa.patch || true
-
 RUN cargo build --release --bin boa
 
 COPY build/dist.py ./
