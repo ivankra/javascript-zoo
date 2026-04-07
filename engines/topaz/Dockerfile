@@ -18,4 +18,6 @@ COPY engines/topaz/topaz_runner.csproj /src/topaz_runner.csproj
 RUN dotnet publish topaz_runner.csproj -c Release -o /dist/topaz-dist
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/topaz --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/topaz-dist/topaz_runner.dll" "$@"'
+RUN ./dist.py /dist/topaz \
+      --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/topaz-dist/topaz_runner.dll" "$@"' \
+      version=$(git describe --tags | sed 's/^release-v//')

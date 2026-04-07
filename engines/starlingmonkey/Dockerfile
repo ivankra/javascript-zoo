@@ -29,4 +29,5 @@ RUN mkdir -p /dist/starlingmonkey-dist && \
     find deps -name wasmtime -type f -executable -exec cp {} /dist/starlingmonkey-dist/wasmtime ';'
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/starlingmonkey
+RUN ./dist.py /dist/starlingmonkey \
+      version=$(git describe --tags --match 'starlingmonkey-v*' | sed 's/starlingmonkey-v//')
