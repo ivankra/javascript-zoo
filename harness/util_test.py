@@ -207,6 +207,15 @@ class VersionSortKeyTest(unittest.TestCase):
         # "test/a/sub" should come before "test/a-b" because '/' < '-'
         self.assertEqual(self._sorted(["test/a-b", "test/a/sub"]), ["test/a/sub", "test/a-b"])
 
+    def test_equal_numeric_components_sort_by_zero_padding(self) -> None:
+        self.assertEqual(self._sorted([
+            "test/language/comments/hashbang/escaped-bang-u21.js",
+            "test/language/comments/hashbang/escaped-bang-u0021.js",
+        ]), [
+            "test/language/comments/hashbang/escaped-bang-u0021.js",
+            "test/language/comments/hashbang/escaped-bang-u21.js",
+        ])
+
 
 class FileDiscoveryFromListTest(unittest.TestCase):
     def test_basic(self) -> None:
