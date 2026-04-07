@@ -9,7 +9,7 @@ from functools import cache
 from pathlib import Path
 from typing import Any, ClassVar
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 

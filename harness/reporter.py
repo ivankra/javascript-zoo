@@ -14,7 +14,7 @@ from datetime import UTC, datetime
 from collections import Counter
 from collections.abc import Callable
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, TypedDict
 
 from .config import EngineConfig
 from .frontmatter import test262_features_yaml
@@ -24,6 +24,11 @@ from .util import get_git_revision, version_sort_key
 
 if TYPE_CHECKING:
     from .util import FileDiscovery
+
+
+class WorkerPoolKwargs(TypedDict):
+    initializer: Callable[[int | None], None]
+    initargs: tuple[int | None]
 
 
 @dataclasses.dataclass
@@ -279,7 +284,7 @@ class Reporter:
             return
         os.write(cls._worker_started_pipe_w, test_id.encode("utf-8", errors="surrogateescape") + b"\n")
 
-    def worker_pool_kwargs(self) -> dict[str, object]:
+    def worker_pool_kwargs(self) -> WorkerPoolKwargs:
         """Executor kwargs needed for exact worker-start progress reporting."""
         if self._started_pipe_r is None or self._started_pipe_w is None:
             read_fd, write_fd = os.pipe()

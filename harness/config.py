@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 
 from .tags import FilterExpr
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 REPO_ROOT = Path(__file__).parent.parent

@@ -216,6 +216,7 @@ class Runner:
     def __init__(self, config: EngineConfig) -> None:
         config.resolve()
         self.config = config
+        self.current_proc: subprocess.Popen[bytes] | None = None
 
     def run_command(
         self,
@@ -270,6 +271,7 @@ class Runner:
                 # New session = dedicated process group; lets us kill wrappers/children.
                 start_new_session=True,
             )
+            self.current_proc = proc
             watchdog: MemoryWatchdog | None = None
             if memory_limit_mb:
                 watchdog = MemoryWatchdog.get()
@@ -291,6 +293,7 @@ class Runner:
             # Kill any orphaned children in the process group
             if proc is not None:
                 _kill_pgroup(proc.pid, signal.SIGKILL)
+            self.current_proc = None
             wall = time.monotonic() - start
 
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
