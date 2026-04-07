@@ -23,22 +23,18 @@ if TYPE_CHECKING:
 
 
 class Verdict(StrEnum):
-    """Test result's coarse classification."""
+    """Test outcome classification."""
 
     OK = "OK"
-    FAILED = "FAILED"
-    SKIPPED = "SKIPPED"  # didn't run the test due to some filter
-
-
-class ErrorType(StrEnum):
-    """Fine-grained subcategories for FAILED/SKIPPED verdicts."""
-
-    FAILED = "FAILED"    # unclassified error / missing OK marker / generic Error exception
-    CRASHED = "CRASHED"  # killed by a signal or runtime panic
-    TIMEOUT = "TIMEOUT"
+    # Didn't run the test due to some filter
+    SKIPPED = "skipped"
+    # Every verdict other than OK/SKIPPED means a failure.
+    FAILED = "failed"    # unclassified/generic error, Error exception, missing OK marker
+    CRASHED = "crashed"  # killed by a signal or runtime panic
+    TIMEOUT = "timeout"
     OOM = "OOM"
     # Non-zero exit code (low priority, only given when no better error type fits)
-    EXIT = "EXIT"
+    EXIT = "exit"
     # Standard JavaScript exception types
     SYNTAX_ERROR = "SyntaxError"
     REFERENCE_ERROR = "ReferenceError"
@@ -59,18 +55,17 @@ class ErrorType(StrEnum):
     # Got "Test262:AsyncTestFailure:..."
     ASYNC_TEST_FAILURE = "AsyncTestFailure"
     # Missing "Test262:AsyncTestComplete" marker
-    NO_ASYNC_TEST_COMPLETE = "NO_ASYNC_TEST_COMPLETE"
+    NO_ASYNC_TEST_COMPLETE = "NoAsyncTestComplete"
 
     @classmethod
-    def from_js_error(cls, exception_name: str) -> ErrorType | None:
+    def from_js_error(cls, exception_name: str) -> Verdict | None:
         if exception_name == "Error":
-            return ErrorType.FAILED
+            return cls.FAILED
         try:
-            et = cls(exception_name)
-            return et if et.value.endswith("Error") else None
+            verdict = cls(exception_name)
+            return verdict if verdict.value.endswith("Error") else None
         except ValueError:
             return None
-
 
 @dataclasses.dataclass
 class RunRusage:
@@ -111,8 +106,11 @@ class RunResult:
     # Original test file path relative to test root (discovery key, e.g. "test/foo.js").
     # Used for grouping runs by file.  Defaults to run_id when not explicitly set.
     test_id: str | None = None
-    # Final outcome: set by Annotator
-    verdict: Verdict | None = None
+    # Test outcome classification.
+    # Mostly populated by Annotator, with some runtime errors by Runner.
+    verdict_type: Verdict | None = None
+    # Human-readable one-line explanation. None when verdict_type is self-explanatory.
+    verdict_detail: str | None = None
     # Shell-renderable command string for reproducibility/debugging.
     command: str | None = None
     cwd: str | None = None
@@ -122,10 +120,6 @@ class RunResult:
     # Refined output streams with engine-specific cleanups applied by Clasifier
     stdout_cleaned: str | None = None
     stderr_cleaned: str | None = None
-    # Coarse failure reason; for test262 negative maps to expected error class.
-    error_type: ErrorType | None = None
-    # Human-readable one-line explanation (None when error_type is self-explanatory).
-    error_message: str | None = None
     # Sidecar build_metadata loaded from <engine>.json, carried for reporting.
     build_metadata: dict[str, Any] = dataclasses.field(default_factory=dict)
     # Concrete runnable script path passed to the engine
@@ -165,40 +159,56 @@ class RunResult:
         sep = "" if out.endswith("\n") else "\n"
         return f"{err}{sep}{out}"
 
+    def is_ok(self) -> bool:
+        return self.verdict_type is Verdict.OK
+
+    def is_skipped(self) -> bool:
+        return self.verdict_type is Verdict.SKIPPED
+
+    def is_failed(self) -> bool:
+        return self.verdict_type not in (None, Verdict.OK, Verdict.SKIPPED)
+
+    def coarse_verdict(self) -> Verdict | None:
+        if self.verdict_type is None:
+            return None
+        return Verdict.FAILED if self.is_failed() else self.verdict_type
+
     def verdict_message(self) -> str:
         """Render verdict plus optional error detail as a compact status string."""
-        if self.verdict is None:
+        if self.verdict_type is None:
             return ""
-        assert self.error_message not in ("OK", "FAILED", "SKIPPED")
-        if self.error_type in (ErrorType.FAILED, ErrorType.EXIT):
-            # Format EXIT as simply their error message: "exit code N"
-            assert self.verdict == Verdict.FAILED
-            return self.error_message or "FAILED"
-        status = str(self.error_type or self.verdict)
-        if self.error_message:
-            status += f": {self.error_message}"
+        assert self.verdict_detail != "OK"
+        if self.verdict_type in (Verdict.FAILED, Verdict.EXIT, Verdict.NEGATIVE):
+            return self.verdict_detail or str(self.verdict_type)
+        status = str(self.verdict_type)
+        if self.verdict_detail:
+            status += f": {self.verdict_detail}"
         return status
 
     def to_dict(self) -> dict[str, Any]:
         d = dataclasses.asdict(self)
-        if d.get("verdict") is not None:
-            d["verdict"] = str(d["verdict"])
-        if d.get("error_type") is not None:
-            d["error_type"] = str(d["error_type"])
+        if d.get("verdict_type") is not None:
+            d["verdict_type"] = str(d["verdict_type"])
         return d
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> RunResult:
         allowed = {f.name for f in dataclasses.fields(cls)}
-        unknown = sorted(set(data) - allowed)
+        compat_fields = {"verdict", "error_type", "error_message"}
+        unknown = sorted(set(data) - allowed - compat_fields)
         if unknown:
             raise ValueError(f"unknown RunResult fields: {unknown}")
         try:
             values = {k: data[k] for k in allowed if k in data}
-            if values.get("verdict") is not None:
-                values["verdict"] = Verdict(str(values["verdict"]))
-            if values.get("error_type") is not None:
-                values["error_type"] = ErrorType(str(values["error_type"]))
+            if "verdict_type" not in values:
+                if data.get("error_type") is not None:
+                    values["verdict_type"] = data["error_type"]
+                elif data.get("verdict") is not None:
+                    values["verdict_type"] = data["verdict"]
+            if "verdict_detail" not in values and data.get("error_message") is not None:
+                values["verdict_detail"] = data["error_message"]
+            if values.get("verdict_type") is not None:
+                values["verdict_type"] = Verdict(str(values["verdict_type"]))
             if "rusage" in values and isinstance(values["rusage"], dict):
                 values["rusage"] = RunRusage(**{
                     k: v for k, v in values["rusage"].items()
@@ -212,7 +222,7 @@ class RunResult:
 class Runner:
     """Process executor: launches engine, captures output, measures resources.
 
-    Classification (verdict/error_type) is intentionally separate – use Annotator.
+    Classification (verdict_type/verdict_detail) is intentionally separate – use Annotator.
     """
 
     def __init__(self, config: EngineConfig, on_spawn: Callable[[int], None] | None = None) -> None:
@@ -244,7 +254,7 @@ class Runner:
         cwd: str | None = None,
         env: dict[str, str] | None = None,
     ) -> RunResult:
-        """Execute argv and return raw RunResult (verdict is not set here).
+        """Execute argv and return raw RunResult (verdict_type is not set here).
 
         Uses resource.getrusage(RUSAGE_CHILDREN) for timing/RSS measurements.
         Timeout is two-step: SIGTERM grace period (0.2s), then SIGKILL.
@@ -351,13 +361,11 @@ class Runner:
         )
 
         if oom_killed:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.OOM
-            run.error_message = f">{memory_limit_mb}MB"
+            run.verdict_type = Verdict.OOM
+            run.verdict_detail = f">{memory_limit_mb}MB"
         elif timed_out:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.TIMEOUT
-            run.error_message = f">{timeout:.0f}s"
+            run.verdict_type = Verdict.TIMEOUT
+            run.verdict_detail = f">{timeout:.0f}s"
 
         return run
 

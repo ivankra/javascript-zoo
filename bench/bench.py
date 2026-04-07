@@ -94,12 +94,12 @@ class BenchResult:
         """Add one RunResult to the aggregated result.
 
         run.benchmarks must be populated with all expected keys (None for missing scores).
-        run.error_message holds the bench error string when run.verdict is FAIL.
+        run.verdict_detail holds the bench error string when run.verdict_type is a failure.
         """
         if not self.time:
             self.time = START_TIME
 
-        error = run.verdict_message() if run.verdict is Verdict.FAILED else None
+        error = run.verdict_message() if run.is_failed() else None
         m = run.rusage
         for key, score in run.benchmarks.items():
             if key not in self.benchmarks:
@@ -405,14 +405,14 @@ class BenchRunner:
         run = self.annotator.classify(run)
         run.benchmarks = scores  # type: ignore[assignment]
 
-        if run.verdict is not Verdict.FAILED:
+        if not run.is_failed():
             if expected and not any(v is not None for v in scores.values()):
-                run.verdict = Verdict.FAILED
-                run.error_message = "No scores in the output"
+                run.verdict_type = Verdict.FAILED
+                run.verdict_detail = "No scores in the output"
 
         if self.cfg.bench_ignore_errors:
-            run.verdict = Verdict.OK
-            run.error_message = None
+            run.verdict_type = Verdict.OK
+            run.verdict_detail = None
 
         self.last = run
         return run
@@ -421,7 +421,7 @@ class BenchRunner:
         """Add self.last to result. Prints error if failed. Returns True on error."""
         assert self.last is not None
         self.result.add_run(self.last)
-        if self.last.verdict is Verdict.FAILED:
+        if self.last.is_failed():
             print(f"{self.name}: {self.last.run_id}: {self.last.verdict_message()}", flush=True)
             return True
         return False

@@ -8,7 +8,7 @@ import re
 import signal
 
 from .config import EngineConfig
-from .runner import ErrorType, RunResult, Verdict
+from .runner import RunResult, Verdict
 
 
 # Regex to match JS error constructor names in engine output.
@@ -19,7 +19,7 @@ _JS_ERROR_NAME_RE = re.compile(
 
 
 class Annotator:
-    """Annotates RunResult with verdict/error_type/error_message."""
+    """Annotates RunResult with verdict_type/verdict_detail."""
 
     # Strip ANSI escape sequences (CSI codes) from all engine output by default.
     _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
@@ -85,33 +85,30 @@ class Annotator:
         run.stderr_cleaned = apply_replacements(run.stderr or "", self._stderr_replace)
 
         # Timeout and OOM were already classified by Runner.
-        if run.error_type in (ErrorType.TIMEOUT, ErrorType.OOM):
-            run.verdict = Verdict.FAILED
+        if run.verdict_type in (Verdict.TIMEOUT, Verdict.OOM):
             return
 
         # Clear any stale classification from Runner.
-        run.error_type = None
-        run.error_message = None
+        run.verdict_type = None
+        run.verdict_detail = None
 
         # Crash = negative exit code (terminated by signal).
         if run.exit_code is not None and run.exit_code < 0 and \
                 not (self._config.ignore_sigabrt and run.exit_code == -6):
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.CRASHED
+            run.verdict_type = Verdict.CRASHED
             signum = -run.exit_code
             try:
-                run.error_message = signal.Signals(signum).name
+                run.verdict_detail = signal.Signals(signum).name
             except ValueError:
-                run.error_message = f"signal {signum}"
+                run.verdict_detail = f"signal {signum}"
             return
 
         # Check for runtime panic messages
         exc = (self._match_exception(run.stderr_cleaned or "", self._crash_cres) or
                self._match_exception(run.stdout_cleaned or "", self._crash_cres))
         if exc:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.CRASHED
-            run.error_message = exc[1]
+            run.verdict_type = Verdict.CRASHED
+            run.verdict_detail = exc[1]
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
 
@@ -123,23 +120,21 @@ class Annotator:
 
         errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
                   self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
-        test262_error = any(e[0] == ErrorType.TEST262_ERROR for e in errors)
+        test262_error = any(e[0] == Verdict.TEST262_ERROR for e in errors)
 
         if "Test262: This statement should not be evaluated." in output:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.DONOTEVALUATE
+            run.verdict_type = Verdict.DONOTEVALUATE
             return
 
         # test262 async protocol
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:
                 m = re.search(r"Test262:AsyncTestFailure:\s*(.*)", output)
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.ASYNC_TEST_FAILURE
-                run.error_message = m.group(1).strip() if m else None
+                run.verdict_type = Verdict.ASYNC_TEST_FAILURE
+                run.verdict_detail = m.group(1).strip() if m else None
                 # Strip redundant "Test262Error: " prefixes from message
-                while run.error_message and run.error_message.startswith("Test262Error:"):
-                    run.error_message = run.error_message[len("Test262Error:"):].strip()
+                while run.verdict_detail and run.verdict_detail.startswith("Test262Error:"):
+                    run.verdict_detail = run.verdict_detail[len("Test262Error:"):].strip()
                 self._shorten_message(run, strip_line_prefix=strip_line_prefix)
                 return
 
@@ -147,9 +142,8 @@ class Annotator:
             ok_required = True
 
         if ok_found and fail_found:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.FAILED
-            run.error_message = "found both ok and fail markers"
+            run.verdict_type = Verdict.FAILED
+            run.verdict_detail = "found both ok and fail markers"
             return
 
         # ok_found means the script ran to completion (ScriptExecutionFinished
@@ -160,19 +154,18 @@ class Annotator:
         # Do not ignore Test262Error's however here
         # e.g. libjs test/language/module-code/instn-named-bndng-var.js
         if ok_found and not fail_found and not test262_error:
-            run.verdict = Verdict.OK
+            run.verdict_type = Verdict.OK
             return
 
         if errors:
             best_et, best_msg = errors[0]
             for et, msg in errors:
-                if et != ErrorType.FAILED:
+                if et != Verdict.FAILED:
                     best_et, best_msg = et, msg
                     break
             msgs = [msg for _, msg in errors if msg]
-            run.verdict = Verdict.FAILED
-            run.error_type = best_et
-            run.error_message = "\n".join(msgs) if msgs else None
+            run.verdict_type = best_et
+            run.verdict_detail = "\n".join(msgs) if msgs else None
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
 
@@ -182,36 +175,33 @@ class Annotator:
             if run.test_path:
                 line_filt = line.replace(os.path.basename(run.test_path), "<test>")
             for m in _JS_ERROR_NAME_RE.finditer(line_filt):
-                js_exc = ErrorType.from_js_error(m.group(1))
+                js_exc = Verdict.from_js_error(m.group(1))
                 if js_exc is not None:
-                    run.verdict = Verdict.FAILED
-                    run.error_type = js_exc
-                    run.error_message = line
+                    run.verdict_type = js_exc
+                    run.verdict_detail = line
                     self._shorten_message(run, strip_line_prefix=strip_line_prefix)
                     return
 
         if fail_found or (ok_required and not ok_found):
-            run.verdict = Verdict.FAILED
+            run.verdict_type = Verdict.FAILED
             if expect_async and "Test262:AsyncTestComplete" not in output:
-                run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
+                run.verdict_type = Verdict.NO_ASYNC_TEST_COMPLETE
             else:
-                run.error_type = ErrorType.FAILED
-                run.error_message = output or None
+                run.verdict_detail = output or None
                 self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
 
         # TODO: fix Promise.prototype.finally.js - many engines pass with non-zero exit code
         assert run.exit_code is not None
         if run.exit_code != 0 and 'es2018/Promise.prototype.finally.js' not in (run.test_path or ''):
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.EXIT
-            run.error_message = f"exit code {run.exit_code}"
+            run.verdict_type = Verdict.EXIT
+            run.verdict_detail = f"exit code {run.exit_code}"
             if self._config.exit_code_for_syntax_error == run.exit_code:
-                run.error_type = ErrorType.SYNTAX_ERROR
-                run.error_message = f"exit code {run.exit_code}"
+                run.verdict_type = Verdict.SYNTAX_ERROR
+                run.verdict_detail = f"exit code {run.exit_code}"
             return
 
-        run.verdict = Verdict.OK
+        run.verdict_type = Verdict.OK
 
     def _check_negative(
         self,
@@ -221,48 +211,40 @@ class Annotator:
         negative_type: str,
     ) -> None:
         """Post-classify check for negative tests. Mutates run in place."""
-        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED, ErrorType.OOM):
+        assert run.verdict_type is not None
+        if run.verdict_type in (Verdict.TIMEOUT, Verdict.CRASHED, Verdict.OOM):
             return
 
-        if negative_phase in ("parse", "resolution"):
-            if run.error_type is None:
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.NEGATIVE
-                run.error_message = "negative test did not fail"
-                return
-
-        if run.error_type is not None:
-            got = run.error_type
-            got_message = run.verdict_message()
-            expected = ErrorType.from_js_error(negative_type)
-            assert expected is not None, f"Unknown negative.type in test262 frontmatter: {negative_type}"
-
-            # Heuristic: accept exit code as a substitute error type for
-            # negative tests when the engine doesn't format the error properly.
-            if got != expected and run.error_type == ErrorType.EXIT:
-                if expected == ErrorType.SYNTAX_ERROR and self._config.exit_code_may_be_syntax_error == run.exit_code:
-                    got = ErrorType.SYNTAX_ERROR
-                elif expected == ErrorType.TEST262_ERROR and self._config.exit_code_may_be_test262_error == run.exit_code:
-                    got = ErrorType.TEST262_ERROR
-
-            if got != expected:
-                run.error_message = f"expected {negative_type}, got: {got_message}"
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.NEGATIVE
-                return
-        else:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.NEGATIVE
-            run.error_message = "expected error not thrown"
+        # if negative_phase in ("parse", "resolution"):
+        if run.is_ok():
+            run.verdict_type = Verdict.NEGATIVE
+            run.verdict_detail = f"Expected {negative_type} but test passed"
             return
 
-        run.verdict = Verdict.OK
-        run.error_type = None
-        run.error_message = None
+        got = run.verdict_type
+        got_message = run.verdict_message()
+        expected = Verdict.from_js_error(negative_type)
+        assert expected is not None, f"Unknown negative.type in test262 frontmatter: {negative_type}"
+
+        # Heuristic: accept exit code as a substitute error type for
+        # negative tests when the engine doesn't format the error properly.
+        if got != expected and run.verdict_type == Verdict.EXIT:
+            if expected == Verdict.SYNTAX_ERROR and self._config.exit_code_may_be_syntax_error == run.exit_code:
+                got = Verdict.SYNTAX_ERROR
+            elif expected == Verdict.TEST262_ERROR and self._config.exit_code_may_be_test262_error == run.exit_code:
+                got = Verdict.TEST262_ERROR
+
+        if got != expected:
+            run.verdict_detail = f"Expected {negative_type} but got: {got_message}"
+            run.verdict_type = Verdict.NEGATIVE
+            return
+
+        run.verdict_type = Verdict.OK
+        run.verdict_detail = None
 
     def _collect_errors(
         self, text: str, cres: list[re.Pattern[str]]
-    ) -> list[tuple[ErrorType, str | None]]:
+    ) -> list[tuple[Verdict, str | None]]:
         """Collect all structured error matches from text lines."""
         results = []
         for line in text.splitlines():
@@ -270,12 +252,12 @@ class Annotator:
                 m = cre.search(line)
                 if m:
                     raw_type = m.group("type") if "type" in cre.groupindex else None
-                    et = ErrorType.from_js_error(raw_type) if raw_type else None
+                    et = Verdict.from_js_error(raw_type) if raw_type else None
                     message = m.group("message") if "message" in cre.groupindex else None
                     if et is None:
                         if raw_type:
                             message = f"{raw_type}: {message}" if message else raw_type
-                        results.append((ErrorType.FAILED, message or None))
+                        results.append((Verdict.FAILED, message or None))
                     else:
                         results.append((et, message or None))
                     break
@@ -283,72 +265,75 @@ class Annotator:
 
     def _match_exception(
         self, text: str, cres: list[re.Pattern[str]]
-    ) -> tuple[ErrorType, str | None] | None:
+    ) -> tuple[Verdict, str | None] | None:
         """Return the first structured exception match, or None."""
         matches = self._collect_errors(text, cres)
         return matches[0] if matches else None
 
     def _shorten_message(self, run: RunResult, *, strip_line_prefix: str | None = None) -> None:
-        if not run.error_message:
+        if not run.verdict_detail:
             return
 
         # Strip per-line prefix, drop empty lines, dedup, flatten to a single line
-        lines = run.error_message.splitlines()
+        lines = run.verdict_detail.splitlines()
         if strip_line_prefix:
             lines = [ln[len(strip_line_prefix):] if ln.startswith(strip_line_prefix) else ln
                      for ln in lines]
         lines = [ln.strip() for ln in lines]
         lines = [ln for (i, ln) in enumerate(lines)
                  if ln.lower() not in ('', 'failed', 'error', 'undefined') and (i == 0 or ln != lines[i-1])]
-        run.error_message = '; '.join(lines)
+        run.verdict_detail = '; '.join(lines)
 
         # Shorten full absolute script path in messages to just
         # the basename of the original test file to keep messages
         # short and consistent between runs.
         for path in [run.script_path, run.test_path]:
-            if path and path.startswith('/') and path in run.error_message:
-                run.error_message = run.error_message.replace(path, os.path.basename(run.test_path or path))
+            if path and path.startswith('/') and path in run.verdict_detail:
+                run.verdict_detail = run.verdict_detail.replace(path, os.path.basename(run.test_path or path))
 
         # Replace temp script basename (from assembler.py: "t262-{os.getpid()}.{...}")
         # with the basename of the original test filename
         if run.script_path and run.test_path and '/t262-' in run.script_path:
-            run.error_message = run.error_message.replace(os.path.basename(run.script_path), os.path.basename(run.test_path))
+            run.verdict_detail = run.verdict_detail.replace(os.path.basename(run.script_path), os.path.basename(run.test_path))
 
         # Strip staging root (temp dir or --stage-dir) from module paths
         # to keep error messages short and consistent between runs.
         if run.cwd:
             assert run.cwd.startswith('/'), f"cwd must be absolute: {run.cwd}"
             cwd_slash = run.cwd + '/'
-            run.error_message = run.error_message.replace('file://' + cwd_slash, '')
-            run.error_message = run.error_message.replace(cwd_slash, '')
+            run.verdict_detail = run.verdict_detail.replace('file://' + cwd_slash, '')
+            run.verdict_detail = run.verdict_detail.replace(cwd_slash, '')
 
         while True:
-            message = run.error_message
+            message = run.verdict_detail
             assert message is not None
             lowered = message.lower()
             for prefix in ("error:", "failed:"):
                 if lowered.startswith(prefix):
-                    run.error_message = message[len(prefix):].strip()
+                    run.verdict_detail = message[len(prefix):].strip()
                     break
             else:
                 break
 
-        if run.error_type and run.error_type.endswith('Error') and run.error_message.startswith(run.error_type + ':'):
-            run.error_message = run.error_message[len(run.error_type)+1:].strip()
+        if run.verdict_type and run.verdict_type.endswith('Error') and run.verdict_detail.startswith(run.verdict_type + ':'):
+            run.verdict_detail = run.verdict_detail[len(run.verdict_type)+1:].strip()
 
         # Collapse tautological pairs like "SyntaxError: syntax error".
-        if run.error_type == ErrorType.SYNTAX_ERROR and run.error_message.lower() == 'syntax error':
-            run.error_message = ''
+        if run.verdict_type == Verdict.SYNTAX_ERROR and run.verdict_detail.lower() == 'syntax error':
+            run.verdict_detail = ''
 
-        run.error_message = run.error_message.strip()
-        if len(run.error_message) > 200:
-            run.error_message = run.error_message[:200] + '...'
+        run.verdict_detail = run.verdict_detail.strip()
+        if len(run.verdict_detail) > 200:
+            run.verdict_detail = run.verdict_detail[:200] + '...'
 
-        if run.error_message and run.error_message.lower() in ('ok', 'error', 'fail', 'failed', 'skipped', str(run.error_type)):
-            run.error_message = None
+        if run.verdict_detail and run.verdict_detail.lower() in ('ok', 'error', 'fail', 'failed', 'skipped'):
+            run.verdict_detail = None
 
-        if not run.error_message:
-            run.error_message = None
+        if run.verdict_detail == str(run.verdict_type):
+            run.verdict_detail = None
+
+        if not run.verdict_detail:
+            run.verdict_detail = None
 
 
 def apply_replacements(text: str, replacements: list[tuple[re.Pattern[str], str]]) -> str:

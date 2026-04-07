@@ -13,13 +13,13 @@ from typing import Any
 from unittest import mock
 
 from harness.config import EngineConfig
-from harness.runner import ErrorType, MemoryWatchdog, RunRusage, RunResult, Runner, Verdict
+from harness.runner import MemoryWatchdog, RunRusage, RunResult, Runner, Verdict
 
 
 def mk_run(**kwargs: Any) -> RunResult:
     defaults: dict[str, Any] = {
         "run_id": "t",
-        "verdict": None,
+        "verdict_type": None,
         "command": "eng x.js",
         "stdout": "",
         "stderr": "",
@@ -49,18 +49,15 @@ class RunResultTest(unittest.TestCase):
 
     def test_to_dict_roundtrip(self) -> None:
         r = mk_run(
-            verdict=Verdict.FAILED,
-            error_type=ErrorType.CRASHED,
-            error_message="signal 11",
+            verdict_type=Verdict.CRASHED,
+            verdict_detail="signal 11",
             exit_code=-11,
         )
         d = r.to_dict()
-        self.assertEqual(d["verdict"], "FAILED")
-        self.assertEqual(d["error_type"], "CRASHED")
+        self.assertEqual(d["verdict_type"], str(Verdict.CRASHED))
         r2 = RunResult.from_dict(d)
-        self.assertEqual(r2.verdict, Verdict.FAILED)
-        self.assertEqual(r2.error_type, ErrorType.CRASHED)
-        self.assertEqual(r2.error_message, "signal 11")
+        self.assertEqual(r2.verdict_type, Verdict.CRASHED)
+        self.assertEqual(r2.verdict_detail, "signal 11")
 
     def test_from_dict_rejects_unknown_fields(self) -> None:
         with self.assertRaisesRegex(ValueError, "unknown RunResult fields"):
@@ -74,28 +71,21 @@ class RunResultTest(unittest.TestCase):
         self.assertEqual(r.rusage.user_time, 0.8)
 
     def test_verdict_message_ok(self) -> None:
-        self.assertEqual(mk_run(verdict=Verdict.OK).verdict_message(), "OK")
-
-    def test_verdict_message_timeout(self) -> None:
-        r = mk_run(verdict=Verdict.FAILED, error_type=ErrorType.TIMEOUT)
-        self.assertEqual(r.verdict_message(), "TIMEOUT")
+        self.assertEqual(mk_run(verdict_type=Verdict.OK).verdict_message(), "OK")
 
     def test_verdict_message_error_with_message(self) -> None:
         r = mk_run(
-            verdict=Verdict.FAILED,
-            error_type=ErrorType.SYNTAX_ERROR,
-            error_message="Unexpected token",
+            verdict_type=Verdict.SYNTAX_ERROR,
+            verdict_detail="Unexpected token",
         )
         self.assertEqual(r.verdict_message(), "SyntaxError: Unexpected token")
 
     def test_verdict_message_failed_omits_error_type(self) -> None:
         r = mk_run(
-            verdict=Verdict.FAILED,
-            error_type=ErrorType.FAILED,
-            error_message="something went wrong",
+            verdict_type=Verdict.FAILED,
+            verdict_detail="something went wrong",
         )
         self.assertEqual(r.verdict_message(), "something went wrong")
-
 
 class ConfigRunnerSmokeTest(unittest.TestCase):
     def _make_binary(self, td: str, name: str = "eng") -> Path:
@@ -124,9 +114,8 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
                     memory_limit_mb=10,
                     timeout_sec=30,
                 )
-            self.assertEqual(run.verdict, Verdict.FAILED)
-            self.assertEqual(run.error_type, ErrorType.OOM)
-            self.assertIn(">10MB", run.error_message or "")
+            self.assertEqual(run.verdict_type, Verdict.OOM)
+            self.assertIn(">10MB", run.verdict_detail or "")
             self.assertIn("memory watchdog: killing", stderr.getvalue())
 
     def test_memory_addr_limit_mb(self) -> None:

@@ -40,7 +40,7 @@ class Stats:
         self.total += 1
         if verdict is Verdict.OK:
             self.passed += 1
-        elif verdict is Verdict.FAILED:
+        elif verdict is not None and verdict is not Verdict.SKIPPED:
             self.failed += 1
         else:
             self.skipped += 1
@@ -297,7 +297,7 @@ class Reporter:
         # Inline per-test output
         if self._verbose >= 1:
             t = f" {run.rusage.real_time * 1000:.2f}ms" if run.rusage.real_time else ""
-            if run.verdict is Verdict.FAILED:
+            if run.is_failed():
                 msg = f"{run.run_id}: {run.verdict_message()[:120]}{t}"
                 if self._use_color:
                     msg = f"\033[1;31m{msg}\033[0m"
@@ -305,7 +305,7 @@ class Reporter:
                 if self._verbose >= 2:
                     run.print_streams()
             else:
-                print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
+                print(f"{run.run_id}: {run.verdict_type.value if run.verdict_type else '?'}{t}", flush=True)
                 if self._verbose >= 3:
                     run.print_streams()
         # Dir progress tracking
@@ -314,8 +314,8 @@ class Reporter:
             fp = run.test_id
             d = os.path.dirname(fp)
             self._dir_done[d] += 1
-            self._dir_stats[d].add(run.verdict, run.weight)
-            if run.verdict is Verdict.OK:
+            self._dir_stats[d].add(run.verdict_type, run.weight)
+            if run.is_ok():
                 self._dir_passed[d] += 1
             else:
                 self._dir_failed_tests[d].append(os.path.basename(fp))
@@ -327,16 +327,16 @@ class Reporter:
         """
         for run in runs:
             self.add(run)
-            self._mode_counts[run.verdict or Verdict.FAILED] += 1
+            self._mode_counts[run.coarse_verdict() or Verdict.FAILED] += 1
 
         if runs:
             test_id = runs[0].test_id or runs[0].run_id or ""
             self._last_completed = test_id
             self._in_flight.pop(test_id, None)
 
-        if any(r.verdict is Verdict.SKIPPED for r in runs):
+        if any(r.is_skipped() for r in runs):
             self._file_counts[Verdict.SKIPPED] += 1
-        elif any(r.verdict is Verdict.FAILED for r in runs):
+        elif any(r.is_failed() for r in runs):
             self._file_counts[Verdict.FAILED] += 1
         else:
             self._file_counts[Verdict.OK] += 1
@@ -490,12 +490,13 @@ class Reporter:
             assert run.test_id is not None
             fp = run.test_id
             prev = fv.get(fp)
-            if prev is Verdict.FAILED or run.verdict is Verdict.FAILED:
+            coarse = run.coarse_verdict()
+            if prev is Verdict.FAILED or coarse is Verdict.FAILED:
                 fv[fp] = Verdict.FAILED
-            elif prev is Verdict.OK or run.verdict is Verdict.OK:
+            elif prev is Verdict.OK or coarse is Verdict.OK:
                 fv[fp] = Verdict.OK
             else:
-                fv[fp] = run.verdict
+                fv[fp] = coarse
         return fv
 
     def _file_weights(self) -> dict[str, float]:
@@ -517,7 +518,7 @@ class Reporter:
                 continue
             assert r.test_id is not None
             key = r.test_id
-            v = r.verdict or Verdict.FAILED
+            v = r.coarse_verdict() or Verdict.FAILED
             for qt in r.tags:
                 fv = tag_file_verdicts.setdefault(qt, {})
                 prev = fv.get(key)
@@ -842,7 +843,7 @@ class Reporter:
         n_skipped = sum(1 for v in fv.values() if v is Verdict.SKIPPED)
 
         # Failure recap (suppressed when verbose already printed them inline)
-        failed = [r for r in results if r.verdict is Verdict.FAILED]
+        failed = [r for r in results if r.is_failed()]
         if failed and self._verbose < 1:
             print(f"\nFailures ({len(failed)}):")
             max_failures = 50

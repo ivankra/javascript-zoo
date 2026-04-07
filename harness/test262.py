@@ -74,7 +74,7 @@ class Test262Worker(PoolWorker):
         if self.filter_expr and not self.filter_expr(tags):
             return [RunResult(
                 run_id=rel_path, test_id=rel_path, test_path=str(test_path),
-                verdict=Verdict.SKIPPED, error_message="filtered out",
+                verdict_type=Verdict.SKIPPED, verdict_detail="filtered out",
                 tags=tags,
             )]
 
@@ -126,7 +126,7 @@ class Test262Worker(PoolWorker):
                     negative_type=scenario.fm.negative_type if is_negative else None,
                 )
 
-                if run.verdict == Verdict.OK:
+                if run.is_ok():
                     break
 
             run.mode = scenario.mode

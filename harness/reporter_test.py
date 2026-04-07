@@ -33,7 +33,7 @@ def _run(
     return RunResult(
         run_id=run_id,
         test_id=test_id or run_id,
-        verdict=verdict,
+        verdict_type=verdict,
         tags=tags,
         mode=mode,
         rusage=rusage or RunRusage(),

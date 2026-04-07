@@ -8,13 +8,13 @@ from typing import Any
 
 from harness.annotator import Annotator
 from harness.config import EngineConfig
-from harness.runner import ErrorType, Runner, RunResult, Verdict
+from harness.runner import Runner, RunResult, Verdict
 
 
 def mk_run(**kwargs: Any) -> RunResult:
     defaults: dict[str, Any] = {
         "run_id": "t",
-        "verdict": None,
+        "verdict_type": None,
         "command": "eng x.js",
         "stdout": "",
         "stderr": "",
@@ -25,39 +25,458 @@ def mk_run(**kwargs: Any) -> RunResult:
     return RunResult(**defaults)
 
 
-# (label, run_kwargs, classify_kwargs, want_verdict, want_error_type, want_msg_substr)
-_CLASSIFY_CASES: list[tuple[str, dict, dict, Verdict, ErrorType | None, str]] = [
-    ("timeout preset",     {"exit_code": -9, "error_type": ErrorType.TIMEOUT}, {},                          Verdict.FAILED, ErrorType.TIMEOUT,                   ""),
-    ("oom preset",         {"exit_code": -9, "error_type": ErrorType.OOM, "error_message": ">1024MB"}, {}, Verdict.FAILED, ErrorType.OOM, ">1024MB"),
-    ("crash signal 11",    {"exit_code": -11},                                  {},                          Verdict.FAILED, ErrorType.CRASHED,                     "SIGSEGV"),
-    ("nonzero exit",       {"exit_code": 2},                                    {},                          Verdict.FAILED, ErrorType.EXIT,                      "2"),
-    ("clean ok",           {"stdout": "42\n"},                                  {},                          Verdict.OK,   None,                                ""),
-    ("nonzero exit+output", {"stdout": "ReferenceError: x not defined", "exit_code": 1}, {},              Verdict.FAILED, ErrorType.REFERENCE_ERROR,           "x not defined"),
-    ("ok pattern found",   {"stdout": "test.js: OK\nnoise"},                    {"ok_pattern": r"test\.js: OK"}, Verdict.OK,   None,                    ""),
-    ("ok pattern missing", {"stdout": "plain output"},                          {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.FAILED,     ""),
-    ("ok absent+error",    {"stdout": "SyntaxError: bad"},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.SYNTAX_ERROR,   "bad"),
-    ("ok absent+exit 3",   {"stdout": "", "exit_code": 3},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.FAILED,     ""),
+# (config_kwargs, run_kwargs, classify_kwargs, want_verdict_type, want_verdict_message)
+_CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
+    (
+        {},
+        {"stdout": "42\n"},
+        {},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {},
+        {"stdout": "Error"},
+        {"ok_pattern": r"OK"},
+        Verdict.FAILED,
+        "failed",
+    ),
+    (
+        {},
+        {"stdout": "", "exit_code": 3},
+        {"ok_pattern": r"OK"},
+        Verdict.FAILED,
+        "failed",
+    ),
+    (
+        {},
+        {"stdout": "plain output"},
+        {"ok_pattern": r"test\.js: OK"},
+        Verdict.FAILED,
+        "plain output",
+    ),
+    (
+        {},
+        {"exit_code": -9, "verdict_type": Verdict.TIMEOUT, "verdict_detail": ">10s"},
+        {},
+        Verdict.TIMEOUT,
+        "timeout: >10s",
+    ),
+    (
+        {},
+        {"exit_code": -9, "verdict_type": Verdict.OOM, "verdict_detail": ">1024MB"},
+        {},
+        Verdict.OOM,
+        "OOM: >1024MB",
+    ),
+    (
+        {},
+        {"exit_code": -11},
+        {},
+        Verdict.CRASHED,
+        "crashed: SIGSEGV",
+    ),
+    (
+        {},
+        {"exit_code": 2},
+        {},
+        Verdict.EXIT,
+        "exit code 2",
+    ),
+    (
+        {},
+        {"stdout": "ReferenceError: x not defined", "exit_code": 1},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError: x not defined",
+    ),
+    (
+        {},
+        {"stdout": "test.js: OK\nnoise"},
+        {"ok_pattern": r"test\.js: OK"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {},
+        {"stdout": "SyntaxError: bad"},
+        {"ok_pattern": r"test\.js: OK"},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: bad",
+    ),
+    (
+        {},
+        {"stdout": "EvalError: bad eval", "exit_code": 1},
+        {},
+        Verdict.EVAL_ERROR,
+        "EvalError: bad eval",
+    ),
+    (
+        {},
+        {"stdout": "RangeError", "exit_code": 1},
+        {},
+        Verdict.RANGE_ERROR,
+        "RangeError",
+    ),
+    (
+        {},
+        {"stdout": "RangeError: out of range", "exit_code": 1},
+        {},
+        Verdict.RANGE_ERROR,
+        "RangeError: out of range",
+    ),
+    (
+        {},
+        {"stdout": "URIError: bad uri", "exit_code": 1},
+        {},
+        Verdict.URI_ERROR,
+        "URIError: bad uri",
+    ),
+    (
+        {},
+        {"stdout": "InternalError: internal", "exit_code": 1},
+        {},
+        Verdict.INTERNAL_ERROR,
+        "InternalError: internal",
+    ),
+    (
+        {},
+        {"stdout": "AggregateError: many", "exit_code": 1},
+        {},
+        Verdict.AGGREGATE_ERROR,
+        "AggregateError: many",
+    ),
+    (
+        {},
+        {"stdout": "SuppressedError: suppressed", "exit_code": 1},
+        {},
+        Verdict.SUPPRESSED_ERROR,
+        "SuppressedError: suppressed",
+    ),
+    (
+        {},
+        {"stdout": "Test262Error: assert", "exit_code": 1},
+        {},
+        Verdict.TEST262_ERROR,
+        "Test262Error: assert",
+    ),
     # fail_pattern tests
-    ("ok+fail both present",  {"stdout": "test.js: OK\ntest.js: failed"},        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.FAILED, "both ok and fail"),
-    ("ok+fail ok only",       {"stdout": "test.js: OK"},                         {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.OK,     None,                 ""),
-    ("ok+fail exception line",{"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"}, {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.FAILED, "both ok and fail"),
-    ("ok+fail fail only",     {"stdout": "test.js: exception: TypeError: bad"},  {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.TYPE_ERROR,  "bad"),
+    (
+        {},
+        {"stdout": "test.js: OK\ntest.js: failed"},
+        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        Verdict.FAILED,
+        "found both ok and fail markers",
+    ),
+    (
+        {},
+        {"stdout": "test.js: OK"},
+        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {},
+        {"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"},
+        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        Verdict.FAILED,
+        "found both ok and fail markers",
+    ),
+    (
+        {},
+        {"stdout": "test.js: exception: TypeError: bad"},
+        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        Verdict.TYPE_ERROR,
+        "TypeError: test.js: exception: TypeError: bad",
+    ),
+    (
+        {},
+        {"stdout": "Test262: This statement should not be evaluated."},
+        {},
+        Verdict.DONOTEVALUATE,
+        "DONOTEVALUATE",
+    ),
     # async tests
-    ("async complete",     {"stdout": "Test262:AsyncTestComplete"},              {"expect_async": True},      Verdict.OK,   None,                                ""),
-    ("async failure",      {"stdout": "Test262:AsyncTestFailure: boom"},         {"expect_async": True},      Verdict.FAILED, ErrorType.ASYNC_TEST_FAILURE,        "boom"),
-    ("async missing",      {"stdout": "plain"},                                  {"expect_async": True},      Verdict.FAILED, ErrorType.NO_ASYNC_TEST_COMPLETE, ""),
+    (
+        {},
+        {"stdout": "Test262:AsyncTestComplete"},
+        {"expect_async": True},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {},
+        {"stdout": "Test262:AsyncTestFailure: boom"},
+        {"expect_async": True},
+        Verdict.ASYNC_TEST_FAILURE,
+        "AsyncTestFailure: boom",
+    ),
+    (
+        {},
+        {"stdout": "plain"},
+        {"expect_async": True},
+        Verdict.NO_ASYNC_TEST_COMPLETE,
+        "NoAsyncTestComplete",
+    ),
+    # negative tests
+    (
+        {},
+        {"stderr": "SyntaxError: bad", "exit_code": 1},
+        {"negative_phase": "parse", "negative_type": "SyntaxError"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {},
+        {"exit_code": -9, "verdict_type": Verdict.TIMEOUT},
+        {"negative_phase": "parse", "negative_type": "SyntaxError"},
+        Verdict.TIMEOUT,
+        "timeout",
+    ),
+    (
+        {},
+        {"exit_code": -11},
+        {"negative_phase": "runtime", "negative_type": "TypeError"},
+        Verdict.CRASHED,
+        "crashed: SIGSEGV",
+    ),
+    (
+        {},
+        {"stdout": "ok"},
+        {"negative_phase": "runtime", "negative_type": "TypeError"},
+        Verdict.NEGATIVE,
+        "Expected TypeError but test passed",
+    ),
+    (
+        {},
+        {"stdout": "RangeError"},
+        {"negative_phase": "runtime", "negative_type": "EvalError"},
+        Verdict.NEGATIVE,
+        "Expected EvalError but got: RangeError",
+    ),
+    (
+        {},
+        {"stderr": "TypeError: bad", "exit_code": 1},
+        {"negative_phase": "runtime", "negative_type": "SyntaxError"},
+        Verdict.NEGATIVE,
+        "Expected SyntaxError but got: TypeError: bad",
+    ),
+    (
+        {},
+        {"stdout": "ok"},
+        {"negative_phase": "parse", "negative_type": "SyntaxError"},
+        Verdict.NEGATIVE,
+        "Expected SyntaxError but test passed",
+    ),
+    (
+        {},
+        {"exit_code": 1},
+        {"negative_phase": "runtime", "negative_type": "SyntaxError"},
+        Verdict.NEGATIVE,
+        "Expected SyntaxError but got: exit code 1",
+    ),
+    (
+        {"exit_code_for_syntax_error": 101},
+        {"exit_code": 101},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: exit code 101",
+    ),
+    (
+        {"exit_code_for_syntax_error": 101},
+        {"exit_code": 101},
+        {"negative_phase": "parse", "negative_type": "SyntaxError"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {"exit_code_may_be_syntax_error": 7},
+        {"exit_code": 7},
+        {},
+        Verdict.EXIT,
+        "exit code 7",
+    ),
+    (
+        {"exit_code_may_be_syntax_error": 7},
+        {"exit_code": 7},
+        {"negative_phase": "parse", "negative_type": "SyntaxError"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {"exit_code_may_be_test262_error": 9},
+        {"exit_code": 9},
+        {},
+        Verdict.EXIT,
+        "exit code 9",
+    ),
+    (
+        {"exit_code_may_be_test262_error": 9},
+        {"exit_code": 9},
+        {"negative_phase": "runtime", "negative_type": "Test262Error"},
+        Verdict.OK,
+        "OK",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "TypeError: bad type\n    at file.js:1:7"},
+        {},
+        Verdict.TYPE_ERROR,
+        "TypeError: bad type",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "ReferenceError: unk is not defined\n    at <eval> (file.js:1)"},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError: unk is not defined",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "TypeError: from stdout", "stderr": "SyntaxError: from stderr"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: from stderr; from stdout",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "42", "stderr": "ReferenceError: unk"},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError: unk",
+    ),
+    (
+        {"errors_re": [r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "Exception: SyntaxError: oops\nglobal code@file.js:1"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: oops",
+    ),
+    (
+        {"errors_re": [r"^Uncaught (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "Uncaught ReferenceError: x not defined"},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError: x not defined",
+    ),
+    (
+        {"errors_re": [r"^Uncaught exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "Uncaught exception: ReferenceError: unk is not defined\n    at %entry (f.js:1)"},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError: unk is not defined",
+    ),
+    (
+        {"errors_re": [r"^\S+ \(line [0-9]+\): (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "/tmp/t.js (line 0): SyntaxError: oops"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: oops",
+    ),
+    (
+        {"errors_re": [r"^[^ ]+ (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "/tmp/t.js:1:7 TypeError: bad type\nStack:\n  @/tmp/t.js:1:7"},
+        {},
+        Verdict.TYPE_ERROR,
+        "TypeError: bad type",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>[^\n]+)"]},
+        {"stderr": "TypeError: bad"},
+        {},
+        Verdict.TYPE_ERROR,
+        "TypeError: bad",
+    ),
+    (
+        {"errors_re": [r"^Unhandled exception: (?P<type>[A-Za-z]+Error)(?:: (?P<message>.+))?$"]},
+        {"stderr": "Unhandled exception: SyntaxError: oops"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: oops",
+    ),
+    (
+        {"errors_re": [r"^Unhandled exception: (?P<type>[A-Za-z]+Error)(?:: (?P<message>.+))?$"]},
+        {"stderr": "Unhandled exception: ReferenceError"},
+        {},
+        Verdict.REFERENCE_ERROR,
+        "ReferenceError",
+    ),
+    (
+        {"errors_re": [r"(?P<type>[A-Za-z]+Error)"]},
+        {"stdout": "SyntaxError"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "CustomError: bad"},
+        {},
+        Verdict.FAILED,
+        "CustomError: bad",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error)$"]},
+        {"stdout": "CustomError"},
+        {},
+        Verdict.FAILED,
+        "CustomError",
+    ),
+    (
+        {"errors_re": [r"^Uncaught: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "Uncaught: TypeError: bad"},
+        {},
+        Verdict.TYPE_ERROR,
+        "TypeError: bad",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "TypeError: bad", "exit_code": -11},
+        {},
+        Verdict.CRASHED,
+        "crashed: SIGSEGV",
+    ),
+    (
+        {"errors_re": [r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "some error occurred", "exit_code": 1},
+        {},
+        Verdict.EXIT,
+        "exit code 1",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stderr": "SyntaxError: first\nReferenceError: second"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: first; second",
+    ),
+    (
+        {"errors_re": [
+            r"^Prefix: (?P<type>[A-Za-z]+Error): (?P<message>.+)$",
+            r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$",
+        ]},
+        {"stderr": "SyntaxError: oops"},
+        {},
+        Verdict.SYNTAX_ERROR,
+        "SyntaxError: oops",
+    ),
+    (
+        {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
+        {"stdout": "raw string"},
+        {},
+        Verdict.OK,
+        "OK",
+    ),
 ]
 
 class AnnotatorTest(unittest.TestCase):
     def test_classify(self) -> None:
-        cl = Annotator(EngineConfig())
-        for label, run_kw, cls_kw, want_v, want_et, want_msg in _CLASSIFY_CASES:
-            with self.subTest(label):
+        for cfg_kw, run_kw, cls_kw, want_vt, want_message in _CLASSIFY_CASES:
+            with self.subTest(config=cfg_kw, run=run_kw):
+                cl = Annotator(EngineConfig(**cfg_kw))
                 out = cl.classify(mk_run(**run_kw), **cls_kw)
-                self.assertEqual(out.verdict, want_v)
-                self.assertEqual(out.error_type, want_et)
-                if want_msg:
-                    self.assertIn(want_msg, out.error_message or "")
+                self.assertEqual(out.verdict_type, want_vt)
+                self.assertEqual(out.verdict_message(), want_message)
 
     def test_stdout_replace_re_anchors_match_per_line(self) -> None:
         # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
@@ -77,8 +496,8 @@ class AnnotatorTest(unittest.TestCase):
             errors_re=[r"^(?P<type>SyntaxError): (?P<message>.*)$"],
         ))
         run = cl.classify(mk_run(stdout="SyntaxError: syntax error\n", exit_code=1))
-        self.assertEqual(run.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertIsNone(run.error_message)
+        self.assertEqual(run.verdict_type, Verdict.SYNTAX_ERROR)
+        self.assertIsNone(run.verdict_detail)
         self.assertEqual(run.verdict_message(), "SyntaxError")
 
     def test_strip_ansi_from_stdout_and_stderr(self) -> None:
@@ -90,39 +509,6 @@ class AnnotatorTest(unittest.TestCase):
         ))
         self.assertEqual(run.stdout_cleaned, "Error: bad\n")
         self.assertEqual(run.stderr_cleaned, "OK\n")
-
-    def test_jsish(self) -> None:
-        cl = Annotator(EngineConfig.load("/bin/true", config_name="jsish"))
-        cases = [
-            (
-                "/conformance/es1/literals.string.hex.js:6: parse: Unsupported string escape: \\x\n"
-                'literals.string.hex.js:9:   "es1/literals.string.hex.js: failed",\n',
-                "SyntaxError: Unsupported string escape: \\x",
-            ),
-            (
-                "/conformance/es1/asi.js:14: parse: :13.6: error: syntax error, unexpected '}'\n"
-                "ERROR: \n",
-                "SyntaxError: unexpected '}'",
-            ),
-            (
-                "/conformance/es1/asi.eval.js:2: parse: /conformance/es1/asi.eval.js:2.7: error: syntax error, unexpected '}'\n"
-                "ERROR: \n",
-                "SyntaxError: unexpected '}'",
-            ),
-            (
-                "/conformance/es1/Array.prototype.join.generic.js:13: error: expected array object\n"
-                "ERROR: \n",
-                "expected array object",
-            ),
-            (
-                'typeof.null.js:11:  "es1/typeof.null.js: typeof null != \'object\'", \n',
-                "exit code 1",
-            ),
-        ]
-        for raw_stderr, want_vm in cases:
-            with self.subTest(want_vm):
-                run = cl.classify(mk_run(stderr=raw_stderr, exit_code=1))
-                self.assertEqual(run.verdict_message(), want_vm)
 
     def test_real_crash_produces_signal_name(self) -> None:
         import shutil
@@ -141,285 +527,18 @@ class AnnotatorTest(unittest.TestCase):
         assert exit_code is not None
         self.assertLess(exit_code, 0)  # negative = killed by signal
         result = Annotator(EngineConfig()).classify(run)
-        self.assertEqual(result.error_type, ErrorType.CRASHED)
-        self.assertEqual(result.error_message, "SIGABRT")
-
-    def test_exit_code_for_syntax_error_unconditional(self) -> None:
-        """exit_code_for_syntax_error maps to SyntaxError even outside negative tests."""
-        cfg = EngineConfig(exit_code_for_syntax_error=101)
-        run = mk_run(exit_code=101)
-        out = Annotator(cfg).classify(run)
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-
-    def test_exit_code_for_syntax_error_negative(self) -> None:
-        cfg = EngineConfig(exit_code_for_syntax_error=101)
-        out = Annotator(cfg).classify(mk_run(exit_code=101), negative_phase="parse", negative_type="SyntaxError")
-        self.assertEqual(out.verdict, Verdict.OK)
-        self.assertIsNone(out.error_type)
-        self.assertIsNone(out.error_message)
-
-    def test_exit_code_may_be_syntax_error_negative(self) -> None:
-        """Heuristic: accept exit code as SyntaxError only in negative tests."""
-        cfg = EngineConfig(exit_code_may_be_syntax_error=7)
-        # Outside negative context, it's just an EXIT error
-        out = Annotator(cfg).classify(mk_run(exit_code=7))
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.EXIT)
-        # In negative context, heuristic kicks in
-        out = Annotator(cfg).classify(mk_run(exit_code=7), negative_phase="parse", negative_type="SyntaxError")
-        self.assertEqual(out.verdict, Verdict.OK)
-        self.assertIsNone(out.error_type)
-        self.assertIsNone(out.error_message)
-
-    def test_exit_code_may_be_test262_error_negative(self) -> None:
-        """Heuristic: accept exit code as Test262Error only in negative tests."""
-        cfg = EngineConfig(exit_code_may_be_test262_error=9)
-        # Outside negative context, it's just an EXIT error
-        out = Annotator(cfg).classify(mk_run(exit_code=9))
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.EXIT)
-        # In negative context, heuristic kicks in
-        out = Annotator(cfg).classify(mk_run(exit_code=9), negative_phase="runtime", negative_type="Test262Error")
-        self.assertEqual(out.verdict, Verdict.OK)
-        self.assertIsNone(out.error_type)
-        self.assertIsNone(out.error_message)
-
-
-class ErrorsReTest(unittest.TestCase):
-    """Tests for errors_re patterns."""
-
-    def _arb(self, errors_re: list[str] | None = None) -> Annotator:
-        return Annotator(EngineConfig(errors_re=errors_re or []))
-
-    # --- stream selection ---
-
-    def test_stdout_match(self) -> None:
-        # v8-style: bare ErrorType: message on stdout
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="TypeError: bad type\n    at file.js:1:7"))
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out.error_message, "bad type")
-
-    def test_stderr_match(self) -> None:
-        # quickjs/engine262-style: bare ErrorType: message on stderr
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(
-            stderr="ReferenceError: unk is not defined\n    at <eval> (file.js:1)",
-        ))
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
-        self.assertEqual(out.error_message, "unk is not defined")
-
-    def test_stderr_before_stdout(self) -> None:
-        pat = r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"
-        cl = self._arb([pat])
-        out = cl.classify(mk_run(stdout="TypeError: from stdout", stderr="SyntaxError: from stderr"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "from stderr; from stdout")
-
-    def test_stderr_used_when_stdout_no_match(self) -> None:
-        pat = r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"
-        cl = self._arb([pat])
-        out = cl.classify(mk_run(stdout="42", stderr="ReferenceError: unk"))
-        self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
-
-    # --- prefix style variants (matching real engine configs) ---
-
-    def test_jsc_exception_prefix(self) -> None:
-        # jsc: ^Exception: ErrorType: message on stdout
-        cl = self._arb([r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="Exception: SyntaxError: oops\nglobal code@file.js:1"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "oops")
-
-    def test_uncaught_prefix(self) -> None:
-        # hermes/escargot: ^Uncaught ErrorType: message
-        cl = self._arb([r"^Uncaught (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stderr="Uncaught ReferenceError: x not defined"))
-        self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
-        self.assertEqual(out.error_message, "x not defined")
-
-    def test_uncaught_exception_prefix(self) -> None:
-        # qv4/nova: ^Uncaught exception: ErrorType: message
-        cl = self._arb([r"^Uncaught exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(
-            stderr="Uncaught exception: ReferenceError: unk is not defined\n    at %entry (f.js:1)",
-        ))
-        self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
-        self.assertEqual(out.error_message, "unk is not defined")
-
-    def test_location_prefix(self) -> None:
-        # kjs: ^path (line N): ErrorType: message
-        cl = self._arb([r"^\S+ \(line [0-9]+\): (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stderr="/tmp/t.js (line 0): SyntaxError: oops"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "oops")
-
-    def test_spidermonkey_location_prefix(self) -> None:
-        # spidermonkey: ^path:line:col ErrorType: message
-        cl = self._arb([r"^[^ ]+ (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stderr="/tmp/t.js:1:7 TypeError: bad type\nStack:\n  @/tmp/t.js:1:7"))
-        self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out.error_message, "bad type")
-
-    def test_error_prefix_pattern(self) -> None:
-        pat = "^(?P<type>[A-Za-z]+Error): (?P<message>[^\n]+)"
-        cl = self._arb([pat])
-        out2 = cl.classify(mk_run(stderr="TypeError: bad"))
-        self.assertEqual(out2.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out2.error_message, "bad")
-
-    # --- optional message group (jerryscript style) ---
-
-    def test_optional_message_present(self) -> None:
-        cl = self._arb([r"^Unhandled exception: (?P<type>[A-Za-z]+Error)(?:: (?P<message>.+))?$"])
-        out = cl.classify(mk_run(stderr="Unhandled exception: SyntaxError: oops"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "oops")
-
-    def test_optional_message_absent(self) -> None:
-        cl = self._arb([r"^Unhandled exception: (?P<type>[A-Za-z]+Error)(?:: (?P<message>.+))?$"])
-        out = cl.classify(mk_run(stderr="Unhandled exception: ReferenceError"))
-        self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
-        self.assertIsNone(out.error_message)
-
-    def test_no_message_group(self) -> None:
-        # Pattern with only a type group → message is None
-        cl = self._arb([r"(?P<type>[A-Za-z]+Error)"])
-        out = cl.classify(mk_run(stdout="SyntaxError"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertIsNone(out.error_message)
-
-    def test_unknown_error_type_preserves_type_and_message(self) -> None:
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="CustomError: bad"))
-        self.assertEqual(out.error_type, ErrorType.FAILED)
-        self.assertEqual(out.error_message, "CustomError: bad")
-
-    def test_unknown_error_type_without_message_preserves_type(self) -> None:
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error)$"])
-        out = cl.classify(mk_run(stdout="CustomError"))
-        self.assertEqual(out.error_type, ErrorType.FAILED)
-        self.assertEqual(out.error_message, "CustomError")
-
-    # --- priority ---
-
-    def test_errors_re_extracts_clean_message(self) -> None:
-        cl = self._arb([r"^Uncaught: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="Uncaught: TypeError: bad"))
-        self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out.error_message, "bad")
-
-    def test_crash_takes_priority_over_errors_re(self) -> None:
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="TypeError: bad", exit_code=-11))
-        self.assertEqual(out.error_type, ErrorType.CRASHED)
-
-    def test_no_match_returns_exit_code_failure(self) -> None:
-        cl = self._arb([r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="some error occurred", exit_code=1))
-        self.assertEqual(out.verdict, Verdict.FAILED)
-        self.assertEqual(out.error_type, ErrorType.EXIT)
-
-    # --- multi-pattern / multi-line ---
-
-    def test_first_matching_line_wins(self) -> None:
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stderr="SyntaxError: first\nReferenceError: second"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "first; second")
-
-    def test_first_matching_pattern_wins(self) -> None:
-        # For each line, patterns are tried in order; first match wins.
-        cl = self._arb([
-            r"^Prefix: (?P<type>[A-Za-z]+Error): (?P<message>.+)$",  # won't match
-            r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$",
-        ])
-        out = cl.classify(mk_run(stderr="SyntaxError: oops"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-
-    def test_raw_throw_no_match(self) -> None:
-        # A raw string throw doesn't contain "Error:" → no errors_re match → OK
-        cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
-        out = cl.classify(mk_run(stdout="raw string"))
-        self.assertEqual(out.verdict, Verdict.OK)
-
-
-class NegativeTest(unittest.TestCase):
-    def _ann(self) -> Annotator:
-        return Annotator(EngineConfig())
-
-    def test_correct_error_passes(self) -> None:
-        run = self._ann().classify(
-            mk_run(stderr="SyntaxError: bad", exit_code=1),
-            negative_phase="parse", negative_type="SyntaxError",
-        )
-        self.assertEqual(run.verdict, Verdict.OK)
-        self.assertIsNone(run.error_type)
-
-    def test_wrong_error_type_fails(self) -> None:
-        run = self._ann().classify(
-            mk_run(stderr="TypeError: bad", exit_code=1),
-            negative_phase="runtime", negative_type="SyntaxError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
-        self.assertIn("expected SyntaxError", run.error_message or "")
-
-    def test_parse_no_error_fails(self) -> None:
-        run = self._ann().classify(
-            mk_run(stdout="ok"),
-            negative_phase="parse", negative_type="SyntaxError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
-        self.assertIn("did not fail", run.error_message or "")
-
-    def test_runtime_no_error_fails(self) -> None:
-        run = self._ann().classify(
-            mk_run(stdout="ok"),
-            negative_phase="runtime", negative_type="TypeError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
-        self.assertIn("expected error not thrown", run.error_message or "")
-
-    def test_timeout_preserved(self) -> None:
-        run = self._ann().classify(
-            mk_run(exit_code=-9, error_type=ErrorType.TIMEOUT),
-            negative_phase="parse", negative_type="SyntaxError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.TIMEOUT)
-
-    def test_crash_preserved(self) -> None:
-        run = self._ann().classify(
-            mk_run(exit_code=-11),
-            negative_phase="runtime", negative_type="TypeError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.CRASHED)
+        self.assertEqual(result.verdict_type, Verdict.CRASHED)
+        self.assertEqual(result.verdict_detail, "SIGABRT")
 
     def test_strip_cwd(self) -> None:
-        ann = self._ann()
+        ann = Annotator(EngineConfig())
         run = mk_run(stderr="SyntaxError: Could not find export 'default' in module '/my/emit/test/foo.js'", exit_code=1, cwd="/my/emit")
         ann.classify(run)
-        self.assertEqual(run.error_message, "Could not find export 'default' in module 'test/foo.js'")
+        self.assertEqual(run.verdict_detail, "Could not find export 'default' in module 'test/foo.js'")
         # file:// URLs are also stripped
         run = mk_run(stderr="TypeError: bad in file:///my/emit/test/foo.js", exit_code=1, cwd="/my/emit")
         ann.classify(run)
-        self.assertEqual(run.error_message, "bad in test/foo.js")
-
-    def test_unmapped_exit_code_fails_negative(self) -> None:
-        run = self._ann().classify(
-            mk_run(exit_code=1),
-            negative_phase="runtime", negative_type="SyntaxError",
-        )
-        self.assertEqual(run.verdict, Verdict.FAILED)
-        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
-        self.assertIn("expected SyntaxError", run.error_message or "")
+        self.assertEqual(run.verdict_detail, "bad in test/foo.js")
 
 
 if __name__ == "__main__":

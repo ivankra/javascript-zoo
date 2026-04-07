@@ -32,7 +32,6 @@ from harness import (
     Annotator,
     Assembler,
     EngineConfig,
-    ErrorType,
     Frontmatter,
     Runner,
     Scenario,
@@ -100,33 +99,33 @@ PROBES: dict[str, dict] = {
     "SyntaxError": {
         "source": '1 +* 2;\n',
         "mode": "sloppy",
-        "expect_error": ErrorType.SYNTAX_ERROR,
+        "expect_error": Verdict.SYNTAX_ERROR,
     },
     "ReferenceError": {
         "source": 'x\n',
         "mode": "sloppy",
-        "expect_error": ErrorType.REFERENCE_ERROR,
+        "expect_error": Verdict.REFERENCE_ERROR,
     },
     "TypeError": {
         "source": 'throw new TypeError();\n',  #test/language/module-code/./eval-rqstd-abrupt-err-type_FIXTURE.js
         "mode": "sloppy",
-        "expect_error": ErrorType.TYPE_ERROR,
+        "expect_error": Verdict.TYPE_ERROR,
     },
     "EvalError": {
         "source": 'throw new EvalError("foo");\n',
         "mode": "sloppy",
-        "expect_error": ErrorType.EVAL_ERROR,
+        "expect_error": Verdict.EVAL_ERROR,
     },
     "RangeError": {
         "source": 'throw new RangeError();\n',  # test/language/module-code/top-level-await/module-import-rejection-tick_FIXTURE.js
         "mode": "sloppy",
-        "expect_error": ErrorType.RANGE_ERROR,
+        "expect_error": Verdict.RANGE_ERROR,
     },
     "Test262Error": {
         "source": 'throw new Test262Error("probe");\n',
         "mode": "sloppy",
         "use_harness": True,
-        "expect_error": ErrorType.TEST262_ERROR,
+        "expect_error": Verdict.TEST262_ERROR,
     },
     "annexB": {
         "source": 'if (typeof escape === "function") print("PROBE_OK");\n',
@@ -258,12 +257,12 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
             staged.cleanup()
 
     if spec.get("expect_async_fail"):
-        ok = run.verdict == Verdict.FAILED
+        ok = run.is_failed()
         detail = run.verdict_message() if not ok else ""
         return probe_name, "OK" if ok else (detail or "FAIL")
 
     if "expect_error" in spec:
-        ok = run.error_type == spec["expect_error"]
+        ok = run.verdict_type == spec["expect_error"]
         if not ok:
             parts = [str(run.verdict_message())]
             if run.stdout:
@@ -279,17 +278,17 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
 
     if spec.get("ok_marker"):
         marker = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
-        ok = run.verdict == Verdict.OK and marker in output
+        ok = run.is_ok() and marker in output
         return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
 
     if "ok" in spec:
-        ok = run.verdict == Verdict.OK and spec["ok"] in output
+        ok = run.is_ok() and spec["ok"] in output
         if not ok:
-            detail = run.verdict_message() if run.verdict != Verdict.OK else "marker not found"
+            detail = run.verdict_message() if not run.is_ok() else "marker not found"
             return probe_name, detail or "FAIL"
         return probe_name, "OK"
 
-    ok = run.verdict == Verdict.OK
+    ok = run.is_ok()
     return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
 
 
