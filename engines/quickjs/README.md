@@ -28,8 +28,8 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
   * [PrimJS](../primjs/README.md): ByteDance's fork with a mark-and-sweep GC
   * [fastschema/qjs](../fastschema-qjs/README.md): QuickJS-NG ported to Go via Wasm
   * [modernc.org/quickjs](../modernc-quickjs/README.md): QuickJS transpiled to pure Go
-  * [QuickJIT](../quickjit/README.md): QuickJS fork that JIT-translates bytecode using TCC
   * [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>: old inactive fork
+  * [QuickJIT](https://github.com/bnoordhuis/quickjit.git) <span class="shields"><img src="https://img.shields.io/github/stars/bnoordhuis/quickjit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bnoordhuis/quickjit?label=&style=flat-square" alt="Last commit" title="Last commit"></span>: proof-of-concept project adding JIT via tcc
 * [Nginx](https://github.com/nginx/njs) - uses QuickJS as an alternative to home-grown [njs](../njs/README.md) engine
 * [PDF.js](https://github.com/mozilla/pdf.js/tree/master/external/quickjs) - uses QuickJS compiled to WASM for sandboxing JavaScript code in .pdf
 * [javy](https://github.com/bytecodealliance/javy.git) <span class="shields"><img src="https://img.shields.io/github/stars/bytecodealliance/javy?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bytecodealliance/javy?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JS to WASM toolchain in Rust
