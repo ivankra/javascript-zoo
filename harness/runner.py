@@ -14,7 +14,7 @@ import sys
 import threading
 import time
 from enum import StrEnum
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Callable
 
 from .config import EngineConfig
 
@@ -135,6 +135,8 @@ class RunResult:
     test_path: str | None = None
     # Raw subprocess return code; negative means terminated by signal (-N → signal N).
     exit_code: int | None = None
+    # Process group leader pid for the engine process tree.
+    pid: int | None = None
     # Resource usage metrics from rusage.
     rusage: RunRusage = dataclasses.field(default_factory=RunRusage)
     # Benchmark-specific numeric scores extracted from output.
@@ -213,10 +215,20 @@ class Runner:
     Classification (verdict/error_type) is intentionally separate – use Annotator.
     """
 
-    def __init__(self, config: EngineConfig) -> None:
+    def __init__(self, config: EngineConfig, on_spawn: Callable[[int], None] | None = None) -> None:
         config.resolve()
         self.config = config
-        self.current_proc: subprocess.Popen[bytes] | None = None
+        self.on_spawn = on_spawn
+        self.proc: subprocess.Popen[bytes] | None = None
+        self.pgid: int | None = None
+
+    def stop(self, sig: int = signal.SIGKILL) -> None:
+        """Kill the active process group, if a command is still running."""
+        if self.pgid is not None:
+            try:
+                os.killpg(self.pgid, sig)
+            except (ProcessLookupError, OSError):
+                pass
 
     def run_command(
         self,
@@ -271,7 +283,10 @@ class Runner:
                 # New session = dedicated process group; lets us kill wrappers/children.
                 start_new_session=True,
             )
-            self.current_proc = proc
+            self.proc = proc
+            self.pgid = proc.pid
+            if self.on_spawn is not None:
+                self.on_spawn(proc.pid)
             watchdog: MemoryWatchdog | None = None
             if memory_limit_mb:
                 watchdog = MemoryWatchdog.get()
@@ -285,15 +300,16 @@ class Runner:
         except subprocess.TimeoutExpired:
             timed_out = True
             if proc is not None and proc.poll() is None:
-                _kill_pgroup(proc.pid, signal.SIGKILL)
+                self.stop(signal.SIGKILL)
                 out, err = proc.communicate()
                 stdout_b += out
                 stderr_b += err
         finally:
             # Kill any orphaned children in the process group
             if proc is not None:
-                _kill_pgroup(proc.pid, signal.SIGKILL)
-            self.current_proc = None
+                self.stop(signal.SIGKILL)
+            self.proc = None
+            self.pgid = None
             wall = time.monotonic() - start
 
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -327,6 +343,7 @@ class Runner:
             stdout=stdout,
             stderr=stderr,
             exit_code=proc.returncode if proc is not None else None,
+            pid=proc.pid if proc is not None else None,
             rusage=rusage,
             test_path=test_path,
             script_path=script_path,
@@ -421,7 +438,10 @@ class MemoryWatchdog:
                     self._oom_killed = True
                     self._pid = 0
                     print(f"memory watchdog: killing pid={pid} rss={rss / (1024 * 1024):.1f}MB limit={limit_bytes // (1024 * 1024)}MB", file=sys.stderr, flush=True)
-                    _kill_pgroup(pid, signal.SIGKILL)
+                    try:
+                        os.killpg(pid, signal.SIGKILL)
+                    except (ProcessLookupError, OSError):
+                        pass
 
     @classmethod
     def _read_tree_rss(cls, root_pid: int) -> int | None:
@@ -454,10 +474,3 @@ class MemoryWatchdog:
             except (FileNotFoundError, ProcessLookupError, PermissionError):
                 continue
         return total_pages * cls.PAGE_SIZE if root_ok else None
-
-
-def _kill_pgroup(pid: int, sig: int) -> None:
-    try:
-        os.killpg(os.getpgid(pid), sig)
-    except (ProcessLookupError, OSError):
-        pass

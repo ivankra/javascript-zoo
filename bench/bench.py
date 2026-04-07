@@ -428,12 +428,7 @@ class BenchRunner:
 
     def kill(self) -> None:
         """Kill the active subprocess, if any."""
-        proc = self._runner.current_proc
-        if proc is not None and proc.poll() is None:
-            try:
-                os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
-            except OSError:
-                pass
+        self._runner.stop()
 
     def save(self) -> None:
         self.result.write_atomic(self.out)

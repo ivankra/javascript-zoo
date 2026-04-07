@@ -5,17 +5,17 @@
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
 import os
 import re
 import sys
 import tempfile
 from pathlib import Path
+from typing import Any, Callable, cast
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from harness import Annotator, EngineConfig, FileDiscovery, Reporter, RunResult, Runner, Tags
+from harness import Annotator, EngineConfig, FileDiscovery, PoolExecutor, PoolWorker, Reporter, RunResult, Runner, Tags
 from harness.util import HelpFormatter
 
 CONFORMANCE_DIR = REPO_ROOT / "conformance"
@@ -72,60 +72,62 @@ def compute_compat_table_weights(test_files: list[str], root: Path) -> dict[str,
     return weights
 
 
-def run_one(
-    runner: Runner,
-    annotator: Annotator,
-    cfg: EngineConfig,
-    test_path: Path,
-    test_id: str,
-    weight: float | None = None,
-) -> RunResult:
-    """Run a single conformance test, return RunResult."""
-    Reporter.test_started(test_id)
-    console_log = cfg.console_log or ["console.log"]
-    if type(console_log) is str:
-        console_log = [console_log]
+class ConformanceWorker(PoolWorker):
+    def __init__(self, cfg: EngineConfig, on_spawn: Callable[[int], None]) -> None:
+        super().__init__(on_spawn)
+        self.cfg = cfg
+        self.runner = Runner(cfg, on_spawn=on_spawn)
+        self.annotator = Annotator(cfg)
 
-    if "console.log" in console_log and not cfg.requires_tmp_staging:
-        run = runner.run_command(
-            cfg.argv(test_path),
-            run_id=test_id,
-            test_path=str(test_path),
-            script_path=str(test_path),
-        )
-    elif "print" in console_log and cfg.multiple_scripts_with_shared_realm is True and not cfg.requires_tmp_staging:
-        # Engine accepts multiple script files with shared environment
-        # between them, so we can just tell it to load a preamble file.
-        run = runner.run_command(
-            cfg.argv(PRELUDE_CONSOLE_JS, test_path),
-            run_id=test_id,
-            test_path=str(test_path),
-            script_path=str(test_path),
-        )
-    else:
-        source = test_path.read_text(encoding="utf-8", errors="replace")
-        source = source.replace("console.log", console_log[0])
-        with tempfile.TemporaryDirectory(prefix="conf-") as td:
-            patched = Path(td) / test_path.name
-            patched.write_text(source, encoding="utf-8")
-            run = runner.run_command(
-                cfg.argv(patched),
+    def run(self, task: Any) -> list[RunResult]:
+        test_id, weight = cast(tuple[str, float | None], task)
+        test_path = CONFORMANCE_DIR / test_id
+        console_log = self.cfg.console_log or ["console.log"]
+        if type(console_log) is str:
+            console_log = [console_log]
+
+        if "console.log" in console_log and not self.cfg.requires_tmp_staging:
+            run = self.runner.run_command(
+                self.cfg.argv(test_path),
                 run_id=test_id,
                 test_path=str(test_path),
-                script_path=str(patched),
+                script_path=str(test_path),
             )
+        elif "print" in console_log and self.cfg.multiple_scripts_with_shared_realm is True and not self.cfg.requires_tmp_staging:
+            run = self.runner.run_command(
+                self.cfg.argv(PRELUDE_CONSOLE_JS, test_path),
+                run_id=test_id,
+                test_path=str(test_path),
+                script_path=str(test_path),
+            )
+        else:
+            source = test_path.read_text(encoding="utf-8", errors="replace")
+            source = source.replace("console.log", console_log[0])
+            with tempfile.TemporaryDirectory(prefix="conf-") as td:
+                patched = Path(td) / test_path.name
+                patched.write_text(source, encoding="utf-8")
+                run = self.runner.run_command(
+                    self.cfg.argv(patched),
+                    run_id=test_id,
+                    test_path=str(test_path),
+                    script_path=str(patched),
+                )
 
-    ok_pattern = rf"{re.escape(test_path.name)}: OK"
-    fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
-    annotator.classify(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
-                     strip_line_prefix=f"{test_id}: ")
+        ok_pattern = rf"{re.escape(test_path.name)}: OK"
+        fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
+        self.annotator.classify(
+            run,
+            ok_pattern=ok_pattern,
+            fail_pattern=fail_pattern,
+            strip_line_prefix=f"{test_id}: ",
+        )
 
-    tags = Tags()
-    tags.add_folders(test_id)
-    run.tags = tags
-    if weight is not None:
-        run.weight = weight
-    return run
+        tags = Tags()
+        tags.add_folders(test_id)
+        run.tags = tags
+        if weight is not None:
+            run.weight = weight
+        return [run]
 
 
 def main() -> None:
@@ -161,8 +163,6 @@ def main() -> None:
     if not tests:
         sys.exit(f"No conformance tests found for patterns: {suites}")
 
-    runner = Runner(cfg)
-    annotator = Annotator(cfg)
     reporter = Reporter(
         cfg,
         discovery=discovery,
@@ -176,19 +176,23 @@ def main() -> None:
         reporter.set_expected_dirs()
 
     weights = compute_compat_table_weights(tests, CONFORMANCE_DIR)
+    items = ((rel, (rel, weights.get(rel))) for rel in tests)
+
+    pool = PoolExecutor(
+        max_workers=cfg.job_count(flag=args.jobs),
+        worker_cls=ConformanceWorker,
+        worker_args=(cfg,),
+    )
 
     try:
-        with concurrent.futures.ProcessPoolExecutor(max_workers=cfg.job_count(flag=args.jobs), **reporter.worker_pool_kwargs()) as pool:
-            futs = {}
-            for rel in tests:
-                futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel, weights.get(rel))] = rel
-            for fut in concurrent.futures.as_completed(futs):
-                run = fut.result()
-                reporter.add_file([run])
-                if not args.verbose and multi_dir:
-                    reporter.print_completed_dirs()
+        for file_results in pool.imap(items, on_started=reporter.test_started):
+            reporter.test_completed(file_results)
+            if not args.verbose and multi_dir:
+                reporter.print_completed_dirs()
+    except KeyboardInterrupt:
+        sys.exit("\nAborted")
     finally:
-        reporter.worker_pool_finished()
+        pool.stop()
 
     reporter.clear_progress()
 

@@ -12,9 +12,8 @@ import sys
 import time
 from datetime import UTC, datetime
 from collections import Counter
-from collections.abc import Callable
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, TypedDict
+from typing import TYPE_CHECKING, Any
 
 from .config import EngineConfig
 from .frontmatter import test262_features_yaml
@@ -24,11 +23,6 @@ from .util import get_git_revision, version_sort_key
 
 if TYPE_CHECKING:
     from .util import FileDiscovery
-
-
-class WorkerPoolKwargs(TypedDict):
-    initializer: Callable[[int | None], None]
-    initargs: tuple[int | None]
 
 
 @dataclasses.dataclass
@@ -173,9 +167,6 @@ class Reporter:
     (call set_expected_dirs() before adding results, then
     print_completed_dirs() after each add()).
     """
-
-    _worker_started_pipe_w: int | None = None
-
     def __init__(
         self,
         engine: EngineConfig,
@@ -211,11 +202,6 @@ class Reporter:
         # Progress bar shows the most recently started entry.
         self._in_flight: dict[str, float] = {}
         self._last_completed: str | None = None
-        # Parent-side read/write fds for worker "started test" notifications.
-        self._started_pipe_r: int | None = None
-        self._started_pipe_w: int | None = None
-        # Partial line buffer for non-blocking pipe reads.
-        self._started_pipe_buf = bytearray()
         self._progress_dirty = False
         # dict used as ordered set (Python 3.7+ insertion order); values unused.
         self._input_order: dict[str, int] = {}
@@ -272,70 +258,9 @@ class Reporter:
         if test_id not in self._input_order:
             self._input_order[test_id] = len(self._input_order)
 
-    @classmethod
-    def _init_started_pipe(cls, write_fd: int | None) -> None:
-        """Initialize worker-local start notification pipe."""
-        cls._worker_started_pipe_w = write_fd
-
-    @classmethod
-    def test_started(cls, test_id: str) -> None:
-        """Report that a worker actually started executing a test."""
-        if cls._worker_started_pipe_w is None:
-            return
-        os.write(cls._worker_started_pipe_w, test_id.encode("utf-8", errors="surrogateescape") + b"\n")
-
-    def worker_pool_kwargs(self) -> WorkerPoolKwargs:
-        """Executor kwargs needed for exact worker-start progress reporting."""
-        if self._started_pipe_r is None or self._started_pipe_w is None:
-            read_fd, write_fd = os.pipe()
-            os.set_blocking(read_fd, False)
-            os.set_inheritable(write_fd, True)
-            self._started_pipe_r = read_fd
-            self._started_pipe_w = write_fd
-        return {
-            "initializer": self._init_started_pipe,
-            "initargs": (self._started_pipe_w,),
-        }
-
-    def _drain_started_pipe(self) -> None:
-        """Drain worker start notifications from the pipe."""
-        read_fd = self._started_pipe_r
-        if read_fd is None:
-            return
-
-        while True:
-            try:
-                chunk = os.read(read_fd, 65536)
-            except BlockingIOError:
-                break
-            if not chunk:
-                break
-            self._started_pipe_buf.extend(chunk)
-
-        if not self._started_pipe_buf:
-            return
-
-        data = bytes(self._started_pipe_buf)
-        last_nl = data.rfind(b"\n")
-        if last_nl < 0:
-            return
-
-        complete = data[:last_nl]
-        self._started_pipe_buf = bytearray(data[last_nl + 1:])
-        for raw in complete.split(b"\n"):
-            if raw:
-                test_id = raw.decode("utf-8", errors="surrogateescape")
-                self._in_flight[test_id] = time.monotonic()
-
-    def worker_pool_finished(self) -> None:
-        """Release the worker start notification pipe."""
-        if self._started_pipe_r is not None:
-            os.close(self._started_pipe_r)
-            self._started_pipe_r = None
-        if self._started_pipe_w is not None:
-            os.close(self._started_pipe_w)
-            self._started_pipe_w = None
-        self._started_pipe_buf.clear()
+    def test_started(self, test_id: str) -> None:
+        """Record that a worker has started executing a test."""
+        self._in_flight[test_id] = time.monotonic()
 
     def set_expected_dirs(self, test_ids: list[str] | None = None) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
@@ -395,12 +320,11 @@ class Reporter:
             else:
                 self._dir_failed_tests[d].append(os.path.basename(fp))
 
-    def add_file(self, runs: list[RunResult]) -> None:
+    def test_completed(self, runs: list[RunResult]) -> None:
         """Record all runs from a single test file and update progress counters.
 
         Prints a progress line to stderr when not in verbose mode and stderr is a TTY.
         """
-        self._drain_started_pipe()
         for run in runs:
             self.add(run)
             self._mode_counts[run.verdict or Verdict.FAILED] += 1

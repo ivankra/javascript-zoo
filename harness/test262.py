@@ -5,7 +5,7 @@
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
+import itertools
 import os
 import re
 import shlex
@@ -13,7 +13,7 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Callable, Iterable, cast
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -25,6 +25,8 @@ from harness import (
     FileDiscovery,
     FilterExpr,
     Frontmatter,
+    PoolExecutor,
+    PoolWorker,
     Reporter,
     RunResult,
     Runner,
@@ -42,82 +44,28 @@ STAGING_SKIP_PATHS = ["test/staging"]
 ANNEX_B_SKIP_PATHS = ["test/annexB"]
 
 
-class Executor:
-    """Executes and classifies test262 scenarios via a process pool."""
-
+class Test262Worker(PoolWorker):
     def __init__(
         self,
         engine: EngineConfig,
         assembler: Assembler,
-        *,
-        jobs: int | None = None,
-        mode: str = "all",
-        filter_expr: FilterExpr | None = None,
+        mode: str,
+        filter_expr: FilterExpr | None,
+        shared_tmp: Path,
+        on_spawn: Callable[[int], None],
     ) -> None:
+        super().__init__(on_spawn)
         self.engine = engine
-        self.test262_dir = assembler.test262_dir
         self.assembler = assembler
-        self.runner = Runner(engine)
+        self.runner = Runner(engine, on_spawn=on_spawn)
         self.annotator = Annotator(engine)
         self.mode = mode
         self.filter_expr = filter_expr
-        self._jobs = engine.job_count(flag=jobs)
-        self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
-        self._flaky_tests = engine.flaky_tests
+        self.shared_tmp = shared_tmp
 
-    def run(self, tests: Iterable[str], *, reporter: Reporter, limit: int = 0) -> None:
-        """Submit test files to worker pool, delivering results to reporter.
-
-        Iterates tests lazily — works with FileDiscovery's background queue.
-        limit: stop after this many non-skipped files (0 = unlimited).
-        """
-        n_submitted = 0
-        try:
-            with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs, **reporter.worker_pool_kwargs()) as pool:
-                futs: dict[concurrent.futures.Future[list[RunResult]], str] = {}
-                test_iter = iter(tests)
-                exhausted = False
-
-                try:
-                    while True:
-                        while not exhausted and len(futs) < self._jobs + 5:
-                            if limit and n_submitted >= limit:
-                                exhausted = True
-                                break
-                            try:
-                                rel_path = next(test_iter)
-                            except StopIteration:
-                                exhausted = True
-                                break
-                            futs[pool.submit(self._process_file, rel_path)] = rel_path
-                            n_submitted += 1
-
-                        if not futs:
-                            break
-
-                        done, _ = concurrent.futures.wait(futs, return_when=concurrent.futures.FIRST_COMPLETED)
-                        for fut in done:
-                            futs.pop(fut)
-                            file_results = fut.result()
-                            reporter.add_file(file_results)
-                except KeyboardInterrupt:
-                    for f in futs:
-                        f.cancel()
-                    raise
-        finally:
-            reporter.worker_pool_finished()
-            shutil.rmtree(self._shared_tmp, ignore_errors=True)
-
-    def _process_file(self, rel_path: str) -> list[RunResult]:
-        """Read file, parse frontmatter, expand modes, execute each.
-
-        Returns a single SKIPPED RunResult if filtered by features,
-        [] if no applicable modes.
-        """
-        Reporter.test_started(rel_path)
-        test_path = self.test262_dir / rel_path
-        # Binary read to preserve CR/CRLF line endings verbatim, e.g.
-        # Function/prototype/toString/line-terminator-normalisation-CR.js
+    def run(self, task: Any) -> list[RunResult]:
+        rel_path = cast(str, task)
+        test_path = self.assembler.test262_dir / rel_path
         source = test_path.read_bytes().decode("utf-8", errors="replace")
         fm = Frontmatter.parse(source)
 
@@ -143,26 +91,24 @@ class Executor:
         return results
 
     def _execute_one(self, scenario: Scenario) -> RunResult:
-        """Execute engine on an assembled scenario, classify result."""
-        is_module = "module" in scenario.fm.flags
         is_negative = bool(scenario.fm.negative_type)
         is_async = "async" in scenario.fm.flags
         ok_pattern: str | None = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
         if is_negative or "raw" in scenario.fm.flags:
             ok_pattern = None
 
-        staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp)
+        staged = self.assembler.stage(scenario, temp_dir=self.shared_tmp)
         if scenario.tags is None:
             scenario.tags = Tags()
         for ref in staged.references:
             scenario.tags.add("ref", ref)
 
         max_attempts = 1
-        if scenario.rel_path in self._flaky_tests:
+        if scenario.rel_path in self.engine.flaky_tests:
             max_attempts = self.engine.flaky_attempts
 
         try:
-            for attempt in range(max_attempts):
+            for _attempt in range(max_attempts):
                 run = self.runner.run_command(
                     self.engine.argv(staged.script_path, tags=scenario.tags),
                     run_id=scenario.run_id(),
@@ -319,6 +265,7 @@ def main() -> None:
         shuffle=args.shuffle,
         background=True,
     )
+    items = ((rel_path, rel_path) for rel_path in itertools.islice(discovery, args.limit or None))
 
     reporter = Reporter(
         cfg,
@@ -349,20 +296,22 @@ def main() -> None:
     if filter_expr is None and cfg.test262_filter:
         filter_expr = parse_filter_expr(p, [cfg.test262_filter])
 
-    executor = Executor(
-        cfg,
-        assembler,
-        jobs=args.jobs,
-        mode=args.mode,
-        filter_expr=filter_expr,
+    shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
+
+    pool = PoolExecutor(
+        max_workers=cfg.job_count(flag=args.jobs),
+        worker_cls=Test262Worker,
+        worker_args=(cfg, assembler, args.mode, filter_expr, shared_tmp),
     )
 
     try:
-        executor.run(discovery, reporter=reporter, limit=args.limit)
+        for file_results in pool.imap(items, on_started=reporter.test_started):
+            reporter.test_completed(file_results)
     except KeyboardInterrupt:
-        reporter.clear_progress()
-        print("\nInterrupted")
-        sys.exit(130)
+        sys.exit("\nAborted")
+    finally:
+        pool.stop()
+        shutil.rmtree(shared_tmp, ignore_errors=True)
 
     reporter.clear_progress()
 
