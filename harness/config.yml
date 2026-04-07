@@ -32,8 +32,6 @@ default:
   # 4G is sufficient for major engines to pass test262: V8 needs 1.5G, JSC 2.8G.
   # GitHub runners provide 16G RAM / 4C + swap; we also use --shuffle against clustered OOMs.
   memory_limit_mb: 4096
-  # Period between memory usage polls by a background OOM watchdog thread.
-  memory_watchdog_poll_sec: 0.05  # ~20 Hz
   # Retry known flaky tests couple times on failures
   flaky_attempts: 3
   flaky_tests:

@@ -90,9 +90,6 @@ class EngineConfig:
     # Maximum RSS size before a process will get killed by OOM watchdog.
     # None disables OOM watchdog.
     memory_limit_mb: int | None = None
-    # Period between memory usage polls by a background OOM watchdog thread.
-    # Must be set, if memory_limit_mb is set.
-    memory_watchdog_poll_sec: float | None = None
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
     output_limit: int = 1000000

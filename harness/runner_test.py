@@ -146,23 +146,5 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             self.assertIn("MemoryError", run.stderr or "")
 
 
-class MemoryWatchdogTest(unittest.TestCase):
-    def test_supported_false_when_procfs_unavailable(self) -> None:
-        with mock.patch("harness.runner.os.listdir", side_effect=OSError("no /proc")):
-            self.assertFalse(MemoryWatchdog.supported())
-
-    def test_runner_skips_watchdog_when_unavailable(self) -> None:
-        cfg = EngineConfig(binary_path="/bin/true", memory_watchdog_poll_sec=0.04)
-        with mock.patch.object(MemoryWatchdog, "supported", return_value=False):
-            with mock.patch.object(MemoryWatchdog, "__init__", side_effect=AssertionError("watchdog should not be created")):
-                run = Runner(cfg).run_command(["/bin/true"], memory_limit_mb=10, timeout_sec=1)
-        self.assertEqual(run.exit_code, 0)
-
-    def test_runner_rejects_memory_limit_without_poll_interval(self) -> None:
-        cfg = EngineConfig(binary_path="/bin/true", memory_watchdog_poll_sec=None)
-        with self.assertRaisesRegex(AssertionError, "memory_limit_mb requires memory_watchdog_poll_sec"):
-            Runner(cfg).run_command(["/bin/true"], memory_limit_mb=10, timeout_sec=1)
-
-
 if __name__ == "__main__":
     unittest.main()

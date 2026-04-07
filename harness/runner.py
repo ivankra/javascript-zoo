@@ -207,90 +207,6 @@ class RunResult:
             raise ValueError(f"invalid RunResult data: {e}") from e
 
 
-class MemoryWatchdog:
-    """Polls /proc for process group RSS and kills on limit breach."""
-
-    RE_NSPGID = re.compile(rb"^NSpgid:\t(\d+)", re.M)
-    RE_PGID = re.compile(rb"^Pgid:\t(\d+)", re.M)
-    RE_VMRSS = re.compile(rb"^VmRSS:\s+(\d+)\s+kB", re.M)
-
-    def __init__(self, proc: subprocess.Popen[bytes], limit_mb: int, *, poll_sec: float) -> None:
-        self.proc = proc
-        self.limit_mb = limit_mb
-        self.poll_sec = poll_sec
-        self.pgid = self._read_proc_group_id(proc.pid)
-        self.oom_killed = False
-        self.peak_rss_kb = 0
-        self._thread: threading.Thread | None = threading.Thread(target=self._run, daemon=True)
-        try:
-            self._thread.start()
-        except RuntimeError:
-            # Hit a thread limit or something
-            print("memory watchdog: cannot start background thread", file=sys.stderr, flush=True)
-            self._thread = None
-
-    def _run(self) -> None:
-        time.sleep(self.poll_sec)
-        while self.proc.poll() is None:
-            rss_kb = self.read_group_rss_kb(self.pgid)
-            if rss_kb is None:
-                return
-            if rss_kb > self.peak_rss_kb:
-                self.peak_rss_kb = rss_kb
-            if rss_kb > self.limit_mb * 1024:
-                self.oom_killed = True
-                print(f"memory watchdog: killing pid={self.proc.pid} pgid={self.pgid} rss={rss_kb / 1024:.1f}MB limit={self.limit_mb}MB", file=sys.stderr, flush=True)
-                _kill_pgroup(self.proc.pid, signal.SIGKILL)
-                return
-            time.sleep(self.poll_sec)
-
-    def read_group_rss_kb(self, pgid: int) -> int | None:
-        """Sum VmRSS of all processes belonging to process group *pgid*."""
-        total = 0
-        try:
-            entries = os.listdir("/proc")
-        except OSError:
-            return None
-        for entry in entries:
-            if not entry.isdigit():
-                continue
-            try:
-                with open(f"/proc/{entry}/status", "rb") as f:
-                    status = f.read()
-            except (FileNotFoundError, ProcessLookupError, PermissionError):
-                continue
-            proc_pgid = self._parse_proc_group_id(status)
-            if proc_pgid is None or proc_pgid != pgid:
-                continue
-            m = self.RE_VMRSS.search(status)
-            if m:
-                total += int(m.group(1))
-        return total
-
-    @classmethod
-    def _parse_proc_group_id(cls, status: bytes) -> int | None:
-        m = cls.RE_NSPGID.search(status) or cls.RE_PGID.search(status)
-        return int(m.group(1)) if m else None
-
-    @classmethod
-    def _read_proc_group_id(cls, pid: int) -> int:
-        try:
-            with open(f"/proc/{pid}/status", "rb") as f:
-                status = f.read()
-        except OSError:
-            return os.getpgid(pid)
-        proc_pgid = cls._parse_proc_group_id(status)
-        return proc_pgid if proc_pgid is not None else os.getpgid(pid)
-
-    @staticmethod
-    def supported() -> bool:
-        try:
-            os.listdir("/proc")
-        except:
-            return False
-        return True
-
-
 class Runner:
     """Process executor: launches engine, captures output, measures resources.
 
@@ -300,7 +216,6 @@ class Runner:
     def __init__(self, config: EngineConfig) -> None:
         config.resolve()
         self.config = config
-        self.current_proc: subprocess.Popen[bytes] | None = None
 
     def run_command(
         self,
@@ -325,9 +240,6 @@ class Runner:
         timeout = timeout_sec or self.config.timeout_sec
         memory_limit_mb = memory_limit_mb or self.config.memory_limit_mb
         memory_addr_limit_mb = memory_addr_limit_mb or self.config.memory_addr_limit_mb
-        memory_watchdog_poll_sec = self.config.memory_watchdog_poll_sec
-        if memory_limit_mb is not None:
-            assert memory_watchdog_poll_sec is not None, "memory_limit_mb requires memory_watchdog_poll_sec"
         run_cwd = cwd or self.config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
@@ -339,7 +251,8 @@ class Runner:
         start = time.monotonic()
 
         proc: subprocess.Popen[bytes] | None = None
-        watchdog: MemoryWatchdog | None = None
+        peak_watchdog_kb = 0
+        oom_killed = False
         stdout_b = b""
         stderr_b = b""
         timed_out = False
@@ -357,10 +270,16 @@ class Runner:
                 # New session = dedicated process group; lets us kill wrappers/children.
                 start_new_session=True,
             )
-            self.current_proc = proc
-            if memory_limit_mb and memory_watchdog_poll_sec is not None and MemoryWatchdog.supported():
-                watchdog = MemoryWatchdog(proc, memory_limit_mb, poll_sec=memory_watchdog_poll_sec)
-            stdout_b, stderr_b = proc.communicate(timeout=timeout)
+            watchdog: MemoryWatchdog | None = None
+            if memory_limit_mb:
+                watchdog = MemoryWatchdog.get()
+                watchdog.start(proc, memory_limit_mb)
+            try:
+                stdout_b, stderr_b = proc.communicate(timeout=timeout)
+            finally:
+                if watchdog is not None:
+                    peak_watchdog_kb, oom_killed = watchdog.stop()
+                    watchdog = None
         except subprocess.TimeoutExpired:
             timed_out = True
             if proc is not None and proc.poll() is None:
@@ -372,7 +291,6 @@ class Runner:
             # Kill any orphaned children in the process group
             if proc is not None:
                 _kill_pgroup(proc.pid, signal.SIGKILL)
-            self.current_proc = None
             wall = time.monotonic() - start
 
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -394,10 +312,9 @@ class Runner:
             ctx_switches_voluntary=max(0, int(ru_after.ru_nvcsw - ru_before.ru_nvcsw)),
             ctx_switches_involuntary=max(0, int(ru_after.ru_nivcsw - ru_before.ru_nivcsw)),
         )
-        peak_watchdog = watchdog.peak_rss_kb if watchdog else 0
         peak_rusage = int(ru_after.ru_maxrss) if ru_after.ru_maxrss > 0 else 0
-        if peak_watchdog or peak_rusage:
-            rusage.max_rss_kb = max(peak_watchdog, peak_rusage)
+        if peak_watchdog_kb or peak_rusage:
+            rusage.max_rss_kb = max(peak_watchdog_kb, peak_rusage)
 
         run = RunResult(
             run_id=run_id,
@@ -413,7 +330,7 @@ class Runner:
             build_metadata=self.config.build_metadata,
         )
 
-        if watchdog and watchdog.oom_killed:
+        if oom_killed:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.OOM
             run.error_message = f">{memory_limit_mb}MB"
@@ -424,17 +341,116 @@ class Runner:
 
         return run
 
-    def kill(self) -> None:
-        """Kill the currently running process group, if any."""
-        proc = self.current_proc
-        if proc is not None and proc.poll() is None:
-            _kill_pgroup(proc.pid, signal.SIGKILL)
-
     @staticmethod
     def _preexec_fn(memory_addr_limit_mb: int | None) -> None:
         if memory_addr_limit_mb is not None:
             limit_bytes = int(memory_addr_limit_mb) * 1024 * 1024
             resource.setrlimit(resource.RLIMIT_AS, (limit_bytes, limit_bytes))
+
+
+class MemoryWatchdog:
+    """Process-wide singleton: one daemon thread polls /proc on a fixed
+    cadence and writes peak RSS / OOM-kill state into shared fields.
+    """
+
+    POLL_SEC = 0.05  # ~20 Hz
+    PAGE_SIZE = os.sysconf("SC_PAGESIZE")
+
+    _instance: MemoryWatchdog | None = None
+    _instance_lock = threading.Lock()
+    _atfork_registered = False
+
+    @classmethod
+    def get(cls) -> MemoryWatchdog:
+        """Return the per-process singleton, creating it on first call."""
+        inst = cls._instance
+        if inst is not None:
+            return inst
+        with cls._instance_lock:
+            if cls._instance is None:
+                cls._instance = cls()
+            return cls._instance
+
+    def __init__(self) -> None:
+        # State guarded by self._lock. The polling thread runs on its own
+        # POLL_SEC timer — start() does NOT wake it. This avoids the
+        # per-call notify+context-switch cost on the runner's hot path.
+        # Tradeoff: a process exiting in <POLL_SEC is never sampled
+        # (peak_rss stays 0; runner falls back to ru_maxrss from rusage).
+        self._lock = threading.Lock()
+        self._pid = 0  # 0 when idle; also the session identity
+        self._limit_bytes = 0
+        self._peak_rss = 0  # bytes
+        self._oom_killed = False
+        threading.Thread(target=self._run, daemon=True).start()
+
+    def start(self, proc: subprocess.Popen[bytes], limit_mb: int) -> None:
+        """Install a new monitoring session. Returns immediately."""
+        with self._lock:
+            self._pid = proc.pid
+            self._limit_bytes = limit_mb * 1024 * 1024
+            self._peak_rss = 0
+            self._oom_killed = False
+
+    def stop(self) -> tuple[int, bool]:
+        """Detach the current session and return (peak_rss_kb, oom_killed)."""
+        with self._lock:
+            self._pid = 0
+            return self._peak_rss // 1024, self._oom_killed
+
+    def _run(self) -> None:
+        while True:
+            time.sleep(self.POLL_SEC)
+            with self._lock:
+                pid = self._pid
+                limit_bytes = self._limit_bytes
+            if pid == 0:
+                continue
+            rss = self._read_tree_rss(pid)
+            if rss is None:
+                continue
+            with self._lock:
+                if self._pid != pid:
+                    continue
+                if rss > self._peak_rss:
+                    self._peak_rss = rss
+                if rss > limit_bytes:
+                    self._oom_killed = True
+                    self._pid = 0
+                    print(f"memory watchdog: killing pid={pid} rss={rss / (1024 * 1024):.1f}MB limit={limit_bytes // (1024 * 1024)}MB", file=sys.stderr, flush=True)
+                    _kill_pgroup(pid, signal.SIGKILL)
+
+    @classmethod
+    def _read_tree_rss(cls, root_pid: int) -> int | None:
+        """Sum RSS (in bytes) of root_pid and all its descendants."""
+        total_pages = 0
+        seen: set[int] = set()
+        stack = [root_pid]
+        root_ok = False
+        while stack:
+            p = stack.pop()
+            if p in seen:
+                continue
+            seen.add(p)
+            try:
+                with open(f"/proc/{p}/statm", "rb") as f:
+                    statm = f.read()
+                # statm: size resident shared text lib data dirty (in pages)
+                resident = int(statm.split(b" ", 2)[1])
+                total_pages += resident
+                if p == root_pid:
+                    root_ok = True
+            except (FileNotFoundError, ProcessLookupError, PermissionError):
+                if p == root_pid:
+                    return None
+                continue
+            try:
+                with open(f"/proc/{p}/task/{p}/children", "rb") as f:
+                    for c in f.read().split():
+                        stack.append(int(c))
+            except (FileNotFoundError, ProcessLookupError, PermissionError):
+                continue
+        return total_pages * cls.PAGE_SIZE if root_ok else None
 
 
 def _kill_pgroup(pid: int, sig: int) -> None:
