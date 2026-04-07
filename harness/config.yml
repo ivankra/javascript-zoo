@@ -36,24 +36,34 @@ default:
   flaky_attempts: 3
   flaky_tests:
     - test/built-ins/Atomics/notify/count-defaults-to-infinity-missing.js
+    - test/built-ins/Atomics/notify/negative-count.js
     - test/built-ins/Atomics/notify/notify-one.js
     - test/built-ins/Atomics/notify/notify-renotify-noop.js
     - test/built-ins/Atomics/notify/undefined-index-defaults-to-zero.js
     - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
     - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
     - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/wait/bigint/waiterlist-block-indexedposition-wake.js
     - test/built-ins/Atomics/wait/false-for-timeout-agent.js
     - test/built-ins/Atomics/wait/nan-for-timeout.js
+    - test/built-ins/Atomics/wait/no-spurious-wakeup-no-operation.js
     - test/built-ins/Atomics/wait/wait-index-value-not-equal.js
     - test/built-ins/Atomics/wait/waiterlist-order-of-operations-is-fifo.js
     - test/built-ins/Atomics/waitAsync/bigint/false-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/negative-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
     - test/built-ins/Atomics/waitAsync/bigint/symbol-for-timeout-throws-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/bigint/value-not-equal-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/waiterlist-block-indexedposition-wake.js
     - test/built-ins/Atomics/waitAsync/implicit-infinity-for-timeout.js
     - test/built-ins/Atomics/waitAsync/nan-for-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-sub.js
     - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-ok.js
+    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-timed-out.js
     - test/built-ins/Atomics/waitAsync/undefined-for-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/undefined-for-timeout.js
     - test/built-ins/Atomics/waitAsync/undefined-index-defaults-to-zero-agent.js
@@ -267,6 +277,7 @@ derkjs:
     - '^Syntax Error ': 'SyntaxError '
   errors_re:
     - '^SyntaxError \[ln [0-9]+, col [0-9]+\]:\s*\n\tnote: (?P<message>.*)$'
+    - '^ERROR: *(?P<message>Uncaught error):?$'
 
 dmdscript:
   console_log: println
@@ -279,7 +290,7 @@ dmdscript:
     - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>Test262Error): ?(?P<message>.*)$': '\g<type>: \g<message>'
   errors_re:
     - '^(?P<type>[A-Za-z0-9]+Error): ?(?P<message>.*)$'
-    - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException|undead.dateparse.DateParseError|std.format.FormatException)@[^ :]+: (?P<message>[^;]+)'
+    - "^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException|undead.dateparse.DateParseError|std.format.FormatException)@[^ :]+: (?P<message>(?:';'|[^;])+)"
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - { if: 'bench', file: 'harness/prelude-es5.js' }
@@ -317,10 +328,11 @@ ejscript:
   crash_re:
     - '^(?P<message>Assertion .*, failed at [^:]+:[0-9]+)'
   stderr_replace_re:
-    - '^ejs: Error: /[^ :]+\.m?js: [0-9]+: (?P<message>Unexpected input .+)$': 'SyntaxError: \g<message>'
+    #  ^ ejs: Error: /tmp/foo.js: 227: Unexpected input ""
+    - '^\s*\^?\s*ejs: Error: /[^ :]+\.m?js: [0-9]+: (?P<message>Unexpected input.+|Cannot parse.+|Cannot compile.+|Cannot find.+|Unknown directive.*|.*not yet implemented.*|Illegal.+)$': 'SyntaxError: \g<message>'
   errors_re:
-    - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+\.m?js: [0-9]+: (?P<message>.+)$'
-    - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+    - '\s*\^?\s*ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+\.m?js: [0-9]+: (?P<message>.+)$'
+    - '\s*\^?\s*ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
   <<: *oom_prone
 
@@ -331,6 +343,9 @@ engine262:
   stderr_replace_re:
     # Test262Error { message: 'x' }
     - "^Test262Error [{] message: '(.*)' [}]$": 'Test262Error: \1'
+  errors_re:
+    # Error: Internal error: .LoadRequestedModules() returned a pending promise
+    - '^Error: (?P<message>Internal error: .*)$'
   flags:
     - --features=all
     - { if: 'flags:module', then: '--module' }
@@ -423,6 +438,9 @@ graaljs: &graaljs
     - --js.test262-mode            # enable $262 object
     - { if: 'flags:CanBlockIsFalse', then: '--js.agent-can-block=false' }
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
+  stderr_replace_re:
+    # SyntaxError: foo.js:283:15 unexpected identifier: "source"
+    - 'SyntaxError: [^ :]+:[0-9]+:[0-9]+ ': 'SyntaxError: '
 
 # GraalJS with experimental flags
 graaljs_exp:
@@ -461,6 +479,9 @@ hako:
     - '^  "name": "(?P<type>[A-Za-z0-9]*Error)",?$'  # hako_wamr/hako-cli
   timeout_sec: 10
 
+hako_wamr:
+  exit_code_may_be_test262_error: 1
+
 hako_wasmtime_go:
   flags:
     - { if: 'flags:module', then: '--module' }
@@ -485,6 +506,7 @@ hermes: &hermes
     - '^[^ ]+\.m?js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
   prelude:
     - file: engines/hermes/prelude.js
+  # Doesn't support ES modules yet.
 
 hermes-v1: *hermes
 
@@ -584,16 +606,17 @@ js-interpreter:
   console_log: ['console.log', 'print']
   errors_re:
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+    - '^(?P<message>Uncaught exception): \[object Object\]$'
   exit_code_may_be_test262_error: 1  # prints 'Uncaught exception: [object Object]'
 
 jscript: &jscript
   console_log: ['console.log', 'print', 'WScript.Echo']
   stderr_replace_re: &jscript_replace_re
-    - 'Microsoft JScript compilation error: Syntax error': 'Microsoft JScript compilation error: SyntaxError'
-    - '^Compilation error$': 'SyntaxError'
+    - '\s*$': ''  # \r\n
+    - '^.*JScript compilation error: Syntax error': 'Uncaught exception: SyntaxError'
+    - '^Compilation error$': 'Uncaught exception: SyntaxError'
   stdout_replace_re: *jscript_replace_re
   errors_re:
-    - '^.*Microsoft JScript compilation error: (?P<type>SyntaxError)$'
     # cscript.exe:
     # "Z:\tmp\jscript.Usdqwf.js(4, 1) Microsoft JScript runtime error: 'x' is undefined"
     # "Z:\tmp\jscript.lutTBX.js(5, 1) Microsoft JScript compilation error: Syntax error"
@@ -607,10 +630,11 @@ jscript: &jscript
 
 jscript9:
   console_log: ['console.log', 'print', 'WScript.Echo']
+  stdout_replace_re:
+    - '\s*$': ''  # \r\n
   stderr_replace_re:
-    - '^Compilation error$': 'SyntaxError'
-  errors_re:
-    - '^(?P<type>SyntaxError)$'
+    - '\s*$': ''  # \r\n
+    - '^Compilation error$': 'Uncaught exception: SyntaxError'
   # TODO: warmup_cmd
 
 jurassic:
@@ -646,6 +670,7 @@ lebjs:
     - *java_crash_re
   stderr_replace_re:
     - '^\[[0-9.]+s\]\[warning\]\[perf,memops\] Cannot use file /tmp/hsperfdata_[^ ]+/[0-9]+ because it is locked by another process \(errno = 11\)$': ''
+    - '^ParserNotImplemented: (.*?)(?: \([0-9]+:[0-9]+\))?$': 'SyntaxError: \1'
 
 libjs: &libjs
   console_log: ['console.log', 'print']
@@ -661,6 +686,11 @@ libjs: &libjs
     - --raw-strings
     - --use-test262-global
     - { if: 'flags:module', then: '--as-module' }
+
+malbrain:
+  # error in /tmp/foo.js: line: 49 syntax error, unexpected PLUS
+  stderr_replace_re:
+    - '^error in [^:]+: line: [0-9]+ syntax error, (.*)$': 'SyntaxError: \1'
 
 metaes:
   console_log: ['console.log', 'print']
@@ -782,6 +812,8 @@ nova:
     - *rust_crash_norm_re
     - 'SyntaxError:\n\n  [x×] ': 'Uncaught exception: SyntaxError: '
     - '^Parse errors:$': ''
+    # Uncaught exception: SyntaxError: regex parse error:
+    - ' *:$': ''
   prelude:
     - file: engines/nova/prelude.js
 
@@ -814,6 +846,9 @@ quad-wheel:
 quanta:
   bench_suite: ['richards.quanta.js']
   console_log: console.log
+  stdout_replace_re:
+    # Lexer error at 225:5: Unterminated regex literal
+    - '^Lexer error at [0-9]+:[0-9]+: (.*)$': 'SyntaxError: \1'
   prelude:
     - code: 'var print = console.log;'
   timeout_sec: 10
@@ -939,7 +974,7 @@ sablejs:
     - '\[ERROR\] compile failed: Error:': '\[ERROR\] compile failed: SyntaxError:'
   errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
-    - '^(?P<message>(Uncaught exception): [object Object])$'
+    - '^(?P<message>Uncaught exception): \[object Object\]$'
 
 sandboxjs:
   console_log: ['console.log', 'print']
@@ -1031,7 +1066,7 @@ ssrlive:
 stackluca:
   stdout_replace_re:
     - 'welcome to v3 javascript interpretor 0.1': ''
-    - '^ *error_code:-3\((unexpected token)\) .*': 'SyntaxError: \1'
+    - '^ *error_code:-[0-9]+\((unexpected token|not support)\) .*': 'SyntaxError: \1'
 
 starlight:
   bench_suite: ['richards.js1.js']
@@ -1057,6 +1092,7 @@ stator:
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+    - '^(?:internal error: )+(.*)$': 'InternalError: \1'
   exit_code_may_be_test262_error: 1
 
 sval:
@@ -1073,8 +1109,9 @@ syoyo:
     - "LightJS REPL v1.0.0": ""
     - "Type '.help' for help, '.exit' to quit": ""
   stderr_replace_re:
-    - "^Parse error in file '(.*)'$": 'SyntaxError: \1'
-    - "^Error in file '([^']+)': (Unexpected character .*)$": 'SyntaxError: \2'
+    - "^Parse error in file '([^']+)'$": 'Uncaught exception: SyntaxError'
+    # Error in file '/tmp/foo.js': Invalid identifier escape
+    - "^Error in file '([^']+)': (Unexpected.*|Invalid.*|Unterminated.*)$": 'SyntaxError: \2'
 
 tiny-js:
   console_log: ['console.log', 'print']
