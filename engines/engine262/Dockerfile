@@ -25,8 +25,11 @@ RUN npx esbuild lib/node/bin.mjs --outfile=/dist/engine262 --bundle --platform=n
 COPY build/dist.py ./
 RUN ./dist.py /dist/engine262
 
-# Alternative wrapper using JavaScriptCore shell as host instead of Node
+# Alternative wrappers using javascript shells instead of nodejs as host runtimes.
+# Both d8 and jsc are much faster than nodejs.
 COPY engines/engine262/main.js ./
-RUN npx esbuild main.js --outfile=engine262_jsc.js --bundle --platform=browser --format=iife --external:fs
-RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/jsc" "$0" -- "$@"'; cat engine262_jsc.js) >/dist/engine262_jsc
+RUN npx esbuild main.js --outfile=main.bundle.js --bundle --platform=browser --format=iife --external:fs
+RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/jsc" "$0" -- "$@"'; cat main.bundle.js) >/dist/engine262_jsc
 RUN ./dist.py /dist/engine262_jsc --no-test console_log=console.log
+RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/v8_full" "$0" -- "$@"'; cat main.bundle.js) >/dist/engine262_d8
+RUN ./dist.py /dist/engine262_d8 --no-test console_log=console.log
