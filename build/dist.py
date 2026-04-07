@@ -266,7 +266,7 @@ def maybe_git_metadata(meta: dict[str, str]) -> None:
             ).strip()
         if "revision_date" not in meta:
             meta["revision_date"] = subprocess.check_output(
-                ["git", "log", "-1", "--format=%ad", "--date=short", "HEAD"],
+                ["git", "log", "-1", "--format=%cd", "--date=short", "HEAD"],
                 text=True,
             ).strip()
         if "repository" not in meta:

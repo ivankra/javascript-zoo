@@ -329,13 +329,13 @@ class GitRevision(NamedTuple):
 
 
 def get_git_revision(path: Path) -> GitRevision | None:
-    """Return the HEAD revision and author date of a git repo, or None."""
+    """Return the HEAD revision and committer date of a git repo, or None."""
     try:
         # -c safe.directory: allow reading repos with different ownership
         # (e.g. bind-mounted into a container with a different uid).
         git = ["git", "-c", f"safe.directory={path}", "-C", str(path)]
         out = subprocess.check_output(
-            git + ["log", "-1", "--format=%H%n%ad", "--date=short"],
+            git + ["log", "-1", "--format=%H%n%cd", "--date=short"],
             stderr=subprocess.DEVNULL,
         ).decode().strip()
         rev, date = out.split("\n", 1)
