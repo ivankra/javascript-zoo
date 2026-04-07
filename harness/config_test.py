@@ -87,6 +87,40 @@ class ResolveFlagsTest(unittest.TestCase):
         )
         self.assertEqual(result, [{"if": "X", "then": "--a", "else": "--b"}])
 
+    def test_empty_if_branches_trimmed_after_shell_resolution(self) -> None:
+        self.assertEqual(
+            resolve_flags(
+                [{"if": "X", "then": {"shell": "true"}}],
+                expand_shell=True,
+                env=self._env(),
+            ),
+            [],
+        )
+        self.assertEqual(
+            resolve_flags(
+                [{"if": "X", "then": "--a", "else": {"shell": "true"}}],
+                expand_shell=True,
+                env=self._env(),
+            ),
+            [{"if": "X", "then": "--a"}],
+        )
+        self.assertEqual(
+            resolve_flags(
+                [{"if": "X", "then": {"shell": "true"}, "else": "--fallback"}],
+                expand_shell=True,
+                env=self._env(),
+            ),
+            [{"if": "!(X)", "then": "--fallback"}],
+        )
+        self.assertEqual(
+            resolve_flags(
+                [{"if": "X", "then": {"shell": "true"}, "else": {"shell": "true"}}],
+                expand_shell=True,
+                env=self._env(),
+            ),
+            [],
+        )
+
     def test_shell_multitoken_inside_then_becomes_list(self) -> None:
         result = resolve_flags(
             [{"if": "X", "then": {"shell": "echo --a --b"}}], expand_shell=True, env=self._env(),

@@ -308,9 +308,11 @@ def resolve_flags(
                 result.extend(shlex.split(proc.stdout))
             else:
                 result.append(item)
-        elif isinstance(item, dict) and "if" in item and "then" in item:
+        elif isinstance(item, dict) and "if" in item and ("then" in item or "else" in item):
             if expand_if:
                 if tags is not None and FilterExpr.eval(item["if"], tags):
+                    if "then" not in item:
+                        continue
                     branch = item["then"]
                 elif "else" in item:
                     branch = item["else"]
@@ -326,7 +328,13 @@ def resolve_flags(
                     v = item[key]
                     v_list = v if isinstance(v, list) else [v]
                     r = resolve_flags(v_list, expand_shell=expand_shell, expand_if=False, env=env, tags=tags)
+                    if not r:
+                        continue
                     resolved[key] = r[0] if len(r) == 1 else r
+                if "then" not in resolved:
+                    if "else" not in resolved:
+                        continue
+                    resolved = {"if": f"!({item['if']})", "then": resolved["else"]}
                 result.append(resolved)
         else:
             sys.exit(f"unexpected flags item: {item!r}")
