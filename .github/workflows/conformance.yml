@@ -164,7 +164,7 @@ jobs:
 
       - name: Run conformance tests
         run: |
-          DR="docker run --rm -m 12g --memory-swap 24g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
+          DR="docker run --rm --cpu-shares=2 -m 12g --memory-swap=24g --tmpfs=/tmp --ulimit=core=0 -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/es1-5 results/compat-table
           set -x
           for engine in ${{ steps.select_engines.outputs.engines }}; do
@@ -215,7 +215,7 @@ jobs:
 
       - name: Run test262
         run: |
-          DR="docker run --rm -m 12g --memory-swap 24g -e PYTHONDONTWRITEBYTECODE=1 -v /tmp:/tmp -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
+          DR="docker run --rm --cpu-shares=2 -m 12g --memory-swap=24g --tmpfs=/tmp --ulimit=core=0 -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/test262 results/test262-tags
           set -x
           for engine in ${{ steps.select_engines.outputs.engines }}; do

@@ -8,6 +8,8 @@ DOCKER ?= $(shell command -v podman container 2>/dev/null || echo docker)
 # Keep in sync with build.sh/dist.sh
 DOCKER_ARCH ?= $(shell uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/; s/armv7l/arm/; s/i686/386/; s/loongarch64/loong64/')
 
+DOCKER_RUN ?= $(DOCKER) run -it --rm --arch=$(DOCKER_ARCH) --cpu-shares=128 --ulimit=core=0 --tmpfs=/tmp
+
 ROOT_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 IID_DIR := $(ROOT_DIR)/.cache/iid/$(DOCKER_ARCH)
 DIST_DIR := $(ROOT_DIR)/dist/$(DOCKER_ARCH)
@@ -83,7 +85,7 @@ $(call dist_json_path,$(1)): $(IID_DIR)/jsz-$(1)
 
 # sh-<name>: start shell in the built image
 sh-$(1) $(1)-sh: $(IID_DIR)/jsz-$(1)
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
+	$(DOCKER_RUN) \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  jsz-$(1):$(DOCKER_ARCH)
@@ -97,7 +99,7 @@ $(if $(filter $(PROJECT),$(1)),sh: sh-$(1))
 $(if $(and $(filter engines,$(GROUP)),$(filter $(CONFORMANCE_BINARY),$(1)),$(strip $(CONFORMANCE_CMD))),
 ifeq ($(DIRECT),)
 conformance: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
+	$(DOCKER_RUN) \
 	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
 	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
 	  -w "$(CURDIR)" \
@@ -105,7 +107,7 @@ conformance: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
 	  bash -c '$(CONFORMANCE_CMD)'
 
 conformance.txt: | $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
+	$(DOCKER_RUN) \
 	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
 	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
 	  -w "$(CURDIR)" \
@@ -142,7 +144,7 @@ $(IID_DIR)/$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CUR
 
 # Start bash in the built image
 $(1)-sh sh-$(1): $(IID_DIR)/$(1)
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
+	$(DOCKER_RUN) \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  $(1):$(DOCKER_ARCH) \
