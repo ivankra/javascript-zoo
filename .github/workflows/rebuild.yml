@@ -1,0 +1,111 @@
+# Rebuilds a small subset of engines using the latest (or given) repo commit
+# and uploads the resulting binaries to an existing draft release.
+#
+# Use case: when build.yml fails on a few engines, commit fixes to the repo,
+# run this workflow against the failed engines for the existing draft release,
+# then run hub.yml to finalize and publish.
+#
+# SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+name: Rebuild
+run-name: "Rebuild (${{ inputs.release }}: ${{ inputs.engines }})"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Release tag to upload artifacts to (YYYYMMDD)'
+        required: true
+        type: string
+      engines:
+        description: 'Engines to rebuild (space-separated)'
+        required: true
+        type: string
+      archs:
+        description: 'Architectures to rebuild (space-separated)'
+        default: 'amd64 arm64'
+        type: string
+      ref:
+        description: 'Git ref to build from'
+        default: 'main'
+        type: string
+
+concurrency:
+  group: rebuild-${{ inputs.release }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # gh release upload
+  packages: write  # GHCR push/pull
+
+jobs:
+  init:
+    runs-on: ubuntu-24.04
+    outputs:
+      archs: ${{ steps.init.outputs.archs }}
+      engines: ${{ steps.init.outputs.engines }}
+      ref: ${{ steps.init.outputs.ref }}
+      release_tag: ${{ steps.init.outputs.release_tag }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Vars
+        id: init
+        run: |
+          echo "release_tag=${{ inputs.release }}" | tee -a "$GITHUB_OUTPUT"
+          echo "ref=${{ inputs.ref }}" | tee -a "$GITHUB_OUTPUT"
+          ARCHS=$(echo '${{ inputs.archs }}' | tr ' ' '\n' | grep -v '^$' | jq -R . | jq -sc .)
+          echo "archs=$ARCHS" | tee -a "$GITHUB_OUTPUT"
+          ENGINES=$(echo '${{ inputs.engines }}' | tr ' ' '\n' | grep -v '^$' | jq -R . | jq -sc .)
+          echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
+
+      - name: Verify release exists
+        run: gh release view "${{ inputs.release }}" --repo ${{ github.repository }} >/dev/null
+
+  engine:
+    needs: init
+    runs-on: ${{ matrix.arch == 'arm64' && 'ubuntu-24.04-arm' || 'ubuntu-24.04' }}
+    timeout-minutes: 360
+    env:
+      DOCKER_ARCH: ${{ matrix.arch }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: ${{ fromJson(needs.init.outputs.engines) }}
+        arch: ${{ fromJson(needs.init.outputs.archs) }}
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be  # main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.init.outputs.ref }}
+
+      - name: Build engine
+        uses: nick-fields/retry@v4
+        with:
+          max_attempts: 3
+          timeout_minutes: 360
+          command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
+
+      - name: Upload to release
+        run: |
+          rm -f dist/amd64/jscript-dist/jscript*.dll dist/amd64/jscript9-dist/jscript*.dll  # proprietary DLLs, amd64 only
+          rm -f dist/${DOCKER_ARCH}/*.dbg
+          tar -c -C dist/${DOCKER_ARCH} . | zstd -19 -o "${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst"
+          for i in 1 2 3 4 5; do
+            gh release upload --clobber "${{ needs.init.outputs.release_tag }}" "${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst" && exit 0
+            sleep 60
+          done
+          exit 1

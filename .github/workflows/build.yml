@@ -1,5 +1,13 @@
 # Builds all engines for amd64 and arm64 architectures,
-# creates a new GitHub release with built binaries.
+# creates docker hub image with runtimes and all binaries and
+# publishes a new GitHub release.
+#
+# Publishing a release triggers conformance.yml in turn.
+#
+# Hub image build and release are gated on every engine succeeding.
+# Recovery flow if a few engines fail: commit a fix, run rebuild.yml
+# against the failed engines and upload to existing draft release,
+# then run hub.yml to build the hub image and publish the release.
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
@@ -20,11 +28,10 @@ permissions:
   packages: write  # GHCR push
 
 jobs:
-  # Init vars and create draft release
   init:
     runs-on: ubuntu-24.04
     outputs:
-      build_date: ${{ steps.init.outputs.build_date }}
+      release_tag: ${{ steps.init.outputs.release_tag }}
       engines_amd64: ${{ steps.init.outputs.engines_amd64 }}
       engines_arm64: ${{ steps.init.outputs.engines_arm64 }}
     env:
@@ -32,25 +39,25 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Set BUILD_DATE and engine lists
+      - name: Set release tag and engine lists
         id: init
         run: |
-          BUILD_DATE=$(date +%Y%m%d)
-          echo "build_date=$BUILD_DATE" >> "$GITHUB_OUTPUT"
+          RELEASE_TAG=$(date +%Y%m%d)
+          echo "release_tag=$RELEASE_TAG" | tee -a "$GITHUB_OUTPUT"
 
           AMD64=$(cd engines && DOCKER_ARCH=amd64 make list | jq -R . | jq -sc .)
-          echo "engines_amd64=$AMD64" >> "$GITHUB_OUTPUT"
+          echo "engines_amd64=$AMD64" | tee -a "$GITHUB_OUTPUT"
 
           ARM64=$(cd engines && DOCKER_ARCH=arm64 make list | jq -R . | jq -sc .)
-          echo "engines_arm64=$ARM64" >> "$GITHUB_OUTPUT"
+          echo "engines_arm64=$ARM64" | tee -a "$GITHUB_OUTPUT"
 
       - name: Create draft release
         run: |
-          BUILD_DATE=${{ steps.init.outputs.build_date }}
-          gh release delete $BUILD_DATE --yes 2>/dev/null || true
-          gh release create $BUILD_DATE --title $BUILD_DATE --draft --target $GITHUB_SHA
+          TAG=${{ steps.init.outputs.release_tag }}
+          gh release delete $TAG --yes 2>/dev/null || true
+          gh release create $TAG --title $TAG --draft --target $GITHUB_SHA
 
-  # Builds base toolchain images (build/jsz-*.Dockerfile) and pushes them to GHCR.
+  # Build base toolchain images (build/jsz-*.Dockerfile) and push them to GHCR.
   # Images are tagged {name}:{arch}, e.g.:
   #   ghcr.io/ivankra/javascript-zoo/jsz-gcc:amd64
   #   ghcr.io/ivankra/javascript-zoo/jsz-clang23:arm64
@@ -62,7 +69,7 @@ jobs:
       matrix:
         runner: [ubuntu-24.04, ubuntu-24.04-arm]
     steps:
-      - &ghcr-login
+      - &ghcr_login
         name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
@@ -80,13 +87,14 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     env:
+      DOCKER_ARCH: amd64
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       fail-fast: false
       matrix:
         engine: ${{ fromJson(needs.init.outputs.engines_amd64) }}
     steps:
-      - &free-disk-space
+      - &free_disk_space
         name: Free disk space
         uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be  # main
         with:
@@ -96,119 +104,85 @@ jobs:
           haskell: true
           large-packages: true
 
-      - *ghcr-login
+      - *ghcr_login
       - *checkout
 
-      - &system-info
-        name: System info
-        run: uname -a; lscpu; cat /proc/cpuinfo; gcc -march=native -Q --help=target
-
       # Retry handles transient failures (OOM, network); timeout matches job limit intentionally.
-      - name: Build engine
+      - &build_engine
+        name: Build engine
         uses: nick-fields/retry@v4
         with:
           max_attempts: 3
           timeout_minutes: 360
           command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
 
-      - name: Pack dist artifact tarball
-        run: tar -cf dist-amd64-${{ matrix.engine }}.tar -C dist/amd64 .
-
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v6
-        with:
-          name: dist-amd64-${{ matrix.engine }}
-          path: dist-amd64-${{ matrix.engine }}.tar
-          if-no-files-found: error
-
-      - name: Package and upload to release
+      - &upload_to_release
+        name: Upload to release
         run: |
           rm -f dist/amd64/jscript-dist/jscript*.dll dist/amd64/jscript9-dist/jscript*.dll  # proprietary DLLs, amd64 only
-          rm -f dist/amd64/*.dbg
-          tar -c -C dist/amd64 . | zstd -19 -o ${{ matrix.engine }}.amd64.tar.zst
-          gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst \
-            || (sleep 15 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst) \
-            || (sleep 30 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst)
+          rm -f dist/${DOCKER_ARCH}/*.dbg
+          tar -c -C dist/${DOCKER_ARCH} . | zstd -19 -o "${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst"
+          for i in 1 2 3 4 5; do
+            gh release upload --clobber "${{ needs.init.outputs.release_tag }}" "${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst" && exit 0
+            sleep 60
+          done
+          exit 1
 
-      - &cleanup
-        name: Cleanup
-        if: always()
-        run: rm -rf dist/
-
-  # Builder for arm64 binaries
+  # Builder for arm64 binaries.
+  # Separate from amd64 as job matrix expansion is limited to only 256 items.
   engine-arm64:
     needs: [init, base]
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 360
     env:
+      DOCKER_ARCH: arm64
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       fail-fast: false
       matrix:
         engine: ${{ fromJson(needs.init.outputs.engines_arm64) }}
     steps:
-      - *free-disk-space
-      - *ghcr-login
+      - *free_disk_space
+      - *ghcr_login
       - *checkout
-      - *system-info
+      - *build_engine
+      - *upload_to_release
 
-      - name: Build engine
-        uses: nick-fields/retry@v4
-        with:
-          max_attempts: 3
-          timeout_minutes: 360
-          command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
-
-      - name: Pack dist artifact tarball
-        run: tar -cf dist-arm64-${{ matrix.engine }}.tar -C dist/arm64 .
-
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v6
-        with:
-          name: dist-arm64-${{ matrix.engine }}
-          path: dist-arm64-${{ matrix.engine }}.tar
-          if-no-files-found: error
-
-      - name: Package and upload to release
-        run: |
-          rm -f dist/arm64/*.dbg
-          tar -c -C dist/arm64 . | zstd -19 -o ${{ matrix.engine }}.arm64.tar.zst
-          gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst \
-            || (sleep 15 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst) \
-            || (sleep 30 && gh release upload --clobber ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst)
-
-      - *cleanup
-
-  publish:
+  # Build and push hub image. Pass REV=$GITHUB_SHA so hub.Dockerfile can locally
+  # tag the build commit as $TAG which doesn't yet exist.
+  hub:
     needs: [init, engine-amd64, engine-arm64]
     runs-on: ubuntu-24.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Publish release
-        run: |
-          gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }} \
-            || (sleep 15 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }}) \
-            || (sleep 30 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }})
-
-  # Create and push Docker Hub image from the latest GitHub release.
-  hub:
-    needs: [init, publish]
-    runs-on: ubuntu-24.04
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REV: ${{ github.sha }}
     steps:
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
       - *checkout
-      - *ghcr-login
+      - *ghcr_login
 
       - name: Build and push ghcr.io/ivankra/javascript-zoo/hub
-        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ needs.init.outputs.build_date }}
+        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ needs.init.outputs.release_tag }}
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u ivankra --password-stdin
 
       - name: Build and push docker.io/ivankra/javascript-zoo
-        run: build/hub.sh docker.io/ivankra/javascript-zoo ${{ needs.init.outputs.build_date }}
+        run: build/hub.sh docker.io/ivankra/javascript-zoo ${{ needs.init.outputs.release_tag }}
+
+  publish:
+    needs: [init, hub]
+    runs-on: ubuntu-24.04
+    env:
+      # PAT needed to trigger conformance.yml - GITHUB_TOKEN-created events don't.
+      GH_TOKEN: ${{ secrets.JSZ_RELEASE_GITHUB_TOKEN }}
+    steps:
+      - name: Publish release
+        run: |
+          for i in 1 2 3 4 5; do
+            gh release edit ${{ needs.init.outputs.release_tag }} --draft=false --repo ${{ github.repository }} && exit 0
+            sleep 60
+          done
+          exit 1

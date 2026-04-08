@@ -9,14 +9,23 @@ FROM $BASE
 
 ARG TAG
 ARG TARGETARCH
+# Optional: commit sha to locally tag as $TAG in case github release is still a draft (no git tag)
+ARG REV=
 
 # Repackaged binaries from GitHub release as a single tarball with <arch>/ directory.
 ADD dist/$TARGETARCH-$TAG.tar /tmp
 
+# /zoo intentionally tracks main HEAD (not $TAG) so `git pull` inside the
+# container fetches the latest harness/scripts.
 RUN rm -rf /dist /zoo && \
     mv /tmp/$TARGETARCH /dist && \
-    git clone --depth=1 --branch="$TAG" "https://github.com/ivankra/javascript-zoo.git" /zoo && \
-    cd /zoo && \
+    if [ -n "$REV" ]; then \
+        git clone --depth=1 "https://github.com/ivankra/javascript-zoo.git" /zoo && \
+        cd /zoo && git fetch --depth=1 origin "$REV" && git tag -f "$TAG" "$REV"; \
+    else \
+        git clone --depth=1 --branch="$TAG" "https://github.com/ivankra/javascript-zoo.git" /zoo && \
+        cd /zoo; \
+    fi && \
     git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*' && \
     git fetch --depth=1 origin main && \
     git checkout -B main origin/main && \

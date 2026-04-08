@@ -16,6 +16,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DOCKER="$(command -v docker 2>/dev/null || command -v podman)"  # prefer docker for `docker buildx --push`
 PUSHDEST="${1:-docker.io/ivankra/javascript-zoo}"
 TAG="${2:-latest}"
+REV="${REV:-}"  # optional commit sha to locally tag as $TAG (for draft releases)
 REGISTRY="${PUSHDEST%%/*}"
 if [[ "$REGISTRY" == "$PUSHDEST" ]]; then
   REGISTRY="docker.io"
@@ -84,6 +85,7 @@ if [[ "$DOCKER" == *docker ]]; then
     -t "$PUSHDEST:latest" \
     --build-arg BASE="$PUSHDEST:runtime" \
     --build-arg TAG="$TAG" \
+    --build-arg REV="$REV" \
     "$ROOT_DIR"
 else
   # podman buildx doesn't support --push, so this is more complicated than it has to be
@@ -99,6 +101,7 @@ else
       -f "$ROOT_DIR/build/hub.Dockerfile" \
       --build-arg BASE="jsz-runtime-$arch" \
       --build-arg TAG="$TAG" \
+      --build-arg REV="$REV" \
       "$ROOT_DIR"
 
     "$DOCKER" push "$PUSHDEST:$TAG-$arch"

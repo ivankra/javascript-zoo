@@ -1,15 +1,21 @@
-# Builds and pushes Docker Hub image from the latest published GitHub release.
+# Builds and pushes Docker Hub image, publishes GitHub release.
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
 name: Hub
+run-name: "Hub (${{ inputs.release }})"
 
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        description: 'Release tag (may include drafts)'
+        default: 'latest'
+        type: string
 
 permissions:
-  contents: read
+  contents: write  # publish draft release
   packages: write
 
 jobs:
@@ -28,11 +34,47 @@ jobs:
       - name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
-      - name: Build and push ghcr.io/ivankra/javascript-zoo/hub from latest release
-        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub
+      - name: Resolve release tag
+        id: tag
+        run: |
+          TAG="${{ inputs.release }}"
+          if [[ -z "$TAG" || "$TAG" == "latest" ]]; then
+            # Pick the most recent release including drafts (gh release view skips drafts)
+            TAG=$(gh release list --repo ${{ github.repository }} --limit 20 --json tagName,isDraft,createdAt \
+                  --jq 'sort_by(.createdAt) | reverse | .[0].tagName')
+          fi
+          echo "tag=$TAG" | tee -a "$GITHUB_OUTPUT"
+          # Commit the release was created from. For draft releases the git tag
+          # doesn't exist yet, so pass it as REV for hub.Dockerfile to locally tag.
+          REV=$(gh release view "$TAG" --repo ${{ github.repository }} --json targetCommitish -q .targetCommitish)
+          echo "rev=$REV" | tee -a "$GITHUB_OUTPUT"
+
+      - name: Build and push ghcr.io/ivankra/javascript-zoo/hub
+        env:
+          REV: ${{ steps.tag.outputs.rev }}
+        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ steps.tag.outputs.tag }}
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u ivankra --password-stdin
 
-      - name: Build and push docker.io/ivankra/javascript-zoo from latest release
-        run: build/hub.sh docker.io/ivankra/javascript-zoo
+      - name: Build and push docker.io/ivankra/javascript-zoo
+        env:
+          REV: ${{ steps.tag.outputs.rev }}
+        run: build/hub.sh docker.io/ivankra/javascript-zoo ${{ steps.tag.outputs.tag }}
+
+      - name: Publish release
+        env:
+          # PAT needed to trigger conformance.yml - GITHUB_TOKEN-created events don't.
+          GH_TOKEN: ${{ secrets.JSZ_RELEASE_GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          IS_DRAFT=$(gh release view "$TAG" --repo ${{ github.repository }} --json isDraft -q .isDraft)
+          if [[ "$IS_DRAFT" == "true" ]]; then
+            for i in 1 2 3 4 5; do
+              gh release edit "$TAG" --draft=false --repo ${{ github.repository }} && exit 0
+              sleep 60
+            done
+            exit 1
+          else
+            echo "Release $TAG is already published."
+          fi

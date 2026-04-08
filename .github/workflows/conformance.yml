@@ -1,13 +1,14 @@
 # Conformance testing for all engines using the hub image.
+#
+# Intentionally runs harness from main HEAD against hub:${release_tag}
+# binaries, so the latest scoring logic applies to historical releases.
 
 name: Conformance
 
 on:
-  # Automatic trigger after Build workflow finishes, using latest release tag
-  workflow_run:
-    workflows: ['Build']
-    types: [completed]
-    branches: [main]
+  # Automatic trigger when a release is published (by build.yml, hub.yml or manually).
+  release:
+    types: [published]
   # Manual trigger
   workflow_dispatch:
     inputs:
@@ -49,11 +50,9 @@ env:
 
 jobs:
   init:
-    # Skip when triggered by a failed Build workflow run
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     outputs:
-      tag: ${{ steps.init.outputs.tag }}
+      release_tag: ${{ steps.init.outputs.release_tag }}
       engines: ${{ steps.init.outputs.engines }}
       conformance_shards: ${{ steps.init.outputs.conformance_shards }}
       conformance_shard_list: ${{ steps.init.outputs.conformance_shard_list }}
@@ -64,18 +63,23 @@ jobs:
       - name: Resolve release tag and build shard arrays
         id: init
         run: |
-          TAG="${{ inputs.release }}"
-          if [[ "$TAG" == "latest" || -z "$TAG" ]]; then
-            TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            TAG="${{ github.event.release.tag_name }}"
+          else
+            TAG="${{ inputs.release }}"
+            if [[ "$TAG" == "latest" || -z "$TAG" ]]; then
+              TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
+            fi
           fi
-          echo "tag=$TAG" | tee -a "$GITHUB_OUTPUT"
+          echo "release_tag=$TAG" | tee -a "$GITHUB_OUTPUT"
 
           ENGINES="${{ inputs.engines }}"
           echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
 
           # Determine whether to commit results to data repo
-          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            # Automatically triggered workflow always commits
+          if [[ "${{ github.event_name }}" == "release" && "$TAG" =~ ^[0-9]{8}$ ]]; then
+            # Auto-commit only for production YYYYMMDD release tags. Test
+            # publishes with any other tag name (e.g. "test-foo") won't commit.
             echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
           elif [[ "${{ inputs.commit }}" == "true" ]]; then
             echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
@@ -97,7 +101,7 @@ jobs:
     needs: init
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
       SHARDS: ${{ needs.init.outputs.conformance_shards }}
       SHARD_PREFIX: conformance
     strategy:
@@ -181,7 +185,7 @@ jobs:
             $DR /zoo/harness/run.py $extra --shuffle -o "/results/compat-table/$engine.json" "$binary" compat-table;
           done
 
-      - &upload_shard_results
+      - &upload_artifact
         name: Upload shard results
         if: always()
         uses: actions/upload-artifact@v6
@@ -194,7 +198,7 @@ jobs:
     needs: init
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
       SHARDS: ${{ needs.init.outputs.test262_shards }}
       SHARD_PREFIX: test262
     strategy:
@@ -229,7 +233,7 @@ jobs:
             $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary";
           done
 
-      - *upload_shard_results
+      - *upload_artifact
 
   merge:
     needs: [init, conformance, test262]
@@ -280,7 +284,7 @@ jobs:
       - name: Upload merged results
         uses: actions/upload-artifact@v6
         with:
-          name: conformance-results-${{ needs.init.outputs.tag }}
+          name: conformance-results-${{ needs.init.outputs.release_tag }}
           path: merged/
           if-no-files-found: warn
 
@@ -304,6 +308,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "conformance.yml workflow for release ${{ needs.init.outputs.tag }}"
+            git commit -m "conformance.yml workflow for release ${{ needs.init.outputs.release_tag }}"
             git push
           fi
