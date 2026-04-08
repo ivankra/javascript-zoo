@@ -40,7 +40,7 @@ class Stats:
         self.total += 1
         if verdict is Verdict.OK:
             self.passed += 1
-        elif verdict is not None and verdict is not Verdict.SKIPPED:
+        elif verdict is not None and verdict is not Verdict.SKIP:
             self.failed += 1
         else:
             self.skipped += 1
@@ -327,7 +327,7 @@ class Reporter:
         """
         for run in runs:
             self.add(run)
-            self._mode_counts[run.coarse_verdict() or Verdict.FAILED] += 1
+            self._mode_counts[run.coarse_verdict() or Verdict.FAIL] += 1
 
         if runs:
             test_id = runs[0].test_id or runs[0].run_id or ""
@@ -335,9 +335,9 @@ class Reporter:
             self._in_flight.pop(test_id, None)
 
         if any(r.is_skipped() for r in runs):
-            self._file_counts[Verdict.SKIPPED] += 1
+            self._file_counts[Verdict.SKIP] += 1
         elif any(r.is_failed() for r in runs):
-            self._file_counts[Verdict.FAILED] += 1
+            self._file_counts[Verdict.FAIL] += 1
         else:
             self._file_counts[Verdict.OK] += 1
 
@@ -360,16 +360,16 @@ class Reporter:
 
     def _progress_line(self) -> str:
         fc = self._file_counts
-        n_done = fc[Verdict.OK] + fc[Verdict.FAILED] + fc[Verdict.SKIPPED]
+        n_done = fc[Verdict.OK] + fc[Verdict.FAIL] + fc[Verdict.SKIP]
         d = self._discovery
         if d is not None and d.done and d.count > 0:
             pct = n_done * 100 // d.count
             prefix = f"[{pct}%]"
         else:
             prefix = f"[{n_done}]"
-        line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
-        if fc[Verdict.SKIPPED]:
-            line += f", {fc[Verdict.SKIPPED]} skipped"
+        line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAIL]} failed"
+        if fc[Verdict.SKIP]:
+            line += f", {fc[Verdict.SKIP]} skipped"
         show_id = None
         if self._in_flight:
             show_id = max(self._in_flight, key=self._in_flight.__getitem__)
@@ -491,8 +491,8 @@ class Reporter:
             fp = run.test_id
             prev = fv.get(fp)
             coarse = run.coarse_verdict()
-            if prev is Verdict.FAILED or coarse is Verdict.FAILED:
-                fv[fp] = Verdict.FAILED
+            if prev is Verdict.FAIL or coarse is Verdict.FAIL:
+                fv[fp] = Verdict.FAIL
             elif prev is Verdict.OK or coarse is Verdict.OK:
                 fv[fp] = Verdict.OK
             else:
@@ -518,12 +518,12 @@ class Reporter:
                 continue
             assert r.test_id is not None
             key = r.test_id
-            v = r.coarse_verdict() or Verdict.FAILED
+            v = r.coarse_verdict() or Verdict.FAIL
             for qt in r.tags:
                 fv = tag_file_verdicts.setdefault(qt, {})
                 prev = fv.get(key)
-                if prev is Verdict.FAILED or v is Verdict.FAILED:
-                    fv[key] = Verdict.FAILED
+                if prev is Verdict.FAIL or v is Verdict.FAIL:
+                    fv[key] = Verdict.FAIL
                 elif prev is Verdict.OK or v is Verdict.OK:
                     fv[key] = Verdict.OK
                 else:
@@ -839,8 +839,8 @@ class Reporter:
 
         fv = self._file_verdicts()
         test_ok = sum(1 for v in fv.values() if v is Verdict.OK)
-        test_fail = sum(1 for v in fv.values() if v is Verdict.FAILED)
-        n_skipped = sum(1 for v in fv.values() if v is Verdict.SKIPPED)
+        test_fail = sum(1 for v in fv.values() if v is Verdict.FAIL)
+        n_skipped = sum(1 for v in fv.values() if v is Verdict.SKIP)
 
         # Failure recap (suppressed when verbose already printed them inline)
         failed = [r for r in results if r.is_failed()]

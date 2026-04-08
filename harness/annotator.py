@@ -12,9 +12,21 @@ from .runner import RunResult, Verdict
 
 
 # Regex to match JS error constructor names in engine output.
-_JS_ERROR_NAME_RE = re.compile(
-        r"(?<!\bdoes not throw )"
-        r"\b([A-Za-z_][A-Za-z0-9_]*Error)\b"
+JS_ERROR_NAME_RE = re.compile(
+    r"(?<!\bdoes not throw )"
+    r"\b([A-Za-z_][A-Za-z0-9_]*Error)\b"
+)
+
+# Test262's assert.throws messages. Capture whole message to avoid
+# a heuristic from tagging it using the first error class name.
+ASSERT_THROWS_RE = re.compile(
+    '(?P<message>Expected a ([A-Za-z0-9]*Error) ' +
+    '(but got a ([A-Za-z0-9]*Error)' +
+    '|but got a different error constructor with the same name' +
+    '|to be thrown but no exception was thrown at all' +
+    '|to be thrown asynchronously)' +
+    r'( \(Testing with [^()]+\))?' +
+    ')'
 )
 
 
@@ -95,7 +107,7 @@ class Annotator:
         # Crash = negative exit code (terminated by signal).
         if run.exit_code is not None and run.exit_code < 0 and \
                 not (self._config.ignore_sigabrt and run.exit_code == -6):
-            run.verdict_type = Verdict.CRASHED
+            run.verdict_type = Verdict.CRASH
             signum = -run.exit_code
             try:
                 run.verdict_detail = signal.Signals(signum).name
@@ -107,7 +119,7 @@ class Annotator:
         exc = (self._match_exception(run.stderr_cleaned or "", self._crash_cres) or
                self._match_exception(run.stdout_cleaned or "", self._crash_cres))
         if exc:
-            run.verdict_type = Verdict.CRASHED
+            run.verdict_type = Verdict.CRASH
             run.verdict_detail = exc[1]
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
@@ -142,7 +154,7 @@ class Annotator:
             ok_required = True
 
         if ok_found and fail_found:
-            run.verdict_type = Verdict.FAILED
+            run.verdict_type = Verdict.FAIL
             run.verdict_detail = "found both ok and fail markers"
             return
 
@@ -160,7 +172,7 @@ class Annotator:
         if errors:
             best_et, best_msg = errors[0]
             for et, msg in errors:
-                if et != Verdict.FAILED:
+                if et != Verdict.FAIL:
                     best_et, best_msg = et, msg
                     break
             msgs = [msg for _, msg in errors if msg]
@@ -174,7 +186,13 @@ class Annotator:
             line_filt = line.removeprefix(strip_line_prefix or '')
             if run.test_path:
                 line_filt = line.replace(os.path.basename(run.test_path), "<test>")
-            for m in _JS_ERROR_NAME_RE.finditer(line_filt):
+
+            for m in ASSERT_THROWS_RE.finditer(line_filt):
+                run.verdict_type = Verdict.TEST262_ERROR
+                run.verdict_detail = m.group(1)
+                return
+
+            for m in JS_ERROR_NAME_RE.finditer(line_filt):
                 js_exc = Verdict.from_js_error(m.group(1))
                 if js_exc is not None:
                     run.verdict_type = js_exc
@@ -183,7 +201,7 @@ class Annotator:
                     return
 
         if fail_found or (ok_required and not ok_found):
-            run.verdict_type = Verdict.FAILED
+            run.verdict_type = Verdict.FAIL
             if expect_async and "Test262:AsyncTestComplete" not in output:
                 run.verdict_type = Verdict.NO_ASYNC_TEST_COMPLETE
             else:
@@ -195,7 +213,7 @@ class Annotator:
         assert run.exit_code is not None
         if run.exit_code != 0 and 'es2018/Promise.prototype.finally.js' not in (run.test_path or ''):
             run.verdict_type = Verdict.EXIT
-            run.verdict_detail = f"exit code {run.exit_code}"
+            run.verdict_detail = str(run.exit_code)
             if self._config.exit_code_for_syntax_error == run.exit_code:
                 run.verdict_type = Verdict.SYNTAX_ERROR
                 run.verdict_detail = f"exit code {run.exit_code}"
@@ -212,13 +230,13 @@ class Annotator:
     ) -> None:
         """Post-classify check for negative tests. Mutates run in place."""
         assert run.verdict_type is not None
-        if run.verdict_type in (Verdict.TIMEOUT, Verdict.CRASHED, Verdict.OOM):
+        if run.verdict_type in (Verdict.TIMEOUT, Verdict.CRASH, Verdict.OOM):
             return
 
         # if negative_phase in ("parse", "resolution"):
         if run.is_ok():
             run.verdict_type = Verdict.NEGATIVE
-            run.verdict_detail = f"Expected {negative_type} but test passed"
+            run.verdict_detail = f"NOT({negative_type}): OK"
             return
 
         got = run.verdict_type
@@ -235,8 +253,8 @@ class Annotator:
                 got = Verdict.TEST262_ERROR
 
         if got != expected:
-            run.verdict_detail = f"Expected {negative_type} but got: {got_message}"
             run.verdict_type = Verdict.NEGATIVE
+            run.verdict_detail = f"NOT({negative_type}): {got_message}"
             return
 
         run.verdict_type = Verdict.OK
@@ -257,7 +275,7 @@ class Annotator:
                     if et is None:
                         if raw_type:
                             message = f"{raw_type}: {message}" if message else raw_type
-                        results.append((Verdict.FAILED, message or None))
+                        results.append((Verdict.FAIL, message or None))
                     else:
                         results.append((et, message or None))
                     break

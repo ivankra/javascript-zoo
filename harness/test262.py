@@ -74,7 +74,7 @@ class Test262Worker(PoolWorker):
         if self.filter_expr and not self.filter_expr(tags):
             return [RunResult(
                 run_id=rel_path, test_id=rel_path, test_path=str(test_path),
-                verdict_type=Verdict.SKIPPED, verdict_detail="filtered out",
+                verdict_type=Verdict.SKIP, verdict_detail="filtered out",
                 tags=tags,
             )]
 

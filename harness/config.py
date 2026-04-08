@@ -107,15 +107,15 @@ class EngineConfig:
     stdout_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
     stderr_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
     # Regex for crash strings from the language runtime (Java, Go etc).
-    # If matches stdout or stderr, run will be classified as ErrorType.CRASHED with
-    # the text captured by the "message" group as error_message.
+    # If matches stdout or stderr, run will be classified as Verdict.CRASH with
+    # the text captured by the "message" group as verdict_detail.
     crash_re: list[str] = dataclasses.field(default_factory=list)
     # Structured patterns for errors/exceptions with named groups "type" and "message".
     # Currently these are ran against each individual line of the combined
     # stdout/stderr, one line after another - first line with errors wins.
     # Order matters - first regex to match against the current line wins.
     # "type" group should capture standard JavaScript error name / one of
-    # ErrorType enum values, else it'll map to uninformative ErrorType.FAILED.
+    # Verdict enum values, else it'll map to uninformative Verdict.FAIL.
     # Advise: try to match stable terminal exception lines (e.g. "TypeError: ..."),
     # not traceback scaffolding; use *_replace_re to strip traceback boilerplate,
     # normalize multi-line exceptions to one-liners, normalize exception names,

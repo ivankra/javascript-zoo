@@ -63,7 +63,7 @@ class TestTagStats(unittest.TestCase):
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
-            _run("test/a.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         # features:Symbol should show 1 file, counted as FAIL (worst of the two modes)
@@ -77,7 +77,7 @@ class TestTagStats(unittest.TestCase):
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
-            _run("test/a.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         # Each mode tag sees exactly 1 file (since file+mode is unique)
@@ -89,7 +89,7 @@ class TestTagStats(unittest.TestCase):
     def test_mode_tags_match_raw_counts(self):
         """mode:* tag stats equal raw per-run counts (no dedup effect)."""
         runs = []
-        for name, v in [("a", Verdict.OK), ("b", Verdict.FAILED), ("c", Verdict.OK)]:
+        for name, v in [("a", Verdict.OK), ("b", Verdict.FAIL), ("c", Verdict.OK)]:
             for mode in ("strict", "sloppy"):
                 tags = _t262({"Symbol"}, mode=mode)
                 runs.append(_run(f"test/{name}.{mode}.js", v, tags=tags, mode=mode, test_id=f"test/{name}.js"))
@@ -110,7 +110,7 @@ class TestTagStats(unittest.TestCase):
             _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
             _run("test/a.sloppy.js", Verdict.OK, tags=tags_l, mode="sloppy", test_id="test/a.js"),
             _run("test/b.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/b.js"),
-            _run("test/b.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/b.js"),
+            _run("test/b.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/b.js"),
         ])
         summary = r._summary_json(r._build_tag_stats(), r._file_verdicts(), r._file_weights())
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
@@ -121,7 +121,7 @@ class TestTagStats(unittest.TestCase):
         """Skipped results with tags appear in tag stats."""
         tags = Tags.test262(Frontmatter(features={"Symbol"}))
         r = self._reporter([
-            _run("test/a.js", Verdict.SKIPPED, tags=tags),
+            _run("test/a.js", Verdict.SKIP, tags=tags),
         ])
         stats = r._build_tag_stats()
         self.assertEqual(stats["features:Symbol"].skipped, 1)
@@ -218,7 +218,7 @@ class TestEditionReport(unittest.TestCase):
         for i, (feat, verdict) in enumerate([
             ("Symbol", Verdict.OK),        # es6
             ("Promise", Verdict.OK),        # es6
-            ("BigInt", Verdict.FAILED),     # es2020
+            ("BigInt", Verdict.FAIL),     # es2020
         ]):
             tags = _t262({feat}, mode="strict")
             runs.append(_run(f"test/{i}.strict.js", verdict, tags=tags, mode="strict", test_id=f"test/{i}.js"))
@@ -245,7 +245,7 @@ class TestEditionReport(unittest.TestCase):
         """An edition where all tests are skipped merges into 'skipped'."""
         tags = _t262({"Symbol"}, mode="strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.SKIPPED, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.SKIP, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("skipped", report)
@@ -255,7 +255,7 @@ class TestEditionReport(unittest.TestCase):
         """Features not in features.yml appear under esnext."""
         tags = _t262({"SomeNewProposal"}, mode="strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.FAILED, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.FAIL, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("esnext", report)
@@ -591,7 +591,7 @@ class TestReporterProgress(unittest.TestCase):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
         r._in_flight["test/Array/from.js"] = 1.0
         r._in_flight["test/Array/of.js"] = 2.0
-        r.test_completed([_run("test/Array/from.js", Verdict.FAILED, test_id="test/Array/from.js")])
+        r.test_completed([_run("test/Array/from.js", Verdict.FAIL, test_id="test/Array/from.js")])
         line = r._progress_line()
         self.assertTrue(line.startswith("[1] "))
         self.assertIn("0 passed, 1 failed", line)

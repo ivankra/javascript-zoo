@@ -407,7 +407,7 @@ class BenchRunner:
 
         if not run.is_failed():
             if expected and not any(v is not None for v in scores.values()):
-                run.verdict_type = Verdict.FAILED
+                run.verdict_type = Verdict.FAIL
                 run.verdict_detail = "No scores in the output"
 
         if self.cfg.bench_ignore_errors:

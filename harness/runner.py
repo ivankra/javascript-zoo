@@ -27,14 +27,14 @@ class Verdict(StrEnum):
 
     OK = "OK"
     # Didn't run the test due to some filter
-    SKIPPED = "skipped"
-    # Every verdict other than OK/SKIPPED means a failure.
-    FAILED = "failed"    # unclassified/generic error, Error exception, missing OK marker
-    CRASHED = "crashed"  # killed by a signal or runtime panic
-    TIMEOUT = "timeout"
+    SKIP = "SKIP"
+    # Every verdict other than OK/SKIP means a failure.
+    FAIL = "FAIL"    # unclassified/generic error, Error exception, missing OK marker
+    CRASH = "CRASH"  # killed by a signal or runtime panic
+    TIMEOUT = "TIMEOUT"
     OOM = "OOM"
     # Non-zero exit code (low priority, only given when no better error type fits)
-    EXIT = "exit"
+    EXIT = "EXIT"
     # Standard JavaScript exception types
     SYNTAX_ERROR = "SyntaxError"
     REFERENCE_ERROR = "ReferenceError"
@@ -48,19 +48,19 @@ class Verdict(StrEnum):
     # Test262Error exception (assertion failure, etc)
     TEST262_ERROR = "Test262Error"
     # Negative test passed or threw an unexpected error
-    NEGATIVE = "NEGATIVE"
+    NEGATIVE = "NOT"
     # Got "Test262: This statement should not be evaluated."
     # Usually a negative syntax test that didn't get rejected.
     DONOTEVALUATE = "DONOTEVALUATE"
-    # Got "Test262:AsyncTestFailure:..."
-    ASYNC_TEST_FAILURE = "AsyncTestFailure"
     # Missing "Test262:AsyncTestComplete" marker
     NO_ASYNC_TEST_COMPLETE = "NoAsyncTestComplete"
+    # Got "Test262:AsyncTestFailure:..."
+    ASYNC_TEST_FAILURE = "AsyncTestFailure"
 
     @classmethod
     def from_js_error(cls, exception_name: str) -> Verdict | None:
         if exception_name == "Error":
-            return cls.FAILED
+            return cls.FAIL
         try:
             verdict = cls(exception_name)
             return verdict if verdict.value.endswith("Error") else None
@@ -163,27 +163,28 @@ class RunResult:
         return self.verdict_type is Verdict.OK
 
     def is_skipped(self) -> bool:
-        return self.verdict_type is Verdict.SKIPPED
+        return self.verdict_type is Verdict.SKIP
 
     def is_failed(self) -> bool:
-        return self.verdict_type not in (None, Verdict.OK, Verdict.SKIPPED)
+        return self.verdict_type not in (None, Verdict.OK, Verdict.SKIP)
 
     def coarse_verdict(self) -> Verdict | None:
         if self.verdict_type is None:
             return None
-        return Verdict.FAILED if self.is_failed() else self.verdict_type
+        return Verdict.FAIL if self.is_failed() else self.verdict_type
 
     def verdict_message(self) -> str:
         """Render verdict plus optional error detail as a compact status string."""
         if self.verdict_type is None:
             return ""
         assert self.verdict_detail != "OK"
-        if self.verdict_type in (Verdict.FAILED, Verdict.EXIT, Verdict.NEGATIVE):
-            return self.verdict_detail or str(self.verdict_type)
         status = str(self.verdict_type)
-        if self.verdict_detail:
-            status += f": {self.verdict_detail}"
-        return status
+        if not self.verdict_detail:
+            return status
+        if self.verdict_type is Verdict.NEGATIVE:
+            assert self.verdict_detail and self.verdict_detail.startswith("NOT(")
+            return self.verdict_detail
+        return f"{status}: {self.verdict_detail}"
 
     def to_dict(self) -> dict[str, Any]:
         d = dataclasses.asdict(self)

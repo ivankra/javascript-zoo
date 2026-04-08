@@ -38,29 +38,29 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stdout": "Error"},
         {"ok_pattern": r"OK"},
-        Verdict.FAILED,
-        "failed",
+        Verdict.FAIL,
+        "FAIL",
     ),
     (
         {},
         {"stdout": "", "exit_code": 3},
         {"ok_pattern": r"OK"},
-        Verdict.FAILED,
-        "failed",
+        Verdict.FAIL,
+        "FAIL",
     ),
     (
         {},
         {"stdout": "plain output"},
         {"ok_pattern": r"test\.js: OK"},
-        Verdict.FAILED,
-        "plain output",
+        Verdict.FAIL,
+        "FAIL: plain output",
     ),
     (
         {},
         {"exit_code": -9, "verdict_type": Verdict.TIMEOUT, "verdict_detail": ">10s"},
         {},
         Verdict.TIMEOUT,
-        "timeout: >10s",
+        "TIMEOUT: >10s",
     ),
     (
         {},
@@ -73,15 +73,15 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"exit_code": -11},
         {},
-        Verdict.CRASHED,
-        "crashed: SIGSEGV",
+        Verdict.CRASH,
+        "CRASH: SIGSEGV",
     ),
     (
         {},
         {"exit_code": 2},
         {},
         Verdict.EXIT,
-        "exit code 2",
+        "EXIT: 2",
     ),
     (
         {},
@@ -165,8 +165,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stdout": "test.js: OK\ntest.js: failed"},
         {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
-        Verdict.FAILED,
-        "found both ok and fail markers",
+        Verdict.FAIL,
+        "FAIL: found both ok and fail markers",
     ),
     (
         {},
@@ -179,8 +179,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"},
         {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
-        Verdict.FAILED,
-        "found both ok and fail markers",
+        Verdict.FAIL,
+        "FAIL: found both ok and fail markers",
     ),
     (
         {},
@@ -231,49 +231,49 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code": -9, "verdict_type": Verdict.TIMEOUT},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
         Verdict.TIMEOUT,
-        "timeout",
+        "TIMEOUT",
     ),
     (
         {},
         {"exit_code": -11},
         {"negative_phase": "runtime", "negative_type": "TypeError"},
-        Verdict.CRASHED,
-        "crashed: SIGSEGV",
+        Verdict.CRASH,
+        "CRASH: SIGSEGV",
     ),
     (
         {},
         {"stdout": "ok"},
         {"negative_phase": "runtime", "negative_type": "TypeError"},
         Verdict.NEGATIVE,
-        "Expected TypeError but test passed",
+        "NOT(TypeError): OK",
     ),
     (
         {},
         {"stdout": "RangeError"},
         {"negative_phase": "runtime", "negative_type": "EvalError"},
         Verdict.NEGATIVE,
-        "Expected EvalError but got: RangeError",
+        "NOT(EvalError): RangeError",
     ),
     (
         {},
         {"stderr": "TypeError: bad", "exit_code": 1},
         {"negative_phase": "runtime", "negative_type": "SyntaxError"},
         Verdict.NEGATIVE,
-        "Expected SyntaxError but got: TypeError: bad",
+        "NOT(SyntaxError): TypeError: bad",
     ),
     (
         {},
         {"stdout": "ok"},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
         Verdict.NEGATIVE,
-        "Expected SyntaxError but test passed",
+        "NOT(SyntaxError): OK",
     ),
     (
         {},
         {"exit_code": 1},
         {"negative_phase": "runtime", "negative_type": "SyntaxError"},
         Verdict.NEGATIVE,
-        "Expected SyntaxError but got: exit code 1",
+        "NOT(SyntaxError): EXIT: 1",
     ),
     (
         {"exit_code_for_syntax_error": 101},
@@ -294,7 +294,7 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code": 7},
         {},
         Verdict.EXIT,
-        "exit code 7",
+        "EXIT: 7",
     ),
     (
         {"exit_code_may_be_syntax_error": 7},
@@ -308,7 +308,7 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code": 9},
         {},
         Verdict.EXIT,
-        "exit code 9",
+        "EXIT: 9",
     ),
     (
         {"exit_code_may_be_test262_error": 9},
@@ -412,15 +412,15 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
         {"stdout": "CustomError: bad"},
         {},
-        Verdict.FAILED,
-        "CustomError: bad",
+        Verdict.FAIL,
+        "FAIL: CustomError: bad",
     ),
     (
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error)$"]},
         {"stdout": "CustomError"},
         {},
-        Verdict.FAILED,
-        "CustomError",
+        Verdict.FAIL,
+        "FAIL: CustomError",
     ),
     (
         {"errors_re": [r"^Uncaught: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
@@ -433,15 +433,15 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
         {"stdout": "TypeError: bad", "exit_code": -11},
         {},
-        Verdict.CRASHED,
-        "crashed: SIGSEGV",
+        Verdict.CRASH,
+        "CRASH: SIGSEGV",
     ),
     (
         {"errors_re": [r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
         {"stdout": "some error occurred", "exit_code": 1},
         {},
         Verdict.EXIT,
-        "exit code 1",
+        "EXIT: 1",
     ),
     (
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
@@ -477,6 +477,34 @@ class AnnotatorTest(unittest.TestCase):
                 out = cl.classify(mk_run(**run_kw), **cls_kw)
                 self.assertEqual(out.verdict_type, want_vt)
                 self.assertEqual(out.verdict_message(), want_message)
+
+    def test_verdict_message_for_every_verdict(self) -> None:
+        cases: list[list[Verdict | str | None]] = [
+            ["OK", Verdict.OK, None],
+            ["SKIP: filtered out", Verdict.SKIP, "filtered out"],
+            ["FAIL: generic failure", Verdict.FAIL, "generic failure"],
+            ["CRASH: SIGSEGV", Verdict.CRASH, "SIGSEGV"],
+            ["TIMEOUT: >10s", Verdict.TIMEOUT, ">10s"],
+            ["OOM: >1024MB", Verdict.OOM, ">1024MB"],
+            ["EXIT: 2", Verdict.EXIT, "2"],
+            ["SyntaxError: bad", Verdict.SYNTAX_ERROR, "bad"],
+            ["ReferenceError: x is not defined", Verdict.REFERENCE_ERROR, "x is not defined"],
+            ["TypeError: bad type", Verdict.TYPE_ERROR, "bad type"],
+            ["EvalError: bad eval", Verdict.EVAL_ERROR, "bad eval"],
+            ["RangeError: out of range", Verdict.RANGE_ERROR, "out of range"],
+            ["URIError: bad uri", Verdict.URI_ERROR, "bad uri"],
+            ["InternalError: internal", Verdict.INTERNAL_ERROR, "internal"],
+            ["AggregateError: many", Verdict.AGGREGATE_ERROR, "many"],
+            ["SuppressedError: suppressed", Verdict.SUPPRESSED_ERROR, "suppressed"],
+            ["Test262Error: assert", Verdict.TEST262_ERROR, "assert"],
+            ["NOT(SyntaxError): TypeError", Verdict.NEGATIVE, "NOT(SyntaxError): TypeError"],
+            ["DONOTEVALUATE", Verdict.DONOTEVALUATE, None],
+            ["NoAsyncTestComplete", Verdict.NO_ASYNC_TEST_COMPLETE, None],
+            ["AsyncTestFailure: boom", Verdict.ASYNC_TEST_FAILURE, "boom"],
+        ]
+        for want, verdict_type, verdict_detail in cases:
+            run = mk_run(verdict_type=verdict_type, verdict_detail=verdict_detail)
+            self.assertEqual(run.verdict_message(), want)
 
     def test_stdout_replace_re_anchors_match_per_line(self) -> None:
         # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
@@ -527,7 +555,7 @@ class AnnotatorTest(unittest.TestCase):
         assert exit_code is not None
         self.assertLess(exit_code, 0)  # negative = killed by signal
         result = Annotator(EngineConfig()).classify(run)
-        self.assertEqual(result.verdict_type, Verdict.CRASHED)
+        self.assertEqual(result.verdict_type, Verdict.CRASH)
         self.assertEqual(result.verdict_detail, "SIGABRT")
 
     def test_strip_cwd(self) -> None:

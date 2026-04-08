@@ -49,14 +49,14 @@ class RunResultTest(unittest.TestCase):
 
     def test_to_dict_roundtrip(self) -> None:
         r = mk_run(
-            verdict_type=Verdict.CRASHED,
+            verdict_type=Verdict.CRASH,
             verdict_detail="signal 11",
             exit_code=-11,
         )
         d = r.to_dict()
-        self.assertEqual(d["verdict_type"], str(Verdict.CRASHED))
+        self.assertEqual(d["verdict_type"], str(Verdict.CRASH))
         r2 = RunResult.from_dict(d)
-        self.assertEqual(r2.verdict_type, Verdict.CRASHED)
+        self.assertEqual(r2.verdict_type, Verdict.CRASH)
         self.assertEqual(r2.verdict_detail, "signal 11")
 
     def test_from_dict_rejects_unknown_fields(self) -> None:
@@ -80,12 +80,12 @@ class RunResultTest(unittest.TestCase):
         )
         self.assertEqual(r.verdict_message(), "SyntaxError: Unexpected token")
 
-    def test_verdict_message_failed_omits_error_type(self) -> None:
+    def test_verdict_message_fail_has_head(self) -> None:
         r = mk_run(
-            verdict_type=Verdict.FAILED,
+            verdict_type=Verdict.FAIL,
             verdict_detail="something went wrong",
         )
-        self.assertEqual(r.verdict_message(), "something went wrong")
+        self.assertEqual(r.verdict_message(), "FAIL: something went wrong")
 
 class ConfigRunnerSmokeTest(unittest.TestCase):
     def _make_binary(self, td: str, name: str = "eng") -> Path:
