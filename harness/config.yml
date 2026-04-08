@@ -32,50 +32,14 @@ default:
   # 4G is sufficient for major engines to pass test262: V8 needs 1.5G, JSC 2.8G.
   # GitHub runners provide 16G RAM / 4C + swap; we also use --shuffle against clustered OOMs.
   memory_limit_mb: 4096
-  # Retry known flaky tests couple times on failures
-  flaky_attempts: 3
-  flaky_tests:
-    - test/built-ins/Atomics/notify/count-defaults-to-infinity-missing.js
-    - test/built-ins/Atomics/notify/negative-count.js
-    - test/built-ins/Atomics/notify/notify-one.js
-    - test/built-ins/Atomics/notify/notify-renotify-noop.js
-    - test/built-ins/Atomics/notify/undefined-index-defaults-to-zero.js
-    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
-    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
-    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-and.js
-    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-store.js
-    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-sub.js
-    - test/built-ins/Atomics/wait/bigint/waiterlist-block-indexedposition-wake.js
-    - test/built-ins/Atomics/wait/false-for-timeout-agent.js
-    - test/built-ins/Atomics/wait/nan-for-timeout.js
-    - test/built-ins/Atomics/wait/no-spurious-wakeup-no-operation.js
-    - test/built-ins/Atomics/wait/wait-index-value-not-equal.js
-    - test/built-ins/Atomics/wait/waiterlist-order-of-operations-is-fifo.js
-    - test/built-ins/Atomics/waitAsync/bigint/false-for-timeout-agent.js
-    - test/built-ins/Atomics/waitAsync/bigint/negative-timeout-agent.js
-    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
-    - test/built-ins/Atomics/waitAsync/bigint/symbol-for-timeout-throws-agent.js
-    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout-agent.js
-    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout.js
-    - test/built-ins/Atomics/waitAsync/bigint/value-not-equal-agent.js
-    - test/built-ins/Atomics/waitAsync/bigint/waiterlist-block-indexedposition-wake.js
-    - test/built-ins/Atomics/waitAsync/implicit-infinity-for-timeout.js
-    - test/built-ins/Atomics/waitAsync/nan-for-timeout-agent.js
-    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-sub.js
-    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-ok.js
-    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-timed-out.js
-    - test/built-ins/Atomics/waitAsync/undefined-for-timeout-agent.js
-    - test/built-ins/Atomics/waitAsync/undefined-for-timeout.js
-    - test/built-ins/Atomics/waitAsync/undefined-index-defaults-to-zero-agent.js
-    - test/built-ins/Atomics/waitAsync/waiterlist-block-indexedposition-wake.js
   # Common error patterns.
   # These will get appended to errors_re at runtime as lower-priority error patterns.
   common_errors_re:
     # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
     # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
-    - &exception_colon_message '^(?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
+    - '^(?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
     # Second common pattern, also used by most of this repo's wrappers
-    - &uncaught_exception_colon_message '^Uncaught (?:exception: )?(?P<type>[A-Za-z0-9]*Error):? *(?P<message>.*)$'
+    - '^Uncaught (?:exception: )?(?P<type>[A-Za-z0-9]*Error):? *(?P<message>.*)$'
     - '^Uncaught exception: (?P<message>.+)$'
 
 # Common constants to be referenced later in the config via YAML anchors.
@@ -113,9 +77,9 @@ asynkron:
 bali:
   console_log: console.log
   stdout_replace_re:
-    - 'Log ': ''
-  errors_re:
-    - '^WARN *parser.* (?P<message>parsing error.*)'
+    - '^Log ': ''
+    # WARN   parser[1244:12] parsing error (Other): expected expression, got nothing instead
+    - '^WARN +parser\[[0-9:]+\] (parsing error.*)': 'SyntaxError: \1'
 
 besen:
   console_log: ['console.log', 'print']
@@ -135,6 +99,7 @@ boa:
     - *rust_crash_re
   stdout_replace_re:
     - 'Uncaught Error: Test262Error {\n *message: "(?P<message>.*)"': 'Uncaught Error: Test262Error: \1'
+    - ' \(/[^(): ]+\.m?js:[0-9]+:[0-9]+\)$': ''  # drop line number info from messages
   stderr_replace_re:
     - *rust_crash_norm_re
   errors_re:
@@ -217,8 +182,9 @@ cesanta-elk:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     - '^"(.*)"$': '\1'
-    - "^Error: ERROR: '(.+?)' not found$": 'ReferenceError: \1 not found'
-    - '^Error: ERROR: bad expr$': 'SyntaxError: bad expr'
+  stderr_replace_re:
+    - '^Error: ERROR: (parse error|bad expr)$': 'SyntaxError'
+    - "^Error: ERROR: '(.+?)' not found$": 'ReferenceError: \1'
   errors_re:
     - '^Error: ERROR: (?P<message>.+?)$'
 
@@ -328,6 +294,8 @@ echosoar:
     - *rust_crash_norm_re
   errors_re:
     - '^\S+: JSIError \{ error_type: (?P<type>[A-Za-z0-9]*Error), message: "(?P<message>[^"]*)"'
+  prelude:
+    - code: 'var print = console.log.bind(console);'
 
 ejscript:
   console_log: print
@@ -345,10 +313,17 @@ ejscript:
 engine262:
   console_log: ['console.log', 'print']
   stdout_replace_re:
-    - "^'(.*)'$": '\1'
+    # Undo overquoting by console.log() (vs print):
+    # console.log('hello "world"') => 'hello \"world\"'
+    # print('hello "world"')       => hello "world"
+    - "^'(.*)\\\\\"(.*)\\\\\"(.*)'$": '\1"\2"\3'
+    - "^'(.*)\\\\\"(.*)\\\\\"(.*)'$": '\1"\2"\3'
+    - "^'(.*)$": '\1'
+    # Test262Error { message: 'obj should have an own property decodeURI' }
+    - "^(?:Uncaught exception: )?Test262Error \\{[\\n ]+message: '(.*)'[\\n ]+\\}\n": 'Test262Error: \1'
   stderr_replace_re:
-    # Test262Error { message: 'x' }
-    - "^Test262Error [{] message: '(.*)' [}]$": 'Test262Error: \1'
+    # Test262Error { message: 'obj should have an own property decodeURI' }
+    - "^(?:Uncaught exception: )?Test262Error \\{[\\n ]+message: '(.*)'[\\n ]+\\}\n": 'Test262Error: \1'
   errors_re:
     # Error: Internal error: .LoadRequestedModules() returned a pending promise
     - '^Error: (?P<message>Internal error: .*)$'
@@ -374,6 +349,50 @@ escargot:
   errors_re:
     - '^Script parsing error: (?P<type>SyntaxError): Line [0-9]+: (?P<message>.*)$'
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?):?$'
+  # Retry known flaky tests couple times on failures
+  flaky_attempts: 3
+  flaky_tests: &flaky_atomics
+    - test/built-ins/Atomics/notify/count-defaults-to-infinity-missing.js
+    - test/built-ins/Atomics/notify/negative-count.js
+    - test/built-ins/Atomics/notify/notify-one.js
+    - test/built-ins/Atomics/notify/notify-renotify-noop.js
+    - test/built-ins/Atomics/notify/notify-two.js
+    - test/built-ins/Atomics/notify/undefined-index-defaults-to-zero.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/wait/bigint/waiterlist-block-indexedposition-wake.js
+    - test/built-ins/Atomics/wait/bigint/was-woken-before-timeout.js
+    - test/built-ins/Atomics/wait/false-for-timeout-agent.js
+    - test/built-ins/Atomics/wait/nan-for-timeout.js
+    - test/built-ins/Atomics/wait/no-spurious-wakeup-no-operation.js
+    - test/built-ins/Atomics/wait/wait-index-value-not-equal.js
+    - test/built-ins/Atomics/wait/waiterlist-order-of-operations-is-fifo.js
+    - test/built-ins/Atomics/waitAsync/bigint/false-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/negative-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/waitAsync/bigint/symbol-for-timeout-throws-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/bigint/undefined-index-defaults-to-zero-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/value-not-equal-agent.js
+    - test/built-ins/Atomics/waitAsync/bigint/waiterlist-block-indexedposition-wake.js
+    - test/built-ins/Atomics/waitAsync/implicit-infinity-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/nan-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-compareExchange.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-exchange.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/waitAsync/no-spurious-wakeup-on-xor.js
+    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-ok.js
+    - test/built-ins/Atomics/waitAsync/returns-result-object-value-is-promise-resolves-to-timed-out.js
+    - test/built-ins/Atomics/waitAsync/undefined-for-timeout-agent.js
+    - test/built-ins/Atomics/waitAsync/undefined-for-timeout.js
+    - test/built-ins/Atomics/waitAsync/undefined-index-defaults-to-zero-agent.js
+    - test/built-ins/Atomics/waitAsync/waiterlist-block-indexedposition-wake.js
 
 espruino:
   console_log: ['console.log', 'print']
@@ -414,6 +433,8 @@ fesi: &fesi
 
 flathead:
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - '^ParseError: ': 'SyntaxError: '
   timeout_sec: 10
   <<: *oom_prone
 
@@ -607,6 +628,8 @@ jsse:
     - { if: 'flags:CanBlockIsTrue', then: '--can-block' }
     - { if: 'flags:module', then: '--module' }
   exit_code_may_be_test262_error: 1
+  flaky_attempts: 3
+  flaky_tests: *flaky_atomics
 
 js-interpreter:
   console_log: ['console.log', 'print']
@@ -649,11 +672,9 @@ jurassic:
 kiesel:
   console_log: ['console.log', 'Kiesel.print']
   flags:
-    - --print-promise-rejection-warnings=no
     - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/kiesel/prelude.js
-  exit_code_may_be_test262_error: 1
 
 kjs:
   console_log: print
@@ -694,8 +715,8 @@ libjs: &libjs
     - { if: 'flags:module', then: '--as-module' }
 
 malbrain:
-  # error in /tmp/foo.js: line: 49 syntax error, unexpected PLUS
   stderr_replace_re:
+    # error in /tmp/foo.js: line: 49 syntax error, unexpected PLUS
     - '^error in [^:]+: line: [0-9]+ syntax error, (.*)$': 'SyntaxError: \1'
 
 metaes:
@@ -1170,14 +1191,28 @@ v8: &v8
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
     - '^[^:]+:[0-9]+: Error: Unhandled Promise.$': ''
+    # /tmp/t262-rpfes8s9/t262-3172501.10.4.3-1-101gs.js:432
+    #     throw "'this' had incorrect value!";
+    #     ^
+    # 'this' had incorrect value!
+    - "^/[^: ]+\\.m?js:[0-9]+\\n *throw ['\"].*\n *\\^\\n(.+)$": 'Uncaught exception: \1'
     # /tmp/t262-w6popv9x/2746545-does-not-invoke-array-setters.sloppy.js:450
     #     throw new Test262Error("Setter on Array.prototype called");
     #     ^
     # Test262Error: Setter on Array.prototype called
+    - '^/[^: ]+\.m?js:[0-9]+\n *throw new ([A-Za-z0-9]+Error).*\n *\^\n\1': '\1'
+    - '^/[^: ]+\.m?js:[0-9]+\n *throw new (Error).*\n *\^\n\1': 'Uncaught exception: \1'
+    # /tmp/t262-4q3f7xzg/t262-3172173.prop-desc.sloppy.js:262
+    #   throw new Test262Error(message);
+    #   ^
+    # Test262Error {
+    #   message: '$1 setter Expected SameValue(«function set $1() { [native code] }», «undefined») to be true'
+    # }
+    # Test262Error { message: 'obj should have an own property decodeURI' }
+    - "^Test262Error \\{[\\n ]+message: '(.*)'[\\n ]+\\}\n": 'Test262Error: \1'
     # (Use `node --trace-uncaught ...` to show where the exception was thrown)
-    # Node.js v25.8.1
-    - '^[^:]+:[0-9]+\n *throw new Test262Error.*\n *\^\nTest262Error': 'Test262Error'
     - '^\(Use `node --trace-uncaught ...` to show where the exception was thrown\)': ''
+    # Node.js v25.8.1
     - '^Node.js v[0-9.]+$': ''
   errors_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
