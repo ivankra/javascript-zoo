@@ -296,6 +296,7 @@ class Runner:
             )
             self.proc = proc
             self.pgid = proc.pid
+            self._set_niceness(proc.pid)
             if self.on_spawn is not None:
                 self.on_spawn(proc.pid)
             watchdog: MemoryWatchdog | None = None
@@ -375,6 +376,19 @@ class Runner:
         if memory_addr_limit_mb is not None:
             limit_bytes = int(memory_addr_limit_mb) * 1024 * 1024
             resource.setrlimit(resource.RLIMIT_AS, (limit_bytes, limit_bytes))
+
+    def _set_niceness(self, pid: int, *, oom_score_adj: int = 1000, nice: int = 19) -> None:
+        """Lower child priority for CPU scheduling and OOM selection."""
+        try:
+            with open(f"/proc/{pid}/oom_score_adj", "w", encoding="ascii") as f:
+                f.write(f"{oom_score_adj}\n")
+        except:
+            pass
+
+        try:
+            os.setpriority(os.PRIO_PROCESS, pid, nice)
+        except:
+            pass
 
 
 class MemoryWatchdog:
