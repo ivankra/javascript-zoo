@@ -1,6 +1,10 @@
 // $262.agent implementation from upstream:
 // https://github.com/v8/v8/blob/main/test/test262/harness-agent.js
 
+// Access $262 via globalThis for tests like
+// test/harness/detachArrayBuffer-host-detachArrayBuffer.js (with node)
+globalThis.
+
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
