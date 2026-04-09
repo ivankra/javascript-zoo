@@ -7,7 +7,7 @@
 [submodule "third_party/test262"]
 	path = third_party/test262
 	url = https://github.com/ivankra/test262.git
-	branch = 20260402
+	branch = jsz
 [submodule "data"]
 	path = data
 	url = https://github.com/ivankra/javascript-zoo-data.git
