@@ -1,56 +1,106 @@
-# Benchmarks all engines across 100 parallel shards per arch using the hub image.
+# Two-stage benchmarking for all engines using the hub image.
 #
-# Design: github-bench.py assigns every (engine, test) combo to exactly one
-# shard so all combos are covered. Each shard then fills its remaining time
-# budget with a random weighted sample from all combos, spreading runs across
-# GitHub's fleet of heterogeneous runners for more representative averages.
+# Stage 1: every (engine, test) combo is run exactly once across N shards.
+# Rank:    stage-1 results are merged and engines ranked by geometric-mean
+#          score. Sampling weights decay exponentially by rank.
+# Stage 2: N shards do weighted random sampling, concentrating additional
+#          runs on top-ranked engines.
+# Merge:   all results from both stages are merged into final per-engine
+#          JSON files and committed to the data repo.
 
 name: Bench
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
-      num_shards:
-        description: 'Number of shards per arch'
-        default: '100'
-        type: string
+      stage1_shards:
+        description: 'Stage 1 shards (one run per combo)'
+        default: &default_stage1_shards 50
+        type: number
+      stage2_shards:
+        description: 'Stage 2 shards (weighted resampling)'
+        default: &default_stage2_shards 50
+        type: number
       time_limit:
-        description: 'Time budget per shard in seconds'
+        description: 'Stage 2 time budget per shard (seconds)'
         default: '1800'
         type: string
       test_timeout:
-        description: 'Per-test timeout in seconds'
+        description: 'Per-test timeout (seconds)'
         default: '1800'
         type: string
+      release:
+        description: 'Release tag'
+        default: 'latest'
+        type: string
+      commit:
+        description: 'Commit results to data repo'
+        default: false
+        type: boolean
+
+concurrency:
+  group: bench
+  cancel-in-progress: false
 
 permissions:
   contents: read
-  packages: read  # GHCR pull
+  packages: read
 
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DEFAULT_STAGE1_SHARDS: *default_stage1_shards
+  DEFAULT_STAGE2_SHARDS: *default_stage2_shards
 
 jobs:
-  # Get release tag and build shard index array.
   init:
     runs-on: ubuntu-24.04
     outputs:
-      tag: ${{ steps.init.outputs.tag }}
-      shards: ${{ steps.init.outputs.shards }}
+      release_tag: ${{ steps.init.outputs.release_tag }}
+      stage1_shards: ${{ steps.init.outputs.stage1_shards }}
+      stage1_shard_list: ${{ steps.init.outputs.stage1_shard_list }}
+      stage2_shards: ${{ steps.init.outputs.stage2_shards }}
+      stage2_shard_list: ${{ steps.init.outputs.stage2_shard_list }}
+      should_commit: ${{ steps.init.outputs.should_commit }}
     steps:
-      - name: Get release tag and shard array
+      - name: Resolve release tag and build shard arrays
         id: init
         run: |
-          TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            TAG="${{ github.event.release.tag_name }}"
+          else
+            TAG="${{ inputs.release }}"
+            if [[ "$TAG" == "latest" || -z "$TAG" ]]; then
+              TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
+            fi
+          fi
+          echo "release_tag=$TAG" | tee -a "$GITHUB_OUTPUT"
 
-          N="${{ inputs.num_shards }}"
-          SHARDS=$(seq 1 "$N" | jq -R 'tonumber' | jq -sc .)
-          echo "shards=$SHARDS" >> "$GITHUB_OUTPUT"
+          if [[ "${{ github.event_name }}" == "release" && "$TAG" =~ ^[0-9]{8}$ ]]; then
+            echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
+          elif [[ "${{ inputs.commit }}" == "true" ]]; then
+            echo "should_commit=true" | tee -a "$GITHUB_OUTPUT"
+          else
+            echo "should_commit=false" | tee -a "$GITHUB_OUTPUT"
+          fi
 
-  bench:
+          N1="${{ inputs.stage1_shards }}"
+          N1="${N1:-$DEFAULT_STAGE1_SHARDS}"
+          echo "stage1_shards=$N1" | tee -a "$GITHUB_OUTPUT"
+          echo "stage1_shard_list=$(seq 1 "$N1" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
+
+          N2="${{ inputs.stage2_shards }}"
+          N2="${N2:-$DEFAULT_STAGE2_SHARDS}"
+          echo "stage2_shards=$N2" | tee -a "$GITHUB_OUTPUT"
+          echo "stage2_shard_list=$(seq 1 "$N2" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
+
+  # Stage 1: run every (engine, test) combo exactly once, striped across shards.
+  stage1:
     needs: init
     timeout-minutes: 360
+    env:
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
     strategy:
       fail-fast: false
       matrix:
@@ -61,58 +111,47 @@ jobs:
           - name: arm64
             runner: ubuntu-24.04-arm
             platform: linux/arm64
-        shard: ${{ fromJson(needs.init.outputs.shards) }}
+        shard: ${{ fromJson(needs.init.outputs.stage1_shard_list) }}
     runs-on: ${{ matrix.arch.runner }}
     steps:
-      - uses: actions/checkout@v6
+      - &checkout
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - &pull_docker_image
+        name: Pull hub image
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker pull --platform ${{ matrix.arch.platform }} "$DOCKER_IMAGE"
 
-      - name: Pull hub image
-        run: docker pull --platform ${{ matrix.arch.platform }} ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-
-      - name: Run mandatory
+      - name: Run stage 1
         run: |
           mkdir -p results
           docker run --rm --platform ${{ matrix.arch.platform }} \
             -e PYTHONDONTWRITEBYTECODE=1 \
             -v "$(pwd):/zoo:ro" \
             -v "$(pwd)/results:/results" \
-            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
+            "$DOCKER_IMAGE" \
             python3 /zoo/bench/github-bench.py run \
               --index=${{ matrix.shard }} \
-              --num-shards=${{ inputs.num_shards }} \
-              --test-timeout=${{ inputs.test_timeout }} \
+              --num-shards=${{ needs.init.outputs.stage1_shards }} \
+              --test-timeout=${{ inputs.test_timeout || '1800' }} \
               --output-dir=/results \
               --dist-dir=/dist
 
-      - name: Run sampling
-        run: |
-          docker run --rm --platform ${{ matrix.arch.platform }} \
-            -e PYTHONDONTWRITEBYTECODE=1 \
-            -v "$(pwd):/zoo:ro" \
-            -v "$(pwd)/results:/results" \
-            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
-            python3 /zoo/bench/github-bench.py sample \
-              --time-limit=${{ inputs.time_limit }} \
-              --test-timeout=${{ inputs.test_timeout }} \
-              --output-dir=/results \
-              --dist-dir=/dist
-
-      - name: Upload results
+      - &upload_results
+        name: Upload results
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: bench-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
+          name: bench-stage1-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
           path: results/
           if-no-files-found: ignore
 
-  # Download all per-shard artifacts and merge into per-engine JSON files.
-  merge:
-    needs: [init, bench]
+  # Merge stage-1 results, rank engines, produce sampling weights for stage 2.
+  rank:
+    needs: [init, stage1]
     if: always() && needs.init.result == 'success'
     runs-on: ubuntu-24.04
     steps:
@@ -120,22 +159,167 @@ jobs:
         with:
           ref: ${{ github.sha }}
 
-      - name: Download all shard results
+      - name: Download stage 1 results
         uses: actions/download-artifact@v6
         with:
-          path: all-results
-          pattern: bench-*
+          path: all-stage1
+          pattern: bench-stage1-*
           merge-multiple: false
 
-      - name: Merge amd64 results
-        run: python3 bench/github-bench.py merge all-results/bench-amd64-shard-*/ merged-results/amd64
+      - name: Merge and rank
+        run: |
+          for arch in amd64 arm64; do
+            dirs=$(ls -d all-stage1/bench-stage1-${arch}-shard-*/ 2>/dev/null || true)
+            if [[ -n "$dirs" ]]; then
+              python3 bench/github-bench.py merge $dirs stage1-merged/${arch}
+              python3 bench/github-bench.py rank stage1-merged/${arch} -o weights/${arch}.json
+            fi
+          done
 
-      - name: Merge arm64 results
-        run: python3 bench/github-bench.py merge all-results/bench-arm64-shard-*/ merged-results/arm64
+      - name: Upload weights
+        uses: actions/upload-artifact@v6
+        with:
+          name: bench-weights
+          path: weights/
+          if-no-files-found: warn
+
+      - name: Upload stage 1 merged
+        uses: actions/upload-artifact@v6
+        with:
+          name: bench-stage1-merged
+          path: stage1-merged/
+          if-no-files-found: warn
+
+  # Stage 2: weighted random sampling, concentrating runs on top-ranked engines.
+  stage2:
+    needs: [init, rank]
+    if: always() && needs.rank.result == 'success'
+    timeout-minutes: 360
+    env:
+      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - name: amd64
+            runner: ubuntu-24.04
+            platform: linux/amd64
+          - name: arm64
+            runner: ubuntu-24.04-arm
+            platform: linux/arm64
+        shard: ${{ fromJson(needs.init.outputs.stage2_shard_list) }}
+    runs-on: ${{ matrix.arch.runner }}
+    steps:
+      - *checkout
+      - *pull_docker_image
+
+      - name: Download weights
+        uses: actions/download-artifact@v6
+        with:
+          name: bench-weights
+          path: weights/
+
+      - name: Run stage 2
+        run: |
+          WEIGHTS=weights/${{ matrix.arch.name }}.json
+          if [[ ! -f "$WEIGHTS" ]]; then
+            echo "No weights for ${{ matrix.arch.name }}, skipping"
+            exit 0
+          fi
+          mkdir -p results
+          docker run --rm --platform ${{ matrix.arch.platform }} \
+            -e PYTHONDONTWRITEBYTECODE=1 \
+            -v "$(pwd):/zoo:ro" \
+            -v "$(pwd)/results:/results" \
+            -v "$(pwd)/weights:/weights:ro" \
+            "$DOCKER_IMAGE" \
+            python3 /zoo/bench/github-bench.py sample \
+              --weights=/weights/${{ matrix.arch.name }}.json \
+              --time-limit=${{ inputs.time_limit || '1800' }} \
+              --test-timeout=${{ inputs.test_timeout || '1800' }} \
+              --seed=${{ matrix.shard }} \
+              --output-dir=/results \
+              --dist-dir=/dist
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: bench-stage2-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
+          path: results/
+          if-no-files-found: ignore
+
+  # Final merge of stage 1 + stage 2 results, commit to data repo.
+  merge:
+    needs: [init, stage1, rank, stage2]
+    if: always() && needs.init.result == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Download stage 1 merged
+        uses: actions/download-artifact@v6
+        with:
+          name: bench-stage1-merged
+          path: stage1-merged/
+        continue-on-error: true
+
+      - name: Download stage 2 results
+        uses: actions/download-artifact@v6
+        with:
+          path: all-stage2
+          pattern: bench-stage2-*
+          merge-multiple: false
+        continue-on-error: true
+
+      - name: Final merge
+        run: |
+          for arch in amd64 arm64; do
+            dirs=""
+            [[ -d "stage1-merged/${arch}" ]] && dirs="stage1-merged/${arch}"
+            s2=$(ls -d all-stage2/bench-stage2-${arch}-shard-*/ 2>/dev/null || true)
+            [[ -n "$s2" ]] && dirs="$dirs $s2"
+            if [[ -n "$dirs" ]]; then
+              python3 bench/github-bench.py merge $dirs merged/${arch}
+            fi
+          done
 
       - name: Upload merged results
         uses: actions/upload-artifact@v6
         with:
-          name: bench-results-${{ needs.init.outputs.tag }}
-          path: merged-results/
+          name: bench-results-${{ needs.init.outputs.release_tag }}
+          path: merged/
           if-no-files-found: warn
+
+      - name: Download weights (for artifact)
+        uses: actions/download-artifact@v6
+        with:
+          name: bench-weights
+          path: merged/weights/
+        continue-on-error: true
+
+      - name: Commit to javascript-zoo-data
+        if: needs.init.outputs.should_commit == 'true' && needs.rank.result == 'success'
+        env:
+          JSZ_DATA_GITHUB_TOKEN: ${{ secrets.JSZ_DATA_GITHUB_TOKEN }}
+        run: |
+          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/ivankra/javascript-zoo-data.git" data-repo
+
+          cd data-repo
+          for arch in amd64 arm64; do
+            mkdir -p bench/${arch}
+            cp -f ../merged/${arch}/*.json bench/${arch}/ || true
+          done
+          make || true
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "bench.yml workflow for release ${{ needs.init.outputs.release_tag }}"
+            git push
+          fi
