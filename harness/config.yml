@@ -517,9 +517,7 @@ hermes: &hermes
   flags:
     - -O  # Expensive optimizations
     - -w  # Disable all warnings
-    - if: test262
-      then:
-        shell: "$BINARY -help-list-hidden | egrep -o '^ *(-Xes6-proxy|-Xhermes-internal-test-methods|-test262) '"
+    - shell: "$BINARY -help-list-hidden | egrep -o '^ *(-test262|-Xhermes-internal-test-methods|-Xes6-proxy|-Xasync-generators|-Xenable-tdz|-Xes6-block-scoping) '"
   console_log: print  # hermes main only has print()
   stderr_replace_re:
     # Syntax errors:
@@ -841,6 +839,7 @@ nova:
     - '^Parse errors:$': ''
     # Uncaught exception: SyntaxError: regex parse error:
     - ' *:$': ''
+    - '^ *[0-9]+ *\| *throw *"Test262: This statement should not be evaluated.";': ''
   prelude:
     - file: engines/nova/prelude.js
 
