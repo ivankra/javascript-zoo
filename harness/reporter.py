@@ -173,6 +173,7 @@ class Reporter:
         *,
         discovery: FileDiscovery | None = None,
         output_file: str | Path | None = None,
+        output_rusage_file: str | Path | None = None,
         output_tags_file: str | Path | None = None,
         verbose: int = 0,
         test262: bool = False,
@@ -222,6 +223,7 @@ class Reporter:
                 raise ValueError(f"invalid rusage mode: {report_rusage!r}")
             self._report_rusage_mode, self._report_rusage_top_n = "top", int(m.group(1))
         self._output_file = Path(output_file) if output_file is not None else None
+        self._output_rusage_file = Path(output_rusage_file) if output_rusage_file is not None else None
         self._output_tags_file = Path(output_tags_file) if output_tags_file is not None else None
         self._report_json = report_json if report_json is not None else bool(
             self._output_file and self._output_file.suffix == ".json"
@@ -657,12 +659,9 @@ class Reporter:
 
         return "\n".join(lines) if any_data else ""
 
-    def to_json(self) -> str:
-        """Format results as JSON with summary, per-test/per-scenario statuses, and rusage."""
+    def _build_rusage_data(self, finished_at: datetime) -> dict[str, Any]:
+        """Build the JSON payload for the rusage section."""
         results = self._results
-        engine = self._engine
-        finished_at = datetime.now(UTC)
-
         rusage: dict[str, Any] = {}
         if self._report_rusage_mode == "top":
             run_rss: list[tuple[str, int]] = [
@@ -709,6 +708,18 @@ class Reporter:
                 "started_at": self._format_timestamp(self._started_at),
                 **rusage,
             }
+        return rusage
+
+    def _inline_rusage_json_value(self, rusage: dict[str, Any]) -> dict[str, Any] | None:
+        """Return the value stored under the main report's rusage key."""
+        if self._report_rusage_mode == "no" or not rusage or self._output_rusage_file is not None:
+            return None
+        return rusage
+
+    def _build_json_data(self, *, rusage_value: dict[str, Any] | str | None = None) -> dict[str, Any]:
+        """Build the main JSON object, optionally overriding the rusage field."""
+        results = self._results
+        engine = self._engine
 
         data: dict[str, Any] = {}
         if engine.build_metadata:
@@ -732,13 +743,20 @@ class Reporter:
             dirs = self._dirs_json(tag_stats)
             if dirs:
                 data["dirs"] = dirs
-        if self._report_rusage_mode != "no" and rusage:
-            data["rusage"] = rusage
+        if rusage_value:
+            data["rusage"] = rusage_value
         test_order = self._test_order()
         if self._report_tests:
             data["tests"] = group_run_results(results, test_order)
         if self._report_runs:
             data["scenarios"] = group_run_results(results, test_order, "run_id")
+        return data
+
+    def to_json(self) -> str:
+        """Format results as JSON with summary, per-test/per-scenario statuses, and rusage."""
+        finished_at = datetime.now(UTC)
+        rusage = self._build_rusage_data(finished_at)
+        data = self._build_json_data(rusage_value=self._inline_rusage_json_value(rusage))
         return self.format_json_value(data) + "\n"
 
     def to_text(self) -> str:
@@ -818,7 +836,14 @@ class Reporter:
             raise ValueError("output_file is not configured")
         path = self._output_file
         if self._report_json:
-            out = self.to_json()
+            finished_at = datetime.now(UTC)
+            rusage = self._build_rusage_data(finished_at)
+            if self._output_rusage_file is not None and self._report_rusage_mode != "no" and rusage:
+                rusage_out = self.format_json_value(rusage) + "\n"
+                self._write_path(self._output_rusage_file, rusage_out, "Rusage")
+            out = self.format_json_value(
+                self._build_json_data(rusage_value=self._inline_rusage_json_value(rusage))
+            ) + "\n"
         else:
             out = self.to_text()
         self._write_path(path, out, "Results")

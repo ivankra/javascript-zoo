@@ -150,14 +150,6 @@ def parse_filter_expr(parser: argparse.ArgumentParser, filter_parts: list[str]) 
     return filter_expr
 
 
-def parse_rusage_mode(value: str) -> str:
-    if value in ("all", "no"):
-        return value
-    if re.fullmatch(r"top(\d+)", value):
-        return value
-    raise argparse.ArgumentTypeError(f"invalid rusage mode: {value!r}; expected topN, all, or no")
-
-
 def main() -> None:
     p = argparse.ArgumentParser(
         description="Run test262 conformance suite against a JavaScript engine.",
@@ -187,6 +179,8 @@ def main() -> None:
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
+    p.add_argument("--output-rusage", metavar="FILE",
+                   help="Write the rusage JSON payload to FILE and store its path in the main report")
     p.add_argument("--output-tags", metavar="FILE",
                    help="Write per-test tags map to FILE")
     p.add_argument("-t", "--timeout", type=float,  metavar="SEC",
@@ -210,7 +204,7 @@ def main() -> None:
                    help="Report results grouped by test file, collapsing strict/sloppy when identical (default)")
     p.add_argument("--report-scenarios", action="store_true", default=False, dest="report_runs",
                    help="Report results per scenario (one entry per each strict/sloppy mode run)")
-    p.add_argument("--report-rusage", metavar="MODE", type=parse_rusage_mode, default="top10",
+    p.add_argument("--report-rusage", metavar="MODE", default="top10",
                    help="Report tests resource usage in json: top<N>, all, or no (default: top10)")
     p.add_argument("--no-report-rusage", action="store_const", const="no", dest="report_rusage",
                    help=argparse.SUPPRESS)
@@ -271,6 +265,7 @@ def main() -> None:
         cfg,
         discovery=discovery,
         output_file=args.output,
+        output_rusage_file=args.output_rusage,
         output_tags_file=args.output_tags,
         verbose=args.verbose,
         test262=True,

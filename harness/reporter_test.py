@@ -508,6 +508,21 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertEqual(list(out["rusage"]["run_duration_sec"]), ["run/b.js", "run/c.js"])
         self.assertEqual(list(out["rusage"]["run_rss_mb"]), ["run/b.js", "run/c.js"])
 
+    def test_json_omits_rusage_when_externalized(self):
+        r = Reporter(
+            EngineConfig(binary_path="/fake/js"),
+            discovery=FileDiscovery.from_list(["test/a.js"]),
+            output_file="/tmp/results/test262/a.json",
+            output_rusage_file="/tmp/results/test262-rusage/a.json",
+            report_json=True,
+            report_rusage="top20",
+        )
+        r.test_completed([
+            _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+        ])
+        out = json.loads(r.to_json())
+        self.assertNotIn("rusage", out)
+
 
 class TestReporterOutputSelection(unittest.TestCase):
     def test_json_defaults_to_tests_only_for_json_path(self):
@@ -582,6 +597,30 @@ class TestReporterWriteStreams(unittest.TestCase):
         with patch("pathlib.Path.write_text") as write_text:
             r.write()
         write_text.assert_called_once_with("test/a.js: PASS\n", encoding="utf-8")
+
+    def test_write_json_can_split_rusage_to_sidecar(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_path = Path(tmpdir) / "test262" / "a.json"
+            output_path.parent.mkdir(parents=True)
+            rusage_path = Path(tmpdir) / "test262-rusage" / "a.json"
+            rusage_path.parent.mkdir(parents=True)
+            r = Reporter(
+                EngineConfig(binary_path="/fake/js"),
+                discovery=FileDiscovery.from_list(["test/a.js"]),
+                output_file=output_path,
+                output_rusage_file=rusage_path,
+                report_json=True,
+                report_rusage="top20",
+            )
+            r.test_completed([
+                _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            ])
+            r.write()
+            main_out = json.loads(output_path.read_text(encoding="utf-8"))
+            rusage_out = json.loads(rusage_path.read_text(encoding="utf-8"))
+            self.assertNotIn("rusage", main_out)
+            self.assertEqual(rusage_out["run_duration_sec"]["test/a.strict.js"], 1.25)
+            self.assertEqual(rusage_out["run_rss_mb"]["test/a.strict.js"], 2.0)
 
 
 class TestReporterProgress(unittest.TestCase):
