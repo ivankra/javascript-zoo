@@ -29,6 +29,8 @@ ASSERT_THROWS_RE = re.compile(
     ')'
 )
 
+DONOTEVALUATE_MESSAGE = "Test262: This statement should not be evaluated."
+
 
 class Annotator:
     """Annotates RunResult with verdict_type/verdict_detail."""
@@ -134,10 +136,6 @@ class Annotator:
                   self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
         test262_error = any(e[0] == Verdict.TEST262_ERROR for e in errors)
 
-        if "Test262: This statement should not be evaluated." in output:
-            run.verdict_type = Verdict.DONOTEVALUATE
-            return
-
         # test262 async protocol
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:
@@ -178,7 +176,16 @@ class Annotator:
             msgs = [msg for _, msg in errors if msg]
             run.verdict_type = best_et
             run.verdict_detail = "\n".join(msgs) if msgs else None
+            if run.verdict_detail and DONOTEVALUATE_MESSAGE in run.verdict_detail:
+                run.verdict_type = Verdict.DONOTEVALUATE
+                run.verdict_detail = None
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
+            return
+
+        # Lower priority after primary exception patterns:
+        # kiesel prints source line with DONOTEVALUATE_MESSAGE, then SyntaxError line.
+        if DONOTEVALUATE_MESSAGE in output:
+            run.verdict_type = Verdict.DONOTEVALUATE
             return
 
         # Heuristic: scan output lines for the first JS error class name.

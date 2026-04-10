@@ -568,6 +568,18 @@ class AnnotatorTest(unittest.TestCase):
         ann.classify(run)
         self.assertEqual(run.verdict_detail, "bad in test/foo.js")
 
+    def test_donotevaluate(self) -> None:
+        ann = Annotator(EngineConfig())
+        run = mk_run(stderr="""
+throw "Test262: This statement should not be evaluated.";
+                                                         ^
+Uncaught exception: SyntaxError: Unexpected token 'identifier'""")
+        ann.classify(run)
+        self.assertEqual(run.verdict_type, Verdict.DONOTEVALUATE)
+        run = mk_run(stderr="Uncaught exception: Test262: This statement should not be evaluated.")
+        ann.classify(run)
+        self.assertEqual(run.verdict_type, Verdict.DONOTEVALUATE)
+
 
 if __name__ == "__main__":
     unittest.main()
