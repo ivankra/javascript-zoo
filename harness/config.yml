@@ -318,7 +318,7 @@ engine262:
     # print('hello "world"')       => hello "world"
     - "^'(.*)\\\\\"(.*)\\\\\"(.*)'$": '\1"\2"\3'
     - "^'(.*)\\\\\"(.*)\\\\\"(.*)'$": '\1"\2"\3'
-    - "^'(.*)$": '\1'
+    - "^'(.*)'$": '\1'
     # Test262Error { message: 'obj should have an own property decodeURI' }
     - "^(?:Uncaught exception: )?Test262Error \\{[\\n ]+message: '(.*)'[\\n ]+\\}\n": 'Test262Error: \1'
   stderr_replace_re:
@@ -519,7 +519,7 @@ hermes: &hermes
     - -w  # Disable all warnings
     - if: test262
       then:
-        shell: $BINARY -help-list-hidden | grep -o [-]test262  # Increase compliance with test262
+        shell: "$BINARY -help-list-hidden | egrep -o '^ *(-Xes6-proxy|-Xhermes-internal-test-methods|-test262) '"
   console_log: print  # hermes main only has print()
   stderr_replace_re:
     # Syntax errors:
