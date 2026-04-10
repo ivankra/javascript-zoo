@@ -93,9 +93,9 @@ class Test262Worker(PoolWorker):
     def _execute_one(self, scenario: Scenario) -> RunResult:
         is_negative = bool(scenario.fm.negative_type)
         is_async = "async" in scenario.fm.flags
-        ok_pattern: str | None = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
+        pass_pattern: str | None = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
         if is_negative or "raw" in scenario.fm.flags:
-            ok_pattern = None
+            pass_pattern = None
 
         staged = self.assembler.stage(scenario, temp_dir=self.shared_tmp)
         if scenario.tags is None:
@@ -121,12 +121,12 @@ class Test262Worker(PoolWorker):
                 self.annotator.classify(
                     run,
                     expect_async=is_async,
-                    ok_pattern=ok_pattern,
+                    pass_pattern=pass_pattern,
                     negative_phase=scenario.fm.negative_phase if is_negative else None,
                     negative_type=scenario.fm.negative_type if is_negative else None,
                 )
 
-                if run.is_ok():
+                if run.is_passed():
                     break
 
             run.mode = scenario.mode
@@ -287,7 +287,7 @@ def main() -> None:
     if not args.no_probe and args.output and reporter.is_json_output():
         for name, result in test262_probe.probe_engine(cfg, test262_dir, jobs=args.jobs):
             reporter.add_probe_result(name, result)
-            if name == "assert.throws" and result != "OK":
+            if name == "assert.throws" and result != "PASS":
                 assembler.fix_assert_throws = True
                 reporter.clear_progress()
                 print("fix_assert_throws = True", flush=True);

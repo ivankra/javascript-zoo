@@ -56,7 +56,7 @@ class Annotator:
         self,
         run: RunResult,
         *,
-        ok_pattern: str | None = None,
+        pass_pattern: str | None = None,
         fail_pattern: str | None = None,
         expect_async: bool = False,
         negative_phase: str | None = None,
@@ -66,16 +66,16 @@ class Annotator:
         """Classify run outcome; returns the same RunResult with fields set.
 
         Args:
-            ok_pattern:        regex that must match a line for OK verdict.
+            pass_pattern:      regex that must match a line for PASS verdict.
             fail_pattern:      regex matching explicit failure lines from the test wrapper.
-                               If both ok_pattern and fail_pattern match, test will fail.
+                               If both pass_pattern and fail_pattern match, test will fail.
             expect_async:      require Test262:AsyncTestComplete token (test262).
             negative_phase:    expected failure phase for negative tests ("parse", "resolution", "runtime").
             negative_type:     expected JS error constructor name for negative tests (e.g. "SyntaxError").
             strip_line_prefix: fixed string prefix stripped from the start of each error
                                message line (e.g. "test/foo.js: " added by test wrappers).
         """
-        self._classify_impl(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
+        self._classify_impl(run, pass_pattern=pass_pattern, fail_pattern=fail_pattern,
                             expect_async=expect_async, strip_line_prefix=strip_line_prefix)
 
         if negative_type:
@@ -87,7 +87,7 @@ class Annotator:
         self,
         run: RunResult,
         *,
-        ok_pattern: str | None = None,
+        pass_pattern: str | None = None,
         fail_pattern: str | None = None,
         expect_async: bool = False,
         strip_line_prefix: str | None = None,
@@ -126,8 +126,8 @@ class Annotator:
 
         output = run.combined_output().strip()
         lines = output.splitlines()
-        ok_required = ok_pattern is not None
-        ok_found = bool(ok_pattern and any(re.search(ok_pattern, ln) for ln in lines))
+        pass_required = pass_pattern is not None
+        pass_found = bool(pass_pattern and any(re.search(pass_pattern, ln) for ln in lines))
         fail_found = bool(fail_pattern and any(re.search(fail_pattern, ln) for ln in lines))
 
         errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
@@ -150,23 +150,23 @@ class Annotator:
                 self._shorten_message(run, strip_line_prefix=strip_line_prefix)
                 return
 
-            ok_found = ("Test262:AsyncTestComplete" in output) and (ok_found or not ok_required)
-            ok_required = True
+            pass_found = ("Test262:AsyncTestComplete" in output) and (pass_found or not pass_required)
+            pass_required = True
 
-        if ok_found and fail_found:
+        if pass_found and fail_found:
             run.verdict_type = Verdict.FAIL
-            run.verdict_detail = "found both ok and fail markers"
+            run.verdict_detail = "found both pass and fail markers"
             return
 
-        # ok_found means the script ran to completion (ScriptExecutionFinished
+        # pass_found means the script ran to completion (ScriptExecutionFinished
         # printed at the end).  Errors in output are likely incidental — caught
         # exceptions, subprocess/module output, or engine warnings.
         # E.g. test/built-ins/ShadowRealm/prototype/importValue/throws-typeerror-import-syntax-error.js
         # must pass despite reporting SyntaxError in an imported module.
         # Do not ignore Test262Error's however here
         # e.g. libjs test/language/module-code/instn-named-bndng-var.js
-        if ok_found and not fail_found and not test262_error:
-            run.verdict_type = Verdict.OK
+        if pass_found and not fail_found and not test262_error:
+            run.verdict_type = Verdict.PASS
             return
 
         if errors:
@@ -200,7 +200,7 @@ class Annotator:
                     self._shorten_message(run, strip_line_prefix=strip_line_prefix)
                     return
 
-        if fail_found or (ok_required and not ok_found):
+        if fail_found or (pass_required and not pass_found):
             run.verdict_type = Verdict.FAIL
             if expect_async and "Test262:AsyncTestComplete" not in output:
                 run.verdict_type = Verdict.NO_ASYNC_TEST_COMPLETE
@@ -219,7 +219,7 @@ class Annotator:
                 run.verdict_detail = f"exit code {run.exit_code}"
             return
 
-        run.verdict_type = Verdict.OK
+        run.verdict_type = Verdict.PASS
 
     def _check_negative(
         self,
@@ -234,9 +234,9 @@ class Annotator:
             return
 
         # if negative_phase in ("parse", "resolution"):
-        if run.is_ok():
+        if run.is_passed():
             run.verdict_type = Verdict.NEGATIVE
-            run.verdict_detail = f"NOT({negative_type}): OK"
+            run.verdict_detail = f"NOT({negative_type}): PASS"
             return
 
         got = run.verdict_type
@@ -257,7 +257,7 @@ class Annotator:
             run.verdict_detail = f"NOT({negative_type}): {got_message}"
             return
 
-        run.verdict_type = Verdict.OK
+        run.verdict_type = Verdict.PASS
         run.verdict_detail = None
 
     def _collect_errors(
@@ -344,11 +344,11 @@ class Annotator:
         if len(run.verdict_detail) > 200:
             run.verdict_detail = run.verdict_detail[:200] + '...'
 
-        if run.verdict_detail and run.verdict_detail.lower() in ('ok', 'error', 'fail', 'failed', 'skipped'):
-            run.verdict_detail = None
+        if run.verdict_detail and run.verdict_detail.lower() in ('ok', 'pass', 'error', 'fail', 'failed', 'skipped'):
+            run.verdict_detail = ''
 
         if run.verdict_detail == str(run.verdict_type):
-            run.verdict_detail = None
+            run.verdict_detail = ''
 
         if not run.verdict_detail:
             run.verdict_detail = None

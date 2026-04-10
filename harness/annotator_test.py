@@ -31,27 +31,27 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stdout": "42\n"},
         {},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {},
         {"stdout": "Error"},
-        {"ok_pattern": r"OK"},
+        {"pass_pattern": r"OK"},
         Verdict.FAIL,
         "FAIL",
     ),
     (
         {},
         {"stdout": "", "exit_code": 3},
-        {"ok_pattern": r"OK"},
+        {"pass_pattern": r"OK"},
         Verdict.FAIL,
         "FAIL",
     ),
     (
         {},
         {"stdout": "plain output"},
-        {"ok_pattern": r"test\.js: OK"},
+        {"pass_pattern": r"test\.js: OK"},
         Verdict.FAIL,
         "FAIL: plain output",
     ),
@@ -93,14 +93,14 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
     (
         {},
         {"stdout": "test.js: OK\nnoise"},
-        {"ok_pattern": r"test\.js: OK"},
-        Verdict.OK,
-        "OK",
+        {"pass_pattern": r"test\.js: OK"},
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {},
         {"stdout": "SyntaxError: bad"},
-        {"ok_pattern": r"test\.js: OK"},
+        {"pass_pattern": r"test\.js: OK"},
         Verdict.SYNTAX_ERROR,
         "SyntaxError: bad",
     ),
@@ -164,28 +164,28 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
     (
         {},
         {"stdout": "test.js: OK\ntest.js: failed"},
-        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        {"pass_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
         Verdict.FAIL,
-        "FAIL: found both ok and fail markers",
+        "FAIL: found both pass and fail markers",
     ),
     (
         {},
         {"stdout": "test.js: OK"},
-        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
-        Verdict.OK,
-        "OK",
+        {"pass_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {},
         {"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"},
-        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        {"pass_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
         Verdict.FAIL,
-        "FAIL: found both ok and fail markers",
+        "FAIL: found both pass and fail markers",
     ),
     (
         {},
         {"stdout": "test.js: exception: TypeError: bad"},
-        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
+        {"pass_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"},
         Verdict.TYPE_ERROR,
         "TypeError: test.js: exception: TypeError: bad",
     ),
@@ -201,8 +201,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stdout": "Test262:AsyncTestComplete"},
         {"expect_async": True},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {},
@@ -223,8 +223,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {},
         {"stderr": "SyntaxError: bad", "exit_code": 1},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {},
@@ -245,7 +245,7 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"stdout": "ok"},
         {"negative_phase": "runtime", "negative_type": "TypeError"},
         Verdict.NEGATIVE,
-        "NOT(TypeError): OK",
+        "NOT(TypeError): PASS",
     ),
     (
         {},
@@ -266,7 +266,7 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"stdout": "ok"},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
         Verdict.NEGATIVE,
-        "NOT(SyntaxError): OK",
+        "NOT(SyntaxError): PASS",
     ),
     (
         {},
@@ -286,8 +286,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code_for_syntax_error": 101},
         {"exit_code": 101},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {"exit_code_may_be_syntax_error": 7},
@@ -300,8 +300,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code_may_be_syntax_error": 7},
         {"exit_code": 7},
         {"negative_phase": "parse", "negative_type": "SyntaxError"},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {"exit_code_may_be_test262_error": 9},
@@ -314,8 +314,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"exit_code_may_be_test262_error": 9},
         {"exit_code": 9},
         {"negative_phase": "runtime", "negative_type": "Test262Error"},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
     (
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
@@ -464,8 +464,8 @@ _CLASSIFY_CASES: list[tuple[dict, dict, dict, Verdict, str]] = [
         {"errors_re": [r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"]},
         {"stdout": "raw string"},
         {},
-        Verdict.OK,
-        "OK",
+        Verdict.PASS,
+        "PASS",
     ),
 ]
 
@@ -480,7 +480,7 @@ class AnnotatorTest(unittest.TestCase):
 
     def test_verdict_message_for_every_verdict(self) -> None:
         cases: list[list[Verdict | str | None]] = [
-            ["OK", Verdict.OK, None],
+            ["PASS", Verdict.PASS, None],
             ["SKIP: filtered out", Verdict.SKIP, "filtered out"],
             ["FAIL: generic failure", Verdict.FAIL, "generic failure"],
             ["CRASH: SIGSEGV", Verdict.CRASH, "SIGSEGV"],
@@ -532,11 +532,11 @@ class AnnotatorTest(unittest.TestCase):
         cl = Annotator(EngineConfig())
         run = cl.classify(mk_run(
             stdout="\x1b[1;31mError\x1b[0m: bad\n",
-            stderr="\x1b[32mOK\x1b[0m\n",
+            stderr="\x1b[32mPASS\x1b[0m\n",
             exit_code=1,
         ))
         self.assertEqual(run.stdout_cleaned, "Error: bad\n")
-        self.assertEqual(run.stderr_cleaned, "OK\n")
+        self.assertEqual(run.stderr_cleaned, "PASS\n")
 
     def test_real_crash_produces_signal_name(self) -> None:
         import shutil

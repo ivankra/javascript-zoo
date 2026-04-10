@@ -113,11 +113,11 @@ class ConformanceWorker(PoolWorker):
                     script_path=str(patched),
                 )
 
-        ok_pattern = rf"{re.escape(test_path.name)}: OK"
+        pass_pattern = rf"{re.escape(test_path.name)}: OK"
         fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
         self.annotator.classify(
             run,
-            ok_pattern=ok_pattern,
+            pass_pattern=pass_pattern,
             fail_pattern=fail_pattern,
             strip_line_prefix=f"{test_id}: ",
         )

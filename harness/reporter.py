@@ -38,7 +38,7 @@ class Stats:
 
     def add(self, verdict: Verdict | None, weight: float | None = None) -> None:
         self.total += 1
-        if verdict is Verdict.OK:
+        if verdict is Verdict.PASS:
             self.passed += 1
         elif verdict is not None and verdict is not Verdict.SKIP:
             self.failed += 1
@@ -47,7 +47,7 @@ class Stats:
         if weight is not None:
             self.weighted_count += 1
             self.weighted_total += weight
-            if verdict is Verdict.OK:
+            if verdict is Verdict.PASS:
                 self.weighted_pass += weight
 
     def merge(self, other: Stats) -> None:
@@ -89,7 +89,7 @@ class Stats:
 
 def format_summary_line(
     label: str,
-    ok: int,
+    passed: int,
     fail: int,
     skip: int = 0,
     *,
@@ -98,21 +98,21 @@ def format_summary_line(
 ) -> str:
     """Format a summary line: label and counts, with optional ANSI color."""
     if use_color:
-        if ok + fail == 0:
+        if passed + fail == 0:
             label = f"\033[1;33m{label}\033[0m"
         elif fail == 0:
             label = f"\033[1;32m{label}\033[0m"
         else:
-            pct = ok * 100 // (ok + fail)
+            pct = passed * 100 // (passed + fail)
             color = "\033[1;33m" if pct >= 50 else "\033[1;31m"
             label = f"{color}{label}\033[0m"
     if fail == 0:
-        counts = f"{ok} passed"
+        counts = f"{passed} passed"
     else:
-        pct_str = f"{ok * 100 / (ok + fail):.2f}%"
+        pct_str = f"{passed * 100 / (passed + fail):.2f}%"
         if weighted_pass_percent is not None:
             pct_str += f", weighted: {weighted_pass_percent:.2f}%"
-        counts = f"{ok}/{ok + fail} ({pct_str}) passed, {fail} failed"
+        counts = f"{passed}/{passed + fail} ({pct_str}) passed, {fail} failed"
     if skip:
         counts += f"; {skip} skipped"
     return f"{label}: {counts}"
@@ -209,7 +209,7 @@ class Reporter:
         self._dir_order: list[str] = []
         self._dir_total: Counter[str] = Counter()
         self._dir_done: Counter[str] = Counter()
-        self._dir_passed: Counter[str] = Counter()
+        self._dir_pass_counts: Counter[str] = Counter()
         self._dir_failed_tests: dict[str, list[str]] = {}
         self._dir_stats: dict[str, Stats] = {}
         self._dir_next_index: int = 0
@@ -281,7 +281,7 @@ class Reporter:
                 seen.add(d)
         self._dir_total = Counter(os.path.dirname(tid) for tid in test_ids)
         self._dir_done = Counter()
-        self._dir_passed = Counter()
+        self._dir_pass_counts = Counter()
         self._dir_failed_tests = {d: [] for d in self._dir_order}
         self._dir_stats = {d: Stats() for d in self._dir_order}
         self._dir_next_index = 0
@@ -315,8 +315,8 @@ class Reporter:
             d = os.path.dirname(fp)
             self._dir_done[d] += 1
             self._dir_stats[d].add(run.verdict_type, run.weight)
-            if run.is_ok():
-                self._dir_passed[d] += 1
+            if run.is_passed():
+                self._dir_pass_counts[d] += 1
             else:
                 self._dir_failed_tests[d].append(os.path.basename(fp))
 
@@ -339,7 +339,7 @@ class Reporter:
         elif any(r.is_failed() for r in runs):
             self._file_counts[Verdict.FAIL] += 1
         else:
-            self._file_counts[Verdict.OK] += 1
+            self._file_counts[Verdict.PASS] += 1
 
         if self._verbose < 1:
             n_done = sum(self._file_counts.values())
@@ -360,14 +360,14 @@ class Reporter:
 
     def _progress_line(self) -> str:
         fc = self._file_counts
-        n_done = fc[Verdict.OK] + fc[Verdict.FAIL] + fc[Verdict.SKIP]
+        n_done = fc[Verdict.PASS] + fc[Verdict.FAIL] + fc[Verdict.SKIP]
         d = self._discovery
         if d is not None and d.done and d.count > 0:
             pct = n_done * 100 // d.count
             prefix = f"[{pct}%]"
         else:
             prefix = f"[{n_done}]"
-        line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAIL]} failed"
+        line = f"{prefix} {fc[Verdict.PASS]} passed, {fc[Verdict.FAIL]} failed"
         if fc[Verdict.SKIP]:
             line += f", {fc[Verdict.SKIP]} skipped"
         show_id = None
@@ -400,15 +400,15 @@ class Reporter:
         if self._probes is None:
             self._probes = {}
         self._probes[name] = result
-        ok = result == "OK"
+        passed = result == "PASS"
         if self._verbose >= 1:
-            status = "OK" if ok else f"FAIL ({result})"
+            status = "PASS" if passed else f"FAIL ({result})"
             print(f"probe {name}: {status}", file=sys.stderr, flush=True)
         elif sys.stderr.isatty():
             n_done = len(self._probes)
-            n_ok = sum(1 for v in self._probes.values() if v == "OK")
-            n_fail = n_done - n_ok
-            msg = f"Probes: {n_done} ({n_ok} ok, {n_fail} failed)" if n_fail else f"Probes: {n_done} ok"
+            n_passed = sum(1 for v in self._probes.values() if v == "PASS")
+            n_fail = n_done - n_passed
+            msg = f"Probes: {n_done} ({n_passed} passed, {n_fail} failed)" if n_fail else f"Probes: {n_done} passed"
             print(f"\r\033[K{msg}", end="", file=sys.stderr, flush=True)
             self._progress_dirty = True
 
@@ -438,9 +438,9 @@ class Reporter:
             first = False
             d = self._dir_order[self._dir_next_index]
             self._dir_next_index += 1
-            ok = self._dir_passed[d]
-            fail = self._dir_total[d] - ok
-            line = format_summary_line(d, ok, fail, use_color=self._use_color,
+            passed = self._dir_pass_counts[d]
+            fail = self._dir_total[d] - passed
+            line = format_summary_line(d, passed, fail, use_color=self._use_color,
                                        weighted_pass_percent=self._dir_stats[d].weighted_pass_percent())
             prefix = "  " if header else ""
             if fail:
@@ -493,8 +493,8 @@ class Reporter:
             coarse = run.coarse_verdict()
             if prev is Verdict.FAIL or coarse is Verdict.FAIL:
                 fv[fp] = Verdict.FAIL
-            elif prev is Verdict.OK or coarse is Verdict.OK:
-                fv[fp] = Verdict.OK
+            elif prev is Verdict.PASS or coarse is Verdict.PASS:
+                fv[fp] = Verdict.PASS
             else:
                 fv[fp] = coarse
         return fv
@@ -524,8 +524,8 @@ class Reporter:
                 prev = fv.get(key)
                 if prev is Verdict.FAIL or v is Verdict.FAIL:
                     fv[key] = Verdict.FAIL
-                elif prev is Verdict.OK or v is Verdict.OK:
-                    fv[key] = Verdict.OK
+                elif prev is Verdict.PASS or v is Verdict.PASS:
+                    fv[key] = Verdict.PASS
                 else:
                     fv[key] = v
 
@@ -838,7 +838,7 @@ class Reporter:
         elapsed_sec = (finished_at - self._started_at).total_seconds()
 
         fv = self._file_verdicts()
-        test_ok = sum(1 for v in fv.values() if v is Verdict.OK)
+        test_pass = sum(1 for v in fv.values() if v is Verdict.PASS)
         test_fail = sum(1 for v in fv.values() if v is Verdict.FAIL)
         n_skipped = sum(1 for v in fv.values() if v is Verdict.SKIP)
 
@@ -865,15 +865,15 @@ class Reporter:
         peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
 
         if results or n_skipped:
-            total = test_ok + test_fail
+            total = test_pass + test_fail
             if test_fail:
                 line = (
-                    f"{engine_name}: {test_ok}/{total} tests passed "
-                    f"({test_ok * 100 / total:.2f}%), "
+                    f"{engine_name}: {test_pass}/{total} tests passed "
+                    f"({test_pass * 100 / total:.2f}%), "
                     f"{test_fail} failed"
                 )
             else:
-                line = f"{engine_name}: all {test_ok} tests passed"
+                line = f"{engine_name}: all {test_pass} tests passed"
             if n_skipped:
                 line += f", {n_skipped} skipped"
             line += f" in {elapsed_sec:.3f}s"

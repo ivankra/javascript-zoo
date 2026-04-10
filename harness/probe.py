@@ -47,34 +47,34 @@ PROBES: dict[str, dict] = {
     "print": {
         "source": 'print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "sloppy": {
         "source": 'x="PROBE_OK"; print(x);\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "strict": {
         "source": '(function() { print(this === undefined ? "PROBE_OK" : "NOT_STRICT"); })();\n',
         "mode": "strict",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "eval": {
         "source": 'print(eval("40+2") === 42 ? "PROBE_OK" : "WRONG");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "module-export": {
         "source": 'export const x = 1;\nprint("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_flags": {"module"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "module-import": {
         "source": 'import { value } from "./probe_dep.mjs";\nprint(value);\n',
         "mode": "sloppy",
         "fm_flags": {"module"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
         "stage_files": {"probe_dep.mjs": 'export const value = "PROBE_OK";\n'},
     },
     "negative": {
@@ -93,7 +93,7 @@ PROBES: dict[str, dict] = {
     "assert.throws": {
         "source": 'var assert=new Object(); assert.throws="PROBE_OK"; print(assert.throws);\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
         "use_harness": False,
     },
     "SyntaxError": {
@@ -130,49 +130,49 @@ PROBES: dict[str, dict] = {
     "annexB": {
         "source": 'if (typeof escape === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "Intl": {
         "source": 'if (typeof Intl !== "undefined") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262": {
         "source": 'if (typeof $262 !== "undefined") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.createRealm": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.createRealm === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.detachArrayBuffer": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.detachArrayBuffer === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.evalScript": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.evalScript === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.gc": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.gc === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_features": {"host-gc-required"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.global": {
         "source": 'if (typeof $262 !== "undefined" && $262.global === globalThis) print("PROBE_OK");\n',
         "mode": "sloppy",
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.agent": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.agent === "object") print("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_features": {"SharedArrayBuffer"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.IsHTMLDDA": {
         "source": (
@@ -184,26 +184,26 @@ PROBES: dict[str, dict] = {
         ),
         "mode": "sloppy",
         "fm_features": {"IsHTMLDDA"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "$262.AbstractModuleSource": {
         "source": 'if (typeof $262 !== "undefined" && typeof $262.AbstractModuleSource === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_features": {"source-phase-imports"},
-        "ok": "PROBE_OK",
+        "pass": "PROBE_OK",
     },
     "harness": {
         "source": 'assert.sameValue(1, 1);\n',
         "mode": "sloppy",
         "use_harness": True,
-        "ok_marker": True,  # check for ScriptExecutionFinished
+        "pass_marker": True,  # check for ScriptExecutionFinished
     },
     # TODO: more tests for each third_party/test262/harness/*.js
 }
 
 
 def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict, *, timeout: float = 0) -> tuple[str, str]:
-    """Run a single probe. Returns (probe_name, "OK" or detail)."""
+    """Run a single probe. Returns (probe_name, "PASS" or detail)."""
     runner = Runner(cfg)
     annotator = Annotator(cfg)
     assembler = Assembler(cfg, test262_dir, no_harness=not spec.get("use_harness"))
@@ -258,39 +258,39 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
             staged.cleanup()
 
     if spec.get("expect_async_fail"):
-        ok = run.is_failed()
-        detail = run.verdict_message() if not ok else ""
-        return probe_name, "OK" if ok else (detail or "FAIL")
+        passed = run.is_failed()
+        detail = run.verdict_message() if not passed else ""
+        return probe_name, "PASS" if passed else (detail or "FAIL")
 
     if "expect_error" in spec:
-        ok = run.verdict_type == spec["expect_error"]
-        if not ok:
+        passed = run.verdict_type == spec["expect_error"]
+        if not passed:
             parts = [str(run.verdict_message())]
             if run.stdout:
                 parts.append(f"stdout={run.stdout.strip()!r}")
             if run.stderr:
                 parts.append(f"stderr={run.stderr.strip()!r}")
             return probe_name, " ".join(parts)
-        return probe_name, "OK"
+        return probe_name, "PASS"
 
     # Probe success markers should be checked against cleaned output so
     # engine-specific quoting/ANSI stripping in config.yml actually takes effect.
     output = run.combined_output()
 
-    if spec.get("ok_marker"):
+    if spec.get("pass_marker"):
         marker = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
-        ok = run.is_ok() and marker in output
-        return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
+        passed = run.is_passed() and marker in output
+        return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
-    if "ok" in spec:
-        ok = run.is_ok() and spec["ok"] in output
-        if not ok:
-            detail = run.verdict_message() if not run.is_ok() else "marker not found"
+    if "pass" in spec:
+        passed = run.is_passed() and spec["pass"] in output
+        if not passed:
+            detail = run.verdict_message() if not run.is_passed() else "marker not found"
             return probe_name, detail or "FAIL"
-        return probe_name, "OK"
+        return probe_name, "PASS"
 
-    ok = run.is_ok()
-    return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
+    passed = run.is_passed()
+    return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
 
 def probe_engine(
@@ -352,7 +352,7 @@ def main() -> None:
         print(f"{binary.name}:", flush=True)
         results = list(probe_engine(cfg, test262_dir, jobs=args.jobs))
         for probe_name, result in sorted(results, key=lambda item: item[0]):
-            if result == "OK":
+            if result == "PASS":
                 print(f"  {probe_name}: true", flush=True)
             else:
                 print(f"  {probe_name}: false  # {result}", flush=True)

@@ -70,8 +70,8 @@ class RunResultTest(unittest.TestCase):
         self.assertEqual(r.rusage.real_time, 1.5)
         self.assertEqual(r.rusage.user_time, 0.8)
 
-    def test_verdict_message_ok(self) -> None:
-        self.assertEqual(mk_run(verdict_type=Verdict.OK).verdict_message(), "OK")
+    def test_verdict_message_pass(self) -> None:
+        self.assertEqual(mk_run(verdict_type=Verdict.PASS).verdict_message(), "PASS")
 
     def test_verdict_message_error_with_message(self) -> None:
         r = mk_run(

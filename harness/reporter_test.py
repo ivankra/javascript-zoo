@@ -62,7 +62,7 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262({"Symbol"}, mode="strict")
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags_s, mode="strict", test_id="test/a.js"),
             _run("test/a.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
@@ -76,7 +76,7 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262({"Symbol"}, mode="strict")
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags_s, mode="strict", test_id="test/a.js"),
             _run("test/a.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
@@ -89,7 +89,7 @@ class TestTagStats(unittest.TestCase):
     def test_mode_tags_match_raw_counts(self):
         """mode:* tag stats equal raw per-run counts (no dedup effect)."""
         runs = []
-        for name, v in [("a", Verdict.OK), ("b", Verdict.FAIL), ("c", Verdict.OK)]:
+        for name, v in [("a", Verdict.PASS), ("b", Verdict.FAIL), ("c", Verdict.PASS)]:
             for mode in ("strict", "sloppy"):
                 tags = _t262({"Symbol"}, mode=mode)
                 runs.append(_run(f"test/{name}.{mode}.js", v, tags=tags, mode=mode, test_id=f"test/{name}.js"))
@@ -107,9 +107,9 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262(mode="strict")
         tags_l = _t262(mode="sloppy")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
-            _run("test/a.sloppy.js", Verdict.OK, tags=tags_l, mode="sloppy", test_id="test/a.js"),
-            _run("test/b.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/b.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.PASS, tags=tags_l, mode="sloppy", test_id="test/a.js"),
+            _run("test/b.strict.js", Verdict.PASS, tags=tags_s, mode="strict", test_id="test/b.js"),
             _run("test/b.sloppy.js", Verdict.FAIL, tags=tags_l, mode="sloppy", test_id="test/b.js"),
         ])
         summary = r._summary_json(r._build_tag_stats(), r._file_verdicts(), r._file_weights())
@@ -129,7 +129,7 @@ class TestTagStats(unittest.TestCase):
     def test_results_without_tags_excluded_from_tag_stats(self):
         """Results with tags=None are silently excluded from tag stats."""
         r = self._reporter([
-            _run("test/a.js", Verdict.OK, tags=None),
+            _run("test/a.js", Verdict.PASS, tags=None),
         ])
         stats = r._build_tag_stats()
         self.assertEqual(stats, {})
@@ -138,7 +138,7 @@ class TestTagStats(unittest.TestCase):
         """Tests with no features/edition produce 'features:N/A' and 'edition:N/A' keys."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         self.assertIn("features:N/A", stats)
@@ -150,7 +150,7 @@ class TestTagStats(unittest.TestCase):
         """'features:N/A' and 'edition:N/A' appear in tags JSON for featureless tests."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         tag_stats = r._tags_stats_json(r._build_tag_stats())
         self.assertIn("features:N/A", tag_stats)
@@ -162,7 +162,7 @@ class TestTagStats(unittest.TestCase):
         tags = Tags.test262(fm, rel_path="test/built-ins/Map/a.js")
         tags.add("mode", "strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         self.assertIn("file:test/built-ins/Map/a.js", stats)
@@ -176,7 +176,7 @@ class TestTagStats(unittest.TestCase):
         tags.add("mode", "strict")
 
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_dirs=True)
-        r.test_completed([_run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js")])
+        r.test_completed([_run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js")])
         self.assertNotIn("dir:test", r._tags_stats_json(r._build_tag_stats()))
 
     def test_dirs_json_when_enabled(self):
@@ -186,7 +186,7 @@ class TestTagStats(unittest.TestCase):
         tags.add("mode", "strict")
 
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_dirs=True)
-        r.test_completed([_run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js")])
+        r.test_completed([_run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js")])
         dirs = r._dirs_json(r._build_tag_stats())
         self.assertIn("test", dirs)
         self.assertIn("test/built-ins", dirs)
@@ -216,8 +216,8 @@ class TestEditionReport(unittest.TestCase):
         """Edition passed+failed+skipped sums match total across all edition lines."""
         runs = []
         for i, (feat, verdict) in enumerate([
-            ("Symbol", Verdict.OK),        # es6
-            ("Promise", Verdict.OK),        # es6
+            ("Symbol", Verdict.PASS),        # es6
+            ("Promise", Verdict.PASS),        # es6
             ("BigInt", Verdict.FAIL),     # es2020
         ]):
             tags = _t262({feat}, mode="strict")
@@ -235,7 +235,7 @@ class TestEditionReport(unittest.TestCase):
         """Tests with no features land in 'N/A', not in any edition."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("N/A", report)
@@ -265,7 +265,7 @@ class TestEditionReport(unittest.TestCase):
         """The empty 'features:' sentinel never appears as a feature line."""
         tags = _t262(mode="strict")  # no features
         r = self._reporter([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         # Should not have a bare "    : " line
@@ -278,7 +278,7 @@ class TestEditionReport(unittest.TestCase):
 class TestJsonFormatting(unittest.TestCase):
     def test_per_mode_verdict_dict_is_inline(self):
         """Per-mode verdict dicts render on a single line, not expanded."""
-        data = {"test/a.js": {"strict": "OK", "sloppy": "FAIL: some error"}}
+        data = {"test/a.js": {"strict": "PASS", "sloppy": "FAIL: some error"}}
         out = Reporter.format_json_value(data)
         # The inner dict should be on the same line as the key
         for line in out.splitlines():
@@ -318,7 +318,7 @@ class TestOutputTags(unittest.TestCase):
         tags.add("mode", "strict")
         r = Reporter(EngineConfig(binary_path="/fake/js"))
         r.test_completed([
-            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
         ])
 
         out = r.to_tags_json()
@@ -336,7 +336,7 @@ class TestOutputTags(unittest.TestCase):
             path = os.path.join(tmpdir, "tags.json")
             r = Reporter(EngineConfig(binary_path="/fake/js"), output_tags_file=path)
             r.test_completed([
-                _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
+                _run("test/a.strict.js", Verdict.PASS, tags=tags, mode="strict", test_id="test/a.js"),
             ])
             r.write_tags()
             data = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -352,8 +352,8 @@ class TestOutputTags(unittest.TestCase):
         sloppy_tags.add("mode", "sloppy")
         r = Reporter(EngineConfig(binary_path="/fake/js"))
         r.test_completed([
-            _run("test/a.strict.js", Verdict.OK, tags=strict_tags, mode="strict", test_id="test/a.js"),
-            _run("test/a.sloppy.js", Verdict.OK, tags=sloppy_tags, mode="sloppy", test_id="test/a.js"),
+            _run("test/a.strict.js", Verdict.PASS, tags=strict_tags, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.PASS, tags=sloppy_tags, mode="sloppy", test_id="test/a.js"),
         ])
 
         data = json.loads(r.to_tags_json())
@@ -369,9 +369,9 @@ class TestTestOrder(unittest.TestCase):
 
     def test_group_run_results_uses_test_order_then_appends_leftovers(self):
         runs = [
-            _run("test/c.strict.js", Verdict.OK, test_id="test/c.js"),
-            _run("test/a.strict.js", Verdict.OK, test_id="test/a.js"),
-            _run("test/b.strict.js", Verdict.OK, test_id="test/b.js"),
+            _run("test/c.strict.js", Verdict.PASS, test_id="test/c.js"),
+            _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js"),
+            _run("test/b.strict.js", Verdict.PASS, test_id="test/b.js"),
         ]
         grouped = group_run_results(
             runs,
@@ -380,7 +380,7 @@ class TestTestOrder(unittest.TestCase):
         self.assertEqual(list(grouped), ["test/a.js", "test/b.js", "test/c.js"])
 
     def test_group_run_results_rejects_missing_test_id(self):
-        run = _run("test/a.strict.js", Verdict.OK, test_id="test/a.js")
+        run = _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js")
         run.test_id = None
         with self.assertRaisesRegex(ValueError, "missing test_id"):
             group_run_results([run], [])
@@ -392,7 +392,7 @@ class TestReporterRusageJson(unittest.TestCase):
         r.test_completed([
             _run(
                 "test/a.strict.js",
-                Verdict.OK,
+                Verdict.PASS,
                 test_id="test/a.js",
                 rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
             )
@@ -405,7 +405,7 @@ class TestReporterRusageJson(unittest.TestCase):
         r.test_completed([
             _run(
                 "test/a.strict.js",
-                Verdict.OK,
+                Verdict.PASS,
                 test_id="test/a.js",
                 rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
             )
@@ -425,7 +425,7 @@ class TestReporterRusageJson(unittest.TestCase):
         r.test_completed([
             _run(
                 "test/a.js",
-                Verdict.OK,
+                Verdict.PASS,
                 test_id="test/a.js",
                 rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
             )
@@ -436,8 +436,8 @@ class TestReporterRusageJson(unittest.TestCase):
     def test_json_reports_all_runs_when_requested(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="all")
         r.test_completed([
-            _run("test/a.strict.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
-            _run("test/a.sloppy.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+            _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("test/a.sloppy.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
         ])
         out = json.loads(r.to_json())
         self.assertEqual(out["rusage"]["test/a.strict.js"]["real_time"], 1.25)
@@ -453,7 +453,7 @@ class TestReporterRusageJson(unittest.TestCase):
             ]
             r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="top20")
             r.test_completed([
-                _run("test/a.strict.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+                _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
             ])
             out = json.loads(r.to_json())
         self.assertEqual(out["rusage"]["started_at"], "2026-04-05 04:28:10 UTC")
@@ -464,7 +464,7 @@ class TestReporterRusageJson(unittest.TestCase):
         r.test_completed([
             _run(
                 "test/a.strict.js",
-                Verdict.OK,
+                Verdict.PASS,
                 test_id="test/a.js",
                 rusage=RunRusage(real_time=0.0, user_time=0.0, sys_time=0.0, max_rss_kb=0),
             ),
@@ -480,8 +480,8 @@ class TestReporterRusageJson(unittest.TestCase):
     def test_json_reports_all_runs_requires_unique_run_id(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="all")
         r.test_completed([
-            _run("run/a.js", Verdict.OK, test_id="test/a.js"),
-            _run("run/a.js", Verdict.OK, test_id="test/b.js"),
+            _run("run/a.js", Verdict.PASS, test_id="test/a.js"),
+            _run("run/a.js", Verdict.PASS, test_id="test/b.js"),
         ])
         with self.assertRaisesRegex(AssertionError, "unique run_id"):
             r.to_json()
@@ -489,9 +489,9 @@ class TestReporterRusageJson(unittest.TestCase):
     def test_json_reports_rusage_sorted_descending(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top20")
         r.test_completed([
-            _run("run/a.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
-            _run("run/b.js", Verdict.OK, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
-            _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
+            _run("run/a.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+            _run("run/b.js", Verdict.PASS, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("run/c.js", Verdict.PASS, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
         ])
         out = json.loads(r.to_json())
         self.assertEqual(list(out["rusage"]["run_duration_sec"]), ["run/b.js", "run/c.js", "run/a.js"])
@@ -500,9 +500,9 @@ class TestReporterRusageJson(unittest.TestCase):
     def test_json_reports_top_n_runs_when_requested(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top2")
         r.test_completed([
-            _run("run/a.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
-            _run("run/b.js", Verdict.OK, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
-            _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
+            _run("run/a.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+            _run("run/b.js", Verdict.PASS, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("run/c.js", Verdict.PASS, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
         ])
         out = json.loads(r.to_json())
         self.assertEqual(list(out["rusage"]["run_duration_sec"]), ["run/b.js", "run/c.js"])
@@ -512,7 +512,7 @@ class TestReporterRusageJson(unittest.TestCase):
 class TestReporterOutputSelection(unittest.TestCase):
     def test_json_defaults_to_tests_only_for_json_path(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]))
-        r.test_completed([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        r.test_completed([_run("test/a.js", Verdict.PASS, test_id="test/a.js")])
         out = json.loads(r.to_json())
         self.assertIn("tests", out)
         self.assertNotIn("scenarios", out)
@@ -526,11 +526,11 @@ class TestReporterOutputSelection(unittest.TestCase):
             report_tests=True,
             report_runs=True,
         )
-        r.test_completed([_run("test/a.strict.js", Verdict.OK, test_id="test/a.js", mode="strict")])
+        r.test_completed([_run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", mode="strict")])
         out = json.loads(r.to_json())
         self.assertIn("tests", out)
         self.assertIn("scenarios", out)
-        self.assertEqual(out["scenarios"]["test/a.strict.js"], "OK")
+        self.assertEqual(out["scenarios"]["test/a.strict.js"], "PASS")
 
     def test_json_can_omit_both_tests_and_runs(self):
         r = Reporter(
@@ -541,7 +541,7 @@ class TestReporterOutputSelection(unittest.TestCase):
             report_tests=False,
             report_runs=False,
         )
-        r.test_completed([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        r.test_completed([_run("test/a.js", Verdict.PASS, test_id="test/a.js")])
         out = json.loads(r.to_json())
         self.assertNotIn("tests", out)
         self.assertNotIn("scenarios", out)
@@ -570,18 +570,18 @@ class TestReporterOutputSelection(unittest.TestCase):
 class TestReporterWriteStreams(unittest.TestCase):
     def test_write_dash_writes_to_stdout(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), output_file="-")
-        r.test_completed([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        r.test_completed([_run("test/a.js", Verdict.PASS, test_id="test/a.js")])
         stdout = io.StringIO()
         with contextlib.redirect_stdout(stdout):
             r.write()
-        self.assertEqual(stdout.getvalue(), "test/a.js: OK\n")
+        self.assertEqual(stdout.getvalue(), "test/a.js: PASS\n")
 
     def test_write_dev_stdout_writes_to_stdout(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), output_file="/dev/stdout")
-        r.test_completed([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        r.test_completed([_run("test/a.js", Verdict.PASS, test_id="test/a.js")])
         with patch("pathlib.Path.write_text") as write_text:
             r.write()
-        write_text.assert_called_once_with("test/a.js: OK\n", encoding="utf-8")
+        write_text.assert_called_once_with("test/a.js: PASS\n", encoding="utf-8")
 
 
 class TestReporterProgress(unittest.TestCase):
@@ -605,7 +605,7 @@ class TestReporterProgress(unittest.TestCase):
         discovery = FileDiscovery.from_list(["test/Array/from.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
         r._in_flight["test/Array/from.js"] = 1.0
-        r.test_completed([_run("test/Array/from.js", Verdict.OK, test_id="test/Array/from.js")])
+        r.test_completed([_run("test/Array/from.js", Verdict.PASS, test_id="test/Array/from.js")])
         line = r._progress_line()
         self.assertIn("[100%]", line)
         self.assertIn("test/Array/from.js", line)
@@ -617,11 +617,11 @@ class TestReporterProgress(unittest.TestCase):
         r._in_flight["b.js"] = 2.0
         r._in_flight["c.js"] = 3.0
         # b completes — progress shows c (last started)
-        r.test_completed([_run("b.js", Verdict.OK, test_id="b.js")])
+        r.test_completed([_run("b.js", Verdict.PASS, test_id="b.js")])
         line = r._progress_line()
         self.assertIn("c.js", line)
         # c completes — now a is the only one left
-        r.test_completed([_run("c.js", Verdict.OK, test_id="c.js")])
+        r.test_completed([_run("c.js", Verdict.PASS, test_id="c.js")])
         line = r._progress_line()
         self.assertIn("a.js", line)
 
@@ -630,7 +630,7 @@ class TestReporterProgress(unittest.TestCase):
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
         r.test_started("a.js")
         r.test_started("b.js")
-        r.test_completed([_run("a.js", Verdict.OK, test_id="a.js")])
+        r.test_completed([_run("a.js", Verdict.PASS, test_id="a.js")])
         line = r._progress_line()
         self.assertIn("b.js", line)
 

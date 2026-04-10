@@ -25,11 +25,11 @@ if TYPE_CHECKING:
 class Verdict(StrEnum):
     """Test outcome classification."""
 
-    OK = "OK"
+    PASS = "PASS"
     # Didn't run the test due to some filter
     SKIP = "SKIP"
-    # Every verdict other than OK/SKIP means a failure.
-    FAIL = "FAIL"    # unclassified/generic error, Error exception, missing OK marker
+    # Every verdict other than PASS/SKIP means a failure.
+    FAIL = "FAIL"    # unclassified/generic error, Error exception, missing PASS marker
     CRASH = "CRASH"  # killed by a signal or runtime panic
     TIMEOUT = "TIMEOUT"
     OOM = "OOM"
@@ -159,14 +159,14 @@ class RunResult:
         sep = "" if out.endswith("\n") else "\n"
         return f"{err}{sep}{out}"
 
-    def is_ok(self) -> bool:
-        return self.verdict_type is Verdict.OK
+    def is_passed(self) -> bool:
+        return self.verdict_type is Verdict.PASS
 
     def is_skipped(self) -> bool:
         return self.verdict_type is Verdict.SKIP
 
     def is_failed(self) -> bool:
-        return self.verdict_type not in (None, Verdict.OK, Verdict.SKIP)
+        return self.verdict_type not in (None, Verdict.PASS, Verdict.SKIP)
 
     def coarse_verdict(self) -> Verdict | None:
         if self.verdict_type is None:
@@ -177,7 +177,7 @@ class RunResult:
         """Render verdict plus optional error detail as a compact status string."""
         if self.verdict_type is None:
             return ""
-        assert self.verdict_detail != "OK"
+        assert self.verdict_detail != "PASS"
         status = str(self.verdict_type)
         if not self.verdict_detail:
             return status
@@ -209,7 +209,10 @@ class RunResult:
             if "verdict_detail" not in values and data.get("error_message") is not None:
                 values["verdict_detail"] = data["error_message"]
             if values.get("verdict_type") is not None:
-                values["verdict_type"] = Verdict(str(values["verdict_type"]))
+                raw_verdict = str(values["verdict_type"])
+                if raw_verdict == "OK":
+                    raw_verdict = str(Verdict.PASS)
+                values["verdict_type"] = Verdict(raw_verdict)
             if "rusage" in values and isinstance(values["rusage"], dict):
                 values["rusage"] = RunRusage(**{
                     k: v for k, v in values["rusage"].items()

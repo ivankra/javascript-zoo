@@ -411,7 +411,7 @@ class BenchRunner:
                 run.verdict_detail = "No scores in the output"
 
         if self.cfg.bench_ignore_errors:
-            run.verdict_type = Verdict.OK
+            run.verdict_type = Verdict.PASS
             run.verdict_detail = None
 
         self.last = run
