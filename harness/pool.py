@@ -4,6 +4,7 @@ import multiprocessing
 import os
 import queue
 import signal
+import threading
 import traceback
 from collections.abc import Callable, Iterable, Iterator
 from dataclasses import dataclass
@@ -115,13 +116,33 @@ class PoolExecutor:
 
     def imap(self, items: Iterable[tuple[str | None, object]], *, on_started: Callable[[str], None] | None = None) -> Iterator[list[RunResult]]:
         pending = 0
-        for item in items:
-            self._task_queue.put(item)
-            pending += 1
+        feeder_done = threading.Event()
+        feeder_error: list[BaseException] = []
+        pending_lock = threading.Lock()
+
+        def feed() -> None:
+            nonlocal pending
+            try:
+                for item in items:
+                    self._task_queue.put(item)
+                    with pending_lock:
+                        pending += 1
+            except BaseException as exc:
+                feeder_error.append(exc)
+            finally:
+                feeder_done.set()
 
         try:
-            while pending:
+            feeder = threading.Thread(target=feed, name="pool-feeder", daemon=True)
+            feeder.start()
+
+            while True:
                 self._raise_if_worker_died()
+                if feeder_error:
+                    raise feeder_error[0]
+                with pending_lock:
+                    if pending == 0 and feeder_done.is_set():
+                        break
                 try:
                     message = self._result_queue.get(timeout=0.1)
                 except queue.Empty:
@@ -133,7 +154,8 @@ class PoolExecutor:
                 elif isinstance(message, _Spawn):
                     self._pids.add(message.pid)
                 elif isinstance(message, _Result):
-                    pending -= 1
+                    with pending_lock:
+                        pending -= 1
                     for run in message.value:
                         if run.pid is not None:
                             self._pids.discard(run.pid)
