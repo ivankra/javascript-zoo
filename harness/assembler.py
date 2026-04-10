@@ -325,6 +325,13 @@ class Assembler:
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
 
+            # test/language/import/import-bytes/bytes-from-png.js ->
+            # test/language/import/import-bytes/bytes-from-png_FIXTURE.png
+            if dep_path.name.endswith(".png"):
+                buf = dep_path.read_bytes()
+                write_atomic(dst, buf)
+                return
+
             try:
                 # Binary read: preserve original line endings in test fixtures
                 dep_src = dep_path.read_bytes().decode("utf-8", errors="replace")
