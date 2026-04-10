@@ -10,6 +10,7 @@ import re
 import shutil
 import sys
 import time
+from concurrent.futures import Future, ThreadPoolExecutor
 from datetime import UTC, datetime
 from collections import Counter
 from pathlib import Path
@@ -195,7 +196,12 @@ class Reporter:
         self._progress_every = progress_every
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
-        self._test262_revision = get_git_revision(test262_dir) if test262_dir else None
+        self._test262_revision = None
+        self._test262_revision_future: Future[Any] | None = None
+        self._test262_revision_executor: ThreadPoolExecutor | None = None
+        if test262_dir is not None:
+            self._test262_revision_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="test262-revision")
+            self._test262_revision_future = self._test262_revision_executor.submit(get_git_revision, test262_dir)
         self._started_at = datetime.now(UTC)
         self._started_monotonic = time.monotonic()
         self._progress_terminal_columns: int | None = None
@@ -245,6 +251,15 @@ class Reporter:
     @staticmethod
     def _format_timestamp(ts: datetime) -> str:
         return ts.strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    def _get_test262_revision(self) -> Any:
+        if self._test262_revision_future is not None:
+            self._test262_revision = self._test262_revision_future.result()
+            self._test262_revision_future = None
+            assert self._test262_revision_executor is not None
+            self._test262_revision_executor.shutdown(wait=False)
+            self._test262_revision_executor = None
+        return self._test262_revision
 
     @property
     def results(self) -> list[RunResult]:
@@ -758,8 +773,9 @@ class Reporter:
             data["flags"] = engine.flags
         if self._probes is not None:
             data["probes"] = dict(sorted(self._probes.items()))
-        if self._test262_revision:
-            data["test262"] = self._test262_revision.to_json()
+        test262_revision = self._get_test262_revision()
+        if test262_revision:
+            data["test262"] = test262_revision.to_json()
         fv = self._file_verdicts()
         fw = self._file_weights()
         tag_stats = self._build_tag_stats(fw)
