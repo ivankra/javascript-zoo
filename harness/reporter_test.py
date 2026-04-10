@@ -16,7 +16,7 @@ from unittest.mock import patch
 from harness.config import EngineConfig
 from harness.frontmatter import Frontmatter
 from harness.tags import Tags
-from harness.reporter import Reporter, group_run_results
+from harness.reporter import ANSI_ESCAPE_RE, Reporter, group_run_results
 from harness.runner import RunResult, RunRusage, Verdict
 from harness.util import FileDiscovery
 
@@ -46,6 +46,10 @@ def _t262(features: set[str] | None = None, *, mode: str) -> Tags:
     tags = Tags.test262(fm)
     tags.add("mode", mode)
     return tags
+
+
+def _strip_ansi(text: str) -> str:
+    return ANSI_ESCAPE_RE.sub("", text)
 
 
 class TestTagStats(unittest.TestCase):
@@ -624,34 +628,39 @@ class TestReporterWriteStreams(unittest.TestCase):
 
 
 class TestReporterProgress(unittest.TestCase):
-    def test_progress_uses_count_until_discovery_finishes(self):
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_omits_percent_until_discovery_finishes(self, _monotonic):
         discovery = FileDiscovery.from_list(["test/Array/from.js", "test/Array/of.js"])
         discovery._done.clear()  # simulate in-progress
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
         r._in_flight["test/Array/from.js"] = 1.0
         r._in_flight["test/Array/of.js"] = 2.0
         r.test_completed([_run("test/Array/from.js", Verdict.FAIL, test_id="test/Array/from.js")])
-        line = r._progress_line()
-        self.assertTrue(line.startswith("[1] "))
-        self.assertIn("0 passed, 1 failed", line)
+        line = _strip_ansi(r._progress_line())
+        self.assertTrue(line.startswith("[00:20   ? +0 -1] "))
         # Shows the most recently started in-flight test.
         self.assertIn("test/Array/of.js", line)
         discovery._done.set()  # simulate done
-        line2 = r._progress_line()
-        self.assertTrue(line2.startswith("[50%] "))
+        line2 = _strip_ansi(r._progress_line())
+        self.assertTrue(line2.startswith("[00:20 50% +0 -1] "))
 
-    def test_progress_shows_last_completed_when_nothing_in_flight(self):
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_shows_last_completed_when_nothing_in_flight(self, _monotonic):
         discovery = FileDiscovery.from_list(["test/Array/from.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
         r._in_flight["test/Array/from.js"] = 1.0
         r.test_completed([_run("test/Array/from.js", Verdict.PASS, test_id="test/Array/from.js")])
-        line = r._progress_line()
-        self.assertIn("[100%]", line)
+        line = _strip_ansi(r._progress_line())
+        self.assertIn("[00:20 99% +1]", line)
         self.assertIn("test/Array/from.js", line)
 
-    def test_progress_shows_latest_in_flight(self):
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_shows_latest_in_flight(self, _monotonic):
         discovery = FileDiscovery.from_list(["a.js", "b.js", "c.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
         r._in_flight["a.js"] = 1.0
         r._in_flight["b.js"] = 2.0
         r._in_flight["c.js"] = 3.0
@@ -664,23 +673,36 @@ class TestReporterProgress(unittest.TestCase):
         line = r._progress_line()
         self.assertIn("a.js", line)
 
-    def test_progress_tracks_started_workers(self):
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_tracks_started_workers(self, _monotonic):
         discovery = FileDiscovery.from_list(["a.js", "b.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
         r.test_started("a.js")
         r.test_started("b.js")
         r.test_completed([_run("a.js", Verdict.PASS, test_id="a.js")])
         line = r._progress_line()
         self.assertIn("b.js", line)
 
-    def test_progress_truncates_filename_to_terminal_width(self):
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_truncates_filename_to_terminal_width(self, _monotonic):
         discovery = FileDiscovery.from_list(["test/Array/from.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
         r._in_flight["test/Array/from.js"] = 1.0
         with patch("harness.reporter.shutil.get_terminal_size", return_value=os.terminal_size((25, 24))):
             line = r._progress_line()
             # Too narrow for filename
             self.assertNotIn("test/Array/from.js", line)
+
+    @patch("harness.reporter.time.monotonic", return_value=20.0)
+    def test_progress_shows_skip_counter(self, _monotonic):
+        discovery = FileDiscovery.from_list(["a.js", "b.js"])
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r._started_monotonic = 0.0
+        r.test_completed([_run("a.js", Verdict.SKIP, test_id="a.js")])
+        line = r._progress_line()
+        self.assertIn("~1", line)
 
     def test_truncate_left(self):
         self.assertEqual(Reporter._truncate_left("abcdefgh", 5), "\u2026efgh")

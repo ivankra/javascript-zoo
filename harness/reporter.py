@@ -25,6 +25,9 @@ if TYPE_CHECKING:
     from .util import FileDiscovery
 
 
+ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-9;]*m")
+
+
 @dataclasses.dataclass
 class Stats:
     """Aggregated pass/fail/skip counts with optional weighted tracking."""
@@ -194,6 +197,9 @@ class Reporter:
         self._test262 = test262
         self._test262_revision = get_git_revision(test262_dir) if test262_dir else None
         self._started_at = datetime.now(UTC)
+        self._started_monotonic = time.monotonic()
+        self._progress_terminal_columns: int | None = None
+        self._progress_terminal_columns_at = 0.0
         self._results: list[RunResult] = []
         # Per-file and per-mode (run) progress counters.
         self._file_counts: Counter[Verdict] = Counter()
@@ -360,18 +366,40 @@ class Reporter:
             return text
         return "\u2026" + text[-(width - 1):] if width > 1 else "\u2026"
 
+    @staticmethod
+    def _visible_len(text: str) -> int:
+        return len(ANSI_ESCAPE_RE.sub("", text))
+
+    @staticmethod
+    def _colorize(text: str, color: str, *, enabled: bool) -> str:
+        return f"{color}{text}\033[0m" if enabled else text
+
+    def _progress_columns(self) -> int:
+        now = time.monotonic()
+        if (
+            self._progress_terminal_columns is None
+            or now - self._progress_terminal_columns_at > 1.0
+        ):
+            self._progress_terminal_columns = shutil.get_terminal_size((80, 24)).columns
+            self._progress_terminal_columns_at = now
+        return self._progress_terminal_columns
+
     def _progress_line(self) -> str:
         fc = self._file_counts
         n_done = fc[Verdict.PASS] + fc[Verdict.FAIL] + fc[Verdict.SKIP]
         d = self._discovery
+        elapsed = int(max(0.0, time.monotonic() - self._started_monotonic))
+        elapsed_str = f"{elapsed // 60:02d}:{elapsed % 60:02d}"
+        progress_str = "  ?"
         if d is not None and d.done and d.count > 0:
-            pct = n_done * 100 // d.count
-            prefix = f"[{pct}%]"
-        else:
-            prefix = f"[{n_done}]"
-        line = f"{prefix} {fc[Verdict.PASS]} passed, {fc[Verdict.FAIL]} failed"
+            progress_str = f"{min(99, n_done * 100 // d.count)}%".rjust(3)
+        progress_bits = [elapsed_str, progress_str]
+        progress_bits.append(self._colorize(f"+{fc[Verdict.PASS]}", "\033[32m", enabled=self._use_color))
+        if fc[Verdict.FAIL]:
+            progress_bits.append(self._colorize(f"-{fc[Verdict.FAIL]}", "\033[31m", enabled=self._use_color))
         if fc[Verdict.SKIP]:
-            line += f", {fc[Verdict.SKIP]} skipped"
+            progress_bits.append(self._colorize(f"~{fc[Verdict.SKIP]}", "\033[33m", enabled=self._use_color))
+        line = f"[{' '.join(progress_bits)}]"
         show_id = None
         if self._in_flight:
             show_id = max(self._in_flight, key=self._in_flight.__getitem__)
@@ -380,10 +408,10 @@ class Reporter:
             # so _in_flight is empty; fall back to the last completed test.
             show_id = self._last_completed
         if show_id:
-            cols = shutil.get_terminal_size((80, 24)).columns
-            avail = cols - len(line) - 3  # " | "
-            if avail >= 10:
-                line += f" | {self._truncate_left(show_id, avail)}"
+            cols = self._progress_columns()
+            avail = cols - self._visible_len(line) - 1
+            if avail > 0:
+                line += f" {self._truncate_left(show_id, avail)}"
         return line
 
     def _print_progress(self) -> None:
@@ -871,7 +899,7 @@ class Reporter:
         failed = [r for r in results if r.is_failed()]
         if failed and self._verbose < 1:
             print(f"\nFailures ({len(failed)}):")
-            max_failures = 50
+            max_failures = 10
             for r in failed[:max_failures]:
                 msg = f"{r.run_id or '?'}: {r.verdict_message()[:120]}"
                 if use_color:
