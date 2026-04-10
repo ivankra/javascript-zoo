@@ -120,12 +120,12 @@ def rename_variant(out: Path) -> None:
 
     out.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(str(src), str(out))
-    shutil.move(str(src_json), str(out_json))
 
-    src_license = Path(str(src) + ".LICENSE")
-    out_license = Path(str(out) + ".LICENSE")
-    if src_license.exists():
-        shutil.move(str(src_license), str(out_license))
+    for artifact in sorted(src.parent.glob(f"{src.name}.*")):
+        target = out.parent / f"{out.name}{artifact.name[len(src.name):]}"
+        if target.exists():
+            fail(f"rename target already exists: {target}")
+        shutil.move(str(artifact), str(target))
 
     src_dist = src.parent / f"{src.name}-dist"
     out_dist = out.parent / f"{out.name}-dist"
