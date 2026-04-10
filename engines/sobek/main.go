@@ -104,6 +104,12 @@ func run() error {
 		return load(vm, call)
 	})
 
+	vm.SetImportModuleDynamically(func(referencingScriptOrModule interface{}, specifierValue sobek.Value, promiseCapability interface{}) {
+		module, err := loader.resolve(referencingScriptOrModule, specifierValue.String())
+		vm.FinishLoadingImportModule(referencingScriptOrModule, specifierValue, promiseCapability, module, err)
+		_, _ = vm.RunString("")
+	})
+
 	vm.Set("readFile", func(name string) (string, error) {
 		b, err := os.ReadFile(name)
 		if err != nil {
@@ -128,6 +134,11 @@ func run() error {
 
 			if filename == "" || filename == "-" {
 				filename = "<stdin>"
+			}
+
+			absFilename := canonicalFilename(filename)
+			if absFilename != "<stdin>" {
+				loader.scriptPath = absFilename
 			}
 
 			if *moduleMode || strings.HasSuffix(filename, ".mjs") {
@@ -211,9 +222,10 @@ func create262(vm *sobek.Runtime) *sobek.Object {
 // Note: module support is a Sobek feature. Goja doesn't implement ES modules.
 
 type moduleLoader struct {
-	mu    sync.Mutex
-	files map[string]sobek.ModuleRecord
-	paths map[sobek.ModuleRecord]string
+	mu         sync.Mutex
+	files      map[string]sobek.ModuleRecord
+	paths      map[sobek.ModuleRecord]string
+	scriptPath string // canonical path of the currently-running script, for resolving dynamic imports
 }
 
 func newModuleLoader() *moduleLoader {
@@ -254,6 +266,9 @@ func (l *moduleLoader) resolve(referencingScriptOrModule interface{}, specifier 
 		l.mu.Lock()
 		referrer = l.paths[module]
 		l.mu.Unlock()
+	} else {
+		// dynamic import from a regular script (*sobek.Program): resolve relative to its directory
+		referrer = l.scriptPath
 	}
 
 	path, err := resolveModulePath(referrer, specifier)
@@ -301,12 +316,6 @@ func (l *moduleLoader) run(vm *sobek.Runtime, filename string, src []byte) error
 	if err := module.Link(); err != nil {
 		return err
 	}
-
-	vm.SetImportModuleDynamically(func(referencingScriptOrModule interface{}, specifierValue sobek.Value, promiseCapability interface{}) {
-		module, err := l.resolve(referencingScriptOrModule, specifierValue.String())
-		vm.FinishLoadingImportModule(referencingScriptOrModule, specifierValue, promiseCapability, module, err)
-		_, _ = vm.RunString("")
-	})
 
 	promise := module.Evaluate(vm)
 	switch promise.State() {
