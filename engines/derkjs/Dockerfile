@@ -27,4 +27,4 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/derkjs \
       --binary=/src/build/derkjs_tco \
       --no-license \
-      run_script_cmd='$BINARY -r $FILE'
+      --smoke-test-cmd='$BINARY -r'

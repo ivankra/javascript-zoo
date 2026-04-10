@@ -13,6 +13,7 @@ import glob
 import hashlib
 import json
 import os
+import shlex
 import shutil
 import stat
 import subprocess
@@ -51,16 +52,14 @@ def arch_name() -> str:
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
-    p = argparse.ArgumentParser(
-        prog="./dist.py",
-        usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--dist_files=<path> ...] [--no-license] [run_script_cmd='$BINARY ...'] [key=value ...]",
-    )
+    p = argparse.ArgumentParser(prog="./dist.py")
     p.add_argument("out", help="output path under /dist, e.g. /dist/v8")
-    p.add_argument("meta", nargs="*", help="metadata as key=value pairs, e.g. version=1.0 run_script_cmd='$BINARY eval'")
+    p.add_argument("meta", nargs="*", help="metadata as key=value pairs, e.g. version=1.0")
     p.add_argument("--binary", dest="binary", help="path to binary to strip and copy to output")
     p.add_argument("--wrapper", dest="wrapper", help="bash exec line for a wrapper script, e.g. 'exec $SCRIPT_DIR/v8 --harmony \"$@\"'")
     p.add_argument("--license", dest="licenses", action="append", default=[], metavar="PATH", help="license file(s) to bundle; may be a glob; repeatable")
     p.add_argument("--dist_files", dest="dist_files", action="append", default=[], metavar="PATH", help="extra files/dirs to include in dist size calculation; repeatable")
+    p.add_argument("--smoke-test-cmd", dest="smoke_test_cmd", help="bash command used for console probe and smoke test, e.g. '$BINARY eval \"$FILE\"'")
     p.add_argument("--no-license", action="store_true", dest="no_license", help="skip license file requirement")
     p.add_argument("--no-test", action="store_true", dest="no_test", help="skip console_log probe and smoke test")
     p.add_argument("--rename-variant", action="store_true", dest="rename_variant", help="rename the single existing /dist artifact to the given output name and update engine/variant in its JSON")
@@ -398,13 +397,15 @@ def _decode_engine_output(data: bytes) -> tuple[str, str | None]:
         return data.decode("utf-8", errors="replace"), repr(data[:200])
 
 
-def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Path) -> subprocess.CompletedProcess:
-    cmd_prefix = run_script_cmd if run_script_cmd else "$BINARY"
-    file_args = " ".join(f'"{f}"' for f in script_files)
-    full_cmd = f"{cmd_prefix} {file_args}"
+def _run_engine(binary_path: Path, smoke_test_cmd: str | None, *script_files: Path) -> subprocess.CompletedProcess:
+    cmd_prefix = smoke_test_cmd if smoke_test_cmd else "$BINARY"
+    file_args = " ".join(shlex.quote(str(f)) for f in script_files)
+    full_cmd = f"{cmd_prefix} {file_args}".strip()
 
     env = os.environ.copy()
     env["BINARY"] = str(binary_path)
+    if script_files:
+        env["FILE"] = str(script_files[0])
 
     proc = subprocess.run(
         ["bash", "-c", full_cmd],
@@ -425,7 +426,7 @@ def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Pa
     return proc
 
 
-def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) -> str:
+def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) -> str:
     attempts: list[tuple[str, str, str]] = []
     expected = "hello world"
     res = []
@@ -437,7 +438,7 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
             script.write_text(source, encoding="utf-8")
 
             try:
-                proc = _run_engine(binary_path, run_script_cmd, script)
+                proc = _run_engine(binary_path, smoke_test_cmd, script)
             except Exception:
                 continue
 
@@ -473,7 +474,7 @@ def maybe_link_to_dist_out(dist_out: Path) -> None:
     link.symlink_to(dist_out)
 
 
-def run_smoke_test(binary_path: Path) -> None:
+def run_smoke_test(binary_path: Path, smoke_test_cmd: str | None = None) -> None:
     """Run smoke test on a packaged binary. Reads test params from its .json metadata.
     Engines can override defaults via smoke_test_js/smoke_test_output metadata keys."""
     json_path = binary_path.with_suffix(binary_path.suffix + ".json")
@@ -490,7 +491,6 @@ def run_smoke_test(binary_path: Path) -> None:
     if type(console_log) is list:
         console_log = console_log[0]
 
-    run_script_cmd = meta.get("run_script_cmd")
     test_code = meta.get("smoke_test_js", "%(console_log)s(40+2);")
     test_output = meta.get("smoke_test_output", "42")
 
@@ -499,7 +499,7 @@ def run_smoke_test(binary_path: Path) -> None:
         script = Path(tmp) / "test.js"
         script.write_text(script_src, encoding="utf-8")
 
-        proc = _run_engine(binary_path, run_script_cmd, script)
+        proc = _run_engine(binary_path, smoke_test_cmd, script)
 
         output = proc.stdout + proc.stderr
         if not _has_line_with_substring(output, test_output):
@@ -527,11 +527,11 @@ def main() -> None:
 
     # --smoke-test: run smoke test on already-packaged binary and exit
     if args.smoke_test:
-        run_smoke_test(args.out)
+        run_smoke_test(args.out, args.smoke_test_cmd)
         return
 
     meta = args.meta
-    run_script_cmd = meta.get("run_script_cmd")
+    smoke_test_cmd = args.smoke_test_cmd
 
     if args.binary is not None and not args.binary.exists():
         fail(f"binary does not exist: {args.binary}")
@@ -571,13 +571,13 @@ def main() -> None:
     meta.setdefault("arch", arch_name())
     if not args.no_test:
         if args.out.parent == Path("/dist") and "console_log" not in meta:
-            meta["console_log"] = probe_console_log_function(args.out, run_script_cmd)
+            meta["console_log"] = probe_console_log_function(args.out, smoke_test_cmd)
     finalize_json(args.out, meta)
     print(args.out.with_suffix(args.out.suffix + ".json").read_text(encoding="utf-8"), end="")
 
     # Smoke test after finalize so run_smoke_test reads the written .json
     if not args.no_test and args.out.parent == Path("/dist") and "console_log" in meta:
-        run_smoke_test(args.out)
+        run_smoke_test(args.out, smoke_test_cmd)
 
 
 if __name__ == "__main__":
