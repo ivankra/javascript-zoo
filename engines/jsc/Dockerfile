@@ -40,3 +40,15 @@ RUN ./dist.py /dist/jsc \
       --binary=/src/WebKitBuild/JSCOnly/Release/bin/jsc \
       --license=Source/JavaScriptCore/COPYING.LIB \
       version="$(curl "https://commits.webkit.org/$(git rev-parse HEAD)/json" 2>&1 | sed -En 's/.*\"identifier\": \"([^\"]+)\".*/\1/p' | sed 's/@main//')"
+
+# See JSTests/test262/Test262-WebKit-Import-and-Runner.md.
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      apt-get update -y && apt-get install -y --no-install-recommends perl && \
+      Tools/Scripts/test262-runner \
+        --jsc /src/WebKitBuild/JSCOnly/Release/bin/jsc \
+        --t262 JSTests/test262 \
+        --release && \
+      cp test262-results/results.yaml /dist/jsc.test262.log && \
+      sed -En 's/^test262 revision: ([0-9a-f]+)$/\1/p' JSTests/test262/test262-Revision.txt >/dist/jsc.test262.rev; \
+    fi || true

@@ -33,3 +33,15 @@ RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "
 RUN ./dist.py /dist/engine262_jsc --no-test console_log=console.log
 RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/v8_full" "$0" -- "$@"'; cat main.bundle.js) >/dist/engine262_d8
 RUN ./dist.py /dist/engine262_d8 --no-test console_log=console.log
+
+# Run tests except slow/skipped using the project's official runner.
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      echo >test/test262/failed && \
+      TEST262= node test/test262/test262.mts --update-failed || true; \
+      cp test/test262/last-failed-list /dist/engine262.test262.failed; \
+      cp test/test262/last-failed.log /dist/engine262.test262.failed.log; \
+      cp test/test262/skip /dist/engine262.test262.skip; \
+      cp test/test262/slow /dist/engine262.test262.slow; \
+      git -C test/test262/test262 rev-parse HEAD >/dist/engine262.test262.rev; \
+    fi || true

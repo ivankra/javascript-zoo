@@ -19,3 +19,11 @@ RUN cargo build --release -p js
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/ssrlive --binary=/src/target/release/js
+
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      apt-get update -y && apt-get install -y --no-install-recommends nodejs && \
+      (node ci/runner.js --limit 1000000 || true) && \
+      cp test262-results.log /dist/ssrlive.test262.log && \
+      git -C /test262 rev-parse HEAD >/dist/ssrlive.test262.rev; \
+    fi || true

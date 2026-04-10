@@ -22,3 +22,8 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/kiesel \
       --binary=/src/zig-out/bin/kiesel \
       version="$(/src/zig-out/bin/kiesel --version | grep -i kiesel | grep -o '[0-9].*')"
+
+# Copy test262 results generated and checked-in by CI workflow.
+# Rerunning: see docs/running-test262.md
+RUN cp tools/test262/results.json /dist/kiesel.test262.log && \
+    sed -En 's/.*TEST262_COMMIT: ([0-9a-f]+)$/\1/p' .forgejo/workflows/ci.yml >/dist/kiesel.test262.rev

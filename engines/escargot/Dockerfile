@@ -35,3 +35,20 @@ RUN ninja -C build
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/escargot --binary=/src/build/escargot
+
+# --junitname broken in upstream
+# ARG TEST262=y
+# RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
+#       apt-get update -y && apt-get install -y --no-install-recommends python3-chardet && \
+#       git submodule update --init test/test262 && \
+#       cp tools/test/test262/excludelist.orig.xml test/test262/excludelist.xml && \
+#       cp tools/test/test262/cth.js tools/test/test262/testIntl.js test/test262/harness/ && \
+#       cp tools/test/test262/parseTestRecord.py tools/test/test262/test262.py test/test262/tools/packaging/ && \
+#       (cd test/test262 && \
+#         TZ=US/Pacific GC_FREE_SPACE_DIVISOR=1 python3 tools/packaging/test262.py \
+#           --command /src/build/escargot \
+#           --summary \
+#           --logname /dist/escargot.test262.log \
+#           --junitname /dist/escargot.test262.xml) && \
+#       git -C test/test262 rev-parse HEAD >/dist/escargot.test262.rev; \
+#     fi || true

@@ -60,3 +60,14 @@ RUN ./dist.py /dist/spidermonkey \
       --license=toolkit/content/license.html \
       version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+' | head -1)" \
       $(if [ "$JITLESS" = y ]; then echo jit=; fi)
+
+# Alternatively, can run `./mach jstests`, a wrapper around jstests.py.
+ARG TEST262=y
+RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
+      python3 js/src/tests/jstests.py \
+          --format=automation \
+          --output-file=/dist/spidermonkey_full.test262.log \
+          /src/obj/dist/bin/js \
+          test262/ && \
+      grep -oE '[0-9a-f]{40}' js/src/tests/test262/GIT-INFO | head -1 >/dist/spidermonkey_full.test262.rev; \
+    fi || true

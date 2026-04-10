@@ -1,4 +1,4 @@
-# Building Hermes:
+Building Hermes:
 # https://github.com/facebook/hermes/blob/main/doc/BuildingAndRunning.md
 #
 # Hermes - main branch:
@@ -55,3 +55,11 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/hermes \
       --binary=/src/build/bin/hermes \
       version="$(git describe --tags | sed 's/hermes-//; s/^v//;')"  # --version lies
+
+ARG TEST262=y
+RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
+      sed -i '/is_failure = test.code.is_failure/i\        print("RESULT: " + __import__("json").dumps({"test": test.test_name, "code": test.code.name, "msg": test.msg, "output": test.output}, ensure_ascii=False))' utils/testsuite/progress.py && \
+      git clone --depth=1 https://github.com/tc39/test262 /src/test262 && \
+      python3 utils/test_runner.py --test-intl /src/test262/test -b build/bin >/dist/hermes.test262.log 2>&1 && \
+      git -C /src/test262 rev-parse HEAD >/dist/hermes.test262.rev; \
+    fi || true

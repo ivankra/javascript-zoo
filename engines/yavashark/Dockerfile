@@ -15,5 +15,22 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN cargo build --release
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/yavashark --binary=/src/target/release/yavashark \
-      run_script_cmd='$BINARY -i'
+RUN ./dist.py /dist/yavashark --binary=/src/target/release/yavashark
+
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      apt-get update -y && \
+      apt-get install -y --no-install-recommends golang-go && \
+      git clone --depth=1 https://github.com/tc39/test262 /src/test262 && \
+      (cd /src/crates/yavashark_test262/runner && go build) && \
+      cargo build --release -p yavashark_test262 && \
+      mkdir -p /tmp/yavashark-test262-data && \
+      (cd /src/crates/yavashark_test262 && \
+        ./runner/yavashark_test262_runner \
+          --ci \
+          --repo /tmp/yavashark-test262-data \
+          --test_root ../../test262/test \
+          --workers "$(nproc)") && \
+      cp /tmp/yavashark-test262-data/results.json /dist/yavashark.test262.log && \
+      git -C /src/test262 rev-parse HEAD >/dist/yavashark.test262.rev; \
+    fi || true

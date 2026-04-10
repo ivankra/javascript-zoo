@@ -28,3 +28,10 @@ RUN python tools/build.py \
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jerryscript --binary=/src/build/bin/jerry
+
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      python3 tools/run-tests.py --test262 update --buildoptions=--compile-flag=-w && \
+      cp ./build/tests/test262/local/bin/test262.report /dist/jerryscript.test262.log && \
+      git -C tests/test262/esnext rev-parse HEAD >/dist/jerryscript.test262.rev; \
+    fi || true

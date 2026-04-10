@@ -8,7 +8,7 @@ Generate ours:
 
 Generate trx.log (in Jint repo):
   apt-get install -y tzdata tzdata-legacy
-  dotnet test Jint.Tests.Test262/Jint.Tests.Test262.csproj -c Release --logger "trx;LogFileName=trx.log"
+  DOTNET_ROLL_FORWARD=Major dotnet test Jint.Tests.Test262/Jint.Tests.Test262.csproj -c Release --logger "trx;LogFileName=trx.log"
   # produces Jint.Tests.Test262/TestResults/trx.log
 """
 

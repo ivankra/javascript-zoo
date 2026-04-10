@@ -15,3 +15,10 @@ RUN go build main.go
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/sobek --binary=/src/main
+
+ARG TEST262=y
+RUN if [ "$TEST262" = y ]; then \
+      ./.tc39_test262_checkout.sh && \
+      (go test -vet=off -v -run TestTC39 ./... >/dist/sobek.test262.log 2>&1 || true) && \
+      git -C testdata/test262 rev-parse HEAD >/dist/sobek.test262.rev; \
+    fi || true

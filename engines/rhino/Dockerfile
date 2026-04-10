@@ -27,3 +27,8 @@ RUN ./dist.py /dist/rhino \
       version="$(git describe --tags | sed -Ee 's/^Rhino([0-9_]+)_Release/\1/; s/_/./g')" && \
     # AOT cache is specific to JVM version and jsz-runtime has a different JDK \
     rm -f /dist/rhino-dist/rhino.aot*
+
+# Copy test262 results generated and checked-in by CI (see .github/workflows/gradle.yml).
+# Rerunning: `./gradlew :tests:test --tests Test262SuiteTest -DupdateTest262properties`.
+RUN cp tests/testsrc/test262.properties /dist/rhino.test262.log && \
+    git -C tests/test262 rev-parse HEAD >/dist/rhino.test262.rev

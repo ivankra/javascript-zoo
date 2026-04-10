@@ -58,3 +58,11 @@ RUN ./dist.py /dist/v8 \
       rustc="$(rustc --version)" \
       v8_build_config.json="$(cat out/release/v8_build_config.json)" \
       version="$(cat version)"
+
+# Run test262 via V8's official test runner.
+# test262 data is pulled by gclient sync into test/test262/data.
+ARG TEST262=y
+RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
+      tools/run-tests.py --outdir=out/release --json-test-results=/dist/v8.test262.log test262 && \
+      git -C test/test262/data rev-parse HEAD >/dist/v8.test262.rev; \
+    fi || true
