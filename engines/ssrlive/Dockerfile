@@ -23,7 +23,7 @@ RUN ./dist.py /dist/ssrlive --binary=/src/target/release/js
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       apt-get update -y && apt-get install -y --no-install-recommends nodejs && \
-      (node ci/runner.js --limit 1000000 || true) && \
-      cp test262-results.log /dist/ssrlive.test262.log && \
-      git -C /test262 rev-parse HEAD >/dist/ssrlive.test262.rev; \
+      node ci/runner.js --limit 1000000; \
     fi || true
+COPY engines/ssrlive/convert262.py ./
+RUN python3 ./convert262.py test262-results.log -o /dist/ssrlive.test262 -b /dist/ssrlive --test262-dir=/test262 || true

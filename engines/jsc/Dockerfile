@@ -44,11 +44,7 @@ RUN ./dist.py /dist/jsc \
 # See JSTests/test262/Test262-WebKit-Import-and-Runner.md.
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
-      apt-get update -y && apt-get install -y --no-install-recommends perl && \
-      Tools/Scripts/test262-runner \
-        --jsc /src/WebKitBuild/JSCOnly/Release/bin/jsc \
-        --t262 JSTests/test262 \
-        --release && \
-      cp test262-results/results.yaml /dist/jsc.test262.log && \
-      sed -En 's/^test262 revision: ([0-9a-f]+)$/\1/p' JSTests/test262/test262-Revision.txt >/dist/jsc.test262.rev; \
+      Tools/Scripts/test262-runner --jsc /src/WebKitBuild/JSCOnly/Release/bin/jsc --t262 JSTests/test262 --release; \
     fi || true
+COPY engines/jsc/convert262.py ./
+RUN python3 ./convert262.py test262-results/results.yaml -o /dist/jsc.test262 -b /dist/jsc --test262-rev="$(sed -En 's/^test262 revision: ([0-9a-f]+)$/\1/p' JSTests/test262/test262-Revision.txt)" || true

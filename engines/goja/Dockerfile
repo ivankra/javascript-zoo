@@ -16,10 +16,10 @@ RUN cd goja && go build
 COPY build/dist.py ./
 RUN ./dist.py /dist/goja --binary=/src/goja/goja
 
-# CI-like test262 run (see .github/workflows/main.yml).
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       ./.tc39_test262_checkout.sh && \
-      (go test -vet=off -v -run TestTC39 ./... >/dist/goja.test262.log 2>&1 || true) && \
-      git -C testdata/test262 rev-parse HEAD >/dist/goja.test262.rev; \
+      go test -vet=off -v -run TestTC39 ./... >test262.log; \
     fi || true
+COPY engines/goja/convert262.py ./
+RUN python3 ./convert262.py test262.log -o /dist/goja.test262 -b /dist/goja --test262-dir=testdata/test262 || true

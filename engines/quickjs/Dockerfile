@@ -27,12 +27,13 @@ RUN git rev-parse --short=8 HEAD >VERSION && \
 COPY build/dist.py ./
 RUN ./dist.py /dist/quickjs --binary=/src/qjs
 
-# TEST262=y: package run-test262 binary as well
-ARG TEST262=
-RUN if [ $TEST262 = y ]; then ./dist.py /dist/quickjs_262 --binary=/src/run-test262 --no-test; fi
+# DIST262=y: package run-test262 binary as well
+ARG DIST262=y
+RUN if [ $DIST262 = y ]; then ./dist.py /dist/quickjs_262 --binary=/src/run-test262 --no-test; fi
 
+ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
-      make test2-bootstrap && make test2 && \
-      cp test262_report.txt /dist/quickjs_262.test262.log && \
-      git -C test262 rev-parse HEAD >/dist/quickjs_262.test262.rev; \
-    fi
+      make test2-bootstrap && make test2; \
+    fi || true
+COPY engines/quickjs/convert262.py ./
+RUN python3 ./convert262.py test262_report.txt -o /dist/quickjs_262.test262 -b /dist/quickjs --test262-dir=test262

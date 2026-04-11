@@ -19,7 +19,7 @@ RUN ./dist.py /dist/jsse --binary=/src/target/release/jsse
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       git submodule update --init --depth=1 && \
-      python3 scripts/run-test262.py --jsse ./target/release/jsse --test262 ./test262 && \
-      cp test262-pass.txt /dist/jsse.test262.pass && \
-      git -C test262 rev-parse HEAD >/dist/jsse.test262.rev; \
+      python3 scripts/run-test262.py --jsse ./target/release/jsse --test262 ./test262; \
     fi || true
+COPY engines/jsse/convert262.py ./
+RUN python3 ./convert262.py test262-pass.txt -o /dist/jsse.test262 --test262-dir=test262 || true

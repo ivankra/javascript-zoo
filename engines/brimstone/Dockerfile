@@ -23,8 +23,7 @@ ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       ./tests/test262/install_test262.sh && \
       cargo brimstone-test -- --reindex && \
-      cargo brimstone-test --release -- --report-test262-progress --save-result-files ./t262 && \
-      cp ./t262_failed.json /dist/brimstone.test262.failed.json && \
-      cp ./t262_success.json /dist/brimstone.test262.success.json && \
-      git -C tests/test262/test262 rev-parse HEAD >/dist/brimstone.test262.rev; \
+      cargo brimstone-test --release -- --report-test262-progress --save-result-files ./test262; \
     fi || true
+COPY engines/brimstone/convert262.py ./
+RUN python3 ./convert262.py test262_failed.json test262_success.json tests/test262/ignored_tests.jsonc -o /dist/brimstone.test262 -b /dist/brimstone --test262-dir=tests/test262/test262 || true

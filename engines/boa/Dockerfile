@@ -14,16 +14,17 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libssl-dev
 
-RUN cargo build --release --bin boa
+RUN cargo build --release
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/boa --binary=/src/target/release/boa
 
-# CI-like test262 run (see .github/workflows/test262.yml).
-# boa_tester clones tc39/test262 at the commit pinned in test262_config.toml, saves it to latest.json.
+# Run test262 using boa_tester.
+# test262 commit is pinned in test262_config.toml, output in latest.json.
+# https://boajs.dev/docs/contributing/testing
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
-      mkdir -p results/test262 && \
-      cargo run --release --bin boa_tester -- run -v -o results/test262 && \
-      cp results/test262/latest.json /dist/boa.test262.log; \
+      ./target/release/boa_tester run -v -o ./test-results; \
     fi || true
+COPY engines/boa/convert262.py ./
+RUN python3 ./convert262.py test-results/latest.json -o /dist/boa.test262 -b /dist/boa || true

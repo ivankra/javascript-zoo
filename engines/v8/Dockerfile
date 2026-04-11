@@ -60,9 +60,12 @@ RUN ./dist.py /dist/v8 \
       version="$(cat version)"
 
 # Run test262 via V8's official test runner.
+# By default it hides expected results - patch it to emit everything.
 # test262 data is pulled by gclient sync into test/test262/data.
 ARG TEST262=y
 RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
-      tools/run-tests.py --outdir=out/release --json-test-results=/dist/v8.test262.log test262 && \
-      git -C test/test262/data rev-parse HEAD >/dist/v8.test262.rev; \
+      sed -i 's/if not result.has_unexpected_output and run == 0:/if False:/; s/"result": test.output_proc.get_outcome(output),/"result": (test.output_proc.get_outcome(output) if result.has_unexpected_output else ""),/' tools/testrunner/testproc/indicators.py; \
+      tools/run-tests.py --outdir=out/release --json-test-results=test262-results.json test262; \
     fi || true
+COPY engines/v8/convert262.py ./
+RUN python3 ./convert262.py test262-results.json -o /dist/v8.test262 -b /dist/v8 --test262-dir=test/test262/data || true

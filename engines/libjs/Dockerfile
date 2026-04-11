@@ -59,7 +59,7 @@ RUN case `dpkg --print-architecture` in \
     esac
 
 RUN if [ `uname -m` = riscv64 ]; then export VCPKG_FORCE_SYSTEM_BINARIES=1; fi; \
-    cmake -B build -G Ninja --preset=Release \
+    cmake -B Build -G Ninja --preset=Release \
       -DCMAKE_C_COMPILER=$CC \
       -DCMAKE_CXX_COMPILER=$CXX \
       -DBUILD_SHARED_LIBS=OFF \
@@ -67,31 +67,29 @@ RUN if [ `uname -m` = riscv64 ]; then export VCPKG_FORCE_SYSTEM_BINARIES=1; fi; 
       -DENABLE_QT=OFF \
       -DVCPKG_TARGET_TRIPLET="$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/')-linux-release"
 
-RUN ninja -C build test262-runner test-js js
+RUN ninja -C Build test262-runner test-js js
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/libjs --binary=/src/build/bin/js
+RUN ./dist.py /dist/libjs --binary=/src/Build/bin/js
 
-# Run the official test262 suite (see .github/workflows/libjs-test262.yml).
-# Uses LadybirdBrowser/libjs-test262 + tc39/test262 + tc39/test262-parser-tests.
+# Run test262 via LadybirdBrowser/libjs-test262.
 # Upstream results:
 # https://ladybirdbrowser.github.io/libjs-website/test262/
 # https://github.com/LadybirdBrowser/libjs-data/blob/master/test262/per-file-master.json
 ARG TEST262=y
+COPY engines/libjs/convert262.py ./
 RUN if [ "$TEST262" = y ]; then \
       git clone --depth=1 https://github.com/LadybirdBrowser/libjs-test262.git /src/libjs-test262 && \
       git clone --depth=1 https://github.com/tc39/test262.git /src/test262 && \
       git clone --depth=1 https://github.com/tc39/test262-parser-tests.git /src/test262-parser-tests && \
-      pip3 install --break-system-packages -r /src/libjs-test262/requirements.txt && \
-      mkdir -p /src/libjs-test262/Build/bin && \
-      ln -sf /src/build/bin/test-js /src/libjs-test262/Build/bin/test-js && \
-      ln -sf /src/build/bin/test262-runner /src/libjs-test262/Build/bin/test262-runner && \
-      (cd /src/libjs-test262 && python3 run_all_and_update_results.py \
+      cd /src/libjs-test262 && \
+      pip3 install --break-system-packages -r requirements.txt && \
+      ln -s /src/Build Build && \
+      python3 run_all_and_update_results.py \
           --serenity /src \
           --test262 /src/test262 \
           --test262-parser-tests /src/test262-parser-tests \
           --results-json results.json \
-          --per-file-output per-file.json || true) && \
-      cp /src/libjs-test262/per-file.json /dist/libjs.test262.log && \
-      git -C /src/test262 rev-parse HEAD >/dist/libjs.test262.rev; \
+          --per-file-output per-file-master.json; \
     fi || true
+RUN python3 ./convert262.py /src/libjs-test262/per-file-master.json -o /dist/libjs.test262 -b /dist/libjs --test262-dir=/src/test262 || true

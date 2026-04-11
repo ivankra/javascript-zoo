@@ -15,15 +15,15 @@ RUN make
 COPY build/dist.py ./
 RUN ./dist.py /dist/quickjs-ng --binary=/src/build/qjs
 
-# TEST262=y: package run-test262 binary as well
-ARG TEST262=
-RUN if [ $TEST262 = y ]; then ./dist.py /dist/quickjs-ng_262 --binary=/src/build/run-test262 --no-test; fi
+# DIST262=y: package run-test262 binary as well
+ARG DIST262=n
+RUN if [ $DIST262 = y ]; then ./dist.py /dist/quickjs-ng_262 --binary=/src/build/run-test262 --no-test; fi
 
-# CI-like test262 run (see .github/workflows/ci.yml).
+ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       git submodule update --init --checkout --depth 1 && \
       echo >test262_errors.txt && \
-      make test262-update || true; \
-      cp test262_errors.txt /dist/quickjs-ng_262.test262.log && \
-      git -C test262 rev-parse HEAD >/dist/quickjs-ng_262.test262.rev; \
-    fi
+      make test262-update; \
+    fi || true
+COPY engines/quickjs/convert262.py ./
+RUN python3 ./convert262.py test262_errors.txt -o /dist/quickjs-ng_262.test262 -e quickjs-ng -b /dist/quickjs-ng --test262-dir=test262 || true

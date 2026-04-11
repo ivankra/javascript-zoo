@@ -56,10 +56,12 @@ RUN ./dist.py /dist/hermes \
       --binary=/src/build/bin/hermes \
       version="$(git describe --tags | sed 's/hermes-//; s/^v//;')"  # --version lies
 
+# Run test262 via util/test_runner.py, patching it to emit every result to stdout
 ARG TEST262=y
 RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
       sed -i '/is_failure = test.code.is_failure/i\        print("RESULT: " + __import__("json").dumps({"test": test.test_name, "code": test.code.name, "msg": test.msg, "output": test.output}, ensure_ascii=False))' utils/testsuite/progress.py && \
       git clone --depth=1 https://github.com/tc39/test262 /src/test262 && \
-      python3 utils/test_runner.py --test-intl /src/test262/test -b build/bin >/dist/hermes.test262.log 2>&1 && \
-      git -C /src/test262 rev-parse HEAD >/dist/hermes.test262.rev; \
+      python3 utils/test_runner.py --test-intl /src/test262/test -b build/bin >test262.log 2>&1; \
     fi || true
+COPY engines/hermes/convert262.py ./
+RUN python3 ./convert262.py test262.log -o /dist/hermes.test262 -b /dist/hermes --test262-dir=/src/test262 || true
