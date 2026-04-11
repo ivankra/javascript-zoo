@@ -237,6 +237,12 @@ class Reporter:
         self._output_file = Path(output_file) if output_file is not None else None
         self._output_rusage_file = Path(output_rusage_file) if output_rusage_file is not None else None
         self._output_tags_file = Path(output_tags_file) if output_tags_file is not None else None
+        if self._output_file is not None:
+            self._validate_output_path(self._output_file, arg_name="output_file")
+        if self._output_rusage_file is not None:
+            self._validate_output_path(self._output_rusage_file, arg_name="output_rusage_file")
+        if self._output_tags_file is not None:
+            self._validate_output_path(self._output_tags_file, arg_name="output_tags_file")
         self._report_json = report_json if report_json is not None else bool(
             self._output_file and self._output_file.suffix == ".json"
         )
@@ -247,6 +253,17 @@ class Reporter:
         if not self._report_json and not self._report_tests and not self._report_runs:
             raise ValueError("text output must include either tests or runs")
         self._report_dirs = report_dirs
+
+    @staticmethod
+    def _validate_output_path(path: Path, *, arg_name: str) -> None:
+        spath = str(path)
+        if spath == "-" or spath.startswith("/dev/"):
+            return
+        parent = path.parent
+        if not parent.exists():
+            raise SystemExit(f"{arg_name} parent directory does not exist: {parent}")
+        if not parent.is_dir():
+            raise SystemExit(f"{arg_name} parent path is not a directory: {parent}")
 
     @staticmethod
     def _format_timestamp(ts: datetime) -> str:

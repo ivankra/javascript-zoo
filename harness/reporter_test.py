@@ -513,19 +513,24 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertEqual(list(out["rusage"]["run_rss_mb"]), ["run/b.js", "run/c.js"])
 
     def test_json_omits_rusage_when_externalized(self):
-        r = Reporter(
-            EngineConfig(binary_path="/fake/js"),
-            discovery=FileDiscovery.from_list(["test/a.js"]),
-            output_file="/tmp/results/test262/a.json",
-            output_rusage_file="/tmp/results/test262-rusage/a.json",
-            report_json=True,
-            report_rusage="top20",
-        )
-        r.test_completed([
-            _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
-        ])
-        out = json.loads(r.to_json())
-        self.assertNotIn("rusage", out)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            out_path = Path(tmpdir) / "test262" / "a.json"
+            out_path.parent.mkdir(parents=True)
+            rusage_path = Path(tmpdir) / "test262-rusage" / "a.json"
+            rusage_path.parent.mkdir(parents=True)
+            r = Reporter(
+                EngineConfig(binary_path="/fake/js"),
+                discovery=FileDiscovery.from_list(["test/a.js"]),
+                output_file=out_path,
+                output_rusage_file=rusage_path,
+                report_json=True,
+                report_rusage="top20",
+            )
+            r.test_completed([
+                _run("test/a.strict.js", Verdict.PASS, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            ])
+            out = json.loads(r.to_json())
+            self.assertNotIn("rusage", out)
 
 
 class TestReporterOutputSelection(unittest.TestCase):
