@@ -304,8 +304,7 @@ class Runner:
                 self.on_spawn(proc.pid)
             watchdog: MemoryWatchdog | None = None
             if memory_limit_mb:
-                watchdog = MemoryWatchdog.get()
-                watchdog.start(proc, memory_limit_mb)
+                watchdog = MemoryWatchdog.monitor(proc.pid, memory_limit_mb, test_path)
             try:
                 stdout_b, stderr_b = proc.communicate(timeout=timeout)
             finally:
@@ -404,22 +403,27 @@ class MemoryWatchdog:
 
     _instance: MemoryWatchdog | None = None
     _instance_lock = threading.Lock()
-    _atfork_registered = False
 
     @classmethod
-    def get(cls) -> MemoryWatchdog:
-        """Return the per-process singleton, creating it on first call."""
+    def monitor(cls, pgid: int, memory_limit_mb: int, test_path: str | None) -> MemoryWatchdog:
+        """Install a new monitoring session on pgid and return the singleton."""
         inst = cls._instance
-        if inst is not None:
-            return inst
-        with cls._instance_lock:
-            if cls._instance is None:
-                cls._instance = cls()
-            return cls._instance
+        if inst is None:
+            with cls._instance_lock:
+                if cls._instance is None:
+                    cls._instance = cls()
+                inst = cls._instance
+        with inst._lock:
+            inst._pid = pgid
+            inst._limit_bytes = memory_limit_mb * 1024 * 1024
+            inst._peak_rss = 0
+            inst._oom_killed = False
+            inst._test_path = test_path
+        return inst
 
     def __init__(self) -> None:
         # State guarded by self._lock. The polling thread runs on its own
-        # POLL_SEC timer — start() does NOT wake it. This avoids the
+        # POLL_SEC timer — monitor() does NOT wake it. This avoids the
         # per-call notify+context-switch cost on the runner's hot path.
         # Tradeoff: a process exiting in <POLL_SEC is never sampled
         # (peak_rss stays 0; runner falls back to ru_maxrss from rusage).
@@ -428,20 +432,14 @@ class MemoryWatchdog:
         self._limit_bytes = 0
         self._peak_rss = 0  # bytes
         self._oom_killed = False
+        self._test_path: str | None = None
         threading.Thread(target=self._run, daemon=True).start()
-
-    def start(self, proc: subprocess.Popen[bytes], limit_mb: int) -> None:
-        """Install a new monitoring session. Returns immediately."""
-        with self._lock:
-            self._pid = proc.pid
-            self._limit_bytes = limit_mb * 1024 * 1024
-            self._peak_rss = 0
-            self._oom_killed = False
 
     def stop(self) -> tuple[int, bool]:
         """Detach the current session and return (peak_rss_kb, oom_killed)."""
         with self._lock:
             self._pid = 0
+            self._test_path = None
             return self._peak_rss // 1024, self._oom_killed
 
     def _run(self) -> None:
@@ -455,6 +453,8 @@ class MemoryWatchdog:
             rss = self._read_tree_rss(pid)
             if rss is None:
                 continue
+            killed_test_path: str | None = None
+            over_limit = False
             with self._lock:
                 if self._pid != pid:
                     continue
@@ -463,11 +463,22 @@ class MemoryWatchdog:
                 if rss > limit_bytes:
                     self._oom_killed = True
                     self._pid = 0
-                    print(f"memory watchdog: killing pid={pid} rss={rss / (1024 * 1024):.1f}MB limit={limit_bytes // (1024 * 1024)}MB", file=sys.stderr, flush=True)
-                    try:
-                        os.killpg(pid, signal.SIGKILL)
-                    except (ProcessLookupError, OSError):
-                        pass
+                    killed_test_path = self._test_path
+                    over_limit = True
+            if not over_limit:
+                continue
+            prefix = "\r\x1b[K" if sys.stderr.isatty() else ""
+            print(
+                f"{prefix}memory watchdog: killing pid={pid}"
+                f" rss={rss / (1024 * 1024):.1f}MB"
+                f" limit={limit_bytes // (1024 * 1024)}MB"
+                f" test={killed_test_path}",
+                file=sys.stderr, flush=True,
+            )
+            try:
+                os.killpg(pid, signal.SIGKILL)
+            except (ProcessLookupError, OSError):
+                pass
 
     @classmethod
     def _read_tree_rss(cls, root_pid: int) -> int | None:
@@ -500,3 +511,12 @@ class MemoryWatchdog:
             except (FileNotFoundError, ProcessLookupError, PermissionError):
                 continue
         return total_pages * cls.PAGE_SIZE if root_ok else None
+
+    @classmethod
+    def _reset_after_fork(cls) -> None:
+        cls._instance = None
+        cls._instance_lock = threading.Lock()
+
+
+# Make sure worker processes creates own watchdog threads after a fork().
+os.register_at_fork(after_in_child=MemoryWatchdog._reset_after_fork)
