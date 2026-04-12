@@ -171,12 +171,6 @@ class Assembler:
             if "async" in scenario.fm.flags and "module" in scenario.fm.flags:
                 pieces.append("if (typeof globalThis !== 'undefined') globalThis.$DONE = $DONE;")
 
-        # TODO: "ReferenceError: assert is not defined" for v8 in
-        # test/language/module-code/ambiguous-export-bindings/namespace-unambiguous-if-export-star-as-from-and-import-star-as-and-export.js
-        # Module test imports another full test file. _copy_deps_recursive()
-        # raw-copies it so its module body can't see harness bindings like assert.
-        # Quick fix here or make non-fixtures go through full assembly pipeline.
-
         # 6. Test source body
         pieces.append(scenario.test_content)
         if references is not None:
@@ -325,9 +319,8 @@ class Assembler:
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
 
-            # test/language/import/import-bytes/bytes-from-png.js ->
-            # test/language/import/import-bytes/bytes-from-png_FIXTURE.png
-            if dep_path.name.endswith(".png"):
+            # test/language/import/import-bytes/bytes-from-png.js: imports .png
+            if dep_path.suffix != ".js":
                 buf = dep_path.read_bytes()
                 write_atomic(dst, buf)
                 return
@@ -347,6 +340,14 @@ class Assembler:
             if rename_map:
                 for old, new in rename_map.items():
                     dep_src = dep_src.replace(f"./{old}", f"./{new}")
+
+            # TODO: properly fix "ReferenceError: assert is not defined" in
+            # test/language/module-code/ambiguous-export-bindings/namespace-unambiguous-if-export-star-as-from-and-import-star-as-and-export.js
+            # This module test imports another full test file (namespace-unambiguous-if-import-star-as-and-export.js)
+            # _copy_deps_recursive() raw-copies it so its module body can't see harness bindings like assert.
+            # Need to ensure dependencies that are independent tests go through full assembly pipeline.
+            if dep_path.name == "namespace-unambiguous-if-import-star-as-and-export.js":
+                dep_src = self._read_harness("assert.js") + "\n" + dep_src
 
             write_atomic(dst, dep_src.encode("utf-8"))
             self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,
