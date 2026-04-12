@@ -14,12 +14,12 @@ from concurrent.futures import Future, ThreadPoolExecutor
 from datetime import UTC, datetime
 from collections import Counter
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Literal, overload, cast
 
 from .config import EngineConfig
+from .data import BinaryInfo, GitRevisionInfo, PerModeTestResult, Report, RunResult, StatsDict, TestResult, Verdict
 from .frontmatter import test262_features_yaml
 from .tags import FilterExpr, Tags
-from .runner import RunResult, Verdict
 from .util import get_git_revision, version_sort_key
 
 if TYPE_CHECKING:
@@ -30,18 +30,16 @@ ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-9;]*m")
 
 
 @dataclasses.dataclass
-class Stats:
-    """Aggregated pass/fail/skip counts with optional weighted tracking."""
-    total: int = 0
-    passed: int = 0
-    failed: int = 0
-    skipped: int = 0
+class StatsAccumulator(StatsDict):
+    """Mutable accumulator for pass/fail/skip counts with optional weighted tracking."""
     weighted_pass: float = 0.0
-    weighted_total: float = 0.0
     weighted_count: int = 0
 
+    @property
+    def total(self) -> int:
+        return self.passed + self.failed + self.skipped
+
     def add(self, verdict: Verdict | None, weight: float | None = None) -> None:
-        self.total += 1
         if verdict is Verdict.PASS:
             self.passed += 1
         elif verdict is not None and verdict is not Verdict.SKIP:
@@ -50,45 +48,36 @@ class Stats:
             self.skipped += 1
         if weight is not None:
             self.weighted_count += 1
-            self.weighted_total += weight
+            self.weight = (self.weight or 0.0) + weight
             if verdict is Verdict.PASS:
                 self.weighted_pass += weight
 
-    def merge(self, other: Stats) -> None:
-        self.total += other.total
+    def merge(self, other: StatsAccumulator) -> None:
         self.passed += other.passed
         self.failed += other.failed
         self.skipped += other.skipped
         self.weighted_pass += other.weighted_pass
-        self.weighted_total += other.weighted_total
+        self.weight = (self.weight or 0.0) + (other.weight or 0.0)
         self.weighted_count += other.weighted_count
 
-    def has_weight_for_every_test(self) -> bool:
-        """True if all non-skipped files have explicit weights (no mix)."""
-        return self.weighted_count > 0 and self.weighted_count == self.passed + self.failed
-
-    def weighted_pass_percent(self) -> float | None:
-        if self.has_weight_for_every_test():
-            return round(100.0 * self.weighted_pass / self.weighted_total, 3) if self.weighted_total else 0.0
+    def _wpct(self) -> float | None:
+        if self.weighted_count > 0 and self.weighted_count == self.passed + self.failed:
+            return round(100.0 * self.weighted_pass / self.weight, 3) if self.weight else 0.0
         return None
 
-    def to_dict(self, percent: bool = False) -> dict[str, int | float]:
-        d: dict[str, int | float] = {}
-        if self.passed:
-            d["pass"] = self.passed
-        if self.failed:
-            d["fail"] = self.failed
-        if self.skipped:
-            d["skip"] = self.skipped
-        total = self.passed + self.failed + self.skipped
-        if percent and total:
-            d["pass_percent"] = round(100.0 * self.passed / total, 3)
-        if percent and self.has_weight_for_every_test():
-            d["weight"] = round(self.weighted_total, 3)
-            wpct = self.weighted_pass_percent()
-            assert wpct is not None
-            d["weighted_pass_percent"] = wpct
-        return d
+    def finalize(self, percent: bool = False) -> StatsDict:
+        wpct = self._wpct() if percent else None
+        return StatsDict(
+            passed=self.passed,
+            failed=self.failed,
+            skipped=self.skipped,
+            pass_percent=round(100.0 * self.passed / self.total, 3) if percent and self.total else None,
+            weight=round(self.weight, 3) if wpct is not None and self.weight is not None else None,
+            weighted_pass_percent=wpct,
+        )
+
+    def to_dict(self) -> dict[str, Any]:  # type: ignore[override]
+        return self.finalize().to_dict()
 
 
 def format_summary_line(
@@ -121,11 +110,14 @@ def format_summary_line(
         counts += f"; {skip} skipped"
     return f"{label}: {counts}"
 
-def group_run_results(
-    results: list[RunResult],
-    test_order: list[str],
-    group_by: str = "test_id",
-) -> dict[str, Any]:
+
+@overload
+def group_run_results(results: list[RunResult], test_order: list[str], group_by: Literal["test_id"] = "test_id") -> dict[str, TestResult]: ...
+
+@overload
+def group_run_results(results: list[RunResult], test_order: list[str], group_by: Literal["run_id"]) -> dict[str, str]: ...
+
+def group_run_results(results: list[RunResult], test_order: list[str], group_by: str = "test_id") -> dict[str, str] | dict[str, TestResult]:
     """Group run results into test or scenario status maps."""
     if group_by == "test_id" or test_order:
         for run in results:
@@ -150,14 +142,22 @@ def group_run_results(
             for scenario_id, runs in grouped.items()
         }
 
-    statuses: dict[str, Any] = {}
+    statuses: dict[str, TestResult] = {}
     for fp, runs in grouped.items():
         messages = [run.verdict_message() for run in runs]
         if len(set(messages)) == 1:
             statuses[fp] = messages[0]
         else:
-            by_mode = {run.mode or run.run_id or "": run.verdict_message() for run in runs}
-            statuses[fp] = dict(sorted(by_mode.items()))
+            by_mode: PerModeTestResult = {}
+            for run in runs:
+                message = run.verdict_message()
+                if run.mode == "strict":
+                    by_mode["strict"] = message
+                elif run.mode == "sloppy":
+                    by_mode["sloppy"] = message
+                else:
+                    raise ValueError(f"unexpected mode for grouped test result: {run.mode!r}")
+            statuses[fp] = by_mode
     return statuses
 
 
@@ -224,7 +224,7 @@ class Reporter:
         self._dir_done: Counter[str] = Counter()
         self._dir_pass_counts: Counter[str] = Counter()
         self._dir_failed_tests: dict[str, list[str]] = {}
-        self._dir_stats: dict[str, Stats] = {}
+        self._dir_stats: dict[str, StatsAccumulator] = {}
         self._dir_next_index: int = 0
         self._probes = probes
         if report_rusage in ("all", "no"):
@@ -323,7 +323,7 @@ class Reporter:
         self._dir_done = Counter()
         self._dir_pass_counts = Counter()
         self._dir_failed_tests = {d: [] for d in self._dir_order}
-        self._dir_stats = {d: Stats() for d in self._dir_order}
+        self._dir_stats = {d: StatsAccumulator() for d in self._dir_order}
         self._dir_next_index = 0
 
     def add(self, run: RunResult) -> None:
@@ -503,7 +503,7 @@ class Reporter:
             passed = self._dir_pass_counts[d]
             fail = self._dir_total[d] - passed
             line = format_summary_line(d, passed, fail, use_color=self._use_color,
-                                       weighted_pass_percent=self._dir_stats[d].weighted_pass_percent())
+                                       weighted_pass_percent=self._dir_stats[d]._wpct())
             prefix = "  " if header else ""
             if fail:
                 failed_text = " ".join(self._dir_failed_tests[d])
@@ -512,38 +512,6 @@ class Reporter:
                 if len(candidate) <= cols:
                     line += f" ({failed_text})"
             print(f"{prefix}{line}", flush=True)
-
-    _INLINE_DICT_KEYS = frozenset({
-        "pass", "pass_percent", "weight", "weighted_pass_percent", "fail",
-        "skip", "strict", "sloppy", "if", "then", "else", "shell", "user_time",
-        "sys_time", "real_time", "max_rss_kb", "io_in_blocks", "io_out_blocks",
-        "ctx_switches_voluntary", "ctx_switches_involuntary"
-    })
-    _INLINE_VALUE_KEYS = frozenset({"console_log"})
-
-    @staticmethod
-    def _is_inline_json(value: Any) -> bool:
-        if not isinstance(value, dict) or not value:
-            return False
-        return set(value.keys()) <= Reporter._INLINE_DICT_KEYS
-
-    @staticmethod
-    def format_json_value(value: Any, indent: int = 0) -> str:
-        """Recursively format JSON; stats dicts go on one line, everything else indented."""
-        pad = "  " * indent
-        inner = "  " * (indent + 1)
-        if isinstance(value, dict):
-            if not value or Reporter._is_inline_json(value):
-                return json.dumps(value)
-            items = [
-                f'{inner}{json.dumps(k)}: {json.dumps(v) if k in Reporter._INLINE_VALUE_KEYS else Reporter.format_json_value(v, indent + 1)}'
-                for k, v in value.items()
-            ]
-            return "{\n" + ",\n".join(items) + "\n" + pad + "}"
-        if isinstance(value, list):
-            items = [f'{inner}{Reporter.format_json_value(v, indent + 1)}' for v in value]
-            return "[\n" + ",\n".join(items) + "\n" + pad + "]"
-        return json.dumps(value)
 
     def _file_verdicts(self) -> dict[str, Verdict | None]:
         """Compute per-file worst verdict (deduplicating across modes)."""
@@ -561,6 +529,11 @@ class Reporter:
                 fv[fp] = coarse
         return fv
 
+    @staticmethod
+    def format_json_value(value: Any, indent: int = 0) -> str:
+        """Backwards-compatible wrapper around the canonical report formatter."""
+        return Report.format_json_value(value, indent)
+
     def _file_weights(self) -> dict[str, float]:
         """Collect per-file weights (first non-None weight per test_id)."""
         fw: dict[str, float] = {}
@@ -569,7 +542,7 @@ class Reporter:
                 fw[run.test_id] = run.weight
         return fw
 
-    def _build_tag_stats(self, fw: dict[str, float] | None = None) -> dict[str, Stats]:
+    def _build_tag_stats(self, fw: dict[str, float] | None = None) -> dict[str, StatsAccumulator]:
         """Aggregate per-file worst verdict for each fully-qualified tag."""
         if fw is None:
             fw = {}
@@ -591,32 +564,35 @@ class Reporter:
                 else:
                     fv[key] = v
 
-        result: dict[str, Stats] = {}
+        result: dict[str, StatsAccumulator] = {}
         for qt, file_verdicts in tag_file_verdicts.items():
-            s = Stats()
+            s = StatsAccumulator()
             for fp, v in file_verdicts.items():
                 s.add(v, fw.get(fp))
             result[qt] = s
         return result
 
-    def _summary_json(self, tag_stats: dict[str, Stats], fv: dict[str, Verdict | None], fw: dict[str, float]) -> dict[str, Any]:
+    def _summary_json(self, tag_stats: dict[str, StatsAccumulator], fv: dict[str, Verdict | None], fw: dict[str, float]) -> dict[str, StatsDict]:
         """Build summary totals."""
         file_tags: dict[str, Tags] = {}
         for r in self._results:
             if r.test_id and isinstance(r.tags, Tags) and r.test_id not in file_tags:
                 file_tags[r.test_id] = r.tags
 
-        def total(filter_expr: str | None = None) -> dict[str, int | float]:
+        def total(filter_expr: str | None = None) -> StatsDict:
             filt = FilterExpr(filter_expr)
-            stats = Stats()
+            stats = StatsAccumulator()
             for fp, verdict in fv.items():
                 tags = file_tags.get(fp)
+                if filter_expr is None:
+                    stats.add(verdict, fw.get(fp))
+                    continue
                 if tags is None or not filt(tags):
                     continue
                 stats.add(verdict, fw.get(fp))
-            return stats.to_dict(percent=True)
+            return stats.finalize(percent=True)
 
-        result: dict[str, Any] = {}
+        result: dict[str, StatsDict] = {}
         result["all"] = total()
 
         if self._test262:
@@ -640,26 +616,26 @@ class Reporter:
             result["esnext"] = total("dir:compat-table/next")
             result["intl"] = total("dir:compat-table/intl")
 
-        return {k: v for k, v in result.items() if v}
+        return {k: v for k, v in result.items() if v.to_dict()}
 
-    def _tags_stats_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
+    def _tags_stats_json(self, tag_stats: dict[str, StatsAccumulator]) -> dict[str, StatsDict]:
         """Build reportable tag stats: {qualified_tag: stats} version-sorted."""
-        result: dict[str, Any] = {}
+        result: dict[str, StatsDict] = {}
         for qt in sorted(tag_stats, key=version_sort_key):
             assert ":" in qt, f"tag must be namespaced: {qt!r}"
             if qt.startswith("file:"):
                 continue
             if qt.startswith("dir:"):
                 continue
-            result[qt] = tag_stats[qt].to_dict(percent=True)
+            result[qt] = tag_stats[qt].finalize(percent=True)
         return result
 
-    def _dirs_json(self, tag_stats: dict[str, Stats]) -> dict[str, Any]:
+    def _dirs_json(self, tag_stats: dict[str, StatsAccumulator]) -> dict[str, StatsDict]:
         """Build dir stats: {path: stats} without the dir: prefix."""
-        dirs: dict[str, Any] = {}
+        dirs: dict[str, StatsDict] = {}
         for qt in sorted(tag_stats, key=version_sort_key):
             if qt.startswith("dir:"):
-                dirs[qt.removeprefix("dir:")] = tag_stats[qt].to_dict(percent=True)
+                dirs[qt.removeprefix("dir:")] = tag_stats[qt].finalize(percent=True)
         return dirs
 
     def _edition_report(self) -> str:
@@ -675,7 +651,7 @@ class Reporter:
 
         lines = ["Summary by edition / feature (note: feature stats aggregate across all editions):"]
         any_data = False
-        skipped = Stats()
+        skipped = StatsAccumulator()
         for edition in editions_order:
             s = tag_stats.get(f"edition:{edition}")
             if not s or s.total == s.skipped:
@@ -776,49 +752,45 @@ class Reporter:
             return None
         return rusage
 
-    def _build_json_data(self, *, rusage_value: dict[str, Any] | str | None = None) -> dict[str, Any]:
-        """Build the main JSON object, optionally overriding the rusage field."""
+    def _build_report(self, *, rusage: dict[str, Any] | None = None) -> Report:
+        """Build the Report object from accumulated results."""
         results = self._results
         engine = self._engine
 
-        data: dict[str, Any] = {}
+        binary: BinaryInfo | None
         if engine.build_metadata:
-            data["binary"] = engine.build_metadata
-        elif self._engine.binary_path:
-            data["binary"] = {"binary_name": os.path.basename(self._engine.binary_path)}
-        if engine.flags:
-            data["flags"] = engine.flags
-        if self._probes is not None:
-            data["probes"] = dict(sorted(self._probes.items()))
-        test262_revision = self._get_test262_revision()
-        if test262_revision:
-            data["test262"] = test262_revision.to_json()
+            binary = cast(BinaryInfo, engine.build_metadata)
+        elif engine.binary_path:
+            binary = {"binary_name": os.path.basename(engine.binary_path)}
+        else:
+            binary = None
+
+        rev = self._get_test262_revision()
         fv = self._file_verdicts()
         fw = self._file_weights()
         tag_stats = self._build_tag_stats(fw)
-        data["summary"] = self._summary_json(tag_stats, fv, fw)
-        tags = self._tags_stats_json(tag_stats)
-        if tags:
-            data["tags"] = tags
-        if self._report_dirs:
-            dirs = self._dirs_json(tag_stats)
-            if dirs:
-                data["dirs"] = dirs
-        if rusage_value:
-            data["rusage"] = rusage_value
         test_order = self._test_order()
-        if self._report_tests:
-            data["tests"] = group_run_results(results, test_order)
-        if self._report_runs:
-            data["scenarios"] = group_run_results(results, test_order, "run_id")
-        return data
+
+        return Report(
+            binary=binary,
+            flags=list(engine.flags) if engine.flags else [],
+            probes=dict(sorted(self._probes.items())) if self._probes is not None else {},
+            test262=GitRevisionInfo(revision=rev.revision, revision_date=rev.revision_date,
+                                    repository=rev.repository, revision_dirty=rev.revision_dirty or None) if rev else None,
+            summary=self._summary_json(tag_stats, fv, fw),
+            tags=self._tags_stats_json(tag_stats),
+            dirs=self._dirs_json(tag_stats) if self._report_dirs else {},
+            rusage=rusage or {},
+            tests=group_run_results(results, test_order) if self._report_tests else {},
+            scenarios=group_run_results(results, test_order, "run_id") if self._report_runs else {},
+        )
 
     def to_json(self) -> str:
         """Format results as JSON with summary, per-test/per-scenario statuses, and rusage."""
         finished_at = datetime.now(UTC)
         rusage = self._build_rusage_data(finished_at)
-        data = self._build_json_data(rusage_value=self._inline_rusage_json_value(rusage))
-        return self.format_json_value(data) + "\n"
+        report = self._build_report(rusage=self._inline_rusage_json_value(rusage))
+        return report.to_text()
 
     def to_text(self) -> str:
         """Format results as text."""
@@ -900,11 +872,10 @@ class Reporter:
             finished_at = datetime.now(UTC)
             rusage = self._build_rusage_data(finished_at)
             if self._output_rusage_file is not None and self._report_rusage_mode != "no" and rusage:
-                rusage_out = self.format_json_value(rusage) + "\n"
+                rusage_out = Report.format_json_value(rusage) + "\n"
                 self._write_path(self._output_rusage_file, rusage_out, "Rusage")
-            out = self.format_json_value(
-                self._build_json_data(rusage_value=self._inline_rusage_json_value(rusage))
-            ) + "\n"
+            report = self._build_report(rusage=self._inline_rusage_json_value(rusage))
+            out = report.to_text()
         else:
             out = self.to_text()
         self._write_path(path, out, "Results")

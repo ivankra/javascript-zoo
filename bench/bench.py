@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import math
 import os
 import random
@@ -20,12 +19,14 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import cast
 
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
 from harness import Annotator, EngineConfig, Prelude, RunResult, Runner, Tags, Verdict, read_json
+from harness.data import BinaryInfo, Report
+from harness.util import write_atomic
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
@@ -60,131 +61,6 @@ OCTANE_TESTS = [
     "zlib.js",
     "typescript.js",
 ]
-
-
-@dataclass
-class BenchmarkEntry:
-    """Aggregated metrics for one benchmark name across multiple runs.
-
-    All numeric lists are in run order; float precision is capped at 4 decimal places.
-    """
-
-    score: list[int | float] = field(default_factory=list)
-    error: str | None = None
-    user: list[float] = field(default_factory=list)
-    sys: list[float] = field(default_factory=list)
-    real: list[float] = field(default_factory=list)
-    rss_mb: list[float] = field(default_factory=list)
-
-
-@dataclass
-class BenchResult:
-    """Full benchmark result document for one engine.
-
-    Aggregates multiple RunResult data points and serializes to the bench JSON
-    format compatible with bench/compare.
-    """
-
-    binary: str
-    metadata: dict[str, Any] = field(default_factory=dict)
-    time: str = ""
-    benchmarks: dict[str, BenchmarkEntry] = field(default_factory=dict)
-
-    def add_run(self, run: RunResult) -> None:
-        """Add one RunResult to the aggregated result.
-
-        run.benchmarks must be populated with all expected keys (None for missing scores).
-        run.verdict_detail holds the bench error string when run.verdict_type is a failure.
-        """
-        if not self.time:
-            self.time = START_TIME
-
-        error = run.verdict_message() if run.is_failed() else None
-        m = run.rusage
-        for key, score in run.benchmarks.items():
-            if key not in self.benchmarks:
-                self.benchmarks[key] = BenchmarkEntry()
-            e = self.benchmarks[key]
-            if error:
-                e.error = error
-            if score is not None:
-                e.score.append(score)
-            if m.user_time is not None:
-                e.user.append(round(m.user_time, 4))
-            if m.sys_time is not None:
-                e.sys.append(round(m.sys_time, 4))
-            if m.real_time is not None:
-                e.real.append(round(m.real_time, 4))
-            if m.max_rss_kb is not None:
-                e.rss_mb.append(round(m.max_rss_kb / 1024.0, 2))
-
-    def _to_serializable(self) -> dict[str, Any]:
-        """Build a clean dict ready for JSON serialization."""
-        doc: dict[str, Any] = {"binary": self.binary}
-        if self.metadata:
-            doc["metadata"] = self.metadata
-        doc["time"] = self.time
-
-        benchmarks: dict[str, Any] = {}
-        for key, entry in self.benchmarks.items():
-            d: dict[str, Any] = {}
-            if entry.error:
-                d["error"] = entry.error
-            elif entry.score:
-                d["score"] = entry.score
-            for metric in ("user", "sys", "real", "rss_mb"):
-                vals = getattr(entry, metric)
-                if vals:
-                    d[metric] = vals
-            benchmarks[key] = d
-
-        doc["benchmarks"] = benchmarks
-        return doc
-
-    def to_json(self) -> str:
-        """Serialize to indented JSON with arrays compacted onto one line."""
-        s = json.dumps(self._to_serializable(), ensure_ascii=False, indent=2)
-        # Keep float arrays compact (one line)
-        s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m.group(1))), s)
-        return s + "\n"
-
-    def write_atomic(self, path: Path) -> None:
-        """Write to a .part file then rename atomically."""
-        path.parent.mkdir(parents=True, exist_ok=True)
-        part = path.with_suffix(path.suffix + ".part")
-        part.write_text(self.to_json(), encoding="utf-8")
-        part.replace(path)
-
-    @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> BenchResult:
-        """Deserialize from a persisted JSON dict (for --append mode)."""
-        benchmarks: dict[str, BenchmarkEntry] = {}
-        for k, v in data.get("benchmarks", {}).items():
-            if isinstance(v, dict):
-                benchmarks[k] = BenchmarkEntry(
-                    score=v.get("score", []),
-                    error=v.get("error"),
-                    user=v.get("user", []),
-                    sys=v.get("sys", []),
-                    real=v.get("real", []),
-                    rss_mb=v.get("rss_mb", []),
-                )
-        return cls(
-            binary=str(data.get("binary", "")),
-            metadata=dict(data.get("metadata") or {}),
-            time=str(data.get("time") or ""),
-            benchmarks=benchmarks,
-        )
-
-    @classmethod
-    def new(cls, cfg: EngineConfig) -> BenchResult:
-        """Create a fresh BenchResult for one engine."""
-        return cls(
-            binary=Path(cfg.binary_path or "").name,
-            metadata=cfg.build_metadata,
-            time=START_TIME,
-        )
-
 
 class RepSpec:
     """Manages repetition counts and time budgets for benchmark runs."""
@@ -352,11 +228,11 @@ def run_compare(paths: list[Path]) -> None:
 class BenchRunner:
     """Per-engine state."""
 
-    def __init__(self, cfg: EngineConfig, extra_flags: list[str], out: Path, result: BenchResult) -> None:
+    def __init__(self, cfg: EngineConfig, extra_flags: list[str], out: Path, report: Report) -> None:
         self.cfg = cfg
         self.extra_flags = extra_flags
         self.out = out
-        self.result = result
+        self.report = report
         self._runner = Runner(cfg)
         self.annotator = Annotator(cfg)
         self.last: RunResult | None = None
@@ -418,9 +294,9 @@ class BenchRunner:
         return run
 
     def commit(self) -> bool:
-        """Add self.last to result. Prints error if failed. Returns True on error."""
+        """Add self.last to the report. Prints error if failed. Returns True on error."""
         assert self.last is not None
-        self.result.add_run(self.last)
+        self.report.add_benchmark_run(self.last, default_time=START_TIME)
         if self.last.is_failed():
             print(f"{self.name}: {self.last.run_id}: {self.last.verdict_message()}", flush=True)
             return True
@@ -431,7 +307,7 @@ class BenchRunner:
         self._runner.stop()
 
     def save(self) -> None:
-        self.result.write_atomic(self.out)
+        write_atomic(self.out, self.report.to_text().encode("utf-8"))
 
     @classmethod
     def create(cls, spec: str, *, config_name: str | None, output: Path, append: bool) -> BenchRunner:
@@ -441,16 +317,24 @@ class BenchRunner:
         cfg.resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
 
-        result = BenchResult.new(cfg)
+        if cfg.build_metadata:
+            binary: BinaryInfo = cast(BinaryInfo, dict(cfg.build_metadata))
+        else:
+            binary = {"binary_name": Path(cfg.binary_path or "").name}
+        report = Report(
+            binary=binary,
+            time=START_TIME,
+            flags=list(cfg.flags) if cfg.flags else [],
+        )
         if output.exists() and append:
             prev = read_json(output, None)
             if isinstance(prev, dict):
-                prev_result = BenchResult.from_dict(prev)
-                if prev_result.time and not prev_result.time.endswith(START_TIME):
-                    prev_result.time = f"{prev_result.time}, {START_TIME}"
-                result = prev_result
+                prev_report = Report.from_dict(prev)
+                if prev_report.time and not prev_report.time.endswith(START_TIME):
+                    prev_report.time = f"{prev_report.time}, {START_TIME}"
+                report = prev_report
 
-        return cls(cfg, extra_flags, output, result)
+        return cls(cfg, extra_flags, output, report)
 
 
 def create_runners(

@@ -11,25 +11,38 @@ import sys
 from pathlib import Path
 from typing import Any
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+
+from harness.data import PerModeTestResult, Report, TestResult
+
+
 def sort_key(value: str) -> list[object]:
     parts = re.split(r"(\d+)", value)
     return [int(part) if i % 2 else part.lower() for i, part in enumerate(parts)]
 
 
-def normalize_unified_value(value: Any) -> str | dict[str, str]:
+def normalize_unified_value(value: Any) -> TestResult:
     if isinstance(value, str):
         return "PASS" if value == "OK" else value
     if isinstance(value, dict):
-        return {
-            str(mode): ("PASS" if mode_value == "OK" else str(mode_value))
-            for mode, mode_value in value.items()
-        }
+        normalized: PerModeTestResult = {}
+        for mode, mode_value in value.items():
+            mode_name = str(mode)
+            status = "PASS" if mode_value == "OK" else str(mode_value)
+            if mode_name == "strict":
+                normalized["strict"] = status
+            elif mode_name == "sloppy":
+                normalized["sloppy"] = status
+            else:
+                raise SystemExit(f"unsupported unified test mode: {mode_name!r}")
+        return normalized
     raise SystemExit(f"unsupported unified test result: {value!r}")
 
 
-def coarse_status(value: str | dict[str, str]) -> str:
+def coarse_status(value: TestResult) -> str:
     if isinstance(value, dict):
-        statuses = {coarse_status(v) for v in value.values()}
+        statuses = {coarse_status(v) for v in value.values() if isinstance(v, str)}
         if statuses == {"PASS"}:
             return "PASS"
         if statuses == {"SKIP"}:
@@ -45,16 +58,11 @@ def coarse_status(value: str | dict[str, str]) -> str:
     return "FAIL"
 
 
-def detail_text(value: str | dict[str, str]) -> str:
+def detail_text(value: TestResult) -> str:
     if isinstance(value, dict):
         return json.dumps(value, ensure_ascii=False, sort_keys=True)
     return value
 
-
-def display_text(value: str | dict[str, str]) -> str:
-    if isinstance(value, dict):
-        return detail_text(value)
-    return detail_text(value)
 
 
 def read_file(path: Path) -> str:
@@ -64,73 +72,48 @@ def read_file(path: Path) -> str:
         raise SystemExit(f"file not found: {path}")
 
 
-def load_unified(path: Path) -> tuple[dict[str, str | dict[str, str]], dict[str, str | None]]:
+def _load_dict(path: Path) -> dict[str, Any]:
     data = json.loads(read_file(path))
     if not isinstance(data, dict):
         raise SystemExit(f"expected JSON object in {path}")
+    return data
 
-    tests = data.get("tests")
-    if not isinstance(tests, dict):
+
+def load_unified(path: Path, data: dict[str, Any] | None = None) -> Report:
+    data = data or _load_dict(path)
+    if not isinstance(data.get("tests"), dict):
         raise SystemExit(f"missing tests object in {path}")
-
-    normalized_tests: dict[str, str | dict[str, str]] = {}
-    for key, value in tests.items():
-        if not isinstance(key, str):
-            raise SystemExit(f"non-string test id in {path}: {key!r}")
-        normalized_tests[key] = normalize_unified_value(value)
-
-    binary = data.get("binary")
-    test262 = data.get("test262")
-    metadata = {
-        "engine_revision": binary.get("revision") if isinstance(binary, dict) else None,
-        "engine_version": binary.get("version") if isinstance(binary, dict) else None,
-        "engine_arch": binary.get("arch") if isinstance(binary, dict) else None,
-        "test262_revision": test262.get("revision") if isinstance(test262, dict) else None,
-    }
-    return normalized_tests, metadata
+    report = Report.from_dict(data)
+    report.tests = {k: normalize_unified_value(v) for k, v in report.tests.items()}
+    return report
 
 
-def load_test262_harness(path: Path) -> tuple[dict[str, str | dict[str, str]], dict[str, str | None]]:
-    data = json.loads(read_file(path))
-    if not isinstance(data, dict):
-        raise SystemExit(f"expected JSON object in {path}")
-
-    tests: dict[str, str | dict[str, str]] = {}
+def load_test262_harness(path: Path, data: dict[str, Any] | None = None) -> Report:
+    data = data or _load_dict(path)
+    tests: dict[str, TestResult] = {}
     for key, value in data.items():
         if not isinstance(key, str) or not isinstance(value, str):
             raise SystemExit(f"unsupported test262-harness entry in {path}: {key!r} -> {value!r}")
         tests[key if key.startswith("test/") else f"test/{key}"] = value
-    return tests, {
-        "engine_revision": None,
-        "engine_version": None,
-        "engine_arch": None,
-        "test262_revision": None,
-    }
+    return Report(tests=tests)
 
 
 def is_test262_harness_payload(data: Any) -> bool:
     if not isinstance(data, dict):
         return False
-
     sample_keys = [
         "test/annexB/built-ins/Array/from/iterator-method-emulates-undefined.js",
         "test/annexB/built-ins/Date/prototype/getYear/B.2.4.js",
     ]
-
-    for key in sample_keys:
-        value = data.get(key)
-        if isinstance(value, str):
-            return True
-
-    return False
+    return any(isinstance(data.get(k), str) for k in sample_keys)
 
 
-def load_results(path: Path, fmt: str) -> tuple[dict[str, str | dict[str, str]], dict[str, str | None]]:
+def load_results(path: Path, fmt: str) -> Report:
     if fmt == "jsz":
-        data = json.loads(read_file(path))
+        data = _load_dict(path)
         if is_test262_harness_payload(data):
-            return load_test262_harness(path)
-        return load_unified(path)
+            return load_test262_harness(path, data)
+        return load_unified(path, data)
     if fmt == "test262-harness":
         return load_test262_harness(path)
     raise SystemExit(f"unsupported format: {fmt}")
@@ -155,17 +138,17 @@ def main() -> int:
     ours_path = Path(args.ours_json)
     theirs_path = Path(args.theirs_json)
 
-    ours, our_meta = load_unified(ours_path)
-    theirs, their_meta = load_results(theirs_path, args.format)
+    ours = load_unified(ours_path)
+    theirs = load_results(theirs_path, args.format)
 
-    shared = sorted(set(ours) & set(theirs), key=sort_key)
-    diffs: list[tuple[str, str | dict[str, str], str | dict[str, str]]] = []
+    shared = sorted(set(ours.tests) & set(theirs.tests), key=sort_key)
+    diffs: list[tuple[str, TestResult, TestResult]] = []
     skip_shared_count = 0
-    ours_skip_count = sum(1 for value in ours.values() if coarse_status(value) == "SKIP")
-    theirs_skip_count = sum(1 for value in theirs.values() if coarse_status(value) == "SKIP")
+    ours_skip_count = sum(1 for v in ours.tests.values() if coarse_status(v) == "SKIP")
+    theirs_skip_count = sum(1 for v in theirs.tests.values() if coarse_status(v) == "SKIP")
     for test in shared:
-        our_value = ours[test]
-        their_value = theirs[test]
+        our_value = ours.tests[test]
+        their_value = theirs.tests[test]
         our_coarse = coarse_status(our_value)
         their_coarse = coarse_status(their_value)
         if "SKIP" in (our_coarse, their_coarse):
@@ -175,17 +158,21 @@ def main() -> int:
             diffs.append((test, our_value, their_value))
 
     print(f"Comparing: {ours_path} {theirs_path}")
-    print(format_meta_match("Binary revision", our_meta.get("engine_revision"), their_meta.get("engine_revision")))
-    if our_meta.get("engine_arch") and their_meta.get("engine_arch"):
-        print(format_meta_match("Binary arch", our_meta.get("engine_arch"), their_meta.get("engine_arch")))
-    print(format_meta_match("Test262 revision", our_meta.get("test262_revision"), their_meta.get("test262_revision")))
-    tests_match = "MATCH" if len(ours) == len(theirs) else "MISMATCH"
-    print(f"Tests: {tests_match} (ours: {len(ours)}, theirs: {len(theirs)}, shared: {len(shared)})")
+    print(format_meta_match("Binary revision",
+        ours.binary.get("revision") if ours.binary else None,
+        theirs.binary.get("revision") if theirs.binary else None))
+    if (ours.binary and ours.binary.get("arch")) and (theirs.binary and theirs.binary.get("arch")):
+        print(format_meta_match("Binary arch", ours.binary.get("arch"), theirs.binary.get("arch")))
+    print(format_meta_match("Test262 revision",
+        ours.test262.revision if ours.test262 else None,
+        theirs.test262.revision if theirs.test262 else None))
+    tests_match = "MATCH" if len(ours.tests) == len(theirs.tests) else "MISMATCH"
+    print(f"Tests: {tests_match} (ours: {len(ours.tests)}, theirs: {len(theirs.tests)}, shared: {len(shared)})")
     print(f"Skipped tests: {skip_shared_count} (ours: {ours_skip_count}, theirs: {theirs_skip_count})")
 
     print(f"Diffs: {len(diffs)}\n")
     for test, our_value, their_value in diffs:
-        print(f"{test}: {display_text(our_value)} vs {display_text(their_value)}")
+        print(f"{test}: {detail_text(our_value)} vs {detail_text(their_value)}")
 
     return 0
 

@@ -8,7 +8,7 @@ import re
 import signal
 
 from .config import EngineConfig
-from .runner import RunResult, Verdict
+from .data import RunResult, Verdict
 
 
 # Regex to match JS error constructor names in engine output.
@@ -30,6 +30,16 @@ ASSERT_THROWS_RE = re.compile(
 )
 
 DONOTEVALUATE_MESSAGE = "Test262: This statement should not be evaluated."
+
+
+def verdict_from_js_error(exception_name: str) -> Verdict | None:
+    if exception_name == "Error":
+        return Verdict.FAIL
+    try:
+        verdict = Verdict(exception_name)
+        return verdict if verdict.value.endswith("Error") else None
+    except ValueError:
+        return None
 
 
 class Annotator:
@@ -200,7 +210,7 @@ class Annotator:
                 return
 
             for m in JS_ERROR_NAME_RE.finditer(line_filt):
-                js_exc = Verdict.from_js_error(m.group(1))
+                js_exc = verdict_from_js_error(m.group(1))
                 if js_exc is not None:
                     run.verdict_type = js_exc
                     run.verdict_detail = line
@@ -248,7 +258,7 @@ class Annotator:
 
         got = run.verdict_type
         got_message = run.verdict_message()
-        expected = Verdict.from_js_error(negative_type)
+        expected = verdict_from_js_error(negative_type)
         assert expected is not None, f"Unknown negative.type in test262 frontmatter: {negative_type}"
 
         # Heuristic: accept exit code as a substitute error type for
@@ -277,7 +287,7 @@ class Annotator:
                 m = cre.search(line)
                 if m:
                     raw_type = m.group("type") if "type" in cre.groupindex else None
-                    et = Verdict.from_js_error(raw_type) if raw_type else None
+                    et = verdict_from_js_error(raw_type) if raw_type else None
                     message = m.group("message") if "message" in cre.groupindex else None
                     if et is None:
                         if raw_type:

@@ -118,8 +118,8 @@ class TestTagStats(unittest.TestCase):
         ])
         summary = r._summary_json(r._build_tag_stats(), r._file_verdicts(), r._file_weights())
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
-        self.assertEqual(summary["all"]["pass"], 1)
-        self.assertEqual(summary["all"]["fail"], 1)
+        self.assertEqual(summary["all"].passed, 1)
+        self.assertEqual(summary["all"].failed, 1)
 
     def test_skipped_with_tags_counted(self):
         """Skipped results with tags appear in tag stats."""
@@ -205,6 +205,27 @@ class TestTags(unittest.TestCase):
         self.assertIn("dir:test", tags)
         self.assertIn("dir:test/built-ins", tags)
         self.assertIn("dir:test/built-ins/Map", tags)
+
+
+class TestReporterJsonOutput(unittest.TestCase):
+    def test_reporter_to_json_uses_report_formatter(self):
+        reporter = Reporter(
+            EngineConfig(binary_path="/fake/js"),
+            report_json=True,
+            report_rusage="all",
+        )
+        reporter.test_completed([
+            _run(
+                "test/a.js",
+                Verdict.PASS,
+                rusage=RunRusage(user_time=1.234, real_time=2.345, max_rss_kb=4096),
+            )
+        ])
+
+        text = reporter.to_json()
+
+        self.assertIn('"summary": {\n    "all": {"passed": 1, "pass_percent": 100.0}\n  }', text)
+        self.assertIn('"test/a.js": {"user_time": 1.234, "real_time": 2.345, "max_rss_kb": 4096}', text)
 
 
 class TestEditionReport(unittest.TestCase):
@@ -294,7 +315,7 @@ class TestJsonFormatting(unittest.TestCase):
             self.fail('"test/a.js" not found in output')
 
     def test_stats_dict_is_inline(self):
-        """Stats dicts (ok/fail/skip) render on a single line."""
+        """StatsAccumulator dicts (ok/fail/skip) render on a single line."""
         data = {"features:Symbol": {"pass": 10, "fail": 2}}
         out = Reporter.format_json_value(data)
         for line in out.splitlines():

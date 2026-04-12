@@ -16,7 +16,9 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
-from typing import Any, Iterable, Iterator, NamedTuple
+from typing import Any, Iterable, Iterator
+
+from .data import GitRevisionInfo
 
 
 UNAME_TO_GOARCH_MAP = {
@@ -311,24 +313,7 @@ def iterate_js_files(
     return FileDiscovery._iter_files(selectors, root, exclude_re)
 
 
-class GitRevision(NamedTuple):
-    revision: str
-    revision_date: str  # YYYY-MM-DD
-    revision_dirty: bool = False
-    repository: str | None = None
-
-    def to_json(self) -> dict[str, Any]:
-        d: dict[str, Any] = {}
-        if self.repository:
-            d["repository"] = self.repository
-        d["revision"] = self.revision
-        d["revision_date"] = self.revision_date
-        if self.revision_dirty:
-            d["revision_dirty"] = True
-        return d
-
-
-def get_git_revision(path: Path) -> GitRevision | None:
+def get_git_revision(path: Path) -> GitRevisionInfo | None:
     """Return the HEAD revision and committer date of a git repo, or None."""
     try:
         # -c safe.directory: allow reading repos with different ownership
@@ -353,7 +338,7 @@ def get_git_revision(path: Path) -> GitRevision | None:
             ).decode().strip() or None
         except (subprocess.CalledProcessError, FileNotFoundError):
             repo = None
-        return GitRevision(rev, revision_date=date, revision_dirty=dirty, repository=repo)
+        return GitRevisionInfo(revision=rev, revision_date=date, revision_dirty=dirty, repository=repo)
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         return None
 
