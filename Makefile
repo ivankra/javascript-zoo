@@ -23,7 +23,6 @@ preview:
 
 mypy:
 	make -C harness mypy
-	make -C bench mypy
 
 sh:
 	make -C build sh

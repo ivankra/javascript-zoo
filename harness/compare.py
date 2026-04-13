@@ -17,8 +17,8 @@ from typing import Any
 
 # scipy is optional, only needed for p-value computations
 try:
-    from scipy import stats
-    from scipy.stats import trimboth
+    from scipy import stats  # type: ignore[import-untyped]
+    from scipy.stats import trimboth  # type: ignore[import-untyped]
     HAS_SCIPY = True
 except ImportError:
     HAS_SCIPY = False
