@@ -320,7 +320,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "conformance.yml workflow run for ${{ needs.init.outputs.release_tag }}"
-            git tag "${{ needs.init.outputs.release_tag }}"
-            git push --follow-tags
+            git commit -m "conformance.yml run for ${{ needs.init.outputs.release_tag }}"
+            git push
+            git tag -f "${{ needs.init.outputs.release_tag }}"
+            git push --force origin "${{ needs.init.outputs.release_tag }}"
           fi

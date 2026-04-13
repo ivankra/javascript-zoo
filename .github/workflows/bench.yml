@@ -312,14 +312,19 @@ jobs:
             mkdir -p bench/${arch}
             cp -f ../merged/${arch}/*.json bench/${arch}/ || true
           done
+
+          # Update generated data
           make || true
 
+          # Commit and push
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "bench.yml workflow for release ${{ needs.init.outputs.release_tag }}"
+            git commit -m "bench.yml run for ${{ needs.init.outputs.release_tag }}"
             git push
+            git tag -f "${{ needs.init.outputs.release_tag }}"
+            git push --force origin "${{ needs.init.outputs.release_tag }}"
           fi
