@@ -15,31 +15,25 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 
 ## Conformance
 
-<details><summary>ES1-ES5: 47%</summary><ul>
-<li>ES1: 74%<pre>
-<a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse returns this failed
-<a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: sort with comparefn failed; reverse comparefn failed
-<a href="../../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
-<a href="../../conformance/es1/Date.js">Date.js</a>: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
-<a href="../../conformance/es1/Date.prototype.getDate.js">Date.prototype.getDate.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getDay.js">Date.prototype.getDay.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getHours.js">Date.prototype.getHours.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getMinutes.js">Date.prototype.getMinutes.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getMonth.js">Date.prototype.getMonth.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getSeconds.js">Date.prototype.getSeconds.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCHours.js">Date.prototype.getUTCHours.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCMilliseconds.js">Date.prototype.getUTCMilliseconds.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: NotImplementedError
-<a href="../../conformance/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: failed
-...
-</pre></li>
-<li>ES3: 20%</li>
-<li>ES5: 27%</li>
+<details><summary>ES1-ES5: 0%</summary><ul>
+<li>ES1: 0% (0/198)</li>
+<li>ES3: 0% (0/148)</li>
+<li>ES5: 0% (0/74)</li>
+</ul></details>
+
+<details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
+<li>ES5: 0%</li>
+<li>ES6: 0%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 0%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 0%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 0%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 0%</li>
 </ul></details>
