@@ -31,7 +31,7 @@ from harness.util import write_atomic
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
 BENCH_ROOT = REPO_ROOT / "bench"
-COMPARE_SCRIPT = BENCH_ROOT / "compare.py"
+COMPARE_SCRIPT = REPO_ROOT / "harness" / "compare.py"
 
 V8_V7_TESTS = [
     "richards.js",
