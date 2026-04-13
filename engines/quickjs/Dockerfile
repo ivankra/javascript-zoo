@@ -35,8 +35,8 @@ ARG DIST262=y
 RUN if [ $DIST262 = y ]; then ./dist.py /dist/quickjs_262 --binary=/src/run-test262 --no-test; fi
 
 ARG TEST262=y
-RUN if [ "$TEST262" = y ]; then \
+RUN if [ "$TEST262" = y ] && [ "$DIST262" = y ]; then \
       make test2-bootstrap && make test2; \
     fi || true
 COPY engines/quickjs/convert262.py ./
-RUN python3 ./convert262.py test262_report.txt -o /dist/quickjs_262.test262 -b /dist/quickjs --test262-dir=test262
+RUN python3 ./convert262.py test262_report.txt -o /dist/quickjs_262.test262 -b /dist/quickjs --test262-dir=test262 || true

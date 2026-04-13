@@ -4,4 +4,4 @@
 include ../../build/build.mk
 
 $(eval $(call build_engine,quickjs,Dockerfile,--build-arg DIST262=y))
-$(eval $(call build_engine,quickjs_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
+$(eval $(call build_engine,quickjs_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg DIST262=n))

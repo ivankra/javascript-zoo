@@ -8,6 +8,7 @@ import argparse
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -134,6 +135,8 @@ def conv_quickjs(path: Path) -> dict[str, str | dict[str, str]]:
                 continue
             mode = "sloppy"
             if current_lines and current_lines[0].strip().startswith("strict mode: "):
+                mode = "strict"
+            elif not current_lines and quickjs_active_modes(current_flags) == ["strict"]:
                 mode = "strict"
             current_failures[mode] = quickjs_first_message(current_lines)
             current_lines = []
@@ -306,6 +309,9 @@ def main() -> None:
     args = parser.parse_args()
     engine = args.engine
     binary_json_path = args.binary.with_suffix(".json")
+
+    if not args.input.exists():
+        sys.exit(f"convert262.py: {args.input} doesn't exist")
 
     if engine == "quickjs":
         note = "Converted from QuickJS test262_report.txt"
