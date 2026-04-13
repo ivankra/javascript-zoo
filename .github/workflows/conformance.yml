@@ -16,10 +16,6 @@ on:
         description: 'Parallel shards for conformance suites'
         default: &default_conformance_shards 5
         type: number
-      test262_shards:
-        description: 'Parallel shards for test262'
-        default: &default_test262_shards 156
-        type: number
       release:
         description: 'Release tag'
         default: 'latest'
@@ -45,7 +41,6 @@ permissions:
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DEFAULT_CONFORMANCE_SHARDS: *default_conformance_shards
-  DEFAULT_TEST262_SHARDS: *default_test262_shards
   EXP_CONFIGS: graaljs_exp jsc_exp spidermonkey_exp v8_exp
 
 jobs:
@@ -56,8 +51,7 @@ jobs:
       engines: ${{ steps.init.outputs.engines }}
       conformance_shards: ${{ steps.init.outputs.conformance_shards }}
       conformance_shard_list: ${{ steps.init.outputs.conformance_shard_list }}
-      test262_shards: ${{ steps.init.outputs.test262_shards }}
-      test262_shard_list: ${{ steps.init.outputs.test262_shard_list }}
+      test262_engines: ${{ steps.init.outputs.test262_engines }}
       should_commit: ${{ steps.init.outputs.should_commit }}
     steps:
       - name: Resolve release tag and build shard arrays
@@ -92,10 +86,17 @@ jobs:
           echo "conformance_shards=$N1" | tee -a "$GITHUB_OUTPUT"
           echo "conformance_shard_list=$(seq 1 "$N1" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
-          N2="${{ inputs.test262_shards }}"
-          N2="${N2:-$DEFAULT_TEST262_SHARDS}"
-          echo "test262_shards=$N2" | tee -a "$GITHUB_OUTPUT"
-          echo "test262_shard_list=$(seq 1 "$N2" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
+          # Build test262 engine list (one job per engine)
+          DOCKER_IMAGE="ghcr.io/ivankra/javascript-zoo/hub:$TAG"
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker pull "$DOCKER_IMAGE"
+          ALL_ENGINES="$(echo $EXP_CONFIGS; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
+          if [[ -n "$ENGINES" ]]; then
+            TEST262_ENGINES="$ENGINES"
+          else
+            TEST262_ENGINES="$ALL_ENGINES"
+          fi
+          echo "test262_engines=$(echo "$TEST262_ENGINES" | tr ' ' '\n' | grep -v '^$' | jq -R . | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
   conformance:
     needs: init
@@ -185,8 +186,7 @@ jobs:
             $DR /zoo/harness/run.py $extra --shuffle -o "/results/compat-table/$engine.json" "$binary" compat-table;
           done
 
-      - &upload_artifact
-        name: Upload shard results
+      - name: Upload artifact
         if: always()
         uses: actions/upload-artifact@v7
         with:
@@ -196,44 +196,47 @@ jobs:
 
   test262:
     needs: init
+    name: test262 (${{ matrix.engine }})
     timeout-minutes: 360
     env:
       DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
-      SHARDS: ${{ needs.init.outputs.test262_shards }}
-      SHARD_PREFIX: test262
     strategy:
       fail-fast: false
       matrix:
-        shard: ${{ fromJson(needs.init.outputs.test262_shard_list) }}
+        engine: ${{ fromJson(needs.init.outputs.test262_engines) }}
     runs-on: ubuntu-24.04
     steps:
       - *free_disk_space
       - *add_swap
       - *checkout
       - *pull_docker_image
-      - *select_engines
 
       - name: Run test262
         run: |
           DR="docker run --rm --cpu-shares=2 -m 12g --memory-swap=24g --tmpfs=/tmp --ulimit=core=0 -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
           mkdir -p results/test262 results/test262-tags
+          engine="${{ matrix.engine }}"
           set -x
-          for engine in ${{ steps.select_engines.outputs.engines }}; do
-            # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
-            if [[ "$engine" == *_exp ]]; then
-              extra="--config=$engine"
-              binary=/dist/${engine/_exp}
-              if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
-                binary+="_full"  # use full-featured build
-              fi
-            else
-              binary="/dist/$engine"
-              extra=""
+          # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
+          if [[ "$engine" == *_exp ]]; then
+            binary=/dist/${engine/_exp}
+            if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
+              binary+="_full"  # use full-featured build
             fi
-            $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary";
-          done
+            extra="--config=$engine"
+          else
+            binary="/dist/$engine"
+            extra=""
+          fi
+          $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary"
 
-      - *upload_artifact
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test262-${{ matrix.engine }}
+          path: results/
+          if-no-files-found: ignore
 
   merge:
     needs: [init, conformance, test262]
@@ -255,20 +258,20 @@ jobs:
             cp -n "$dir"/es1-5/*.json merged/es1-5/ 2>/dev/null || true
             cp -n "$dir"/compat-table/*.json merged/compat-table/ 2>/dev/null || true
           done
-          for dir in all-results/test262-shard-*/; do
+          for dir in all-results/test262-*/; do
             [[ -d "$dir" ]] || continue
             cp -n "$dir"/test262/*.json merged/test262/ 2>/dev/null || true
             cp -n "$dir"/test262-rusage/*.json merged/test262/rusage/ 2>/dev/null || true
           done
 
           echo "=== test262-tags sha256sums ==="
-          sha256sum all-results/test262-shard-*/test262-tags/latest.json 2>/dev/null || true
+          sha256sum all-results/test262-*/test262-tags/latest.json 2>/dev/null || true
 
-          # For each shard, extract test262 revision from its main report file
+          # For each engine, extract test262 revision from its report file
           # and put its tags file into merged/test262/tags/ as <revision>.json.
-          # Should be the same file/rev in all shards, but just in case.
+          # Should be the same file/rev for all engines, but just in case.
           mkdir -p merged/test262/tags
-          for dir in all-results/test262-shard-*/; do
+          for dir in all-results/test262-*/; do
             if [[ -f "$dir/test262-tags/latest.json" ]]; then
               REV=$(jq -r '.test262.revision // empty' "$dir"/test262/*.json 2>/dev/null | head -1) || true
               if [[ -n "$REV" ]]; then
@@ -278,7 +281,7 @@ jobs:
             fi
           done
 
-      - name: Upload merged results
+      - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
           name: conformance-results-${{ needs.init.outputs.release_tag }}
