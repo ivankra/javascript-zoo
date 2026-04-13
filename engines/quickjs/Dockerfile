@@ -18,6 +18,9 @@ ARG OPT=-O3
 # LTO=y to enable link-time optimization
 ARG LTO=
 
+COPY engines/quickjs/no-can-block.patch ./
+RUN git apply no-can-block.patch || true
+
 RUN git rev-parse --short=8 HEAD >VERSION && \
     sed -i "s/ -O2/ $OPT/" Makefile && \
     if ${CC:-cc} --version 2>&1 | grep -q clang; then export CONFIG_CLANG=y; fi; \
