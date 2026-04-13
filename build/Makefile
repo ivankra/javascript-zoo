@@ -45,6 +45,9 @@ else
 $(eval $(call build_base,jsz-clang,jsz-clang.Dockerfile,--build-arg VER=19))
 endif
 
+mypy:
+	python3 -m mypy *.py
+
 hub:
 	bash ./hub.sh
 
@@ -57,4 +60,4 @@ clean-docker:
 	-$(DOCKER) image ls | awk '/jsz-/{print $$1}' | xargs -r $(DOCKER) image rm
 	$(DOCKER) image prune -f
 
-.PHONY: hub sh clean-docker
+.PHONY: mypy hub sh clean-docker
