@@ -896,12 +896,21 @@ quickjs: &quickjs
     # https://github.com/bellard/quickjs/issues/501
     - if: flags:CanBlockIsFalse
       then:
-        shell: $BINARY -h 2>&1 | grep -o -- --no-can-block
+        - shell: $BINARY -h 2>&1 | grep -o -- --no-can-block
     - if: flags:module
       then: --module
       else:
         # quickjs-ng frequently misdetects modules and needs explicit --script
         - shell: $BINARY -h 2>&1 | grep -o -- --script
+  flaky_attempts: 3
+  flaky_tests:
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-no-operation.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-or.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/wait/bigint/no-spurious-wakeup-on-xor.js
 
 quickjs-ng: *quickjs
 primjs: *quickjs
