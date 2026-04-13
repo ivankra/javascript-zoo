@@ -319,18 +319,13 @@ class Assembler:
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
 
-            # test/language/import/import-bytes/bytes-from-png.js: imports .png
-            if dep_path.suffix != ".js":
-                buf = dep_path.read_bytes()
-                write_atomic(dst, buf)
-                return
+            buf = dep_path.read_bytes()
 
             try:
-                # Binary read: preserve original line endings in test fixtures
-                dep_src = dep_path.read_bytes().decode("utf-8", errors="replace")
-            except Exception as e:
-                print(f"warning: skipping deps of {dep_path}: {e}", file=sys.stderr)
-                write_atomic(dst, dep_path.read_bytes())
+                dep_src = buf.decode("utf-8")
+            except UnicodeDecodeError as e:
+                # test/language/import/import-bytes/bytes-from-png.js: imports .png
+                write_atomic(dst, buf)
                 continue
 
             if references is not None:
