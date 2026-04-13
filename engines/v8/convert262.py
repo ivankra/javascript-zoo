@@ -98,8 +98,9 @@ def extract_actual(item: dict[str, Any]) -> str:
     # Seen in V8 status expectations where both outcomes are acceptable, e.g.:
     # - built-ins/Array/prototype/sort/bug_596_1
     # - built-ins/Date/prototype/setFullYear/new-value-time-clip
-    if has_expected_pass_and_fail(item):
-        return "FAIL: may PASS or FAIL"
+    # Mark these as skipped even though they ran if result wasn't recorded.
+    if has_expected_pass_and_fail(item) and not item.get("result"):
+        return "SKIP: may PASS or FAIL"
 
     result = str(item.get("result") or "").strip()
     if result:
