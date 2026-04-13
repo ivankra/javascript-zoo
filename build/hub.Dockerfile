@@ -32,7 +32,7 @@ RUN rm -rf /dist /zoo && \
     git submodule update --init --depth=1 && \
     mkdir -p /zoo/dist && ln -s /dist /zoo/dist/$TARGETARCH && \
     cat /zoo/build/hub.motd | sed "2s/\$/ @$TAG $TARGETARCH/" >/etc/motd && \
-    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/zoo/bench:/zoo/conformance:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
+    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/zoo/harness:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
 
 # Build AOT cache for faster startup
 RUN rm -rf /dist/rhino-dist/rhino.aot* && /dist/rhino /zoo/bench/v8-v7.js || true; \

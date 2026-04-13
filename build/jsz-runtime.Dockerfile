@@ -33,7 +33,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         python3 \
         sudo \
         tar \
-        # Needed by some engines for Temporal and test262, e.g. Jint \
+        # tzdata-legacy: needed by some engines for Temporal and test262, e.g. Jint \
         tzdata-legacy \
         unzip \
         wget \
@@ -44,29 +44,35 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         # ruby: for twostroke \
         ruby \
         # Packages for benchmarking and conformance testing scripts \
-        jsonnet \
-        moreutils \
         python3-requests \
         python3-scipy \
         python3-yaml \
-        time \
         # Development/debugging tools for convenience only \
+        bsdextrautils \
+        fd-find \
         gdb \
         less \
+        moreutils \
         procps \
         psmisc \
         ripgrep \
         strace \
-        vim && \
+        time \
+        vim \
+        zsh && \
     # luajit/lua5.1 for castl \
     (apt-get install -y luajit || apt-get install -y lua5.1) && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
     locale-gen
 
-ENV DEBIAN_FRONTEND=noninteractive \
+ENV PATH=/zoo/harness:/opt/node/bin:/opt/dotnet:$PATH \
+    DEBIAN_FRONTEND=noninteractive \
     LC_ALL=en_US.UTF-8 \
     SHELL=/bin/bash \
-    PATH=/opt/node/bin:$PATH
+    DOTNET_ROOT=/opt/dotnet \
+    DOTNET_CLI_TELEMETRY_OPTOUT=1 \
+    DOTNET_NOLOGO=1 \
+    NUGET_XMLDOC_MODE=skip
 
 # Install latest node and npm via official installer (https://nodejs.org/en/download)
 # Fallback to debian packages on unsupported archs
@@ -80,21 +86,15 @@ RUN case "$(dpkg --print-architecture)" in \
         ln -s /opt/nvm/versions/node/*/ /opt/node;; \
       *) \
         apt-get install -y nodejs npm;; \
-    esac
-
-# Install other popular runtimes from npm
-RUN case "$(dpkg --print-architecture)" in \
+    esac && \
+    # Install other popular runtimes from npm \
+    case "$(dpkg --print-architecture)" in \
       amd64|arm64) \
         npm install -g bun deno && \
         (echo '' | bun repl >/dev/null 2>&1 || true);; \
     esac
 
 # Install dotnet SDK for .NET engines
-ENV DOTNET_ROOT=/opt/dotnet \
-    DOTNET_CLI_TELEMETRY_OPTOUT=1 \
-    DOTNET_NOLOGO=1 \
-    NUGET_XMLDOC_MODE=skip \
-    PATH=/opt/dotnet:$PATH
 RUN case "$(dpkg --print-architecture)" in \
       amd64|arm64) \
         curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
