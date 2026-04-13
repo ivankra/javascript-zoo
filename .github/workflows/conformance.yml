@@ -188,7 +188,7 @@ jobs:
       - &upload_artifact
         name: Upload shard results
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.SHARD_PREFIX }}-shard-${{ matrix.shard }}
           path: results/
@@ -241,7 +241,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Download all shard results
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           path: all-results
           pattern: '{conformance,test262}-*'
@@ -279,7 +279,7 @@ jobs:
           done
 
       - name: Upload merged results
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: conformance-results-${{ needs.init.outputs.release_tag }}
           path: merged/

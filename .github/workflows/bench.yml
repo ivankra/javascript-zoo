@@ -143,7 +143,7 @@ jobs:
       - &upload_results
         name: Upload results
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bench-stage1-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
           path: results/
@@ -160,7 +160,7 @@ jobs:
           ref: ${{ github.sha }}
 
       - name: Download stage 1 results
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           path: all-stage1
           pattern: bench-stage1-*
@@ -177,14 +177,14 @@ jobs:
           done
 
       - name: Upload weights
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bench-weights
           path: weights/
           if-no-files-found: warn
 
       - name: Upload stage 1 merged
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bench-stage1-merged
           path: stage1-merged/
@@ -214,7 +214,7 @@ jobs:
       - *pull_docker_image
 
       - name: Download weights
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: bench-weights
           path: weights/
@@ -243,7 +243,7 @@ jobs:
 
       - name: Upload results
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bench-stage2-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
           path: results/
@@ -260,14 +260,14 @@ jobs:
           ref: ${{ github.sha }}
 
       - name: Download stage 1 merged
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: bench-stage1-merged
           path: stage1-merged/
         continue-on-error: true
 
       - name: Download stage 2 results
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           path: all-stage2
           pattern: bench-stage2-*
@@ -287,14 +287,14 @@ jobs:
           done
 
       - name: Upload merged results
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: bench-results-${{ needs.init.outputs.release_tag }}
           path: merged/
           if-no-files-found: warn
 
       - name: Download weights (for artifact)
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: bench-weights
           path: merged/weights/
