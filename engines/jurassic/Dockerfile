@@ -4,13 +4,12 @@
 ARG BASE=jsz-dotnet
 FROM $BASE
 
-ARG REPO=https://github.com/paulbartrum/jurassic.git
-ARG REV=master
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/paulbartrum/jurassic.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 COPY engines/jurassic/jurassic.cs /src/REPL/Program.cs
 

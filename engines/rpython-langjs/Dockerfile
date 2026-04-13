@@ -55,13 +55,12 @@ RUN find $DIST -name '*test*' -exec rm -rf {} ';' 2>/dev/null || true
 RUN find $DIST -name '*doc*' -exec rm -rf {} ';' 2>/dev/null || true
 RUN find $DIST -name '*.pyc' -exec rm -rf {} ';' 2>/dev/null || true
 
-ARG REPO=https://github.com/progval/rpython-langjs.git
-ARG REV=master
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/progval/rpython-langjs.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 RUN sed -i 's/^_version_string = .*/_version_string = "1.0"/' js/builtins/js_global.py
 

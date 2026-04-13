@@ -7,13 +7,12 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://github.com/Moddable-OpenSource/moddable.git
-ARG REV=public
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/Moddable-OpenSource/moddable.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=public
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libncurses-dev
 RUN cd xs/makefiles/lin && MODDABLE=/src make -j release  # -O3

@@ -5,13 +5,12 @@
 ARG BASE=jsz-clang
 FROM $BASE
 
-ARG REPO=https://github.com/chakra-core/ChakraCore.git
-ARG REV=master
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/chakra-core/ChakraCore.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # TODO: fix x64 build with --embed-icu, seems to use system ICU instead of downloaded
 # ChakraICU.h:21:10: fatal error: 'unicode/uvernum.h' file not found

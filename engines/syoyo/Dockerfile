@@ -4,13 +4,12 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://github.com/syoyo/lightjs.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/syoyo/lightjs.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 RUN cmake -S . -G Ninja -B build && \
     cmake --build build --target lightjs_repl

@@ -4,13 +4,12 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://github.com/jrmuizel/mozilla-cvs-history.git
-ARG REV=master
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/jrmuizel/mozilla-cvs-history.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 COPY engines/epimetheus/epimetheus.patch /tmp/epimetheus.patch
 RUN git apply /tmp/epimetheus.patch

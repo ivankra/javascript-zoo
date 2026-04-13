@@ -4,13 +4,12 @@
 ARG BASE=jsz-rust
 FROM $BASE
 
-ARG REPO=https://github.com/rust-js/rjs.git
-ARG REV=master
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/rust-js/rjs.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # Earliest rust nightly with arm64 support
 RUN rustup toolchain install nightly-2016-05-31 --profile minimal && rustup override set nightly-2016-05-31

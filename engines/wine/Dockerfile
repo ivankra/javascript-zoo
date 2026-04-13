@@ -7,14 +7,13 @@
 ARG BASE=jsz-mingw
 FROM $BASE
 
+WORKDIR /src
 #ARG REPO=https://gitlab.winehq.org/wine/wine.git
 ARG REPO=https://github.com/wine-mirror/wine.git
-ARG REV=master
+RUN git clone --depth=1 "$REPO" .
 
-WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # Build 64-bit jscript.dll
 RUN mkdir -p build64 && cd build64 && \

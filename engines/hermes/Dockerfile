@@ -21,13 +21,12 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends libicu-dev libreadline-dev
     #build-essential ca-certificates cmake git ninja-build python3 zip
 
-ARG REPO=https://github.com/facebook/hermes.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/facebook/hermes.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # Fix broken -DHERMES_ENABLE_INTL=ON build on main branch
 RUN grep -q cstdint lib/Platform/Intl/impl_icu/IntlUtils.cpp || \

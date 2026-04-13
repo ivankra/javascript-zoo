@@ -4,13 +4,12 @@
 ARG BASE=jsz-dotnet
 FROM $BASE
 
-ARG REPO=https://github.com/koculu/Topaz.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/koculu/Topaz.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 COPY engines/topaz/topaz.cs /src/
 COPY engines/topaz/topaz_runner.csproj /src/topaz_runner.csproj

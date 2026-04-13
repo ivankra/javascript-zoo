@@ -4,13 +4,12 @@
 ARG BASE=jsz-dotnet
 FROM $BASE
 
-ARG REPO=https://github.com/asynkron/Asynkron.JsEngine.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/asynkron/Asynkron.JsEngine.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 COPY engines/asynkron/asynkron.cs /src/
 COPY engines/asynkron/asynkron.csproj /src/

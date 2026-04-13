@@ -4,13 +4,12 @@
 ARG BASE=jsz-dotnet-wasi
 FROM $BASE
 
-ARG REPO=https://github.com/6over3/hako.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/6over3/hako.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 RUN git submodule update --depth=1 --init --recursive
 
 RUN hosts/dotnet/scripts/build-engine.sh

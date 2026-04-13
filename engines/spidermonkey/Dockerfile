@@ -23,7 +23,7 @@ RUN if [ "$(dpkg --print-architecture)" = i386 ]; then \
 WORKDIR /src
 
 ARG REPO=https://github.com/mozilla-firefox/firefox.git
-RUN git clone --depth=1 --branch=main "$REPO" .
+RUN git clone --depth=1 "$REPO" .
 
 ARG REV=main
 RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD && git rev-parse HEAD

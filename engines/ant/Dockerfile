@@ -18,13 +18,12 @@ RUN export CFLAGS="-Os -flto" \
     && cmake --build build \
     && cmake --install build
 
-ARG REPO=https://github.com/theMackabu/ant.git
-ARG REV=master
-
 WORKDIR /src/ant
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/theMackabu/ant.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=master
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 RUN npm ci --prefix src/tools
 

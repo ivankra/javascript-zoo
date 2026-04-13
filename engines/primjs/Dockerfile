@@ -4,13 +4,12 @@
 ARG BASE=jsz-clang
 FROM $BASE
 
-ARG REPO=https://github.com/lynx-family/primjs.git
-ARG REV=develop
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+ARG REPO=https://github.com/lynx-family/primjs.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=develop
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # DISABLE_GC=y: disables tracing GC
 ARG DISABLE_GC=
