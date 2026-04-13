@@ -11,16 +11,18 @@
 * Years:       2024-
 * Ancestor:    [QuickJS](../quickjs/README.md)
 * Interpreter: stack-based VM
-* GC:          mark-and-sweep / reference counting
-  * One of key features - compile-time option to replace QuickJS's reference counting with a mark-and-sweep GC, touting +10-20% performance ([doc](https://github.com/lynx-family/primjs/blob/develop/docs/gc.md)).
+* GC:          mark-and-sweep GC / reference counting
 
-## Quirks
+## Tech
 
-* Buggy nullish coalescing operator (ES2020): `null ?? 42` => `null`
+Based on a really old version of QuickJS, stuck at ca. ES2019 (nullish coalescing is broken).
 
-## Forks
+Couple improvements, both only on arm64:
 
-* [Hako](../hako/README.md): PrimJS ported to WASM
+* [Tracing GC](https://github.com/lynx-family/primjs/blob/develop/docs/gc.md): compile-time option replacing QuickJS's reference counting with a mark-and-sweep GC, touting +10-20% performance.
+* ["Template interpreter"](https://github.com/lynx-family/primjs/blob/develop/docs/template_interpreter.md): replaces QuickJS VM interpreter with a closed-source binary blob (`embedded.S`), improving it with computed goto and pinned registers for interpreter state and top-of-stack caching.
+
+Other features: WebAssembly support (via wasm3), inspector/debugger, N-API compatibility layer.
 
 ## Conformance
 
