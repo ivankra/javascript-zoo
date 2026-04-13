@@ -8,9 +8,9 @@
 #                     at index k-1.
 #
 #   Ranking (rank):   Merged stage-1 results are ranked by geometric-mean
-#                     score. Per-engine weights decay exponentially by rank:
-#                     top ~5 engines get weight 50-100, dropping to ~1 by
-#                     rank 30.
+#                     score. Per-engine weights use a slower exponential
+#                     decay by rank, with a 10x boost for engines at least
+#                     as fast as mocha and a 1/5 demotion for "_" variants.
 #
 #   Stage 2 (sample): Shards draw weighted-random (engine, test) pairs,
 #                     concentrating additional samples on top-ranked engines.
@@ -32,10 +32,17 @@ ROOT_DIR   = BENCH_DIR.parent
 TIME_LIMIT   = 1800   # seconds per stage-2 shard (~30 min)
 TEST_TIMEOUT = 1800   # seconds per individual test run
 
-# Weight formula: weight(rank) = max(1, round(100 * exp(-RANK_DECAY * (rank - 1))))
-#   rank 1  -> 100     rank 5  -> 55     rank 10 -> 26
-#   rank 15 ->  12     rank 20 ->  6     rank 30 ->  1
-RANK_DECAY = 0.15
+# Weight formula:
+#   base(rank) = max(1, round(100 * exp(-RANK_DECAY * (rank - 1))))
+#   if geomean >= geomean(mocha): weight *= 10
+#   if "_" in engine name:        weight *= 0.2
+RANK_DECAY = 0.10
+TOP_WEIGHT = 100
+MIN_WEIGHT = 1
+MOCHA_ENGINE = 'mocha'
+MOCHA_GEOMEAN_FALLBACK = 100.0
+MOCHA_BOOST = 10.0
+VARIANT_FACTOR = 0.2
 
 OCTANE_TESTS = [
     'richards.js', 'deltablue.js', 'crypto.js', 'raytrace.js',
@@ -66,7 +73,7 @@ def all_combos(dist_dir: Path) -> list[tuple[str, str]]:
 
 def rank_weight(rank: int) -> int:
     """Exponentially decaying weight by rank."""
-    return max(1, round(100 * math.exp(-RANK_DECAY * (rank - 1))))
+    return max(MIN_WEIGHT, round(TOP_WEIGHT * math.exp(-RANK_DECAY * (rank - 1))))
 
 
 def run_combo(engine: str, test: str, label: str, args: argparse.Namespace) -> None:
@@ -75,7 +82,7 @@ def run_combo(engine: str, test: str, label: str, args: argparse.Namespace) -> N
         print(f'[{label}] skip {engine}: not found', flush=True)
         return
     out = args.output_dir / f'{engine}.json'
-    cmd = [sys.executable, str(BENCH_DIR / 'bench.py'), '-a', '-v',
+    cmd = [sys.executable, str(ROOT_DIR / 'harness' / 'bench.py'), '-a', '-v',
            '-t', str(args.test_timeout), '-o', str(out), str(binary), test]
     print(f'[{label}] {engine} x {test}', flush=True)
     subprocess.run(cmd)
@@ -116,9 +123,15 @@ def cmd_rank(args: argparse.Namespace) -> None:
             engine_gm[f.stem] = math.exp(sum(math.log(s) for s in scores) / len(scores))
 
     ranked = sorted(engine_gm.items(), key=lambda x: -x[1])
+    mocha_geomean = engine_gm.get(MOCHA_ENGINE, MOCHA_GEOMEAN_FALLBACK)
     weights: dict[str, int] = {}
-    for rank, (engine, _) in enumerate(ranked, 1):
-        weights[engine] = rank_weight(rank)
+    for rank, (engine, gm) in enumerate(ranked, 1):
+        weight = float(rank_weight(rank))
+        if gm >= mocha_geomean:
+            weight *= MOCHA_BOOST
+        if '_' in engine:
+            weight *= VARIANT_FACTOR
+        weights[engine] = max(MIN_WEIGHT, round(weight))
 
     # Engines with files but no valid scores get weight 0 (skip in sampling)
     for f in args.input_dir.glob('*.json'):
