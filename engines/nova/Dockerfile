@@ -25,4 +25,4 @@ RUN if [ "$TEST262" = y ]; then \
       /src/target/release/test262 --noprogress >test262.log; \
     fi || true
 COPY engines/nova/convert262.py ./
-RUN python3 ./convert262.py test262.log -o /dist/nova.test262 -b /dist/nova --test262-dir=/src/tests/test262 || true
+RUN python3 ./convert262.py test262.log -o /dist/nova.ci-test262 -b /dist/nova --test262-dir=/src/tests/test262 || true

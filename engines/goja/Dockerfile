@@ -22,4 +22,4 @@ RUN if [ "$TEST262" = y ]; then \
       go test -vet=off -v -run TestTC39 ./... >test262.log; \
     fi || true
 COPY engines/goja/convert262.py ./
-RUN python3 ./convert262.py test262.log -o /dist/goja.test262 -b /dist/goja --test262-dir=testdata/test262 || true
+RUN python3 ./convert262.py test262.log -o /dist/goja.ci-test262 -b /dist/goja --test262-dir=testdata/test262 || true

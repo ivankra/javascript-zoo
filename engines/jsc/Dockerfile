@@ -47,4 +47,4 @@ RUN if [ "$TEST262" = y ]; then \
       Tools/Scripts/test262-runner --jsc /src/WebKitBuild/JSCOnly/Release/bin/jsc --t262 JSTests/test262 --release; \
     fi || true
 COPY engines/jsc/convert262.py ./
-RUN python3 ./convert262.py test262-results/results.yaml -o /dist/jsc.test262 -b /dist/jsc --test262-rev="$(sed -En 's/^test262 revision: ([0-9a-f]+)$/\1/p' JSTests/test262/test262-Revision.txt)" || true
+RUN python3 ./convert262.py test262-results/results.yaml -o /dist/jsc.ci-test262 -b /dist/jsc --test262-rev="$(sed -En 's/^test262 revision: ([0-9a-f]+)$/\1/p' JSTests/test262/test262-Revision.txt)" || true

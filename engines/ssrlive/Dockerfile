@@ -26,4 +26,4 @@ RUN if [ "$TEST262" = y ]; then \
       node ci/runner.js --limit 1000000; \
     fi || true
 COPY engines/ssrlive/convert262.py ./
-RUN python3 ./convert262.py test262-results.log -o /dist/ssrlive.test262 -b /dist/ssrlive --test262-dir=/test262 || true
+RUN python3 ./convert262.py test262-results.log -o /dist/ssrlive.ci-test262 -b /dist/ssrlive --test262-dir=/test262 || true

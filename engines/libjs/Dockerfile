@@ -92,4 +92,4 @@ RUN if [ "$TEST262" = y ]; then \
           --results-json results.json \
           --per-file-output per-file-master.json; \
     fi || true
-RUN python3 ./convert262.py /src/libjs-test262/per-file-master.json -o /dist/libjs.test262 -b /dist/libjs --test262-dir=/src/test262 || true
+RUN python3 ./convert262.py /src/libjs-test262/per-file-master.json -o /dist/libjs.ci-test262 -b /dist/libjs --test262-dir=/src/test262 || true

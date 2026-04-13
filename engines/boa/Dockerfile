@@ -27,4 +27,4 @@ RUN if [ "$TEST262" = y ]; then \
       ./target/release/boa_tester run -v -o ./test-results; \
     fi || true
 COPY engines/boa/convert262.py ./
-RUN python3 ./convert262.py test-results/latest.json -o /dist/boa.test262 -b /dist/boa || true
+RUN python3 ./convert262.py test-results/latest.json -o /dist/boa.ci-test262 -b /dist/boa || true

@@ -22,4 +22,4 @@ RUN if [ "$TEST262" = y ]; then \
       python3 scripts/run-test262.py --jsse ./target/release/jsse --test262 ./test262; \
     fi || true
 COPY engines/jsse/convert262.py ./
-RUN python3 ./convert262.py test262-pass.txt -o /dist/jsse.test262 --test262-dir=test262 || true
+RUN python3 ./convert262.py test262-pass.txt -o /dist/jsse.ci-test262 --test262-dir=test262 || true

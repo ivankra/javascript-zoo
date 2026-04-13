@@ -26,4 +26,4 @@ RUN if [ "$TEST262" = y ]; then \
       cargo brimstone-test --release -- --report-test262-progress --save-result-files ./test262; \
     fi || true
 COPY engines/brimstone/convert262.py ./
-RUN python3 ./convert262.py test262_failed.json test262_success.json tests/test262/ignored_tests.jsonc -o /dist/brimstone.test262 -b /dist/brimstone --test262-dir=tests/test262/test262 || true
+RUN python3 ./convert262.py test262_failed.json test262_success.json tests/test262/ignored_tests.jsonc -o /dist/brimstone.ci-test262 -b /dist/brimstone --test262-dir=tests/test262/test262 || true

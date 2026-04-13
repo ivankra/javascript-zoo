@@ -23,4 +23,4 @@ RUN if [ "$TEST262" = y ]; then \
       DOTNET_ROLL_FORWARD=Major dotnet test Jint.Tests.Test262/Jint.Tests.Test262.csproj -c Release --logger "trx;LogFileName=/src/test262.trx"; \
     fi || true
 COPY engines/jint/convert262.py ./
-RUN python3 ./convert262.py test262.trx -o /dist/jint.test262 -b /dist/jint --test262-rev="$(sed -nE 's/.*"SuiteGitSha": "([0-9a-f]+)".*/\1/p' Jint.Tests.Test262/Test262Harness.settings.json)" || true
+RUN python3 ./convert262.py test262.trx -o /dist/jint.ci-test262 -b /dist/jint --test262-rev="$(sed -nE 's/.*"SuiteGitSha": "([0-9a-f]+)".*/\1/p' Jint.Tests.Test262/Test262Harness.settings.json)" || true

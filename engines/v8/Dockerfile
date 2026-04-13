@@ -68,4 +68,4 @@ RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
       tools/run-tests.py --outdir=out/release --json-test-results=test262-results.json test262; \
     fi || true
 COPY engines/v8/convert262.py ./
-RUN python3 ./convert262.py test262-results.json -o /dist/v8.test262 -b /dist/v8 --test262-dir=test/test262/data || true
+RUN python3 ./convert262.py test262-results.json -o /dist/v8.ci-test262 -b /dist/v8 --test262-dir=test/test262/data || true

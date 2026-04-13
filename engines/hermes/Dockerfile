@@ -64,4 +64,4 @@ RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
       python3 utils/test_runner.py --test-intl /src/test262/test -b build/bin >test262.log 2>&1; \
     fi || true
 COPY engines/hermes/convert262.py ./
-RUN python3 ./convert262.py test262.log -o /dist/hermes.test262 -b /dist/hermes --test262-dir=/src/test262 || true
+RUN python3 ./convert262.py test262.log -o /dist/hermes.ci-test262 -b /dist/hermes --test262-dir=/src/test262 || true
