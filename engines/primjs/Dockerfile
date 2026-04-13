@@ -11,36 +11,36 @@ RUN git clone --depth=1 "$REPO" .
 ARG REV=develop
 RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
-# DISABLE_GC=y: disables tracing GC
-ARG DISABLE_GC=n
-# DIST262=y: package run-test262 binary as primjs_262
-ARG DIST262=y
+# RUN sed -i '/^machine = "x86_64" if/a machine = "arm64" if machine == "aarch64" else machine' DEPS
+# RUN bash -c 'source tools/envsetup.sh && hab sync .'
 
-# Fix: logging.cc:(.text._ZN6primjs7general7logging10LogMessageD2Ev+0x64): undefined reference to `primjs::general::logging::Log(primjs::general::logging::LogMessage*)'
-RUN sed -i '/^set(quickjs_sources/a     ${CMAKE_CURRENT_SOURCE_DIR}/src/basic/log/primjs_logging.cc' CMakeLists.txt
+RUN git clone --depth=1 https://github.com/lynx-family/buildroot.git build
+RUN mkdir -p buildtools/gn && \
+    curl -fsSL "https://github.com/lynx-family/buildtools/releases/download/gn-cc28efe6/buildtools-gn-linux-$(uname -m | sed 's/^aarch64$/arm64/').tar.gz" | tar xz -C buildtools/gn && \
+    chmod +x buildtools/gn/gn
+RUN mkdir -p buildtools/llvm/bin && \
+    for x in clang clang++ llvm-ar llvm-nm llvm-readelf llvm-objcopy llvm-readobj; do \
+      target=$(command -v $x 2>/dev/null) || \
+      target=$(ls /usr/bin/$x-[0-9]* 2>/dev/null | sort -V | tail -1); \
+      if [ -n "$target" ]; then ln -s "$target" buildtools/llvm/bin/$x; fi \
+    done
+RUN git clone --depth=1 https://github.com/tc39/test262 third_party/test262 && \
+    REV=$(echo "root_dir=''; $(cat DEPS); print(deps['third_party/test262']['commit'])" | python3) && \
+    git -C third_party/test262 fetch origin $REV && \
+    git -C third_party/test262 checkout $REV
+ENV PATH=/src/buildtools/gn:$PATH
 
-RUN sed -i 's/ -Os / -O3 /' CMakeLists.txt
+# Fix for newer clang/libc++
+RUN sed -i '/<sys\/time.h>/a #include <cstring>' src/gc/thread_pool.cc && \
+    sed -i '/#include <fstream>/a #include <functional>' src/gc/cartesian_tree.h && \
+    sed -i 's/size_t allocatedSize = AllocatedMemory();/size_t allocatedSize = this->AllocatedMemory();/' src/gc/ros_allocator.h
 
-# Fix current upstream build breakages with newer Clang/libc++ headers.
-RUN sed -i '/sys.time.h/a #include <cstring>' src/gc/thread_pool.cc
-RUN sed -i '/#include <fstream>/a #include <functional>' src/gc/cartesian_tree.h
-RUN sed -i 's/size_t allocatedSize = AllocatedMemory();/size_t allocatedSize = this->AllocatedMemory();/' src/gc/ros_allocator.h
+# Copy embedded.S (closed source blob)
+RUN cp -a src/interpreter/primjs/android/ src/interpreter/primjs/linux
 
-RUN args="-DENABLE_UNITTESTS=ON"; \
-    if [ "${DISABLE_GC}" != "y" ]; then \
-      args="$args -DENABLE_LEPUSNG=ON -DENABLE_PRIMJS_SNAPSHOT=ON -DENABLE_COMPATIBLE_MM=ON -DCMAKE_C_FLAGS=-DENABLE_TRACING_GC -DCMAKE_CXX_FLAGS=-DENABLE_TRACING_GC"; \
-      args="$args -DPLATFORM_ABI=$(uname -m | sed 's/^aarch64$/arm64/; s/^arm64$/arm64/; s/^x86_64$/x86_64/')"; \
-    fi; \
-    if [ "$DIST262" = y ]; then \
-      args="$args -DCMAKE_EXE_LINKER_FLAGS=-Wl,--allow-multiple-definition"; \
-      cmake -B build -G Ninja $args && \
-      ninja -C build qjs run-test262; \
-    else \
-      cmake -B build -G Ninja $args && \
-      ninja -C build qjs; \
-    fi;
+RUN gn gen out/Release --args="target_cpu=\"$(uname -m | sed 's/aarch64/arm64/; s/x86_64/x64/; s/armv7l/arm/; s/i686/x86/')\" target_os=\"linux\" enable_primjs_snapshot=true enable_compatible_mm=true enable_tracing_gc=true enable_unittests=true use_default_linux_sysroot=false use_flutter_cxx=false use_lepusng=true" && \
+    ninja -C out/Release qjs run_test262
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/primjs --binary=/src/build/qjs
-
-RUN if [ "$DIST262" = y ]; then ./dist.py /dist/primjs_262 --binary=/src/build/run-test262 --no-test; fi
+RUN ./dist.py /dist/primjs --binary=/src/out/Release/qjs
+RUN ./dist.py /dist/primjs_262 --binary=/src/out/Release/run_test262 --smoke-test-cmd='$BINARY -N'
