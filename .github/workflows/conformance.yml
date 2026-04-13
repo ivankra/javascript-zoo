@@ -216,7 +216,7 @@ jobs:
       - name: Run test262
         run: |
           DR="docker run --rm --cpu-shares=2 -m 12g --memory-swap=24g --tmpfs=/tmp --ulimit=core=0 -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $DOCKER_IMAGE python3"
-          mkdir -p results/test262 results/test262-rusage results/test262-tags
+          mkdir -p results/test262 results/test262-tags
           set -x
           for engine in ${{ steps.select_engines.outputs.engines }}; do
             # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
@@ -230,7 +230,7 @@ jobs:
               binary="/dist/$engine"
               extra=""
             fi
-            $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-rusage="/results/test262-rusage/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary";
+            $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary";
           done
 
       - *upload_artifact
@@ -266,21 +266,17 @@ jobs:
 
           # For each shard, extract test262 revision from its main report file
           # and put its tags file into merged/test262/tags/ as <revision>.json.
-          # Should be the same file in all shards, but just in case.
+          # Should be the same file/rev in all shards, but just in case.
           mkdir -p merged/test262/tags
-          LAST_REV=""
           for dir in all-results/test262-shard-*/; do
-            [[ -f "$dir/test262-tags/latest.json" ]] || continue
-            REV=$(jq -r '.test262.revision // empty' "$dir"/test262/*.json 2>/dev/null | head -1) || true
-            [[ -n "$REV" ]] || continue
-            echo "shard $dir: test262 revision $REV"
-            mv -f "$dir/test262-tags/latest.json" "merged/test262/tags/$REV.json"
-            LAST_REV="$REV"
+            if [[ -f "$dir/test262-tags/latest.json" ]]; then
+              REV=$(jq -r '.test262.revision // empty' "$dir"/test262/*.json 2>/dev/null | head -1) || true
+              if [[ -n "$REV" ]]; then
+                echo "shard $dir: test262 revision $REV"
+                mv -f "$dir/test262-tags/latest.json" "merged/test262/tags/$REV.json"
+              fi
+            fi
           done
-          # Copy the last one as latest.json. Not symlink - won't survive upload-artifact.
-          if [[ -n "$LAST_REV" ]]; then
-            cp -af "merged/test262/tags/$LAST_REV.json" merged/test262/tags/latest.json
-          fi
 
       - name: Upload merged results
         uses: actions/upload-artifact@v6
@@ -297,18 +293,34 @@ jobs:
           git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/ivankra/javascript-zoo-data.git" data-repo
 
           cd data-repo
-          for dir in es1-5 compat-table test262 test262-rusage test262-tags; do
+          for dir in es1-5 compat-table test262 test262/tags; do
             mkdir -p $dir
             cp -f ../merged/$dir/*.json $dir/ || true
           done
+
+          # Symlink test262/tags/latest.json -> <latest test262 rev>.json
+          for f in ../merged/test262/*.json; do
+            if [[ -f "$f" ]]; then
+              REV=$(jq -r '.test262.revision // empty' "$f" 2>/dev/null | head -1) || true
+              if [[ -n "$REV" ]]; then
+                rm -f test262/tags/latest.json
+                ln -s "$REV.json" test262/tags/latest.json
+                break
+              fi
+            fi
+          done
+
+          # Update generated data
           make || true
 
+          # Commit and push
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "conformance.yml workflow for release ${{ needs.init.outputs.release_tag }}"
-            git push
+            git commit -m "conformance.yml workflow run for ${{ needs.init.outputs.release_tag }}"
+            git tag "${{ needs.init.outputs.release_tag }}"
+            git push --follow-tags
           fi
