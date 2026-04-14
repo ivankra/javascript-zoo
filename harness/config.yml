@@ -479,6 +479,9 @@ graaljs_exp:
     # See also: https://github.com/oracle/graaljs/blob/master/graal-js/src/com.oracle.truffle.js/src/com/oracle/truffle/js/runtime/JSContextOptions.java
     - shell: |
         EXP_FLAGS=(
+          --js.import-bytes
+          --js.import-text
+          --js.json-modules
           --js.class-fields
           --js.import-attributes
           --js.private-fields-in
@@ -488,6 +491,7 @@ graaljs_exp:
           --js.async-context
           --js.async-iterator-helpers
           --js.atomics-wait-async
+          --js.explicit-resource-management
           --js.iterator-helpers
           --js.new-set-methods
           --js.shadow-realm
