@@ -243,7 +243,10 @@ class EngineConfig:
             for key in [re.split(r"[_.]", binary.name, maxsplit=1)[0], binary.name]:
                 if key and key in configs:
                     cfg = {**cfg, **configs[key]}
-        cfg = {**cfg, **build_metadata}
+
+        # TODO: drop it in favor of always just probing the engine binary
+        if build_metadata.get("console_log"):
+            cfg["console_log"] = build_metadata["console_log"]
 
         field_names = {field.name for field in dataclasses.fields(EngineConfig)}
         cfg = {key: value for key, value in cfg.items() if key in field_names}

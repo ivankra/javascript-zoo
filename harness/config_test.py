@@ -442,17 +442,10 @@ class EngineConfigLoadTest(unittest.TestCase):
             (Path(td) / "eng.json").write_text(json.dumps({
                 "engine": "myeng",
                 "console_log": "print",
-                "cwd": "/tmp/work",
-                "env": {"MODE": "test"},
-                "output_limit": 123,
                 "flags": ["--ignored-by-cmdline"],
             }))
             cfg = EngineConfig.load(f"{binary} --fast", config_name="nova")
-            self.assertEqual(cfg.engine, "myeng")
             self.assertEqual(cfg.console_log, "print")
-            self.assertEqual(cfg.cwd, "/tmp/work")
-            self.assertEqual(cfg.env, {"MODE": "test"})
-            self.assertEqual(cfg.output_limit, 123)
             self.assertEqual(cfg.flags, ["--fast"])
 
     def test_explicit_config_name_overrides_detected_config(self) -> None:
@@ -462,13 +455,6 @@ class EngineConfigLoadTest(unittest.TestCase):
             cfg = EngineConfig.load(str(binary), config_name="nova")
             self.assertIn("eval", cfg.flags)
             self.assertIn("--expose-internals", cfg.flags)
-
-    def test_load_preserves_explicit_empty_list_from_sidecar(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"conformance_suite": []}))
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.conformance_suite, [])
 
     def test_load_detected_config_supplies_patterns(self) -> None:
         cfg = EngineConfig.load(str(self._binary), config_name="boa")
