@@ -253,7 +253,12 @@ class EngineConfig:
         cfg["binary_path"] = str(binary)
         cfg["build_metadata"] = build_metadata
         if cmd_flags:
-            cfg["flags"] = cmd_flags
+            if cmd_flags[-1] == "--":
+                # Trailing -- means replace: use cmd_flags verbatim, drop the sentinel.
+                cfg["flags"] = cmd_flags[:-1]
+            else:
+                # No trailing --: prepend cmd_flags before config flags.
+                cfg["flags"] = cmd_flags + list(cfg.get("flags", []))
         return EngineConfig(**cfg)
 
 

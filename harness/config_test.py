@@ -442,11 +442,57 @@ class EngineConfigLoadTest(unittest.TestCase):
             (Path(td) / "eng.json").write_text(json.dumps({
                 "engine": "myeng",
                 "console_log": "print",
-                "flags": ["--ignored-by-cmdline"],
+                "flags": ["--ignored-by-sidecar"],
             }))
             cfg = EngineConfig.load(f"{binary} --fast", config_name="nova")
+            # console_log comes from the sidecar JSON
             self.assertEqual(cfg.console_log, "print")
-            self.assertEqual(cfg.flags, ["--fast"])
+            # cmd flags are prepended before config (nova) flags
+            self.assertEqual(cfg.flags[0], "--fast")
+            self.assertIn("eval", cfg.flags)
+            self.assertIn("--expose-internals", cfg.flags)
+
+    def test_load_cmd_flags_prepend_to_config_flags(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            with mock.patch("harness.config.load_configs_dict", return_value={
+                "default": {},
+                "eng": {"flags": ["--config-flag"]},
+            }):
+                cfg = EngineConfig.load(f"{binary} --cmd-flag")
+            self.assertEqual(cfg.flags, ["--cmd-flag", "--config-flag"])
+
+    def test_load_cmd_flags_replace_when_trailing_double_dash(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            with mock.patch("harness.config.load_configs_dict", return_value={
+                "default": {},
+                "eng": {"flags": ["--config-flag"]},
+            }):
+                cfg = EngineConfig.load(f"{binary} --cmd-flag --")
+            # trailing -- stripped, config flags not appended
+            self.assertEqual(cfg.flags, ["--cmd-flag"])
+
+    def test_load_cmd_flags_only_double_dash_replace_empties_flags(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            with mock.patch("harness.config.load_configs_dict", return_value={
+                "default": {},
+                "eng": {"flags": ["--config-flag"]},
+            }):
+                cfg = EngineConfig.load(f"{binary} --")
+            self.assertEqual(cfg.flags, [])
+
+    def test_load_cmd_flags_double_dash_edge_case(self) -> None:
+        # node --a -- -- : last -- stripped (replace), inner -- kept as literal flag
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            with mock.patch("harness.config.load_configs_dict", return_value={
+                "default": {},
+                "eng": {"flags": ["--config-flag"]},
+            }):
+                cfg = EngineConfig.load(f"{binary} --cmd-flag -- --")
+            self.assertEqual(cfg.flags, ["--cmd-flag", "--"])
 
     def test_explicit_config_name_overrides_detected_config(self) -> None:
         with tempfile.TemporaryDirectory() as td:

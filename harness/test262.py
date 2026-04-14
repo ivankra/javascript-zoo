@@ -156,7 +156,10 @@ def main() -> None:
         usage="%(prog)s [opts] engine [tests]",
         formatter_class=HelpFormatter,
     )
-    p.add_argument("engine", help="Engine binary path or a shell command (e.g. /dist/v8, node, 'node --js-staging')")
+    p.add_argument("engine", help="""
+        Engine binary path or a shell command, e.g. /dist/v8, node, 'node --js-staging'.
+        Extra flags are prepended before flags from config.yml.
+        Append -- to replace config flags entirely: 'node --js-staging --'.""")
     p.add_argument("tests", nargs="*", help="""
         Test files/dirs globs relative to test262 root. Glob matching
         a directory selects all *.js files recursively. May use ** globs,
