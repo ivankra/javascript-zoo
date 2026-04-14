@@ -127,6 +127,11 @@ PROBES: dict[str, dict] = {
         "use_harness": True,
         "expect_error": Verdict.TEST262_ERROR,
     },
+    "DONOTEVALUATE": {
+        "source": 'throw "Test262: This statement should not be evaluated."',
+        "mode": "sloppy",
+        "expect_error": Verdict.DONOTEVALUATE,
+    },
     "annexB": {
         "source": 'if (typeof escape === "function") print("PROBE_OK");\n',
         "mode": "sloppy",
