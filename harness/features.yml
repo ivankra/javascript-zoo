@@ -1,6 +1,8 @@
 # Mapping of ECMAScript editions to test262 feature tags
 #
 # References:
+#   * https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md
+#   * https://github.com/tc39/proposals/blob/main/ecma402/finished-proposals.md
 #   * https://github.com/tc39/test262/blob/main/features.txt
 #   * https://github.com/boa-dev/boa/blob/main/tests/tester/src/edition.rs
 #   * https://github.com/test262-fyi/data/blob/main/controller/generate.js
@@ -173,6 +175,7 @@ es2022:
 
 es2023:
   - Intl-enumeration  # https://402.ecma-international.org/10.0/index.html#sec-intl.supportedvaluesof
+  - Intl.NumberFormat-v3
   - array-find-from-last
   - change-array-by-copy
   - hashbang
@@ -198,5 +201,16 @@ es2025:
   - promise-try
   - regexp-modifiers
   - set-methods
+
+es2026:
+  - Array.fromAsync
+  - Error.isError
+  - Intl.Era-monthcode
+  - Intl.Locale-info
+  - Math.sumPrecise
+  - iterator-sequencing
+  - json-parse-with-source
+  - uint8array-base64
+  - upsert
 
 # esnext: everything else
