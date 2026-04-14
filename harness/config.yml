@@ -470,6 +470,12 @@ flathead:
   timeout_sec: 10
   <<: *oom_prone
 
+gocciascript:
+  # Custom test262 harness files: engine doesn't support var and non-arrow functions.
+  includes_dir: engines/gocciascript/test262_harness
+  prelude:
+    - code: let print = console.log.bind(console);
+
 goja: &goja
   # While our wrapper provides print(), standard goja main doesn't
   console_log: console.log
