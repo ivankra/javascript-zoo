@@ -843,6 +843,15 @@ nova:
   prelude:
     - file: engines/nova/prelude.js
 
+okojo:
+  console_log: console.log
+  stderr_replace_re:
+    '^JsParseException: (.*?)( at line [0-9]+, column [0-9]+)?( \(position [0-9]+\)\.?)?$': 'SyntaxError: \1'
+    "^InternalError: Throw: { message: '(.*)' }$": 'InternalError: Throw: Test262Error: \1'
+    '^InternalError: Throw: String\("Test262: This statement should not be ev...<truncated>"\)': 'Test262: This statement should not be evaluated.'
+  errors_re:
+    - '^InternalError: Throw: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+
 otto:
   console_log: console.log
   crash_re:

@@ -11,3 +11,4 @@
 [submodule "data"]
 	path = data
 	url = https://github.com/ivankra/javascript-zoo-data.git
+	branch = data
