@@ -14,4 +14,4 @@ RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-pars
 RUN mkdir -p bin && ${CXX:-c++} -o bin/es es.cc -std=c++17 -I. -include cstdint -include memory
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/zhuzilin --binary=/src/bin/es console_log=console.log
+RUN ./dist.py /dist/zhuzilin --binary=/src/bin/es

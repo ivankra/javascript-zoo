@@ -29,9 +29,9 @@ RUN ./dist.py /dist/engine262
 COPY engines/engine262/main.js ./
 RUN npx esbuild main.js --outfile=main.bundle.js --bundle --platform=browser --format=iife --external:fs
 RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/jsc" "$0" -- "$@"'; cat main.bundle.js) >/dist/engine262_jsc
-RUN ./dist.py /dist/engine262_jsc --no-test console_log=console.log
+RUN ./dist.py /dist/engine262_jsc --no-test
 RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/v8_full" "$0" -- "$@"'; cat main.bundle.js) >/dist/engine262_d8
-RUN ./dist.py /dist/engine262_d8 --no-test console_log=console.log
+RUN ./dist.py /dist/engine262_d8 --no-test
 
 # Run tests except slow/skipped using the project's official runner.
 ARG TEST262=y

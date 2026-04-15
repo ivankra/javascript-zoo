@@ -17,9 +17,6 @@
 #  * config.yml[<engine>] - standard engine config. Engine name is derived
 #    from binary's basename by stripping _* and .* suffixes.
 #  * config.yml[<basename>] - higher priority overrides for specific variants.
-#  * <basename>.json - sidecar metadata file next to the binary
-#    (highest priority overrides; deprecated: only used for console_log now,
-#    which should be removed in favor of just always probing)
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT

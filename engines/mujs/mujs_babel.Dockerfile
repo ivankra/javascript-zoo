@@ -12,4 +12,4 @@ RUN npm install --prefix=/dist/mujs_babel-dist \
 COPY engines/mujs/mujs_babel.sh /dist/mujs_babel
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/mujs_babel --no-license --no-test console_log=console.log
+RUN ./dist.py /dist/mujs_babel --no-license --no-test

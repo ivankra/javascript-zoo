@@ -21,4 +21,4 @@ RUN ./dist.py /dist/js-interpreter
 
 # Alternative wrapper using JavaScriptCore shell as host (faster than Node/V8)
 RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/jsc" "$0" -- "$@"'; cat /dist/js-interpreter | sed 1d) >/dist/js-interpreter_jsc
-RUN ./dist.py /dist/js-interpreter_jsc --no-test console_log=console.log
+RUN ./dist.py /dist/js-interpreter_jsc --no-test

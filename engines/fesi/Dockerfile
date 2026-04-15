@@ -17,5 +17,4 @@ RUN ./dist.py /dist/fesi \
       --wrapper='if [ "$#" -gt 0 ]; then script="$1"; shift; if [ "$#" -gt 0 ]; then exec java -cp "$SCRIPT_DIR/fesi.jar" FESI.Interpreter.Interpret -f "$script" -A "$@"; else exec java -cp "$SCRIPT_DIR/fesi.jar" FESI.Interpreter.Interpret -f "$script"; fi; else exec java -cp "$SCRIPT_DIR/fesi.jar" FESI.Interpreter.Interpret -i; fi' \
       --dist_files=/dist/fesi.jar \
       --license=/src/License.txt \
-      version="1.1.8" \
-      console_log=writeln
+      version="1.1.8"

@@ -16,4 +16,4 @@ RUN git apply motet-a.patch
 RUN make release
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/motet-a --binary=/src/toy console_log=print
+RUN ./dist.py /dist/motet-a --binary=/src/toy --no-test

@@ -19,7 +19,9 @@ import stat
 import subprocess
 import sys
 import tempfile
+from dataclasses import dataclass
 from pathlib import Path
+from typing import NoReturn
 
 
 NUMERIC_META_KEYS = {"binary_size", "dist_size", "loc"}
@@ -37,7 +39,7 @@ LICENSE_GLOBS = [
 ]
 
 
-def fail(msg: str) -> None:
+def fail(msg: str) -> NoReturn:
     print(f"dist.py: {msg}", file=sys.stderr)
     raise SystemExit(1)
 
@@ -246,13 +248,13 @@ def detect_license_sources(explicit: list[str]) -> list[Path]:
     if env_licenses:
         return [Path(x) for x in env_licenses.split() if x.strip()]
 
-    found: list[Path] = []
+    result: list[Path] = []
     for pattern in LICENSE_GLOBS:
         for p in sorted(glob.glob(pattern)):
             pp = Path(p)
-            if pp.is_file() and pp not in found:
-                found.append(pp)
-    return found
+            if pp.is_file() and pp not in result:
+                result.append(pp)
+    return result
 
 
 def maybe_git_metadata(meta: dict[str, str]) -> None:
@@ -390,6 +392,15 @@ def _has_line_with_substring(text: str, needle: str) -> bool:
     return any(needle in line for line in text.splitlines())
 
 
+@dataclass
+class EngineResult:
+    returncode: int
+    stdout: str
+    stderr: str
+    stdout_decode_error: str | None
+    stderr_decode_error: str | None
+
+
 def _decode_engine_output(data: bytes) -> tuple[str, str | None]:
     try:
         return data.decode("utf-8"), None
@@ -397,7 +408,7 @@ def _decode_engine_output(data: bytes) -> tuple[str, str | None]:
         return data.decode("utf-8", errors="replace"), repr(data[:200])
 
 
-def _run_engine(binary_path: Path, smoke_test_cmd: str | None, *script_files: Path) -> subprocess.CompletedProcess:
+def _run_engine(binary_path: Path, smoke_test_cmd: str | None, *script_files: Path) -> EngineResult:
     cmd_prefix = smoke_test_cmd if smoke_test_cmd else "$BINARY"
     file_args = " ".join(shlex.quote(str(f)) for f in script_files)
     full_cmd = f"{cmd_prefix} {file_args}".strip()
@@ -415,24 +426,24 @@ def _run_engine(binary_path: Path, smoke_test_cmd: str | None, *script_files: Pa
         env=env,
         check=False,
     )
-    stdout_bytes = proc.stdout
-    stderr_bytes = proc.stderr
-    stdout_text, stdout_decode_error = _decode_engine_output(stdout_bytes)
-    stderr_text, stderr_decode_error = _decode_engine_output(stderr_bytes)
-    proc.stdout = stdout_text
-    proc.stderr = stderr_text
-    proc.jsz_stdout_decode_error = stdout_decode_error
-    proc.jsz_stderr_decode_error = stderr_decode_error
-    return proc
+    stdout_text, stdout_decode_error = _decode_engine_output(proc.stdout)
+    stderr_text, stderr_decode_error = _decode_engine_output(proc.stderr)
+    return EngineResult(
+        returncode=proc.returncode,
+        stdout=stdout_text,
+        stderr=stderr_text,
+        stdout_decode_error=stdout_decode_error,
+        stderr_decode_error=stderr_decode_error,
+    )
 
 
-def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) -> str:
+def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) -> str | list[str]:
     attempts: list[tuple[str, str, str]] = []
     expected = "hello world"
     res = []
 
     with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
-        for func in ["console.log", "print"]:
+        for func in ["console.log", "print", "writeln", "println"]:
             source = f'{func}("hello" + " world");\n'
             script = Path(tmp) / f"{func.replace('.', '_')}.js"
             script.write_text(source, encoding="utf-8")
@@ -453,7 +464,7 @@ def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) ->
         return res
 
     print(
-        f"dist.py: could not detect console.log/print for {binary_path}",
+        f"dist.py: could not detect console.log/print/writeln/println for {binary_path}",
         file=sys.stderr,
     )
     for name, out, err in attempts:
@@ -462,7 +473,7 @@ def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) ->
         print(f"dist.py: probe {name} stderr:", file=sys.stderr)
         print(err, file=sys.stderr, end="" if err.endswith("\n") else "\n")
 
-    fail(f"could not detect console.log/print for {binary_path}")
+    fail(f"could not detect console.log/print/writeln/println for {binary_path}")
 
 
 def maybe_link_to_dist_out(dist_out: Path) -> None:
@@ -474,7 +485,7 @@ def maybe_link_to_dist_out(dist_out: Path) -> None:
     link.symlink_to(dist_out)
 
 
-def run_smoke_test(binary_path: Path, smoke_test_cmd: str | None = None) -> None:
+def run_smoke_test(binary_path: Path, smoke_test_cmd: str | None = None, console_log: str | list[str] | None = None) -> None:
     """Run smoke test on a packaged binary. Reads test params from its .json metadata.
     Engines can override defaults via smoke_test_js/smoke_test_output metadata keys."""
     json_path = binary_path.with_suffix(binary_path.suffix + ".json")
@@ -485,9 +496,10 @@ def run_smoke_test(binary_path: Path, smoke_test_cmd: str | None = None) -> None
 
     meta = json.loads(json_path.read_text(encoding="utf-8"))
 
-    console_log = meta.get("console_log")
+    if console_log is None:
+        console_log = meta.get("console_log")
     if not console_log:
-        fail(f"no console_log in {json_path}")
+        fail(f"no console_log provided or found in {json_path}")
     if type(console_log) is list:
         console_log = console_log[0]
 
@@ -504,10 +516,10 @@ def run_smoke_test(binary_path: Path, smoke_test_cmd: str | None = None) -> None
         output = proc.stdout + proc.stderr
         if not _has_line_with_substring(output, test_output):
             diag = []
-            if proc.jsz_stdout_decode_error is not None:
-                diag.append(f"stdout_bytes={proc.jsz_stdout_decode_error}")
-            if proc.jsz_stderr_decode_error is not None:
-                diag.append(f"stderr_bytes={proc.jsz_stderr_decode_error}")
+            if proc.stdout_decode_error is not None:
+                diag.append(f"stdout_bytes={proc.stdout_decode_error}")
+            if proc.stderr_decode_error is not None:
+                diag.append(f"stderr_bytes={proc.stderr_decode_error}")
             suffix = f" ({', '.join(diag)})" if diag else ""
             fail(
                 f"smoke test failed for {binary_path}: {script_src.strip()!r} "
@@ -569,15 +581,17 @@ def main() -> None:
     meta["binary_name"] = Path(args.out).name
     meta.setdefault("engine", Path(args.out).name.split("_", 1)[0])
     meta.setdefault("arch", arch_name())
+    console_log: str | list[str] | None = None
     if not args.no_test:
         if args.out.parent == Path("/dist") and "console_log" not in meta:
             meta["console_log"] = probe_console_log_function(args.out, smoke_test_cmd)
+        console_log = meta.pop("console_log", None)
     finalize_json(args.out, meta)
     print(args.out.with_suffix(args.out.suffix + ".json").read_text(encoding="utf-8"), end="")
 
     # Smoke test after finalize so run_smoke_test reads the written .json
-    if not args.no_test and args.out.parent == Path("/dist") and "console_log" in meta:
-        run_smoke_test(args.out, smoke_test_cmd)
+    if not args.no_test and args.out.parent == Path("/dist") and console_log is not None:
+        run_smoke_test(args.out, smoke_test_cmd, console_log)
 
 
 if __name__ == "__main__":

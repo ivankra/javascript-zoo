@@ -51,4 +51,4 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/wine \
       --dist_files=/dist/wine-dist/jscript64.dll \
       --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; if [[ -x /usr/lib/wine/wine64 ]]; then WINE=/usr/lib/wine/wine64; fi; exec "${WINE:-wine}" "$SCRIPT_DIR/wine-dist/jscript64.exe" --dll "$SCRIPT_DIR/wine-dist/jscript64.dll" "$@"' \
-      console_log=console.log
+      --no-test

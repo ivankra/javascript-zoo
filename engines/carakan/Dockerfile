@@ -37,5 +37,5 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/carakan \
       --binary=/src/modules/ecmascript/carakan/standalone/fast-jsshell \
       --no-license \
-      console_log=print \
+      --no-test \
       repository=

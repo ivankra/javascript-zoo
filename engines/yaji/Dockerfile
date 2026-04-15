@@ -23,5 +23,4 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/yaji \
       --wrapper='if [ "$#" -gt 0 ]; then exec java -jar "$SCRIPT_DIR/yaji.jar" -f "$1"; else exec java -jar "$SCRIPT_DIR/yaji.jar" -i; fi' \
       --dist_files=/dist/yaji.jar \
-      --license=/src/yaji-ecmascript-interpreter/License.txt \
-      console_log=writeln
+      --license=/src/yaji-ecmascript-interpreter/License.txt
