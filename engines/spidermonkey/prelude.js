@@ -64,6 +64,7 @@ if (!("createIsHTMLDDA" in globalThis) && !("document" in globalThis && "all" in
         evalScript: global.evaluateScript || global.evaluate,
         global,
         IsHTMLDDA,
+        AbstractModuleSource: global.getAbstractModuleSource?.(),
         gc() {
             gc();
         },
