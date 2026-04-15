@@ -90,12 +90,6 @@ PROBES: dict[str, dict] = {
         "use_harness": True,
         "expect_async": True,
     },
-    "assert.throws": {
-        "source": 'var assert=new Object(); assert.throws="PROBE_OK"; print(assert.throws);\n',
-        "mode": "sloppy",
-        "pass": "PROBE_OK",
-        "use_harness": False,
-    },
     "SyntaxError": {
         "source": '1 +* 2;\n',
         "mode": "sloppy",

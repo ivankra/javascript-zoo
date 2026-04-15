@@ -338,6 +338,7 @@ epimetheus:
     - 'Welcome to Epimetheus.': ''
     - '(?m)^Syntax error: (.+)$': 'SyntaxError: \1'
     - '(?m)^Reference error: (.+)$': 'ReferenceError: \1'
+  fix_assert_throws: True
   timeout_sec: 10
 
 escargot:
@@ -739,6 +740,7 @@ mocha:
     - '^Mocha: [^,]+\.m?js, line [0-9]+: (?P<type>SyntaxError)$'
     - '^Mocha: [^,]+\.m?js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
+  fix_assert_throws: True
 
 modernc-quickjs:
   console_log: ['console.log', 'print']
@@ -1038,6 +1040,7 @@ see:
     - 'WARNING: SEE is using non-release malloc': ''
   errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+\.m?js:[0-9]+: )?(?P<message>.+)$'
+  fix_assert_throws: True
 
 sobek: *goja
 
@@ -1091,6 +1094,7 @@ spidermonkey_old: &spidermonkey_old
   prelude:
     - file: harness/prelude-print.js
     - { if: 'bench', file: 'harness/prelude-es5.js' }
+  fix_assert_throws: True  # needed for 1.5
 
 spidermonkey_1.5: *spidermonkey_old
 spidermonkey_1.6: *spidermonkey_old

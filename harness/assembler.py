@@ -115,13 +115,13 @@ class Assembler:
     temp dir mirroring the test262 layout for module resolution.
     """
 
-    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, stage_dir: str | Path | None = None, no_harness: bool = False) -> None:
+    def __init__(self, config: EngineConfig, test262_dir: Path, *, verbose: bool = False, stage_dir: str | Path | None = None, no_harness: bool = False) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
-        self.preludes = engine.prelude
+        self.preludes = config.prelude
         self.no_harness = no_harness
-        self.fix_assert_throws = False  # to be changed by user
-        self.print_prelude = build_print_prelude(engine.console_log, self.preludes)
+        self.fix_assert_throws = config.fix_assert_throws
+        self.print_prelude = build_print_prelude(config.console_log, self.preludes)
         self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
         if self.stage_dir:
             self.stage_dir.mkdir(parents=True, exist_ok=True)

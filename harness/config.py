@@ -141,6 +141,10 @@ class EngineConfig:
     #   {"if": "X", "code": "..."}  → conditional inline JS
     prelude: list[Prelude] = dataclasses.field(default_factory=list)
 
+    # Replace assert.throws by assert["throws"].
+    # Needed for some pre-ES5 engines that treat "throws" as a reserved keyword.
+    fix_assert_throws: bool = False
+
     # --- Bench mode ---
     bench_suite: list[str] = dataclasses.field(default_factory=list)
     bench_transforms: list[str] = dataclasses.field(default_factory=list)
