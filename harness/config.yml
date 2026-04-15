@@ -668,7 +668,7 @@ jurassic:
   console_log: ['console.log', 'print']
 
 kiesel:
-  console_log: ['console.log', 'Kiesel.print']
+  console_log: Kiesel.print
   flags:
     - { if: 'flags:module', then: '--module' }
   prelude:

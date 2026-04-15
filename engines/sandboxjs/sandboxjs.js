@@ -4,7 +4,7 @@
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
 
-const Sandbox = require('./dist/node/Sandbox.js').default;
+const Sandbox = require('./dist/cjs/Sandbox.js').default;
 
 if (typeof print === 'undefined') {
   globalThis.print = function(s) { console.log(s); };

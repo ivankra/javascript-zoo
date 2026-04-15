@@ -443,7 +443,7 @@ def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) ->
     res = []
 
     with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
-        for func in ["console.log", "print", "writeln", "println"]:
+        for func in ["console.log", "print", "writeln", "println", "Kiesel.print", "WScript.Echo"]:
             source = f'{func}("hello" + " world");\n'
             script = Path(tmp) / f"{func.replace('.', '_')}.js"
             script.write_text(source, encoding="utf-8")
@@ -463,17 +463,13 @@ def probe_console_log_function(binary_path: Path, smoke_test_cmd: str | None) ->
             return res[0]
         return res
 
-    print(
-        f"dist.py: could not detect console.log/print/writeln/println for {binary_path}",
-        file=sys.stderr,
-    )
     for name, out, err in attempts:
         print(f"dist.py: probe {name} stdout:", file=sys.stderr)
         print(out, file=sys.stderr, end="" if out.endswith("\n") else "\n")
         print(f"dist.py: probe {name} stderr:", file=sys.stderr)
         print(err, file=sys.stderr, end="" if err.endswith("\n") else "\n")
 
-    fail(f"could not detect console.log/print/writeln/println for {binary_path}")
+    fail(f"could not detect console.log equivalent for {binary_path}")
 
 
 def maybe_link_to_dist_out(dist_out: Path) -> None:
