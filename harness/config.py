@@ -244,9 +244,18 @@ class EngineConfig:
                 raise SystemExit(f"unknown config: {config_name}")
             cfg = {**cfg, **configs[config_name]}
         else:
-            for key in [re.split(r"[_.]", binary.name, maxsplit=1)[0], binary.name]:
-                if key and key in configs:
-                    cfg = {**cfg, **configs[key]}
+            for sep in ["[_.]", "[_.-]"]:
+                found = False
+                for key in [re.split(sep, binary.name, maxsplit=1)[0], binary.name]:
+                    if key and key in configs:
+                        cfg = {**cfg, **configs[key]}
+                        found = True
+
+                if found:
+                    break
+            else:
+                # TODO: logging.warning()
+                print(f'warning: unknown binary "{binary.name}" - using default config')
 
         field_names = {field.name for field in dataclasses.fields(EngineConfig)}
         cfg = {key: value for key, value in cfg.items() if key in field_names}

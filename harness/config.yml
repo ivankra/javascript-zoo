@@ -535,8 +535,6 @@ hermes: &hermes
     - file: engines/hermes/prelude.js
   # Doesn't support ES modules yet.
 
-hermes-v1: *hermes
-
 iv-lv5:
   console_log: ['console.log', 'print']
   errors_re:
