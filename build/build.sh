@@ -72,37 +72,20 @@ dockerfile_arg_default() {
   sed -nE "/^ *ARG +$key=/{s/^ *ARG +$key=([^ ]+).*$/\\1/p;q;}" "$DOCKERFILE"
 }
 
-# Apply env override (REPO/REV) by replacing any existing matching build-arg.
-# Mutates BUILD_ARGS array.
+# Apply env override (REPO/REV/TEST262) by appending --build-arg to BUILD_ARGS.
+# (last value wins in docker/podman).
 apply_env_build_arg_override() {
   local key="$1"
   local value="$2"
-  local -a filtered=()
-  local a="" skip_next=0
 
   [[ -n "$value" ]] || return 0
   grep -Eq "^ARG +$key=" "$DOCKERFILE" || return 0
 
-  for a in "${BUILD_ARGS[@]}"; do
-    if [[ "$skip_next" == 1 ]]; then
-      skip_next=0
-      continue
-    fi
-    if [[ "$a" == "--build-arg" ]]; then
-      skip_next=1
-      continue
-    fi
-    if [[ "$a" == --build-arg="$key="* || "$a" == "$key="* ]]; then
-      continue
-    fi
-    filtered+=("$a")
-  done
+  local current
+  current="$(resolve_build_arg "$key" "${BUILD_ARGS[@]}")"
+  [[ "$current" == "$value" ]] && return 0
 
-  if [[ ${#filtered[@]} -gt 0 ]]; then
-    BUILD_ARGS=("${filtered[@]}" --build-arg "$key=$value")
-  else
-    BUILD_ARGS=(--build-arg "$key=$value")
-  fi
+  BUILD_ARGS+=(--build-arg "$key=$value")
 
   if [[ "$PRINT_REV" != 1 ]]; then
     echo "Using $key=$value override to build $DOCKERFILE" >&2
@@ -250,6 +233,7 @@ IID_DIR="$ROOT_DIR/.cache/iid/$DOCKER_ARCH"
 
 apply_env_build_arg_override REPO "${REPO:-}"
 apply_env_build_arg_override REV "${REV:-}"
+apply_env_build_arg_override TEST262 "${TEST262:-}"
 set_base_build_arg
 
 if [[ "$PRINT_REV" == 1 ]]; then
