@@ -29,11 +29,11 @@ ARG REV=main
 RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD && git rev-parse HEAD
 
 # FULL=y: build with full internationalization support.
-ARG FULL=
+ARG FULL=n
 
 # JITLESS=y: build without JIT. Behaves like --no-jit-backend CLI flag.
 # Note: somehow, --no-jit-backend is NOT identical to --no-ion --no-baseline --no-asmjs --no-native-regexp!
-ARG JITLESS=
+ARG JITLESS=n
 
 # Run './js/src/configure --help' to see all configure options.
 RUN { \
@@ -61,13 +61,11 @@ RUN ./dist.py /dist/spidermonkey \
       version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+' | head -1)" \
       $(if [ "$JITLESS" = y ]; then echo jit=; fi)
 
-# Alternatively, can run `./mach jstests`, a wrapper around jstests.py.
+# Running tests by hand: use `./mach jstests test262` wrapper
 ARG TEST262=y
-RUN if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
-      python3 js/src/tests/jstests.py \
-          --format=automation \
-          --output-file=/dist/spidermonkey_full.test262.log \
-          /src/obj/dist/bin/js \
-          test262/ && \
-      grep -oE '[0-9a-f]{40}' js/src/tests/test262/GIT-INFO | head -1 >/dist/spidermonkey_full.test262.rev; \
+RUN set -x; if [ "$TEST262" = y ] && [ "$FULL" = y ]; then \
+      python3 js/src/tests/jstests.py --format=automation --run-skipped /src/obj/dist/bin/js test262 >test262.log; \
     fi || true
+COPY engines/spidermonkey/convert262.py ./
+RUN rev=$(sed -En 's/^commit ([0-9a-f]{40})$/\1/p' js/src/tests/test262/GIT-INFO 2>/dev/null | head -1); \
+    python3 ./convert262.py test262.log -o /dist/spidermonkey.ci-test262 -b /dist/spidermonkey --test262-rev="$rev" || true
