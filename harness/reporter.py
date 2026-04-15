@@ -376,6 +376,10 @@ class Reporter:
 
         if any(r.is_skipped() for r in runs):
             self._file_counts[Verdict.SKIP] += 1
+        elif any(r.verdict_type in (Verdict.CRASH, Verdict.OOM) for r in runs):
+            self._file_counts[Verdict.CRASH] += 1
+        elif any(r.verdict_type is Verdict.TIMEOUT for r in runs):
+            self._file_counts[Verdict.TIMEOUT] += 1
         elif any(r.is_failed() for r in runs):
             self._file_counts[Verdict.FAIL] += 1
         else:
@@ -418,7 +422,7 @@ class Reporter:
 
     def _progress_line(self) -> str:
         fc = self._file_counts
-        n_done = fc[Verdict.PASS] + fc[Verdict.FAIL] + fc[Verdict.SKIP]
+        n_done = fc[Verdict.PASS] + fc[Verdict.FAIL] + fc[Verdict.CRASH] + fc[Verdict.TIMEOUT] + fc[Verdict.SKIP]
         d = self._discovery
         elapsed = int(max(0.0, time.monotonic() - self._started_monotonic))
         elapsed_str = f"{elapsed // 60:02d}:{elapsed % 60:02d}"
@@ -429,8 +433,12 @@ class Reporter:
         progress_bits.append(self._colorize(f"+{fc[Verdict.PASS]}", "\033[32m", enabled=self._use_color))
         if fc[Verdict.FAIL]:
             progress_bits.append(self._colorize(f"-{fc[Verdict.FAIL]}", "\033[31m", enabled=self._use_color))
+        if fc[Verdict.CRASH]:
+            progress_bits.append(self._colorize(f"↯{fc[Verdict.CRASH]}", "\033[93m", enabled=self._use_color))
+        if fc[Verdict.TIMEOUT]:
+            progress_bits.append(self._colorize(f"⏱{fc[Verdict.TIMEOUT]}", "\033[34m", enabled=self._use_color))
         if fc[Verdict.SKIP]:
-            progress_bits.append(self._colorize(f"~{fc[Verdict.SKIP]}", "\033[33m", enabled=self._use_color))
+            progress_bits.append(self._colorize(f"⏭{fc[Verdict.SKIP]}", "\033[37m", enabled=self._use_color))
         line = f"[{' '.join(progress_bits)}]"
         show_id = None
         if self._in_flight:

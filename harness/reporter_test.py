@@ -728,7 +728,7 @@ class TestReporterProgress(unittest.TestCase):
         r._started_monotonic = 0.0
         r.test_completed([_run("a.js", Verdict.SKIP, test_id="a.js")])
         line = r._progress_line()
-        self.assertIn("~1", line)
+        self.assertIn("⏭1", line)
 
     def test_truncate_left(self):
         self.assertEqual(Reporter._truncate_left("abcdefgh", 5), "\u2026efgh")
