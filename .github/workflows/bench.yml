@@ -17,15 +17,16 @@ on:
     inputs:
       stage1_shards:
         description: 'Stage 1 shards (one run per combo)'
-        default: &default_stage1_shards 50
+        default: &default_stage1_shards 20
         type: number
+      # higher number of shards preferrable over long-running shards to better sample the fleet
       stage2_shards:
         description: 'Stage 2 shards (weighted resampling)'
-        default: &default_stage2_shards 50
+        default: &default_stage2_shards 100
         type: number
       time_limit:
         description: 'Stage 2 time budget per shard (seconds)'
-        default: '1800'
+        default: '3600'
         type: string
       test_timeout:
         description: 'Per-test timeout (seconds)'
