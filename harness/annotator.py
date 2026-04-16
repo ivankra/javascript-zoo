@@ -173,7 +173,8 @@ class Annotator:
         # must pass despite reporting SyntaxError in an imported module.
         # Do not ignore Test262Error's however here
         # e.g. libjs test/language/module-code/instn-named-bndng-var.js
-        if pass_found and not fail_found and not test262_error:
+        # Check for DONOTEVALUATE message for Mocha (doesn't stop on errors).
+        if pass_found and not fail_found and not test262_error and DONOTEVALUATE_MESSAGE not in output:
             run.verdict_type = Verdict.PASS
             return
 
