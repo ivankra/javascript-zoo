@@ -20,6 +20,7 @@ class Frontmatter:
     includes: list[str] = dataclasses.field(default_factory=list)
     flags: set[str] = dataclasses.field(default_factory=set)
     features: set[str] = dataclasses.field(default_factory=set)
+    defines: list[str] = dataclasses.field(default_factory=list)
     negative_phase: str | None = None
     negative_type: str | None = None
     locale: list[str] = dataclasses.field(default_factory=list)
@@ -42,6 +43,7 @@ class Frontmatter:
             includes=list(data.get("includes") or []),
             flags=set(data.get("flags") or []),
             features=set(data.get("features") or []),
+            defines=list(data.get("defines") or []),
             negative_phase=negative.get("phase"),
             negative_type=negative.get("type"),
             locale=list(data.get("locale") or []),

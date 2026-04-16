@@ -10,7 +10,7 @@ import re
 import shutil
 import sys
 import tempfile
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 
 from .config import EngineConfig, Prelude
@@ -163,13 +163,9 @@ class Assembler:
             harness.extend(name for name in scenario.fm.includes if name not in harness)
             for name in harness:
                 pieces.append(self._read_harness(name))
+                pieces.append(self._generate_harness_footer(name))
                 if references is not None:
                     references.update(self._get_harness_references(name))
-            # Fix "Test262Error: asyncTest called without async flag" in
-            # test/language/import/import-defer/errors/resolution-error/import-defer-of-missing-module-fails.js
-            # In module mode, harness-defined $DONE doesn't automatically end up in globalThis.
-            if "async" in scenario.fm.flags and "module" in scenario.fm.flags:
-                pieces.append("if (typeof globalThis !== 'undefined') globalThis.$DONE = $DONE;")
 
         # 6. Test source body
         pieces.append(scenario.test_content)
@@ -285,14 +281,42 @@ class Assembler:
         else:
             sys.stdout.buffer.write(assembled.encode("utf-8"))
 
-    @lru_cache(maxsize=100)
+    @cache
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
         return p.read_bytes().decode("utf-8", errors="replace")
 
-    @lru_cache(maxsize=100)
+    @cache
     def _get_harness_references(self, name: str) -> set[str]:
         return find_references(self._read_harness(name))
+
+    @cache
+    def _generate_harness_footer(self, name: str) -> str:
+        """Return a JS snippet to assign symbols from "defines:" to globalThis.
+
+        INTERPRETING.md prescribes evaluating harness code in global scope.
+        This is problematic for module tests (as well as Node.js which wraps
+        scripts in a function) if we concatenate harness and test code into
+        a single .mjs. It will get evaluated in module scope, so harness-defined
+        symbols will not automatically end up in globalThis, breaking tests lile:
+        test/language/import/import-defer/errors/resolution-error/import-defer-of-missing-module-fails.js
+        test/built-ins/Array/fromAsync/async-iterable-async-mapped-awaits-once.js
+
+        One workaround is to add a footer to the harness code to explicitly
+        assign to globalThis all symbols in "defines:" frontmatter section.
+
+        More complex alternatives: separate harness .js that imports .mjs,
+        and indirect eval.
+        """
+        defines = Frontmatter.parse(self._read_harness(name)).defines
+        if not defines:
+            return ""
+        parts = ["if (typeof globalThis !== 'undefined') {"]
+        for sym in defines:
+            parts.append(f"if (typeof globalThis.{sym} === 'undefined' && typeof {sym} !== 'undefined')")
+            parts.append("{ globalThis.%s = %s; };" % (sym, sym))
+        parts.append("}\n")
+        return " ".join(parts)
 
     def _copy_deps_recursive(
         self,

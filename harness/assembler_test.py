@@ -396,6 +396,27 @@ class TestStageModule(unittest.TestCase):
                 staged.cleanup()
 
 
+class TestGenerateHarnessFooter(unittest.TestCase):
+    def test_defines_assigned_to_global_this(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            t262 = Path(tmpdir) / "test262"
+            harness = t262 / "harness"
+            harness.mkdir(parents=True)
+            (harness / "done.js").write_text("/*---\ndefines: [$DONE]\n---*/\nfunction $DONE() {}\n")
+            asm = Assembler(EngineConfig(binary_path="/fake/js"), t262, no_harness=True)
+            footer = asm._generate_harness_footer("done.js")
+            self.assertIn("globalThis.$DONE = $DONE", footer)
+
+    def test_no_defines_returns_empty(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            t262 = Path(tmpdir) / "test262"
+            harness = t262 / "harness"
+            harness.mkdir(parents=True)
+            (harness / "sta.js").write_text("// no defines\n")
+            asm = Assembler(EngineConfig(binary_path="/fake/js"), t262, no_harness=True)
+            self.assertEqual(asm._generate_harness_footer("sta.js"), "")
+
+
 class TestBuildPrintPrelude(unittest.TestCase):
     def test_print_in_console_log_returns_none(self):
         self.assertIsNone(build_print_prelude(["print"], []))
