@@ -24,6 +24,11 @@ on:
         description: 'Engines (space-separated, empty=all)'
         default: ''
         type: string
+      test262_skip_engines:
+        description: 'Engines to skip for test262 (space-separated)'
+        # too slow for a single github actions job, >6h
+        default: &default_skip_engines 'continuum epimetheus fastschema-qjs hako hako_go hako_wasmtime_go mujs_babel nashorn nashorn_ot porffor rhino rpython-langjs topchetoeu twostroke yantra zhuzilin'
+        type: string
       commit:
         description: 'Commit results to data repo'
         default: false
@@ -41,6 +46,7 @@ permissions:
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DEFAULT_CONFORMANCE_SHARDS: *default_conformance_shards
+  DEFAULT_SKIP_ENGINES: *default_skip_engines
   EXP_CONFIGS: graaljs_exp jsc_exp spidermonkey_exp v8_exp
 
 jobs:
@@ -95,6 +101,14 @@ jobs:
             TEST262_ENGINES="$ENGINES"
           else
             TEST262_ENGINES="$ALL_ENGINES"
+          fi
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            SKIP_ENGINES="$DEFAULT_SKIP_ENGINES"
+          else
+            SKIP_ENGINES="${{ inputs.test262_skip_engines }}"
+          fi
+          if [[ -n "$SKIP_ENGINES" ]]; then
+            TEST262_ENGINES=$(echo "$TEST262_ENGINES" | tr ' ' '\n' | grep -v '^$' | grep -vxF -f <(echo "$SKIP_ENGINES" | tr ' ' '\n' | grep -v '^$') | tr '\n' ' ')
           fi
           echo "test262_engines=$(echo "$TEST262_ENGINES" | tr ' ' '\n' | grep -v '^$' | jq -R . | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
@@ -289,7 +303,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Commit to javascript-zoo-data
-        if: needs.init.outputs.should_commit == 'true' && needs.conformance.result == 'success' && needs.test262.result == 'success'
+        if: needs.init.outputs.should_commit == 'true'
         env:
           JSZ_DATA_GITHUB_TOKEN: ${{ secrets.JSZ_DATA_GITHUB_TOKEN }}
         run: |
