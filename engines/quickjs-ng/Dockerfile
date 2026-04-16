@@ -21,9 +21,10 @@ RUN if [ $DIST262 = y ]; then ./dist.py /dist/quickjs-ng_262 --binary=/src/build
 
 ARG TEST262=y
 RUN if [ "$TEST262" = y ] && [ "$DIST262" = y ]; then \
+      # QuickJS-NG cut out test262_report.txt output; patching it is easiest way to per-test results \
+      sed -i '/atomic_inc(&test_failed);/a flockfile(stdout); fprintf(stdout, "TEST-%s\\t%s\\t%s\\n", ret ? "FAIL" : "PASS", filename, (eval_flags & JS_EVAL_FLAG_STRICT) ? "strict" : "sloppy"); funlockfile(stdout);' run-test262.c && \
       git submodule update --init --checkout --depth 1 && \
-      echo >test262_errors.txt && \
-      make test262-update; \
+      make && make test262-update >test262.log; \
     fi || true
-COPY engines/quickjs/convert262.py ./
-RUN python3 ./convert262.py test262_errors.txt -o /dist/quickjs-ng_262.ci-test262 -e quickjs-ng -b /dist/quickjs-ng --test262-dir=test262 || true
+COPY engines/quickjs-ng/convert262.py ./
+RUN python3 ./convert262.py test262.log -o /dist/quickjs-ng_262.ci-test262 -b /dist/quickjs-ng --test262-dir=test262 || true
