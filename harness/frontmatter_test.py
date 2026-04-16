@@ -42,7 +42,7 @@ negative:
         self.assertEqual(fm.flags, set())
 
     def test_modes(self):
-        self.assertEqual(Frontmatter().modes(), ("strict", "sloppy"))
+        self.assertEqual(Frontmatter().modes(), ("sloppy", "strict"))
         self.assertEqual(Frontmatter(flags={"onlyStrict"}).modes(), ("strict",))
         self.assertEqual(Frontmatter(flags={"noStrict"}).modes(), ("sloppy",))
         self.assertEqual(Frontmatter(flags={"raw"}).modes(), ("sloppy",))

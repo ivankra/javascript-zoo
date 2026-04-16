@@ -61,8 +61,8 @@ class Verdict(StrEnum):
 
 
 class PerModeTestResult(TypedDict, total=False):
-    strict: str
     sloppy: str
+    strict: str
 
 
 # A single test verdict: bare string "<Verdict>[: <detail>]" e.g. "PASS", "ReferenceError: foo",

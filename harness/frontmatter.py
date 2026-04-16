@@ -58,7 +58,7 @@ class Frontmatter:
         # raw implies noStrict (test262/CONTRIBUTING.md)
         if "noStrict" in self.flags or "raw" in self.flags:
             return ("sloppy",)
-        return ("strict", "sloppy")
+        return ("sloppy", "strict")
 
     def edition(self) -> str | None:
         """ECMAScript edition level of the test: "es5", "es6", "es2016" ... "esnext".

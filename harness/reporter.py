@@ -157,7 +157,7 @@ def group_run_results(results: list[RunResult], test_order: list[str], group_by:
                     by_mode["sloppy"] = message
                 else:
                     raise ValueError(f"unexpected mode for grouped test result: {run.mode!r}")
-            statuses[fp] = by_mode
+            statuses[fp] = cast(PerModeTestResult, dict(sorted(by_mode.items())))
     return statuses
 
 
