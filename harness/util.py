@@ -13,7 +13,6 @@ import re
 import shutil
 import subprocess
 import sys
-import tempfile
 import threading
 from pathlib import Path
 from typing import Any, Iterable, Iterator
@@ -88,15 +87,9 @@ def write_atomic(path: Path, data: bytes, *, check_same: bool = False) -> None:
                 print(f"warning: overwriting {path} with different content", file=sys.stderr)
         except OSError:
             pass
-    fd, tmp_name = tempfile.mkstemp(
-        dir=str(path.parent),
-        prefix=f".{path.name}.{os.getpid()}.",
-        suffix=".tmp",
-    )
-    tmp = Path(tmp_name)
+    tmp = path.with_suffix(f".tmp{os.getpid()}")
     try:
-        with os.fdopen(fd, "wb") as f:
-            f.write(data)
+        tmp.write_bytes(data)
         os.replace(tmp, path)
     except Exception:
         tmp.unlink(missing_ok=True)
