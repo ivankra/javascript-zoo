@@ -150,18 +150,17 @@ jobs:
           sudo swapon /extra-swapfile
           swapon --show; free -h; df -h; nproc
 
-      # Use latest harness and test262 from default branch, not the release commit - that's only for binaries.
-      - &checkout
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ github.sha }}
-          submodules: true
-
       - &pull_docker_image
         name: Pull hub image
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
           docker pull "$DOCKER_IMAGE"
+
+      # Use latest commit from default branch, not the release commit - that's only for binaries.
+      - &checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
 
       - &select_engines
         name: Select engines for this shard
@@ -222,8 +221,11 @@ jobs:
     steps:
       - *free_disk_space
       - *add_swap
-      - *checkout
       - *pull_docker_image
+      - *checkout
+
+      - name: Checkout test262 submodule
+        run: git submodule update --init --depth=1 third_party/test262
 
       - name: Run test262
         run: |
