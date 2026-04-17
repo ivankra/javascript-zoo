@@ -124,6 +124,7 @@ boa:
 bramblex:
   console_log: ['console.log', 'print']
   stdout_replace_re:
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
     - '^Uncaught exception: \[Error\] \[object Object\], (.*) 未定义$': 'Uncaught exception: ReferenceError: \1'
 
 brimstone: &brimstone
@@ -166,6 +167,7 @@ castl:
     - "^luajit: \\{ message: '(.*)' \\}\\nstack traceback:\n\t\\[C\\]: in function 'error'\n\t.*jssupport.lua.*": 'Test262Error: \1'
     - '(?ms)^(luajit: .*)\nstack traceback:\n.*$': '\1'
   stderr_replace_re:
+    - 'Error: Line [0-9]+: ': 'Error: '
     - "^SyntaxError: Couldn't transpile JS code: Error: (.*)$": 'SyntaxError: \1'
   errors_re:
     - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
@@ -281,6 +283,8 @@ dscriptcpp:
 
 duktape: &duktape
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - '^(SyntaxError: .*) \(line [0-9]+\)$': '\1'
 
 echosoar:
   bench_transforms: ['hex']
@@ -405,6 +409,8 @@ espruino:
 
 eval5:
   console_log: ['console.log', 'print']
+  stdout_replace_re:
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
 
 fastschema-qjs:
   console_log: ['console.log', 'print']
@@ -417,10 +423,12 @@ fastschema-qjs:
 fesi: &fesi
   console_log: writeln
   stderr_replace_re:
-    - '^Syntax error ': 'SyntaxError: '
+    # Syntax error detected Encountered "*" at line 226, column 9.
+    - '^Syntax error (detected )?': 'SyntaxError: '
     - '^Lexical error ': 'SyntaxError: '
     - "('(?:toDateString|toLocaleDateString|toTimeString|toLocaleTimeString)' is not defined) for object .*": '\1'
     - "^(Keyword '[^']+' reserved for future extension .*)$": 'SyntaxError: \1'
+    - ' at line [0-9]+, column [0-9]+\.$': ''
   errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -446,6 +454,8 @@ goja: &goja
   stderr_replace_re:
     # goja_nodejs/console prefixes console messages with a timestamp
     - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
+    # SyntaxError: Async generators are not supported yet at /tmp/t262-1yr0wj33/t262-29634.async-iterable-input-iteration-err.strict.js:359:3
+    - '^(.*SyntaxError.*) at [^: ]+\.m?js:[0-9]+:[0-9]+$': '\1'
   flags:
     # Only for our sobek wrapper (goja doesn't implement ES modules).
     # Optional: it would also recognize .mjs.
@@ -544,6 +554,8 @@ iv-lv5:
 
 je-perl:
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - ' at [^ ]+\.m?js, line [0-9]+\.$': ''
 
 jerryscript: &jerryscript
   console_log: print
@@ -576,6 +588,7 @@ js2py:
     - '^"(.*)"$': '\1'
     - "KeyError: b'.*$": 'KeyError'
   stderr_replace_re:
+    - 'SyntaxError: Line [0-9]+: ': 'SyntaxError: '
     - '^Traceback \(most recent call last\):$': ''
     - '^  File ".*$",?': ''
     - '^    .*$': ''
@@ -631,6 +644,8 @@ jsse:
 
 js-interpreter:
   console_log: ['console.log', 'print']
+  stdout_replace_re:
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
   errors_re:
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '^(?P<message>Uncaught exception): \[object Object\]$'
@@ -673,6 +688,8 @@ kiesel:
     - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/kiesel/prelude.js
+  stderr_replace_re:
+    - '^(.*SyntaxError.*) \([^(): ]+\.m?js:[0-9]+:[0-9]+\)$': '\1'
 
 kjs:
   console_log: print
@@ -696,13 +713,16 @@ lebjs:
   stderr_replace_re:
     - '^\[[0-9.]+s\]\[warning\]\[perf,memops\] Cannot use file /tmp/hsperfdata_[^ ]+/[0-9]+ because it is locked by another process \(errno = 11\)$': ''
     - '^ParserNotImplemented: (.*?)(?: \([0-9]+:[0-9]+\))?$': 'SyntaxError: \1'
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
 
 libjs: &libjs
   console_log: ['console.log', 'print']
   stdout_replace_re:
+    - '^(.*SyntaxError.*) \(line: [0-9]+, column: [0-9]+\)$': '\1'
     # console.log output gets quoted unless passing --raw-strings
     - '^"(.*)"$': '\1'
   stderr_replace_re:
+    - '^(.*SyntaxError.*) \(line: [0-9]+, column: [0-9]+\)$': '\1'
     - '^Uncaught exception: *\n\[([A-Za-z0-9]*Error)\] *': '\1: '
     # test/annexB/language/comments/multi-line-html-close.js
     - '^Uncaught exception: *\nObject\{ message: (.*), toString: \[Function\] * \} *$': 'Test262Error: \1'
@@ -761,12 +781,16 @@ mujs:
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^(SyntaxError: .*)undefined$': '\1'
+    - 'Error: [^(): ]+\.m?js:[0-9]+: ': 'Error: '
+    - "'undefined$": "'"   # EvalError: script.js:217: invalid use of 'eval'undefined
   errors_re:
     - '^(?P<type>SyntaxError): [^:]+\.m?js:[0-9]+: (?P<message>[^\n]+)'
 
 mujs_babel:
   stderr_replace_re:
-    '/tmp/mujs_babel.[^ :]+\.js': '<script>'
+    - '/tmp/mujs_babel.[^ :]+\.js': '<script>'
+    - 'Error: [^(): ]+\.m?js:[0-9]+: ': 'Error: '
+    - "'undefined$": "'"
   timeout_sec: 10
 
 narcissus:
@@ -774,6 +798,7 @@ narcissus:
   bench_suite: ['richards.js1.js']
   stderr_replace_re:
     - '^:[0-9]+:[0-9]+ ': ''
+    - 'SyntaxError: [0-9]+: ': 'SyntaxError: '
   exit_code_may_be_test262_error: 3  # print '... uncaught exception: [object Object]'
 
 nashorn:
@@ -809,6 +834,8 @@ niljs:
   console_log: ['console.log', 'print']
   errors_re:
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
+  stderr_replace_re:
+    - ' at \([0-9]+:[0-9*]+\)$': ''
   flags:
     - { if: 'flags:module', then: '--module' }
 
@@ -824,6 +851,13 @@ njs:
     - { if: 'flags:module', then: '-m' }
   errors_re:
     - '^Thrown: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
+
+nocturnejs:
+  console_log: print
+  stdout_replace_re:
+    # error: unexpected token:10:4
+    # error: expected ';':17:11
+    - '^error: ((?:expected|unexpected).*):[0-9]+:[0-9]+$': 'SyntaxError: \1'
 
 nova:
   console_log: print
@@ -859,6 +893,7 @@ otto:
     - *go_crash_re
   stderr_replace_re:
     - '^\(anonymous\): Line [0-9]+:[0-9]+ ': 'SyntaxError: '
+    - ' \(and [0-9]+ more errors\)$': ''
 
 porffor:
   # print() exists but broken
@@ -885,6 +920,7 @@ quanta:
   stdout_replace_re:
     # Lexer error at 225:5: Unterminated regex literal
     - '^Lexer error at [0-9]+:[0-9]+: (.*)$': 'SyntaxError: \1'
+    - ' at line [0-9]+$': ''
   prelude:
     - code: 'var print = console.log;'
   timeout_sec: 10
@@ -941,6 +977,7 @@ rapidus:
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+    - 'Syntax ?[Ee]rror: [^ :]+\.m?js:[0-9]+:[0-9]+: ': 'SyntaxError: '
     - "^Syntax error: ": "SyntaxError: "
   stdout_replace_re:
     - "^Error[(]Reference error: '(.*)' is not defined[)]$": 'ReferenceError: \1 is not defined'
@@ -1006,6 +1043,7 @@ rust-js:
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+    - 'SyntaxError: [0-9]+:[0-9]+: ': 'SyntaxError: '
   errors_re:
     - '^\S+\.m?js: (?P<type>[A-Za-z0-9]*Error)(?:: (?P<message>.+))?$'
 
@@ -1033,6 +1071,8 @@ see:
   console_log: print
   stderr_replace_re:
     - 'WARNING: SEE is using non-release malloc': ''
+    # SyntaxError: :0: /tmp/t262-m8l8ge6n/t262-31589.prop-desc.sloppy.js:596: expected string, identifier or number after ',' but got '}'
+    - 'SyntaxError: (:[0-9]+: )?[^: ]+\.m?js:[0-9]+: ': 'SyntaxError: '
   errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+\.m?js:[0-9]+: )?(?P<message>.+)$'
   fix_assert_throws: True
@@ -1043,6 +1083,8 @@ sophonjs:
   console_log: console.log
   stderr_replace_re:
     - '^LOG: ': ''
+    # Error: 228.5-10: parse error, unexpected '\', expect "IDENTIFIER"
+    - '^Error: [0-9]+\.[0-9]+-[0-9]+: parse error, ': 'SyntaxError: '
   errors_re:
     - '^exception (?P<type>SyntaxError):Syntax error$'
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
@@ -1123,6 +1165,7 @@ starlight:
   stderr_replace_re:
     - *rust_crash_norm_re
     - '^Executed in [0-9.]+ms$': ''
+    - '.*SyntaxError: Compile Error NotYetImpl.*': 'SyntaxError: NotYetImpl'
 
 starlingmonkey:
   console_log: console.log
@@ -1140,12 +1183,14 @@ stator:
   stderr_replace_re:
     - *rust_crash_norm_re
     - '^(?:internal error: )+(.*)$': 'InternalError: \1'
+    - 'SyntaxError: at [0-9]+:[0-9]+ (— )?': 'SyntaxError: '
   exit_code_may_be_test262_error: 1
 
 sval:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     - "(Cannot read properties of null) [(]reading '.*'[)]": '\1'
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
   prelude:
     # TODO: investigate
     - code: globalThis.print = console.log;
@@ -1171,6 +1216,8 @@ tiny-js:
 
 topaz:
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - 'SyntaxError: Line [0-9]+: ': 'SyntaxError: '
   errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error: (TopazException: )?(?P<message>.+)$'
@@ -1332,6 +1379,10 @@ yavashark:
     - '^"(.*)"$': '\1'
     - '^Interpreter: Undefined': ''
     - '^Error: Uncaught: \{ "name": "Test262Error", "message": "(.*)" \}$': 'Error: Test262Error: \1'
+    # SyntaxError: Error { error: (6715..6725, ExpectedIdent) }
+    - 'SyntaxError: Error \{ error: \([0-9]+\.\.[0-9]+, (.*)\) \}$': 'SyntaxError: \1'
+    #    at /tmp/t262-fcmta6ip/t262-78090.10.4.3-1-36gs.js:233
+    - '^ + at [^: ]+\.m?js:[0-9]+$': ''
   errors_re:
     - '^Error: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
@@ -1386,6 +1437,7 @@ gjs: &gjs
 # Note: <alias>_* variants won't automatically pick up <primary>_*.
 
 Jint.Repl: *jint
+Jint: *jint
 YantraJS: *yantra
 bs: *brimstone
 ch: *chakracore
