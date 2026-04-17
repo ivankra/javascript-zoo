@@ -9,15 +9,15 @@ before running the full test262 suite. Scans a directory for engine
 binaries (with sidecar .json) and runs small test snippets to
 check basic capabilities.
 
-Output: YAML to stdout, one block per engine with true/false per probe
-and failure details as comments.
+Output: YAML to stdout, one block per engine.
 
-Usage: probe.py [engines or dirs...]
+Usage: probe.py [engines or dir with binaries]
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import tempfile
@@ -49,18 +49,44 @@ PROBES: dict[str, dict] = {
         "mode": "sloppy",
         "pass": "PROBE_OK",
     },
-    "sloppy": {
-        "source": 'x="PROBE_OK"; print(x);\n',
-        "mode": "sloppy",
-        "pass": "PROBE_OK",
-    },
     "strict": {
         "source": '(function() { print(this === undefined ? "PROBE_OK" : "NOT_STRICT"); })();\n',
         "mode": "strict",
         "pass": "PROBE_OK",
     },
+    "sloppy": {
+        "source": 'x="PROBE_OK"; print(x);\n',
+        "mode": "sloppy",
+        "pass": "PROBE_OK",
+    },
+    "sloppy-via-function": {
+        "source": '''print(Function('x="PROBE_OK"; return x')());\n''',
+        "mode": "sloppy",
+        "fm_flags": {"module"},
+        "pass": "PROBE_OK",
+    },
     "eval": {
         "source": 'print(eval("40+2") === 42 ? "PROBE_OK" : "WRONG");\n',
+        "mode": "sloppy",
+        "pass": "PROBE_OK",
+    },
+    "indirect-eval": {
+        "source": '''(0, eval)("print('PROBE_OK');");\n''',
+        "mode": "sloppy",
+        "pass": "PROBE_OK",
+    },
+    "globalThis": {
+        "source": 'print(typeof globalThis !== "undefined" ? "PROBE_OK" : "FAIL");\n',
+        "mode": "sloppy",
+        "pass": "PROBE_OK",
+    },
+    "global-scope": {
+        "source": '''
+            var x = "PROBE_OK";
+            if (this === (0, eval)("this") && (typeof globalThis === "undefined" || this === globalThis)) {
+                (0, eval)("print(x);");
+            }
+        ''',
         "mode": "sloppy",
         "pass": "PROBE_OK",
     },
@@ -191,13 +217,12 @@ PROBES: dict[str, dict] = {
         "fm_features": {"source-phase-imports"},
         "pass": "PROBE_OK",
     },
-    "harness": {
+    "assert.js": {
         "source": 'assert.sameValue(1, 1);\n',
         "mode": "sloppy",
         "use_harness": True,
         "pass_marker": True,  # check for ScriptExecutionFinished
     },
-    # TODO: more tests for each third_party/test262/harness/*.js
 }
 
 
@@ -281,15 +306,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
         passed = run.is_passed() and marker in output
         return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
-    if "pass" in spec:
-        passed = run.is_passed() and spec["pass"] in output
-        if not passed:
-            detail = run.verdict_message() if not run.is_passed() else "marker not found"
-            return probe_name, detail or "FAIL"
-        return probe_name, "PASS"
-
-    passed = run.is_passed()
-    return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
+    return probe_name, run.verdict_message()
 
 
 def probe_engine(
@@ -324,8 +341,9 @@ def probe_engine(
 def main() -> None:
     p = argparse.ArgumentParser(description="Probe JavaScript engines for test262 readiness.")
     p.add_argument("engines", nargs="+", help="Engine binary paths (or path to directory with them)")
-    p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR), help="test262 repo root")
+    p.add_argument("-c", "--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
     p.add_argument("-j", "--jobs", type=int, default=None, help="Parallel probes per engine")
+    p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR), help="test262 repo root")
     args = p.parse_args()
 
     test262_dir = Path(args.test262_dir).resolve()
@@ -342,7 +360,7 @@ def main() -> None:
 
     for binary in engines:
         try:
-            cfg = EngineConfig.load(str(binary))
+            cfg = EngineConfig.load(str(binary), config_name=args.config)
             cfg.resolve()
         except Exception as e:
             print(f"{binary.name}:  # load error: {e}", flush=True)
@@ -351,10 +369,7 @@ def main() -> None:
         print(f"{binary.name}:", flush=True)
         results = list(probe_engine(cfg, test262_dir, jobs=args.jobs))
         for probe_name, result in sorted(results, key=lambda item: item[0]):
-            if result == "PASS":
-                print(f"  {probe_name}: true", flush=True)
-            else:
-                print(f"  {probe_name}: false  # {result}", flush=True)
+            print(f"  {probe_name}: {json.dumps(result)}", flush=True)
         print(flush=True)
 
 
