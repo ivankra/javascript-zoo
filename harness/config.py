@@ -233,7 +233,7 @@ class EngineConfig:
         if json_path.exists():
             try:
                 raw = json.loads(json_path.read_text(encoding="utf-8"))
-                if isinstance(raw, dict):
+                if isinstance(raw, dict) and ("binary_name" in raw or "engine" in raw):
                     build_metadata = raw
             except Exception:
                 pass

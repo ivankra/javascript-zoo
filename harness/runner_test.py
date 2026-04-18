@@ -94,14 +94,6 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
         p.chmod(0o755)
         return p
 
-    def test_run_command_propagates_build_metadata(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"engine": "eng", "version": "1.0"}))
-            cfg = EngineConfig.load(str(binary))
-            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
-            self.assertEqual(run.build_metadata.get("version"), "1.0")
-
     def test_oom_kill(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             binary = self._make_binary(td)

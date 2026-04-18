@@ -127,8 +127,6 @@ class RunResult:
     # Refined output streams with engine-specific cleanups applied by Clasifier
     stdout_cleaned: str | None = None
     stderr_cleaned: str | None = None
-    # Sidecar build_metadata loaded from <engine>.json, carried for reporting.
-    build_metadata: dict[str, Any] = dataclasses.field(default_factory=dict)
     # Concrete runnable script path passed to the engine
     # (usually a temp file containing the test code after preprocessing).
     script_path: str | None = None

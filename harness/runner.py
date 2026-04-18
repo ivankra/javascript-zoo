@@ -125,7 +125,6 @@ class Runner:
             rusage=rusage,
             test_path=test_path,
             script_path=script_path,
-            build_metadata=self._config.build_metadata,
         )
 
         if oom_killed:
