@@ -94,6 +94,8 @@ class EngineConfig:
     output_limit_mb: int | float = 10
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
+    # Contents of package.json file to write at the root of the mirror module tree.
+    package_json: str | None = None
 
     # --- Output classification ---
     # Post-run output cleanups to be applied by Annotator: {regex: replacement}.

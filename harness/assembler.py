@@ -160,6 +160,7 @@ class Assembler:
         self.preludes = config.prelude
         self.no_harness = no_harness
         self.fix_assert_throws = config.fix_assert_throws
+        self.package_json = config.package_json
         self.print_prelude = build_print_prelude(config.console_log, self.preludes)
         self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
         if self.stage_dir:
@@ -276,6 +277,8 @@ class Assembler:
         write_atomic(staged_path, assembled.encode("utf-8"), check_same=True)
 
         if needs_mirror_tree:
+            if self.package_json is not None:
+                write_atomic(dst_root / "package.json", self.package_json.encode("utf-8"), check_same=True)
             visited: set[str] = {scenario.rel_path}
             self._copy_deps_recursive(
                 dst_root, scenario.test_path.parent, scenario.test_content, visited,

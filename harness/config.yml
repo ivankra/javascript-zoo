@@ -1413,6 +1413,9 @@ zuqe:
 
 node: &node
   <<: *v8
+  # Tell Node to treat .js files in the module tree as ES modules.
+  # Helps to fix a few dynamic import tests.
+  package_json: '{"type":"module"}'
   # TODO: check if prelude causes these
   flaky_attempts: 3
   flaky_tests: &node_flaky_tests
