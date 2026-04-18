@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness.assembler import Assembler, Scenario, build_print_prelude, _REL_SPECIFIER_RE
+from harness.assembler import Assembler, HarnessScript, Scenario, build_print_prelude, _REL_SPECIFIER_RE
 from harness.config import EngineConfig, Prelude
 from harness.frontmatter import Frontmatter
 from harness.tags import Tags
@@ -396,25 +396,18 @@ class TestStageModule(unittest.TestCase):
                 staged.cleanup()
 
 
-class TestGenerateHarnessFooter(unittest.TestCase):
+class TestGenerateHarnessScriptFooter(unittest.TestCase):
     def test_defines_assigned_to_global_this(self):
         with tempfile.TemporaryDirectory() as tmpdir:
-            t262 = Path(tmpdir) / "test262"
-            harness = t262 / "harness"
-            harness.mkdir(parents=True)
-            (harness / "done.js").write_text("/*---\ndefines: [$DONE]\n---*/\nfunction $DONE() {}\n")
-            asm = Assembler(EngineConfig(binary_path="/fake/js"), t262, no_harness=True)
-            footer = asm._generate_harness_footer("done.js")
-            self.assertIn("globalThis.$DONE = $DONE", footer)
+            path = Path(tmpdir) / "done.js"
+            path.write_text("/*---\ndefines: [$DONE]\n---*/\nfunction $DONE() {}\n")
+            self.assertIn("globalThis.$DONE = $DONE", HarnessScript(path).globalThis_footer)
 
     def test_no_defines_returns_empty(self):
         with tempfile.TemporaryDirectory() as tmpdir:
-            t262 = Path(tmpdir) / "test262"
-            harness = t262 / "harness"
-            harness.mkdir(parents=True)
-            (harness / "sta.js").write_text("// no defines\n")
-            asm = Assembler(EngineConfig(binary_path="/fake/js"), t262, no_harness=True)
-            self.assertEqual(asm._generate_harness_footer("sta.js"), "")
+            path = Path(tmpdir) / "sta.js"
+            path.write_text("// no defines\n")
+            self.assertEqual(HarnessScript(path).globalThis_footer, "")
 
 
 class TestBuildPrintPrelude(unittest.TestCase):
