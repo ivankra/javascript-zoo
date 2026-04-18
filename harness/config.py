@@ -90,9 +90,10 @@ class EngineConfig:
     # Maximum RSS size before a process will get killed by OOM watchdog.
     # None disables OOM watchdog.
     memory_limit_mb: int | None = None
+    # Limit on stdout+stderr combined size in MiB.
+    output_limit_mb: int | float = 10
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
-    output_limit: int = 1000000
 
     # --- Output classification ---
     # Post-run output cleanups to be applied by Annotator: {regex: replacement}.

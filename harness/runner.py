@@ -3,23 +3,18 @@
 
 from __future__ import annotations
 
-import dataclasses
 import os
-import re
 import resource
+import select
 import shlex
 import signal
 import subprocess
 import sys
 import threading
 import time
-from typing import TYPE_CHECKING, Any, Callable
+from typing import Callable
 
 from .config import EngineConfig
-
-if TYPE_CHECKING:
-    from .tags import Tags
-
 from .data import Verdict, RunResult, RunRusage
 
 
@@ -27,22 +22,16 @@ class Runner:
     """Process executor: launches engine, captures output, measures resources.
 
     Classification (verdict_type/verdict_detail) is intentionally separate – use Annotator.
+
+    Not thread-safe - we currently use a single shared OOM watchdog thread
+    for performance. Use with a process pool to parallelize.
     """
 
     def __init__(self, config: EngineConfig, on_spawn: Callable[[int], None] | None = None) -> None:
         config.resolve()
-        self.config = config
-        self.on_spawn = on_spawn
-        self.proc: subprocess.Popen[bytes] | None = None
-        self.pgid: int | None = None
-
-    def stop(self, sig: int = signal.SIGKILL) -> None:
-        """Kill the active process group, if a command is still running."""
-        if self.pgid is not None:
-            try:
-                os.killpg(self.pgid, sig)
-            except (ProcessLookupError, OSError):
-                pass
+        self._config = config
+        self._on_spawn = on_spawn
+        self._proc: subprocess.Popen[bytes] | None = None
 
     def run_command(
         self,
@@ -58,34 +47,33 @@ class Runner:
         cwd: str | None = None,
         env: dict[str, str] | None = None,
     ) -> RunResult:
-        """Execute argv and return raw RunResult (verdict_type is not set here).
-
-        Uses resource.getrusage(RUSAGE_CHILDREN) for timing/RSS measurements.
-        Timeout is two-step: SIGTERM grace period (0.2s), then SIGKILL.
-        Memory limit (when set) is enforced by polling /proc for group RSS.
-        """
-        timeout = timeout_sec or self.config.timeout_sec
-        memory_limit_mb = memory_limit_mb or self.config.memory_limit_mb
-        memory_addr_limit_mb = memory_addr_limit_mb or self.config.memory_addr_limit_mb
-        run_cwd = cwd or self.config.cwd or os.getcwd()
+        """Execute argv and return initial RunResult."""
+        timeout = timeout_sec or self._config.timeout_sec
+        memory_limit_mb = memory_limit_mb or self._config.memory_limit_mb
+        memory_addr_limit_mb = memory_addr_limit_mb or self._config.memory_addr_limit_mb
+        run_cwd = cwd or self._config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
-        run_env.update(self.config.env)
+        run_env.update(self._config.env)
         if env:
             run_env.update(env)
 
-        ru_before = resource.getrusage(resource.RUSAGE_CHILDREN)
-        start = time.monotonic()
+        preexec_fn = None
+        if memory_addr_limit_mb:
+            preexec_fn = lambda: self._preexec_fn(memory_addr_limit_mb)
 
-        proc: subprocess.Popen[bytes] | None = None
+        watchdog: MemoryWatchdog = MemoryWatchdog.get()
         peak_watchdog_kb = 0
         oom_killed = False
+        timed_out = False
+        output_limit_hit = False
         stdout_b = b""
         stderr_b = b""
-        timed_out = False
+        ru_before = resource.getrusage(resource.RUSAGE_CHILDREN)
+        start_time = time.monotonic()
 
         try:
-            proc = subprocess.Popen(
+            self._proc = subprocess.Popen(
                 argv,
                 cwd=run_cwd,
                 env=run_env,
@@ -93,103 +81,143 @@ class Runner:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=False,
-                preexec_fn=((lambda: self._preexec_fn(memory_addr_limit_mb)) if memory_addr_limit_mb else None),
-                # New session = dedicated process group; lets us kill wrappers/children.
-                start_new_session=True,
+                preexec_fn=preexec_fn,   # expensive!
+                start_new_session=True,  # start new process group to let us kill all children
             )
-            self.proc = proc
-            self.pgid = proc.pid
-            self._set_niceness(proc.pid)
-            if self.on_spawn is not None:
-                self.on_spawn(proc.pid)
-            watchdog: MemoryWatchdog | None = None
-            if memory_limit_mb:
-                watchdog = MemoryWatchdog.monitor(proc.pid, memory_limit_mb, test_path)
-            try:
-                stdout_b, stderr_b = proc.communicate(timeout=timeout)
-            finally:
-                if watchdog is not None:
-                    peak_watchdog_kb, oom_killed = watchdog.stop()
-                    watchdog = None
-        except subprocess.TimeoutExpired:
-            timed_out = True
-            if proc is not None and proc.poll() is None:
-                self.stop(signal.SIGKILL)
-                out, err = proc.communicate()
-                stdout_b += out
-                stderr_b += err
-        finally:
-            # Kill any orphaned children in the process group
-            if proc is not None:
-                self.stop(signal.SIGKILL)
-            self.proc = None
-            self.pgid = None
-            wall = time.monotonic() - start
 
+            self._set_niceness(self._proc.pid)
+
+            if memory_limit_mb:
+                watchdog.monitor(self._proc.pid, memory_limit_mb, test_path)
+
+            # communicate pgid to PoolExecutor of the master process
+            if self._on_spawn is not None:
+                self._on_spawn(self._proc.pid)
+
+            stdout_b, stderr_b, output_limit_hit, timed_out = self._communicate(timeout)
+        finally:
+            self.stop(signal.SIGKILL)
+            peak_watchdog_kb, oom_killed = watchdog.stop()
+
+        duration = time.monotonic() - start_time
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
 
-        stdout = stdout_b.decode("utf-8", errors="replace")
-        stderr = stderr_b.decode("utf-8", errors="replace")
-
-        if len(stdout) > self.config.output_limit:
-            stdout = stdout[: self.config.output_limit] + "\n..."
-        if len(stderr) > self.config.output_limit:
-            stderr = stderr[: self.config.output_limit] + "\n..."
-
         rusage = RunRusage(
-            real_time=wall,
+            real_time=duration,
             user_time=max(0.0, float(ru_after.ru_utime - ru_before.ru_utime)),
             sys_time=max(0.0, float(ru_after.ru_stime - ru_before.ru_stime)),
+            max_rss_kb=max(int(ru_after.ru_maxrss), peak_watchdog_kb),
             io_in_blocks=max(0, int(ru_after.ru_inblock - ru_before.ru_inblock)),
             io_out_blocks=max(0, int(ru_after.ru_oublock - ru_before.ru_oublock)),
             ctx_switches_voluntary=max(0, int(ru_after.ru_nvcsw - ru_before.ru_nvcsw)),
             ctx_switches_involuntary=max(0, int(ru_after.ru_nivcsw - ru_before.ru_nivcsw)),
         )
-        peak_rusage = int(ru_after.ru_maxrss) if ru_after.ru_maxrss > 0 else 0
-        if peak_watchdog_kb or peak_rusage:
-            rusage.max_rss_kb = max(peak_watchdog_kb, peak_rusage)
 
         run = RunResult(
             run_id=run_id,
             test_id=test_id or run_id,
             command=shlex.join(argv),
             cwd=str(run_cwd),
-            stdout=stdout,
-            stderr=stderr,
-            exit_code=proc.returncode if proc is not None else None,
-            pid=proc.pid if proc is not None else None,
+            stdout=stdout_b.decode("utf-8", errors="replace"),
+            stderr=stderr_b.decode("utf-8", errors="replace"),
+            exit_code=self._proc.returncode,
+            pid=self._proc.pid,
             rusage=rusage,
             test_path=test_path,
             script_path=script_path,
-            build_metadata=self.config.build_metadata,
+            build_metadata=self._config.build_metadata,
         )
 
         if oom_killed:
             run.verdict_type = Verdict.OOM
             run.verdict_detail = f">{memory_limit_mb}MB"
+        elif output_limit_hit:
+            run.verdict_type = Verdict.OOM
+            run.verdict_detail = f"output >{self._config.output_limit_mb}MB"
         elif timed_out:
             run.verdict_type = Verdict.TIMEOUT
             run.verdict_detail = f">{timeout:.0f}s"
 
+        self._proc = None
         return run
 
-    @staticmethod
-    def _preexec_fn(memory_addr_limit_mb: int | None) -> None:
-        if memory_addr_limit_mb is not None:
-            limit_bytes = int(memory_addr_limit_mb) * 1024 * 1024
-            resource.setrlimit(resource.RLIMIT_AS, (limit_bytes, limit_bytes))
+    def stop(self, sig: int = signal.SIGKILL) -> None:
+        """Kill the active process group, if a command is still running."""
+        if self._proc is not None:
+            try:
+                os.killpg(self._proc.pid, sig)
+            except (ProcessLookupError, OSError):
+                pass
 
-    def _set_niceness(self, pid: int, *, oom_score_adj: int = 1000, nice: int = 19) -> None:
+    def _communicate(self, timeout: float | None) -> tuple[bytes, bytes, bool, bool]:
+        """Read stdout/stderr, enforcing time and output limits.
+
+        Returns (stdout, stderr, output_limit_hit, timed_out).
+        """
+        assert self._proc is not None
+        limit = self._config.output_limit_mb * 1048576.0
+        stdout_chunks: list[bytes] = []
+        stderr_chunks: list[bytes] = []
+        chunks_by_fd: dict[int, list[bytes]] = {
+            self._proc.stdout.fileno(): stdout_chunks,  # type: ignore[union-attr]
+            self._proc.stderr.fileno(): stderr_chunks,  # type: ignore[union-attr]
+        }
+        total = 0
+        truncated = False
+        timed_out = False
+        deadline = time.monotonic() + timeout if timeout is not None else None
+
+        while chunks_by_fd:
+            remaining = max(0.0, deadline - time.monotonic()) if deadline is not None else None
+            try:
+                readable, _, _ = select.select(list(chunks_by_fd), [], [], remaining)
+            except (ValueError, OSError):
+                break
+            if not readable:
+                timed_out = True
+                break
+            for fd in readable:
+                chunk = os.read(fd, 8192)
+                if not chunk:
+                    del chunks_by_fd[fd]
+                    continue
+                chunks_by_fd[fd].append(chunk)
+                total += len(chunk)
+                if total > limit:
+                    truncated = True
+                    break
+            if truncated:
+                break
+
+        if truncated or timed_out:
+            for pipe in (self._proc.stdout, self._proc.stderr):
+                try:
+                    if pipe:
+                        pipe.close()
+                except OSError:
+                    pass
+            self.stop(signal.SIGKILL)
+
+        self._proc.wait()
+        return b"".join(stdout_chunks), b"".join(stderr_chunks), truncated, timed_out
+
+    @staticmethod
+    def _preexec_fn(memory_addr_limit_mb: int) -> None:
+        limit_bytes = memory_addr_limit_mb * 1024 * 1024
+        resource.setrlimit(resource.RLIMIT_AS, (limit_bytes, limit_bytes))
+
+    @staticmethod
+    def _set_niceness(pid: int, *, oom_score_adj: int = 1000, nice: int = 19) -> None:
         """Lower child priority for CPU scheduling and OOM selection."""
         try:
             with open(f"/proc/{pid}/oom_score_adj", "w", encoding="ascii") as f:
                 f.write(f"{oom_score_adj}\n")
-        except:
+        except (OSError, PermissionError):
             pass
 
         try:
             os.setpriority(os.PRIO_PROCESS, pid, nice)
-        except:
+        except (OSError, PermissionError):
             pass
 
 
@@ -204,23 +232,6 @@ class MemoryWatchdog:
     _instance: MemoryWatchdog | None = None
     _instance_lock = threading.Lock()
 
-    @classmethod
-    def monitor(cls, pgid: int, memory_limit_mb: int, test_path: str | None) -> MemoryWatchdog:
-        """Install a new monitoring session on pgid and return the singleton."""
-        inst = cls._instance
-        if inst is None:
-            with cls._instance_lock:
-                if cls._instance is None:
-                    cls._instance = cls()
-                inst = cls._instance
-        with inst._lock:
-            inst._pid = pgid
-            inst._limit_bytes = memory_limit_mb * 1024 * 1024
-            inst._peak_rss = 0
-            inst._oom_killed = False
-            inst._test_path = test_path
-        return inst
-
     def __init__(self) -> None:
         # State guarded by self._lock. The polling thread runs on its own
         # POLL_SEC timer — monitor() does NOT wake it. This avoids the
@@ -234,6 +245,24 @@ class MemoryWatchdog:
         self._oom_killed = False
         self._test_path: str | None = None
         threading.Thread(target=self._run, daemon=True).start()
+
+    @classmethod
+    def get(cls) -> MemoryWatchdog:
+        """Return the process-wide singleton, creating it if necessary."""
+        if cls._instance is None:
+            with cls._instance_lock:
+                if cls._instance is None:
+                    cls._instance = cls()
+        return cls._instance
+
+    def monitor(self, pgid: int, memory_limit_mb: int, test_path: str | None) -> None:
+        """Install a new monitoring session on pgid."""
+        with self._lock:
+            self._pid = pgid
+            self._limit_bytes = memory_limit_mb * 1024 * 1024
+            self._peak_rss = 0
+            self._oom_killed = False
+            self._test_path = test_path
 
     def stop(self) -> tuple[int, bool]:
         """Detach the current session and return (peak_rss_kb, oom_killed)."""
@@ -280,8 +309,8 @@ class MemoryWatchdog:
             except (ProcessLookupError, OSError):
                 pass
 
-    @classmethod
-    def _read_tree_rss(cls, root_pid: int) -> int | None:
+    @staticmethod
+    def _read_tree_rss(root_pid: int) -> int | None:
         """Sum RSS (in bytes) of root_pid and all its descendants."""
         total_pages = 0
         seen: set[int] = set()
@@ -310,7 +339,7 @@ class MemoryWatchdog:
                         stack.append(int(c))
             except (FileNotFoundError, ProcessLookupError, PermissionError):
                 continue
-        return total_pages * cls.PAGE_SIZE if root_ok else None
+        return total_pages * MemoryWatchdog.PAGE_SIZE if root_ok else None
 
     @classmethod
     def _reset_after_fork(cls) -> None:

@@ -74,6 +74,7 @@ class Annotator:
         negative_phase: str | None = None,
         negative_type: str | None = None,
         strip_line_prefix: str | None = None,
+        keep_output: bool = False,
     ) -> RunResult:
         """Classify run outcome; returns the same RunResult with fields set.
 
@@ -93,6 +94,8 @@ class Annotator:
         if negative_type:
             self._check_negative(run, negative_phase=negative_phase, negative_type=negative_type)
 
+        if not keep_output:
+            run.stdout = run.stderr = run.stdout_cleaned = run.stderr_cleaned = None
         return run
 
     def _classify_impl(

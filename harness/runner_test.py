@@ -118,6 +118,17 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             self.assertIn(">10MB", run.verdict_detail or "")
             self.assertIn("memory watchdog: killing", stderr.getvalue())
 
+    def test_output_limit(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            cfg = EngineConfig.load(str(binary))
+            run = Runner(cfg).run_command(
+                ["/bin/yes"],
+                timeout_sec=30,
+                test_id="yes-test",
+            )
+            self.assertEqual(run.verdict_type, Verdict.OOM)
+
     def test_memory_addr_limit_mb(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             binary = self._make_binary(td)

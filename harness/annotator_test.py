@@ -510,13 +510,13 @@ class AnnotatorTest(unittest.TestCase):
         # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
         cfg = EngineConfig(stdout_replace_re={"^noise: ": "", "noise$": ""})
         cl = Annotator(cfg)
-        run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
+        run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"), keep_output=True)
         self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
 
     def test_stdout_replace_re_list_of_dicts_form(self) -> None:
         cfg = EngineConfig(stdout_replace_re=[{"^noise: ": ""}, {"noise$": ""}])
         cl = Annotator(cfg)
-        run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
+        run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"), keep_output=True)
         self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
 
     def test_shorten_message_drops_redundant_syntax_error_text(self) -> None:
@@ -534,7 +534,7 @@ class AnnotatorTest(unittest.TestCase):
             stdout="\x1b[1;31mError\x1b[0m: bad\n",
             stderr="\x1b[32mPASS\x1b[0m\n",
             exit_code=1,
-        ))
+        ), keep_output=True)
         self.assertEqual(run.stdout_cleaned, "Error: bad\n")
         self.assertEqual(run.stderr_cleaned, "PASS\n")
 
