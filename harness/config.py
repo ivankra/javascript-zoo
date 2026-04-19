@@ -96,6 +96,11 @@ class EngineConfig:
     env: dict[str, str] = dataclasses.field(default_factory=dict)
     # Contents of package.json file to write at the root of the mirror module tree.
     package_json: str | None = None
+    # Pass the script via stdin instead of a file path as a command-line arg.
+    # For Node.js in particular, this runs the script at true global scope
+    # rather than wrapped in a function scope. Applies to non-module tests only.
+    # Script argument will be changed to "-", CWD to script's directory.
+    redirect_stdin: bool = False
 
     # --- Output classification ---
     # Post-run output cleanups to be applied by Annotator: {regex: replacement}.

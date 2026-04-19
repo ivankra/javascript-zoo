@@ -12,6 +12,7 @@ import subprocess
 import sys
 import threading
 import time
+from pathlib import Path
 from typing import Callable
 
 from .config import EngineConfig
@@ -51,7 +52,7 @@ class Runner:
         timeout = timeout_sec or self._config.timeout_sec
         memory_limit_mb = memory_limit_mb or self._config.memory_limit_mb
         memory_addr_limit_mb = memory_addr_limit_mb or self._config.memory_addr_limit_mb
-        run_cwd = cwd or self._config.cwd or os.getcwd()
+        cwd = cwd or self._config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
         run_env.update(self._config.env)
@@ -61,6 +62,16 @@ class Runner:
         preexec_fn = None
         if memory_addr_limit_mb:
             preexec_fn = lambda: self._preexec_fn(memory_addr_limit_mb)
+
+        # Hack for Node.js: pass the script via stdin to get true global scope.
+        # Note: do not pipe - breaks some of its pipe/file-sensitive internals.
+        redirect_stdin = (self._config.redirect_stdin and not argv[-1].endswith(".mjs"))
+        if redirect_stdin:
+            stdin_fp = open(argv[-1], "rb")
+            cwd = str(Path(argv[-1]).resolve().parent)  # so relative imports resolve
+            argv = argv[:-1] + ["-"]
+        else:
+            stdin_fp = None
 
         watchdog: MemoryWatchdog = MemoryWatchdog.get()
         peak_watchdog_kb = 0
@@ -75,15 +86,19 @@ class Runner:
         try:
             self._proc = subprocess.Popen(
                 argv,
-                cwd=run_cwd,
+                cwd=cwd,
                 env=run_env,
-                stdin=subprocess.DEVNULL,
+                stdin=stdin_fp or subprocess.DEVNULL,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=False,
                 preexec_fn=preexec_fn,   # expensive!
                 start_new_session=True,  # start new process group to let us kill all children
             )
+
+            if stdin_fp:
+                stdin_fp.close()
+                stdin_fp = None
 
             self._set_niceness(self._proc.pid)
 
@@ -98,7 +113,10 @@ class Runner:
         finally:
             self.stop(signal.SIGKILL)
             peak_watchdog_kb, oom_killed = watchdog.stop()
-
+            if stdin_fp:
+                stdin_fp.close()
+                stdin_fp = None
+        assert self._proc is not None
         duration = time.monotonic() - start_time
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
 
@@ -117,7 +135,7 @@ class Runner:
             run_id=run_id,
             test_id=test_id or run_id,
             command=shlex.join(argv),
-            cwd=str(run_cwd),
+            cwd=str(cwd),
             stdout=stdout_b.decode("utf-8", errors="replace"),
             stderr=stderr_b.decode("utf-8", errors="replace"),
             exit_code=self._proc.returncode,
@@ -189,13 +207,14 @@ class Runner:
                 break
 
         if truncated or timed_out:
-            for pipe in (self._proc.stdout, self._proc.stderr):
-                try:
-                    if pipe:
-                        pipe.close()
-                except OSError:
-                    pass
             self.stop(signal.SIGKILL)
+
+        for pipe in (self._proc.stdout, self._proc.stderr):
+            try:
+                if pipe:
+                    pipe.close()
+            except OSError:
+                pass
 
         self._proc.wait()
         return b"".join(stdout_chunks), b"".join(stderr_chunks), truncated, timed_out
