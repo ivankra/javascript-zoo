@@ -926,10 +926,32 @@ class Reporter:
         if results or n_skipped:
             total = test_pass + test_fail
             if test_fail:
+                test_specials: dict[str, str] = {}
+                for run in results:
+                    if run.test_id is None:
+                        continue
+                    verdict = run.verdict_type
+                    if verdict is Verdict.CRASH:
+                        test_specials[run.test_id] = "crash"
+                    elif verdict is Verdict.OOM and test_specials.get(run.test_id) != "crash":
+                        test_specials[run.test_id] = "oom"
+                    elif verdict is Verdict.TIMEOUT and run.test_id not in test_specials:
+                        test_specials[run.test_id] = "timeout"
+                n_crashes = sum(1 for v in test_specials.values() if v == "crash")
+                n_ooms = sum(1 for v in test_specials.values() if v == "oom")
+                n_timeouts = sum(1 for v in test_specials.values() if v == "timeout")
+                fail_detail_parts = []
+                if n_crashes:
+                    fail_detail_parts.append(f"crashes: {n_crashes}")
+                if n_ooms:
+                    fail_detail_parts.append(f"OOM: {n_ooms}")
+                if n_timeouts:
+                    fail_detail_parts.append(f"timeouts: {n_timeouts}")
+                fail_detail = f" ({', '.join(fail_detail_parts)})" if fail_detail_parts else ""
                 line = (
                     f"{engine_name}: {test_pass}/{total} tests passed "
                     f"({test_pass * 100 / total:.2f}%), "
-                    f"{test_fail} failed"
+                    f"{test_fail} failed{fail_detail}"
                 )
             else:
                 line = f"{engine_name}: all {test_pass} tests passed"
