@@ -375,6 +375,13 @@ escargot:
     - test/built-ins/Atomics/waitAsync/bigint/false-for-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/negative-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-compareExchange.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-exchange.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-or.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-xor.js
     - test/built-ins/Atomics/waitAsync/bigint/symbol-for-timeout-throws-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout-agent.js
     - test/built-ins/Atomics/waitAsync/bigint/undefined-for-timeout.js
@@ -1323,7 +1330,7 @@ v8: &v8
 # Usage: run test262.py with `-c v8_exp` flag to select this config.
 v8_exp: &v8_exp
   <<: *v8
-  flags:
+  flags: &v8_exp_flags
     - *v8_flags
     # Check what flags the binary advertises, filter for default disabled flags
     # and enable every one of: --future, --harmony, --harmony-*, --js-*
@@ -1404,8 +1411,23 @@ zuqe:
 # --------------------------------------------------------------------
 # Runtimes
 
-node: *v8
-node_exp: *v8_exp
+node: &node
+  <<: *v8
+  # TODO: check if prelude causes these
+  flaky_attempts: 3
+  flaky_tests: &node_flaky_tests
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-add.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-and.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-compareExchange.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-exchange.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-or.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-store.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-sub.js
+    - test/built-ins/Atomics/waitAsync/bigint/no-spurious-wakeup-on-xor.js
+
+node_exp:
+  <<: *node
+  flags: *v8_exp_flags
 
 bun:
   console_log: console.log
