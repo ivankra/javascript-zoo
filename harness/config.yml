@@ -1284,13 +1284,15 @@ v8: &v8
   errors_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   flags: &v8_flags
-    # d8-specific flags
     - shell: |
-        if $BINARY --help 2>&1 | grep -q '^ *d8 '; then
+        if $BINARY --help 2>&1 | grep -q '^ *d8 '; then  # d8-specific flags
           # test/built-ins/Promise/any/ctx-ctor.js
           echo --ignore-unhandled-promises;
           # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
           echo --no-arguments;
+        elif $BINARY --help 2>&1 | fgrep -q 'nodejs.org'; then  # Node-specific flags
+          # Module autodetection breaks a few tests like test/language/global-code/export.js
+          echo --no-experimental-detect-module
         fi
     # Expose %-intrinsics for $262 prelude
     - --allow-natives-syntax
@@ -1301,13 +1303,13 @@ v8: &v8
       then: --expose-gc
     - if: flags:CanBlockIsFalse
       then:
-        # Note: not advertised in --help
+        # Note: only supported by d8 and not advertised in its --help
         shell: "if $BINARY --help 2>&1 | grep -q '^ *d8 '; then echo --no-can-block; fi"
     - if: flags:module
       then:
         # Not supported by node - we rely on renaming test as *.mjs instead
         shell: "if $BINARY --help 2>&1 | grep -q '^ *d8 '; then echo --module; fi"
-  prelude:
+  prelude: &v8_prelude
     - file: engines/v8/prelude.js
     - file: engines/v8/prelude-agent.js
     # These intrinsics don't work well with try/eval() wrapper and may not be
