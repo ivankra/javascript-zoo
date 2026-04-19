@@ -1,7 +1,15 @@
-// Prelude for test262 for V8's d8 shell
+// Test262 prelude for V8 and Node.js
 
-if (typeof print === "undefined" && typeof console !== "undefined") {
-  globalThis.print = console.log.bind(console);  // for nodejs
+if (typeof print === "undefined") {
+  if (typeof process !== "undefined" && typeof process.stdout !== "undefined") {
+    // Node has a complicated console.log(), prone to breakage by test code.
+    // Do not change implementation here without a full test262 rerun.
+    // 1-arg print() is enough for test262.
+    process.stdout.write("");  // force lazy initialization
+    globalThis.print = function(x) { process.stdout.write(x + "\n"); }
+  } else if (typeof console !== "undefined") {
+    globalThis.print = console.log;
+  }
 }
 
 globalThis.$262 = {
