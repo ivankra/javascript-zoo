@@ -1261,6 +1261,8 @@ ucode:
 # Upstream test262 flags: see _get_files_params/_get_suite_flags/FEATURE_FLAGS in
 # https://github.com/v8/v8/blob/main/test/test262/testcfg.py
 v8: &v8
+  binary_info:
+    version: $BINARY --version | sed -n 's/^V8 version \([^ ]*\).*/\1/p; s/^v\([0-9]\)/\1/p'
   console_log: console.log  # d8 has both, but nodejs only has console.log()
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
@@ -1413,6 +1415,9 @@ zuqe:
 
 node: &node
   <<: *v8
+  binary_info:
+    version: $BINARY --version | sed -n 's/^v\([0-9]\)/\1/p'
+    v8_version: $BINARY -e "console.log(process.versions.v8)"
   # Tell Node to treat .js files in the module tree as ES modules.
   # Helps to fix a few dynamic import tests.
   package_json: '{"type":"module"}'
@@ -1438,12 +1443,15 @@ node_exp:
   flags: *v8_exp_flags
 
 bun:
+  binary_info:
+    version: $BINARY --version
   console_log: console.log
-  # TODO: module_always: true
 
 deno:
+  binary_info:
+    version: $BINARY --version | sed -n 's/^deno \([^ ]*\).*/\1/p'
+    v8_version: $BINARY --version | sed -n 's/^v8 //p'
   console_log: console.log
-  # TODO: module_always: true
   stderr_replace_re:
     - "error: The module's source code could not be parsed: ": "SyntaxError: "
   errors_re:
@@ -1452,7 +1460,9 @@ deno:
 
 # GNOME/Cinnamon JavaScript runtime (SpiderMonkey)
 gjs: &gjs
-  # TODO: accept list for console_log
+  binary_info:
+    version: $BINARY --version | sed 's/^[a-z]* //'
+    spidermonkey_version: $BINARY --jsversion | sed 's/^JavaScript-C//'
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '.js-Console-Message: [0-9:.]+: ': ''

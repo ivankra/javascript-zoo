@@ -765,13 +765,7 @@ class Reporter:
         results = self._results
         engine = self._engine
 
-        binary: BinaryInfo | None
-        if engine.build_metadata:
-            binary = cast(BinaryInfo, engine.build_metadata)
-        elif engine.binary_path:
-            binary = {"binary_name": os.path.basename(engine.binary_path)}
-        else:
-            binary = None
+        binary: BinaryInfo | None = cast(BinaryInfo, engine.build_metadata) if engine.build_metadata else None
 
         rev = self._get_test262_revision()
         fv = self._file_verdicts()

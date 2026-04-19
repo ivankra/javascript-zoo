@@ -153,6 +153,13 @@ class EngineConfig:
     # Needed for some pre-ES5 engines that treat "throws" as a reserved keyword.
     fix_assert_throws: bool = False
 
+    # Shell commands to populate build_metadata fields, run once at startup.
+    # Accepts a dict or list of dicts (flattened) mapping metadata key to shell command.
+    # May use $BINARY to refer to the engine binary.
+    # Each command's stdout is stripped and stored under its key if non-empty
+    # and the key is not already set by the sidecar .json.
+    binary_info: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
+
     # --- Bench mode ---
     bench_suite: list[str] = dataclasses.field(default_factory=list)
     bench_transforms: list[str] = dataclasses.field(default_factory=list)
@@ -189,6 +196,25 @@ class EngineConfig:
         """
         env = {**os.environ, "BINARY": str(self.binary_path) or ""}
         self.flags = resolve_flags(self.flags, expand_shell=True, env=env)
+        if self.binary_info:
+            cmds: dict[str, str] = {}
+            items = self.binary_info if isinstance(self.binary_info, list) else [self.binary_info]
+            for d in items:
+                cmds.update(d)
+            for key, cmd in cmds.items():
+                if self.build_metadata.get(key):
+                    continue
+                try:
+                    proc = subprocess.run(
+                        ["bash", "-c", cmd],
+                        env=env, capture_output=True, text=True, timeout=30,
+                        stdin=subprocess.DEVNULL,
+                    )
+                    v = proc.stdout.strip()
+                    if v:
+                        self.build_metadata[key] = v
+                except Exception as e:
+                    sys.exit(f"binary_info[{key!r}] failed: {e}")
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
         self.flaky_tests = _flatten_str_set(self.flaky_tests)
@@ -268,6 +294,7 @@ class EngineConfig:
         field_names = {field.name for field in dataclasses.fields(EngineConfig)}
         cfg = {key: value for key, value in cfg.items() if key in field_names}
         cfg["binary_path"] = str(binary)
+        build_metadata.setdefault("binary_name", binary.name)
         cfg["build_metadata"] = build_metadata
         if cmd_flags:
             if cmd_flags[-1] == "--":
@@ -324,6 +351,7 @@ def resolve_flags(
                     proc = subprocess.run(
                         ["bash", "-c", item["shell"]],
                         env=env, capture_output=True, text=True, timeout=30,
+                        stdin=subprocess.DEVNULL,
                     )
                 except Exception as e:
                     sys.exit(f"shell flag expansion failed: {e}")

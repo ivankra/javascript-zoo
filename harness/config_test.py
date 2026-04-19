@@ -597,6 +597,14 @@ class ResolvePreludesTest(unittest.TestCase):
         self.assertIsInstance(cfg.prelude[0], Prelude)
         self.assertEqual(cfg.prelude[0].code, "var z = 1;")
 
+    def test_binary_info_populates_build_metadata(self) -> None:
+        cfg = EngineConfig(
+            binary_path="/bin/sh",
+            binary_info={"version": "echo 1.2.3"},
+        )
+        cfg.resolve()
+        self.assertEqual(cfg.build_metadata["version"], "1.2.3")
+
     def test_resolve_idempotent(self) -> None:
         cfg = EngineConfig(
             binary_path="/bin/eng",

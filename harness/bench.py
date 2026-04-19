@@ -317,10 +317,7 @@ class BenchRunner:
         cfg.resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
 
-        if cfg.build_metadata:
-            binary: BinaryInfo = cast(BinaryInfo, dict(cfg.build_metadata))
-        else:
-            binary = {"binary_name": Path(cfg.binary_path or "").name}
+        binary: BinaryInfo = cast(BinaryInfo, dict(cfg.build_metadata))
         report = Report(
             binary=binary,
             time=START_TIME,
