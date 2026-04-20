@@ -15,9 +15,8 @@ Embeddable JavaScript engine written in Rust.
 
 ## Users
 
-* Runtimes:
-  * [JetCrab](https://github.com/JetCrabCollab/JetCrab) <span class="shields"><img src="https://img.shields.io/github/stars/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* Boa's [temporal\_rs](https://crates.io/crates/temporal_rs) implementation got adopted by [V8](../v8/README.md) and some other engines
+* Runtimes: [JetCrab](https://github.com/JetCrabCollab/JetCrab) <span class="shields"><img src="https://img.shields.io/github/stars/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Boa's [temporal\_rs](https://crates.io/crates/temporal_rs) implementation got adopted by [V8](../v8/README.md), [Kiesel](../kiesel/README.md) and [Yavashark](../yavashark/README.md)
 
 ## Conformance
 

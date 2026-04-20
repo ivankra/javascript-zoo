@@ -24,6 +24,7 @@ Further projects:
 * https://github.com/shapesecurity/shift-parser-js <span class="shields"><img src="https://img.shields.io/github/stars/shapesecurity/shift-parser-js?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/shapesecurity/shift-parser-js?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * https://github.com/pvdz/ZeParser <span class="shields"><img src="https://img.shields.io/github/stars/pvdz/ZeParser?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/pvdz/ZeParser?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * https://github.com/thegreatercurve/okapi <span class="shields"><img src="https://img.shields.io/github/stars/thegreatercurve/okapi?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/thegreatercurve/okapi?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* https://github.com/adams85/acornima <span class="shields"><img src="https://img.shields.io/github/stars/adams85/acornima?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/adams85/acornima?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * https://github.com/facebook/hermes/tree/master/tools/hermes-parser/js/hermes-parser
 * https://github.com/facebook/flow/tree/main/src/parser
 * https://github.com/antlr/grammars-v4/tree/master/javascript

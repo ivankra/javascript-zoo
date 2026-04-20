@@ -13,8 +13,7 @@ Embeddable JavaScript engine with a focus on portability and compact footprint.
 
 ## Users
 
-* Browsers:
-  * [NetSurf](https://github.com/netsurf-browser/netsurf/tree/master/content/handlers/javascript)
+* Browsers: [NetSurf](https://github.com/netsurf-browser/netsurf/tree/master/content/handlers/javascript)
 * Runtimes:
   * [dukluv](https://github.com/creationix/dukluv) <span class="shields"><img src="https://img.shields.io/github/stars/creationix/dukluv?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/creationix/dukluv?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - libuv bindings for duktape
   * [lowjs](https://github.com/neonious/lowjs) <span class="shields"><img src="https://img.shields.io/github/stars/neonious/lowjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/neonious/lowjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - low-footprint Node.js port for duktape

@@ -8,6 +8,7 @@ JavaScript interpreter for .NET.
 * License:          BSD-2-Clause
 * Standard:         ESnext (partial)
 * Years:            2013-
+* Parser:           [acornima](https://github.com/adams85/acornima)
 * Runtime platform: .NET
 * Interpreter:      tree walker
 
