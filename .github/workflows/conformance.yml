@@ -47,7 +47,7 @@ env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DEFAULT_CONFORMANCE_SHARDS: *default_conformance_shards
   DEFAULT_SKIP_ENGINES: *default_skip_engines
-  EXP_CONFIGS: graaljs_exp jsc_exp spidermonkey_exp v8_exp
+  SPECIAL_CONFIGS: graaljs_exp jsc_exp spidermonkey_exp v8_exp node node_exp bun deno
 
 jobs:
   init:
@@ -96,7 +96,7 @@ jobs:
           DOCKER_IMAGE="ghcr.io/ivankra/javascript-zoo/hub:$TAG"
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
           docker pull "$DOCKER_IMAGE"
-          ALL_ENGINES="$(echo $EXP_CONFIGS; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
+          ALL_ENGINES="$(echo $SPECIAL_CONFIGS; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
           if [[ -n "$ENGINES" ]]; then
             TEST262_ENGINES="$ENGINES"
           else
@@ -162,6 +162,10 @@ jobs:
         with:
           ref: ${{ github.sha }}
 
+      - &checkout_submodules
+        name: Checkout test262 submodule
+        run: git submodule update --init --depth=1 third_party/test262
+
       - &select_engines
         name: Select engines for this shard
         id: select_engines
@@ -171,7 +175,7 @@ jobs:
           if [[ -n "$INPUT_ENGINES" ]]; then
             ENGINES="$INPUT_ENGINES"
           else
-            ENGINES="$(echo $EXP_CONFIGS | tr ' ' '\n'; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
+            ENGINES="$(echo $SPECIAL_CONFIGS | tr ' ' '\n'; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
           fi
           ENGINES=$(echo "$ENGINES" | tr ' ' '\n' | grep -v '^$' | sed -n '${{ matrix.shard }}~'"$SHARDS"'p' | tr '\n' ' ')
           echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
@@ -182,17 +186,18 @@ jobs:
           mkdir -p results/es1-5 results/compat-table
           set -x
           for engine in ${{ steps.select_engines.outputs.engines }}; do
-            # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
-            if [[ "$engine" == *_exp ]]; then
-              extra="--config=$engine"
-              binary=/dist/${engine/_exp}
-              if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
-                binary+="_full"  # use full-featured build
-              fi
-            else
-              binary="/dist/$engine"
-              extra=""
-            fi
+            extra="--config=$engine"
+            case "$engine" in
+              graaljs_exp)      binary=/dist/graaljs ;;
+              jsc_exp)          binary=/dist/jsc ;;
+              spidermonkey_exp) binary=/dist/spidermonkey_full ;;
+              v8_exp)           binary=/dist/v8_full ;;
+              node)             binary=node ;;
+              node_exp)         binary=node ;;
+              bun)              binary=bun ;;
+              deno)             binary=deno ;;
+              *)                binary=/dist/$engine; extra="" ;;
+            esac
             # For jscript/jscript9 to download .dll's. TODO: remove after run.py starts probing for print
             $DR /zoo/harness/probe.py "$binary";
             $DR /zoo/harness/run.py $extra --shuffle -o "/results/es1-5/$engine.json" "$binary" "es[1-5]";
@@ -223,9 +228,7 @@ jobs:
       - *add_swap
       - *pull_docker_image
       - *checkout
-
-      - name: Checkout test262 submodule
-        run: git submodule update --init --depth=1 third_party/test262
+      - *checkout_submodules
 
       - name: Run test262
         run: |
@@ -233,17 +236,18 @@ jobs:
           mkdir -p results/test262 results/test262-tags
           engine="${{ matrix.engine }}"
           set -x
-          # For *_exp (EXP_CONFIGS): pass --config *_exp, but use *[_full] binary.
-          if [[ "$engine" == *_exp ]]; then
-            binary=/dist/${engine/_exp}
-            if [[ "$engine" == spidermonkey_exp || "$engine" == v8_exp ]]; then
-              binary+="_full"  # use full-featured build
-            fi
-            extra="--config=$engine"
-          else
-            binary="/dist/$engine"
-            extra=""
-          fi
+          extra="--config=$engine"
+          case "$engine" in
+            graaljs_exp)      binary=/dist/graaljs ;;
+            jsc_exp)          binary=/dist/jsc ;;
+            spidermonkey_exp) binary=/dist/spidermonkey_full ;;
+            v8_exp)           binary=/dist/v8_full ;;
+            node)             binary=node ;;
+            node_exp)         binary=node ;;
+            bun)              binary=bun ;;
+            deno)             binary=deno ;;
+            *)                binary=/dist/$engine; extra="" ;;
+          esac
           $DR /zoo/harness/test262.py $extra --progress=100 --shuffle -o "/results/test262/$engine.json" --output-tags="/results/test262-tags/latest.json" "$binary"
 
       - name: Upload artifact
