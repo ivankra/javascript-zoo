@@ -38,6 +38,25 @@ default:
     # Second common pattern, also used by most of this repo's wrappers
     - '^Uncaught (?:exception: )?(?P<type>[A-Za-z0-9]*Error):? *(?P<message>.*)$'
     - '^Uncaught exception: (?P<message>.+)$'
+  # Patches to test262 harness code
+  harness_replace_re: &test262_harness_patches
+    # Downgrade ES6 syntax in assert.js / propertyHelper.js
+    # https://github.com/tc39/test262/pull/5006
+    - '^ *assert\(false, \`Actual argument \[\$\{actual\}\] shouldn''t be primitive\. \$\{message\}\`\);$': '    assert(false, "Actual argument [" + actual + "] shouldn''t be primitive. " + String(message));'
+    - '^ *assert\(false, \`Expected argument \[\$\{expected\}\] shouldn''t be primitive\. \$\{message\}\`\);$': '    assert(false, "Expected argument [" + expected + "] shouldn''t be primitive. " + String(message));'
+    - '^ *assert\(false, \`Actual \$\{format\(actual\)\} and expected \$\{format\(expected\)\} should have the same contents\. \$\{message\}\`\);$': '  assert(false, "Actual " + format(actual) + " and expected " + format(expected) + " should have the same contents. " + String(message));'
+    - '^ *return \`\[\$\{Array\.prototype\.map\.call\(arrayLike, String\)\.join\('', ''\)\}\]\`;$': '  return "[" + Array.prototype.map.call(arrayLike, String).join(", ") + "]";'
+    - '^ *return typeof JSON !== "undefined" \? JSON\.stringify\(value\) : \`"\$\{value\}"\`;$': '      return typeof JSON !== "undefined" ? JSON.stringify(value) : ''"'' + value + ''"'';'
+    - '^ *return \`\$\{value\}n\`;$': '      return String(value) + "n";'
+    - '^ *"Invalid descriptor field: " \+ names\[i\],$': '      "Invalid descriptor field: " + names[i]'
+    # Fix harness/sm/non262-strict-shell.js (testLenientAndStrict is broken in strict mode)
+    # https://github.com/tc39/test262/pull/5008
+    - '^ *eval\(code\);$': '      Function(''code'', ''eval(code)'')(code);'
+    - '^ *eval\(code\);$': '        Function(''code'', ''eval(code)'')(code);'
+    - '^ *return eval\(code\) === value;$': '        return Function(''code'', ''return eval(code)'')(code) === value;'
+    # Fix harness/sm/non262-expressions-shell.js (broken in strict mode as well)
+    # test/staging/sm/expressions/destructuring-array-default-*.js: "ReferenceError: 'a' is not defined"
+    - '^ *var c;$': '        var a, c;'
 
 # Common constants to be referenced later in the config via YAML anchors.
 # Top-level keys starting with a dot are ignored when validating the config.
@@ -1454,6 +1473,7 @@ deno:
   console_log: console.log
   package_json: '{"type":"module"}'
   harness_replace_re:
+    - *test262_harness_patches
     # deno aborts on redefinition of isPrimitive() in harness/testTypedArray.js
     - '^function isPrimitive\(val\) \{\n  return.*\n\}': ''
     # global scope is broken in strict mode, this === undefined

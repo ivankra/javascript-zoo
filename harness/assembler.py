@@ -184,11 +184,13 @@ class Assembler:
         if self.stage_dir:
             self.stage_dir.mkdir(parents=True, exist_ok=True)
         src = config.harness_replace_re
-        self._harness_replace: tuple[tuple[str, str], ...] = tuple(
-            (p, r)
-            for d in (src if isinstance(src, list) else [src])
-            for p, r in d.items()
-        )
+        def _pairs(x):
+            for d in (x if isinstance(x, list) else [x]):
+                if isinstance(d, list):
+                    yield from _pairs(d)
+                else:
+                    yield from d.items()
+        self._harness_replace: tuple[tuple[str, str], ...] = tuple(_pairs(src))
 
     def assemble(self, scenario: Scenario, *, references: set[str] | None = None) -> str:
         """Compose the runnable script for one scenario."""
