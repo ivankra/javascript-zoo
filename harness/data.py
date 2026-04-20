@@ -311,8 +311,9 @@ class Report:
     """Top-level conformance/bench .json report document."""
     binary: BinaryInfo | None = None
     flags: list[str] = dataclasses.field(default_factory=list)
-    probes: dict[str, str] = dataclasses.field(default_factory=dict)
     test262: GitRevisionInfo | None = None
+    runner: GitRevisionInfo | None = None
+    probes: dict[str, str] = dataclasses.field(default_factory=dict)
     summary: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
     tags: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
     dirs: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
@@ -345,8 +346,9 @@ class Report:
 
         binary_data = data.get("binary")
         test262 = data.get("test262")
+        runner = data.get("runner")
         bm = data.get("benchmarks")
-        passthrough = _fields(cls) - {"binary", "test262", "benchmarks", "summary", "tags", "dirs"}
+        passthrough = _fields(cls) - {"binary", "test262", "runner", "benchmarks", "summary", "tags", "dirs"}
 
         def stats_map(d: Any) -> dict[str, StatsDict]:
             return {k: StatsDict.from_dict(v) for k, v in d.items()} if isinstance(d, dict) else {}
@@ -354,6 +356,7 @@ class Report:
         return cls(
             binary=cast(BinaryInfo, binary_data) if isinstance(binary_data, dict) else None,
             test262=GitRevisionInfo.from_dict(test262) if isinstance(test262, dict) else None,
+            runner=GitRevisionInfo.from_dict(runner) if isinstance(runner, dict) else None,
             benchmarks={k: BenchmarkResult.from_dict(v) for k, v in bm.items()} if isinstance(bm, dict) else {},
             summary=stats_map(data.get("summary")),
             tags=stats_map(data.get("tags")),

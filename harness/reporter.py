@@ -202,6 +202,10 @@ class Reporter:
         if test262_dir is not None:
             self._test262_revision_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="test262-revision")
             self._test262_revision_future = self._test262_revision_executor.submit(get_git_revision, test262_dir)
+        self._runner_revision: Any = None
+        _runner_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="runner-revision")
+        self._runner_revision_future: Future[Any] | None = _runner_executor.submit(get_git_revision, Path(__file__).parent)
+        _runner_executor.shutdown(wait=False)
         self._started_at = datetime.now(UTC)
         self._started_monotonic = time.monotonic()
         self._progress_terminal_columns: int | None = None
@@ -277,6 +281,12 @@ class Reporter:
             self._test262_revision_executor.shutdown(wait=False)
             self._test262_revision_executor = None
         return self._test262_revision
+
+    def _get_runner_revision(self) -> Any:
+        if self._runner_revision_future is not None:
+            self._runner_revision = self._runner_revision_future.result()
+            self._runner_revision_future = None
+        return self._runner_revision
 
     @property
     def results(self) -> list[RunResult]:
@@ -768,6 +778,7 @@ class Reporter:
         binary: BinaryInfo | None = cast(BinaryInfo, engine.build_metadata) if engine.build_metadata else None
 
         rev = self._get_test262_revision()
+        runner_rev = self._get_runner_revision()
         fv = self._file_verdicts()
         fw = self._file_weights()
         tag_stats = self._build_tag_stats(fw)
@@ -779,6 +790,8 @@ class Reporter:
             probes=dict(sorted(self._probes.items())) if self._probes is not None else {},
             test262=GitRevisionInfo(revision=rev.revision, revision_date=rev.revision_date,
                                     repository=rev.repository, revision_dirty=rev.revision_dirty or None) if rev else None,
+            runner=GitRevisionInfo(revision=runner_rev.revision, revision_date=runner_rev.revision_date,
+                                   repository=runner_rev.repository, revision_dirty=runner_rev.revision_dirty or None) if runner_rev else None,
             summary=self._summary_json(tag_stats, fv, fw),
             tags=self._tags_stats_json(tag_stats),
             dirs=self._dirs_json(tag_stats) if self._report_dirs else {},
