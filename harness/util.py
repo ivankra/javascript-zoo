@@ -309,30 +309,30 @@ def iterate_js_files(
 def get_git_revision(path: Path) -> GitRevisionInfo | None:
     """Return the HEAD revision and committer date of a git repo, or None."""
     try:
-        # -c safe.directory: allow reading repos with different ownership
+        # safe.directory=*: allow reading repos with different ownership
         # (e.g. bind-mounted into a container with a different uid).
-        git = ["git", "-c", f"safe.directory={path}", "-C", str(path)]
-        out = subprocess.check_output(
+        git = ["git", "-c", "safe.directory=*", "-C", str(path)]
+        git_log = subprocess.check_output(
             git + ["log", "-1", "--format=%H%n%cd", "--date=short"],
             stderr=subprocess.DEVNULL,
-        ).decode().strip()
-        rev, date = out.split("\n", 1)
+            text=True,
+        ).strip()
+        rev, date = git_log.split("\n", 1)
         if not rev:
             return None
-        dirty = subprocess.call(
+        repo = subprocess.run(
+            git + ["remote", "get-url", "origin"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).stdout.strip() or None
+        dirty = subprocess.run(
             git + ["diff", "--quiet", "HEAD"],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
-        ) != 0
-        try:
-            repo = subprocess.check_output(
-                git + ["remote", "get-url", "origin"],
-                stderr=subprocess.DEVNULL,
-            ).decode().strip() or None
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            repo = None
-        return GitRevisionInfo(revision=rev, revision_date=date, revision_dirty=dirty, repository=repo)
-    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+        ).returncode != 0
+        return GitRevisionInfo(repository=repo, revision=rev, revision_date=date, revision_dirty=dirty)
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError, UnicodeDecodeError):
         return None
 
 
