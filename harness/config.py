@@ -101,8 +101,11 @@ class EngineConfig:
     # rather than wrapped in a function scope. Applies to non-module tests only.
     # Script argument will be changed to "-", CWD to script's directory.
     redirect_stdin: bool = False
+    # Wrap code that needs to be run in sloppy mode in a Function().
+    sloppy_via_function: bool = False
+    # Edits to apply to test262 harness code. Same format as stdout_replace_re.
+    harness_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
 
-    # --- Output classification ---
     # Post-run output cleanups to be applied by Annotator: {regex: replacement}.
     # Patterns are run against the whole stdout/stderr input and compiled
     # with re.MULTILINE: ^ and $ match line boundaries; . does not match \n;

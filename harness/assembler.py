@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import dataclasses
 import itertools
+import json
 import os
 import re
 import shutil
@@ -145,6 +146,25 @@ class HarnessScript:
         self.globalThis_footer = " ".join(parts)
 
 
+class HarnessSource:
+    """HarnessScript content with engine-specific harness_replace_re applied, cached."""
+
+    @staticmethod
+    @cache
+    def load(path: Path, replacements: tuple[tuple[str, str], ...]) -> "HarnessSource":
+        return HarnessSource(path, replacements)
+
+    def __init__(self, path: Path, replacements: tuple[tuple[str, str], ...]) -> None:
+        base = HarnessScript.load(path)
+        content = base.content
+        if "harness/" in str(path):
+            for pattern, repl in replacements:
+                content = re.sub(pattern, repl, content, flags=re.MULTILINE)
+        self.content = content
+        self.globalThis_footer = base.globalThis_footer
+        self.references = base.references
+
+
 class Assembler:
     """Prepares runnable test262 scripts and module trees.
 
@@ -155,16 +175,20 @@ class Assembler:
     """
 
     def __init__(self, config: EngineConfig, test262_dir: Path, *, verbose: bool = False, stage_dir: str | Path | None = None, no_harness: bool = False) -> None:
+        self._config = config
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
-        self.preludes = config.prelude
         self.no_harness = no_harness
-        self.fix_assert_throws = config.fix_assert_throws
-        self.package_json = config.package_json
-        self.print_prelude = build_print_prelude(config.console_log, self.preludes)
+        self.print_prelude = build_print_prelude(config.console_log, config.prelude)
         self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
         if self.stage_dir:
             self.stage_dir.mkdir(parents=True, exist_ok=True)
+        src = config.harness_replace_re
+        self._harness_replace: tuple[tuple[str, str], ...] = tuple(
+            (p, r)
+            for d in (src if isinstance(src, list) else [src])
+            for p, r in d.items()
+        )
 
     def assemble(self, scenario: Scenario, *, references: set[str] | None = None) -> str:
         """Compose the runnable script for one scenario."""
@@ -185,7 +209,7 @@ class Assembler:
             pieces.append('//"use strict";\n')
 
         # 2. Engine prelude(s)
-        for p in self.preludes:
+        for p in self._config.prelude:
             if p.code and FilterExpr.eval(p.if_tag, scenario.tags):
                 pieces.append(p.code)
 
@@ -200,10 +224,10 @@ class Assembler:
             includes = ["assert.js", "sta.js"]
             if "async" in scenario.fm.flags:
                 includes.append("doneprintHandle.js")
-            includes.extend(scenario.fm.includes)
+            includes.extend((x for x in scenario.fm.includes if x not in includes))
 
             for name in includes:
-                h = HarnessScript.load(self.harness_dir / name)
+                h = HarnessSource.load(self.harness_dir / name, self._harness_replace)
                 pieces.append(h.content)
                 pieces.append(h.globalThis_footer)
                 if references is not None:
@@ -222,8 +246,12 @@ class Assembler:
         code = "\n".join(pieces)
 
         # "throws" is a reserved keyword in ES3, some old engines would reject with a syntax error
-        if self.fix_assert_throws:
+        if self._config.fix_assert_throws:
             code = re.sub(r'\bassert\.throws\b', 'assert["throws"]', code)
+
+        # Wrap code in a Function() to execute in sloppy mode if necessary (for deno)
+        if self._config.sloppy_via_function and scenario.mode == "sloppy":
+            code = "Function(%s)()" % json.dumps(code)
 
         return code
 
@@ -277,8 +305,8 @@ class Assembler:
         write_atomic(staged_path, assembled.encode("utf-8"), check_same=True)
 
         if needs_mirror_tree:
-            if self.package_json is not None:
-                write_atomic(dst_root / "package.json", self.package_json.encode("utf-8"), check_same=True)
+            if self._config.package_json is not None:
+                write_atomic(dst_root / "package.json", self._config.package_json.encode("utf-8"), check_same=True)
             visited: set[str] = {scenario.rel_path}
             self._copy_deps_recursive(
                 dst_root, scenario.test_path.parent, scenario.test_content, visited,

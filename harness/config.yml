@@ -1452,11 +1452,22 @@ deno:
     version: $BINARY --version | sed -n 's/^deno \([^ ]*\).*/\1/p'
     v8_version: $BINARY --version | sed -n 's/^v8 //p'
   console_log: console.log
+  package_json: '{"type":"module"}'
+  harness_replace_re:
+    # deno aborts on redefinition of isPrimitive() in harness/testTypedArray.js
+    - '^function isPrimitive\(val\) \{\n  return.*\n\}': ''
+    # global scope is broken in strict mode, this === undefined
+    - '^  if \(this.setTimeout === undefined\) \{$': '  if (globalThis.setTimeout === undefined) {'
   stderr_replace_re:
     - "error: The module's source code could not be parsed: ": "SyntaxError: "
+    - 'error: Uncaught (?:\(in promise\) )?Test262Error \{\n *message: (.)(.*)\1\n\}': 'Test262Error: \2'
   errors_re:
     - '^(?P<SyntaxError>): (?P<message>.*)$'
     - '^error: Uncaught( [(][^)]+[)])? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+  sloppy_via_function: true  # needs Function() wrapper to switch to sloppy mode
+  flags:
+    - --v8-flags=--allow-natives-syntax,--expose-gc  # note: only allows one --v8-flags
+  prelude: *v8_prelude
 
 # GNOME/Cinnamon JavaScript runtime (SpiderMonkey)
 gjs: &gjs
