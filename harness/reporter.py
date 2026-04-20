@@ -435,7 +435,10 @@ class Reporter:
         n_done = fc[Verdict.PASS] + fc[Verdict.FAIL] + fc[Verdict.CRASH] + fc[Verdict.TIMEOUT] + fc[Verdict.SKIP]
         d = self._discovery
         elapsed = int(max(0.0, time.monotonic() - self._started_monotonic))
-        elapsed_str = f"{elapsed // 60:02d}:{elapsed % 60:02d}"
+        if elapsed >= 3600:
+            elapsed_str = f"{elapsed // 3600}:{elapsed % 3600 // 60:02d}:{elapsed % 60:02d}"
+        else:
+            elapsed_str = f"{elapsed // 60:02d}:{elapsed % 60:02d}"
         progress_str = "  ?"
         if d is not None and d.done and d.count > 0:
             progress_str = f"{min(99, n_done * 100 // d.count)}%".rjust(3)
