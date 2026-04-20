@@ -43,7 +43,7 @@ def _worker_main(
     worker_args: tuple[object, ...],
 ) -> None:
     task_queue.cancel_join_thread()
-    result_queue.cancel_join_thread()
+
     def on_spawn(pid: int) -> None:
         result_queue.put(_Spawn(pid))
 
