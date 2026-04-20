@@ -199,7 +199,7 @@ class Assembler:
         if "raw" in scenario.fm.flags:
             return scenario.test_content
 
-        pieces: list[str] = []
+        pieces: list[str] = [f'// {scenario.rel_path}\n']
 
         # Order is dictated test262's INTERPRETING.md
 

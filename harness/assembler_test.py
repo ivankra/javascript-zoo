@@ -35,12 +35,14 @@ class TestAssemble(unittest.TestCase):
     def test_strict_directive(self):
         asm = _assembler()
         out = asm.assemble(_scenario("var x;", mode="strict"))
-        self.assertTrue(out.startswith('"use strict";\n'))
+        lines = [l for l in out.splitlines() if l]
+        self.assertEqual(lines[1], '"use strict";')
 
     def test_sloppy_directive(self):
         asm = _assembler()
         out = asm.assemble(_scenario("var x;", mode="sloppy"))
-        self.assertTrue(out.startswith('//"use strict";\n'))
+        lines = [l for l in out.splitlines() if l]
+        self.assertEqual(lines[1], '//"use strict";')
 
     def test_raw_flag_passthrough(self):
         source = "/*---\nflags: [raw]\n---*/\nvar x;"
