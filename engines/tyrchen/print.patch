@@ -1,0 +1,92 @@
+diff --git a/apps/rjs/src/main.rs b/apps/rjs/src/main.rs
+index 05e4bbd..294af5c 100644
+--- a/apps/rjs/src/main.rs
++++ b/apps/rjs/src/main.rs
+@@ -12,6 +12,8 @@ use rjs_core::{JsContext, JsObject, JsRuntime, JsString, JsValue};
+ use rjs_parser::Parser;
+ use rjs_vm::Interpreter;
+ 
++const PRELUDE: &[u8] = b"var console={log:print};\n";
++
+ fn main() -> anyhow::Result<()> {
+     tracing_subscriber::fmt::init();
+ 
+@@ -29,7 +31,7 @@ fn main() -> anyhow::Result<()> {
+ /// Execute a JavaScript source file and print the result.
+ #[allow(clippy::disallowed_methods)] // Sync file I/O is intentional; the CLI is not async.
+ fn run_file(path: &str) -> anyhow::Result<()> {
+-    let source = std::fs::read(path).with_context(|| format!("failed to read file: {path}"))?;
++    let source = load_source(path)?;
+     let mut runtime = JsRuntime::new();
+     let mut ctx = JsContext::new(&mut runtime);
+ 
+@@ -56,6 +58,13 @@ fn run_file(path: &str) -> anyhow::Result<()> {
+     Ok(())
+ }
+ 
++fn load_source(path: &str) -> anyhow::Result<Vec<u8>> {
++    let source = std::fs::read(path).with_context(|| format!("failed to read file: {path}"))?;
++    let mut wrapped = PRELUDE.to_vec();
++    wrapped.extend_from_slice(&source);
++    Ok(wrapped)
++}
++
+ /// Run an interactive REPL that evaluates one line at a time.
+ fn run_repl() -> anyhow::Result<()> {
+     println!(
+@@ -107,7 +116,9 @@ fn eval_source(
+     runtime: &mut JsRuntime,
+     source: &[u8],
+ ) -> anyhow::Result<JsValue> {
+-    let mut parser = Parser::new(source)?;
++    let mut wrapped = PRELUDE.to_vec();
++    wrapped.extend_from_slice(source);
++    let mut parser = Parser::new(&wrapped)?;
+     let func = parser.parse_script()?;
+     let result = Interpreter::execute(ctx, runtime, &func)?;
+     Ok(result)
+diff --git a/crates/vm/src/interpreter.rs b/crates/vm/src/interpreter.rs
+index aedac2c..0e755ef 100644
+--- a/crates/vm/src/interpreter.rs
++++ b/crates/vm/src/interpreter.rs
+@@ -115,6 +115,8 @@ enum BuiltinFn {
+     FinalizationRegistry = 59,
+     // Proxy constructor
+     Proxy = 61,
++    // Host output
++    Print = 62,
+ }
+ 
+ /// TypedArray element kinds. The numeric value is encoded as a property on the
+@@ -1421,6 +1423,7 @@ fn resolve_builtin_global(name: &str) -> Option<JsValue> {
+         "encodeURIComponent" => Some(methods::make_method_value(MethodId::EncodeURIComponent)),
+         "decodeURIComponent" => Some(methods::make_method_value(MethodId::DecodeURIComponent)),
+         "encodeURI" => Some(methods::make_method_value(MethodId::EncodeURI)),
++        "print" => Some(make_builtin_fn_value(BuiltinFn::Print)),
+         "decodeURI" => Some(methods::make_method_value(MethodId::DecodeURI)),
+         _ => None,
+     }
+@@ -1487,6 +1490,7 @@ fn populate_global_this(obj: &mut JsObject) {
+         ("WeakSet", || make_builtin_fn_value(BuiltinFn::WeakSet)),
+         ("WeakRef", || make_builtin_fn_value(BuiltinFn::WeakRef)),
+         ("Promise", || make_builtin_fn_value(BuiltinFn::Promise)),
++        ("print", || make_builtin_fn_value(BuiltinFn::Print)),
+         ("RegExp", || make_builtin_fn_value(BuiltinFn::RegExp)),
+         ("ArrayBuffer", || {
+             make_builtin_fn_value(BuiltinFn::ArrayBuffer)
+@@ -16066,6 +16070,15 @@ fn call_builtin(runtime: &mut JsRuntime, id: usize, args: &[JsValue]) -> Result<
+             .unwrap_or_else(|| "Invalid Date".to_owned());
+             Ok(make_string_value(&s))
+         }
++        id if id == BuiltinFn::Print as usize => {
++            let rendered = args
++                .iter()
++                .map(|arg| to_string(*arg))
++                .collect::<Vec<_>>()
++                .join(" ");
++            println!("{rendered}");
++            Ok(JsValue::UNDEFINED)
++        }
+         id if id == BuiltinFn::TypedArray as usize => {
+             // %TypedArray% is an abstract class -- always throws TypeError
+             Err(JsError::Type(

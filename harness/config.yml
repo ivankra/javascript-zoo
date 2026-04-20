@@ -1259,6 +1259,13 @@ topchetoeu:
     - '^Running j2s .*': ''
   timeout_sec: 10
 
+tyrchen:
+  stderr_replace_re:
+    '^Error: exception thrown: Error: ': 'Uncaught exception: Test262Error: '
+    '^Error: exception thrown: ': 'Uncaught exception: '
+    '^Error: failed to parse script$': 'Uncaught exception: SyntaxError'
+  timeout_sec: 10
+
 twostroke:
   console_log: console.log
   bench_suite: ['richards.es1.js']
