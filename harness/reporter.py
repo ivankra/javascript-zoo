@@ -199,13 +199,8 @@ class Reporter:
         self._test262_revision = None
         self._test262_revision_future: Future[Any] | None = None
         self._test262_revision_executor: ThreadPoolExecutor | None = None
-        if test262_dir is not None:
-            self._test262_revision_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="test262-revision")
-            self._test262_revision_future = self._test262_revision_executor.submit(get_git_revision, test262_dir)
         self._runner_revision: Any = None
-        _runner_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="runner-revision")
-        self._runner_revision_future: Future[Any] | None = _runner_executor.submit(get_git_revision, Path(__file__).parent)
-        _runner_executor.shutdown(wait=False)
+        self._runner_revision_future: Future[Any] | None = None
         self._started_at = datetime.now(UTC)
         self._started_monotonic = time.monotonic()
         self._progress_terminal_columns: int | None = None
@@ -257,6 +252,13 @@ class Reporter:
         if not self._report_json and not self._report_tests and not self._report_runs:
             raise ValueError("text output must include either tests or runs")
         self._report_dirs = report_dirs
+        if self._report_json:
+            if test262_dir is not None:
+                self._test262_revision_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="test262-revision")
+                self._test262_revision_future = self._test262_revision_executor.submit(get_git_revision, test262_dir)
+            _runner_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="runner-revision")
+            self._runner_revision_future = _runner_executor.submit(get_git_revision, Path(__file__).parent)
+            _runner_executor.shutdown(wait=False)
 
     @staticmethod
     def _validate_output_path(path: Path, *, arg_name: str) -> None:
