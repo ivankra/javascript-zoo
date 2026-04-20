@@ -313,10 +313,10 @@ class Report:
     flags: list[str] = dataclasses.field(default_factory=list)
     test262: GitRevisionInfo | None = None
     runner: GitRevisionInfo | None = None
-    probes: dict[str, str] = dataclasses.field(default_factory=dict)
     summary: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
     tags: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
     dirs: dict[str, StatsDict] = dataclasses.field(default_factory=dict)
+    probes: dict[str, str] = dataclasses.field(default_factory=dict)
     rusage: dict[str, Any] = dataclasses.field(default_factory=dict)  # TODO: schema
     tests: dict[str, TestResult] = dataclasses.field(default_factory=dict)
     scenarios: dict[str, str] = dataclasses.field(default_factory=dict)

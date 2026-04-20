@@ -277,6 +277,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
                 expect_async=expect_async,
                 negative_phase=negative_phase,
                 negative_type=negative_type,
+                keep_output=True,
             )
         finally:
             staged.cleanup()
@@ -306,7 +307,15 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
         passed = run.is_passed() and marker in output
         return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
-    return probe_name, run.verdict_message()
+    if "pass" in spec:
+        passed = run.is_passed() and spec["pass"] in output
+        if not passed:
+            detail = run.verdict_message() if not run.is_passed() else "FAIL"
+            return probe_name, detail or "FAIL"
+        return probe_name, "PASS"
+
+    passed = run.is_passed()
+    return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
 
 def probe_engine(
