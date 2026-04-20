@@ -351,11 +351,11 @@ class Reporter:
                 msg = f"{run.run_id}: {run.verdict_message()[:120]}{t}"
                 if self._use_color:
                     msg = f"\033[1;31m{msg}\033[0m"
-                print(msg, flush=True)
+                print(msg, file=sys.stderr, flush=True)
                 if self._verbose >= 2:
                     run.print_streams()
             else:
-                print(f"{run.run_id}: {run.verdict_type.value if run.verdict_type else '?'}{t}", flush=True)
+                print(f"{run.run_id}: {run.verdict_type.value if run.verdict_type else '?'}{t}", file=sys.stderr, flush=True)
                 if self._verbose >= 3:
                     run.print_streams()
         # Dir progress tracking
@@ -514,7 +514,7 @@ class Reporter:
                 == self._dir_total[self._dir_order[self._dir_next_index]]
         ):
             if header and first and self._dir_next_index == 0:
-                print("Summary by directory:", flush=True)
+                print("Summary by directory:", file=sys.stderr, flush=True)
             first = False
             d = self._dir_order[self._dir_next_index]
             self._dir_next_index += 1
@@ -529,7 +529,7 @@ class Reporter:
                 cols = shutil.get_terminal_size((80, 24)).columns
                 if len(candidate) <= cols:
                     line += f" ({failed_text})"
-            print(f"{prefix}{line}", flush=True)
+            print(f"{prefix}{line}", file=sys.stderr, flush=True)
 
     def _file_verdicts(self) -> dict[str, Verdict | None]:
         """Compute per-file worst verdict (deduplicating across modes)."""
@@ -872,7 +872,7 @@ class Reporter:
             except OSError:
                 pass
             raise
-        print(f"{success_label} written to {path}")
+        print(f"{success_label} written to {path}", file=sys.stderr)
 
     def write(self) -> None:
         """Write results to file.
@@ -917,22 +917,22 @@ class Reporter:
         # Failure recap (suppressed when verbose already printed them inline)
         failed = [r for r in results if r.is_failed()]
         if failed and self._verbose < 1:
-            print(f"\nFailures ({len(failed)}):")
+            print(f"\nFailures ({len(failed)}):", file=sys.stderr)
             max_failures = 10
             for r in failed[:max_failures]:
                 msg = f"{r.run_id or '?'}: {r.verdict_message()[:120]}"
                 if use_color:
                     msg = f"\033[31m{msg}\033[0m"
-                print(f"  {msg}")
+                print(f"  {msg}", file=sys.stderr)
             if len(failed) > max_failures:
-                print(f"  ... and {len(failed) - max_failures} more")
-            print()
+                print(f"  ... and {len(failed) - max_failures} more", file=sys.stderr)
+            print(file=sys.stderr)
 
         if self._editions_order:
             edition_table = self._edition_report()
             if edition_table:
-                print(edition_table)
-                print()
+                print(edition_table, file=sys.stderr)
+                print(file=sys.stderr)
 
         peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
 
@@ -975,6 +975,6 @@ class Reporter:
                 line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
         else:
             line = f"{engine_name}: no tests were run"
-        print(line)
+        print(line, file=sys.stderr)
 
         return len(failed)
