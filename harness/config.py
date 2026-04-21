@@ -106,6 +106,9 @@ class EngineConfig:
     sloppy_via_function: bool = False
     # Edits to apply to test262 harness code. Same format as stdout_replace_re.
     harness_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
+    # Directory with test262 include files, relative to repository root or absolute.
+    # If set, include files will be first looked up here, falling back to test262.
+    includes_dir: str | None = None
 
     # Post-run output cleanups to be applied by Annotator: {regex: replacement}.
     # Patterns are run against the whole stdout/stderr input and compiled
@@ -221,6 +224,11 @@ class EngineConfig:
                     sys.exit(f"binary_info[{key!r}] failed: {e}")
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
+        if self.includes_dir:
+            includes_dir = Path(self.includes_dir)
+            if not includes_dir.is_absolute():
+                includes_dir = REPO_ROOT / includes_dir
+            self.includes_dir = str(includes_dir)
         self.flaky_tests = _flatten_str_set(self.flaky_tests)
         if self.common_errors_re:
             self.errors_re = self.errors_re + self.common_errors_re

@@ -221,6 +221,8 @@ def main() -> None:
                    help="Skip engine probing before test run")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
+    p.add_argument("--includes-dir", metavar="DIR",
+                   help="Look up test262 includes here first, falling back to <test262>/harness/")
     args = p.parse_args()
     filter_expr = parse_filter_expr(p, args.filter)
 
@@ -233,6 +235,8 @@ def main() -> None:
 
     cfg = EngineConfig.load(args.engine, config_name=args.config)
     cfg.resolve()
+    if args.includes_dir is not None:
+        cfg.includes_dir = str(Path(args.includes_dir).resolve())
     if args.timeout is not None:
         cfg.timeout_sec = args.timeout
 
