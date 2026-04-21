@@ -82,6 +82,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         k, v = token.split("=", 1)
         if not k:
             fail("metadata key cannot be empty")
+        if k == "version" and not v:
+            continue
         if k.endswith('.json'):
             meta[k[:-5]] = json.loads(v)
         else:
