@@ -1,0 +1,15 @@
+import {
+  "dowdiness/js_engine" @lib,
+  "dowdiness/js_engine/parser",
+  "dowdiness/js_engine/interpreter",
+  "dowdiness/js_engine/interpreter/runtime" @runtime,
+  "dowdiness/js_engine/errors",
+  "moonbitlang/core/env",
+  "moonbitlang/x/fs",
+  "moonbitlang/x/path",
+}
+
+options(
+  "is-main": true,
+  "supported-targets": "native",
+)

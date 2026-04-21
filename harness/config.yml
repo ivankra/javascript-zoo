@@ -305,6 +305,11 @@ duktape: &duktape
   stderr_replace_re:
     - '^(SyntaxError: .*) \(line [0-9]+\)$': '\1'
 
+dowdiness:
+  console_log: console.log
+  flags:
+    - { if: 'flags:module', then: '--module' }
+
 echosoar:
   bench_transforms: ['hex']
   console_log: console.log
