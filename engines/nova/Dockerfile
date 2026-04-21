@@ -4,11 +4,12 @@
 ARG BASE=jsz-rust
 FROM $BASE
 
-ARG REPO=https://github.com/trynova/nova.git
-ARG REV=main
-
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
+ARG REPO=https://github.com/trynova/nova.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # Hack test262 runner to print a line with every test's result
 RUN sed -i '/let relpath = path.strip_prefix(&self.inner.tests_base).unwrap();/a\\ println!("RESULT: {}: {:?}", relpath.to_string_lossy(), test_result);' tests/test262_runner.rs

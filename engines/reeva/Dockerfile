@@ -4,11 +4,12 @@
 ARG BASE=jsz-jdk21
 FROM $BASE
 
-ARG REPO=https://github.com/ReevaJS/reeva.git
-ARG REV=main
-
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
+ARG REPO=https://github.com/ReevaJS/reeva.git
+RUN git clone --depth=1 "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 COPY engines/reeva/reeva.patch ./
 RUN git apply reeva.patch
