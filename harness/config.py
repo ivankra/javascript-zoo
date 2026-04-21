@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from .tags import Tags
 
 from .tags import FilterExpr
+from .util import docker_arch_name
 
 import yaml  # type: ignore[import-untyped]
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
@@ -297,6 +298,7 @@ class EngineConfig:
         field_names = {field.name for field in dataclasses.fields(EngineConfig)}
         cfg = {key: value for key, value in cfg.items() if key in field_names}
         cfg["binary_path"] = str(binary)
+        build_metadata.setdefault("arch", docker_arch_name())
         build_metadata.setdefault("binary_name", binary.name)
         cfg["build_metadata"] = build_metadata
         if cmd_flags:
