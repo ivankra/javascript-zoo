@@ -112,12 +112,15 @@ class HarnessScript:
 
     @staticmethod
     @cache
-    def load(path: Path) -> "HarnessScript":
-        return HarnessScript(path)
+    def load(path: Path, replacements: tuple[tuple[re.Pattern[str], str], ...]) -> "HarnessScript":
+        return HarnessScript(path, replacements)
 
-    def __init__(self, path: Path) -> None:
+    def __init__(self, path: Path, replacements: tuple[tuple[re.Pattern[str], str], ...] = ()) -> None:
         self.path = path
         self.content = path.read_bytes().decode("utf-8", errors="replace")
+        if "harness/" in str(path):
+            for cre, repl in replacements:
+                self.content = cre.sub(repl, self.content)
         self.fm = Frontmatter.parse(self.content)
         self.references = find_references(self.content)
 
@@ -146,25 +149,6 @@ class HarnessScript:
         self.globalThis_footer = " ".join(parts)
 
 
-class HarnessSource:
-    """HarnessScript content with engine-specific harness_replace_re applied, cached."""
-
-    @staticmethod
-    @cache
-    def load(path: Path, replacements: tuple[tuple[str, str], ...]) -> "HarnessSource":
-        return HarnessSource(path, replacements)
-
-    def __init__(self, path: Path, replacements: tuple[tuple[str, str], ...]) -> None:
-        base = HarnessScript.load(path)
-        content = base.content
-        if "harness/" in str(path):
-            for pattern, repl in replacements:
-                content = re.sub(pattern, repl, content, flags=re.MULTILINE)
-        self.content = content
-        self.globalThis_footer = base.globalThis_footer
-        self.references = base.references
-
-
 class Assembler:
     """Prepares runnable test262 scripts and module trees.
 
@@ -177,7 +161,9 @@ class Assembler:
     def __init__(self, config: EngineConfig, test262_dir: Path, *, verbose: bool = False, stage_dir: str | Path | None = None, no_harness: bool = False) -> None:
         self._config = config
         self.test262_dir = test262_dir
-        self.harness_dir = test262_dir / "harness"
+        self.includes_dirs: list[Path] = [self.test262_dir / "harness"]
+        if self._config.includes_dir:
+            self.includes_dirs = [Path(self._config.includes_dir)] + self.includes_dirs
         self.no_harness = no_harness
         self.print_prelude = build_print_prelude(config.console_log, config.prelude)
         self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
@@ -190,7 +176,10 @@ class Assembler:
                     yield from _pairs(d)
                 else:
                     yield from d.items()
-        self._harness_replace: tuple[tuple[str, str], ...] = tuple(_pairs(src))
+        self._harness_replace: tuple[tuple[re.Pattern[str], str], ...] = tuple(
+            (re.compile(pattern, re.MULTILINE), repl)
+            for pattern, repl in _pairs(src)
+        )
 
     def assemble(self, scenario: Scenario, *, references: set[str] | None = None) -> str:
         """Compose the runnable script for one scenario."""
@@ -229,11 +218,11 @@ class Assembler:
             includes.extend((x for x in scenario.fm.includes if x not in includes))
 
             for name in includes:
-                h = HarnessSource.load(self.harness_dir / name, self._harness_replace)
-                pieces.append(h.content)
-                pieces.append(h.globalThis_footer)
+                incl = self._get_include(name)
+                pieces.append(incl.content)
+                pieces.append(incl.globalThis_footer)
                 if references is not None:
-                    references.update(h.references)
+                    references.update(incl.references)
 
         # 6. Test source body
         pieces.append(scenario.test_content)
@@ -355,6 +344,13 @@ class Assembler:
         else:
             sys.stdout.buffer.write(assembled.encode("utf-8"))
 
+    def _get_include(self, name: str) -> HarnessScript:
+        for base_dir in self.includes_dirs:
+            path = base_dir / name
+            if path.exists():
+                return HarnessScript.load(path, self._harness_replace)
+        sys.exit(f'harness file not found: {name}')
+
     def _copy_deps_recursive(
         self,
         dst_root: Path,
@@ -403,7 +399,7 @@ class Assembler:
             # _copy_deps_recursive() raw-copies it so its module body can't see harness bindings like assert.
             # Need to ensure dependencies that are independent tests go through full assembly pipeline.
             if dep_path.name == "namespace-unambiguous-if-import-star-as-and-export.js":
-                dep_src = HarnessScript.load(self.harness_dir / "assert.js").content + "\n" + dep_src
+                dep_src = self._get_include("assert.js").content + "\n" + dep_src
 
             write_atomic(dst, dep_src.encode("utf-8"))
             self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,

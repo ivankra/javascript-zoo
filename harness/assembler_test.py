@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import tempfile
+import re
 import unittest
 from pathlib import Path
 
@@ -399,6 +400,15 @@ class TestStageModule(unittest.TestCase):
 
 
 class TestGenerateHarnessScriptFooter(unittest.TestCase):
+    def test_compiled_replacements_are_applied(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            harness_dir = Path(tmpdir) / "harness"
+            harness_dir.mkdir()
+            path = harness_dir / "sta.js"
+            path.write_text("var print = this.print;\n")
+            script = HarnessScript(path, ((re.compile(r"^var print = ", re.MULTILINE), "let print = "),))
+            self.assertIn("let print = this.print;", script.content)
+
     def test_defines_assigned_to_global_this(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             path = Path(tmpdir) / "done.js"
