@@ -85,10 +85,18 @@ ant:
   console_log: console.log
   prelude:
     - code: 'var print = console.log.bind(console);'
+  stderr_replace_re:
+    # /tmp/foo.js:232:5
+    # 229 |   assert.throws(
+    #         ^^^^^^
+    - '^[^ :]+\.m?js:[0-9]+(:[0-9]+)?(\n *[0-9]+ *[|].*)+\n *\^+': '<SOURCE>'
+    - '<SOURCE>\nError: ': 'Test262Error: '
 
 asynkron:
   timeout_sec: 20
   exit_code_may_be_syntax_error: 1
+  stderr_replace_re:
+    - ' at line [0-9]+, column [0-9]+$': ''
 
 bali:
   console_log: console.log
@@ -118,6 +126,7 @@ boa:
     - ' \(/[^(): ]+\.m?js:[0-9]+:[0-9]+\)$': ''  # drop line number info from messages
   stderr_replace_re:
     - *rust_crash_norm_re
+    - ' at line [0-9]+, col [0-9]+$': ''
   errors_re:
     #  0: SyntaxError: unexpected token 'using', primary expression at line 52, col 13
     - '^[ ]*[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
@@ -152,6 +161,8 @@ brimstone: &brimstone
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+  errors_re:
+    - '^Error: (?P<message>.+)$'
   flags:
     - --no-color
     - --annex-b
@@ -231,6 +242,8 @@ cesanta-v7:
 
 chakracore: &chakracore
   console_log: ['console.log', 'print', 'WScript.Echo']
+  errors_re:
+    - '^Error: (?P<message>.+)$'
   flags:
     - if: test262
       then:
@@ -264,6 +277,7 @@ derkjs:
   flags: ['-r']
   stderr_replace_re:
     - '\x1b\[[0-9;]*m': ''
+    - '^Syntax Error \[ln [0-9]+, col [0-9]+\]:$': 'SyntaxError'
     - '^Syntax Error ': 'SyntaxError '
   errors_re:
     - '^SyntaxError \[ln [0-9]+, col [0-9]+\]:\s*\n\tnote: (?P<message>.*)$'
@@ -274,7 +288,7 @@ dmdscript:
   stderr_replace_re:
     - '^1 source files$': ''
     # dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): /tmp/file.js(11) : Error: found '[' instead of statement
-    - '^dmdscript.script.ScriptException@[^ :]+: /[^():]+[(][0-9]+[)] : Error: (?P<message>.+)$': 'SyntaxError: \g<message>'
+    - '^dmdscript.script.ScriptException@[^ :]+: (?:/[^():]+|[^():]+)[(][0-9]+[)] : Error: (?P<message>.+)$': 'SyntaxError: \g<message>'
     - "^dmdscript.script.ScriptException@[^ :]+: Variable (?P<message>.+ is not defined)$": 'ReferenceError: \g<message>'
     - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>TypeError|RangeError)$': '\g<type>:'
     - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>Test262Error): ?(?P<message>.*)$': '\g<type>: \g<message>'
@@ -304,6 +318,8 @@ duktape: &duktape
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^(SyntaxError: .*) \(line [0-9]+\)$': '\1'
+  errors_re:
+    - '^Error: (?P<message>.+)$'
 
 dowdiness:
   console_log: console.log
@@ -329,6 +345,7 @@ ejscript:
   stderr_replace_re:
     #  ^ ejs: Error: /tmp/foo.js: 227: Unexpected input ""
     - '^\s*\^?\s*ejs: Error: /[^ :]+\.m?js: [0-9]+: (?P<message>Unexpected input.+|Cannot parse.+|Cannot compile.+|Cannot find.+|Unknown directive.*|.*not yet implemented.*|Illegal.+)$': 'SyntaxError: \g<message>'
+    - ' starting on line [0-9]+': ''
   errors_re:
     - '\s*\^?\s*ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+\.m?js: [0-9]+: (?P<message>.+)$'
     - '\s*\^?\s*ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
@@ -442,6 +459,7 @@ eval5:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
+    - ' \[[0-9]+:[0-9]+\]$': ''
 
 fastschema-qjs:
   console_log: ['console.log', 'print']
@@ -460,6 +478,7 @@ fesi: &fesi
     - "('(?:toDateString|toLocaleDateString|toTimeString|toLocaleTimeString)' is not defined) for object .*": '\1'
     - "^(Keyword '[^']+' reserved for future extension .*)$": 'SyntaxError: \1'
     - ' at line [0-9]+, column [0-9]+\.$': ''
+    - ' near line [0-9]+, column [0-9]+, after .*?$': ''
   errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -472,6 +491,8 @@ flathead:
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^ParseError: ': 'SyntaxError: '
+  errors_re:
+    - '^Error: (?P<message>.+)$'
   timeout_sec: 10
   <<: *oom_prone
 
@@ -507,6 +528,8 @@ graaljs: &graaljs
   stderr_replace_re:
     # SyntaxError: foo.js:283:15 unexpected identifier: "source"
     - 'SyntaxError: [^ :]+:[0-9]+:[0-9]+ ': 'SyntaxError: '
+  errors_re:
+    - '^Error: (?P<message>.+)$'
 
 # GraalJS with experimental flags
 graaljs_exp:
@@ -605,6 +628,8 @@ jint: &jint
   stdout_replace_re:
     # REPL prints last expression's value to stdout
     - '^(null|undefined|\[object Promise\])$': ''
+  stderr_replace_re:
+    - ' \([^()]+\.(?:m?js):[0-9]+:[0-9]+\)$': ''
   flags:
     - { if: 'flags:module', then: '--module' }
   timeout_sec: 10
@@ -735,6 +760,7 @@ kodjodevf:
   console_log: console.log
   stderr_replace_re:
     - '^Uncaught exception: Error: (.*)$': 'Uncaught exception: Test262Error: \1'
+    - '^Uncaught exception: SyntaxError: SyntaxError: Unexpected token at [0-9]+:[0-9]+: (.*)$': 'Uncaught exception: SyntaxError: \1'
 
 lebjs:
   bench_suite: ['richards.quad-wheel.js']
@@ -743,8 +769,8 @@ lebjs:
     - *java_crash_re
   stderr_replace_re:
     - '^\[[0-9.]+s\]\[warning\]\[perf,memops\] Cannot use file /tmp/hsperfdata_[^ ]+/[0-9]+ because it is locked by another process \(errno = 11\)$': ''
-    - '^ParserNotImplemented: (.*?)(?: \([0-9]+:[0-9]+\))?$': 'SyntaxError: \1'
-    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)$': '\1'
+    - '^ParserNotImplemented: (.*?)(?: \([0-9]+:[0-9]+\)\.?)?$': 'SyntaxError: \1'
+    - '^(.*SyntaxError.*) \([0-9]+:[0-9]+\)\.?$': '\1'
 
 libjs: &libjs
   console_log: ['console.log', 'print']
@@ -815,6 +841,7 @@ mujs:
     - 'Error: [^(): ]+\.m?js:[0-9]+: ': 'Error: '
     - "'undefined$": "'"   # EvalError: script.js:217: invalid use of 'eval'undefined
   errors_re:
+    - '^Error: (?P<message>.+)$'
     - '^(?P<type>SyntaxError): [^:]+\.m?js:[0-9]+: (?P<message>[^\n]+)'
 
 mujs_babel:
@@ -866,7 +893,7 @@ niljs:
   errors_re:
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
   stderr_replace_re:
-    - ' at \([0-9]+:[0-9*]+\)$': ''
+    - ' \([0-9]+:[0-9*]+\)$': ''
   flags:
     - { if: 'flags:module', then: '--module' }
 
@@ -912,6 +939,7 @@ nova:
 okojo:
   console_log: console.log
   stderr_replace_re:
+    ' at line [0-9]+, column [0-9]+ \(position [0-9]+\)\.?$': ''
     '^JsParseException: (.*?)( at line [0-9]+, column [0-9]+)?( \(position [0-9]+\)\.?)?$': 'SyntaxError: \1'
     "^InternalError: Throw: { message: '(.*)' }$": 'InternalError: Throw: Test262Error: \1'
     '^InternalError: Throw: String\("Test262: This statement should not be ev...<truncated>"\)': 'Test262: This statement should not be evaluated.'
@@ -1005,6 +1033,7 @@ rapidus:
   console_log: console.log
   bench_suite: ['richards.rapidus.js']
   crash_re:
+    - "^(?P<message>thread '[^']+' panicked at 'not implemented).*$"
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
@@ -1104,6 +1133,7 @@ see:
     - 'WARNING: SEE is using non-release malloc': ''
     # SyntaxError: :0: /tmp/t262-m8l8ge6n/t262-31589.prop-desc.sloppy.js:596: expected string, identifier or number after ',' but got '}'
     - 'SyntaxError: (:[0-9]+: )?[^: ]+\.m?js:[0-9]+: ': 'SyntaxError: '
+    - 'SyntaxError: :0: line [0-9]+: ': 'SyntaxError: '
   errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+\.m?js:[0-9]+: )?(?P<message>.+)$'
   fix_assert_throws: True
@@ -1470,6 +1500,8 @@ bun:
   binary_info:
     version: $BINARY --version
   console_log: console.log
+  errors_re:
+    - '^error: (?P<message>.+)$'
 
 deno:
   binary_info:
@@ -1486,6 +1518,7 @@ deno:
   stderr_replace_re:
     - "error: The module's source code could not be parsed: ": "SyntaxError: "
     - 'error: Uncaught (?:\(in promise\) )?Test262Error \{\n *message: (.)(.*)\1\n\}': 'Test262Error: \2'
+    - ' at file://[^: ]+:[0-9]+:[0-9]+$': ''
   errors_re:
     - '^(?P<SyntaxError>): (?P<message>.*)$'
     - '^error: Uncaught( [(][^)]+[)])? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
