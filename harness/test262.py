@@ -52,6 +52,7 @@ class Test262Worker(PoolWorker):
         mode: str,
         filter_expr: FilterExpr | None,
         shared_tmp: Path,
+        verbose: int,
         on_spawn: Callable[[int], None],
     ) -> None:
         super().__init__(on_spawn)
@@ -62,6 +63,7 @@ class Test262Worker(PoolWorker):
         self.mode = mode
         self.filter_expr = filter_expr
         self.shared_tmp = shared_tmp
+        self.verbose = verbose
 
     def run(self, task: Any) -> list[RunResult]:
         rel_path = cast(str, task)
@@ -124,6 +126,7 @@ class Test262Worker(PoolWorker):
                     pass_pattern=pass_pattern,
                     negative_phase=scenario.fm.negative_phase if is_negative else None,
                     negative_type=scenario.fm.negative_type if is_negative else None,
+                    keep_output=self.verbose >= 2,
                 )
 
                 if run.is_passed():
@@ -299,7 +302,7 @@ def main() -> None:
     pool = PoolExecutor(
         max_workers=cfg.job_count(flag=args.jobs),
         worker_cls=Test262Worker,
-        worker_args=(cfg, assembler, args.mode, filter_expr, shared_tmp),
+        worker_args=(cfg, assembler, args.mode, filter_expr, shared_tmp, args.verbose),
     )
 
     try:

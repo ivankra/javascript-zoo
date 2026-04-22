@@ -339,12 +339,7 @@ class Reporter:
         self._dir_next_index = 0
 
     def add(self, run: RunResult) -> None:
-        """Record one completed run.
-
-        Verbose output levels (set via constructor):
-          -v  (1): print every result (failures highlighted)
-          -vv (2): same, plus stdout/stderr on failures
-        """
+        """Record one completed run."""
         self._results.append(run)
         # Inline per-test output
         if self._verbose >= 1:
@@ -354,12 +349,20 @@ class Reporter:
                 if self._use_color:
                     msg = f"\033[1;31m{msg}\033[0m"
                 print(msg, file=sys.stderr, flush=True)
-                if self._verbose >= 2:
-                    run.print_streams()
             else:
                 print(f"{run.run_id}: {run.verdict_type.value if run.verdict_type else '?'}{t}", file=sys.stderr, flush=True)
-                if self._verbose >= 3:
-                    run.print_streams()
+            if self._verbose >= 3:
+                for line in (run.stdout or "").rstrip().splitlines():
+                    print(f"  stdout> {line}")
+                for line in (run.stderr or "").rstrip().splitlines():
+                    print(f"  stderr> {line}")
+                if run.stdout_cleaned != run.stdout or run.stderr_cleaned != run.stderr:
+                    cleaned = (run.stderr_cleaned or "").strip() + "\n"
+                    cleaned += (run.stdout_cleaned or "").strip()
+                    for line in cleaned.rstrip().splitlines():
+                        print(f"  cleaned> {line}")
+                if run.exit_code:
+                    print(f"  exit code: {run.exit_code}")
         # Dir progress tracking
         if self._dir_order:
             assert run.test_id is not None
@@ -975,7 +978,13 @@ class Reporter:
                 line = f"{engine_name}: all {test_pass} tests passed"
             if n_skipped:
                 line += f", {n_skipped} skipped"
-            line += f" in {elapsed_sec:.3f}s"
+            if elapsed_sec >= 3600:
+                elapsed_str = f"{int(elapsed_sec // 3600)}h{int((elapsed_sec % 3600) // 60)}m"
+            elif elapsed_sec >= 60:
+                elapsed_str = f"{int(elapsed_sec // 60)}m{int(elapsed_sec % 60)}s"
+            else:
+                elapsed_str = f"{elapsed_sec:.2f}s"
+            line += f" in {elapsed_str}"
             if peak_rss_kb:
                 line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
         else:

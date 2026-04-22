@@ -146,13 +146,6 @@ class RunResult:
     # Weight for compat-table's weighted pass rate calculation.
     weight: float | None = None
 
-    def print_streams(self) -> None:
-        """Print stdout and stderr with stream-prefixed lines."""
-        for line in (self.stdout or "").rstrip().splitlines():
-            print(f"  stdout> {line}")
-        for line in (self.stderr or "").rstrip().splitlines():
-            print(f"  stderr> {line}")
-
     def combined_output(self) -> str:
         """Merge stdout and stderr into a single string for parsing."""
         out = self.stdout_cleaned if self.stdout_cleaned is not None else (self.stdout or "")
