@@ -52,7 +52,7 @@ RUN update-alternatives --install /usr/bin/cc cc $CC 150 && \
     update-alternatives --install /usr/bin/llvm-ar llvm-ar $AR 150 && \
     update-alternatives --install /usr/bin/llvm-nm llvm-nm $NM 150
 
-# Record compiler's version in build metadata.
+# For dist.py - copied into "cc" field in binary's metadata json
 RUN $CC -v 2>&1 | sed -ne 's/.*clang version /clang /p' >/jsz_cc
 
 # Verify binaries: readelf -p .comment <binary>
