@@ -16,6 +16,7 @@ $(eval $(call build_base,jsz-node,jsz-node.Dockerfile,))
 $(eval $(call build_base,jsz-rust,jsz-rust.Dockerfile,))
 $(eval $(call build_base,jsz-clang-rust,jsz-rust.Dockerfile,--build-arg BASE=jsz-clang))
 $(eval $(call build_base,jsz-zig,jsz-zig.Dockerfile,))
+$(eval $(call build_base,jsz-zig15,jsz-zig.Dockerfile,--build-arg VER=0.15.2))
 
 $(eval $(call build_base,jsz-gcc14,jsz-gcc.Dockerfile,--build-arg VER=14))
 $(eval $(call build_base,jsz-gcc15,jsz-gcc.Dockerfile,--build-arg VER=15))

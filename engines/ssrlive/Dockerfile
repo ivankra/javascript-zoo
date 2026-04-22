@@ -8,7 +8,7 @@ WORKDIR /src
 ARG REPO=https://github.com/ssrlive/javascript.git
 RUN git clone --depth=1 "$REPO" .
 
-ARG REV=vm
+ARG REV=master
 RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && git rev-parse HEAD
 
 # REPL aborts on first run when ~/.js_repl_history does not exist

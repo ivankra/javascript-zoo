@@ -1,4 +1,4 @@
-ARG BASE=jsz-zig
+ARG BASE=jsz-zig15
 FROM $BASE
 
 RUN apt-get update && \

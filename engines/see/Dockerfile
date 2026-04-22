@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-gcc
+ARG BASE=jsz-gcc14
 FROM $BASE
 
 RUN apt-get update -y && \

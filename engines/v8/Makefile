@@ -6,8 +6,8 @@ include ../../build/build.mk
 CONFORMANCE_BINARY = v8_full
 SUPPORTED_ARCHS = arm64 amd64
 
+REV ?= 14.9.102  # newer versions need new clang's flag: -fdiagnostics-show-inlining-chain
+
 $(eval $(call build_engine,v8,Dockerfile))
 $(eval $(call build_engine,v8_full,Dockerfile,--build-arg FULL=y))
 $(eval $(call build_engine,v8_jitless,Dockerfile,--build-arg JITLESS=y))
-#$(eval $(call build_engine,v8_gcc,v8_gcc.Dockerfile))  -- often broken
-#$(eval $(call build_engine,v8_pgo,v8_pgo.Dockerfile,--build-arg REV=$(REV_PGO)))  -- needs too much disk space
