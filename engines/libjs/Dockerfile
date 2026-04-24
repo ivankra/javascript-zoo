@@ -49,7 +49,7 @@ RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD
 # Truncate vcpkg dependencies to a minimal necessary set for LibJS build
 # If running into cmake errors, add missing components here from
 # https://github.com/LadybirdBrowser/ladybird/blob/master/vcpkg.json
-# RUN sed -i '/^  "dependencies": \[/,/^  \],$/c "dependencies": ["fast-float", "fmt", "harfbuzz", "icu", "libtommath", "libxml2", "mimalloc", "openssl", "simdjson", "simdutf", "sqlite3", "zlib"],' vcpkg.json
+RUN sed -i '/^  "dependencies": \[/,/^  \],$/c "dependencies": ["fast-float", "fmt", "icu", "libtommath", "libxml2", "mimalloc", "openssl", "simdjson", "simdutf", "sqlite3", "zlib"],' vcpkg.json
 
 # Target AVX2 / generic ARMv8 CPUs rather than native
 # for higher compatibility of built binaries
