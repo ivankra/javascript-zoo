@@ -96,7 +96,7 @@ class Test262Worker(PoolWorker):
         is_negative = bool(scenario.fm.negative_type)
         is_async = "async" in scenario.fm.flags
         pass_pattern: str | None = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
-        if is_negative or "raw" in scenario.fm.flags:
+        if "raw" in scenario.fm.flags:
             pass_pattern = None
 
         staged = self.assembler.stage(scenario, temp_dir=self.shared_tmp)
