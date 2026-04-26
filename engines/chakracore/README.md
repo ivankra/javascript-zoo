@@ -49,6 +49,7 @@ BigInt behind a compile flag.
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
+<li>Tested version: <a href="https://github.com/chakra-core/ChakraCore/commit/97e68c9174209413f621deb2f963941550ef6f22">2026-02-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/chakracore_full.json">json</a>)</li>
 <li>ES1: 97% (192/198)<pre>
 <a href="../../conformance/es1/bitwise.unsigned-shift.js">bitwise.unsigned-shift.js</a>: FAIL: -12345 &gt;&gt;&gt; 0 != 4294954951 (got: 4294954951)
 <a href="../../conformance/es1/conversions.ToInt32.js">conversions.ToInt32.js</a>: FAIL: 2^32-1 failed; 2^32 failed; -2^31-1 failed
@@ -68,6 +69,7 @@ BigInt behind a compile flag.
 </ul></details>
 
 <details><summary>compat-table: ES6 96%, ES2016+ 48%, Next 6%, Intl 89%</summary><ul>
+<li>Tested version: <a href="https://github.com/chakra-core/ChakraCore/commit/97e68c9174209413f621deb2f963941550ef6f22">2026-02-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/chakracore_full.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 95.7%<pre>
 <a href="../../conformance/compat-table/es6/RegExp.prototype.Symbol.match.js">RegExp.prototype.Symbol.match.js</a>: FAIL
@@ -158,10 +160,11 @@ BigInt behind a compile flag.
 </pre></li>
 </ul></details>
 
-<details><summary>test262: 62.3%, main 75.1%, staging 61.1%, annexB 65.4%, Next 3.8%, Intl 7%</summary>
+<details><summary>test262: 62.3%, main 74.6%, staging 61.1%, annexB 65.4%, Next 3.6%, Intl 6.9%</summary>
 <ul>
-<li>Overall: 62.3% (33117/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 75.1% (30964/41237)</li>
+<li>Tested version: <a href="https://github.com/chakra-core/ChakraCore/commit/97e68c9174209413f621deb2f963941550ef6f22">2026-02-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/chakracore_full.json">json</a>)</li>
+<li>Overall: 62.3% (33120/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 74.6% (30997/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 96.7% (7929/8197)<pre>
 caller: 100% (23/23)
@@ -179,8 +182,8 @@ DataView.prototype.getInt8: 60% (3/5)
 DataView.prototype.getUint16: 57.1% (4/7)
 DataView.prototype.getUint32: 57.1% (4/7)
 DataView.prototype.setUint8: 35.7% (20/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 50% (2/4)
 Int8Array: 77.1% (27/35)
@@ -238,12 +241,12 @@ Array.prototype.includes: 52.2% (36/69)
 exponentiation: 41.7% (43/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 45.2% (344/761)<pre>
+<li>ES2017: 45.1% (344/763)<pre>
 __getter__: 92.6% (25/27)
 __setter__: 92.6% (25/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 54.5% (384/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -325,8 +328,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 92.3% (250/271)
 </pre></li>
-<li>ES2023: 36.4% (112/308)<pre>
+<li>ES2023: 29% (119/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 6.9% (7/102)
 array-find-from-last: 70.6% (77/109)
 change-array-by-copy: 4.5% (6/132)
 hashbang: 100% (29/29)
@@ -342,8 +346,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 3.5% (16/463)
 </pre></li>
-<li>ES2025: 18% (228/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 18% (228/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -353,16 +357,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 14.6% (28/192)
 </pre></li>
-<li>Next: 3.8% (320/8357)<pre>
+<li>ES2026: 8.6% (31/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0.1% (1/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 6.9% (7/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 30.6% (22/72)
+</pre></li>
+<li>Next: 3.6% (282/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -371,17 +380,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 30.6% (22/72)
 </pre></li>
-<li>N/A: 84.3% (7351/8720)</li>
+<li>N/A: 84.4% (7354/8718)</li>
 </ul>
 </details>

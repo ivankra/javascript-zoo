@@ -16,6 +16,7 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: <a href="https://github.com/grafana/sobek/commit/6d789dcdd1773496f3069ea095d54fb21c9fd941">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/sobek.json">json</a>)</li>
 <li>ES1: 98.5% (195/198)<pre>
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Object has no member 'getYear'
 <a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Object has no member 'setYear'
@@ -28,6 +29,7 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 </ul></details>
 
 <details><summary>compat-table: ES6 97%, ES2016+ 66%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/grafana/sobek/commit/6d789dcdd1773496f3069ea095d54fb21c9fd941">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/sobek.json">json</a>)</li>
 <li>ES5: 99.1%<pre>
 <a href="../../conformance/compat-table/es5/strict.legacy-octal-error.js">strict.legacy-octal-error.js</a>: FAIL
 </pre></li>
@@ -37,7 +39,7 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Object has no member 'anchor'
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: Object has no member 'anchor'
 <a href="../../conformance/compat-table/es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: g is not defined
-<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement. at annex-b.function.labeled.js:12:10
+<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement.
 <a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token &gt; (and 2 more errors)
 <a href="../../conformance/compat-table/es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/annex-b.__proto__.literals.not-computed.js">annex-b.__proto__.literals.not-computed.js</a>: FAIL
@@ -79,7 +81,7 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 </pre></li>
 <li>ES2018: 63.2%<pre>
 <a href="../../conformance/compat-table/es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: SyntaxError: Unexpected token await (and 4 more errors)
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: Async generators are not supported yet at async-iterators.generators.js:44:3
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: Async generators are not supported yet
 <a href="../../conformance/compat-table/es2018/regex.named-capture-groups.js">regex.named-capture-groups.js</a>: TypeError: Cannot read property 'year' of undefined
 <a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.js">regex.unicode-property-escapes.js</a>: FAIL
 <a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-11.js">regex.unicode-property-escapes.unicode-11.js</a>: FAIL
@@ -106,15 +108,16 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 67%, main 81.7%, staging 66.5%, annexB 56.4%, Next 3.8%, Intl 0.7%</summary>
+<details><summary>test262: 67%, main 81.2%, staging 66.5%, annexB 56.4%, Next 3.6%, Intl 0.7%</summary>
 <ul>
-<li>Overall: 67% (35636/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 81.7% (33705/41237)</li>
+<li>Tested version: <a href="https://github.com/grafana/sobek/commit/6d789dcdd1773496f3069ea095d54fb21c9fd941">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/sobek.json">json</a>)</li>
+<li>Overall: 67% (35637/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 81.2% (33737/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.5% (8072/8197)<pre>
 caller: 100% (23/23)
 </pre></li>
-<li>ES6: 96.9% (10708/11054)<pre>
+<li>ES6: 96.9% (10707/11054)<pre>
 __proto__: 94.4% (17/18)
 Array.prototype.values: 100% (4/4)
 ArrayBuffer: 32.8% (88/268)
@@ -127,8 +130,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 77.1% (27/35)
@@ -178,7 +181,7 @@ new.target: 100% (61/61)
 proxy-missing-checks: 100% (3/3)
 rest-parameters: 100% (96/96)
 super: 100% (19/19)
-tail-call-optimization: 97.1% (34/35)
+tail-call-optimization: 94.3% (33/35)
 template: 100% (1/1)
 </pre></li>
 <li>ES2016: 94.6% (123/130)<pre>
@@ -186,12 +189,12 @@ Array.prototype.includes: 50.7% (35/69)
 exponentiation: 96.1% (99/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 45.6% (347/761)<pre>
+<li>ES2017: 45.5% (347/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 86.2% (608/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -273,8 +276,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 89.3% (242/271)
 </pre></li>
-<li>ES2023: 84.7% (261/308)<pre>
+<li>ES2023: 63.7% (261/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 96.3% (105/109)
 change-array-by-copy: 97.7% (129/132)
 hashbang: 96.6% (28/29)
@@ -290,8 +294,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 23.5% (44/187)
 resizable-arraybuffer: 4.3% (20/463)
 </pre></li>
-<li>ES2025: 20.4% (258/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 20.4% (258/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 37% (37/100)
@@ -301,16 +305,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 18.2% (35/192)
 </pre></li>
-<li>Next: 3.8% (316/8357)<pre>
+<li>ES2026: 8.6% (31/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 3.6% (285/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -319,17 +328,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 15.8% (3/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 90.3% (7871/8720)</li>
+<li>N/A: 90.3% (7873/8718)</li>
 </ul>
 </details>

@@ -13,11 +13,12 @@ JavaScript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 97%</summary><ul>
+<li>Tested version: <a href="https://github.com/nupha/zuqe/commit/3d05a00633375b3aa139db116f0763e829957745">2026-03-11</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/zuqe.json">json</a>)</li>
 <li>ES1: 98% (194/198)<pre>
 <a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: 'escape' is not defined
 <a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: 'unescape' is not defined
 <a href="../../conformance/es1/conversions.ToInt32.js">conversions.ToInt32.js</a>: FAIL: +Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31 failed; -2^31-1 failed
-<a href="../../conformance/es1/unary.plus.str.js">unary.plus.str.js</a>: FAIL
+<a href="../../conformance/es1/conversions.js">conversions.js</a>: FAIL: 123 != '123'; '123' != 123.0; '123' &gt;= 124; 123 - '123' != 0
 </pre></li>
 <li>ES3: 96.6% (143/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: FAIL: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
@@ -33,13 +34,14 @@ JavaScript engine written in Rust.
 </ul></details>
 
 <details><summary>compat-table: ES6 93%, ES2016+ 77%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/nupha/zuqe/commit/3d05a00633375b3aa139db116f0763e829957745">2026-03-11</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/zuqe.json">json</a>)</li>
 <li>ES5: 95.6%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/misc.Function.prototype.non-enumerable.js">misc.Function.prototype.non-enumerable.js</a>: CRASH: SIGABRT
 <a href="../../conformance/compat-table/es5/strict.reserved-words.js">strict.reserved-words.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.this-not-coerced-accessors.js">strict.this-not-coerced-accessors.js</a>: FAIL
 </pre></li>
-<li>ES6: 93.3%<pre>
+<li>ES6: 93.1%<pre>
 <a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: TIMEOUT: &gt;60s
 <a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: TIMEOUT: &gt;60s
 <a href="../../conformance/compat-table/es6/Promise.constructor-requires-new.js">Promise.constructor-requires-new.js</a>: FAIL
@@ -51,6 +53,7 @@ JavaScript engine written in Rust.
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: not a function
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: not a function
 <a href="../../conformance/compat-table/es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: not a function
+<a href="../../conformance/compat-table/es6/literals.binary.Number.js">literals.binary.Number.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js">misc.Proxy.get.RegExp.Symbol.split.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.RegExp.test.js">misc.Proxy.get.RegExp.test.js</a>: TypeError: RegExp object expected
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: FAIL
@@ -59,7 +62,6 @@ JavaScript engine written in Rust.
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.arrow.js">misc.bound-function-prototype.arrow.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.class.js">misc.bound-function-prototype.class.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.function.js">misc.bound-function-prototype.function.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/misc.bound-function-prototype.generator.js">misc.bound-function-prototype.generator.js</a>: FAIL
 ...
 </pre></li>
 <li>ES2016: 100%</li>
@@ -114,12 +116,13 @@ JavaScript engine written in Rust.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 74.9%, main 91.4%, staging 65%, annexB 80.2%, Next 3.7%, Intl 0.6%</summary>
+<details><summary>test262: 74.9%, main 90.7%, staging 65%, annexB 80.2%, Next 3.6%, Intl 0.6%</summary>
 <ul>
-<li>Overall: 74.9% (39836/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 91.4% (37676/41237)</li>
+<li>Tested version: <a href="https://github.com/nupha/zuqe/commit/3d05a00633375b3aa139db116f0763e829957745">2026-03-11</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/zuqe.json">json</a>)</li>
+<li>Overall: 74.9% (39828/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 90.7% (37696/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 98% (8036/8197)<pre>
+<li>ES5: 98% (8030/8197)<pre>
 caller: 91.3% (21/23)
 </pre></li>
 <li>ES6: 95.3% (10531/11054)<pre>
@@ -135,15 +138,15 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 64.3% (36/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 82.9% (29/35)
 Map: 90% (36/40)
 Object.is: 100% (2/2)
 Promise: 100% (4/4)
-Proxy: 85.5% (400/468)
+Proxy: 85.7% (401/468)
 Reflect: 63.5% (297/468)
 Reflect.construct: 62.6% (436/696)
 Reflect.set: 78.3% (36/46)
@@ -152,7 +155,7 @@ Set: 94.7% (36/38)
 String.fromCodePoint: 100% (22/22)
 String.prototype.endsWith: 100% (27/27)
 String.prototype.includes: 100% (26/26)
-Symbol: 51.4% (768/1494)
+Symbol: 51.3% (767/1494)
 Symbol.hasInstance: 94.1% (16/17)
 Symbol.isConcatSpreadable: 97.1% (33/34)
 Symbol.iterator: 98.8% (1842/1865)
@@ -164,7 +167,7 @@ Symbol.split: 89.7% (52/58)
 Symbol.toPrimitive: 52.8% (123/233)
 Symbol.toStringTag: 64.1% (84/131)
 Symbol.unscopables: 95.5% (42/44)
-TypedArray: 48.9% (1229/2513)
+TypedArray: 48.9% (1228/2513)
 Uint16Array: 33.3% (2/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 63.6% (7/11)
@@ -194,12 +197,12 @@ Array.prototype.includes: 49.3% (34/69)
 exponentiation: 85.4% (88/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 62.7% (477/761)<pre>
+<li>ES2017: 62.5% (477/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 33% (153/463)
+SharedArrayBuffer: 33% (153/464)
 async-functions: 92.8% (654/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -281,10 +284,11 @@ error-cause: 100% (5/5)
 regexp-match-indices: 83.9% (26/31)
 top-level-await: 93.4% (253/271)
 </pre></li>
-<li>ES2023: 71.1% (219/308)<pre>
+<li>ES2023: 53.2% (218/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 70.6% (77/109)
-change-array-by-copy: 85.6% (113/132)
+change-array-by-copy: 84.8% (112/132)
 hashbang: 100% (29/29)
 symbols-as-weakmap-keys: 0% (0/29)
 </pre></li>
@@ -298,8 +302,8 @@ promise-with-resolvers: 88.9% (8/9)
 regexp-v-flag: 96.8% (181/187)
 resizable-arraybuffer: 3.2% (15/463)
 </pre></li>
-<li>ES2025: 23.3% (294/1264)<pre>
-Float16Array: 14.3% (7/49)
+<li>ES2025: 23.2% (294/1266)<pre>
+Float16Array: 13.7% (7/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -309,16 +313,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 14.6% (28/192)
 </pre></li>
-<li>Next: 3.7% (310/8357)<pre>
+<li>ES2026: 7.8% (28/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 8.7% (6/69)
+upsert: 30.6% (22/72)
+</pre></li>
+<li>Next: 3.6% (282/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -327,17 +336,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 8.7% (6/69)
-upsert: 30.6% (22/72)
 </pre></li>
-<li>N/A: 91.6% (7985/8720)</li>
+<li>N/A: 91.6% (7984/8718)</li>
 </ul>
 </details>

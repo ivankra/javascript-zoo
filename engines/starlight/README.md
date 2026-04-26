@@ -16,6 +16,7 @@ Unmaintained old Rust codebase, only builds on x64.
 ## Conformance
 
 <details><summary>ES1-ES5: 69%</summary><ul>
+<li>Tested version: 0.0.1-55-g503e789 (<a href="https://github.com/Starlight-JS/starlight/commit/503e789b9ef53594aee30c45a621018e855dcc17">2021-10-31</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/starlight.json">json</a>)</li>
 <li>ES1: 80.3% (159/198)<pre>
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: TypeError: not a callable object
 <a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: TypeError: not a callable object
@@ -62,32 +63,11 @@ Unmaintained old Rust codebase, only builds on x64.
 <a href="../../conformance/es3/Object.prototype.hasOwnProperty.js">Object.prototype.hasOwnProperty.js</a>: FAIL: ToString conversion failed
 ...
 </pre></li>
-<li>ES5: 50% (37/74)<pre>
-<a href="../../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: TypeError: not a callable object
-<a href="../../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: FAIL: sparse array skips missing elements failed
-<a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: FAIL: sparse array skips missing elements failed
-<a href="../../conformance/es5/Array.prototype.indexOf.js">Array.prototype.indexOf.js</a>: FAIL: negative fromIndex failed
-<a href="../../conformance/es5/Array.prototype.lastIndexOf.js">Array.prototype.lastIndexOf.js</a>: TypeError: not a callable object
-<a href="../../conformance/es5/Array.prototype.reduceRight.js">Array.prototype.reduceRight.js</a>: TypeError: not a callable object
-<a href="../../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: FAIL: sparse array skips missing elements failed
-<a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: FAIL: date with milliseconds format incorrect; invalid date does not throw RangeError
-<a href="../../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: FAIL: invalid date does not return null
-<a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: TypeError: null does not have properties
-<a href="../../conformance/es5/JSON.js">JSON.js</a>: FAIL: typeof JSON !== 'object'
-<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: TypeError: undefined does not have properties ('parse')
-<a href="../../conformance/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: TypeError: undefined does not have properties ('parse')
-<a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../../conformance/es5/Object.getOwnPropertyNames.js">Object.getOwnPropertyNames.js</a>: TypeError: not a callable object
-<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: FAIL: non-enumerable did not shadow enumerable
-<a href="../../conformance/es5/debugger.js">debugger.js</a>: SyntaxError: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Debugger(DebuggerStmt { span: Span { lo: BytePos(216), hi: BytePos(225), ctxt: #0 } })")
-<a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: FAIL: Infinity is not a number after assignment; Infinity not positive infinity after assignment
-...
-</pre></li>
+<li>ES5: 48.6% (36/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 28%, ES2016+ 15%, Next 0%, Intl 4%</summary><ul>
+<li>Tested version: 0.0.1-55-g503e789 (<a href="https://github.com/Starlight-JS/starlight/commit/503e789b9ef53594aee30c45a621018e855dcc17">2021-10-31</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/starlight.json">json</a>)</li>
 <li>ES5: 63.6%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.every.js">Array.prototype.every.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Array.prototype.lastIndexOf.js">Array.prototype.lastIndexOf.js</a>: FAIL
@@ -101,13 +81,13 @@ Unmaintained old Rust codebase, only builds on x64.
 <a href="../../conformance/compat-table/es5/String.prototype.split.js">String.prototype.split.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/immutable-globals.Infinity.js">immutable-globals.Infinity.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/immutable-globals.NaN.js">immutable-globals.NaN.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/literals.getter-accessors.js">literals.getter-accessors.js</a>: SyntaxError: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(252), hi: BytePos(271), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(256), hi: B...
-<a href="../../conformance/compat-table/es5/literals.setter-accessors.js">literals.setter-accessors.js</a>: SyntaxError: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Setter(SetterProp { span: Span { lo: BytePos(262), hi: BytePos(284), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(266), hi: B...
+<a href="../../conformance/compat-table/es5/literals.getter-accessors.js">literals.getter-accessors.js</a>: SyntaxError: NotYetImpl
+<a href="../../conformance/compat-table/es5/literals.setter-accessors.js">literals.setter-accessors.js</a>: SyntaxError: NotYetImpl
 <a href="../../conformance/compat-table/es5/misc.enumerable-shadow.js">misc.enumerable-shadow.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/misc.thrown-functions-this.js">misc.thrown-functions-this.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.arguments-callee-error.js">strict.arguments-callee-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-eval-arguments-error.js">strict.assignment-eval-arguments-error.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: SyntaxError: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(657), hi: BytePos(667), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(661), hi: B...
+<a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: SyntaxError: NotYetImpl
 <a href="../../conformance/compat-table/es5/strict.delete-bindings-error.js">strict.delete-bindings-error.js</a>: FAIL
 ...
 </pre></li>
@@ -126,15 +106,16 @@ Unmaintained old Rust codebase, only builds on x64.
 <li>Intl: 3.6%</li>
 </ul></details>
 
-<details><summary>test262: 22%, main 26.9%, staging 11%, annexB 17.7%, Next 3.2%, Intl 0.1%</summary>
+<details><summary>test262: 22%, main 26.7%, staging 11%, annexB 17.7%, Next 3.4%, Intl 0.1%</summary>
 <ul>
-<li>Overall: 22% (11710/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 26.9% (11086/41237)</li>
+<li>Tested version: 0.0.1-55-g503e789 (<a href="https://github.com/Starlight-JS/starlight/commit/503e789b9ef53594aee30c45a621018e855dcc17">2021-10-31</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/starlight.json">json</a>)</li>
+<li>Overall: 22% (11712/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 26.7% (11088/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 56.8% (4654/8197)<pre>
+<li>ES5: 56.8% (4655/8197)<pre>
 caller: 69.6% (16/23)
 </pre></li>
-<li>ES6: 16.7% (1842/11054)<pre>
+<li>ES6: 16.7% (1843/11054)<pre>
 __proto__: 0% (0/18)
 Array.prototype.values: 0% (0/4)
 ArrayBuffer: 9% (24/268)
@@ -147,8 +128,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 28.6% (2/7)
 DataView.prototype.setUint8: 46.4% (26/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -206,12 +187,12 @@ Array.prototype.includes: 24.6% (17/69)
 exponentiation: 13.6% (14/103)
 u180e: 48% (12/25)
 </pre></li>
-<li>ES2017: 17.7% (135/761)<pre>
+<li>ES2017: 17.7% (135/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.5% (201/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -293,8 +274,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 3% (8/271)
 </pre></li>
-<li>ES2023: 10.7% (33/308)<pre>
+<li>ES2023: 8% (33/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 5.5% (6/109)
 change-array-by-copy: 3% (4/132)
 hashbang: 79.3% (23/29)
@@ -310,8 +292,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 7.5% (14/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 15.3% (194/1264)<pre>
-Float16Array: 10.2% (5/49)
+<li>ES2025: 15.3% (194/1266)<pre>
+Float16Array: 9.8% (5/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -321,16 +303,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.2% (266/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.4% (266/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -339,17 +326,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.9% (73/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 30.9% (2693/8720)</li>
+<li>N/A: 30.9% (2693/8718)</li>
 </ul>
 </details>

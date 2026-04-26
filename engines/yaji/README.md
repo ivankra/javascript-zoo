@@ -27,7 +27,7 @@ Fork of FESI interpreter with ES5 support.
 <a href="../../conformance/es1/numbers.double.js">numbers.double.js</a>: FAIL
 </pre></li>
 <li>ES3: 91.2% (135/148)<pre>
-<a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: SyntaxError: detected Encountered "function" at line 54, column 3.
+<a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: SyntaxError: Encountered "function"
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: FAIL: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 <a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: FAIL: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: FAIL: rounding failed
@@ -36,8 +36,8 @@ Fork of FESI interpreter with ES5 support.
 <a href="../../conformance/es3/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: FAIL: Runtime error The function 'substr' is not defined for object 'abcdefgh'
 <a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: FAIL: wrong exception for invalid token
 <a href="../../conformance/es3/labelled.break.js">labelled.break.js</a>: FAIL: labelled break from block failed
-<a href="../../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: SyntaxError: detected Encountered "function" at line 10, column 3.
-<a href="../../conformance/es3/nested-functions.js">nested-functions.js</a>: SyntaxError: detected Encountered "function" at line 10, column 3.
+<a href="../../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: SyntaxError: Encountered "function"
+<a href="../../conformance/es3/nested-functions.js">nested-functions.js</a>: SyntaxError: Encountered "function"
 <a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: FAIL: backref for a group that hasn't captured failed
 <a href="../../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: FAIL: Runtime error 'null' cannot be converted to Object
 </pre></li>
@@ -45,14 +45,14 @@ Fork of FESI interpreter with ES5 support.
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: FAIL: escape sequences failed
 <a href="../../conformance/es5/Object.getOwnPropertyNames.js">Object.getOwnPropertyNames.js</a>: FAIL: basic property names failed
 <a href="../../conformance/es5/Object.keys.js">Object.keys.js</a>: FAIL: basic keys failed
-<a href="../../conformance/es5/debugger.js">debugger.js</a>: SyntaxError: Keyword 'debugger' reserved for future extension near line 7, column 1, after &lt;EOF&gt;
+<a href="../../conformance/es5/debugger.js">debugger.js</a>: SyntaxError: Keyword 'debugger' reserved for future extension
 <a href="../../conformance/es5/strict.js">strict.js</a>: FAIL
 <a href="../../conformance/es5/strict.no-arguments-caller.js">strict.no-arguments-caller.js</a>: FAIL: Runtime error GetcallerThrower not valid in strict mode
 <a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: FAIL
 <a href="../../conformance/es5/strict.no-assignment-to-unresolvable.js">strict.no-assignment-to-unresolvable.js</a>: FAIL
 <a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: FAIL
 <a href="../../conformance/es5/strict.no-function-caller-or-arguments.js">strict.no-function-caller-or-arguments.js</a>: FAIL
-<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: SyntaxError: detected Encountered "function" at line 10, column 3.
+<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: SyntaxError: Encountered "function"
 <a href="../../conformance/es5/strict.unmapped-arguments.js">strict.unmapped-arguments.js</a>: FAIL
 </pre></li>
 </ul></details>
@@ -68,7 +68,7 @@ Fork of FESI interpreter with ES5 support.
 <a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-unresolvable-error.js">strict.assignment-unresolvable-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.function-caller-arguments-error.js">strict.function-caller-arguments-error.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/strict.this-not-coerced-accessors.js">strict.this-not-coerced-accessors.js</a>: SyntaxError: detected Encountered "function" at line 11, column 3.
+<a href="../../conformance/compat-table/es5/strict.this-not-coerced-accessors.js">strict.this-not-coerced-accessors.js</a>: SyntaxError: Encountered "function"
 </pre></li>
 <li>ES6: 1.4%</li>
 <li>ES2016: 0%</li>
@@ -85,10 +85,10 @@ Fork of FESI interpreter with ES5 support.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 26.1%, main 32.5%, staging 12%, annexB 3.2%, Next 3.2%, Intl 0.4%</summary>
+<details><summary>test262: 26.1%, main 32.2%, staging 12%, annexB 3.2%, Next 3.3%, Intl 0.4%</summary>
 <ul>
-<li>Overall: 26.1% (13887/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 32.5% (13398/41237)</li>
+<li>Overall: 26.1% (13887/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 32.2% (13398/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 86.1% (7059/8197)<pre>
 caller: 87% (20/23)
@@ -106,8 +106,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -165,12 +165,12 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 68% (17/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -252,8 +252,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 7.5% (23/308)<pre>
+<li>ES2023: 5.6% (23/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 3.7% (4/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -269,8 +270,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 0.5% (1/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 9.4% (119/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 9.4% (119/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -280,16 +281,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 45.2% (104/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.2% (264/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.3% (264/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -298,17 +304,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 39.2% (3419/8720)</li>
+<li>N/A: 39.2% (3419/8718)</li>
 </ul>
 </details>

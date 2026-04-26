@@ -25,6 +25,7 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: <a href="https://github.com/jerryscript-project/jerryscript/commit/b7069350c2e52e7dc721dfb75f067147bd79b39b">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/jerryscript.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 98% (145/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: FAIL: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
@@ -35,6 +36,7 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 </ul></details>
 
 <details><summary>compat-table: ES6 96%, ES2016+ 70%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/jerryscript-project/jerryscript/commit/b7069350c2e52e7dc721dfb75f067147bd79b39b">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/jerryscript.json">json</a>)</li>
 <li>ES5: 98.6%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 </pre></li>
@@ -99,10 +101,11 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 74.6%, main 90.6%, staging 71.2%, annexB 84.4%, Next 3.8%, Intl 0.8%</summary>
+<details><summary>test262: 74.6%, main 90%, staging 71.2%, annexB 84.4%, Next 3.6%, Intl 0.8%</summary>
 <ul>
-<li>Overall: 74.6% (39663/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 90.6% (37355/41237)</li>
+<li>Tested version: <a href="https://github.com/jerryscript-project/jerryscript/commit/b7069350c2e52e7dc721dfb75f067147bd79b39b">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/jerryscript.json">json</a>)</li>
+<li>Overall: 74.6% (39666/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 90% (37389/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.4% (8065/8197)<pre>
 caller: 100% (23/23)
@@ -120,8 +123,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 80% (28/35)
@@ -179,12 +182,12 @@ Array.prototype.includes: 50.7% (35/69)
 exponentiation: 87.4% (90/103)
 u180e: 92% (23/25)
 </pre></li>
-<li>ES2017: 83.4% (635/761)<pre>
+<li>ES2017: 83.4% (636/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 41.8% (157/376)
+Atomics: 41.8% (158/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 51.6% (239/463)
+SharedArrayBuffer: 51.7% (240/464)
 async-functions: 87.2% (615/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -266,8 +269,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 3.3% (9/271)
 </pre></li>
-<li>ES2023: 15.6% (48/308)<pre>
+<li>ES2023: 11.7% (48/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 16.5% (18/109)
 change-array-by-copy: 7.6% (10/132)
 hashbang: 69% (20/29)
@@ -283,8 +287,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 4.8% (22/463)
 </pre></li>
-<li>ES2025: 18.7% (236/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 18.6% (236/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -294,16 +298,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 18.2% (35/192)
 </pre></li>
-<li>Next: 3.8% (317/8357)<pre>
+<li>ES2026: 8.6% (31/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 16.7% (1/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 3.6% (286/7895)<pre>
+Atomics.pause: 16.7% (1/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -312,17 +321,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 91.6% (7991/8720)</li>
+<li>N/A: 91.7% (7993/8718)</li>
 </ul>
 </details>

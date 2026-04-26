@@ -25,6 +25,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
+<li>Tested version: 2.0.0-SNAPSHOT (<a href="https://github.com/mozilla/rhino/commit/ade3da64abe5c7f4bb88d5ea8f4a61825fc3b2c0">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/rhino.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 86.5% (64/74)<pre>
@@ -42,6 +43,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 </ul></details>
 
 <details><summary>compat-table: ES6 73%, ES2016+ 59%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 2.0.0-SNAPSHOT (<a href="https://github.com/mozilla/rhino/commit/ade3da64abe5c7f4bb88d5ea8f4a61825fc3b2c0">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/rhino.json">json</a>)</li>
 <li>ES5: 91.6%<pre>
 <a href="../../conformance/compat-table/es5/misc.enumerable-shadow.js">misc.enumerable-shadow.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-eval-arguments-error.js">strict.assignment-eval-arguments-error.js</a>: FAIL

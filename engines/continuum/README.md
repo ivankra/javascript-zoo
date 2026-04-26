@@ -16,6 +16,7 @@ ES6 interpreter written in ES3.
 ## Conformance
 
 <details><summary>ES1-ES5: 68%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/continuum/commit/9647c7d9c4c7b1ce770ccdd1683597b4319a9e1c">2014-06-25</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/continuum.json">json</a>)</li>
 <li>ES1: 83.8% (166/198)<pre>
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: FAIL
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: FAIL: numeric sort failed; string sort failed; sort with comparefn failed; reverse comparefn failed
@@ -88,6 +89,7 @@ ES6 interpreter written in ES3.
 </ul></details>
 
 <details><summary>compat-table: ES6 33%, ES2016+ 1%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/continuum/commit/9647c7d9c4c7b1ce770ccdd1683597b4319a9e1c">2014-06-25</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/continuum.json">json</a>)</li>
 <li>ES5: 73.4%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-undefined.js">Array.prototype.sort.compareFn-undefined.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Array.prototype.unshift.return-count.js">Array.prototype.unshift.return-count.js</a>: TypeError: $$Assert failed

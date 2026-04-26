@@ -17,6 +17,7 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: 15.7 (<a href="https://github.com/openjdk/nashorn/commit/4923f1e70e460d87c0eeb1f5232344487d46108d">2025-08-21</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/nashorn.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 98% (145/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: FAIL: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
@@ -31,6 +32,7 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 </ul></details>
 
 <details><summary>compat-table: ES6 30%, ES2016+ 3%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 15.7 (<a href="https://github.com/openjdk/nashorn/commit/4923f1e70e460d87c0eeb1f5232344487d46108d">2025-08-21</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/nashorn.json">json</a>)</li>
 <li>ES5: 96.7%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: FAIL

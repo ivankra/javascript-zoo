@@ -47,12 +47,14 @@ JavaScript engine of Firefox.
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: 152.0 with experimental flags (<a href="https://github.com/mozilla-firefox/firefox/commit/986b2e474acca54ab469aca8d549b71cdcea33a5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/spidermonkey_exp.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 55%, Intl 100%</summary><ul>
+<li>Tested version: 152.0 with experimental flags (<a href="https://github.com/mozilla-firefox/firefox/commit/986b2e474acca54ab469aca8d549b71cdcea33a5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/spidermonkey_exp.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 98.1%<pre>
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: too much recursion
@@ -87,11 +89,11 @@ JavaScript engine of Firefox.
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 99%, main 99.6%, staging 99.7%, annexB 99.8%, Next 95.2%, Intl 98.6%</summary>
+<details><summary>test262: 99.1%, main 99.6%, staging 99.8%, annexB 99.8%, Next 96.7%, Intl 98.6%</summary>
 <ul>
-<li>Experimental flags were enabled.</li>
-<li>Overall: 99% (52606/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 99.6% (41082/41237)</li>
+<li>Tested version: 152.0 with experimental flags (<a href="https://github.com/mozilla-firefox/firefox/commit/986b2e474acca54ab469aca8d549b71cdcea33a5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/spidermonkey_exp.json">json</a>)</li>
+<li>Overall: 99.1% (52710/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 99.6% (41395/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 99.9% (8195/8197)<pre>
 caller: 100% (23/23)
@@ -109,8 +111,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 100% (7/7)
+Float64Array: 100% (7/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -168,12 +170,12 @@ Array.prototype.includes: 94.2% (65/69)
 exponentiation: 100% (103/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 99.9% (760/761)<pre>
+<li>ES2017: 99.9% (762/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 99.5% (374/376)
+Atomics: 99.5% (376/378)
 Intl.DateTimeFormat-dayPeriod: 100% (12/12)
-SharedArrayBuffer: 99.6% (461/463)
+SharedArrayBuffer: 99.6% (462/464)
 async-functions: 100% (705/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -181,7 +183,7 @@ intl-normative-optional: 100% (4/4)
 IsHTMLDDA: 100% (42/42)
 Promise.prototype.finally: 100% (29/29)
 Symbol.asyncIterator: 100% (538/538)
-async-iteration: 99.8% (4956/4968)
+async-iteration: 99.9% (4964/4968)
 object-rest: 100% (355/355)
 object-spread: 100% (135/135)
 regexp-dotall: 100% (17/17)
@@ -211,7 +213,7 @@ Promise.allSettled: 100% (102/102)
 String.prototype.matchAll: 100% (16/16)
 Symbol.matchAll: 100% (63/63)
 coalesce-expression: 92.3% (24/26)
-dynamic-import: 84.4% (798/946)
+dynamic-import: 93.9% (888/946)
 export-star-as-namespace-from-module: 100% (19/19)
 for-in-order: 100% (9/9)
 globalThis: 100% (148/148)
@@ -255,8 +257,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
 top-level-await: 95.9% (260/271)
 </pre></li>
-<li>ES2023: 100% (308/308)<pre>
+<li>ES2023: 100% (410/410)<pre>
 Intl-enumeration: 100% (35/35)
+Intl.NumberFormat-v3: 100% (102/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -272,46 +275,47 @@ promise-with-resolvers: 100% (9/9)
 regexp-v-flag: 100% (187/187)
 resizable-arraybuffer: 100% (463/463)
 </pre></li>
-<li>ES2025: 100% (1264/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 100% (1266/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 100% (112/112)
 RegExp.escape: 100% (21/21)
-import-attributes: 99% (99/100)
+import-attributes: 100% (100/100)
 iterator-helpers: 100% (567/567)
 json-modules: 100% (13/13)
 promise-try: 100% (12/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 95.2% (7956/8357)<pre>
+<li>ES2026: 88.1% (318/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 99.9% (1542/1543)
 Intl.Locale-info: 2.3% (1/43)
-Intl.NumberFormat-v3: 100% (102/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 100% (22/22)
+uint8array-base64: 100% (69/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 96.7% (7637/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 0% (0/64)
-Temporal: 99.9% (6662/6670)
+Temporal: 99.9% (6663/6671)
 await-dictionary: 100% (37/37)
 canonical-tz: 78.9% (15/19)
 decorators: 11.1% (3/27)
 explicit-resource-management: 100% (477/477)
-immutable-arraybuffer: 95% (19/20)
-import-bytes: 80% (4/5)
+immutable-arraybuffer: 100% (20/20)
+import-bytes: 100% (5/5)
 import-defer: 32.3% (74/229)
 import-text: 100% (6/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 100% (78/78)
-json-parse-with-source: 100% (22/22)
 legacy-regexp: 100% (26/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 100% (19/19)
-source-phase-imports: 56.6% (129/228)
-source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 100% (69/69)
-upsert: 100% (72/72)
+source-phase-imports: 100% (228/228)
+source-phase-imports-module-source: 100% (84/84)
 </pre></li>
-<li>N/A: 99.3% (8660/8720)</li>
+<li>N/A: 99.3% (8659/8718)</li>
 </ul>
 </details>

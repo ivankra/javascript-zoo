@@ -18,6 +18,7 @@ JavaScript interpreter written in Ruby.
 ## Conformance
 
 <details><summary>ES1-ES5: 57%</summary><ul>
+<li>Tested version: <a href="https://github.com/charliesome/twostroke/commit/3e6d5366bad603e987f78027d472255707ec26fa">2012-05-30</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/twostroke.json">json</a>)</li>
 <li>ES1: 69.7% (138/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: FAIL: Array.prototype.constructor failed
@@ -68,6 +69,7 @@ JavaScript interpreter written in Ruby.
 </ul></details>
 
 <details><summary>compat-table: ES6 2%, ES2016+ 6%, Next 0%, Intl 4%</summary><ul>
+<li>Tested version: <a href="https://github.com/charliesome/twostroke/commit/3e6d5366bad603e987f78027d472255707ec26fa">2012-05-30</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/twostroke.json">json</a>)</li>
 <li>ES5: 34.9%</li>
 <li>ES6: 1.6%</li>
 <li>ES2016: 0%</li>

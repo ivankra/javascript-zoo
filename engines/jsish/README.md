@@ -19,6 +19,7 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 ## Conformance
 
 <details><summary>ES1-ES5: 39%</summary><ul>
+<li>Tested version: 3.0-252-g42c694c (<a href="https://github.com/pcmacdon/jsish/commit/42c694c152f7f4fbee34d5e14be37d6e0d09673f">2022-08-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/jsish.json">json</a>)</li>
 <li>ES1: 56.1% (111/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: FAIL: Array.prototype.constructor failed; array instance constructor failed
@@ -47,6 +48,7 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 </ul></details>
 
 <details><summary>compat-table: ES6 7%, ES2016+ 3%, Next 0%, Intl 11%</summary><ul>
+<li>Tested version: 3.0-252-g42c694c (<a href="https://github.com/pcmacdon/jsish/commit/42c694c152f7f4fbee34d5e14be37d6e0d09673f">2022-08-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/jsish.json">json</a>)</li>
 <li>ES5: 37%</li>
 <li>ES6: 6.7%</li>
 <li>ES2016: 0%</li>
@@ -63,10 +65,11 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 <li>Intl: 10.7%</li>
 </ul></details>
 
-<details><summary>test262: 7.6%, main 9.4%, staging 0.4%, annexB 0.6%, Next 1.9%, Intl 0%</summary>
+<details><summary>test262: 7.6%, main 9.3%, staging 0.4%, annexB 0.6%, Next 2%, Intl 0%</summary>
 <ul>
-<li>Overall: 7.6% (4027/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 9.4% (3859/41237)</li>
+<li>Tested version: 3.0-252-g42c694c (<a href="https://github.com/pcmacdon/jsish/commit/42c694c152f7f4fbee34d5e14be37d6e0d09673f">2022-08-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/jsish.json">json</a>)</li>
+<li>Overall: 7.6% (4027/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 9.3% (3859/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 3.1% (255/8197)<pre>
 caller: 0% (0/23)
@@ -84,8 +87,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -143,12 +146,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 13.6% (14/103)
 u180e: 4% (1/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -230,8 +233,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 7.1% (22/308)<pre>
+<li>ES2023: 5.4% (22/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 75.9% (22/29)
@@ -247,8 +251,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 26.7% (50/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 7.7% (97/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 7.7% (97/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 14% (14/100)
@@ -258,16 +262,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 36.1% (83/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 1.9% (156/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2% (156/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -276,17 +285,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 18.3% (42/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 23.2% (53/228)
 source-phase-imports-module-source: 32.1% (27/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 7.8% (682/8720)</li>
+<li>N/A: 7.8% (682/8718)</li>
 </ul>
 </details>

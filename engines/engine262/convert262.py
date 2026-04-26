@@ -63,6 +63,8 @@ def normalize_test_path(path: str) -> str:
     path = path.strip()
     if path.startswith("- "):
         path = path[2:].strip()
+    # Drop trailing " [flag]" suffixes (e.g. " [strict]", " [module]")
+    path = re.sub(r"\s+\[[^\]]*\]$", "", path)
     if path.startswith(PATH_PREFIX):
         path = path[len(PATH_PREFIX) :]
     if path.startswith("test/"):
@@ -71,6 +73,7 @@ def normalize_test_path(path: str) -> str:
 
 
 def parse_failure_messages(text: str) -> dict[str, str]:
+    # Matches: " FAIL  <path> [flags] description\n<body>"
     pattern = re.compile(r"^ FAIL  (?P<path>\S+) (?P<desc>.+?)\n(?P<body>.*?)(?=^ FAIL  |\Z)", re.M | re.S)
     failures: dict[str, str] = {}
     preferred_patterns = [
@@ -79,16 +82,18 @@ def parse_failure_messages(text: str) -> dict[str, str]:
         re.compile(r"^NoAsyncTestComplete\b"),
     ]
     for match in pattern.finditer(text):
-        test = normalize_test_path(match.group("path"))
+        raw_path = match.group("path")
+        test = normalize_test_path(raw_path)
+
         lines = [line.strip() for line in match.group("body").splitlines()]
         message = ""
-        for pattern in preferred_patterns:
+        for patt in preferred_patterns:
             for line in lines:
                 if not line or line.startswith("<NATIVE>") or line.startswith("at "):
                     continue
                 if line.startswith("|") or line.startswith("^") or re.match(r"^\d+\s+\|", line):
                     continue
-                if pattern.match(line):
+                if patt.match(line):
                     message = line
                     break
             if message:
@@ -99,7 +104,7 @@ def parse_failure_messages(text: str) -> dict[str, str]:
                     continue
                 if line.startswith("|") or line.startswith("^") or re.match(r"^\d+\s+\|", line):
                     continue
-                if "---" in line:
+                if "---" in line or "⎯" in line:  # skip source annotations and ⎯ separators
                     continue
                 message = line
                 break

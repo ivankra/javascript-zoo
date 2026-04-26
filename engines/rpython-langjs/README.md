@@ -16,12 +16,14 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
+<li>Tested version: <a href="https://github.com/progval/rpython-langjs/commit/d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9">2017-10-01</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/rpython-langjs.json">json</a>)</li>
 <li>ES1: 0% (0/198)</li>
 <li>ES3: 0% (0/148)</li>
 <li>ES5: 0% (0/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
+<li>Tested version: <a href="https://github.com/progval/rpython-langjs/commit/d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9">2017-10-01</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/rpython-langjs.json">json</a>)</li>
 <li>ES5: 0%</li>
 <li>ES6: 0%</li>
 <li>ES2016: 0%</li>

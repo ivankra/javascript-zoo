@@ -26,6 +26,7 @@ from build.parse_markdown import (
     MDItem,
     MDParse,
     parse_markdown,
+    parse_markdown_to_json,
     discover_files,
 )
 
@@ -242,7 +243,32 @@ def _format_dir_item(
     return lines
 
 
-def format_conformance(engine_name: str, reports: dict, sources: dict) -> List[str]:
+def _tested_item(report: Report, suite: str, source: str, alt_github_url: str = "") -> str:
+    binary = report.binary or {}
+    revision_date = binary.get("revision_date", "")
+    if not revision_date:
+        return ""
+
+    revision = binary.get("revision", "")
+    forge_pat = r"https?://(github\.com|gitlab\.com|codeberg\.org)/([^/]+/[^/]+?)(?:\.git)?/?$"
+    forge_match = re.match(forge_pat, binary.get("repository", "")) or re.match(forge_pat, alt_github_url)
+    if forge_match and revision:
+        commit_path = "/-/commit" if forge_match[1] == "gitlab.com" else "/commit"
+        date_str = f'<a href="https://{forge_match[1]}/{forge_match[2]}{commit_path}/{revision}">{revision_date}</a>'
+    else:
+        date_str = revision_date
+
+    version = binary.get("version", "")
+    exp_str = " with experimental flags" if source.endswith("_exp.json") else ""
+    data_url = f"https://github.com/ivankra/javascript-zoo-data/blob/data/{suite}/{source}"
+
+    if version:
+        return f'<li>Tested version: {version}{exp_str} ({date_str}, <a href="{data_url}">json</a>)</li>\n'
+    else:
+        return f'<li>Tested version: {date_str}{exp_str} (<a href="{data_url}">json</a>)</li>\n'
+
+
+def format_conformance(engine_name: str, reports: dict, sources: dict, alt_github_url: str = "") -> List[str]:
     lines: List[str] = ["## Conformance\n", "\n"]
 
     # ES1-ES5
@@ -250,6 +276,8 @@ def format_conformance(engine_name: str, reports: dict, sources: dict) -> List[s
         if es15 := report.summary.get("es1-5"):
             headline = f"ES1-ES5: {format_fmt(es15)}"
             lines += [f"<details><summary>{headline}</summary><ul>\n"]
+            if item := _tested_item(report, "es1-5", sources.get("es1-5", ""), alt_github_url):
+                lines.append(item)
             for dir_key, label in [("es1", "ES1"), ("es3", "ES3"), ("es5", "ES5")]:
                 if stats := report.dirs.get(dir_key):
                     failing = _failing_tests(report, dir_key)
@@ -271,6 +299,8 @@ def format_conformance(engine_name: str, reports: dict, sources: dict) -> List[s
             headline = "compat-table: " + ", ".join(parts)
 
             lines += ["\n", f"<details><summary>{headline}</summary><ul>\n"]
+            if item := _tested_item(report, "compat-table", sources.get("compat-table", ""), alt_github_url):
+                lines.append(item)
 
             def _ct_sort_key(k):
                 # es5 → 5, es6 → 6, es2016 → 2016, next → 9998, intl → 9999
@@ -315,9 +345,8 @@ def format_conformance(engine_name: str, reports: dict, sources: dict) -> List[s
 
             # Single <ul> containing summary items, editions, N/A, and other tags
             lines.append("<ul>\n")
-
-            if sources.get("test262", "").endswith("_exp.json"):
-                lines.append("<li>Experimental flags were enabled.</li>\n")
+            if item := _tested_item(report, "test262", sources.get("test262", ""), alt_github_url):
+                lines.append(item)
 
             # Summary items
             if s := report.summary.get("all"):
@@ -420,7 +449,8 @@ def update_conformance(
     if not reports:
         return None
 
-    new_section = format_conformance(engine_name, reports, sources)
+    alt_github_url = parse_markdown_to_json(filename).get("github", "")
+    new_section = format_conformance(engine_name, reports, sources, alt_github_url)
     lines = content.splitlines(keepends=True)
 
     start = next(

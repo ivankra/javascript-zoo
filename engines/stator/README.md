@@ -12,6 +12,7 @@ JavaScript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 83%</summary><ul>
+<li>Tested version: <a href="https://github.com/telecos/stator/commit/455b1eb10f919ef9f26533a8b741d61e2b3e98c9">2026-04-02</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/stator.json">json</a>)</li>
 <li>ES1: 93.4% (185/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array.length failed
 <a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: FAIL
@@ -75,7 +76,8 @@ JavaScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 50%, ES2016+ 54%, Next 11%, Intl 79%</summary><ul>
+<details><summary>compat-table: ES6 49%, ES2016+ 54%, Next 11%, Intl 79%</summary><ul>
+<li>Tested version: <a href="https://github.com/telecos/stator/commit/455b1eb10f919ef9f26533a8b741d61e2b3e98c9">2026-04-02</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/stator.json">json</a>)</li>
 <li>ES5: 74%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
@@ -99,37 +101,14 @@ JavaScript engine written in Rust.
 <a href="../../conformance/compat-table/es5/strict.reserved-words.js">strict.reserved-words.js</a>: FAIL
 ...
 </pre></li>
-<li>ES6: 49.8%</li>
-<li>ES2016: 63.6%<pre>
+<li>ES6: 49.4%</li>
+<li>ES2016: 72.7%<pre>
 <a href="../../conformance/compat-table/es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: TypeError: CallProperty: callee is not a function (got Undefined)
 <a href="../../conformance/compat-table/es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: FAIL
 <a href="../../conformance/compat-table/es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: TypeError: CallProperty: callee is not a function (got Undefined)
 <a href="../../conformance/compat-table/es2016/misc.generator-no-new.js">misc.generator-no-new.js</a>: InternalError: bytecode fell off the end without Return
-<a href="../../conformance/compat-table/es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: CRASH: thread '&lt;unnamed&gt;' panicked at crates/stator_core/src/compiler/maglev/codegen.rs:2104:57:
 </pre></li>
-<li>ES2017: 50.1%<pre>
-<a href="../../conformance/compat-table/es2017/Object.getOwnPropertyDescriptors.js">Object.getOwnPropertyDescriptors.js</a>: TypeError: Cannot read properties of undefined (reading 'value')
-<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.Symbol.species.js">SharedArrayBuffer.Symbol.species.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js">annex-b.Object.prototype.__defineGetter__.ToObject.js</a>: CRASH: thread '&lt;unnamed&gt;' panicked at crates/stator_core/src/compiler/maglev/codegen.rs:2104:57:
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js">annex-b.Object.prototype.__defineGetter__.js</a>: TypeError: Cannot read properties of undefined (reading 'get')
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: Cannot read properties of undefined (reading 'get')
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js">annex-b.Object.prototype.__defineSetter__.ToObject.js</a>: CRASH: thread '&lt;unnamed&gt;' panicked at crates/stator_core/src/compiler/maglev/codegen.rs:2104:57:
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js">annex-b.Object.prototype.__defineSetter__.js</a>: TypeError: Cannot read properties of undefined (reading 'set')
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js">annex-b.Object.prototype.__defineSetter__.symbols.js</a>: TypeError: Cannot read properties of undefined (reading 'set')
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js">annex-b.Object.prototype.__lookupGetter__.ToObject.js</a>: TypeError: Cannot read properties of undefined (reading 'call')
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js">annex-b.Object.prototype.__lookupGetter__.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js">annex-b.Object.prototype.__lookupGetter__.prototype-chain.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js">annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js</a>: TypeError: CallProperty: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js">annex-b.Object.prototype.__lookupGetter__.symbols.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js">annex-b.Object.prototype.__lookupSetter__.ToObject.js</a>: CRASH: thread '&lt;unnamed&gt;' panicked at crates/stator_core/src/compiler/maglev/codegen.rs:2104:57:
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js">annex-b.Object.prototype.__lookupSetter__.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js">annex-b.Object.prototype.__lookupSetter__.prototype-chain.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js">annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js</a>: TypeError: CallProperty: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js">annex-b.Object.prototype.__lookupSetter__.symbols.js</a>: TypeError: CallAnyReceiver: callee is not a function (got Undefined)
-<a href="../../conformance/compat-table/es2017/annex-b.Proxy.__defineGetter__.js">annex-b.Proxy.__defineGetter__.js</a>: FAIL
-...
-</pre></li>
+<li>ES2017: 48.1%</li>
 <li>ES2018: 50.5%<pre>
 <a href="../../conformance/compat-table/es2018/Promise.prototype.finally.change-rejection.js">Promise.prototype.finally.change-rejection.js</a>: TypeError: Promise.prototype.finally called on non-Promise
 <a href="../../conformance/compat-table/es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: TypeError: Promise.prototype.then called on non-Promise
@@ -149,7 +128,7 @@ JavaScript engine written in Rust.
 <a href="../../conformance/compat-table/es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: unterminated string literal
 <a href="../../conformance/compat-table/es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: SyntaxError: unterminated string literal
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: FAIL: found both ok and fail markers
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: FAIL: found both pass and fail markers
 </pre></li>
 <li>ES2020: 71.4%<pre>
 <a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: FAIL
@@ -193,15 +172,16 @@ JavaScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>test262: 7.1%, main 7.8%, staging 2.4%, annexB 26.2%, Next 2.5%, Intl 0%</summary>
+<details><summary>test262: 7%, main 7.7%, staging 2.1%, annexB 26%, Next 2.7%, Intl 0%</summary>
 <ul>
-<li>Overall: 7.1% (3752/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 7.8% (3222/41237)</li>
+<li>Tested version: <a href="https://github.com/telecos/stator/commit/455b1eb10f919ef9f26533a8b741d61e2b3e98c9">2026-04-02</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/stator.json">json</a>)</li>
+<li>Overall: 7% (3711/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 7.7% (3187/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 8% (657/8197)<pre>
+<li>ES5: 8% (656/8197)<pre>
 caller: 100% (23/23)
 </pre></li>
-<li>ES6: 6.7% (737/11054)<pre>
+<li>ES6: 6.4% (708/11054)<pre>
 __proto__: 0% (0/18)
 Array.prototype.values: 0% (0/4)
 ArrayBuffer: 0% (0/268)
@@ -214,8 +194,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -242,7 +222,7 @@ Symbol.species: 0% (0/276)
 Symbol.split: 0% (0/58)
 Symbol.toPrimitive: 0% (0/233)
 Symbol.toStringTag: 0% (0/131)
-Symbol.unscopables: 9.1% (4/44)
+Symbol.unscopables: 6.8% (3/44)
 TypedArray: 0% (1/2513)
 Uint16Array: 0% (0/6)
 Uint32Array: 0% (0/2)
@@ -251,15 +231,15 @@ Uint8ClampedArray: 0% (0/6)
 WeakMap: 0% (0/79)
 WeakSet: 0% (0/34)
 arrow-function: 0.5% (5/949)
-class: 8.8% (420/4768)
-computed-property-names: 0.2% (1/478)
+class: 8.4% (400/4768)
+computed-property-names: 0% (0/478)
 const: 0% (0/15)
 cross-realm: 0% (0/201)
 default-parameters: 8.8% (199/2269)
-destructuring-assignment: 9.2% (13/141)
+destructuring-assignment: 4.3% (6/141)
 destructuring-binding: 7.2% (476/6637)
 for-of: 0% (0/5)
-generators: 8.4% (343/4085)
+generators: 8.2% (335/4085)
 let: 0% (0/77)
 new.target: 19.7% (12/61)
 proxy-missing-checks: 0% (0/3)
@@ -273,12 +253,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 13.6% (14/103)
 u180e: 4% (1/25)
 </pre></li>
-<li>ES2017: 8.5% (65/761)<pre>
+<li>ES2017: 8.5% (65/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 14.6% (103/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -308,7 +288,7 @@ stable-typedarray-sort: 0% (0/1)
 string-trimming: 0% (0/54)
 well-formed-json-stringify: 0% (0/1)
 </pre></li>
-<li>ES2020: 8.3% (180/2156)<pre>
+<li>ES2020: 8.3% (179/2156)<pre>
 BigInt: 2.6% (39/1501)
 Intl.NumberFormat-unified: 0% (0/67)
 Intl.RelativeTimeFormat: 0% (0/79)
@@ -319,7 +299,7 @@ coalesce-expression: 15.4% (4/26)
 dynamic-import: 33.6% (318/946)
 export-star-as-namespace-from-module: 10.5% (2/19)
 for-in-order: 0% (0/9)
-globalThis: 6.1% (9/148)
+globalThis: 5.4% (8/148)
 import.meta: 47.8% (11/23)
 optional-chaining: 37.5% (21/56)
 </pre></li>
@@ -339,7 +319,7 @@ align-detached-buffer-semantics-with-web-reality: 0% (0/158)
 logical-assignment-operators: 11.1% (12/108)
 numeric-separator-literal: 36.5% (58/159)
 </pre></li>
-<li>ES2022: 9% (494/5465)<pre>
+<li>ES2022: 9% (490/5465)<pre>
 Array.prototype.at: 0% (0/11)
 Intl.DateTimeFormat-extend-timezonename: 0% (0/2)
 Intl.DisplayNames-v2: 0% (0/12)
@@ -348,9 +328,9 @@ Object.hasOwn: 0% (0/62)
 String.prototype.at: 0% (0/11)
 TypedArray.prototype.at: 0% (0/13)
 arbitrary-module-namespace-names: 6.2% (1/16)
-class-fields-private: 18.6% (211/1134)
+class-fields-private: 18.4% (209/1134)
 class-fields-private-in: 26.3% (5/19)
-class-fields-public: 5.9% (122/2058)
+class-fields-public: 5.7% (118/2058)
 class-methods-private: 15.4% (264/1709)
 class-static-block: 32.3% (21/65)
 class-static-fields-private: 1.2% (4/345)
@@ -360,8 +340,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 3% (8/271)
 </pre></li>
-<li>ES2023: 7.8% (24/308)<pre>
+<li>ES2023: 5.9% (24/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 82.8% (24/29)
@@ -377,8 +358,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 0% (0/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 1.2% (15/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 1.2% (15/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -388,16 +369,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 0% (0/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 2.5% (211/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2.7% (211/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -406,17 +392,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 11.2% (981/8720)</li>
+<li>N/A: 11.2% (975/8718)</li>
 </ul>
 </details>

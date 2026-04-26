@@ -19,6 +19,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 ## Conformance
 
 <details><summary>ES1-ES5: 95%</summary><ul>
+<li>Tested version: <a href="https://github.com/trynova/nova/commit/285a37e9d1cf3516258b71992d98762b36be67f3">2026-04-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/nova.json">json</a>)</li>
 <li>ES1: 96.5% (191/198)<pre>
 <a href="../../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: FAIL: Date.prototype.toLocaleString not implemented
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Not a callable object
@@ -48,6 +49,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 </ul></details>
 
 <details><summary>compat-table: ES6 94%, ES2016+ 85%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/trynova/nova/commit/285a37e9d1cf3516258b71992d98762b36be67f3">2026-04-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/nova.json">json</a>)</li>
 <li>ES5: 98.6%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 </pre></li>
@@ -149,10 +151,11 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 77.7%, main 93.8%, staging 72.4%, annexB 52.1%, Next 11.6%, Intl 0.8%</summary>
+<details><summary>test262: 77.7%, main 93.2%, staging 72.5%, annexB 52.1%, Next 12%, Intl 0.8%</summary>
 <ul>
-<li>Overall: 77.7% (41298/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 93.8% (38676/41237)</li>
+<li>Tested version: <a href="https://github.com/trynova/nova/commit/285a37e9d1cf3516258b71992d98762b36be67f3">2026-04-19</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/nova.json">json</a>)</li>
+<li>Overall: 77.7% (41325/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 93.2% (38722/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 95.1% (7794/8197)<pre>
 caller: 0% (0/23)
@@ -170,8 +173,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 85.7% (6/7)
+Float64Array: 85.7% (6/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -180,14 +183,14 @@ Object.is: 100% (2/2)
 Promise: 50% (2/4)
 Proxy: 73.3% (343/468)
 Reflect: 76.1% (356/468)
-Reflect.construct: 72.4% (504/696)
+Reflect.construct: 72.7% (506/696)
 Reflect.set: 97.8% (45/46)
 Reflect.setPrototypeOf: 91.3% (21/23)
 Set: 100% (38/38)
 String.fromCodePoint: 63.6% (14/22)
 String.prototype.endsWith: 100% (27/27)
 String.prototype.includes: 100% (26/26)
-Symbol: 70.9% (1059/1494)
+Symbol: 71% (1061/1494)
 Symbol.hasInstance: 94.1% (16/17)
 Symbol.isConcatSpreadable: 97.1% (33/34)
 Symbol.iterator: 98.2% (1832/1865)
@@ -229,12 +232,12 @@ Array.prototype.includes: 59.4% (41/69)
 exponentiation: 96.1% (99/103)
 u180e: 84% (21/25)
 </pre></li>
-<li>ES2017: 89.4% (680/761)<pre>
+<li>ES2017: 89.4% (682/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 99.2% (373/376)
+Atomics: 99.2% (375/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 98.1% (454/463)
+SharedArrayBuffer: 98.1% (455/464)
 async-functions: 98.9% (697/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -316,8 +319,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 38.7% (12/31)
 top-level-await: 93.7% (254/271)
 </pre></li>
-<li>ES2023: 91.9% (283/308)<pre>
+<li>ES2023: 69% (283/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 99.2% (131/132)
 hashbang: 100% (29/29)
@@ -333,8 +337,8 @@ promise-with-resolvers: 66.7% (6/9)
 regexp-v-flag: 30.5% (57/187)
 resizable-arraybuffer: 95.2% (441/463)
 </pre></li>
-<li>ES2025: 44.5% (563/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 44.5% (563/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 100% (21/21)
 import-attributes: 76% (76/100)
@@ -344,16 +348,21 @@ promise-try: 83.3% (10/12)
 regexp-modifiers: 49.6% (114/230)
 set-methods: 18.2% (35/192)
 </pre></li>
-<li>Next: 11.6% (969/8357)<pre>
+<li>ES2026: 12.2% (44/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 16.7% (1/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0.1% (1/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 9.4% (3/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 12% (949/7895)<pre>
+Atomics.pause: 16.7% (1/6)
 ShadowRealm: 0% (0/64)
-Temporal: 7.2% (477/6670)
+Temporal: 7.5% (501/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 85.2% (23/27)
@@ -362,17 +371,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 59% (135/229)
 import-text: 0% (0/6)
-iterator-sequencing: 9.4% (3/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 3.8% (1/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 5.3% (1/19)
 source-phase-imports: 82% (187/228)
 source-phase-imports-module-source: 97.6% (82/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 88% (7673/8720)</li>
+<li>N/A: 88% (7674/8718)</li>
 </ul>
 </details>

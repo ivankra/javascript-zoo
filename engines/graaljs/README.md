@@ -31,12 +31,14 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: 25.1.0 with experimental flags (2026-04-22, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/graaljs_exp.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 99%, Next 38%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 62%, Intl 100%</summary><ul>
+<li>Tested version: 25.1.0 with experimental flags (2026-04-22, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/graaljs_exp.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 98.1%<pre>
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
@@ -44,27 +46,34 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
-<li>ES2018: 98.9%<pre>
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Unsupported Unicode script name 'Sidetic'
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 95.9%<pre>
-<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: FAIL
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 38%</li>
+<li>Next: 62.2%<pre>
+<a href="../../conformance/compat-table/next/Array.isTemplateObject.js">Array.isTemplateObject.js</a>: TypeError: (intermediate value).isTemplateObject is not a function
+<a href="../../conformance/compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js">AsyncIterator.prototype.Symbol.toStringTag.js</a>: FAIL
+<a href="../../conformance/compat-table/next/Map.prototype.upsert.js">Map.prototype.upsert.js</a>: TypeError: map.upsert is not a function
+<a href="../../conformance/compat-table/next/WeakMap.prototype.upsert.js">WeakMap.prototype.upsert.js</a>: TypeError: map.upsert is not a function
+<a href="../../conformance/compat-table/next/class-decorators.js">class-decorators.js</a>: TypeError: Cannot set property 'configurable' of undefined
+<a href="../../conformance/compat-table/next/function.sent.js">function.sent.js</a>: SyntaxError: Expected ( but found .
+<a href="../../conformance/compat-table/next/throw-expr.arrow.js">throw-expr.arrow.js</a>: SyntaxError: Expected an operand but found throw
+<a href="../../conformance/compat-table/next/throw-expr.conditional.js">throw-expr.conditional.js</a>: SyntaxError: Expected an operand but found throw
+<a href="../../conformance/compat-table/next/throw-expr.logical.js">throw-expr.logical.js</a>: SyntaxError: Expected an operand but found throw
+<a href="../../conformance/compat-table/next/throw-expr.param-init.js">throw-expr.param-init.js</a>: SyntaxError: Expected an operand but found throw
+</pre></li>
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 98.6%, main 99.9%, staging 97.8%, annexB 97.6%, Next 92.3%, Intl 84.5%</summary>
+<details><summary>test262: 98.6%, main 99.9%, staging 97.8%, annexB 97.6%, Next 91.9%, Intl 84.5%</summary>
 <ul>
-<li>Experimental flags were enabled.</li>
-<li>Overall: 98.6% (52423/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 99.9% (41201/41237)</li>
+<li>Tested version: 25.1.0 with experimental flags (2026-04-22, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/graaljs_exp.json">json</a>)</li>
+<li>Overall: 98.6% (52426/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 99.9% (41513/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 99.9% (8195/8197)<pre>
 caller: 100% (23/23)
@@ -82,8 +91,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 100% (7/7)
+Float64Array: 100% (7/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -141,12 +150,12 @@ Array.prototype.includes: 100% (69/69)
 exponentiation: 100% (103/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 100% (761/761)<pre>
+<li>ES2017: 100% (763/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 100% (376/376)
+Atomics: 100% (378/378)
 Intl.DateTimeFormat-dayPeriod: 100% (12/12)
-SharedArrayBuffer: 100% (463/463)
+SharedArrayBuffer: 100% (464/464)
 async-functions: 100% (705/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -228,8 +237,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
 top-level-await: 100% (271/271)
 </pre></li>
-<li>ES2023: 99.7% (307/308)<pre>
+<li>ES2023: 99.8% (409/410)<pre>
 Intl-enumeration: 97.1% (34/35)
+Intl.NumberFormat-v3: 100% (102/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -245,8 +255,8 @@ promise-with-resolvers: 100% (9/9)
 regexp-v-flag: 100% (187/187)
 resizable-arraybuffer: 100% (463/463)
 </pre></li>
-<li>ES2025: 100% (1264/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 100% (1266/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 100% (112/112)
 RegExp.escape: 100% (21/21)
 import-attributes: 100% (100/100)
@@ -256,16 +266,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 92.3% (7715/8357)<pre>
+<li>ES2026: 99.7% (360/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 71.2% (1099/1543)
 Intl.Locale-info: 100% (43/43)
-Intl.NumberFormat-v3: 100% (102/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 100% (22/22)
+uint8array-base64: 100% (69/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 91.9% (7254/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 100% (64/64)
-Temporal: 92% (6137/6670)
+Temporal: 92% (6138/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 100% (19/19)
 decorators: 100% (27/27)
@@ -274,17 +289,13 @@ immutable-arraybuffer: 100% (20/20)
 import-bytes: 100% (5/5)
 import-defer: 100% (229/229)
 import-text: 100% (6/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 100% (22/22)
 legacy-regexp: 100% (26/26)
 nonextensible-applies-to-private: 100% (4/4)
 regexp-duplicate-named-groups: 100% (19/19)
 source-phase-imports: 100% (228/228)
 source-phase-imports-module-source: 100% (84/84)
-uint8array-base64: 100% (69/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 99.6% (8687/8720)</li>
+<li>N/A: 99.6% (8685/8718)</li>
 </ul>
 </details>

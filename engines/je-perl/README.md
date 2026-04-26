@@ -34,13 +34,13 @@ Packaged as [libje-perl](https://packages.debian.org/search?keywords=libje-perl)
 <a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: FAIL: Argument "b" isn't numeric in addition (+) at je-perl-dist/lib/perl5/JE/Number.pm line 93.; Argument "a" isn't numeric in addition (+) at je-perl-dist/lib/perl5/JE/Number.pm line 93.; Argument "test" ...
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: FAIL: $nn 10 captures failed; $nn reverse order failed
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: TIMEOUT: &gt;60s
-<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: ReferenceError: The variable EvalError has not been declared at global.EvalError.js, line 14.
+<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: ReferenceError: The variable EvalError has not been declared
 <a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '� = 1;
 <a href="../../conformance/es3/literals.object.decimal.js">literals.object.decimal.js</a>: FAIL: property name 1e2 failed; property name 2.5e1 failed
 <a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Expected colon but found '�: 42};
-<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '��1;  // r' at source.line-terminators.js, line 13.
-<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '�w = 4;   ' at source.whitespace.js, line 12.
-<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '��x = 1;  ' at source.whitespace.unicode.js, line 8.
+<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '��1;  // r'
+<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '�w = 4;   '
+<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: Expected semicolon, '}' or end of line but found '��x = 1;  '
 </pre></li>
 <li>ES5: 9.5% (7/74)</li>
 </ul></details>
@@ -62,15 +62,15 @@ Packaged as [libje-perl](https://packages.debian.org/search?keywords=libje-perl)
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 17.5%, main 21.1%, staging 9.7%, annexB 25%, Next 2.2%, Intl 0.1%</summary>
+<details><summary>test262: 17.5%, main 20.9%, staging 9.7%, annexB 25%, Next 2.4%, Intl 0.1%</summary>
 <ul>
-<li>Overall: 17.5% (9311/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 21.1% (8708/41237)</li>
+<li>Overall: 17.5% (9292/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 20.9% (8689/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 48.4% (3965/8197)<pre>
+<li>ES5: 48.4% (3964/8197)<pre>
 caller: 78.3% (18/23)
 </pre></li>
-<li>ES6: 9.9% (1092/11054)<pre>
+<li>ES6: 9.7% (1074/11054)<pre>
 __proto__: 0% (0/18)
 Array.prototype.values: 0% (0/4)
 ArrayBuffer: 0% (0/268)
@@ -83,8 +83,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -134,7 +134,7 @@ new.target: 24.6% (15/61)
 proxy-missing-checks: 0% (0/3)
 rest-parameters: 100% (96/96)
 super: 15.8% (3/19)
-tail-call-optimization: 71.4% (25/35)
+tail-call-optimization: 20% (7/35)
 template: 0% (0/1)
 </pre></li>
 <li>ES2016: 19.2% (25/130)<pre>
@@ -142,12 +142,12 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 44% (11/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -229,8 +229,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 7.5% (23/308)<pre>
+<li>ES2023: 5.6% (23/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 3.7% (4/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -246,8 +247,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 12.9% (163/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 12.9% (163/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -257,16 +258,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 64.3% (148/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 2.2% (187/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2.4% (187/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -275,17 +281,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 21.8% (50/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 15.8% (3/19)
 source-phase-imports: 30.7% (70/228)
 source-phase-imports-module-source: 40.5% (34/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 22.4% (1954/8720)</li>
+<li>N/A: 22.4% (1954/8718)</li>
 </ul>
 </details>

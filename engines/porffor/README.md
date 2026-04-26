@@ -14,6 +14,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 ## Conformance
 
 <details><summary>ES1-ES5: 77%</summary><ul>
+<li>Tested version: <a href="https://github.com/CanadaHonk/porffor/commit/84fdcda4741ed2ee1383ae65e15743869cd6c017">2026-03-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/porffor.json">json</a>)</li>
 <li>ES1: 89.9% (178/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array() + array index length update failed; sparse array length failed
 <a href="../../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: FAIL: array index length update failed
@@ -85,6 +86,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 </ul></details>
 
 <details><summary>compat-table: ES6 46%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/CanadaHonk/porffor/commit/84fdcda4741ed2ee1383ae65e15743869cd6c017">2026-03-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/porffor.json">json</a>)</li>
 <li>ES5: 81%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/String.prototype.split.js">String.prototype.split.js</a>: FAIL

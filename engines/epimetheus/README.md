@@ -14,6 +14,7 @@ Netscape's experimental "JavaScript 2.0" implementation towards ES4 proposal.
 ## Conformance
 
 <details><summary>ES1-ES5: 63%</summary><ul>
+<li>Tested version: <a href="https://github.com/jrmuizel/mozilla-cvs-history/commit/3229d5d8b7f8376cfb7936e7be810635a14a486b">2008-08-12</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/epimetheus.json">json</a>)</li>
 <li>ES1: 81.8% (162/198)<pre>
 <a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: TIMEOUT: &gt;10s
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: TIMEOUT: &gt;10s
@@ -64,6 +65,7 @@ Netscape's experimental "JavaScript 2.0" implementation towards ES4 proposal.
 </ul></details>
 
 <details><summary>compat-table: ES6 2%, ES2016+ 1%, Next 3%, Intl 21%</summary><ul>
+<li>Tested version: <a href="https://github.com/jrmuizel/mozilla-cvs-history/commit/3229d5d8b7f8376cfb7936e7be810635a14a486b">2008-08-12</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/epimetheus.json">json</a>)</li>
 <li>ES5: 6.4%</li>
 <li>ES6: 2.3%</li>
 <li>ES2016: 0%</li>

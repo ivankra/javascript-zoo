@@ -12,6 +12,7 @@ Vibe-coded JavaScript interpreter for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: <a href="https://github.com/asynkron/Asynkron.JsEngine/commit/00fecd1de76491afe557d7a07b4f373ed40c93eb">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/asynkron.json">json</a>)</li>
 <li>ES1: 99.5% (197/198)<pre>
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Legacy octal literals are not allowed. Use 0o prefix for octal literals on line 14 column 10.
 </pre></li>
@@ -27,6 +28,7 @@ Vibe-coded JavaScript interpreter for .NET.
 </ul></details>
 
 <details><summary>compat-table: ES6 90%, ES2016+ 95%, Next 36%, Intl 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/asynkron/Asynkron.JsEngine/commit/00fecd1de76491afe557d7a07b4f373ed40c93eb">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/asynkron.json">json</a>)</li>
 <li>ES5: 99.1%<pre>
 <a href="../../conformance/compat-table/es5/strict.assignment-eval-arguments-error.js">strict.assignment-eval-arguments-error.js</a>: FAIL
 </pre></li>
@@ -72,7 +74,7 @@ Vibe-coded JavaScript interpreter for .NET.
 </pre></li>
 <li>ES2020: 100%</li>
 <li>ES2021: 98.4%<pre>
-<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: Unexpected token '}'. at line 10, column 32
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: Unexpected token '}'.
 </pre></li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
@@ -82,10 +84,11 @@ Vibe-coded JavaScript interpreter for .NET.
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 89%, main 91.7%, staging 74.8%, annexB 97.9%, Next 76%, Intl 55.1%</summary>
+<details><summary>test262: 89%, main 91.7%, staging 74.9%, annexB 97.9%, Next 74.9%, Intl 55.1%</summary>
 <ul>
-<li>Overall: 89% (47321/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 91.7% (37813/41237)</li>
+<li>Tested version: <a href="https://github.com/asynkron/Asynkron.JsEngine/commit/00fecd1de76491afe557d7a07b4f373ed40c93eb">2026-04-06</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/asynkron.json">json</a>)</li>
+<li>Overall: 89% (47323/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 91.7% (38105/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.4% (8062/8197)<pre>
 caller: 100% (23/23)
@@ -103,8 +106,8 @@ DataView.prototype.getInt8: 80% (4/5)
 DataView.prototype.getUint16: 85.7% (6/7)
 DataView.prototype.getUint32: 85.7% (6/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 85.7% (6/7)
+Float64Array: 85.7% (6/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -162,12 +165,12 @@ Array.prototype.includes: 95.7% (66/69)
 exponentiation: 92.2% (95/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 84.6% (644/761)<pre>
+<li>ES2017: 84.5% (645/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 91% (342/376)
+Atomics: 90.7% (343/378)
 Intl.DateTimeFormat-dayPeriod: 100% (12/12)
-SharedArrayBuffer: 91.4% (423/463)
+SharedArrayBuffer: 91.4% (424/464)
 async-functions: 71.6% (505/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -198,14 +201,14 @@ string-trimming: 100% (54/54)
 well-formed-json-stringify: 100% (1/1)
 </pre></li>
 <li>ES2020: 84.2% (1815/2156)<pre>
-BigInt: 96.7% (1451/1501)
+BigInt: 96.7% (1452/1501)
 Intl.NumberFormat-unified: 83.6% (56/67)
 Intl.RelativeTimeFormat: 94.9% (75/79)
 Promise.allSettled: 100% (102/102)
 String.prototype.matchAll: 100% (16/16)
 Symbol.matchAll: 100% (63/63)
 coalesce-expression: 76.9% (20/26)
-dynamic-import: 47.3% (447/946)
+dynamic-import: 47.1% (446/946)
 export-star-as-namespace-from-module: 57.9% (11/19)
 for-in-order: 100% (9/9)
 globalThis: 98.6% (146/148)
@@ -228,7 +231,7 @@ align-detached-buffer-semantics-with-web-reality: 99.4% (157/158)
 logical-assignment-operators: 80.6% (87/108)
 numeric-separator-literal: 87.4% (139/159)
 </pre></li>
-<li>ES2022: 86.8% (4746/5465)<pre>
+<li>ES2022: 86.8% (4745/5465)<pre>
 Array.prototype.at: 90.9% (10/11)
 Intl.DateTimeFormat-extend-timezonename: 100% (2/2)
 Intl.DisplayNames-v2: 100% (12/12)
@@ -247,27 +250,28 @@ class-static-fields-public: 86.9% (185/213)
 class-static-methods-private: 95.1% (1439/1513)
 error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
-top-level-await: 78.6% (213/271)
+top-level-await: 77.9% (211/271)
 </pre></li>
-<li>ES2023: 99% (305/308)<pre>
+<li>ES2023: 98.3% (403/410)<pre>
 Intl-enumeration: 85.7% (30/35)
+Intl.NumberFormat-v3: 96.1% (98/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 96.6% (28/29)
 symbols-as-weakmap-keys: 100% (29/29)
 </pre></li>
-<li>ES2024: 89.3% (750/840)<pre>
+<li>ES2024: 89.2% (749/840)<pre>
 Atomics.waitAsync: 68.3% (69/101)
 String.prototype.isWellFormed: 100% (8/8)
 String.prototype.toWellFormed: 100% (8/8)
 array-grouping: 96.4% (27/28)
 arraybuffer-transfer: 96.6% (57/59)
-promise-with-resolvers: 88.9% (8/9)
+promise-with-resolvers: 77.8% (7/9)
 regexp-v-flag: 72.2% (135/187)
 resizable-arraybuffer: 98.9% (458/463)
 </pre></li>
-<li>ES2025: 86.5% (1093/1264)<pre>
-Float16Array: 95.9% (47/49)
+<li>ES2025: 86.3% (1093/1266)<pre>
+Float16Array: 92.2% (47/51)
 Intl.DurationFormat: 100% (112/112)
 RegExp.escape: 95.2% (20/21)
 import-attributes: 24% (24/100)
@@ -277,16 +281,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 63.9% (147/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 76% (6348/8357)<pre>
+<li>ES2026: 93.1% (336/361)<pre>
 Array.fromAsync: 84.2% (80/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 20.5% (316/1543)
 Intl.Locale-info: 97.7% (42/43)
-Intl.NumberFormat-v3: 96.1% (98/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 93.8% (30/32)
+json-parse-with-source: 95.5% (21/22)
+uint8array-base64: 100% (69/69)
+upsert: 98.6% (71/72)
+</pre></li>
+<li>Next: 74.9% (5915/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 98.4% (63/64)
-Temporal: 76.4% (5098/6670)
+Temporal: 76.4% (5099/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 94.7% (18/19)
 decorators: 92.6% (25/27)
@@ -295,17 +304,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 62.9% (144/229)
 import-text: 0% (0/6)
-iterator-sequencing: 93.8% (30/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 95.5% (21/22)
 legacy-regexp: 100% (26/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 94.7% (18/19)
 source-phase-imports: 58.3% (133/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 100% (69/69)
-upsert: 98.6% (71/72)
 </pre></li>
-<li>N/A: 91.1% (7946/8720)</li>
+<li>N/A: 91.2% (7948/8718)</li>
 </ul>
 </details>

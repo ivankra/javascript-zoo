@@ -20,6 +20,7 @@ Always runs in strict mode, seemingly no option to disable.
 ## Conformance
 
 <details><summary>ES1-ES5: 88%</summary><ul>
+<li>Tested version: 0.9.7 (<a href="https://github.com/nginx/njs/commit/463ee0d52d687bb6b3bb3a81dc53a42bbc6065fc">2026-04-21</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/njs.json">json</a>)</li>
 <li>ES1: 93.4% (185/198)<pre>
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
@@ -77,6 +78,7 @@ Always runs in strict mode, seemingly no option to disable.
 </ul></details>
 
 <details><summary>compat-table: ES6 39%, ES2016+ 32%, Next 0%, Intl 11%</summary><ul>
+<li>Tested version: 0.9.7 (<a href="https://github.com/nginx/njs/commit/463ee0d52d687bb6b3bb3a81dc53a42bbc6065fc">2026-04-21</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/njs.json">json</a>)</li>
 <li>ES5: 82.9%<pre>
 <a href="../../conformance/compat-table/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/immutable-globals.Infinity.js">immutable-globals.Infinity.js</a>: TypeError: Cannot assign to read-only property "Infinity" of object
@@ -144,10 +146,11 @@ Always runs in strict mode, seemingly no option to disable.
 <li>Intl: 10.7%</li>
 </ul></details>
 
-<details><summary>test262: 35.7%, main 44.4%, staging 22.6%, annexB 4.9%, Next 3.3%, Intl 0.3%</summary>
+<details><summary>test262: 35.7%, main 44.1%, staging 22.6%, annexB 4.9%, Next 3.4%, Intl 0.3%</summary>
 <ul>
-<li>Overall: 35.7% (18998/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 44.4% (18326/41237)</li>
+<li>Tested version: 0.9.7 (<a href="https://github.com/nginx/njs/commit/463ee0d52d687bb6b3bb3a81dc53a42bbc6065fc">2026-04-21</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/njs.json">json</a>)</li>
+<li>Overall: 35.7% (18998/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 44.1% (18334/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 87.9% (7206/8197)<pre>
 caller: 0% (0/23)
@@ -165,8 +168,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 64.3% (36/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 62.9% (22/35)
@@ -224,12 +227,12 @@ Array.prototype.includes: 37.7% (26/69)
 exponentiation: 56.3% (58/103)
 u180e: 56% (14/25)
 </pre></li>
-<li>ES2017: 23.3% (177/761)<pre>
+<li>ES2017: 23.2% (177/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 34.6% (244/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -311,8 +314,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 2.6% (7/271)
 </pre></li>
-<li>ES2023: 39% (120/308)<pre>
+<li>ES2023: 29.3% (120/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 12.8% (14/109)
 change-array-by-copy: 64.4% (85/132)
 hashbang: 72.4% (21/29)
@@ -328,8 +332,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 1.1% (5/463)
 </pre></li>
-<li>ES2025: 15.6% (197/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 15.6% (197/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -339,16 +343,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 71.3% (164/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.3% (279/8357)<pre>
+<li>ES2026: 2.2% (8/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.4% (271/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -357,17 +366,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.9% (73/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 57.1% (4977/8720)</li>
+<li>N/A: 57.1% (4977/8718)</li>
 </ul>
 </details>

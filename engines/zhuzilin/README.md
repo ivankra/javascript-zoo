@@ -13,13 +13,14 @@ JavaScript interpreter written in C++.
 ## Conformance
 
 <details><summary>ES1-ES5: 52%</summary><ul>
+<li>Tested version: 0.2.0 (<a href="https://github.com/zhuzilin/es/commit/943e5c09470813e26404bd3920b93601fcc5b46b">2026-02-10</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/zhuzilin.json">json</a>)</li>
 <li>ES1: 68.2% (135/198)<pre>
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: CRASH: SIGSEGV
 <a href="../../conformance/es1/Date.diff.js">Date.diff.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Date.js">Date.js</a>: CRASH: SIGABRT
-<a href="../../conformance/es1/Date.prototype.getDate.js">Date.prototype.getDate.js</a>: TIMEOUT: &gt;10s
+<a href="../../conformance/es1/Date.prototype.getDate.js">Date.prototype.getDate.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Date.prototype.getDay.js">Date.prototype.getDay.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: CRASH: SIGABRT
 <a href="../../conformance/es1/Date.prototype.getHours.js">Date.prototype.getHours.js</a>: CRASH: SIGABRT
@@ -41,6 +42,7 @@ JavaScript interpreter written in C++.
 </ul></details>
 
 <details><summary>compat-table: ES6 1%, ES2016+ 1%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: 0.2.0 (<a href="https://github.com/zhuzilin/es/commit/943e5c09470813e26404bd3920b93601fcc5b46b">2026-02-10</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/zhuzilin.json">json</a>)</li>
 <li>ES5: 83.6%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.unshift.return-count.js">Array.prototype.unshift.return-count.js</a>: CRASH: SIGABRT
 <a href="../../conformance/compat-table/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: CRASH: SIGABRT

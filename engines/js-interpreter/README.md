@@ -27,6 +27,7 @@ Sandboxed ES5 interpreter in JavaScript.
 ## Conformance
 
 <details><summary>ES1-ES5: 92%</summary><ul>
+<li>Tested version: <a href="https://github.com/NeilFraser/JS-Interpreter/commit/37e73f830051d4bcfdf0e6b466e7bd8dc1d45709">2025-02-27</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/js-interpreter.json">json</a>)</li>
 <li>ES1: 98.5% (195/198)<pre>
 <a href="../../conformance/es1/String.generics.js">String.generics.js</a>: FAIL: charAt failed; charCodeAt failed; indexOf failed; lastIndexOf failed; split failed; substring failed; toLowerCase failed; toUpperCase failed
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: arguments.callee is not a function
@@ -66,6 +67,7 @@ Sandboxed ES5 interpreter in JavaScript.
 </ul></details>
 
 <details><summary>compat-table: ES6 5%, ES2016+ 4%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/NeilFraser/JS-Interpreter/commit/37e73f830051d4bcfdf0e6b466e7bd8dc1d45709">2025-02-27</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/js-interpreter.json">json</a>)</li>
 <li>ES5: 81.1%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Object.freeze.js">Object.freeze.js</a>: FAIL
@@ -101,10 +103,11 @@ Sandboxed ES5 interpreter in JavaScript.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 26.2%, main 32.1%, staging 12.1%, annexB 27%, Next 2.3%, Intl 0.5%</summary>
+<details><summary>test262: 26.2%, main 31.9%, staging 12.1%, annexB 27%, Next 2.4%, Intl 0.5%</summary>
 <ul>
-<li>Overall: 26.2% (13933/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 32.1% (13256/41237)</li>
+<li>Tested version: <a href="https://github.com/NeilFraser/JS-Interpreter/commit/37e73f830051d4bcfdf0e6b466e7bd8dc1d45709">2025-02-27</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/js-interpreter.json">json</a>)</li>
+<li>Overall: 26.2% (13933/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 31.9% (13256/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 79% (6475/8197)<pre>
 caller: 87% (20/23)
@@ -122,8 +125,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -181,12 +184,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 13.6% (14/103)
 u180e: 68% (17/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -268,8 +271,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 6.2% (19/308)<pre>
+<li>ES2023: 4.6% (19/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -285,8 +289,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 26.7% (50/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 10.8% (136/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 10.7% (136/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -296,16 +300,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 52.6% (121/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 2.3% (193/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2.4% (193/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -314,17 +323,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 22.7% (52/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 31.6% (6/19)
 source-phase-imports: 31.6% (72/228)
 source-phase-imports-module-source: 40.5% (34/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 43.6% (3798/8720)</li>
+<li>N/A: 43.6% (3798/8718)</li>
 </ul>
 </details>

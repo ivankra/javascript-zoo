@@ -37,7 +37,7 @@ RUN ./dist.py /dist/engine262_d8 --no-test
 ARG TEST262=y
 RUN if [ "$TEST262" = y ]; then \
       echo >test/test262/failed && \
-      CI=1 TEST262= node test/test262/test262.mts --vv --update-failed >test262.log; \
+      TEST262= node test/test262/test262.mts --vv --update-failed >test262.log; \
     fi || true
 COPY engines/engine262/convert262.py ./
 RUN python3 ./convert262.py test262.log -o /dist/engine262.ci-test262 -b /dist/engine262 --test262-dir=test/test262/test262 || true

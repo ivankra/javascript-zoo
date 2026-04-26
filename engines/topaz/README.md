@@ -14,12 +14,14 @@ Multithreaded JavaScript engine for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 17%</summary><ul>
+<li>Tested version: 1.4.1 (<a href="https://github.com/koculu/Topaz/commit/03ef33706098e87e6272a43037fe44b78060f63d">2024-11-14</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/topaz.json">json</a>)</li>
 <li>ES1: 21.7% (43/198)</li>
 <li>ES3: 14.2% (21/148)</li>
 <li>ES5: 9.5% (7/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 15%, ES2016+ 8%, Next 1%, Intl 7%</summary><ul>
+<li>Tested version: 1.4.1 (<a href="https://github.com/koculu/Topaz/commit/03ef33706098e87e6272a43037fe44b78060f63d">2024-11-14</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/topaz.json">json</a>)</li>
 <li>ES5: 20.9%</li>
 <li>ES6: 14.9%</li>
 <li>ES2016: 34.8%</li>
@@ -36,10 +38,11 @@ Multithreaded JavaScript engine for .NET.
 <li>Intl: 7.1%</li>
 </ul></details>
 
-<details><summary>test262: 5.9%, main 7%, staging 0.2%, annexB 0.2%, Next 3.1%, Intl 0%</summary>
+<details><summary>test262: 5.9%, main 7%, staging 0.2%, annexB 0.2%, Next 3.3%, Intl 0%</summary>
 <ul>
-<li>Overall: 5.9% (3163/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 7% (2897/41237)</li>
+<li>Tested version: 1.4.1 (<a href="https://github.com/koculu/Topaz/commit/03ef33706098e87e6272a43037fe44b78060f63d">2024-11-14</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/topaz.json">json</a>)</li>
+<li>Overall: 5.9% (3163/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 7% (2897/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 3.5% (290/8197)<pre>
 caller: 0% (0/23)
@@ -57,8 +60,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -116,12 +119,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 6.8% (7/103)
 u180e: 0% (0/25)
 </pre></li>
-<li>ES2017: 6.7% (51/761)<pre>
+<li>ES2017: 6.7% (51/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 16% (113/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -203,8 +206,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 1.8% (5/271)
 </pre></li>
-<li>ES2023: 6.2% (19/308)<pre>
+<li>ES2023: 4.6% (19/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -220,8 +224,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 26.7% (50/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 5.1% (65/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 5.1% (65/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -231,16 +235,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 21.7% (50/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.1% (261/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.3% (261/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -249,17 +258,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 2.3% (199/8720)</li>
+<li>N/A: 2.3% (199/8718)</li>
 </ul>
 </details>

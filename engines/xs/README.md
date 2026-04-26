@@ -23,6 +23,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: 17.9.1 (<a href="https://github.com/Moddable-OpenSource/moddable/commit/5516726818906190d3a042d8be90219ce9d51b45">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/xs.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 99.3% (147/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: FAIL: rounding failed
@@ -33,6 +34,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 </ul></details>
 
 <details><summary>compat-table: ES6 98%, ES2016+ 98%, Next 30%, Intl 25%</summary><ul>
+<li>Tested version: 17.9.1 (<a href="https://github.com/Moddable-OpenSource/moddable/commit/5516726818906190d3a042d8be90219ce9d51b45">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/xs.json">json</a>)</li>
 <li>ES5: 99.1%<pre>
 <a href="../../conformance/compat-table/es5/strict.this-not-coerced-accessors.js">strict.this-not-coerced-accessors.js</a>: FAIL
 </pre></li>
@@ -75,10 +77,11 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 82.1%, main 99.6%, staging 87.1%, annexB 23.4%, Next 12.4%, Intl 0.8%</summary>
+<details><summary>test262: 82.1%, main 99.6%, staging 87.1%, annexB 23.4%, Next 9.1%, Intl 0.8%</summary>
 <ul>
-<li>Overall: 82.1% (43635/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 99.6% (41088/41237)</li>
+<li>Tested version: 17.9.1 (<a href="https://github.com/Moddable-OpenSource/moddable/commit/5516726818906190d3a042d8be90219ce9d51b45">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/xs.json">json</a>)</li>
+<li>Overall: 82.1% (43635/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 99.6% (41398/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.6% (8086/8197)<pre>
 caller: 100% (23/23)
@@ -96,8 +99,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 100% (7/7)
+Float64Array: 100% (7/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -155,12 +158,12 @@ Array.prototype.includes: 63.8% (44/69)
 exponentiation: 98.1% (101/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 92.4% (703/761)<pre>
+<li>ES2017: 92.4% (705/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 74.2% (279/376)
+Atomics: 74.3% (281/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 79.3% (367/463)
+SharedArrayBuffer: 79.3% (368/464)
 async-functions: 95.3% (672/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -242,8 +245,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 96.8% (30/31)
 top-level-await: 95.6% (259/271)
 </pre></li>
-<li>ES2023: 92.2% (284/308)<pre>
+<li>ES2023: 69.3% (284/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -259,8 +263,8 @@ promise-with-resolvers: 100% (9/9)
 regexp-v-flag: 99.5% (186/187)
 resizable-arraybuffer: 98.7% (457/463)
 </pre></li>
-<li>ES2025: 90.4% (1143/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 90.4% (1145/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 100% (21/21)
 import-attributes: 89% (89/100)
@@ -270,16 +274,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 99.6% (229/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 12.4% (1033/8357)<pre>
+<li>ES2026: 86.4% (312/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 16.7% (1/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 95.5% (21/22)
+uint8array-base64: 100% (69/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 9.1% (721/7895)<pre>
+Atomics.pause: 16.7% (1/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -288,17 +297,13 @@ immutable-arraybuffer: 75% (15/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 95.5% (21/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 94.7% (18/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 100% (69/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 87.9% (7661/8720)</li>
+<li>N/A: 87.8% (7657/8718)</li>
 </ul>
 </details>

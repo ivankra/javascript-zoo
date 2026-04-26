@@ -19,6 +19,7 @@ standard library - passes through most of it from the host environment.
 ## Conformance
 
 <details><summary>ES1-ES5: 94%</summary><ul>
+<li>Tested version: <a href="https://github.com/bplok20010/eval5/commit/64f9f7ffc97b6eb0ada78078b13897d1d52aea12">2024-10-25</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/eval5.json">json</a>)</li>
 <li>ES1: 98% (194/198)<pre>
 <a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: FAIL: function instance constructor failed
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
@@ -26,7 +27,7 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: FAIL: C++ like evaluation order in 'x += f()'
 </pre></li>
 <li>ES3: 98.6% (146/148)<pre>
-<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: ReferenceError: EvalError is not defined [14:4]
+<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: ReferenceError: EvalError is not defined
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: FAIL: wrong exception for calling number; no exception for Function.prototype.toString on non-function
 </pre></li>
 <li>ES5: 71.6% (53/74)<pre>
@@ -55,6 +56,7 @@ standard library - passes through most of it from the host environment.
 </ul></details>
 
 <details><summary>compat-table: ES6 41%, ES2016+ 31%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/bplok20010/eval5/commit/64f9f7ffc97b6eb0ada78078b13897d1d52aea12">2024-10-25</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/eval5.json">json</a>)</li>
 <li>ES5: 83.2%<pre>
 <a href="../../conformance/compat-table/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/immutable-globals.Infinity.js">immutable-globals.Infinity.js</a>: FAIL
@@ -77,27 +79,27 @@ standard library - passes through most of it from the host environment.
 <li>ES2017: 36%</li>
 <li>ES2018: 21.1%</li>
 <li>ES2019: 62.5%<pre>
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: Unexpected token (3:18)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: SyntaxError: Unexpected token (1:4)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: The keyword 'class' is reserved (1:13)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: The keyword 'class' is reserved (1:1)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: Unexpected token (1:15)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: SyntaxError: The keyword 'const' is reserved (10:2)
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Unexpected token (1:29)
-<a href="../../conformance/compat-table/es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Unterminated string constant (1:0)
-<a href="../../conformance/compat-table/es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: SyntaxError: Unterminated string constant (1:0)
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: Unexpected token (44:9)
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: SyntaxError: Unexpected token (12:8)
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Unexpected token (9:11)
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: The keyword 'class' is reserved
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: The keyword 'class' is reserved
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: SyntaxError: The keyword 'const' is reserved
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Unterminated string constant
+<a href="../../conformance/compat-table/es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: SyntaxError: Unterminated string constant
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Unexpected token
 </pre></li>
 <li>ES2020: 14.3%</li>
 <li>ES2021: 7.1%</li>
 <li>ES2022: 29.4%</li>
 <li>ES2023: 62.9%<pre>
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: Uint8Array is not defined [10:16]
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: Uint8Array is not defined [10:16]
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: Uint8Array is not defined [10:16]
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#' (1:0)
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: Uint8Array is not defined
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: Uint8Array is not defined
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: Uint8Array is not defined
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#'
 </pre></li>
 <li>ES2024: 22.4%</li>
 <li>ES2025: 36.8%</li>
@@ -105,10 +107,11 @@ standard library - passes through most of it from the host environment.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 32.7%, main 39.6%, staging 23.5%, annexB 35.3%, Next 3.4%, Intl 0.5%</summary>
+<details><summary>test262: 32.7%, main 39.4%, staging 23.5%, annexB 35.3%, Next 3.4%, Intl 0.5%</summary>
 <ul>
-<li>Overall: 32.7% (17372/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 39.6% (16341/41237)</li>
+<li>Tested version: <a href="https://github.com/bplok20010/eval5/commit/64f9f7ffc97b6eb0ada78078b13897d1d52aea12">2024-10-25</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/eval5.json">json</a>)</li>
+<li>Overall: 32.7% (17372/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 39.4% (16358/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 82.6% (6774/8197)<pre>
 caller: 0% (0/23)
@@ -126,8 +129,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -185,12 +188,12 @@ Array.prototype.includes: 36.2% (25/69)
 exponentiation: 13.6% (14/103)
 u180e: 76% (19/25)
 </pre></li>
-<li>ES2017: 22.5% (171/761)<pre>
+<li>ES2017: 22.4% (171/763)<pre>
 __getter__: 63% (17/27)
 __setter__: 63% (17/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -272,8 +275,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 16.1% (5/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 32.5% (100/308)<pre>
+<li>ES2023: 24.4% (100/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 25.7% (28/109)
 change-array-by-copy: 28% (37/132)
 hashbang: 65.5% (19/29)
@@ -289,8 +293,8 @@ promise-with-resolvers: 33.3% (3/9)
 regexp-v-flag: 27.8% (52/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 15.3% (194/1264)<pre>
-Float16Array: 4.1% (2/49)
+<li>ES2025: 15.3% (194/1266)<pre>
+Float16Array: 3.9% (2/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 52.4% (11/21)
 import-attributes: 15% (15/100)
@@ -300,16 +304,21 @@ promise-try: 33.3% (4/12)
 regexp-modifiers: 68.7% (158/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.4% (286/8357)<pre>
+<li>ES2026: 5% (18/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 46.2% (6/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 9.1% (2/22)
+uint8array-base64: 0% (0/69)
+upsert: 13.9% (10/72)
+</pre></li>
+<li>Next: 3.4% (268/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -318,17 +327,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 9.1% (2/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 13.9% (10/72)
 </pre></li>
-<li>N/A: 56.9% (4961/8720)</li>
+<li>N/A: 56.9% (4961/8718)</li>
 </ul>
 </details>

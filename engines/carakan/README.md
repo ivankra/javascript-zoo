@@ -15,6 +15,7 @@ JavaScript engine of Opera 10.50 – 12.18.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: 2017-01-20 (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/carakan.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 97.3% (72/74)<pre>
@@ -24,6 +25,7 @@ JavaScript engine of Opera 10.50 – 12.18.
 </ul></details>
 
 <details><summary>compat-table: ES6 5%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 2017-01-20 (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/carakan.json">json</a>)</li>
 <li>ES5: 98.9%<pre>
 <a href="../../conformance/compat-table/es5/misc.parseInt.ignores-leading-zeros.js">misc.parseInt.ignores-leading-zeros.js</a>: FAIL
 </pre></li>
@@ -44,6 +46,7 @@ JavaScript engine of Opera 10.50 – 12.18.
 
 <details><summary>test262: 30.9%, main 37.5%, staging 20.7%, annexB 32.6%, Next 3.2%, Intl 0.4%</summary>
 <ul>
+<li>Tested version: 2017-01-20 (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/carakan.json">json</a>)</li>
 <li>Overall: 30.9% (16421/53164)</li>
 <li>Excluding staging, annexB, Next and Intl: 37.5% (15479/41237)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
@@ -211,6 +214,7 @@ top-level-await: 2.2% (6/271)
 </pre></li>
 <li>ES2023: 8.1% (25/308)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 5.5% (6/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -238,13 +242,7 @@ regexp-modifiers: 67.4% (155/230)
 set-methods: 0% (0/192)
 </pre></li>
 <li>Next: 3.2% (269/8357)<pre>
-Array.fromAsync: 0% (0/95)
 Atomics.pause: 0% (0/6)
-Error.isError: 0% (0/13)
-Intl.Era-monthcode: 0% (0/1543)
-Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
-Math.sumPrecise: 0% (0/10)
 ShadowRealm: 0% (0/64)
 Temporal: 0% (0/6670)
 await-dictionary: 0% (0/37)
@@ -255,16 +253,12 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 7.2% (5/69)
-upsert: 0% (0/72)
 </pre></li>
 <li>N/A: 52% (4533/8720)</li>
 </ul>

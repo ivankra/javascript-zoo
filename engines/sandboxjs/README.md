@@ -21,7 +21,8 @@ those cases just trip the whitelist.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 70%</summary><ul>
+<details><summary>ES1-ES5: 72%</summary><ul>
+<li>Tested version: 0.9.3-1-gfe79ab4 (<a href="https://github.com/nyariv/SandboxJS/commit/fe79ab4f87a288710d9857c5efbadd80d4651a85">2026-04-17</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/sandboxjs.json">json</a>)</li>
 <li>ES1: 84.8% (168/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array.prototype failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
@@ -38,14 +39,14 @@ those cases just trip the whitelist.
 <a href="../../conformance/es1/Number.prototype.constructor.js">Number.prototype.constructor.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es1/Object.prototype.constructor.js">Object.prototype.constructor.js</a>: FAIL: SandboxAccessError: Static method or property access not permitted: Object.prototype
 <a href="../../conformance/es1/String.generics.js">String.generics.js</a>: FAIL: SandboxAccessError: Override prototype property 'toString' not allowed
-<a href="../../conformance/es1/String.js">String.js</a>: FAIL: 15.5.3.1 String.prototype failed
+<a href="../../conformance/es1/String.js">String.js</a>: FAIL: 15.5.1.2 String() failed; 15.5.3.1 String.prototype failed
 <a href="../../conformance/es1/String.prototype.constructor.js">String.prototype.constructor.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: FAIL: 0755 failed; max safe integer failed
 <a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Octal Deprecation: 101
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: ReferenceError: arguments is not defined
 ...
 </pre></li>
-<li>ES3: 73% (108/148)<pre>
+<li>ES3: 75.7% (112/148)<pre>
 <a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
@@ -68,23 +69,30 @@ those cases just trip the whitelist.
 <a href="../../conformance/es3/global.RangeError.js">global.RangeError.js</a>: FAIL: SandboxAccessError: Static method or property access not permitted: RangeError.prototype
 ...
 </pre></li>
-<li>ES5: 27% (20/74)</li>
+<li>ES5: 28.4% (21/74)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 27%, ES2016+ 38%, Next 8%, Intl 50%</summary><ul>
+<details><summary>compat-table: ES6 33%, ES2016+ 42%, Next 8%, Intl 50%</summary><ul>
+<li>Tested version: 0.9.3-1-gfe79ab4 (<a href="https://github.com/nyariv/SandboxJS/commit/fe79ab4f87a288710d9857c5efbadd80d4651a85">2026-04-17</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/sandboxjs.json">json</a>)</li>
 <li>ES5: 32.9%</li>
-<li>ES6: 26.9%</li>
-<li>ES2016: 16.7%</li>
-<li>ES2017: 30%</li>
-<li>ES2018: 45.6%</li>
+<li>ES6: 33%</li>
+<li>ES2016: 30.3%</li>
+<li>ES2017: 36%</li>
+<li>ES2018: 66.7%<pre>
+<a href="../../conformance/compat-table/es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: ReferenceError: arguments is not defined
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Object.Symbol(Symbol.asyncIterator)
+<a href="../../conformance/compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: ReferenceError: Proxy is not defined
+<a href="../../conformance/compat-table/es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Octal Deprecation: 01
+<a href="../../conformance/compat-table/es2018/regex.lookbehind.js">regex.lookbehind.js</a>: SyntaxError: Unexpected end of expression: /0/r.test("0") &amp;&amp; /1/r.test("1") &amp;&amp;
+</pre></li>
 <li>ES2019: 70.8%<pre>
-<a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: FAIL: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: FAIL: Unexpected token 'class': class  A  extends  function B() {}  {  c
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: FAIL: Unexpected token 'class': class A {}
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: FAIL: Unexpected token after call: {: { [  "0"  ]  (  )  {  } }.f
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: FAIL: Unexpected token 'function': function \u0061(\u{62}, \u0063) { \u0062
 <a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Unexpected token 'function': function *foo() {
@@ -94,19 +102,19 @@ those cases just trip the whitelist.
 <a href="../../conformance/compat-table/es2020/BigUint64Array.js">BigUint64Array.js</a>: ReferenceError: ArrayBuffer is not defined
 <a href="../../conformance/compat-table/es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: ReferenceError: ArrayBuffer is not defined
 <a href="../../conformance/compat-table/es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: ReferenceError: ArrayBuffer is not defined
-<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: FAIL: Method or property access not permitted: Iterator.Symbol(Symbol.iterator)
-<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: FAIL: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.Symbol(Symbol.iterator)
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: FAIL: SandboxAccessError: Static method or property access not permitted: Object.prototype
 <a href="../../conformance/compat-table/es2020/globalThis.js">globalThis.js</a>: TypeError: Cannot read properties of null (reading 'lacksGlobalThis')
 <a href="../../conformance/compat-table/es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: n is not a function
 </pre></li>
 <li>ES2021: 23%</li>
 <li>ES2022: 12.1%</li>
 <li>ES2023: 62.9%<pre>
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: FAIL: Method or property access not permitted: TypedArray.toReversed
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: FAIL: Method or property access not permitted: TypedArray.toSorted
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: FAIL: Method or property access not permitted: TypedArray.with
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected token after dot: #: #!/0/r/env node
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: TypedArray.toReversed
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: TypedArray.toSorted
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: TypedArray.with
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Invalid flags supplied to RegExp constructor 'bin'
 </pre></li>
 <li>ES2024: 20.4%</li>
 <li>ES2025: 52.6%<pre>
@@ -115,47 +123,48 @@ those cases just trip the whitelist.
 <a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
 <a href="../../conformance/compat-table/es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: FAIL: Method or property access not permitted: Iterator.drop
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: FAIL: Method or property access not permitted: Iterator.every
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: FAIL: Method or property access not permitted: Iterator.filter
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: FAIL: Method or property access not permitted: Iterator.find
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: FAIL: Method or property access not permitted: Iterator.flatMap
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: FAIL: Method or property access not permitted: Iterator.forEach
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: FAIL: Method or property access not permitted: Iterator.map
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: FAIL: Method or property access not permitted: Iterator.reduce
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: FAIL: Method or property access not permitted: Iterator.some
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: FAIL: Method or property access not permitted: Iterator.take
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: FAIL: Method or property access not permitted: Iterator.toArray
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.drop
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.every
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.filter
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.find
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.flatMap
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.forEach
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.map
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.reduce
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.some
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.take
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: Iterator.toArray
 <a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: ReferenceError: arguments is not defined
 </pre></li>
 <li>Next: 8.1%</li>
 <li>Intl: 50%<pre>
-<a href="../../conformance/compat-table/intl/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: FAIL: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: FAIL: SandboxAccessError: Object construction not allowed: Function
 <a href="../../conformance/compat-table/intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: FAIL
 <a href="../../conformance/compat-table/intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: FAIL
-<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: FAIL
-<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: FAIL: Object construction not allowed: Function
-<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: FAIL: Method or property access not permitted: DateTimeFormat.resolvedOptions
-<a href="../../conformance/compat-table/intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: FAIL: Object construction not allowed: Function
-<a href="../../conformance/compat-table/intl/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: FAIL: Access to prototype of global object is not permitted
-<a href="../../conformance/compat-table/intl/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: FAIL: Static method or property access not permitted: Object.prototype
-<a href="../../conformance/compat-table/intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: FAIL: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: FAIL: SandboxAccessError: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: FAIL: SandboxAccessError: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: FAIL: SandboxAccessError: Method or property access not permitted: DateTimeFormat.resolvedOptions
+<a href="../../conformance/compat-table/intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: FAIL: SandboxAccessError: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: FAIL: SandboxAccessError: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/compat-table/intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: FAIL: SandboxAccessError: Access to prototype of global object is not permitted
 </pre></li>
 </ul></details>
 
-<details><summary>test262: 6.8%, main 8.2%, staging 0.2%, annexB 0.6%, Next 2.6%, Intl 0%</summary>
+<details><summary>test262: 6.9%, main 8.3%, staging 0.3%, annexB 0.6%, Next 2.8%, Intl 0%</summary>
 <ul>
-<li>Overall: 6.8% (3597/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 8.2% (3366/41237)</li>
+<li>Tested version: 0.9.3-1-gfe79ab4 (<a href="https://github.com/nyariv/SandboxJS/commit/fe79ab4f87a288710d9857c5efbadd80d4651a85">2026-04-17</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/sandboxjs.json">json</a>)</li>
+<li>Overall: 6.9% (3669/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 8.3% (3436/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 2.9% (234/8197)<pre>
+<li>ES5: 3.2% (260/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
-<li>ES6: 8.2% (901/11054)<pre>
+<li>ES6: 6.9% (767/11054)<pre>
 __proto__: 0% (0/18)
 Array.prototype.values: 0% (0/4)
 ArrayBuffer: 0% (0/268)
@@ -168,8 +177,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -204,20 +213,20 @@ Uint8Array: 0% (0/11)
 Uint8ClampedArray: 0% (0/6)
 WeakMap: 0% (0/79)
 WeakSet: 0% (0/34)
-arrow-function: 6.4% (61/949)
+arrow-function: 6.2% (59/949)
 class: 15.7% (750/4768)
 computed-property-names: 2.5% (12/478)
 const: 0% (0/15)
 cross-realm: 0% (0/201)
-default-parameters: 9.7% (219/2269)
-destructuring-assignment: 66.7% (94/141)
-destructuring-binding: 7.7% (510/6637)
+default-parameters: 7.6% (172/2269)
+destructuring-assignment: 65.2% (92/141)
+destructuring-binding: 6.5% (432/6637)
 for-of: 0% (0/5)
-generators: 10.6% (433/4085)
+generators: 8.6% (350/4085)
 let: 0% (0/77)
 new.target: 19.7% (12/61)
 proxy-missing-checks: 0% (0/3)
-rest-parameters: 91.7% (88/96)
+rest-parameters: 59.4% (57/96)
 super: 10.5% (2/19)
 tail-call-optimization: 0% (0/35)
 template: 0% (0/1)
@@ -227,28 +236,28 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 11.7% (12/103)
 u180e: 4% (1/25)
 </pre></li>
-<li>ES2017: 10.5% (80/761)<pre>
+<li>ES2017: 8.1% (62/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
-async-functions: 20.7% (146/705)
+SharedArrayBuffer: 0% (0/464)
+async-functions: 17.6% (124/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
-<li>ES2018: 9.1% (441/4855)<pre>
+<li>ES2018: 10.8% (526/4855)<pre>
 IsHTMLDDA: 0% (0/42)
 Promise.prototype.finally: 0% (0/29)
 Symbol.asyncIterator: 0% (0/538)
-async-iteration: 11.9% (591/4968)
+async-iteration: 9.7% (480/4968)
 object-rest: 1.1% (4/355)
 object-spread: 17.8% (24/135)
 regexp-dotall: 0% (0/17)
 regexp-lookbehind: 0% (0/19)
-regexp-named-groups: 0% (0/100)
-regexp-unicode-property-escapes: 0% (0/681)
+regexp-named-groups: 54% (54/100)
+regexp-unicode-property-escapes: 23.9% (163/681)
 </pre></li>
-<li>ES2019: 0% (0/137)<pre>
+<li>ES2019: 0.7% (1/137)<pre>
 Array.prototype.flat: 0% (0/15)
 Array.prototype.flatMap: 0% (0/21)
 Object.fromEntries: 0% (0/25)
@@ -256,13 +265,13 @@ String.prototype.trimEnd: 0% (0/24)
 String.prototype.trimStart: 0% (0/23)
 Symbol.prototype.description: 0% (0/8)
 json-superset: 0% (0/4)
-optional-catch-binding: 0% (0/5)
+optional-catch-binding: 20% (1/5)
 stable-array-sort: 0% (0/4)
 stable-typedarray-sort: 0% (0/1)
 string-trimming: 0% (0/54)
 well-formed-json-stringify: 0% (0/1)
 </pre></li>
-<li>ES2020: 6.5% (141/2156)<pre>
+<li>ES2020: 6.6% (143/2156)<pre>
 BigInt: 1.2% (18/1501)
 Intl.NumberFormat-unified: 0% (0/67)
 Intl.RelativeTimeFormat: 0% (0/79)
@@ -275,9 +284,9 @@ export-star-as-namespace-from-module: 21.1% (4/19)
 for-in-order: 0% (0/9)
 globalThis: 5.4% (8/148)
 import.meta: 52.2% (12/23)
-optional-chaining: 33.9% (19/56)
+optional-chaining: 37.5% (21/56)
 </pre></li>
-<li>ES2021: 4.8% (44/920)<pre>
+<li>ES2021: 4.6% (42/920)<pre>
 AggregateError: 0% (0/31)
 FinalizationRegistry: 0% (0/49)
 Intl.DateTimeFormat-datetimestyle: 0% (0/16)
@@ -290,8 +299,8 @@ Promise.any: 0% (0/92)
 String.prototype.replaceAll: 0% (0/41)
 WeakRef: 0% (0/37)
 align-detached-buffer-semantics-with-web-reality: 0% (0/158)
-logical-assignment-operators: 5.6% (6/108)
-numeric-separator-literal: 23.9% (38/159)
+logical-assignment-operators: 2.8% (3/108)
+numeric-separator-literal: 24.5% (39/159)
 </pre></li>
 <li>ES2022: 16.2% (883/5465)<pre>
 Array.prototype.at: 0% (0/11)
@@ -314,63 +323,65 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 1.5% (4/271)
 </pre></li>
-<li>ES2023: 6.2% (19/308)<pre>
+<li>ES2023: 4.6% (19/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
 symbols-as-weakmap-keys: 0% (0/29)
 </pre></li>
-<li>ES2024: 0.1% (1/840)<pre>
+<li>ES2024: 6% (50/840)<pre>
 Atomics.waitAsync: 0% (0/101)
 String.prototype.isWellFormed: 0% (0/8)
 String.prototype.toWellFormed: 0% (0/8)
 array-grouping: 0% (0/28)
 arraybuffer-transfer: 0% (0/59)
 promise-with-resolvers: 0% (0/9)
-regexp-v-flag: 0.5% (1/187)
+regexp-v-flag: 26.7% (50/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 1.2% (15/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 7.7% (98/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
 iterator-helpers: 0% (0/567)
 json-modules: 15.4% (2/13)
 promise-try: 0% (0/12)
-regexp-modifiers: 0% (0/230)
+regexp-modifiers: 36.1% (83/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 2.6% (221/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2.8% (222/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
-explicit-resource-management: 11.9% (57/477)
+explicit-resource-management: 12.2% (58/477)
 immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 26.2% (60/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 45.6% (104/228)
 source-phase-imports-module-source: 40.5% (34/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 6.9% (605/8720)</li>
+<li>N/A: 6.7% (584/8718)</li>
 </ul>
 </details>

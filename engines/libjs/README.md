@@ -19,17 +19,19 @@ JavaScript engine of Ladybird browser and SerenityOS.
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/LadybirdBrowser/ladybird/commit/4b1ecbc9df6d862109a3e284d3a70c26b764459d">2026-04-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/libjs.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 97%, ES2016+ 100%, Next 18%, Intl 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/LadybirdBrowser/ladybird/commit/4b1ecbc9df6d862109a3e284d3a70c26b764459d">2026-04-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/libjs.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 97.4%<pre>
 <a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: Not allowed to declare a function here (line: 12, column: 10)
+<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: Not allowed to declare a function here
 <a href="../../conformance/compat-table/es6/arrow.precedence.js">arrow.precedence.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/subclassing.Function.prototype-chain.js">subclassing.Function.prototype-chain.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: FAIL
@@ -50,10 +52,11 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 97.9%, main 98.9%, staging 92.6%, annexB 99.9%, Next 93.2%, Intl 100%</summary>
+<details><summary>test262: 97.9%, main 98.9%, staging 92.6%, annexB 99.9%, Next 92.9%, Intl 100%</summary>
 <ul>
-<li>Overall: 97.9% (52058/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 98.9% (40777/41237)</li>
+<li>Tested version: <a href="https://github.com/LadybirdBrowser/ladybird/commit/4b1ecbc9df6d862109a3e284d3a70c26b764459d">2026-04-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/libjs.json">json</a>)</li>
+<li>Overall: 97.9% (52061/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 98.9% (41081/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 99% (8112/8197)<pre>
 caller: 0% (0/23)
@@ -71,8 +74,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 100% (7/7)
+Float64Array: 100% (7/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -130,12 +133,12 @@ Array.prototype.includes: 97.1% (67/69)
 exponentiation: 100% (103/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 92.9% (707/761)<pre>
+<li>ES2017: 92.9% (709/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 62.8% (236/376)
+Atomics: 63% (238/378)
 Intl.DateTimeFormat-dayPeriod: 100% (12/12)
-SharedArrayBuffer: 70.6% (327/463)
+SharedArrayBuffer: 70.7% (328/464)
 async-functions: 92.6% (653/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -217,8 +220,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
 top-level-await: 91.5% (248/271)
 </pre></li>
-<li>ES2023: 100% (308/308)<pre>
+<li>ES2023: 100% (410/410)<pre>
 Intl-enumeration: 100% (35/35)
+Intl.NumberFormat-v3: 100% (102/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -234,8 +238,8 @@ promise-with-resolvers: 66.7% (6/9)
 regexp-v-flag: 100% (187/187)
 resizable-arraybuffer: 99.8% (462/463)
 </pre></li>
-<li>ES2025: 99.9% (1263/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 99.9% (1265/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 100% (112/112)
 RegExp.escape: 100% (21/21)
 import-attributes: 88% (88/100)
@@ -245,16 +249,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 93.2% (7790/8357)<pre>
+<li>ES2026: 97.5% (352/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 100% (1543/1543)
 Intl.Locale-info: 100% (43/43)
-Intl.NumberFormat-v3: 100% (102/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 68.2% (15/22)
+uint8array-base64: 97.1% (67/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 92.9% (7337/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 0% (0/64)
-Temporal: 100% (6670/6670)
+Temporal: 100% (6671/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 100% (19/19)
 decorators: 11.1% (3/27)
@@ -263,17 +272,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 0% (0/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 100% (78/78)
-json-parse-with-source: 68.2% (15/22)
 legacy-regexp: 100% (26/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 100% (19/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 97.1% (67/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 98.6% (8598/8720)</li>
+<li>N/A: 98.6% (8596/8718)</li>
 </ul>
 </details>

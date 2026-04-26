@@ -23,12 +23,13 @@ Embeddable JavaScript engine.
 ## Conformance
 
 <details><summary>ES1-ES5: 58%</summary><ul>
+<li>Tested version: 2.7.7-22-gbb38d46e9 (<a href="https://github.com/embedthis/ejscript/commit/bb38d46e96ad20e923821d31d4a37e64de926d5a">2025-03-09</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/ejscript.json">json</a>)</li>
 <li>ES1: 73.7% (146/198)<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: FAIL: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: FAIL: Array.prototype.constructor failed
 <a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: FAIL
 <a href="../../conformance/es1/Array.prototype.join.js">Array.prototype.join.js</a>: FAIL: join() without separator failed
-<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: FAIL
+<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: CRASH: SIGSEGV
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: FAIL
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: FAIL: sort with comparefn failed; reverse comparefn failed
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: FAIL: new Boolean(true) failed; new Boolean() failed
@@ -47,32 +48,33 @@ Embeddable JavaScript engine.
 ...
 </pre></li>
 <li>ES3: 50% (74/148)<pre>
-<a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.4 Array.prototype.concat ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
+<a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.4 Array.prototype.concat ( [ item1 [ , item2 [ , Unterminated comment"
 <a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Array.prototype.push.js">Array.prototype.push.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
+<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , Unterminated comment"
+<a href="../../conformance/es3/Array.prototype.push.js">Array.prototype.push.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , Unterminated comment"
 <a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: CRASH: SIGSEGV
 <a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Array.prototype.unshift.returns-new-length.js">Array.prototype.unshift.returns-new-length.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment starting on line 1"
+<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , Unterminated comment"
+<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , Unterminated comment"
+<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment"
+<a href="../../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment"
+<a href="../../conformance/es3/Array.prototype.unshift.returns-new-length.js">Array.prototype.unshift.returns-new-length.js</a>: SyntaxError: Unexpected input " ES3: 15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , Unterminated comment"
 <a href="../../conformance/es3/Error.prototype.constructor.js">Error.prototype.constructor.js</a>: FAIL
 <a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: FAIL
 <a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: FAIL
 <a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: FAIL: ArgError: Insufficient actual parameters 1. Call requires 2 parameter(s).
-<a href="../../conformance/es3/Function.prototype.call.js">Function.prototype.call.js</a>: SyntaxError: Unexpected input " ES3: 15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Math.max.variadic.js">Math.max.variadic.js</a>: SyntaxError: Unexpected input " ES3: 15.8.2.11 max ( [ value1 [ , value2 [ , Unterminated comment starting on line 1"
-<a href="../../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: SyntaxError: Unexpected input " ES3: 15.8.2.12 min ( [ value1 [ , value2 [ , Unterminated comment starting on line 1"
+<a href="../../conformance/es3/Function.prototype.call.js">Function.prototype.call.js</a>: SyntaxError: Unexpected input " ES3: 15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, Unterminated comment"
+<a href="../../conformance/es3/Math.max.variadic.js">Math.max.variadic.js</a>: SyntaxError: Unexpected input " ES3: 15.8.2.11 max ( [ value1 [ , value2 [ , Unterminated comment"
+<a href="../../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: SyntaxError: Unexpected input " ES3: 15.8.2.12 min ( [ value1 [ , value2 [ , Unterminated comment"
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: FAIL: zero failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: SyntaxError: Unexpected input " e and n, pick the e and n for which n Unterminated comment starting on line 6"
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: SyntaxError: Unexpected input " e and n, pick the e and n for which n Unterminated comment"
 ...
 </pre></li>
 <li>ES5: 32.4% (24/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 8%, ES2016+ 9%, Next 0%, Intl 21%</summary><ul>
+<li>Tested version: 2.7.7-22-gbb38d46e9 (<a href="https://github.com/embedthis/ejscript/commit/bb38d46e96ad20e923821d31d4a37e64de926d5a">2025-03-09</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/ejscript.json">json</a>)</li>
 <li>ES5: 60.1%<pre>
 <a href="../../conformance/compat-table/es5/Array.isArray.js">Array.isArray.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
@@ -80,7 +82,7 @@ Embeddable JavaScript engine.
 <a href="../../conformance/compat-table/es5/Array.prototype.unshift.return-count.js">Array.prototype.unshift.return-count.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: CRASH: Assertion tp-&gt;tm_yday &gt;= 0, failed at src/mpr/mprLib.c:29429
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: SyntaxError: Unexpected input " compat-table: ES5 &gt; Number methods (small) &gt; Number.prototype.toExponential throws on Unterminated comment starting on line 1"
+<a href="../../conformance/compat-table/es5/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: SyntaxError: Unexpected input " compat-table: ES5 &gt; Number methods (small) &gt; Number.prototype.toExponential throws on Unterminated comment"
 <a href="../../conformance/compat-table/es5/Object.getPrototypeOf.js">Object.getPrototypeOf.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/String.prototype.split.js">String.prototype.split.js</a>: FAIL: ArgError:  Exception: Insufficient actual parameters 0. Call requires 1 parameter(s).
 <a href="../../conformance/compat-table/es5/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: ReferenceError: Exception: Cannot find function "substr"
@@ -111,10 +113,11 @@ Embeddable JavaScript engine.
 <li>Intl: 21.4%</li>
 </ul></details>
 
-<details><summary>test262: 6%, main 7.4%, staging 0.3%, annexB 0.4%, Next 1.6%, Intl 0%</summary>
+<details><summary>test262: 6%, main 7.3%, staging 0.3%, annexB 0.4%, Next 1.7%, Intl 0%</summary>
 <ul>
-<li>Overall: 6% (3190/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 7.4% (3044/41237)</li>
+<li>Tested version: 2.7.7-22-gbb38d46e9 (<a href="https://github.com/embedthis/ejscript/commit/bb38d46e96ad20e923821d31d4a37e64de926d5a">2025-03-09</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/ejscript.json">json</a>)</li>
+<li>Overall: 6% (3198/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 7.3% (3052/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 2.2% (183/8197)<pre>
 caller: 0% (0/23)
@@ -132,8 +135,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -168,8 +171,8 @@ Uint8Array: 0% (0/11)
 Uint8ClampedArray: 0% (0/6)
 WeakMap: 0% (0/79)
 WeakSet: 0% (0/34)
-arrow-function: 6.6% (63/949)
-class: 13.4% (637/4768)
+arrow-function: 6.7% (64/949)
+class: 13.4% (639/4768)
 computed-property-names: 2.1% (10/478)
 const: 0% (0/15)
 cross-realm: 0% (0/201)
@@ -191,12 +194,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 13.6% (14/103)
 u180e: 4% (1/25)
 </pre></li>
-<li>ES2017: 16.2% (123/761)<pre>
+<li>ES2017: 16.1% (123/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 25.7% (181/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -257,7 +260,7 @@ align-detached-buffer-semantics-with-web-reality: 0% (0/158)
 logical-assignment-operators: 3.7% (4/108)
 numeric-separator-literal: 5.7% (9/159)
 </pre></li>
-<li>ES2022: 14% (765/5465)<pre>
+<li>ES2022: 14% (767/5465)<pre>
 Array.prototype.at: 0% (0/11)
 Intl.DateTimeFormat-extend-timezonename: 0% (0/2)
 Intl.DisplayNames-v2: 0% (0/12)
@@ -266,9 +269,9 @@ Object.hasOwn: 0% (0/62)
 String.prototype.at: 0% (0/11)
 TypedArray.prototype.at: 0% (0/13)
 arbitrary-module-namespace-names: 37.5% (6/16)
-class-fields-private: 25.3% (287/1134)
+class-fields-private: 25.5% (289/1134)
 class-fields-private-in: 31.6% (6/19)
-class-fields-public: 11.4% (235/2058)
+class-fields-public: 11.5% (237/2058)
 class-methods-private: 18.5% (316/1709)
 class-static-block: 41.5% (27/65)
 class-static-fields-private: 4.6% (16/345)
@@ -278,11 +281,12 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 1.8% (5/271)
 </pre></li>
-<li>ES2023: 5.5% (17/308)<pre>
+<li>ES2023: 5.6% (23/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
-hashbang: 58.6% (17/29)
+hashbang: 79.3% (23/29)
 symbols-as-weakmap-keys: 0% (0/29)
 </pre></li>
 <li>ES2024: 3% (25/840)<pre>
@@ -295,8 +299,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 13.4% (25/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 6.2% (79/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 6.2% (79/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 14% (14/100)
@@ -306,16 +310,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 28.3% (65/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 1.6% (137/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 1.7% (137/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -324,17 +333,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 13.5% (31/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 23.7% (54/228)
 source-phase-imports-module-source: 21.4% (18/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 4.2% (370/8720)</li>
+<li>N/A: 4.2% (370/8718)</li>
 </ul>
 </details>

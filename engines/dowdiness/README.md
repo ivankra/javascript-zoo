@@ -12,6 +12,7 @@ Vibe-coded JavaScript engine written in MoonBit.
 ## Conformance
 
 <details><summary>ES1-ES5: 93%</summary><ul>
+<li>Tested version: 0.2.0-5-g4cb84a6 (<a href="https://github.com/dowdiness/js_engine/commit/4cb84a6fd4f27ee03cd5236804d7abd13ec54a9b">2026-04-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/dowdiness.json">json</a>)</li>
 <li>ES1: 98.5% (195/198)<pre>
 <a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: FAIL
 <a href="../../conformance/es1/numbers.inf.js">numbers.inf.js</a>: FAIL: value out of range
@@ -50,14 +51,15 @@ Vibe-coded JavaScript engine written in MoonBit.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 76%, ES2016+ 51%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 77%, ES2016+ 52%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: 0.2.0-5-g4cb84a6 (<a href="https://github.com/dowdiness/js_engine/commit/4cb84a6fd4f27ee03cd5236804d7abd13ec54a9b">2026-04-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/dowdiness.json">json</a>)</li>
 <li>ES5: 96.3%<pre>
 <a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.eval-arguments-bindings-error.js">strict.eval-arguments-bindings-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.legacy-octal-error.js">strict.legacy-octal-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.this-not-coerced-accessors.js">strict.this-not-coerced-accessors.js</a>: TypeError: Cannot set property 'test' of string
 </pre></li>
-<li>ES6: 76%<pre>
+<li>ES6: 76.9%<pre>
 <a href="../../conformance/compat-table/es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: TypeError: is not a function
 <a href="../../conformance/compat-table/es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: FAIL
@@ -69,20 +71,19 @@ Vibe-coded JavaScript engine written in MoonBit.
 <a href="../../conformance/compat-table/es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Map.iterator-prototype-chain.js">Map.iterator-prototype-chain.js</a>: TypeError: is not a function
 <a href="../../conformance/compat-table/es6/Map.zero-key.js">Map.zero-key.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/compat-table/es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/compat-table/es6/Promise.race.js">Promise.race.js</a>: CRASH: SIGSEGV
-<a href="../../conformance/compat-table/es6/Proxy.handler.defineProperty.invariants.js">Proxy.handler.defineProperty.invariants.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.defineProperty.js">Proxy.handler.defineProperty.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js">Proxy.handler.getOwnPropertyDescriptor.invariants.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: TypeError: Cannot read properties of undefined (reading 'value')
+<a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: TIMEOUT: &gt;60s
+<a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: TIMEOUT: &gt;60s
+<a href="../../conformance/compat-table/es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: TIMEOUT: &gt;60s
+<a href="../../conformance/compat-table/es6/Promise.race.js">Promise.race.js</a>: TIMEOUT: &gt;60s
 <a href="../../conformance/compat-table/es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/Proxy.handler.has.instances.js">Proxy.handler.has.instances.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/Reflect.construct.Array-subclassing.js">Reflect.construct.Array-subclassing.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: FAIL
 ...
 </pre></li>
-<li>ES2016: 77.3%<pre>
+<li>ES2016: 86.4%<pre>
 <a href="../../conformance/compat-table/es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: FAIL
-<a href="../../conformance/compat-table/es2016/misc.generator-no-new.js">misc.generator-no-new.js</a>: FAIL
 <a href="../../conformance/compat-table/es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: FAIL
 </pre></li>
 <li>ES2017: 57.5%<pre>
@@ -158,3 +159,234 @@ Vibe-coded JavaScript engine written in MoonBit.
 <li>Next: 0%</li>
 <li>Intl: 25%</li>
 </ul></details>
+
+<details><summary>test262: 52.6%, main 63.3%, staging 38.7%, annexB 72.7%, Next 3.6%, Intl 0.5%</summary>
+<ul>
+<li>Tested version: 0.2.0-5-g4cb84a6 (<a href="https://github.com/dowdiness/js_engine/commit/4cb84a6fd4f27ee03cd5236804d7abd13ec54a9b">2026-04-23</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/dowdiness.json">json</a>)</li>
+<li>Overall: 52.6% (27948/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 63.3% (26290/41549)</li>
+<li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
+<li>ES5: 88.3% (7238/8197)<pre>
+caller: 0% (0/23)
+</pre></li>
+<li>ES6: 78.5% (8676/11054)<pre>
+__proto__: 16.7% (3/18)
+Array.prototype.values: 75% (3/4)
+ArrayBuffer: 14.9% (40/268)
+DataView: 26.3% (50/190)
+DataView.prototype.getFloat32: 71.4% (5/7)
+DataView.prototype.getFloat64: 60% (3/5)
+DataView.prototype.getInt16: 85.7% (6/7)
+DataView.prototype.getInt32: 85.7% (6/7)
+DataView.prototype.getInt8: 80% (4/5)
+DataView.prototype.getUint16: 85.7% (6/7)
+DataView.prototype.getUint32: 85.7% (6/7)
+DataView.prototype.setUint8: 50% (28/56)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
+Int16Array: 100% (2/2)
+Int32Array: 75% (3/4)
+Int8Array: 77.1% (27/35)
+Map: 85% (34/40)
+Object.is: 100% (2/2)
+Promise: 25% (1/4)
+Proxy: 58.8% (275/468)
+Reflect: 43.8% (205/468)
+Reflect.construct: 60.2% (419/696)
+Reflect.set: 52.2% (24/46)
+Reflect.setPrototypeOf: 69.6% (16/23)
+Set: 92.1% (35/38)
+String.fromCodePoint: 45.5% (10/22)
+String.prototype.endsWith: 96.3% (26/27)
+String.prototype.includes: 96.2% (25/26)
+Symbol: 40.8% (610/1494)
+Symbol.hasInstance: 76.5% (13/17)
+Symbol.isConcatSpreadable: 70.6% (24/34)
+Symbol.iterator: 41.1% (767/1865)
+Symbol.match: 36.4% (32/88)
+Symbol.replace: 38.8% (38/98)
+Symbol.search: 48.6% (18/37)
+Symbol.species: 33% (91/276)
+Symbol.split: 39.7% (23/58)
+Symbol.toPrimitive: 46.8% (109/233)
+Symbol.toStringTag: 34.4% (45/131)
+Symbol.unscopables: 25% (11/44)
+TypedArray: 29% (729/2513)
+Uint16Array: 33.3% (2/6)
+Uint32Array: 100% (2/2)
+Uint8Array: 54.5% (6/11)
+Uint8ClampedArray: 33.3% (2/6)
+WeakMap: 89.9% (71/79)
+WeakSet: 82.4% (28/34)
+arrow-function: 58% (550/949)
+class: 26.5% (1265/4768)
+computed-property-names: 81.8% (391/478)
+const: 86.7% (13/15)
+cross-realm: 33.3% (67/201)
+default-parameters: 71.8% (1630/2269)
+destructuring-assignment: 38.3% (54/141)
+destructuring-binding: 63.8% (4237/6637)
+for-of: 20% (1/5)
+generators: 62.5% (2552/4085)
+let: 53.2% (41/77)
+new.target: 41% (25/61)
+proxy-missing-checks: 100% (3/3)
+rest-parameters: 0% (0/96)
+super: 21.1% (4/19)
+tail-call-optimization: 0% (0/35)
+template: 100% (1/1)
+</pre></li>
+<li>ES2016: 70% (91/130)<pre>
+Array.prototype.includes: 30.4% (21/69)
+exponentiation: 66% (68/103)
+u180e: 84% (21/25)
+</pre></li>
+<li>ES2017: 27.5% (210/763)<pre>
+__getter__: 63% (17/27)
+__setter__: 63% (17/27)
+Atomics: 0% (0/378)
+Intl.DateTimeFormat-dayPeriod: 0% (0/12)
+SharedArrayBuffer: 0% (0/464)
+async-functions: 43.5% (307/705)
+intl-normative-optional: 0% (0/4)
+</pre></li>
+<li>ES2018: 45.6% (2213/4855)<pre>
+IsHTMLDDA: 26.2% (11/42)
+Promise.prototype.finally: 89.7% (26/29)
+Symbol.asyncIterator: 4.8% (26/538)
+async-iteration: 42.3% (2100/4968)
+object-rest: 61.4% (218/355)
+object-spread: 59.3% (80/135)
+regexp-dotall: 41.2% (7/17)
+regexp-lookbehind: 0% (0/19)
+regexp-named-groups: 18% (18/100)
+regexp-unicode-property-escapes: 0% (0/681)
+</pre></li>
+<li>ES2019: 69.3% (95/137)<pre>
+Array.prototype.flat: 80% (12/15)
+Array.prototype.flatMap: 71.4% (15/21)
+Object.fromEntries: 56% (14/25)
+String.prototype.trimEnd: 75% (18/24)
+String.prototype.trimStart: 78.3% (18/23)
+Symbol.prototype.description: 87.5% (7/8)
+json-superset: 0% (0/4)
+optional-catch-binding: 60% (3/5)
+stable-array-sort: 50% (2/4)
+stable-typedarray-sort: 0% (0/1)
+string-trimming: 77.8% (42/54)
+well-formed-json-stringify: 0% (0/1)
+</pre></li>
+<li>ES2020: 23.5% (506/2156)<pre>
+BigInt: 9.9% (149/1501)
+Intl.NumberFormat-unified: 0% (0/67)
+Intl.RelativeTimeFormat: 0% (0/79)
+Promise.allSettled: 96.1% (98/102)
+String.prototype.matchAll: 93.8% (15/16)
+Symbol.matchAll: 55.6% (35/63)
+coalesce-expression: 88.5% (23/26)
+dynamic-import: 33% (312/946)
+export-star-as-namespace-from-module: 15.8% (3/19)
+for-in-order: 66.7% (6/9)
+globalThis: 37.8% (56/148)
+import.meta: 69.6% (16/23)
+optional-chaining: 69.6% (39/56)
+</pre></li>
+<li>ES2021: 40.3% (371/920)<pre>
+AggregateError: 67.7% (21/31)
+FinalizationRegistry: 0% (0/49)
+Intl.DateTimeFormat-datetimestyle: 0% (0/16)
+Intl.DateTimeFormat-formatRange: 0% (0/37)
+Intl.DateTimeFormat-fractionalSecondDigits: 0% (0/10)
+Intl.DisplayNames: 0% (0/47)
+Intl.ListFormat: 0% (0/81)
+Intl.Locale: 0% (0/156)
+Promise.any: 95.7% (88/92)
+String.prototype.replaceAll: 58.5% (24/41)
+WeakRef: 0% (0/37)
+align-detached-buffer-semantics-with-web-reality: 29.7% (47/158)
+logical-assignment-operators: 60.2% (65/108)
+numeric-separator-literal: 89.3% (142/159)
+</pre></li>
+<li>ES2022: 25% (1367/5465)<pre>
+Array.prototype.at: 100% (11/11)
+Intl.DateTimeFormat-extend-timezonename: 0% (0/2)
+Intl.DisplayNames-v2: 0% (0/12)
+Intl.Segmenter: 0% (0/79)
+Object.hasOwn: 95.2% (59/62)
+String.prototype.at: 100% (11/11)
+TypedArray.prototype.at: 38.5% (5/13)
+arbitrary-module-namespace-names: 43.8% (7/16)
+class-fields-private: 34.4% (390/1134)
+class-fields-private-in: 42.1% (8/19)
+class-fields-public: 31.2% (643/2058)
+class-methods-private: 20.1% (344/1709)
+class-static-block: 43.1% (28/65)
+class-static-fields-private: 4.9% (17/345)
+class-static-fields-public: 68.5% (146/213)
+class-static-methods-private: 10.7% (162/1513)
+error-cause: 60% (3/5)
+regexp-match-indices: 19.4% (6/31)
+top-level-await: 2.6% (7/271)
+</pre></li>
+<li>ES2023: 44.1% (181/410)<pre>
+Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
+array-find-from-last: 55% (60/109)
+change-array-by-copy: 66.7% (88/132)
+hashbang: 69% (20/29)
+symbols-as-weakmap-keys: 75.9% (22/29)
+</pre></li>
+<li>ES2024: 6.5% (55/840)<pre>
+Atomics.waitAsync: 0% (0/101)
+String.prototype.isWellFormed: 75% (6/8)
+String.prototype.toWellFormed: 75% (6/8)
+array-grouping: 78.6% (22/28)
+arraybuffer-transfer: 0% (0/59)
+promise-with-resolvers: 44.4% (4/9)
+regexp-v-flag: 3.2% (6/187)
+resizable-arraybuffer: 2.4% (11/463)
+</pre></li>
+<li>ES2025: 12.8% (162/1266)<pre>
+Float16Array: 21.6% (11/51)
+Intl.DurationFormat: 0% (0/112)
+RegExp.escape: 0% (0/21)
+import-attributes: 15% (15/100)
+iterator-helpers: 2.3% (13/567)
+json-modules: 15.4% (2/13)
+promise-try: 91.7% (11/12)
+regexp-modifiers: 33.5% (77/230)
+set-methods: 18.2% (35/192)
+</pre></li>
+<li>ES2026: 26% (94/361)<pre>
+Array.fromAsync: 1.1% (1/95)
+Error.isError: 84.6% (11/13)
+Intl.Era-monthcode: 0% (0/1543)
+Intl.Locale-info: 0% (0/43)
+Math.sumPrecise: 60% (6/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 94.4% (68/72)
+</pre></li>
+<li>Next: 3.6% (285/7895)<pre>
+Atomics.pause: 0% (0/6)
+ShadowRealm: 0% (0/64)
+Temporal: 0.1% (6/6671)
+await-dictionary: 5.4% (2/37)
+canonical-tz: 0% (0/19)
+decorators: 7.4% (2/27)
+explicit-resource-management: 15.5% (74/477)
+immutable-arraybuffer: 0% (0/20)
+import-bytes: 0% (0/5)
+import-defer: 31.9% (73/229)
+import-text: 0% (0/6)
+joint-iteration: 0% (0/78)
+legacy-regexp: 0% (0/26)
+nonextensible-applies-to-private: 0% (0/4)
+regexp-duplicate-named-groups: 0% (0/19)
+source-phase-imports: 56.1% (128/228)
+source-phase-imports-module-source: 50% (42/84)
+</pre></li>
+<li>N/A: 73.5% (6404/8718)</li>
+</ul>
+</details>

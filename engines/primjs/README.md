@@ -27,12 +27,14 @@ Other features: WebAssembly support (via wasm3), inspector/debugger, N-API compa
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/lynx-family/primjs/commit/bd6fe44e38eee521df22432b3dd4ced440f7dd15">2026-04-21</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/primjs_262.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 98%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/lynx-family/primjs/commit/bd6fe44e38eee521df22432b3dd4ced440f7dd15">2026-04-21</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/primjs_262.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 97.7%<pre>
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
@@ -110,10 +112,11 @@ Other features: WebAssembly support (via wasm3), inspector/debugger, N-API compa
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 75.5%, main 91.6%, staging 68.8%, annexB 94.1%, Next 3.7%, Intl 0.7%</summary>
+<details><summary>test262: 75.5%, main 91%, staging 68.8%, annexB 94.1%, Next 3.5%, Intl 0.7%</summary>
 <ul>
-<li>Overall: 75.5% (40161/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 91.6% (37790/41237)</li>
+<li>Tested version: <a href="https://github.com/lynx-family/primjs/commit/bd6fe44e38eee521df22432b3dd4ced440f7dd15">2026-04-21</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/primjs_262.json">json</a>)</li>
+<li>Overall: 75.5% (40161/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 91% (37821/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.6% (8086/8197)<pre>
 caller: 100% (23/23)
@@ -131,8 +134,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 80% (28/35)
@@ -190,12 +193,12 @@ Array.prototype.includes: 50.7% (35/69)
 exponentiation: 90.3% (93/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 69.8% (531/761)<pre>
+<li>ES2017: 69.6% (531/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 36.3% (168/463)
+SharedArrayBuffer: 36.2% (168/464)
 async-functions: 92.8% (654/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -277,8 +280,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 3.3% (9/271)
 </pre></li>
-<li>ES2023: 36% (111/308)<pre>
+<li>ES2023: 27.1% (111/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 65.1% (71/109)
 change-array-by-copy: 8.3% (11/132)
 hashbang: 100% (29/29)
@@ -294,8 +298,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 4.8% (22/463)
 </pre></li>
-<li>ES2025: 18.7% (236/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 18.6% (236/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -305,16 +309,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 18.2% (35/192)
 </pre></li>
-<li>Next: 3.7% (311/8357)<pre>
+<li>ES2026: 8.6% (31/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 11.6% (8/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 3.5% (280/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -323,17 +332,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 92.3% (8052/8720)</li>
+<li>N/A: 92.4% (8052/8718)</li>
 </ul>
 </details>

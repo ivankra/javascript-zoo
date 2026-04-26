@@ -14,6 +14,7 @@ Unfinished JavaScript engine written in Java.
 ## Conformance
 
 <details><summary>ES1-ES5: 51%</summary><ul>
+<li>Tested version: <a href="https://github.com/LebsterFace/LebJS/commit/7b5db4a32e9d97b6881452da59f363f514e61b76">2025-08-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/lebjs.json">json</a>)</li>
 <li>ES1: 60.1% (119/198)<pre>
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: TypeError: Boolean is not a constructor
 <a href="../../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: TypeError: Boolean is not a constructor
@@ -42,6 +43,7 @@ Unfinished JavaScript engine written in Java.
 </ul></details>
 
 <details><summary>compat-table: ES6 37%, ES2016+ 32%, Next 0%, Intl 14%</summary><ul>
+<li>Tested version: <a href="https://github.com/LebsterFace/LebJS/commit/7b5db4a32e9d97b6881452da59f363f514e61b76">2025-08-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/lebjs.json">json</a>)</li>
 <li>ES5: 68.7%<pre>
 <a href="../../conformance/compat-table/es5/Date.now.js">Date.now.js</a>: ReferenceError: Date is not defined
 <a href="../../conformance/compat-table/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: ReferenceError: Date is not defined
@@ -56,7 +58,7 @@ Unfinished JavaScript engine written in Java.
 <a href="../../conformance/compat-table/es5/immutable-globals.undefined.js">immutable-globals.undefined.js</a>: TypeError: Cannot assign to read-only property 'undefined'
 <a href="../../conformance/compat-table/es5/misc.Arguments.toStringTag.js">misc.Arguments.toStringTag.js</a>: ReferenceError: arguments is not defined
 <a href="../../conformance/compat-table/es5/misc.Function.prototype.non-enumerable.js">misc.Function.prototype.non-enumerable.js</a>: FAIL: NotImplemented: The Function constructor has not been implemented.
-<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Unexpected token '\' (8:8)
+<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Unexpected token '\'
 <a href="../../conformance/compat-table/es5/strict.arguments-callee-error.js">strict.arguments-callee-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.arguments-caller-error.js">strict.arguments-caller-error.js</a>: ReferenceError: arguments is not defined
 <a href="../../conformance/compat-table/es5/strict.arguments-unmapped.js">strict.arguments-unmapped.js</a>: ReferenceError: arguments is not defined
@@ -81,8 +83,8 @@ Unfinished JavaScript engine written in Java.
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: FAIL: NotImplemented: RegExp.prototype.test has not been implemented.
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Unexpected token '\', expected '(' (1:23)
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: Parsing `async` functions has not been implemented (44:4).
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Parsing Generator function declarations has not been implemented (9:12).
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: Parsing `async` functions has not been implemented
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Parsing Generator function declarations has not been implemented
 </pre></li>
 <li>ES2020: 7.1%</li>
 <li>ES2021: 25.4%</li>
@@ -110,15 +112,16 @@ Unfinished JavaScript engine written in Java.
 <li>Intl: 14.3%</li>
 </ul></details>
 
-<details><summary>test262: 21.6%, main 26.3%, staging 14.2%, annexB 13.5%, Next 3.3%, Intl 0%</summary>
+<details><summary>test262: 21.6%, main 26.1%, staging 14.2%, annexB 13.5%, Next 3.6%, Intl 0%</summary>
 <ul>
-<li>Overall: 21.6% (11470/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 26.3% (10832/41237)</li>
+<li>Tested version: <a href="https://github.com/LebsterFace/LebJS/commit/7b5db4a32e9d97b6881452da59f363f514e61b76">2025-08-14</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/lebjs.json">json</a>)</li>
+<li>Overall: 21.6% (11496/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 26.1% (10856/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 33.6% (2756/8197)<pre>
+<li>ES5: 33.6% (2757/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
-<li>ES6: 27% (2988/11054)<pre>
+<li>ES6: 27% (2986/11054)<pre>
 __proto__: 0% (0/18)
 Array.prototype.values: 25% (1/4)
 ArrayBuffer: 0% (0/268)
@@ -131,8 +134,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -167,7 +170,7 @@ Uint8Array: 0% (0/11)
 Uint8ClampedArray: 0% (0/6)
 WeakMap: 1.3% (1/79)
 WeakSet: 0% (0/34)
-arrow-function: 27.4% (260/949)
+arrow-function: 27% (256/949)
 class: 15.1% (722/4768)
 computed-property-names: 14.2% (68/478)
 const: 13.3% (2/15)
@@ -190,12 +193,12 @@ Array.prototype.includes: 27.5% (19/69)
 exponentiation: 42.7% (44/103)
 u180e: 60% (15/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -277,8 +280,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 12.9% (4/31)
 top-level-await: 3% (8/271)
 </pre></li>
-<li>ES2023: 31.8% (98/308)<pre>
+<li>ES2023: 23.9% (98/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 22% (24/109)
 change-array-by-copy: 35.6% (47/132)
 hashbang: 93.1% (27/29)
@@ -294,8 +298,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 1.6% (3/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 21.8% (275/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 21.7% (275/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -305,35 +309,36 @@ promise-try: 0% (0/12)
 regexp-modifiers: 29.6% (68/230)
 set-methods: 52.6% (101/192)
 </pre></li>
-<li>Next: 3.3% (279/8357)<pre>
+<li>ES2026: 2.8% (10/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 9.4% (3/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 9.7% (7/72)
+</pre></li>
+<li>Next: 3.6% (281/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 18.8% (12/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
-explicit-resource-management: 10.9% (52/477)
+explicit-resource-management: 13.4% (64/477)
 immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 9.4% (3/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 9.7% (7/72)
 </pre></li>
-<li>N/A: 32.9% (2865/8720)</li>
+<li>N/A: 33% (2880/8718)</li>
 </ul>
 </details>

@@ -12,12 +12,14 @@ Toy JavaScript interpreter written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/DelSkayn/toyjs/commit/11f084fc09723785b4bdb0575509664ca8b05f49">2022-06-04</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/delskayn.json">json</a>)</li>
 <li>ES1: 37.9% (75/198)</li>
 <li>ES3: 10.1% (15/148)</li>
 <li>ES5: 17.6% (13/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 10%, ES2016+ 4%, Next 0%, Intl 0%</summary><ul>
+<li>Tested version: <a href="https://github.com/DelSkayn/toyjs/commit/11f084fc09723785b4bdb0575509664ca8b05f49">2022-06-04</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/delskayn.json">json</a>)</li>
 <li>ES5: 26.4%</li>
 <li>ES6: 9.8%</li>
 <li>ES2016: 27.3%</li>
@@ -34,10 +36,11 @@ Toy JavaScript interpreter written in Rust.
 <li>Intl: 0%</li>
 </ul></details>
 
-<details><summary>test262: 12.5%, main 14.6%, staging 3.8%, annexB 27.3%, Next 3.1%, Intl 0%</summary>
+<details><summary>test262: 12.5%, main 14.5%, staging 3.8%, annexB 27.3%, Next 3.3%, Intl 0%</summary>
 <ul>
-<li>Overall: 12.5% (6645/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 14.6% (6030/41237)</li>
+<li>Tested version: <a href="https://github.com/DelSkayn/toyjs/commit/11f084fc09723785b4bdb0575509664ca8b05f49">2022-06-04</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/delskayn.json">json</a>)</li>
+<li>Overall: 12.5% (6645/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 14.5% (6030/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 21.5% (1763/8197)<pre>
 caller: 0% (0/23)
@@ -55,8 +58,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -114,12 +117,12 @@ Array.prototype.includes: 0% (0/69)
 exponentiation: 22.3% (23/103)
 u180e: 44% (11/25)
 </pre></li>
-<li>ES2017: 17.1% (130/761)<pre>
+<li>ES2017: 17% (130/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 27.8% (196/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -201,8 +204,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.6% (7/271)
 </pre></li>
-<li>ES2023: 4.2% (13/308)<pre>
+<li>ES2023: 3.2% (13/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 0% (0/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 44.8% (13/29)
@@ -218,8 +222,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 26.7% (50/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 7.8% (98/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 7.7% (98/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -229,16 +233,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 36.1% (83/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.1% (262/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.3% (262/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -247,17 +256,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 14.4% (1256/8720)</li>
+<li>N/A: 14.4% (1256/8718)</li>
 </ul>
 </details>

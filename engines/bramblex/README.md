@@ -14,6 +14,7 @@ Toy metacircular JavaScript interpreter.
 ## Conformance
 
 <details><summary>ES1-ES5: 87%</summary><ul>
+<li>Tested version: <a href="https://github.com/bramblex/jsjs/commit/ab7133f7435acdf16a86473cbd36ab68d6195fba">2018-03-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/bramblex.json">json</a>)</li>
 <li>ES1: 91.9% (182/198)<pre>
 <a href="../../conformance/es1/Function.js">Function.js</a>: ReferenceError: 'Function'
 <a href="../../conformance/es1/Function.length.js">Function.length.js</a>: ReferenceError: 'Function'
@@ -68,6 +69,7 @@ Toy metacircular JavaScript interpreter.
 </ul></details>
 
 <details><summary>compat-table: ES6 15%, ES2016+ 20%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/bramblex/jsjs/commit/ab7133f7435acdf16a86473cbd36ab68d6195fba">2018-03-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/bramblex.json">json</a>)</li>
 <li>ES5: 81.2%<pre>
 <a href="../../conformance/compat-table/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: FAIL: exception: [Error] [object Object], 'Function' 未定义
 <a href="../../conformance/compat-table/es5/immutable-globals.Infinity.js">immutable-globals.Infinity.js</a>: FAIL
@@ -99,7 +101,7 @@ Toy metacircular JavaScript interpreter.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: FAIL: exception: [Error] [object Object], 'Uint8Array' 未定义
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: FAIL: exception: [Error] [object Object], 'Uint8Array' 未定义
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: FAIL: exception: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#' (1:0)
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#'
 </pre></li>
 <li>ES2024: 18.4%</li>
 <li>ES2025: 15.8%</li>
@@ -107,10 +109,11 @@ Toy metacircular JavaScript interpreter.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 26.1%, main 32.1%, staging 15.2%, annexB 13.2%, Next 3.4%, Intl 0.5%</summary>
+<details><summary>test262: 26.1%, main 31.8%, staging 15.2%, annexB 13.2%, Next 3.4%, Intl 0.5%</summary>
 <ul>
-<li>Overall: 26.1% (13877/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 32.1% (13217/41237)</li>
+<li>Tested version: <a href="https://github.com/bramblex/jsjs/commit/ab7133f7435acdf16a86473cbd36ab68d6195fba">2018-03-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/bramblex.json">json</a>)</li>
+<li>Overall: 26.1% (13877/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 31.8% (13225/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 67.8% (5559/8197)<pre>
 caller: 0% (0/23)
@@ -128,8 +131,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -187,12 +190,12 @@ Array.prototype.includes: 24.6% (17/69)
 exponentiation: 13.6% (14/103)
 u180e: 56% (14/25)
 </pre></li>
-<li>ES2017: 21.4% (163/761)<pre>
+<li>ES2017: 21.4% (163/763)<pre>
 __getter__: 48.1% (13/27)
 __setter__: 48.1% (13/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -274,8 +277,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 12.9% (4/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 24% (74/308)<pre>
+<li>ES2023: 18% (74/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 20.2% (22/109)
 change-array-by-copy: 25% (33/132)
 hashbang: 65.5% (19/29)
@@ -291,8 +295,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 27.8% (52/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 18.1% (229/1264)<pre>
-Float16Array: 4.1% (2/49)
+<li>ES2025: 18.1% (229/1266)<pre>
+Float16Array: 3.9% (2/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 52.4% (11/21)
 import-attributes: 15% (15/100)
@@ -302,16 +306,21 @@ promise-try: 25% (3/12)
 regexp-modifiers: 86.1% (198/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.4% (280/8357)<pre>
+<li>ES2026: 2.5% (9/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 53.8% (7/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 9.1% (2/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.4% (271/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -320,17 +329,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 9.1% (2/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 36.8% (7/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 44.8% (3906/8720)</li>
+<li>N/A: 44.8% (3906/8718)</li>
 </ul>
 </details>

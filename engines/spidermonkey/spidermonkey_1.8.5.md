@@ -18,6 +18,7 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 ## Conformance
 
 <details><summary>ES1-ES5: 96%</summary><ul>
+<li>Tested version: 1.8.5 (2011-03-31, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/spidermonkey_1.8.5.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 94.6% (140/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: FAIL: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
@@ -42,6 +43,7 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 </ul></details>
 
 <details><summary>compat-table: ES6 9%, ES2016+ 3%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 1.8.5 (2011-03-31, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/spidermonkey_1.8.5.json">json</a>)</li>
 <li>ES5: 91.6%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js">Number.prototype.toExponential.no-throw-edge-cases.js</a>: FAIL
@@ -66,10 +68,11 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 29.9%, main 36.4%, staging 18.9%, annexB 39.4%, Next 1.9%, Intl 0.4%</summary>
+<details><summary>test262: 29.9%, main 36.2%, staging 18.9%, annexB 39.4%, Next 2%, Intl 0.4%</summary>
 <ul>
-<li>Overall: 29.9% (15898/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 36.4% (15019/41237)</li>
+<li>Tested version: 1.8.5 (2011-03-31, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/spidermonkey_1.8.5.json">json</a>)</li>
+<li>Overall: 29.9% (15898/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 36.2% (15024/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 93.2% (7636/8197)<pre>
 caller: 100% (23/23)
@@ -87,8 +90,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -146,12 +149,12 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 52% (13/25)
 </pre></li>
-<li>ES2017: 20.5% (156/761)<pre>
+<li>ES2017: 20.4% (156/763)<pre>
 __getter__: 51.9% (14/27)
 __setter__: 51.9% (14/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 27.5% (194/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -233,8 +236,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 8.1% (25/308)<pre>
+<li>ES2023: 6.1% (25/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 5.5% (6/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -250,8 +254,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 0.4% (2/463)
 </pre></li>
-<li>ES2025: 8.5% (108/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 8.5% (108/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -261,16 +265,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 34.8% (80/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 1.9% (159/8357)<pre>
+<li>ES2026: 1.4% (5/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 7.2% (5/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 2% (154/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -279,17 +288,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 17.5% (40/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 22.4% (51/228)
 source-phase-imports-module-source: 29.8% (25/84)
-uint8array-base64: 7.2% (5/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 50.5% (4400/8720)</li>
+<li>N/A: 50.5% (4400/8718)</li>
 </ul>
 </details>

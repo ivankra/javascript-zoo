@@ -15,12 +15,14 @@ QuickJS ported to Go via WebAssembly (Wazero, a cgo-free runtime).
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: 0.0.6 (<a href="https://github.com/fastschema/qjs/commit/461716f4f380f81ffd09378751f1812919cddbca">2025-10-28</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/fastschema-qjs.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 97%, ES2016+ 93%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: 0.0.6 (<a href="https://github.com/fastschema/qjs/commit/461716f4f380f81ffd09378751f1812919cddbca">2025-10-28</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/fastschema-qjs.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 96.6%<pre>
 <a href="../../conformance/compat-table/es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: FAIL

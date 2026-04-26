@@ -14,6 +14,7 @@ Unfinished ES5 interpreter written in Java.
 ## Conformance
 
 <details><summary>ES1-ES5: 52%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/topchetoeu/commit/139b240463dc485fd0744663272c4c4066801311">2026-02-01</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/topchetoeu.json">json</a>)</li>
 <li>ES1: 53% (105/198)<pre>
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: FAIL: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.j2s.runtime.values.objects.ArrayValue (me.topchetoeu.j2s.runtime.values.o...
 <a href="../../conformance/es1/Array.prototype.toString.js">Array.prototype.toString.js</a>: FAIL: numeric array toString failed; string array toString failed; empty array toString failed
@@ -64,6 +65,7 @@ Unfinished ES5 interpreter written in Java.
 </ul></details>
 
 <details><summary>compat-table: ES6 17%, ES2016+ 6%, Next 0%, Intl 0%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/topchetoeu/commit/139b240463dc485fd0744663272c4c4066801311">2026-02-01</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/topchetoeu.json">json</a>)</li>
 <li>ES5: 69%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.reduceRight.js">Array.prototype.reduceRight.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL

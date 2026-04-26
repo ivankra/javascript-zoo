@@ -29,12 +29,14 @@ Pass `--script` argument to force classic sloppy script mode.
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: 0.14.0-11-gc707cf5 (<a href="https://github.com/quickjs-ng/quickjs/commit/c707cf5eda67a97bbff7a60cb2ef124fd4a77420">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/quickjs-ng_262.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 95%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 97%, ES2016+ 95%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 0.14.0-11-gc707cf5 (<a href="https://github.com/quickjs-ng/quickjs/commit/c707cf5eda67a97bbff7a60cb2ef124fd4a77420">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/quickjs-ng_262.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 96.6%<pre>
 <a href="../../conformance/compat-table/es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: FAIL
@@ -76,14 +78,15 @@ Pass `--script` argument to force classic sloppy script mode.
 <a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: invalid group
 <a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: invalid group
 </pre></li>
-<li>Next: 0%</li>
+<li>Next: 6.1%</li>
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 82.5%, main 99.1%, staging 87.5%, annexB 96.9%, Next 7.7%, Intl 0.7%</summary>
+<details><summary>test262: 82.7%, main 99.1%, staging 87.7%, annexB 96.9%, Next 5%, Intl 0.7%</summary>
 <ul>
-<li>Overall: 82.5% (43885/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 99.1% (40876/41237)</li>
+<li>Tested version: 0.14.0-11-gc707cf5 (<a href="https://github.com/quickjs-ng/quickjs/commit/c707cf5eda67a97bbff7a60cb2ef124fd4a77420">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/quickjs-ng_262.json">json</a>)</li>
+<li>Overall: 82.7% (43949/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 99.1% (41188/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 98.5% (8073/8197)<pre>
 caller: 100% (23/23)
@@ -101,8 +104,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 66.7% (4/6)
-Float64Array: 66.7% (4/6)
+Float32Array: 71.4% (5/7)
+Float64Array: 71.4% (5/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 94.3% (33/35)
@@ -111,7 +114,7 @@ Object.is: 100% (2/2)
 Promise: 100% (4/4)
 Proxy: 97.6% (457/468)
 Reflect: 91.9% (430/468)
-Reflect.construct: 74.7% (520/696)
+Reflect.construct: 75.6% (526/696)
 Reflect.set: 93.5% (43/46)
 Reflect.setPrototypeOf: 100% (23/23)
 Set: 100% (38/38)
@@ -130,7 +133,7 @@ Symbol.split: 100% (58/58)
 Symbol.toPrimitive: 87.6% (204/233)
 Symbol.toStringTag: 76.3% (100/131)
 Symbol.unscopables: 97.7% (43/44)
-TypedArray: 93.3% (2344/2513)
+TypedArray: 95.7% (2405/2513)
 Uint16Array: 66.7% (4/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 81.8% (9/11)
@@ -160,12 +163,12 @@ Array.prototype.includes: 63.8% (44/69)
 exponentiation: 98.1% (101/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 97.8% (744/761)<pre>
+<li>ES2017: 97.6% (745/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 71.8% (270/376)
+Atomics: 71.7% (271/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 80.8% (374/463)
+SharedArrayBuffer: 80.8% (375/464)
 async-functions: 93.2% (657/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -247,8 +250,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 90.3% (28/31)
 top-level-await: 94.8% (257/271)
 </pre></li>
-<li>ES2023: 92.2% (284/308)<pre>
+<li>ES2023: 69.3% (284/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -264,8 +268,8 @@ promise-with-resolvers: 88.9% (8/9)
 regexp-v-flag: 49.7% (93/187)
 resizable-arraybuffer: 98.1% (454/463)
 </pre></li>
-<li>ES2025: 84.5% (1068/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 84.5% (1070/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 95.2% (20/21)
 import-attributes: 98% (98/100)
@@ -275,16 +279,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 69.6% (160/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 7.7% (643/8357)<pre>
+<li>ES2026: 86.4% (312/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 95.5% (21/22)
+uint8array-base64: 100% (69/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 5% (392/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 11.1% (3/27)
@@ -293,17 +302,13 @@ immutable-arraybuffer: 100% (20/20)
 import-bytes: 100% (5/5)
 import-defer: 32.3% (74/229)
 import-text: 66.7% (4/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 100% (78/78)
-json-parse-with-source: 95.5% (21/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 11.6% (8/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 96.1% (8376/8720)</li>
+<li>N/A: 96.1% (8376/8718)</li>
 </ul>
 </details>

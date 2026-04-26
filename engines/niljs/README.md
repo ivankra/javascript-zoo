@@ -14,6 +14,7 @@ JavaScript interpreter for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 96%</summary><ul>
+<li>Tested version: 2.6.1721 (<a href="https://github.com/nilproject/NiL.JS/commit/027efd6b753851c8ef206bc26cbe899e646b5f1f">2026-03-10</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/niljs.json">json</a>)</li>
 <li>ES1: 98.5% (195/198)<pre>
 <a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: FAIL
 <a href="../../conformance/es1/comments.js">comments.js</a>: SyntaxError: Invalid pattern '(*' at offset 2. Quantifier '*' following nothing.
@@ -28,17 +29,18 @@ JavaScript interpreter for .NET.
 <a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: TypeError: Cannot get prototype of null or undefined
 <a href="../../conformance/es3/String.prototype.search.str.js">String.prototype.search.str.js</a>: FAIL: string with \d+ pattern failed; string with \w+ pattern failed; string with [0-9]+ pattern failed; string with \s pattern failed; string with \. pattern failed
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: FAIL: '0'.split(undefined, 0).length !== 0; 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4
-<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: Unknown identifier "var" at (9:1)
+<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: Unknown identifier "var" at
 </pre></li>
 <li>ES5: 94.6% (70/74)<pre>
 <a href="../../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: FAIL
 <a href="../../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: RangeError: Invalid time value
 <a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: FAIL: non-enumerable did not shadow enumerable
-<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Invalid variable definition at (11:5)
+<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Invalid variable definition at
 </pre></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 44%, ES2016+ 19%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: 2.6.1721 (<a href="https://github.com/nilproject/NiL.JS/commit/027efd6b753851c8ef206bc26cbe899e646b5f1f">2026-03-10</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/niljs.json">json</a>)</li>
 <li>ES5: 91.1%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: FAIL
@@ -46,7 +48,7 @@ JavaScript interpreter for .NET.
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/String.prototype.split.js">String.prototype.split.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/misc.enumerable-shadow.js">misc.enumerable-shadow.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Invalid variable definition at (8:7)
+<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Invalid variable definition at
 </pre></li>
 <li>ES6: 44%</li>
 <li>ES2016: 39.4%</li>
@@ -63,15 +65,16 @@ JavaScript interpreter for .NET.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 34.6%, main 42%, staging 27.3%, annexB 35.8%, Next 3.4%, Intl 0.2%</summary>
+<details><summary>test262: 34.6%, main 41.8%, staging 27.3%, annexB 35.8%, Next 3.4%, Intl 0.2%</summary>
 <ul>
-<li>Overall: 34.6% (18406/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 42% (17327/41237)</li>
+<li>Tested version: 2.6.1721 (<a href="https://github.com/nilproject/NiL.JS/commit/027efd6b753851c8ef206bc26cbe899e646b5f1f">2026-03-10</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/niljs.json">json</a>)</li>
+<li>Overall: 34.6% (18420/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 41.8% (17353/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 96.2% (7888/8197)<pre>
 caller: 91.3% (21/23)
 </pre></li>
-<li>ES6: 28.6% (3158/11054)<pre>
+<li>ES6: 28.6% (3161/11054)<pre>
 __proto__: 27.8% (5/18)
 Array.prototype.values: 0% (0/4)
 ArrayBuffer: 1.1% (3/268)
@@ -84,8 +87,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 75% (3/4)
 Int8Array: 5.7% (2/35)
@@ -94,7 +97,7 @@ Object.is: 100% (2/2)
 Promise: 75% (3/4)
 Proxy: 0% (0/468)
 Reflect: 0% (0/468)
-Reflect.construct: 36.1% (251/696)
+Reflect.construct: 36.2% (252/696)
 Reflect.set: 0% (0/46)
 Reflect.setPrototypeOf: 0% (0/23)
 Set: 63.2% (24/38)
@@ -120,12 +123,12 @@ Uint8Array: 18.2% (2/11)
 Uint8ClampedArray: 33.3% (2/6)
 WeakMap: 1.3% (1/79)
 WeakSet: 0% (0/34)
-arrow-function: 36.4% (345/949)
+arrow-function: 36.6% (347/949)
 class: 19.4% (926/4768)
 computed-property-names: 7.5% (36/478)
 const: 33.3% (5/15)
 cross-realm: 0% (0/201)
-default-parameters: 20.8% (472/2269)
+default-parameters: 20.8% (471/2269)
 destructuring-assignment: 66.7% (94/141)
 destructuring-binding: 16.2% (1076/6637)
 for-of: 0% (0/5)
@@ -143,18 +146,18 @@ Array.prototype.includes: 27.5% (19/69)
 exponentiation: 24.3% (25/103)
 u180e: 44% (11/25)
 </pre></li>
-<li>ES2017: 19.7% (150/761)<pre>
+<li>ES2017: 19.8% (151/763)<pre>
 __getter__: 63% (17/27)
 __setter__: 48.1% (13/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
-async-functions: 26.5% (187/705)
+SharedArrayBuffer: 0% (0/464)
+async-functions: 26.7% (188/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
-<li>ES2018: 11.6% (563/4855)<pre>
+<li>ES2018: 11.6% (564/4855)<pre>
 IsHTMLDDA: 0% (0/42)
-Promise.prototype.finally: 20.7% (6/29)
+Promise.prototype.finally: 24.1% (7/29)
 Symbol.asyncIterator: 0% (0/538)
 async-iteration: 11.9% (590/4968)
 object-rest: 11.5% (41/355)
@@ -178,7 +181,7 @@ stable-typedarray-sort: 0% (0/1)
 string-trimming: 3.7% (2/54)
 well-formed-json-stringify: 0% (0/1)
 </pre></li>
-<li>ES2020: 11.8% (254/2156)<pre>
+<li>ES2020: 12% (259/2156)<pre>
 BigInt: 2.6% (39/1501)
 Intl.NumberFormat-unified: 0% (0/67)
 Intl.RelativeTimeFormat: 0% (0/79)
@@ -186,12 +189,12 @@ Promise.allSettled: 2% (2/102)
 String.prototype.matchAll: 0% (0/16)
 Symbol.matchAll: 7.9% (5/63)
 coalesce-expression: 84.6% (22/26)
-dynamic-import: 38.4% (363/946)
+dynamic-import: 38.7% (366/946)
 export-star-as-namespace-from-module: 15.8% (3/19)
 for-in-order: 44.4% (4/9)
 globalThis: 5.4% (8/148)
 import.meta: 69.6% (16/23)
-optional-chaining: 30.4% (17/56)
+optional-chaining: 32.1% (18/56)
 </pre></li>
 <li>ES2021: 11.8% (109/920)<pre>
 AggregateError: 0% (0/31)
@@ -230,8 +233,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 3% (8/271)
 </pre></li>
-<li>ES2023: 10.7% (33/308)<pre>
+<li>ES2023: 8% (33/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 7.3% (8/109)
 change-array-by-copy: 4.5% (6/132)
 hashbang: 65.5% (19/29)
@@ -247,27 +251,32 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 0.5% (1/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 11.5% (145/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 11.4% (144/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
-import-attributes: 16% (16/100)
+import-attributes: 15% (15/100)
 iterator-helpers: 1.2% (7/567)
 json-modules: 15.4% (2/13)
 promise-try: 16.7% (2/12)
 regexp-modifiers: 40% (92/230)
 set-methods: 14.6% (28/192)
 </pre></li>
-<li>Next: 3.4% (282/8357)<pre>
+<li>ES2026: 3.3% (12/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 8.7% (6/69)
+upsert: 8.3% (6/72)
+</pre></li>
+<li>Next: 3.4% (270/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -276,17 +285,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.9% (73/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 3.8% (1/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 10.5% (2/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 8.7% (6/69)
-upsert: 8.3% (6/72)
 </pre></li>
-<li>N/A: 55.1% (4801/8720)</li>
+<li>N/A: 55.1% (4806/8718)</li>
 </ul>
 </details>

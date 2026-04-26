@@ -26,6 +26,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 ## Conformance
 
 <details><summary>ES1-ES5: 90%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/narcissus/commit/a1eae5c735c3932cc435d869e68933d469d419f6">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/narcissus.json">json</a>)</li>
 <li>ES1: 97% (192/198)<pre>
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: FAIL: array instance constructor failed
 <a href="../../conformance/es1/Function.prototype.js">Function.prototype.js</a>: FAIL: prototype property failed
@@ -46,7 +47,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: FAIL: custom toString failed
 <a href="../../conformance/es3/do-while.js">do-while.js</a>: TypeError: narcissus:1757:39 TypeError: this.x.pushTarget(...).next is not a function
 <a href="../../conformance/es3/instanceof.js">instanceof.js</a>: FAIL: array instanceof Array failed; custom constructor instanceof failed
-<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: 13: Illegal token
+<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: Illegal token
 </pre></li>
 <li>ES5: 70.3% (52/74)<pre>
 <a href="../../conformance/es5/Array.isArray.js">Array.isArray.js</a>: TypeError: Array.isArray is not callable
@@ -74,6 +75,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 </ul></details>
 
 <details><summary>compat-table: ES6 33%, ES2016+ 44%, Next 8%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/ivankra/narcissus/commit/a1eae5c735c3932cc435d869e68933d469d419f6">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/narcissus.json">json</a>)</li>
 <li>ES5: 82.6%<pre>
 <a href="../../conformance/compat-table/es5/Array.isArray.js">Array.isArray.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/String.property-access.js">String.property-access.js</a>: FAIL
@@ -110,32 +112,32 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: 1: Invalid property name
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: FAIL
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: 1: missing formal parameter
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: 44: Missing )
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: SyntaxError: 12: Missing (
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: 13: Missing (
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: SyntaxError: Missing )
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: SyntaxError: Missing (
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Missing (
 </pre></li>
 <li>ES2020: 14.3%</li>
 <li>ES2021: 64.3%<pre>
-<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: SyntaxError: 49: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: SyntaxError: 49: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2021/logical-assignment.and.js">logical-assignment.and.js</a>: SyntaxError: 10: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: SyntaxError: 10: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.or.js">logical-assignment.or.js</a>: SyntaxError: 10: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: SyntaxError: 9: missing ; before statement
-<a href="../../conformance/compat-table/es2021/numeric-separators.js">numeric-separators.js</a>: SyntaxError: 9: missing ; before statement
+<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.js">logical-assignment.and.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.js">logical-assignment.or.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2021/numeric-separators.js">numeric-separators.js</a>: SyntaxError: missing ; before statement
 </pre></li>
 <li>ES2022: 33.3%</li>
 <li>ES2023: 80%<pre>
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: 1: Illegal token
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Illegal token
 </pre></li>
 <li>ES2024: 51%<pre>
-<a href="../../conformance/compat-table/es2024/Map.groupBy.js">Map.groupBy.js</a>: SyntaxError: 13: Bad left-hand side of assignment
-<a href="../../conformance/compat-table/es2024/Object.groupBy.js">Object.groupBy.js</a>: SyntaxError: 11: Bad left-hand side of assignment
+<a href="../../conformance/compat-table/es2024/Map.groupBy.js">Map.groupBy.js</a>: SyntaxError: Bad left-hand side of assignment
+<a href="../../conformance/compat-table/es2024/Object.groupBy.js">Object.groupBy.js</a>: SyntaxError: Bad left-hand side of assignment
 <a href="../../conformance/compat-table/es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: SyntaxError: narcissus:1:4 SyntaxError: invalid property name in regular expression:
 <a href="../../conformance/compat-table/es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: SyntaxError: narcissus:1:4 SyntaxError: invalid class property name in regular expression:
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: SyntaxError: narcissus:1:4 SyntaxError: invalid property name in regular expression:
@@ -143,19 +145,19 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: SyntaxError: narcissus:1:4 SyntaxError: invalid property name in regular expression:
 </pre></li>
 <li>ES2025: 55.3%<pre>
-<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: SyntaxError: 10: missing ; before statement
+<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: SyntaxError: missing ; before statement
 <a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: TypeError: Array.from is not callable
-<a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: SyntaxError: 12: missing : after property
+<a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: SyntaxError: missing : after property
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: FAIL
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: TypeError: Array.from is not callable
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: SyntaxError: 10: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: SyntaxError: 10: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: SyntaxError: 10: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: SyntaxError: 10: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: SyntaxError: 10: missing ; before statement
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: SyntaxError: 10: missing operand; found &gt;
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: SyntaxError: 10: Bad left-hand side of assignment
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: SyntaxError: 10: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: SyntaxError: missing ; before statement
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: SyntaxError: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: SyntaxError: Bad left-hand side of assignment
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: SyntaxError: missing operand; found &gt;
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: Array.from is not callable
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: Array.isArray is not callable
 <a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: FAIL
@@ -164,10 +166,11 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 31.3%, main 37.4%, staging 24.5%, annexB 39.6%, Next 5%, Intl 0.2%</summary>
+<details><summary>test262: 31.3%, main 37.3%, staging 24.5%, annexB 39.6%, Next 4.3%, Intl 0.2%</summary>
 <ul>
-<li>Overall: 31.3% (16618/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 37.4% (15411/41237)</li>
+<li>Tested version: <a href="https://github.com/ivankra/narcissus/commit/a1eae5c735c3932cc435d869e68933d469d419f6">2025-10-08</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/narcissus.json">json</a>)</li>
+<li>Overall: 31.3% (16620/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 37.3% (15495/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 73.6% (6036/8197)<pre>
 caller: 0% (0/23)
@@ -185,8 +188,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 75% (42/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 82.9% (29/35)
@@ -244,12 +247,12 @@ Array.prototype.includes: 27.5% (19/69)
 exponentiation: 13.6% (14/103)
 u180e: 60% (15/25)
 </pre></li>
-<li>ES2017: 35.2% (268/761)<pre>
+<li>ES2017: 35.1% (268/763)<pre>
 __getter__: 51.9% (14/27)
 __setter__: 51.9% (14/27)
-Atomics: 10.1% (38/376)
+Atomics: 10.1% (38/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 30% (139/463)
+SharedArrayBuffer: 30% (139/464)
 async-functions: 28.5% (201/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -331,8 +334,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 32.3% (10/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 32.1% (99/308)<pre>
+<li>ES2023: 24.1% (99/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 27.5% (30/109)
 change-array-by-copy: 22.7% (30/132)
 hashbang: 65.5% (19/29)
@@ -348,27 +352,32 @@ promise-with-resolvers: 44.4% (4/9)
 regexp-v-flag: 29.4% (55/187)
 resizable-arraybuffer: 22.9% (106/463)
 </pre></li>
-<li>ES2025: 29% (367/1264)<pre>
-Float16Array: 59.2% (29/49)
+<li>ES2025: 29.1% (369/1266)<pre>
+Float16Array: 56.9% (29/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 66.7% (14/21)
 import-attributes: 15% (15/100)
 iterator-helpers: 9.7% (55/567)
 json-modules: 15.4% (2/13)
-promise-try: 33.3% (4/12)
+promise-try: 50% (6/12)
 regexp-modifiers: 96.5% (222/230)
 set-methods: 14.6% (28/192)
 </pre></li>
-<li>Next: 5% (419/8357)<pre>
+<li>ES2026: 23% (83/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 61.5% (8/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 50% (5/10)
+iterator-sequencing: 3.1% (1/32)
+json-parse-with-source: 9.1% (2/22)
+uint8array-base64: 55.1% (38/69)
+upsert: 40.3% (29/72)
+</pre></li>
+<li>Next: 4.3% (336/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -377,17 +386,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 28.8% (66/229)
 import-text: 0% (0/6)
-iterator-sequencing: 3.1% (1/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 9.1% (2/22)
 legacy-regexp: 38.5% (10/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 57.9% (11/19)
 source-phase-imports: 50.9% (116/228)
 source-phase-imports-module-source: 45.2% (38/84)
-uint8array-base64: 55.1% (38/69)
-upsert: 40.3% (29/72)
 </pre></li>
-<li>N/A: 53.8% (4691/8720)</li>
+<li>N/A: 53.8% (4691/8718)</li>
 </ul>
 </details>

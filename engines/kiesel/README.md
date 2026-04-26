@@ -14,6 +14,7 @@ JavaScript engine written in Zig.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: 0.1.0-dev+dccb0db93 (<a href="https://codeberg.org/kiesel-js/kiesel/commit/dccb0db932fea715a6652b8e8fdd4d1a0c9d0bc5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/kiesel.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 98.6% (146/148)<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: FAIL: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
@@ -26,6 +27,7 @@ JavaScript engine written in Zig.
 </ul></details>
 
 <details><summary>compat-table: ES6 94%, ES2016+ 95%, Next 5%, Intl 100%</summary><ul>
+<li>Tested version: 0.1.0-dev+dccb0db93 (<a href="https://codeberg.org/kiesel-js/kiesel/commit/dccb0db932fea715a6652b8e8fdd4d1a0c9d0bc5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/kiesel.json">json</a>)</li>
 <li>ES5: 96.7%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.legacy-octal-error.js">strict.legacy-octal-error.js</a>: FAIL
@@ -35,11 +37,11 @@ JavaScript engine written in Zig.
 <a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: 'g' is not defined
 <a href="../../conformance/compat-table/es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: ReferenceError: 'foo' is not defined
-<a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token 'function' (annex-b.html-comments.js:1:1)
+<a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token 'function'
 <a href="../../conformance/compat-table/es6/arrow.precedence.js">arrow.precedence.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/const.for-loop.js">const.for-loop.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/const.strict.for-loop.js">const.strict.for-loop.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/destructuring-assign.nested-rest.js">destructuring-assign.nested-rest.js</a>: SyntaxError: Invalid left-hand side in assignment expression (destructuring-assign.nested-rest.js:11:27)
+<a href="../../conformance/compat-table/es6/destructuring-assign.nested-rest.js">destructuring-assign.nested-rest.js</a>: SyntaxError: Invalid left-hand side in assignment expression
 <a href="../../conformance/compat-table/es6/for-of.iterator-closing-throw.js">for-of.iterator-closing-throw.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/generators.shorthand.no-constructor.js">generators.shorthand.no-constructor.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/generators.throw.js">generators.throw.js</a>: FAIL: exception: foo
@@ -59,12 +61,12 @@ JavaScript engine written in Zig.
 <a href="../../conformance/compat-table/es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: FAIL: exception: undefined
 </pre></li>
 <li>ES2017: 92%<pre>
-<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token 'function' (annex-b.for-in-assignment-non-strict.js:1:1)
+<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token 'function'
 <a href="../../conformance/compat-table/es2017/async.await-rejection.js">async.await-rejection.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/async.await.js">async.await.js</a>: FAIL
 </pre></li>
 <li>ES2018: 94.7%<pre>
-<a href="../../conformance/compat-table/es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
+<a href="../../conformance/compat-table/es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Unexpected token 'function'
 </pre></li>
 <li>ES2019: 83.3%<pre>
 <a href="../../conformance/compat-table/es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Invalid character ''' (eval:1:1)
@@ -81,10 +83,11 @@ JavaScript engine written in Zig.
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 93.7%, main 96.8%, staging 87.3%, annexB 58.7%, Next 86.9%, Intl 80.6%</summary>
+<details><summary>test262: 93.7%, main 96.8%, staging 87.2%, annexB 58.7%, Next 87.6%, Intl 80.6%</summary>
 <ul>
-<li>Overall: 93.7% (49811/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 96.8% (39932/41237)</li>
+<li>Tested version: 0.1.0-dev+dccb0db93 (<a href="https://codeberg.org/kiesel-js/kiesel/commit/dccb0db932fea715a6652b8e8fdd4d1a0c9d0bc5">2026-04-22</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/kiesel.json">json</a>)</li>
+<li>Overall: 93.7% (49813/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 96.8% (40230/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 97.6% (8002/8197)<pre>
 caller: 0% (0/23)
@@ -102,8 +105,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 100% (7/7)
+Float64Array: 100% (7/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -161,12 +164,12 @@ Array.prototype.includes: 78.3% (54/69)
 exponentiation: 93.2% (96/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 92.2% (702/761)<pre>
+<li>ES2017: 92.3% (704/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 68.6% (258/376)
+Atomics: 68.8% (260/378)
 Intl.DateTimeFormat-dayPeriod: 33.3% (4/12)
-SharedArrayBuffer: 75.2% (348/463)
+SharedArrayBuffer: 75.2% (349/464)
 async-functions: 91.3% (644/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -248,8 +251,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
 top-level-await: 93% (252/271)
 </pre></li>
-<li>ES2023: 97.7% (301/308)<pre>
+<li>ES2023: 83.2% (341/410)<pre>
 Intl-enumeration: 62.9% (22/35)
+Intl.NumberFormat-v3: 39.2% (40/102)
 array-find-from-last: 100% (109/109)
 change-array-by-copy: 100% (132/132)
 hashbang: 100% (29/29)
@@ -265,8 +269,8 @@ promise-with-resolvers: 66.7% (6/9)
 regexp-v-flag: 96.8% (181/187)
 resizable-arraybuffer: 99.8% (462/463)
 </pre></li>
-<li>ES2025: 94.8% (1198/1264)<pre>
-Float16Array: 100% (49/49)
+<li>ES2025: 94.8% (1200/1266)<pre>
+Float16Array: 100% (51/51)
 Intl.DurationFormat: 34.8% (39/112)
 RegExp.escape: 100% (21/21)
 import-attributes: 95% (95/100)
@@ -276,16 +280,21 @@ promise-try: 100% (12/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 86.9% (7262/8357)<pre>
+<li>ES2026: 84.8% (306/361)<pre>
 Array.fromAsync: 94.7% (90/95)
-Atomics.pause: 100% (6/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 99.5% (1536/1543)
 Intl.Locale-info: 16.3% (7/43)
-Intl.NumberFormat-v3: 39.2% (40/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 100% (22/22)
+uint8array-base64: 87% (60/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 87.6% (6917/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 0% (0/64)
-Temporal: 97.8% (6520/6670)
+Temporal: 97.8% (6521/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 94.7% (18/19)
 decorators: 11.1% (3/27)
@@ -294,17 +303,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 32.3% (74/229)
 import-text: 100% (6/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 100% (78/78)
-json-parse-with-source: 100% (22/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 94.7% (18/19)
 source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 87% (60/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 91.5% (7981/8720)</li>
+<li>N/A: 91.5% (7978/8718)</li>
 </ul>
 </details>

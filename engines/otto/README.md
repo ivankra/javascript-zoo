@@ -20,6 +20,7 @@ which started out by forking otto's parser.
 ## Conformance
 
 <details><summary>ES1-ES5: 91%</summary><ul>
+<li>Tested version: 0.5.1-2-g3ca7298 (<a href="https://github.com/robertkrimen/otto/commit/3ca729876b8973d2faeb6f25d1c8e7dd6580063a">2025-06-13</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/otto.json">json</a>)</li>
 <li>ES1: 99% (196/198)<pre>
 <a href="../../conformance/es1/String.generics.js">String.generics.js</a>: CRASH: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: FAIL: C++ like evaluation order in 'x += f()'
@@ -35,14 +36,14 @@ which started out by forking otto's parser.
 <a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: FAIL: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 <a href="../../conformance/es3/literals.object.decimal.js">literals.object.decimal.js</a>: FAIL: property name 1e2 failed; property name 2.5e1 failed
 <a href="../../conformance/es3/literals.object.hex.js">literals.object.hex.js</a>: FAIL: property name 0xff failed; property name 0x10 failed; property name 0xABC failed
-<a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: SyntaxError: Invalid regular expression: re2: Invalid \1 &lt;backreference&gt; (and 2 more errors)
-<a href="../../conformance/es3/regex.lookahead.js">regex.lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?=) &lt;lookahead&gt; (and 2 more errors)
-<a href="../../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?!) &lt;lookahead&gt; (and 2 more errors)
+<a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: SyntaxError: Invalid regular expression: re2: Invalid \1 &lt;backreference&gt;
+<a href="../../conformance/es3/regex.lookahead.js">regex.lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?=) &lt;lookahead&gt;
+<a href="../../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?!) &lt;lookahead&gt;
 </pre></li>
 <li>ES5: 71.6% (53/74)<pre>
 <a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: FAIL: invalid date does not throw RangeError
 <a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: FAIL: non-enumerable did not shadow enumerable
-<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Unexpected token ILLEGAL (and 5 more errors)
+<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Unexpected token ILLEGAL
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: FAIL
 <a href="../../conformance/es5/strict.js">strict.js</a>: FAIL
 <a href="../../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: FAIL
@@ -65,11 +66,12 @@ which started out by forking otto's parser.
 </ul></details>
 
 <details><summary>compat-table: ES6 5%, ES2016+ 6%, Next 0%, Intl 25%</summary><ul>
+<li>Tested version: 0.5.1-2-g3ca7298 (<a href="https://github.com/robertkrimen/otto/commit/3ca729876b8973d2faeb6f25d1c8e7dd6580063a">2025-06-13</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/otto.json">json</a>)</li>
 <li>ES5: 79.7%<pre>
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.rounds-properly.js">Number.prototype.toExponential.rounds-properly.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/String.prototype.split.js">String.prototype.split.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/misc.enumerable-shadow.js">misc.enumerable-shadow.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Unexpected token ILLEGAL (and 3 more errors)
+<a href="../../conformance/compat-table/es5/misc.zero-width-identifiers.js">misc.zero-width-identifiers.js</a>: SyntaxError: Unexpected token ILLEGAL
 <a href="../../conformance/compat-table/es5/strict.arguments-callee-error.js">strict.arguments-callee-error.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.arguments-unmapped.js">strict.arguments-unmapped.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-eval-arguments-error.js">strict.assignment-eval-arguments-error.js</a>: FAIL
@@ -103,10 +105,11 @@ which started out by forking otto's parser.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 28.8%, main 35.1%, staging 17%, annexB 29.2%, Next 3.2%, Intl 0.3%</summary>
+<details><summary>test262: 28.9%, main 34.9%, staging 17.3%, annexB 29.2%, Next 3.4%, Intl 0.3%</summary>
 <ul>
-<li>Overall: 28.8% (15335/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 35.1% (14489/41237)</li>
+<li>Tested version: 0.5.1-2-g3ca7298 (<a href="https://github.com/robertkrimen/otto/commit/3ca729876b8973d2faeb6f25d1c8e7dd6580063a">2025-06-13</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/otto.json">json</a>)</li>
+<li>Overall: 28.9% (15341/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 34.9% (14490/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 89.5% (7336/8197)<pre>
 caller: 100% (23/23)
@@ -124,8 +127,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -183,12 +186,12 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 44% (11/25)
 </pre></li>
-<li>ES2017: 18% (137/761)<pre>
+<li>ES2017: 18% (137/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -270,8 +273,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 7.5% (23/308)<pre>
+<li>ES2023: 5.6% (23/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 3.7% (4/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -287,8 +291,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 0% (0/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 14.2% (179/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 14.1% (179/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -298,16 +302,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 71.3% (164/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.2% (267/8357)<pre>
+<li>ES2026: 0% (0/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 0% (0/69)
+upsert: 0% (0/72)
+</pre></li>
+<li>Next: 3.4% (267/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -316,17 +325,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 15.8% (3/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 0% (0/69)
-upsert: 0% (0/72)
 </pre></li>
-<li>N/A: 50.9% (4437/8720)</li>
+<li>N/A: 51% (4443/8718)</li>
 </ul>
 </details>

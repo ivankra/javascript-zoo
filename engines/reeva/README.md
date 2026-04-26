@@ -13,6 +13,7 @@ JavaScript interpreter for JVM written in Kotlin.
 ## Conformance
 
 <details><summary>ES1-ES5: 77%</summary><ul>
+<li>Tested version: <a href="https://github.com/ReevaJS/reeva/commit/f715163354ea06e37a97bd4e5e0bddc9c195c886">2024-01-18</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/reeva.json">json</a>)</li>
 <li>ES1: 82.3% (163/198)<pre>
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: FAIL
 <a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: FAIL: reverse order failed; reverse single element failed
@@ -83,6 +84,7 @@ JavaScript interpreter for JVM written in Kotlin.
 </ul></details>
 
 <details><summary>compat-table: ES6 60%, ES2016+ 38%, Next 0%, Intl 14%</summary><ul>
+<li>Tested version: <a href="https://github.com/ReevaJS/reeva/commit/f715163354ea06e37a97bd4e5e0bddc9c195c886">2024-01-18</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/reeva.json">json</a>)</li>
 <li>ES5: 83.5%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-undefined.js">Array.prototype.sort.compareFn-undefined.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: FAIL
@@ -161,12 +163,13 @@ JavaScript interpreter for JVM written in Kotlin.
 <li>Intl: 14.3%</li>
 </ul></details>
 
-<details><summary>test262: 36.7%, main 45.5%, staging 20.4%, annexB 11.6%, Next 3.4%, Intl 0.2%</summary>
+<details><summary>test262: 36.7%, main 45.2%, staging 20.4%, annexB 11.6%, Next 3.4%, Intl 0.2%</summary>
 <ul>
-<li>Overall: 36.7% (19496/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 45.5% (18778/41237)</li>
+<li>Tested version: <a href="https://github.com/ReevaJS/reeva/commit/f715163354ea06e37a97bd4e5e0bddc9c195c886">2024-01-18</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/reeva.json">json</a>)</li>
+<li>Overall: 36.7% (19502/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 45.2% (18797/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 76.3% (6257/8197)<pre>
+<li>ES5: 76.4% (6262/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
 <li>ES6: 44.5% (4921/11054)<pre>
@@ -182,8 +185,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 50% (2/4)
 Int8Array: 71.4% (25/35)
@@ -241,12 +244,12 @@ Array.prototype.includes: 29% (20/69)
 exponentiation: 41.7% (43/103)
 u180e: 60% (15/25)
 </pre></li>
-<li>ES2017: 23.4% (178/761)<pre>
+<li>ES2017: 23.3% (178/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 29.1% (205/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -328,11 +331,12 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 53.9% (146/271)
 </pre></li>
-<li>ES2023: 10.4% (32/308)<pre>
+<li>ES2023: 8% (33/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 9.2% (10/109)
 change-array-by-copy: 3% (4/132)
-hashbang: 62.1% (18/29)
+hashbang: 65.5% (19/29)
 symbols-as-weakmap-keys: 0% (0/29)
 </pre></li>
 <li>ES2024: 1.4% (12/840)<pre>
@@ -345,8 +349,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 4.3% (8/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 8.8% (111/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 8.8% (111/1266)<pre>
+Float16Array: 21.6% (11/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -356,16 +360,21 @@ promise-try: 16.7% (2/12)
 regexp-modifiers: 36.1% (83/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 3.4% (283/8357)<pre>
+<li>ES2026: 3.6% (13/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 8.7% (6/69)
+upsert: 9.7% (7/72)
+</pre></li>
+<li>Next: 3.4% (270/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 7.4% (2/27)
@@ -374,17 +383,13 @@ immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 8.7% (6/69)
-upsert: 9.7% (7/72)
 </pre></li>
-<li>N/A: 56% (4879/8720)</li>
+<li>N/A: 56% (4879/8718)</li>
 </ul>
 </details>

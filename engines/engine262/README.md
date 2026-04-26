@@ -25,6 +25,7 @@ But, very slow.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: <a href="https://github.com/engine262/engine262/commit/e23ee39900d3dee972182c98455752d1f578219f">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/engine262.json">json</a>)</li>
 <li>ES1: 97.5% (193/198)<pre>
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: d.getYear is not a function. (In "d.getYear()", it is undefined)
 <a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: d.setYear is not a function. (In "d.setYear(99)", it is undefined)
@@ -38,15 +39,17 @@ But, very slow.
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 94%, Next 9%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 96%, ES2016+ 95%, Next 9%, Intl 25%</summary><ul>
+<li>Tested version: <a href="https://github.com/engine262/engine262/commit/e23ee39900d3dee972182c98455752d1f578219f">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/engine262.json">json</a>)</li>
 <li>ES5: 98.9%<pre>
 <a href="../../conformance/compat-table/es5/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: TypeError: '0b'.substr is not a function. (In "'0b'.substr(-1)", it is undefined)
 </pre></li>
-<li>ES6: 95.7%<pre>
-<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: FAIL: failed'
-<a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: FAIL: failed'
+<li>ES6: 95.6%<pre>
+<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/Set.zero-key.js">Set.zero-key.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: rx.compile is not a function. (In "rx.compile('b')", it is undefined)
-<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: FAIL: failed'
+<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: \"\"[names[i]] is not a function. (In \"\""[names[i]]()", it is undefined)
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: \"\"[names[i]] is not a function. (In \"\"\"[names[i]]('"')", it is undefined)
 <a href="../../conformance/compat-table/es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: "g" is not defined
@@ -57,7 +60,7 @@ But, very slow.
 <a href="../../conformance/compat-table/es6/annex-b.regex.hyphens.js">annex-b.regex.hyphens.js</a>: SyntaxError: Invalid class range
 <a href="../../conformance/compat-table/es6/annex-b.regex.incomplete-patterns.js">annex-b.regex.incomplete-patterns.js</a>: SyntaxError: Expected } but got
 <a href="../../conformance/compat-table/es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: SyntaxError: Invalid identity escape
-<a href="../../conformance/compat-table/es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: FAIL: failed'
+<a href="../../conformance/compat-table/es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/annex-b.regex.octal-escapes.js">annex-b.regex.octal-escapes.js</a>: SyntaxError: Invalid identity escape
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
 <a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
@@ -77,15 +80,13 @@ But, very slow.
 <a href="../../conformance/compat-table/es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: "Atomics" is not defined
 <a href="../../conformance/compat-table/es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: "Atomics" is not defined
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.Symbol.species.js">SharedArrayBuffer.Symbol.species.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
-<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.js">SharedArrayBuffer.js</a>: FAIL: failed'
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.js">SharedArrayBuffer.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js">SharedArrayBuffer.prototype.Symbol.toStringTag.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.slice.js">SharedArrayBuffer.prototype.slice.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
 <a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token
 </pre></li>
-<li>ES2018: 98.9%<pre>
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid unicode property value
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 93.8%<pre>
 <a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: ' \\t \\n abc   \\t\\n'.trimLeft is not a function. (In "' \\t \\n abc   \\t\\n'.trimLeft()", it is undefined)
 <a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: ' \\t \\n abc   \\t\\n'.trimRight is not a function. (In "' \\t \\n abc   \\t\\n'.trimRight()", it is undefined)
@@ -94,26 +95,26 @@ But, very slow.
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 67.3%<pre>
+<li>ES2024: 71.4%<pre>
 <a href="../../conformance/compat-table/es2024/ArrayBuffer.prototype.detached.js">ArrayBuffer.prototype.detached.js</a>: TypeError: buffer1.transfer is not a function. (In "buffer1.transfer()", it is undefined)
 <a href="../../conformance/compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js">ArrayBuffer.prototype.transferToFixedLength.js</a>: TypeError: buffer1.transferToFixedLength is not a function. (In "buffer1.transferToFixedLength()", it is undefined)
 <a href="../../conformance/compat-table/es2024/ArrayBuffer.prototype.transfer.js">ArrayBuffer.prototype.transfer.js</a>: TypeError: buffer1.transfer is not a function. (In "buffer1.transfer()", it is undefined)
-<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: FAIL: failed'
 </pre></li>
 <li>ES2025: 100%</li>
 <li>Next: 9.1%</li>
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 87.9%, main 96.1%, staging 90%, annexB 15.7%, Next 66.9%, Intl 2.2%</summary>
+<details><summary>test262: 87.9%, main 96.1%, staging 90.8%, annexB 15.7%, Next 66.8%, Intl 2.2%</summary>
 <ul>
-<li>Overall: 87.9% (46742/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 96.1% (39635/41237)</li>
+<li>Tested version: <a href="https://github.com/engine262/engine262/commit/e23ee39900d3dee972182c98455752d1f578219f">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/engine262.json">json</a>)</li>
+<li>Overall: 87.9% (46724/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 96.1% (39928/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 98.2% (8052/8197)<pre>
+<li>ES5: 98.2% (8051/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
-<li>ES6: 97.5% (10783/11054)<pre>
+<li>ES6: 97.5% (10778/11054)<pre>
 __proto__: 100% (18/18)
 Array.prototype.values: 100% (4/4)
 ArrayBuffer: 32.8% (88/268)
@@ -126,8 +127,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 77.1% (27/35)
@@ -145,7 +146,7 @@ String.prototype.endsWith: 100% (27/27)
 String.prototype.includes: 100% (26/26)
 Symbol: 88.4% (1320/1494)
 Symbol.hasInstance: 100% (17/17)
-Symbol.isConcatSpreadable: 100% (34/34)
+Symbol.isConcatSpreadable: 94.1% (32/34)
 Symbol.iterator: 99.8% (1862/1865)
 Symbol.match: 97.7% (86/88)
 Symbol.replace: 98% (96/98)
@@ -155,7 +156,7 @@ Symbol.split: 94.8% (55/58)
 Symbol.toPrimitive: 80.3% (187/233)
 Symbol.toStringTag: 78.6% (103/131)
 Symbol.unscopables: 100% (44/44)
-TypedArray: 80% (2010/2513)
+TypedArray: 79.8% (2006/2513)
 Uint16Array: 33.3% (2/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 63.6% (7/11)
@@ -163,7 +164,7 @@ Uint8ClampedArray: 33.3% (2/6)
 WeakMap: 100% (79/79)
 WeakSet: 100% (34/34)
 arrow-function: 84.1% (798/949)
-class: 99.8% (4757/4768)
+class: 99.8% (4758/4768)
 computed-property-names: 95.6% (457/478)
 const: 100% (15/15)
 cross-realm: 87.1% (175/201)
@@ -185,12 +186,12 @@ Array.prototype.includes: 53.6% (37/69)
 exponentiation: 99% (102/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 52.8% (402/761)<pre>
+<li>ES2017: 52.7% (402/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 93.2% (657/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -204,7 +205,7 @@ object-spread: 100% (135/135)
 regexp-dotall: 94.1% (16/17)
 regexp-lookbehind: 94.7% (18/19)
 regexp-named-groups: 98% (98/100)
-regexp-unicode-property-escapes: 35.2% (240/681)
+regexp-unicode-property-escapes: 35.1% (239/681)
 </pre></li>
 <li>ES2019: 94.2% (129/137)<pre>
 Array.prototype.flat: 100% (15/15)
@@ -220,18 +221,18 @@ stable-typedarray-sort: 100% (1/1)
 string-trimming: 85.2% (46/54)
 well-formed-json-stringify: 100% (1/1)
 </pre></li>
-<li>ES2020: 88.2% (1902/2156)<pre>
-BigInt: 86.7% (1301/1501)
+<li>ES2020: 88.3% (1903/2156)<pre>
+BigInt: 86.6% (1300/1501)
 Intl.NumberFormat-unified: 0% (0/67)
 Intl.RelativeTimeFormat: 0% (0/79)
 Promise.allSettled: 100% (102/102)
 String.prototype.matchAll: 93.8% (15/16)
 Symbol.matchAll: 98.4% (62/63)
 coalesce-expression: 88.5% (23/26)
-dynamic-import: 89.7% (849/946)
+dynamic-import: 89.9% (850/946)
 export-star-as-namespace-from-module: 94.7% (18/19)
 for-in-order: 100% (9/9)
-globalThis: 97.3% (144/148)
+globalThis: 98% (145/148)
 import.meta: 100% (23/23)
 optional-chaining: 100% (56/56)
 </pre></li>
@@ -270,65 +271,67 @@ class-static-fields-public: 100% (213/213)
 class-static-methods-private: 100% (1513/1513)
 error-cause: 100% (5/5)
 regexp-match-indices: 100% (31/31)
-top-level-await: 98.9% (268/271)
+top-level-await: 98.5% (267/271)
 </pre></li>
-<li>ES2023: 92.2% (284/308)<pre>
+<li>ES2023: 69.3% (284/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 96.3% (105/109)
 change-array-by-copy: 97.7% (129/132)
 hashbang: 100% (29/29)
 symbols-as-weakmap-keys: 100% (29/29)
 </pre></li>
-<li>ES2024: 30.8% (259/840)<pre>
+<li>ES2024: 30.7% (258/840)<pre>
 Atomics.waitAsync: 0% (0/101)
 String.prototype.isWellFormed: 100% (8/8)
 String.prototype.toWellFormed: 100% (8/8)
 array-grouping: 100% (28/28)
 arraybuffer-transfer: 0% (0/59)
 promise-with-resolvers: 100% (9/9)
-regexp-v-flag: 100% (187/187)
+regexp-v-flag: 99.5% (186/187)
 resizable-arraybuffer: 4.1% (19/463)
 </pre></li>
-<li>ES2025: 88.8% (1123/1264)<pre>
-Float16Array: 32.7% (16/49)
+<li>ES2025: 88.9% (1125/1266)<pre>
+Float16Array: 31.4% (16/51)
 Intl.DurationFormat: 0.9% (1/112)
 RegExp.escape: 100% (21/21)
-import-attributes: 92% (92/100)
+import-attributes: 94% (94/100)
 iterator-helpers: 100% (567/567)
-json-modules: 92.3% (12/13)
+json-modules: 100% (13/13)
 promise-try: 100% (12/12)
 regexp-modifiers: 99.6% (229/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 66.9% (5595/8357)<pre>
+<li>ES2026: 86.7% (313/361)<pre>
 Array.fromAsync: 100% (95/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 100% (13/13)
 Intl.Era-monthcode: 2.8% (43/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 100% (22/22)
+uint8array-base64: 100% (69/69)
+upsert: 100% (72/72)
+</pre></li>
+<li>Next: 66.8% (5270/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 98.4% (63/64)
-Temporal: 69.3% (4624/6670)
+Temporal: 69.2% (4613/6671)
 await-dictionary: 100% (37/37)
 canonical-tz: 0% (0/19)
 decorators: 100% (27/27)
 explicit-resource-management: 15.9% (76/477)
 immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
-import-defer: 97.4% (223/229)
+import-defer: 98.3% (225/229)
 import-text: 100% (6/6)
-iterator-sequencing: 100% (32/32)
-joint-iteration: 96.2% (75/78)
-json-parse-with-source: 100% (22/22)
+joint-iteration: 92.3% (72/78)
 legacy-regexp: 3.8% (1/26)
 nonextensible-applies-to-private: 100% (4/4)
 regexp-duplicate-named-groups: 94.7% (18/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 100% (69/69)
-upsert: 100% (72/72)
 </pre></li>
-<li>N/A: 88.4% (7709/8720)</li>
+<li>N/A: 88.4% (7707/8718)</li>
 </ul>
 </details>

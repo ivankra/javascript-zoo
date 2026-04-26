@@ -31,6 +31,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Tested version: <a href="https://github.com/facebook/hermes/commit/cc613ea2043c9bb9f03f8fbe75942ffabaf8b966">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/hermes_full.json">json</a>)</li>
 <li>ES1: 99.5% (197/198)<pre>
 <a href="../../conformance/es1/with.js">with.js</a>: SyntaxError: with statement is not supported
 </pre></li>
@@ -38,20 +39,19 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 <a href="../../conformance/es3/String.prototype.toLocaleLowerCase.js">String.prototype.toLocaleLowerCase.js</a>: FAIL: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
 <a href="../../conformance/es3/String.prototype.toLocaleUpperCase.js">String.prototype.toLocaleUpperCase.js</a>: FAIL: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'uppered')
 </pre></li>
-<li>ES5: 95.9% (71/74)<pre>
+<li>ES5: 97.3% (72/74)<pre>
 <a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: FAIL: non-enumerable did not shadow enumerable
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: FAIL
-<a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: SyntaxError: invalid assignment left-hand side
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 90%, ES2016+ 85%, Next 12%, Intl 96%</summary><ul>
-<li>ES5: 97.1%<pre>
+<details><summary>compat-table: ES6 91%, ES2016+ 89%, Next 12%, Intl 96%</summary><ul>
+<li>Tested version: <a href="https://github.com/facebook/hermes/commit/cc613ea2043c9bb9f03f8fbe75942ffabaf8b966">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/hermes_full.json">json</a>)</li>
+<li>ES5: 98%<pre>
 <a href="../../conformance/compat-table/es5/misc.enumerable-shadow.js">misc.enumerable-shadow.js</a>: FAIL
-<a href="../../conformance/compat-table/es5/strict.assignment-non-writable-error.js">strict.assignment-non-writable-error.js</a>: SyntaxError: invalid assignment left-hand side
 <a href="../../conformance/compat-table/es5/strict.eval-no-bindings.js">strict.eval-no-bindings.js</a>: FAIL
 </pre></li>
-<li>ES6: 90.2%<pre>
+<li>ES6: 91.4%<pre>
 <a href="../../conformance/compat-table/es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Map.Symbol.species.js">Map.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
@@ -68,10 +68,10 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 <a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: Function declaration not allowed as body of labeled statement
 <a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: invalid expression
 <a href="../../conformance/compat-table/es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/const.for-in.js">const.for-in.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/const.for-of.js">const.for-of.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/const.strict.for-in.js">const.strict.for-in.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/default-params.tdz.js">default-params.tdz.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/destructuring-decl.defaults-tdz.js">destructuring-decl.defaults-tdz.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js">misc.Proxy.defineProperty.SetIntegrityLevel.js</a>: FAIL
+<a href="../../conformance/compat-table/es6/misc.Proxy.get.Array.concat.js">misc.Proxy.get.Array.concat.js</a>: FAIL
 ...
 </pre></li>
 <li>ES2016: 100%</li>
@@ -96,9 +96,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 <a href="../../conformance/compat-table/es2017/misc.arguments-caller-removed.js">misc.arguments-caller-removed.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: FAIL
 </pre></li>
-<li>ES2018: 89.5%<pre>
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: async generators are unsupported
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 81%<pre>
 <a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property 'flat' of undefined
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: 2:1:')' expected at end of function parameter list
@@ -118,13 +116,10 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: undefined is not a function
 </pre></li>
 <li>ES2024: 42.9%</li>
-<li>ES2025: 63.2%<pre>
+<li>ES2025: 84.2%<pre>
 <a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: FAIL
 <a href="../../conformance/compat-table/es2025/RegExp.escape.js">RegExp.escape.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid regular expression: Duplicate capture group name
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
 </pre></li>
 <li>Next: 12.1%</li>
 <li>Intl: 96.4%<pre>
@@ -132,19 +127,20 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 </pre></li>
 </ul></details>
 
-<details><summary>test262: 74.6%, main 89.7%, staging 73.1%, annexB 78.1%, Next 5.6%, Intl 10.3%</summary>
+<details><summary>test262: 74.8%, main 89.6%, staging 73.3%, annexB 78.1%, Next 3.7%, Intl 10.3%</summary>
 <ul>
-<li>Overall: 74.6% (39665/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 89.7% (36972/41237)</li>
+<li>Tested version: <a href="https://github.com/facebook/hermes/commit/cc613ea2043c9bb9f03f8fbe75942ffabaf8b966">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/hermes_full.json">json</a>)</li>
+<li>Overall: 74.8% (39777/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 89.6% (37223/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 96% (7866/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
-<li>ES6: 92.4% (10218/11054)<pre>
+<li>ES6: 92.5% (10221/11054)<pre>
 __proto__: 100% (18/18)
 Array.prototype.values: 100% (4/4)
-ArrayBuffer: 35.8% (96/268)
-DataView: 51.1% (97/190)
+ArrayBuffer: 36.6% (98/268)
+DataView: 52.1% (99/190)
 DataView.prototype.getFloat32: 100% (7/7)
 DataView.prototype.getFloat64: 100% (5/5)
 DataView.prototype.getInt16: 100% (7/7)
@@ -152,9 +148,9 @@ DataView.prototype.getInt32: 100% (7/7)
 DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
-DataView.prototype.setUint8: 89.3% (50/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+DataView.prototype.setUint8: 100% (56/56)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 80% (28/35)
@@ -163,14 +159,14 @@ Object.is: 100% (2/2)
 Promise: 75% (3/4)
 Proxy: 82.1% (384/468)
 Reflect: 64.3% (301/468)
-Reflect.construct: 65.7% (457/696)
+Reflect.construct: 66.1% (460/696)
 Reflect.set: 93.5% (43/46)
 Reflect.setPrototypeOf: 87% (20/23)
 Set: 100% (38/38)
 String.fromCodePoint: 45.5% (10/22)
 String.prototype.endsWith: 100% (27/27)
 String.prototype.includes: 100% (26/26)
-Symbol: 58.2% (870/1494)
+Symbol: 58.4% (872/1494)
 Symbol.hasInstance: 88.2% (15/17)
 Symbol.isConcatSpreadable: 91.2% (31/34)
 Symbol.iterator: 89% (1660/1865)
@@ -182,14 +178,14 @@ Symbol.split: 44.8% (26/58)
 Symbol.toPrimitive: 81.5% (190/233)
 Symbol.toStringTag: 56.5% (74/131)
 Symbol.unscopables: 0% (0/44)
-TypedArray: 71.9% (1806/2513)
+TypedArray: 72.1% (1812/2513)
 Uint16Array: 33.3% (2/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 63.6% (7/11)
 Uint8ClampedArray: 33.3% (2/6)
 WeakMap: 72.2% (57/79)
 WeakSet: 100% (34/34)
-arrow-function: 63% (598/949)
+arrow-function: 63.2% (600/949)
 class: 96.5% (4600/4768)
 computed-property-names: 93.7% (448/478)
 const: 86.7% (13/15)
@@ -212,12 +208,12 @@ Array.prototype.includes: 58% (40/69)
 exponentiation: 95.1% (98/103)
 u180e: 96% (24/25)
 </pre></li>
-<li>ES2017: 49.8% (379/761)<pre>
+<li>ES2017: 49.7% (379/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 25% (3/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 87% (613/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
@@ -247,8 +243,8 @@ stable-typedarray-sort: 100% (1/1)
 string-trimming: 100% (54/54)
 well-formed-json-stringify: 100% (1/1)
 </pre></li>
-<li>ES2020: 59.4% (1280/2156)<pre>
-BigInt: 69.4% (1041/1501)
+<li>ES2020: 59.5% (1283/2156)<pre>
+BigInt: 69.6% (1044/1501)
 Intl.NumberFormat-unified: 1.5% (1/67)
 Intl.RelativeTimeFormat: 0% (0/79)
 Promise.allSettled: 39.2% (40/102)
@@ -299,8 +295,9 @@ error-cause: 100% (5/5)
 regexp-match-indices: 83.9% (26/31)
 top-level-await: 2.6% (7/271)
 </pre></li>
-<li>ES2023: 74% (228/308)<pre>
+<li>ES2023: 63.7% (261/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 32.4% (33/102)
 array-find-from-last: 95.4% (104/109)
 change-array-by-copy: 56.8% (75/132)
 hashbang: 96.6% (28/29)
@@ -316,27 +313,32 @@ promise-with-resolvers: 66.7% (6/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 4.3% (20/463)
 </pre></li>
-<li>ES2025: 74% (935/1264)<pre>
-Float16Array: 22.4% (11/49)
+<li>ES2025: 82.1% (1039/1266)<pre>
+Float16Array: 94.1% (48/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
 iterator-helpers: 97.9% (555/567)
 json-modules: 15.4% (2/13)
 promise-try: 16.7% (2/12)
-regexp-modifiers: 69.6% (160/230)
+regexp-modifiers: 98.7% (227/230)
 set-methods: 100% (192/192)
 </pre></li>
-<li>Next: 5.6% (468/8357)<pre>
+<li>ES2026: 39.9% (144/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 84.6% (11/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 32.4% (33/102)
 Math.sumPrecise: 90% (9/10)
+iterator-sequencing: 100% (32/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 100% (69/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 3.7% (291/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 10.5% (2/19)
 decorators: 11.1% (3/27)
@@ -345,17 +347,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 100% (32/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 23.1% (6/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 100% (69/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 89.4% (7792/8720)</li>
+<li>N/A: 89.4% (7794/8718)</li>
 </ul>
 </details>

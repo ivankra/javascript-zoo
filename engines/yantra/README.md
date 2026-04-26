@@ -15,15 +15,16 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 ## Conformance
 
 <details><summary>ES1-ES5: 78%</summary><ul>
+<li>Tested version: 1.2.334 (<a href="https://github.com/yantrajs/yantra/commit/284d019dbaafc900381dfa6bc7a5401a35da7b87">2026-04-19</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/yantra.json">json</a>)</li>
 <li>ES1: 87.9% (174/198)<pre>
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: FAIL: Boolean(true) failed; Boolean(false) failed
 <a href="../../conformance/es1/Date.js">Date.js</a>: FAIL: typeof Date() != 'string'
 <a href="../../conformance/es1/Function.length.js">Function.length.js</a>: FAIL: Function.length failed
 <a href="../../conformance/es1/Math.LOG2E.js">Math.LOG2E.js</a>: FAIL
 <a href="../../conformance/es1/String.js">String.js</a>: FAIL: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
-<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Method 427 not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
-<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Method 427 not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
-<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Method 427 not found in Thu Apr 09 2026 07:56:53 GMT+0000 (Coordinated Universal Time)
+<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Method getYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
+<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Method setYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
+<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Method toGMTString not found in Fri Apr 24 2026 06:49:51 GMT+0000 (Coordinated Universal Time)
 <a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: FAIL: 0755 failed; max safe integer failed
@@ -68,15 +69,15 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 <a href="../../conformance/es5/Function.prototype.apply.array-like.js">Function.prototype.apply.array-like.js</a>: FAIL: array-like object not accepted
 <a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: Cannot set property value of null; at Item in /src/YantraJS.Core/Core/Primitive/JSNull.cs:line 69; Ctor: Cannot set property value of null; at Ctor:/zoo...
 <a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: FAIL: invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError
-<a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: FAIL: Stack overflow.; at YantraJS.Core.Core.Storage.VirtualMemory`1[[YantraJS.Core.SAUint32Map`1+Node[[System.ValueTuple`2[[YantraJS.Core.JSProperty, YantraJS.Core, Version=1.2.0.0, Culture=neutral, Public...
+<a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: FAIL: Stack overflow.; at YantraJS.Core.JSArray.GetElementEnumerator(); at YantraJS.Core.JSJSON.Stringify(System.IO.TextWriter, YantraJS.Core.JSValue, System.Func`2&lt;System.ValueTuple`3&lt;YantraJS.Core.JSValue...
 <a href="../../conformance/es5/Object.create.js">Object.create.js</a>: FAIL: null prototype failed; Properties argument failed
-<a href="../../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Cannot modify property 430 of [object Object]
-<a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Cannot modify property 430 of [object Object]
+<a href="../../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Cannot modify property a of [object Object]
+<a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Cannot modify property y of [object Object]
 <a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented.; at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
 <a href="../../conformance/es5/Object.isExtensible.js">Object.isExtensible.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented.; at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
 <a href="../../conformance/es5/Object.isFrozen.js">Object.isFrozen.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented.; at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
 <a href="../../conformance/es5/Object.isSealed.js">Object.isSealed.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented.; at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
-<a href="../../conformance/es5/Object.preventExtensions.js">Object.preventExtensions.js</a>: TypeError: Cannot add property 430 to [object Object]
+<a href="../../conformance/es5/Object.preventExtensions.js">Object.preventExtensions.js</a>: TypeError: Cannot add property y to [object Object]
 <a href="../../conformance/es5/Object.seal.js">Object.seal.js</a>: TypeError: Cannot delete property 432 of [object Object]
 <a href="../../conformance/es5/arguments.toStringTag.js">arguments.toStringTag.js</a>: FAIL
 <a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: FAIL: Unhandled exception. YantraJS.Core.JSException: Infinity is not a number; at ToJSNumber in /src/YantraJS.Core/Utils/ArgumentsExtension.cs:line 32; at native in /zoo/conformance/es5/./global.Infinity.i...
@@ -87,6 +88,7 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 </ul></details>
 
 <details><summary>compat-table: ES6 49%, ES2016+ 29%, Next 6%, Intl 36%</summary><ul>
+<li>Tested version: 1.2.334 (<a href="https://github.com/yantrajs/yantra/commit/284d019dbaafc900381dfa6bc7a5401a35da7b87">2026-04-19</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/yantra.json">json</a>)</li>
 <li>ES5: 78.5%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.unshift.return-count.js">Array.prototype.unshift.return-count.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js">Number.prototype.toExponential.no-throw-edge-cases.js</a>: FAIL
@@ -115,8 +117,8 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 <li>ES2019: 28.9%</li>
 <li>ES2020: 38.6%</li>
 <li>ES2021: 81%<pre>
-<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: TypeError: Method 431 not found in function Promise() { [native code] }
-<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: TypeError: Method 431 not found in function Promise() { [native code] }
+<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
+<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
 <a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: FAIL
 <a href="../../conformance/compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: FAIL
 <a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: FAIL

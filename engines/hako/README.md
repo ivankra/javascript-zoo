@@ -15,12 +15,14 @@ QuickJS ported to WebAssembly with C#/Go bindings.
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Tested version: 1.0.14 (<a href="https://github.com/6over3/hako/commit/b06576afc382028cf849fa36e9bfd15115be5a71">2026-01-04</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/hako.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 97%, ES2016+ 95%, Next 6%, Intl 25%</summary><ul>
+<li>Tested version: 1.0.14 (<a href="https://github.com/6over3/hako/commit/b06576afc382028cf849fa36e9bfd15115be5a71">2026-01-04</a>, <a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/hako.json">json</a>)</li>
 <li>ES5: 100%</li>
 <li>ES6: 97%<pre>
 <a href="../../conformance/compat-table/es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: FAIL

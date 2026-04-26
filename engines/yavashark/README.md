@@ -13,7 +13,8 @@ JavaScript/TypeScript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 88%</summary><ul>
-<li>ES1: 91.4% (181/198)<pre>
+<li>Tested version: <a href="https://github.com/Sharktheone/yavashark/commit/c684cdb1b4689e82e2311b02e58c280825442e7d">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/yavashark.json">json</a>)</li>
+<li>ES1: 91.9% (182/198)<pre>
 <a href="../../conformance/es1/Function.length.js">Function.length.js</a>: FAIL: Function.length failed
 <a href="../../conformance/es1/String.prototype.charAt.js">String.prototype.charAt.js</a>: FAIL: charAt out of bounds failed; charAt negative failed
 <a href="../../conformance/es1/String.prototype.charCodeAt.js">String.prototype.charCodeAt.js</a>: FAIL: charCodeAt out of bounds NaN failed
@@ -28,11 +29,10 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../../conformance/es1/conversions.ToInteger.js">conversions.ToInteger.js</a>: FAIL: -1.9 failed
 <a href="../../conformance/es1/conversions.ToUint32.js">conversions.ToUint32.js</a>: FAIL: +Infinity failed; 2^32 failed; -1 failed; -2^31 failed
 <a href="../../conformance/es1/conversions.js">conversions.js</a>: FAIL: 123 != '0123'; 123.0 != '0123'
-<a href="../../conformance/es1/global.parseInt.hex.js">global.parseInt.hex.js</a>: FAIL
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: FAIL
 <a href="../../conformance/es1/with.js">with.js</a>: FAIL: assignment failed
 </pre></li>
-<li>ES3: 91.9% (136/148)<pre>
+<li>ES3: 92.6% (137/148)<pre>
 <a href="../../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: TypeError: expected object
 <a href="../../conformance/es3/Error.js">Error.js</a>: TypeError: ErrorObjConstructor is not callable
 <a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: FAIL
@@ -40,7 +40,6 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: FAIL: inherited property should be false failed
 <a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: FAIL: RuntimeError: Not implemented
 <a href="../../conformance/es3/RegExp.js">RegExp.js</a>: FAIL: RegExp passthrough failed
-<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: FAIL: no exception for negative array length; no exception for array length exceeding 2^32-1
 <a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: FAIL: no exception for unclosed string
 <a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: FAIL: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
@@ -71,7 +70,8 @@ JavaScript/TypeScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 64%, ES2016+ 73%, Next 4%, Intl 64%</summary><ul>
+<details><summary>compat-table: ES6 64%, ES2016+ 73%, Next 4%, Intl 68%</summary><ul>
+<li>Tested version: <a href="https://github.com/Sharktheone/yavashark/commit/c684cdb1b4689e82e2311b02e58c280825442e7d">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/yavashark.json">json</a>)</li>
 <li>ES5: 86.8%<pre>
 <a href="../../conformance/compat-table/es5/Array.prototype.sort.compareFn-type.js">Array.prototype.sort.compareFn-type.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.assignment-eval-arguments-error.js">strict.assignment-eval-arguments-error.js</a>: FAIL
@@ -133,7 +133,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../../conformance/compat-table/es2017/annex-b.Proxy.__defineSetter__.js">annex-b.Proxy.__defineSetter__.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/annex-b.Proxy.__lookupGetter__.js">annex-b.Proxy.__lookupGetter__.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/annex-b.Proxy.__lookupSetter__.js">annex-b.Proxy.__lookupSetter__.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Error { error: (513..514, Expected(";", ")")) }
+<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Expected(";", ")")
 <a href="../../conformance/compat-table/es2017/async.Symbol.toStringTag.js">async.Symbol.toStringTag.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/async.await.js">async.await.js</a>: TIMEOUT: &gt;60s
 ...
@@ -198,7 +198,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Duplicate capture group name 'year'
 </pre></li>
 <li>Next: 4%</li>
-<li>Intl: 64.3%<pre>
+<li>Intl: 67.9%<pre>
 <a href="../../conformance/compat-table/intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: FAIL
 <a href="../../conformance/compat-table/intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: FAIL
 <a href="../../conformance/compat-table/intl/Intl.Collator.valid-tags.js">Intl.Collator.valid-tags.js</a>: FAIL
@@ -208,19 +208,19 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.without-new.js">Intl.DateTimeFormat.without-new.js</a>: FAIL: exception: [object Error]
 <a href="../../conformance/compat-table/intl/Intl.NumberFormat.valid-tags.js">Intl.NumberFormat.valid-tags.js</a>: FAIL
 <a href="../../conformance/compat-table/intl/Intl.NumberFormat.without-new.js">Intl.NumberFormat.without-new.js</a>: FAIL: exception: [object Error]
-<a href="../../conformance/compat-table/intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: FAIL
 </pre></li>
 </ul></details>
 
-<details><summary>test262: 74.8%, main 76%, staging 41.2%, annexB 69.6%, Next 77.1%, Intl 73.2%</summary>
+<details><summary>test262: 74.9%, main 75.9%, staging 41.5%, annexB 69.6%, Next 78.6%, Intl 73.4%</summary>
 <ul>
-<li>Overall: 74.8% (39745/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 76% (31339/41237)</li>
+<li>Tested version: <a href="https://github.com/Sharktheone/yavashark/commit/c684cdb1b4689e82e2311b02e58c280825442e7d">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/yavashark.json">json</a>)</li>
+<li>Overall: 74.9% (39805/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 75.9% (31549/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 85.7% (7028/8197)<pre>
+<li>ES5: 85.9% (7041/8197)<pre>
 caller: 100% (23/23)
 </pre></li>
-<li>ES6: 69.3% (7655/11054)<pre>
+<li>ES6: 69.5% (7680/11054)<pre>
 __proto__: 11.1% (2/18)
 Array.prototype.values: 25% (1/4)
 ArrayBuffer: 58.6% (157/268)
@@ -233,43 +233,43 @@ DataView.prototype.getInt8: 80% (4/5)
 DataView.prototype.getUint16: 71.4% (5/7)
 DataView.prototype.getUint32: 71.4% (5/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 33.3% (2/6)
-Float64Array: 33.3% (2/6)
+Float32Array: 28.6% (2/7)
+Float64Array: 28.6% (2/7)
 Int16Array: 100% (2/2)
 Int32Array: 75% (3/4)
 Int8Array: 82.9% (29/35)
 Map: 47.5% (19/40)
 Object.is: 100% (2/2)
 Promise: 100% (4/4)
-Proxy: 31.8% (149/468)
+Proxy: 35.7% (167/468)
 Reflect: 43.8% (205/468)
-Reflect.construct: 90.7% (631/696)
+Reflect.construct: 90.9% (633/696)
 Reflect.set: 63% (29/46)
 Reflect.setPrototypeOf: 52.2% (12/23)
 Set: 76.3% (29/38)
 String.fromCodePoint: 81.8% (18/22)
 String.prototype.endsWith: 70.4% (19/27)
 String.prototype.includes: 69.2% (18/26)
-Symbol: 68.5% (1024/1494)
+Symbol: 68.7% (1026/1494)
 Symbol.hasInstance: 11.8% (2/17)
-Symbol.isConcatSpreadable: 82.4% (28/34)
-Symbol.iterator: 46.4% (865/1865)
+Symbol.isConcatSpreadable: 85.3% (29/34)
+Symbol.iterator: 46.6% (869/1865)
 Symbol.match: 56.8% (50/88)
 Symbol.replace: 76.5% (75/98)
 Symbol.search: 59.5% (22/37)
 Symbol.species: 14.5% (40/276)
 Symbol.split: 46.6% (27/58)
 Symbol.toPrimitive: 74.7% (174/233)
-Symbol.toStringTag: 41.2% (54/131)
+Symbol.toStringTag: 43.5% (57/131)
 Symbol.unscopables: 13.6% (6/44)
-TypedArray: 55.4% (1392/2513)
+TypedArray: 55.6% (1396/2513)
 Uint16Array: 33.3% (2/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 54.5% (6/11)
 Uint8ClampedArray: 33.3% (2/6)
-WeakMap: 83.5% (66/79)
+WeakMap: 86.1% (68/79)
 WeakSet: 73.5% (25/34)
-arrow-function: 78% (740/949)
+arrow-function: 78.1% (741/949)
 class: 83.9% (4002/4768)
 computed-property-names: 83.7% (400/478)
 const: 0% (0/15)
@@ -292,12 +292,12 @@ Array.prototype.includes: 49.3% (34/69)
 exponentiation: 81.6% (84/103)
 u180e: 84% (21/25)
 </pre></li>
-<li>ES2017: 49.7% (378/761)<pre>
+<li>ES2017: 49.5% (378/763)<pre>
 __getter__: 66.7% (18/27)
 __setter__: 51.9% (14/27)
-Atomics: 21% (79/376)
+Atomics: 20.9% (79/378)
 Intl.DateTimeFormat-dayPeriod: 8.3% (1/12)
-SharedArrayBuffer: 32.6% (151/463)
+SharedArrayBuffer: 32.5% (151/464)
 async-functions: 67.7% (477/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -379,12 +379,13 @@ error-cause: 0% (0/5)
 regexp-match-indices: 58.1% (18/31)
 top-level-await: 61.6% (167/271)
 </pre></li>
-<li>ES2023: 79.9% (246/308)<pre>
+<li>ES2023: 77.1% (316/410)<pre>
 Intl-enumeration: 48.6% (17/35)
+Intl.NumberFormat-v3: 68.6% (70/102)
 array-find-from-last: 78% (85/109)
 change-array-by-copy: 82.6% (109/132)
 hashbang: 100% (29/29)
-symbols-as-weakmap-keys: 69% (20/29)
+symbols-as-weakmap-keys: 72.4% (21/29)
 </pre></li>
 <li>ES2024: 62.6% (526/840)<pre>
 Atomics.waitAsync: 10.9% (11/101)
@@ -396,8 +397,8 @@ promise-with-resolvers: 44.4% (4/9)
 regexp-v-flag: 93.6% (175/187)
 resizable-arraybuffer: 60.7% (281/463)
 </pre></li>
-<li>ES2025: 75.9% (960/1264)<pre>
-Float16Array: 79.6% (39/49)
+<li>ES2025: 75.8% (960/1266)<pre>
+Float16Array: 76.5% (39/51)
 Intl.DurationFormat: 72.3% (81/112)
 RegExp.escape: 95.2% (20/21)
 import-attributes: 56% (56/100)
@@ -407,16 +408,21 @@ promise-try: 75% (9/12)
 regexp-modifiers: 93.5% (215/230)
 set-methods: 49% (94/192)
 </pre></li>
-<li>Next: 77.1% (6440/8357)<pre>
+<li>ES2026: 49% (177/361)<pre>
 Array.fromAsync: 8.4% (8/95)
-Atomics.pause: 83.3% (5/6)
 Error.isError: 84.6% (11/13)
 Intl.Era-monthcode: 91.1% (1406/1543)
 Intl.Locale-info: 2.3% (1/43)
-Intl.NumberFormat-v3: 68.6% (70/102)
 Math.sumPrecise: 100% (10/10)
+iterator-sequencing: 93.8% (30/32)
+json-parse-with-source: 63.6% (14/22)
+uint8array-base64: 58% (40/69)
+upsert: 87.5% (63/72)
+</pre></li>
+<li>Next: 78.6% (6208/7895)<pre>
+Atomics.pause: 83.3% (5/6)
 ShadowRealm: 0% (0/64)
-Temporal: 85.9% (5728/6670)
+Temporal: 86% (5735/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 73.7% (14/19)
 decorators: 59.3% (16/27)
@@ -425,17 +431,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 49.8% (114/229)
 import-text: 0% (0/6)
-iterator-sequencing: 93.8% (30/32)
 joint-iteration: 29.5% (23/78)
-json-parse-with-source: 63.6% (14/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 5.3% (1/19)
 source-phase-imports: 75% (171/228)
 source-phase-imports-module-source: 88.1% (74/84)
-uint8array-base64: 52.2% (36/69)
-upsert: 81.9% (59/72)
 </pre></li>
-<li>N/A: 73.3% (6396/8720)</li>
+<li>N/A: 73.4% (6403/8718)</li>
 </ul>
 </details>

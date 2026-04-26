@@ -64,12 +64,12 @@ classic [JScript](../jscript/README.md) with a Chakra-based engine.
 <li>Intl: 28.6%</li>
 </ul></details>
 
-<details><summary>test262: 31.8%, main 38.4%, staging 23.2%, annexB 40.8%, Next 3.3%, Intl 0.5%</summary>
+<details><summary>test262: 31.8%, main 38.1%, staging 23.2%, annexB 40.8%, Next 3.3%, Intl 0.5%</summary>
 <ul>
-<li>Overall: 31.8% (16900/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 38.4% (15818/41237)</li>
+<li>Overall: 31.8% (16900/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 38.1% (15832/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 96.3% (7890/8197)<pre>
+<li>ES5: 96.2% (7889/8197)<pre>
 caller: 100% (23/23)
 </pre></li>
 <li>ES6: 13.4% (1483/11054)<pre>
@@ -85,8 +85,8 @@ DataView.prototype.getInt8: 20% (1/5)
 DataView.prototype.getUint16: 28.6% (2/7)
 DataView.prototype.getUint32: 28.6% (2/7)
 DataView.prototype.setUint8: 39.3% (22/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 57.1% (20/35)
@@ -128,7 +128,7 @@ const: 33.3% (5/15)
 cross-realm: 0% (0/201)
 default-parameters: 9.7% (219/2269)
 destructuring-assignment: 66.7% (94/141)
-destructuring-binding: 7.7% (511/6637)
+destructuring-binding: 7.7% (512/6637)
 for-of: 0% (0/5)
 generators: 10.6% (433/4085)
 let: 39% (30/77)
@@ -144,20 +144,20 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 60% (15/25)
 </pre></li>
-<li>ES2017: 21.7% (165/761)<pre>
+<li>ES2017: 21.6% (165/763)<pre>
 __getter__: 51.9% (14/27)
 __setter__: 51.9% (14/27)
-Atomics: 0% (0/376)
+Atomics: 0% (0/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 0% (0/463)
+SharedArrayBuffer: 0% (0/464)
 async-functions: 28.8% (203/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
-<li>ES2018: 13.1% (636/4855)<pre>
+<li>ES2018: 13.1% (637/4855)<pre>
 IsHTMLDDA: 0% (0/42)
 Promise.prototype.finally: 0% (0/29)
 Symbol.asyncIterator: 0% (0/538)
-async-iteration: 11.9% (590/4968)
+async-iteration: 11.9% (591/4968)
 object-rest: 1.1% (4/355)
 object-spread: 17.8% (24/135)
 regexp-dotall: 0% (0/17)
@@ -231,8 +231,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 3.2% (1/31)
 top-level-await: 2.2% (6/271)
 </pre></li>
-<li>ES2023: 7.5% (23/308)<pre>
+<li>ES2023: 5.6% (23/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 3.7% (4/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 65.5% (19/29)
@@ -248,8 +249,8 @@ promise-with-resolvers: 0% (0/9)
 regexp-v-flag: 27.3% (51/187)
 resizable-arraybuffer: 0% (0/463)
 </pre></li>
-<li>ES2025: 14.2% (179/1264)<pre>
-Float16Array: 4.1% (2/49)
+<li>ES2025: 14.1% (179/1266)<pre>
+Float16Array: 3.9% (2/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -259,16 +260,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 67.4% (155/230)
 set-methods: 3.6% (7/192)
 </pre></li>
-<li>Next: 3.3% (278/8357)<pre>
+<li>ES2026: 3.9% (14/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 5.8% (4/69)
+upsert: 13.9% (10/72)
+</pre></li>
+<li>Next: 3.3% (264/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 0% (0/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -277,17 +283,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 31.4% (72/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 56.1% (128/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 5.8% (4/69)
-upsert: 13.9% (10/72)
 </pre></li>
-<li>N/A: 56.8% (4953/8720)</li>
+<li>N/A: 56.8% (4953/8718)</li>
 </ul>
 </details>

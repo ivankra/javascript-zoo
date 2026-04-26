@@ -17,23 +17,18 @@ standard library - passes through most of it from the host environment.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 94%</summary><ul>
+<details><summary>ES1-ES5: 95%</summary><ul>
+<li>Tested version: <a href="https://github.com/Siubaak/sval/commit/58550fd3a5e4202fdbfda3eb652099667b4c976f">2026-04-12</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/sval.json">json</a>)</li>
 <li>ES1: 98% (194/198)<pre>
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../../conformance/es1/asi.js">asi.js</a>: TypeError: Cannot create property '0' on number '1'
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: FAIL: C++ like evaluation order in 'x += f()'
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError: Delete of an unqualified identifier in strict mode
 </pre></li>
-<li>ES3: 98.6% (146/148)<pre>
+<li>ES3: 99.3% (147/148)<pre>
 <a href="../../conformance/es3/labelled.statements.js">labelled.statements.js</a>: SyntaxError: ExpressionStatement cannot be labeled
-<a href="../../conformance/es3/literals.array.elisions.js">literals.array.elisions.js</a>: TypeError: Cannot read properties of null
 </pre></li>
-<li>ES5: 73% (54/74)<pre>
-<a href="../../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: TypeError: Cannot read properties of null
-<a href="../../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: TypeError: Cannot read properties of null
-<a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: TypeError: Cannot read properties of null
-<a href="../../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: TypeError: Cannot read properties of null
-<a href="../../conformance/es5/Array.prototype.some.js">Array.prototype.some.js</a>: TypeError: Cannot read properties of null
+<li>ES5: 79.7% (59/74)<pre>
 <a href="../../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Cannot assign to read only property 'a' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Cannot assign to read only property 'y' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: TypeError: Cannot assign to read only property 'x' of object '#&lt;Object&gt;'
@@ -52,7 +47,8 @@ standard library - passes through most of it from the host environment.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 87%, ES2016+ 93%, Next 18%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 89%, ES2016+ 93%, Next 18%, Intl 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/Siubaak/sval/commit/58550fd3a5e4202fdbfda3eb652099667b4c976f">2026-04-12</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/sval.json">json</a>)</li>
 <li>ES5: 89.8%<pre>
 <a href="../../conformance/compat-table/es5/immutable-globals.Infinity.js">immutable-globals.Infinity.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/immutable-globals.NaN.js">immutable-globals.NaN.js</a>: FAIL
@@ -65,7 +61,7 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/compat-table/es5/strict.reserved-words.js">strict.reserved-words.js</a>: FAIL
 <a href="../../conformance/compat-table/es5/strict.with-error.js">strict.with-error.js</a>: FAIL
 </pre></li>
-<li>ES6: 86.6%<pre>
+<li>ES6: 88.7%<pre>
 <a href="../../conformance/compat-table/es6/Function.name.accessor.js">Function.name.accessor.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: FAIL
 <a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: FAIL
@@ -88,9 +84,7 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/compat-table/es6/arrow.no-prototype.js">arrow.no-prototype.js</a>: FAIL
 ...
 </pre></li>
-<li>ES2016: 95.5%<pre>
-<a href="../../conformance/compat-table/es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: TypeError: Cannot read properties of null
-</pre></li>
+<li>ES2016: 100%</li>
 <li>ES2017: 88%<pre>
 <a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: FAIL
 <a href="../../conformance/compat-table/es2017/async.Symbol.toStringTag.js">async.Symbol.toStringTag.js</a>: FAIL
@@ -99,9 +93,9 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/compat-table/es2017/async.prototype-chain.js">async.prototype-chain.js</a>: FAIL
 </pre></li>
 <li>ES2018: 83.2%<pre>
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: TypeError: Cannot convert a Symbol value to a string
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: TypeError: iterator is not a function
 <a href="../../conformance/compat-table/es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: FAIL
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/: Invalid property value (10:10)
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/: Invalid property value
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 92.9%<pre>
@@ -126,17 +120,18 @@ standard library - passes through most of it from the host environment.
 <li>Intl: 100%</li>
 </ul></details>
 
-<details><summary>test262: 68.5%, main 80.5%, staging 65.5%, annexB 41%, Next 9.3%, Intl 35.5%</summary>
+<details><summary>test262: 69.3%, main 81%, staging 67.9%, annexB 41%, Next 7%, Intl 35.5%</summary>
 <ul>
-<li>Overall: 68.5% (36408/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 80.5% (33194/41237)</li>
+<li>Tested version: <a href="https://github.com/Siubaak/sval/commit/58550fd3a5e4202fdbfda3eb652099667b4c976f">2026-04-12</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/test262/sval.json">json</a>)</li>
+<li>Overall: 69.3% (36819/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 81% (33662/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
-<li>ES5: 93.9% (7694/8197)<pre>
+<li>ES5: 94.1% (7713/8197)<pre>
 caller: 0% (0/23)
 </pre></li>
-<li>ES6: 76.2% (8421/11054)<pre>
+<li>ES6: 76.6% (8468/11054)<pre>
 __proto__: 83.3% (15/18)
-Array.prototype.values: 75% (3/4)
+Array.prototype.values: 100% (4/4)
 ArrayBuffer: 93.3% (250/268)
 DataView: 87.4% (166/190)
 DataView.prototype.getFloat32: 100% (7/7)
@@ -147,8 +142,8 @@ DataView.prototype.getInt8: 100% (5/5)
 DataView.prototype.getUint16: 100% (7/7)
 DataView.prototype.getUint32: 100% (7/7)
 DataView.prototype.setUint8: 100% (56/56)
-Float32Array: 100% (6/6)
-Float64Array: 100% (6/6)
+Float32Array: 85.7% (6/7)
+Float64Array: 85.7% (6/7)
 Int16Array: 100% (2/2)
 Int32Array: 100% (4/4)
 Int8Array: 100% (35/35)
@@ -156,7 +151,7 @@ Map: 95% (38/40)
 Object.is: 100% (2/2)
 Promise: 50% (2/4)
 Proxy: 85.3% (399/468)
-Reflect: 72.9% (341/468)
+Reflect: 73.3% (343/468)
 Reflect.construct: 79.9% (556/696)
 Reflect.set: 82.6% (38/46)
 Reflect.setPrototypeOf: 100% (23/23)
@@ -164,19 +159,19 @@ Set: 100% (38/38)
 String.fromCodePoint: 100% (22/22)
 String.prototype.endsWith: 100% (27/27)
 String.prototype.includes: 100% (26/26)
-Symbol: 66% (986/1494)
+Symbol: 66.1% (987/1494)
 Symbol.hasInstance: 88.2% (15/17)
 Symbol.isConcatSpreadable: 91.2% (31/34)
-Symbol.iterator: 31.7% (591/1865)
+Symbol.iterator: 31.7% (592/1865)
 Symbol.match: 93.2% (82/88)
 Symbol.replace: 84.7% (83/98)
 Symbol.search: 83.8% (31/37)
-Symbol.species: 90.2% (249/276)
+Symbol.species: 90.6% (250/276)
 Symbol.split: 86.2% (50/58)
 Symbol.toPrimitive: 91.4% (213/233)
 Symbol.toStringTag: 67.9% (89/131)
 Symbol.unscopables: 22.7% (10/44)
-TypedArray: 84% (2110/2513)
+TypedArray: 84.1% (2113/2513)
 Uint16Array: 100% (6/6)
 Uint32Array: 100% (2/2)
 Uint8Array: 100% (11/11)
@@ -184,42 +179,42 @@ Uint8ClampedArray: 100% (6/6)
 WeakMap: 70.9% (56/79)
 WeakSet: 97.1% (33/34)
 arrow-function: 74.1% (703/949)
-class: 78.1% (3724/4768)
+class: 78.6% (3748/4768)
 computed-property-names: 92.5% (442/478)
 const: 73.3% (11/15)
 cross-realm: 1% (2/201)
-default-parameters: 65.3% (1481/2269)
+default-parameters: 66.3% (1504/2269)
 destructuring-assignment: 67.4% (95/141)
-destructuring-binding: 61.6% (4089/6637)
+destructuring-binding: 62.6% (4156/6637)
 for-of: 60% (3/5)
-generators: 59.8% (2441/4085)
+generators: 60.3% (2463/4085)
 let: 44.2% (34/77)
-new.target: 75.4% (46/61)
+new.target: 77% (47/61)
 proxy-missing-checks: 100% (3/3)
 rest-parameters: 100% (96/96)
 super: 78.9% (15/19)
 tail-call-optimization: 0% (0/35)
 template: 100% (1/1)
 </pre></li>
-<li>ES2016: 97.7% (127/130)<pre>
-Array.prototype.includes: 89.9% (62/69)
-exponentiation: 95.1% (98/103)
+<li>ES2016: 99.2% (129/130)<pre>
+Array.prototype.includes: 91.3% (63/69)
+exponentiation: 96.1% (99/103)
 u180e: 100% (25/25)
 </pre></li>
-<li>ES2017: 87.5% (666/761)<pre>
+<li>ES2017: 87.8% (670/763)<pre>
 __getter__: 100% (27/27)
 __setter__: 100% (27/27)
-Atomics: 66.2% (249/376)
+Atomics: 65.9% (249/378)
 Intl.DateTimeFormat-dayPeriod: 100% (12/12)
-SharedArrayBuffer: 74.7% (346/463)
-async-functions: 82% (578/705)
+SharedArrayBuffer: 74.6% (346/464)
+async-functions: 82.6% (582/705)
 intl-normative-optional: 100% (4/4)
 </pre></li>
-<li>ES2018: 61% (2961/4855)<pre>
+<li>ES2018: 61.7% (2995/4855)<pre>
 IsHTMLDDA: 0% (0/42)
 Promise.prototype.finally: 93.1% (27/29)
 Symbol.asyncIterator: 0.2% (1/538)
-async-iteration: 53.7% (2670/4968)
+async-iteration: 54.6% (2712/4968)
 object-rest: 90.4% (321/355)
 object-spread: 88.1% (119/135)
 regexp-dotall: 94.1% (16/17)
@@ -241,8 +236,8 @@ stable-typedarray-sort: 100% (1/1)
 string-trimming: 100% (54/54)
 well-formed-json-stringify: 100% (1/1)
 </pre></li>
-<li>ES2020: 75% (1618/2156)<pre>
-BigInt: 74.3% (1115/1501)
+<li>ES2020: 75.3% (1623/2156)<pre>
+BigInt: 74.4% (1117/1501)
 Intl.NumberFormat-unified: 98.5% (66/67)
 Intl.RelativeTimeFormat: 96.2% (76/79)
 Promise.allSettled: 98% (100/102)
@@ -254,7 +249,7 @@ export-star-as-namespace-from-module: 21.1% (4/19)
 for-in-order: 100% (9/9)
 globalThis: 41.9% (62/148)
 import.meta: 87% (20/23)
-optional-chaining: 76.8% (43/56)
+optional-chaining: 83.9% (47/56)
 </pre></li>
 <li>ES2021: 84.3% (776/920)<pre>
 AggregateError: 87.1% (27/31)
@@ -272,31 +267,32 @@ align-detached-buffer-semantics-with-web-reality: 46.2% (73/158)
 logical-assignment-operators: 60.2% (65/108)
 numeric-separator-literal: 100% (159/159)
 </pre></li>
-<li>ES2022: 76.7% (4191/5465)<pre>
-Array.prototype.at: 72.7% (8/11)
+<li>ES2022: 77.2% (4219/5465)<pre>
+Array.prototype.at: 100% (11/11)
 Intl.DateTimeFormat-extend-timezonename: 100% (2/2)
 Intl.DisplayNames-v2: 100% (12/12)
 Intl.Segmenter: 97.5% (77/79)
 Object.hasOwn: 100% (62/62)
 String.prototype.at: 100% (11/11)
-TypedArray.prototype.at: 92.3% (12/13)
+TypedArray.prototype.at: 100% (13/13)
 arbitrary-module-namespace-names: 43.8% (7/16)
 class-fields-private: 78.3% (888/1134)
 class-fields-private-in: 78.9% (15/19)
 class-fields-public: 85.3% (1756/2058)
-class-methods-private: 65.4% (1118/1709)
+class-methods-private: 66.1% (1130/1709)
 class-static-block: 92.3% (60/65)
 class-static-fields-private: 95.7% (330/345)
 class-static-fields-public: 79.3% (169/213)
-class-static-methods-private: 74.4% (1125/1513)
+class-static-methods-private: 75.1% (1137/1513)
 error-cause: 100% (5/5)
 regexp-match-indices: 96.8% (30/31)
 top-level-await: 69% (187/271)
 </pre></li>
-<li>ES2023: 91.9% (283/308)<pre>
+<li>ES2023: 95.1% (390/410)<pre>
 Intl-enumeration: 60% (21/35)
-array-find-from-last: 85.3% (93/109)
-change-array-by-copy: 93.9% (124/132)
+Intl.NumberFormat-v3: 99% (101/102)
+array-find-from-last: 87.2% (95/109)
+change-array-by-copy: 97% (128/132)
 hashbang: 100% (29/29)
 symbols-as-weakmap-keys: 72.4% (21/29)
 </pre></li>
@@ -310,46 +306,47 @@ promise-with-resolvers: 55.6% (5/9)
 regexp-v-flag: 99.5% (186/187)
 resizable-arraybuffer: 97% (449/463)
 </pre></li>
-<li>ES2025: 91.5% (1157/1264)<pre>
-Float16Array: 85.7% (42/49)
+<li>ES2025: 91.7% (1161/1266)<pre>
+Float16Array: 84.3% (43/51)
 Intl.DurationFormat: 89.3% (100/112)
 RegExp.escape: 85.7% (18/21)
 import-attributes: 49% (49/100)
 iterator-helpers: 93.7% (531/567)
 json-modules: 0% (0/13)
-promise-try: 75% (9/12)
+promise-try: 100% (12/12)
 regexp-modifiers: 100% (230/230)
 set-methods: 92.7% (178/192)
 </pre></li>
-<li>Next: 9.3% (781/8357)<pre>
-Array.fromAsync: 5.3% (5/95)
-Atomics.pause: 100% (6/6)
+<li>ES2026: 69.5% (251/361)<pre>
+Array.fromAsync: 89.5% (85/95)
 Error.isError: 76.9% (10/13)
 Intl.Era-monthcode: 0.1% (2/1543)
 Intl.Locale-info: 100% (43/43)
-Intl.NumberFormat-v3: 99% (101/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 9.4% (3/32)
+json-parse-with-source: 95.5% (21/22)
+uint8array-base64: 92.8% (64/69)
+upsert: 31.9% (23/72)
+</pre></li>
+<li>Next: 7% (553/7895)<pre>
+Atomics.pause: 100% (6/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 7.4% (2/27)
-explicit-resource-management: 57% (272/477)
+explicit-resource-management: 66% (315/477)
 immutable-arraybuffer: 5% (1/20)
 import-bytes: 0% (0/5)
 import-defer: 31.9% (73/229)
 import-text: 0% (0/6)
-iterator-sequencing: 9.4% (3/32)
 joint-iteration: 6.4% (5/78)
-json-parse-with-source: 95.5% (21/22)
 legacy-regexp: 3.8% (1/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 100% (19/19)
-source-phase-imports: 56.1% (128/228)
+source-phase-imports: 56.6% (129/228)
 source-phase-imports-module-source: 50% (42/84)
-uint8array-base64: 92.8% (64/69)
-upsert: 31.9% (23/72)
 </pre></li>
-<li>N/A: 78.4% (6835/8720)</li>
+<li>N/A: 80% (6973/8718)</li>
 </ul>
 </details>

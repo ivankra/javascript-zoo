@@ -68,10 +68,10 @@ JavaScript engine of Internet Explorer 3.0 – 8.0.
 <li>Intl: 25%</li>
 </ul></details>
 
-<details><summary>test262: 15.2%, main 18.1%, staging 9.4%, annexB 27.4%, Next 1.9%, Intl 0.2%</summary>
+<details><summary>test262: 15.2%, main 18%, staging 9.4%, annexB 27.4%, Next 1.9%, Intl 0.2%</summary>
 <ul>
-<li>Overall: 15.2% (8084/53164)</li>
-<li>Excluding staging, annexB, Next and Intl: 18.1% (7483/41237)</li>
+<li>Overall: 15.2% (8084/53167)</li>
+<li>Excluding staging, annexB, Next and Intl: 18% (7492/41549)</li>
 <li>Results per edition/feature (note: figure for each feature is across tests for all editions, not just the introducing one):</li>
 <li>ES5: 45.8% (3751/8197)<pre>
 caller: 78.3% (18/23)
@@ -89,8 +89,8 @@ DataView.prototype.getInt8: 0% (0/5)
 DataView.prototype.getUint16: 0% (0/7)
 DataView.prototype.getUint32: 0% (0/7)
 DataView.prototype.setUint8: 0% (0/56)
-Float32Array: 0% (0/6)
-Float64Array: 0% (0/6)
+Float32Array: 0% (0/7)
+Float64Array: 0% (0/7)
 Int16Array: 0% (0/2)
 Int32Array: 0% (0/4)
 Int8Array: 0% (0/35)
@@ -148,12 +148,12 @@ Array.prototype.includes: 1.4% (1/69)
 exponentiation: 13.6% (14/103)
 u180e: 60% (15/25)
 </pre></li>
-<li>ES2017: 7.5% (57/761)<pre>
+<li>ES2017: 7.5% (57/763)<pre>
 __getter__: 0% (0/27)
 __setter__: 0% (0/27)
-Atomics: 0.5% (2/376)
+Atomics: 0.5% (2/378)
 Intl.DateTimeFormat-dayPeriod: 0% (0/12)
-SharedArrayBuffer: 1.7% (8/463)
+SharedArrayBuffer: 1.7% (8/464)
 async-functions: 15.6% (110/705)
 intl-normative-optional: 0% (0/4)
 </pre></li>
@@ -235,8 +235,9 @@ error-cause: 0% (0/5)
 regexp-match-indices: 0% (0/31)
 top-level-await: 0% (0/271)
 </pre></li>
-<li>ES2023: 1.3% (4/308)<pre>
+<li>ES2023: 1% (4/410)<pre>
 Intl-enumeration: 0% (0/35)
+Intl.NumberFormat-v3: 0% (0/102)
 array-find-from-last: 3.7% (4/109)
 change-array-by-copy: 0% (0/132)
 hashbang: 0% (0/29)
@@ -252,8 +253,8 @@ promise-with-resolvers: 22.2% (2/9)
 regexp-v-flag: 0% (0/187)
 resizable-arraybuffer: 0.9% (4/463)
 </pre></li>
-<li>ES2025: 7.8% (99/1264)<pre>
-Float16Array: 0% (0/49)
+<li>ES2025: 7.8% (99/1266)<pre>
+Float16Array: 0% (0/51)
 Intl.DurationFormat: 0% (0/112)
 RegExp.escape: 0% (0/21)
 import-attributes: 15% (15/100)
@@ -263,16 +264,21 @@ promise-try: 0% (0/12)
 regexp-modifiers: 36.1% (83/230)
 set-methods: 0% (0/192)
 </pre></li>
-<li>Next: 1.9% (157/8357)<pre>
+<li>ES2026: 2.5% (9/361)<pre>
 Array.fromAsync: 0% (0/95)
-Atomics.pause: 0% (0/6)
 Error.isError: 0% (0/13)
 Intl.Era-monthcode: 0% (0/1543)
 Intl.Locale-info: 0% (0/43)
-Intl.NumberFormat-v3: 0% (0/102)
 Math.sumPrecise: 0% (0/10)
+iterator-sequencing: 0% (0/32)
+json-parse-with-source: 0% (0/22)
+uint8array-base64: 2.9% (2/69)
+upsert: 9.7% (7/72)
+</pre></li>
+<li>Next: 1.9% (148/7895)<pre>
+Atomics.pause: 0% (0/6)
 ShadowRealm: 0% (0/64)
-Temporal: 0% (0/6670)
+Temporal: 0% (0/6671)
 await-dictionary: 5.4% (2/37)
 canonical-tz: 0% (0/19)
 decorators: 0% (0/27)
@@ -281,17 +287,13 @@ immutable-arraybuffer: 0% (0/20)
 import-bytes: 0% (0/5)
 import-defer: 22.3% (51/229)
 import-text: 0% (0/6)
-iterator-sequencing: 0% (0/32)
 joint-iteration: 0% (0/78)
-json-parse-with-source: 0% (0/22)
 legacy-regexp: 0% (0/26)
 nonextensible-applies-to-private: 0% (0/4)
 regexp-duplicate-named-groups: 0% (0/19)
 source-phase-imports: 37.7% (86/228)
 source-phase-imports-module-source: 33.3% (28/84)
-uint8array-base64: 2.9% (2/69)
-upsert: 9.7% (7/72)
 </pre></li>
-<li>N/A: 22.3% (1947/8720)</li>
+<li>N/A: 22.3% (1947/8718)</li>
 </ul>
 </details>
