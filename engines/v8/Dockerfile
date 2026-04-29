@@ -9,7 +9,10 @@
 # SPDX-License-Identifier: MIT
 
 # Toolchain image *must* set CC CXX AR NM for V8's //build/toolchain/linux/unbundle
-ARG BASE=jsz-clang
+# Build LLVM from source until apt.llvm.org is fixed -
+# 14.9.1xx needs a more recent clang than Mar 2026 snapshot.
+# https://apt.llvm.org/trixie/pool/main/l/llvm-toolchain-snapshot/
+ARG BASE=jsz-clang-git
 FROM $BASE
 
 WORKDIR /src
@@ -31,7 +34,7 @@ RUN build/install-build-deps.sh --no-prompt
 RUN apt-get install -y --no-install-recommends rustup && \
     rustup default nightly && \
     cargo install bindgen-cli --root "$(rustc --print sysroot)" && \
-    ln -s "$(find /usr/lib -name "libclang-$($CC -dumpversion).so" -print -quit)" \
+    ln -s "$(find /usr/local/lib /usr/lib \( -name "libclang.so" -o -name "libclang-$($CC -dumpversion).so" \) -print -quit)" \
           "$(rustc --print sysroot)/lib/libclang.so"
 
 # Configure build. Options: JITLESS=y => compile out JIT, FULL=y => fully-featured build.

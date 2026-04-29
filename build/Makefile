@@ -41,6 +41,7 @@ $(eval $(call build_base,jsz-dotnet-wasi,jsz-wasi.Dockerfile,--build-arg BASE=js
 #$(eval $(call build_base,jsz-clang22,jsz-clang.Dockerfile,--build-arg VER=22))
 #$(eval $(call build_base,jsz-clang23,jsz-clang.Dockerfile,--build-arg VER=23))
 $(eval $(call build_base,jsz-clang,jsz-clang.Dockerfile,--build-arg VER=23))
+$(eval $(call build_base,jsz-clang-git,jsz-clang-git.Dockerfile,))
 else
 # Fallback to debian's clang19 if not on amd64/arm64 (only archs provided by clang's apt repositories)
 $(eval $(call build_base,jsz-clang,jsz-clang.Dockerfile,--build-arg VER=19))
