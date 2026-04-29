@@ -1162,6 +1162,7 @@ spidermonkey: &spidermonkey
     - '^uncaught exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags: &spidermonkey_flags
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
+    - { if: 'bench', then: '--strict-benchmark-mode' }  # https://spidermonkey.dev/blog/2026/04/13/benchmark-mode.html
   prelude:
     - file: engines/spidermonkey/prelude.js
 
