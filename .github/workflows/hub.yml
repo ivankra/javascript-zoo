@@ -49,18 +49,18 @@ jobs:
           REV=$(gh release view "$TAG" --repo ${{ github.repository }} --json targetCommitish -q .targetCommitish)
           echo "rev=$REV" | tee -a "$GITHUB_OUTPUT"
 
-      - name: Build and push ghcr.io/ivankra/javascript-zoo/hub
+      - name: Build and push ghcr.io/${{ github.repository }}/hub
         env:
           REV: ${{ steps.tag.outputs.rev }}
-        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ steps.tag.outputs.tag }}
+        run: build/hub.sh ghcr.io/${{ github.repository }}/hub ${{ steps.tag.outputs.tag }}
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u ivankra --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u "${{ github.repository_owner }}" --password-stdin
 
-      - name: Build and push docker.io/ivankra/javascript-zoo
+      - name: Build and push docker.io/${{ github.repository }}
         env:
           REV: ${{ steps.tag.outputs.rev }}
-        run: build/hub.sh docker.io/ivankra/javascript-zoo ${{ steps.tag.outputs.tag }}
+        run: build/hub.sh docker.io/${{ github.repository }} ${{ steps.tag.outputs.tag }}
 
       - name: Publish release
         env:

@@ -75,7 +75,7 @@ jobs:
           ref: ${{ github.sha }}
 
       - name: Build and push base toolchain images
-        run: DOCKER_PUSH=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C build all
+        run: DOCKER_PUSH=1 DOCKER_REGISTRY=ghcr.io/${{ github.repository }} make -C build all
 
   engine:
     needs: [init, base]
@@ -114,7 +114,7 @@ jobs:
               jerryscript|escargot) TARGET=dist-${{ matrix.engine }} ;;
               *) TARGET=dist ;;
             esac
-            DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} $TARGET
+            DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/${{ github.repository }} make -C engines/${{ matrix.engine }} $TARGET
 
       - name: Package and upload to release
         run: |
@@ -145,25 +145,25 @@ jobs:
           # Repack into <arch>-<tag>.tar for hub.Dockerfile (ADD auto-extracts it)
           tar --owner=root --group=root -cf ${DOCKER_ARCH}-${RELEASE_TAG}.tar ${DOCKER_ARCH}
 
-      - name: "Build and push ghcr.io/ivankra/javascript-zoo/jsz-runtime:${{ inputs.arch }}"
+      - name: "Build and push ghcr.io/${{ github.repository }}/jsz-runtime:${{ inputs.arch }}"
         run: |
           docker buildx build --platform linux/${DOCKER_ARCH} --push \
             -f build/jsz-runtime.Dockerfile \
-            -t ghcr.io/ivankra/javascript-zoo/jsz-runtime:${DOCKER_ARCH} \
+            -t ghcr.io/${{ github.repository }}/jsz-runtime:${DOCKER_ARCH} \
             --build-arg BASE=debian:stable \
             .
 
-      - name: "Build and push ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}"
+      - name: "Build and push ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }}"
         run: |
           docker buildx build --platform linux/${DOCKER_ARCH} --push \
             -f build/hub.Dockerfile \
-            -t ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }} \
-            --build-arg BASE=ghcr.io/ivankra/javascript-zoo/jsz-runtime:${DOCKER_ARCH} \
+            -t ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }} \
+            --build-arg BASE=ghcr.io/${{ github.repository }}/jsz-runtime:${DOCKER_ARCH} \
             --build-arg TAG=${{ needs.init.outputs.release_tag }} \
             .
 
       - name: Smoke test
         run: |
           docker run --rm --platform linux/${DOCKER_ARCH} \
-            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }} \
+            ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }} \
             bash -c 'set -ex; while read f; do python3 /zoo/build/dist.py --smoke-test "/dist/$f"; done < /dist/LIST'
