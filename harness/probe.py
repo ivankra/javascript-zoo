@@ -11,7 +11,7 @@ check basic capabilities.
 
 Output: YAML to stdout, one block per engine.
 
-Usage: probe.py [engines or dir with binaries]
+Usage: probe.py [opts] engine... [-- script...]
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import tempfile
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -36,10 +37,13 @@ from harness import (
     Runner,
     Scenario,
     Tags,
+    RunResult,
     Verdict,
 )
 
 DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
+CONFORMANCE_DIR = (REPO_ROOT / "conformance").resolve()
+PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
 
 
 # Each probe: source uses print() which is defined by the assembler's auto-generated prelude.
@@ -318,6 +322,142 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
     return probe_name, "PASS" if passed else (run.verdict_message() or "FAIL")
 
 
+def _relative_to(path: Path, root: Path) -> str | None:
+    try:
+        return str(path.resolve().relative_to(root.resolve()))
+    except ValueError:
+        return None
+
+
+def _format_probe_result(run: RunResult) -> str:
+    return "PASS" if run.is_passed() else (run.verdict_message() or "FAIL")
+
+
+def _run_conformance_script_probe(cfg: EngineConfig, script_path: Path, test_id: str) -> tuple[str, str]:
+    runner = Runner(cfg)
+    annotator = Annotator(cfg)
+
+    console_log = cfg.console_log or ["console.log"]
+    if type(console_log) is str:
+        console_log = [console_log]
+
+    if "console.log" in console_log and not cfg.requires_tmp_staging:
+        run = runner.run_command(
+            cfg.argv(script_path),
+            run_id=f"script/{test_id}",
+            test_path=str(script_path),
+            script_path=str(script_path),
+        )
+    elif "print" in console_log and cfg.multiple_scripts_with_shared_realm is True and not cfg.requires_tmp_staging:
+        run = runner.run_command(
+            cfg.argv(PRELUDE_CONSOLE_JS, script_path),
+            run_id=f"script/{test_id}",
+            test_path=str(script_path),
+            script_path=str(script_path),
+        )
+    else:
+        source = script_path.read_text(encoding="utf-8", errors="replace")
+        source = source.replace("console.log", console_log[0])
+        with tempfile.TemporaryDirectory(prefix="probe-conf-") as td:
+            patched = Path(td) / script_path.name
+            patched.write_text(source, encoding="utf-8")
+            run = runner.run_command(
+                cfg.argv(patched),
+                run_id=f"script/{test_id}",
+                test_path=str(script_path),
+                script_path=str(patched),
+            )
+
+    pass_pattern = rf"{re.escape(script_path.name)}: OK"
+    fail_pattern = rf"{re.escape(script_path.name)}: (?:failed|exception)"
+    annotator.classify(
+        run,
+        pass_pattern=pass_pattern,
+        fail_pattern=fail_pattern,
+        strip_line_prefix=f"{test_id}: ",
+    )
+    return test_id, _format_probe_result(run)
+
+
+def _run_plain_script_probe(cfg: EngineConfig, script_path: Path, test_id: str) -> tuple[str, str]:
+    runner = Runner(cfg)
+    annotator = Annotator(cfg)
+    run = runner.run_command(
+        cfg.argv(script_path),
+        run_id=f"script/{test_id}",
+        test_path=str(script_path),
+        script_path=str(script_path),
+    )
+    annotator.classify(run)
+    return test_id, _format_probe_result(run)
+
+
+def _run_test262_script_probe(
+    cfg: EngineConfig,
+    test262_dir: Path,
+    script_path: Path,
+    rel_path: str,
+) -> list[tuple[str, str]]:
+    runner = Runner(cfg)
+    annotator = Annotator(cfg)
+    assembler = Assembler(cfg, test262_dir)
+
+    source = script_path.read_bytes().decode("utf-8", errors="replace")
+    fm = Frontmatter.parse(source)
+    results: list[tuple[str, str]] = []
+
+    with tempfile.TemporaryDirectory(prefix="probe-t262-") as tmp_str:
+        tmp_dir = Path(tmp_str)
+        for mode in fm.modes():
+            tags = Tags.test262(fm, rel_path=rel_path)
+            tags.add("mode", mode)
+            scenario = Scenario(
+                test_path=script_path,
+                test_content=source,
+                rel_path=rel_path,
+                fm=fm,
+                mode=mode,
+                tags=tags,
+            )
+            staged = assembler.stage(scenario, temp_dir=tmp_dir)
+            try:
+                run = runner.run_command(
+                    cfg.argv(staged.script_path, tags=tags),
+                    run_id=f"script/{scenario.run_id()}",
+                    test_id=rel_path,
+                    test_path=str(script_path),
+                    script_path=str(staged.script_path),
+                    cwd=str(staged.cwd),
+                )
+                annotator.classify(
+                    run,
+                    expect_async="async" in fm.flags,
+                    pass_pattern=None if "raw" in fm.flags else Assembler.SCRIPT_EXECUTION_FINISHED_MARKER,
+                    negative_phase=fm.negative_phase if fm.negative_type else None,
+                    negative_type=fm.negative_type,
+                )
+            finally:
+                staged.cleanup()
+
+            results.append((scenario.run_id(), _format_probe_result(run)))
+
+    return results
+
+
+def run_script_probes(cfg: EngineConfig, test262_dir: Path, scripts: list[Path]) -> Iterator[tuple[str, str]]:
+    for script in scripts:
+        script_path = script.resolve()
+        test262_rel = _relative_to(script_path, test262_dir)
+        conformance_rel = _relative_to(script_path, CONFORMANCE_DIR)
+
+        if test262_rel is not None:
+            yield from _run_test262_script_probe(cfg, test262_dir, script_path, test262_rel)
+        elif conformance_rel is not None:
+            yield _run_conformance_script_probe(cfg, script_path, conformance_rel)
+        else:
+            yield _run_plain_script_probe(cfg, script_path, str(script))
+
+
 def probe_engine(
     cfg: EngineConfig, test262_dir: Path, *, jobs: int | None = None
 ) -> Iterator[tuple[str, str]]:
@@ -347,15 +487,30 @@ def probe_engine(
             yield future.result()
 
 
+def split_engine_and_script_args(argv: list[str]) -> tuple[list[str], list[str]]:
+    if "--" not in argv:
+        return argv, []
+    sep = argv.index("--")
+    return argv[:sep], argv[sep + 1:]
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description="Probe JavaScript engines for test262 readiness.")
-    p.add_argument("engines", nargs="+", help="Engine binary paths (or path to directory with them)")
-    p.add_argument("-c", "--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
+    p.add_argument(
+        "-c", "--config",
+        help="Force a specific config entry from config.yml (normally inferred from binary basename)",
+    )
     p.add_argument("-j", "--jobs", type=int, default=None, help="Parallel probes per engine")
     p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR), help="test262 repo root")
-    args = p.parse_args()
+    p.add_argument("engines", nargs="+", help="Engine binary paths (or path to directory with them)")
+    engine_args, script_args = split_engine_and_script_args(sys.argv[1:])
+    args = p.parse_args(engine_args)
 
     test262_dir = Path(args.test262_dir).resolve()
+    scripts = [Path(s) for s in script_args]
+    missing_scripts = [str(s) for s in scripts if not s.exists()]
+    if missing_scripts:
+        sys.exit(f"script not found: {', '.join(missing_scripts)}")
 
     engines: list[Path] = []
     for e in args.engines:
@@ -376,7 +531,10 @@ def main() -> None:
             continue
 
         print(f"{binary.name}:", flush=True)
-        results = list(probe_engine(cfg, test262_dir, jobs=args.jobs))
+        if scripts:
+            results = list(run_script_probes(cfg, test262_dir, scripts))
+        else:
+            results = list(probe_engine(cfg, test262_dir, jobs=args.jobs))
         for probe_name, result in sorted(results, key=lambda item: item[0]):
             print(f"  {probe_name}: {json.dumps(result)}", flush=True)
         print(flush=True)
