@@ -93,7 +93,7 @@ jobs:
           echo "conformance_shard_list=$(seq 1 "$N1" | jq -R 'tonumber' | jq -sc .)" | tee -a "$GITHUB_OUTPUT"
 
           # Build test262 engine list (one job per engine)
-          DOCKER_IMAGE="ghcr.io/ivankra/javascript-zoo/hub:$TAG"
+          DOCKER_IMAGE="ghcr.io/${{ github.repository }}/hub:$TAG"
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
           docker pull "$DOCKER_IMAGE"
           ALL_ENGINES="$(echo $SPECIAL_CONFIGS; docker run --rm "$DOCKER_IMAGE" cat /dist/LIST)"
@@ -116,7 +116,7 @@ jobs:
     needs: init
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
+      DOCKER_IMAGE: ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }}
       SHARDS: ${{ needs.init.outputs.conformance_shards }}
       SHARD_PREFIX: conformance
     strategy:
@@ -217,7 +217,7 @@ jobs:
     name: test262 (${{ matrix.engine }})
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
+      DOCKER_IMAGE: ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }}
     strategy:
       fail-fast: false
       matrix:
@@ -313,7 +313,7 @@ jobs:
         env:
           JSZ_DATA_GITHUB_TOKEN: ${{ secrets.JSZ_DATA_GITHUB_TOKEN }}
         run: |
-          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/ivankra/javascript-zoo-data.git" data-repo
+          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/${{ github.repository_owner }}/javascript-zoo-data.git" data-repo
 
           cd data-repo
           for dir in es1-5 compat-table test262 test262/tags; do

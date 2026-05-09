@@ -101,7 +101,7 @@ jobs:
     needs: init
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
+      DOCKER_IMAGE: ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }}
     strategy:
       fail-fast: false
       matrix:
@@ -197,7 +197,7 @@ jobs:
     if: always() && needs.rank.result == 'success'
     timeout-minutes: 360
     env:
-      DOCKER_IMAGE: ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.release_tag }}
+      DOCKER_IMAGE: ghcr.io/${{ github.repository }}/hub:${{ needs.init.outputs.release_tag }}
     strategy:
       fail-fast: false
       matrix:
@@ -306,7 +306,7 @@ jobs:
         env:
           JSZ_DATA_GITHUB_TOKEN: ${{ secrets.JSZ_DATA_GITHUB_TOKEN }}
         run: |
-          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/ivankra/javascript-zoo-data.git" data-repo
+          git clone --branch data --single-branch --depth 1 "https://x-access-token:${JSZ_DATA_GITHUB_TOKEN}@github.com/${{ github.repository_owner }}/javascript-zoo-data.git" data-repo
 
           cd data-repo
           for arch in amd64 arm64; do
