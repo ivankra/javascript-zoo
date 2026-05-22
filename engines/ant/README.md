@@ -1,101 +1,53 @@
 # Ant
 
-Ant-sized JavaScript runtime, notable for async/await, FFI, HTTP servers, crypto, while being under 4 MB.
+Ant is a lightweight, high-performance JavaScript runtime built from scratch.
 
 * Repository:   [theMackabu/ant](https://github.com/theMackabu/ant.git) <span class="shields"><img src="https://img.shields.io/github/stars/theMackabu/ant?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/theMackabu/ant?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:          [34461](# "cloc src")
+* LOC:          [177492](# "cloc src")
 * Language:     C
 * License:      MIT
-* Standard:     ES5 (ES6 Partial)
+* Standard:     ESnext
 * Years:        2025-
-* Interpreter:  tree-walking
+* Features:     object shapes, inline caches, MIR-based JIT
+* Parser:       recursive descent, builds AST then emits bytecode
+* Interpreter:  stack-based bytecode VM (Ant Silver)
+* GC:           generational mark-and-sweep
 * Regex engine: PCRE2
 
 ## Links
 
-- https://s.tail.so/js-in-one-month
+- https://ant.ax
+- https://themackabu.dev/blog/js-in-one-month
+- https://themackabu.dev/blog/ant-part-two
 
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
-<li>Tested version: <a href="https://github.com/theMackabu/ant/commit/12d3171b8efcbdebe50107e0b0b21385e168bec6">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/ant.json">json</a>)</li>
+<li>Tested version: <a href="https://github.com/theMackabu/ant/commit/06eaddc36f684df4615f0fe724d9152b2be0ed57">2026-05-09</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/es1-5/ant.json">json</a>)</li>
 <li>ES1: 100% (198/198)</li>
 <li>ES3: 100% (148/148)</li>
 <li>ES5: 100% (74/74)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 86%, ES2016+ 89%, Next 6%, Intl 100%</summary><ul>
-<li>Tested version: <a href="https://github.com/theMackabu/ant/commit/12d3171b8efcbdebe50107e0b0b21385e168bec6">2026-04-22</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/ant.json">json</a>)</li>
+<details><summary>compat-table: ES6 100%, ES2016+ 100%, Next 82%, Intl 100%</summary><ul>
+<li>Tested version: <a href="https://github.com/theMackabu/ant/commit/06eaddc36f684df4615f0fe724d9152b2be0ed57">2026-05-09</a> (<a href="https://github.com/ivankra/javascript-zoo-data/blob/data/compat-table/ant.json">json</a>)</li>
 <li>ES5: 100%</li>
-<li>ES6: 85.8%<pre>
-<a href="../../conformance/compat-table/es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.accessor.js">Function.name.accessor.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.bound.js">Function.name.bound.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.class-static.js">Function.name.class-static.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.configurable.js">Function.name.configurable.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.new-Function.js">Function.name.new-Function.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Function.name.variable.js">Function.name.variable.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Map.constructor-invokes-set.js">Map.constructor-invokes-set.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Map.prototype-not-instance.js">Map.prototype-not-instance.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: FAIL: Uncaught (in promise) 'qux'; Uncaught (in promise) 'baz'
-<a href="../../conformance/compat-table/es6/Promise.race.js">Promise.race.js</a>: FAIL: Uncaught (in promise) 'baz'; Uncaught (in promise) 'bar'
-<a href="../../conformance/compat-table/es6/Proxy.Array.isArray.js">Proxy.Array.isArray.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.JSON.stringify.js">Proxy.JSON.stringify.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.defineProperty.invariants.js">Proxy.handler.defineProperty.invariants.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js">Proxy.handler.getOwnPropertyDescriptor.invariants.js</a>: FAIL
-<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: FAIL
-...
-</pre></li>
+<li>ES6: 100%</li>
 <li>ES2016: 100%</li>
-<li>ES2017: 86.1%<pre>
-<a href="../../conformance/compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js">Object.getOwnPropertyDescriptors.no-undefined.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.Symbol.species.js">SharedArrayBuffer.Symbol.species.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/async.Symbol.toStringTag.js">async.Symbol.toStringTag.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/async.no-await-in-params.js">async.no-await-in-params.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/async.no-line-break.js">async.no-line-break.js</a>: FAIL
-<a href="../../conformance/compat-table/es2017/async.no-prototype.js">async.no-prototype.js</a>: FAIL
-</pre></li>
+<li>ES2017: 100%</li>
 <li>ES2018: 100%</li>
-<li>ES2019: 70.2%<pre>
-<a href="../../conformance/compat-table/es2019/Object.fromEntries.js">Object.fromEntries.js</a>: TypeError: Object.fromEntries iterable values must be entry objects
-<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.empty.js">Symbol.prototype.description.empty.js</a>: FAIL
-<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: FAIL
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: FAIL
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: FAIL
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: FAIL
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: FAIL
-</pre></li>
-<li>ES2020: 92.9%<pre>
-<a href="../../conformance/compat-table/es2020/Promise.allSettled.js">Promise.allSettled.js</a>: FAIL: Uncaught (in promise) 2
-</pre></li>
+<li>ES2019: 100%</li>
+<li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
-<li>ES2025: 63.2%<pre>
-<a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: FAIL
-<a href="../../conformance/compat-table/es2025/Set.prototype.difference.js">Set.prototype.difference.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.intersection.js">Set.prototype.intersection.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.isDisjointFrom.js">Set.prototype.isDisjointFrom.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.isSubsetOf.js">Set.prototype.isSubsetOf.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.isSupersetOf.js">Set.prototype.isSupersetOf.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.symmetricDifference.js">Set.prototype.symmetricDifference.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/Set.prototype.union.js">Set.prototype.union.js</a>: TypeError: undefined is not a function
+<li>ES2025: 100%</li>
+<li>Next: 81.8%<pre>
+<a href="../../conformance/compat-table/next/ShadowRealm.js">ShadowRealm.js</a>: FAIL
+<a href="../../conformance/compat-table/next/class-decorators.js">class-decorators.js</a>: FAIL
+<a href="../../conformance/compat-table/next/function.sent.js">function.sent.js</a>: FAIL
 </pre></li>
-<li>Next: 6.1%</li>
 <li>Intl: 100%</li>
 </ul></details>
 
