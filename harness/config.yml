@@ -982,7 +982,9 @@ quanta:
     - ' at line [0-9]+$': ''
   prelude:
     - code: 'var print = console.log;'
-  timeout_sec: 10
+  flags:
+    - { if: 'flags:module', then: '--module' }
+  timeout_sec: 20 # RegExp/property-escapes/generated tooks much so increased this 10 to 20
 
 # QuickJS (qjs and run-test262 binaries) and derivatives
 quickjs: &quickjs
