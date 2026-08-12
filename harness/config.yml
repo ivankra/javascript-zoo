@@ -1426,6 +1426,19 @@ yantra: &yantra
   timeout_sec: 10
   <<: *oom_prone
 
+viperjs:
+  console_log: print
+  crash_re:
+    - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  errors_re:
+    # viper: TypeError: cannot read a property of something that is not an object
+    # An uncaught throw is reported on stderr, prefixed with the program name, and exits 1.
+    - '^viper: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+    # A thrown value that is not an Error keeps whatever ToString gives it.
+    - '^viper: (?P<message>.+)$'
+
 yrm006:
   console_log: print
   stdout_replace_re:
