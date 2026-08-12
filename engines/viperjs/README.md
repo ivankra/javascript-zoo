@@ -3,7 +3,7 @@
 Embeddable JavaScript engine in safe Rust, with zero runtime dependencies.
 
 * Repository:   [MerlijnW70/viperjs](https://github.com/MerlijnW70/viperjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/MerlijnW70/viperjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/MerlijnW70/viperjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:          [82328](# "cloc --not_match_d='(?i)(test)' src")
+* LOC:          [103829](# "cloc --not_match_d='(?i)(test)' src")
 * Language:     Rust
 * License:      MIT OR Apache-2.0
 * Standard:     ES2023 (partial)
