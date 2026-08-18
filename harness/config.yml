@@ -1460,6 +1460,11 @@ zhuzilin:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
   timeout_sec: 10
 
+zjs:
+  console_log: console.log
+  flags:
+    - { if: 'flags:module', then: '-m' }
+
 zuqe:
   console_log: ['console.log', 'print']
   flags:
