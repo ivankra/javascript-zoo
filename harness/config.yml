@@ -149,6 +149,11 @@ boa:
   prelude:
     - file: engines/boa/prelude.js
 
+boomkat:
+  console_log: ['print', 'console.log']
+  flags:
+    - { if: 'flags:module', else: '--script' }
+
 bramblex:
   console_log: ['console.log', 'print']
   stdout_replace_re:

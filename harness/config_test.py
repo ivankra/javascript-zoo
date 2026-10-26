@@ -236,6 +236,13 @@ class ResolveFlagsTest(unittest.TestCase):
         self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--script"])
         self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:module"])), [])
 
+    def test_expand_if_without_tags_uses_empty_tags(self) -> None:
+        flags = [{"if": "!flags:module", "then": "--script"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True), ["--script"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--script"])
+        self.assertEqual(resolve_flags(flags, expand_if=True,
+                         tags=Tags.from_iterable(["flags:module"])), [])
+
     def test_expand_if_and_expr(self) -> None:
         flags = [{"if": "flags:CanBlockIsTrue & features:Atomics", "then": "--atomics-wait"}]
         self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:CanBlockIsTrue", "features:Atomics"])), ["--atomics-wait"])
@@ -423,6 +430,18 @@ class EngineConfigLoadTest(unittest.TestCase):
             cfg = EngineConfig.load(str(binary))
             self.assertEqual(cfg.binary_path, str(binary.resolve()))
             self.assertEqual(cfg.flags, [])
+
+    def test_boomkat_variants_select_script_and_module_modes(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            for name in ("boomkat", "boomkat_full_icu"):
+                with self.subTest(binary=name):
+                    binary = self._make_binary(td, name)
+                    cfg = EngineConfig.load(str(binary))
+                    self.assertEqual(cfg.argv("/tmp/script.js")[-2:],
+                                     ["--script", "/tmp/script.js"])
+                    self.assertEqual(cfg.argv("/tmp/module.js",
+                                     tags=Tags.from_iterable(["flags:module"]))[1:],
+                                     ["/tmp/module.js"])
 
     def test_load_relative_binary_path_is_resolved(self) -> None:
         old_cwd = os.getcwd()

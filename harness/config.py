@@ -13,16 +13,13 @@ import subprocess
 import sys
 from functools import cache
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     __package__ = "harness"
 
-if TYPE_CHECKING:
-    from .tags import Tags
-
-from .tags import FilterExpr
+from .tags import FilterExpr, Tags
 from .util import docker_arch_name
 
 import yaml  # type: ignore[import-untyped]
@@ -373,7 +370,7 @@ def resolve_flags(
                 result.append(item)
         elif isinstance(item, dict) and "if" in item and ("then" in item or "else" in item):
             if expand_if:
-                if tags is not None and FilterExpr.eval(item["if"], tags):
+                if FilterExpr.eval(item["if"], tags if tags is not None else Tags()):
                     if "then" not in item:
                         continue
                     branch = item["then"]
