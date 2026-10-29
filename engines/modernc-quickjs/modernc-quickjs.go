@@ -44,6 +44,9 @@ func main() {
 			}
 
 			_, err = vm.Eval(string(data), evalFlags)
+			if err == nil {
+				err = runJobs(vm)
+			}
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Uncaught exception: %v\n", err)
 				os.Exit(1)
@@ -58,6 +61,9 @@ func main() {
 			}
 
 			result, err := vm.Eval(scanner.Text(), quickjs.EvalGlobal)
+			if err == nil {
+				err = runJobs(vm)
+			}
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Uncaught exception: %v\n", err)
 			} else if _, isUndefined := result.(quickjs.Undefined); !isUndefined {
@@ -68,6 +74,17 @@ func main() {
 		if err := scanner.Err(); err != nil {
 			fmt.Fprintf(os.Stderr, "Error reading input: %v\n", err)
 			os.Exit(1)
+		}
+	}
+}
+
+// runJobs runs pending jobs (promise reactions, async function continuations)
+// until there are none left, like the event loop of the qjs shell does.
+func runJobs(vm *quickjs.VM) error {
+	for {
+		n, err := vm.ExecutePendingJobs()
+		if err != nil || n == 0 {
+			return err
 		}
 	}
 }
